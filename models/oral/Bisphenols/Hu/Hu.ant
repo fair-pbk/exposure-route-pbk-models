@@ -1,0 +1,313 @@
+model Hu2023_BPA_Human()
+
+#Created: Carolina Vogs, September 2025
+#Checked:
+
+# ===========================================================
+# BPA PBPK (Hu et al. 2023)
+# Human PBK for oral absorption 
+# administration → Stomach → SI → liver <- GI Lumen Metabolism
+# Parent only, perfusion-limited tissues
+# GI Lumen Metabolism BAPG → BAP
+# Hepatic Metabolism BAP → BAPG & BAPS
+# EHR of BAPG from liver to GI Lumen, hydrolyzed to BAP, EHR of hydrolyzed BAPG to liver
+# https://www.ncbi.nlm.nih.gov/pubmed/36649768
+# ===========================================================
+
+# ------------------------
+# Body size 
+# ------------------------
+BW   = 70                                    # kg
+VLc  = 0.0233   
+VPlasmac = 0.04  
+
+VL   = VLc*BW  
+VPlasma = VPlasmac*BW
+ 
+VRest := 0.84*BW - VL - VPlasma  
+
+
+# Small-intestinal enterocyte “processing” volume (for gut glucuronidation)
+enterocytes = 0.1223       # L (volume of distribution in SI)
+
+
+
+# ------------------------
+# Cardiac output & flows
+# ------------------------
+QC  = 354                 # L/h
+# Flow fractions; adjust to sum ≤ 1
+QLc = 0.24; 
+
+# Flows:
+QL = QLc*QC; 
+
+QRest = QC - QL
+
+# ------------------------
+# Tissue:serum partition coefficients
+# ------------------------
+PL = 0.73
+PRest = 1
+
+# ------------------------
+# Presystemic absorption & gastric emptying
+# ------------------------
+
+# BAP relevant parameters
+kstoC   = 3.50		       # 1/h/bw^-0.25, Gastric emptying 
+ksto   = kstoC / BW^(0.25)    # 1/h 
+
+k0C  = 0	  	       # 1/h/bw^-0.25, uptake from the stomach into the liver  
+k0   = k0C / BW^(0.25)         # 1/h gastric emptying (adult scaling; Karrer Table 8)
+
+kabsC = 2.1			# uptake enterocyte → portal/liver, 1/h/bw^-0.25 
+kabs = kabsC / BW^(0.25)  	# 1/h uptake enterocyte → portal/liver 
+
+kfeC = 0			# (1/h/BW^(-0.25) Fecal elimination of BPA from small intestine 
+kfe := kfeC / BW^(0.25)		# 1/h
+
+# Parameters for Met1 and Met2 including EHR for Met1
+# Met1 - BPAG, Met2 - BPAS
+
+kfeMetC = 0			# (1/h/BW^(-0.25) Fecal elimination of BPGA from small intestine 
+kfeMet := kfeMetC / BW^(0.25)* BW^(0.25)	# 1/h
+
+kabsMet1C = 50			# (1/h/BW^-0.25)|Transport of BPAG from enterocytes into serum 
+kabsMet1 := kabsMet1C / BW^(0.25) # 1/h
+
+kabsMet2C = 50			# (1/h/BW^-0.25)|Transport of BPAS from enterocytes into serum 
+kabsMet2 := kabsMet2C / BW^(0.25) # 1/h
+
+EHRrateC = 0.2; 		# (1/h/bw^-0.25) |EHR of BPAG
+EHRrate := EHRrateC / BW^(0.25)	# 1/h
+
+kehrMet1C = 0.2 		# (1/h/bw^-0.25) EHR of BPA due to biliary excretion of BPAGkehrMet1 := kehrMet1C / BW^(0.25)kehrMet2C = 0.0 		# (1/h/bw^-0.25) EHR of BPA due to biliary excretion of BPAS
+kehrMet2 := kehrMet2C / BW^(0.25)
+
+#------------------------
+# Intestinal metabolism - Met1 - BPAG, Met2 - BPAS
+#------------------------
+BileFracSIMet1 = 0.1		# 10% of formed BPAG goes to bile 
+BileFracSIMet2 = 0			# 0% of formed BPAS goes to bile
+
+# GI glucuronidation of BPA in the small intestine
+fGutMet1 = 1 						# correction factor
+KmGILumenMet1   = 58400                                 # nM   (GI glucuronidation Km)
+VmaxGILumenMet1c = 361                                	# nmol/h/kg (GI Vmax)
+VmaxGILumenMet1 := fGutMet1 * BW^0.75 * (VmaxGILumenMet1c * BW/ BW^0.75)       # nmol/h 
+
+# GI sulfation of BPA in the small intestine - not modelled
+fGutMet2 = 0 						# correction factor
+KmGILumenMet2   = 10100  				# nM
+VmaxGILumenMet2c = 149          			# nmol/h/kg liver
+VmaxGILumenMet2  := fGutMet2 * BW^0.75 * (VmaxGILumenMet2c * BW/ BW^0.75)     	# nmol/h
+
+
+#------------------------
+# Hepatic metabolism - Met1 - BPAG, Met2 - BPAS
+#------------------------
+BileFracLMet1 = 0.1		# 10% of formed BPAG goes to bile
+BileFracLMet2 = 0		# 0% of formed BPAS goes to bile
+
+# Glucuronidation of BPA in the liver
+fLiverMet1 = 1 						# correction factor
+KmLMet1    = 45800                             # nM  (hepatic glucuronidation Km)
+VmaxLMet1c = 9043.2                            # nmol/h/g liver (hepatic glucuronidation) 
+VmaxLMet1 := fLiverMet1 * BW^0.75 *VmaxLMet1c  * VLc * 1000 * BW / BW^0.75         # nmol/h
+
+# Sulfation of BPA in the liver
+fLiverMet2 = 1 					   # correction factor
+KmLMet2   = 10100                              # nM  (hepatic sulfation Km)
+VmaxLMet2c= 149                                # nmol/h/g liver (hepatic sulfation Vmax)
+VmaxLMet2 := fLiverMet2 * BW^0.75 * (VmaxLMet2c * VLc * 1000 * BW/ BW^0.75)         # nmol/h
+					
+
+#------------------------
+# Compartments
+#------------------------
+compartment Stomach;          Stomach = 1.0
+compartment SI;               SI = 1
+compartment Liver;            Liver   = VL
+compartment Plasma;           Plasma   = VPlasma
+compartment Rest;             Rest    = VRest
+compartment GILumen;          GILumen   = 1
+compartment Feces;            Feces    = 1
+
+
+#------------------------
+# Species (amounts; BPA unless noted)
+#------------------------
+substanceOnly species AStomach   in Stomach
+substanceOnly species ASI   	 in SI
+substanceOnly species ALiver     in Liver
+substanceOnly species APlasma    in Plasma
+substanceOnly species ARest      in Rest
+substanceOnly species AGILumen   in GILumen
+substanceOnly species AFeces     in Feces
+
+
+# Conjugates - Met1 - BPAG, Met2 - BPAS
+substanceOnly species ASIMet1 in SI			#BPA to BPAG
+substanceOnly species ASIMet2 in SI			#BPA to BPAS
+substanceOnly species ALiverMet1 in Liver		#BPA to BPAG
+substanceOnly species ALiverMet2 in Liver		#BPA to BPAS
+substanceOnly species APVMet1 in Liver	
+substanceOnly species APVMet2 in Liver	
+substanceOnly species AGILumenMet1 in GILumen	
+substanceOnly species AGILumenMet2 in GILumen	
+substanceOnly species APlasmaMet1 in Plasma
+substanceOnly species APlasmaMet2 in Plasma
+substanceOnly species AFecesMet1  in Feces
+substanceOnly species AFecesMet2  in Feces
+
+#------------------------
+# Initial conditions
+#------------------------
+AStomach = 0; 
+ASI = 0; 
+ALiver = 0; 
+APlasma = 0; 
+ARest = 0; 
+AGILumen = 0;
+AFeces = 0;
+
+
+ASIMet1= 0; 
+ASIMet2 = 0; 
+APVMet1= 0; 
+APVMet2 = 0; 
+ALiverMet1= 0; 
+ALiverMet2 = 0; 
+AGILumenMet1 = 0;
+AGILumenMet2 = 0;
+APlasmaMet1 = 0;
+APlasmaMet2 = 0;
+AFecesMet1 = 0;
+AFecesMet2 = 0;
+
+#------------------------
+# Concentrations 
+#------------------------
+CSt       := AStomach / Stomach
+CSI  	  := ASI / SI
+CLiver    := ALiver / Liver
+CPlasma   := APlasma / Plasma
+CRest     := ARest / Rest
+ABile     := AGILumen / GILumen
+CGut  	  := ASI/enterocytes 
+
+#------------------------
+# Reactions / Transfers
+#------------------------
+
+#------------------------
+# GI Tract
+#------------------------
+
+# Oral: Stomach → small intestine
+AStomach     -> ASI;    ksto * AStomach
+
+# Oral: Stomach → portal
+AStomach     -> ALiver;    k0 * AStomach
+
+# Small Intestine  → liver
+ASI -> ALiver;     kabs * ASI
+
+# Small Intestine  → Feces, set to 0
+ASI -> AFeces;	   kfe * ASI 
+
+#------------------------
+# Intestinal Metabolism
+#------------------------
+
+# Met1 - BPAG, Met2 - BPAS
+
+# A) Small Intestine  → Glucuronidation BAP → BPAG in "enterocytes”
+ASI -> ASIMet1;  (VmaxGILumenMet1 * CGut / (KmGILumenMet1 + CGut))
+
+# rapid absorption to the portal vein
+ASIMet1 -> APVMet1; kabsMet1 * ASIMet1
+
+# 90% of BPAG to systemic circulation 
+APVMet1 -> APlasmaMet1;  (1-BileFracSIMet1)* APVMet1
+
+# 10% of BPAG is secreted by the bile duct
+APVMet1 -> AGILumenMet1;   BileFracSIMet1* APVMet1
+
+
+
+# B) Small Intestine  → Sulfation → BPA to BPAS in "enterocytes”
+ASI -> ASIMet2;  (VmaxGILumenMet2 * CGut/ (KmGILumenMet2 + CGut)) 
+
+# rapid absorption to the portal vein
+ASIMet2 -> APVMet2; kabsMet2 * ASIMet2 
+
+# 100% of BPAS to systemic circulation 
+APVMet2 -> APlasmaMet2; (1-BileFracSIMet2)*APVMet2
+
+# 0% of BPAS secreted by bile duct
+APVMet2 -> AGILumenMet2;   BileFracSIMet2 * APVMet2
+
+
+#------------------------
+# Hepatic Metabolism
+#------------------------
+
+# A) BPA → BPAG 
+
+# BPA → BPAG
+ALiver  -> ALiverMet1; ((VmaxLMet1 * (CLiver/PL) / (KmLMet1  + (CLiver/PL)) )) 
+
+# BPAG to volume of distribution (90%)
+ALiverMet1 -> APlasmaMet1; (1-BileFracLMet1) * ALiverMet1
+
+# BPAG to bile (10%)
+ALiverMet1  -> AGILumenMet1;  BileFracLMet1 * ALiverMet1
+
+# B) BPA → BPAS
+
+ALiver  -> ALiverMet2; (VmaxLMet2 * (CLiver/PL) / (KmLMet2 + (CLiver/PL)) )
+
+# BPAS to volume of distribution (100%)
+ALiverMet2 -> APlasmaMet2; (1-BileFracLMet2) * ALiverMet2
+
+# 0%  goes to bile 
+
+ALiverMet2 -> AGILumenMet2; BileFracLMet2 * ALiverMet2
+
+#------------------------
+# Perfusion limited BAP
+#------------------------
+
+# Liver ↔ Plasma (perfusion-limited BPA)
+APlasma  -> ALiver;   QL * CPlasma
+ALiver  -> APlasma;   QL * (CLiver/PL)
+
+# Rest ↔ Plasma (perfusion-limited BPA)
+APlasma  -> ARest;    QRest * CPlasma
+ARest   -> APlasma;   QRest * (CRest/PRest)
+
+#------------------------
+# EHR: BPAG hydrolyzed to BPA in the GI lumen and backtransported to the liver
+#------------------------
+
+AGILumenMet1 -> APlasmaMet1; AGILumenMet1 * EHRrate
+AGILumenMet1 -> AFecesMet1; AGILumenMet1 * kfeMet
+
+# Uptake rate of BPA into the liver from the gut (EHR compartment for BPAG)
+AGILumenMet1 -> ALiver; AGILumenMet1 * kehrMet1
+
+#------------------------
+# EHR: BPAS hydrolyzed to BPA in the GI lumen and backtransported to the liver - set to 0
+#------------------------
+
+AGILumenMet2 -> APlasmaMet2; AGILumenMet2 * EHRrate
+AGILumenMet2 -> AFecesMet2; AGILumenMet2 * kfeMet
+
+# Uptake rate of BPA into the liver from the gut (EHR compartment for BPAG)
+AGILumenMet2 -> ALiver; AGILumenMet2 * kehrMet2
+
+
+
+end

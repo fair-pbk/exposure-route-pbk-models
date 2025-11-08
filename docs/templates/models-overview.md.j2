@@ -1,0 +1,29 @@
+# Overview
+
+| Id | Route | Chemical Group | Compartments | Species | Parameters | Unit consistency checks |
+| ---| ----- | -------------- | ------------ | ------- | ---------- | ----------------------- |
+{% for record in records -%}
+| [{{record["id"]}}]({{record["report_path"]}}) | {{record["route"]}} | {{record["chemical_group"]}} |
+{%- for compartment in record["compartments"] -%}
+{%- if compartment["pbpko_bqm_is_class"] -%}
+[{{compartment["pbpko_bqm_is_class"]["label"]}}]({{compartment["pbpko_bqm_is_class"]["iri"]}}){% if not loop.last %}, {% endif %}
+{%- else -%}
+<i>{{compartment["id"]}}</i>{% if not loop.last %}, {% endif %}
+{%- endif -%}
+{%- endfor -%} |
+{%- if record["num_species_unannotated"] > 0 -%}
+{{record["num_species"]}} ({{record["num_species_unannotated"]}} not annotated)
+{%- else -%}
+{{record["num_species"]}}
+{%- endif -%} |
+{%- if record["num_parameters_unannotated"] > 0 -%}
+{{record["num_parameters"]}} ({{record["num_parameters_unannotated"]}} not annotated)
+{%- else -%}
+{{record["num_parameters"]}}
+{%- endif -%} |
+{%- if record["num_unit_consistency_errors"] + record["num_unit_consistency_warnings"]> 0 -%}
+{{record["num_unit_consistency_errors"]}} errors, {{record["num_unit_consistency_warnings"]}} warnings
+{%- else -%}
+passed
+{%- endif -%} |
+{% endfor %}

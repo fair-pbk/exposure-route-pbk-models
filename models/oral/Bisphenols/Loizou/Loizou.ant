@@ -1,0 +1,146 @@
+model Loizou2022_BisphenolA_Human()
+
+#Created: Carolina Vogs, September 2025
+#Checked:
+
+#===========================================================
+# BAP PBK (Louizou et al. 2022):
+#===========================================================
+
+#------------------------
+# Body size & base volumes
+#------------------------
+BW   = 70                       # kg
+VLc  = 0.026                    # L/kg (liver)
+VPlasmac  = 0.0428              # L/kg (plasma)
+VGc  = 0.017			# L/kg (gut)
+
+VL   = VLc*BW                   # L
+VPlasma = VPlasmac*BW           # L
+VG = VGc*BW           		# L
+
+VRest := 0.84*BW - VL - VPlasma - VG  # Lumped Rest-of-body volume L 
+
+#------------------------
+# Blood Flows
+#------------------------
+QC    = 20*BW^0.75            # L/h (cardiac output)
+QLc   = 0.026
+QGc   = 0.016
+	
+QL    = QLc*QC                # L/h (liver)
+QG    = QGc*QC                # L/h (gut)
+QRest = (1 - QLc - QGc)*QC    # L/h (rest)
+
+Hct = 0.45
+fu = 0.965		      # 3.5% protein binding according to Edington and Ritter (2018)
+
+#------------------------
+# Absorption & hepatic metabolism
+#------------------------
+
+k0C = 0				# L/h/kg^(-0.25)
+k0 = k0C * BW ^(-0.25)	# L/h
+
+kstoC 	   = 3.5		# L/h/kg^(-0.25)
+ksto = kstoC * BW ^(-0.25)	# L/h
+
+kabsC        = 9                # L/h/kg^(-0.25)
+kabs = kabsC * BW ^(-0.25)	# L/h
+
+
+#------------------------
+# Intestinal metabolism - Michaelis-Menten Kinetic
+#------------------------
+VmaxGMet1C = 1.4			# nmol/min/mg of protein
+VmaxGMet1 = 22750/1000 * BW^0.75	# µmol/h/kg
+KmGMet1 = 58				# µmol
+
+#------------------------
+# Hepatic metabolism - Michaelis-Menten Kinetic
+#------------------------
+VmaxLMet1C = 4.71			# nmol/min/mg of protein
+VmaxLMet1 = 680095.6/1000 * BW^0.75	# µmol/h/kg
+KmLMet1 = 45.8				# µmol
+
+VmaxLMet2C = 149			# nmol/h/g liver
+VmaxLMet2 = 11657/1000 * BW^0.75	# µmol/h/kg
+KmLMet2 = 10.1				# µmol
+
+
+#------------------------
+# Partition coefficients
+#------------------------
+PL = 0.73
+PRest = 1
+
+#------------------------
+# Compartments (sizes)
+#------------------------
+compartment Stomach; Stomach = 1
+compartment Liver;   Liver = VL
+compartment Plasma;  Plasma = VPlasma
+compartment Gut;  Gut = VG
+compartment Rest;    Rest  = VRest
+ 
+
+#------------------------
+# Species (amount states)
+#------------------------
+substanceOnly species AStomach in Stomach
+substanceOnly species ALiver in Liver
+substanceOnly species APlasma in Plasma
+substanceOnly species AGut in Gut
+substanceOnly species ARest  in Rest
+substanceOnly species AGutMet1   in Gut
+substanceOnly species ALiverMet1   in Liver
+substanceOnly species ALiverMet2  in Liver
+
+
+#------------------------
+# Initial conditions
+#------------------------
+AStomach = 0; 
+ALiver = 0; 
+APlasma = 0; 
+AGut = 0;
+ARest = 0; 
+AGutMet1  = 0; 
+ALiverMet1  = 0; 
+ALiverMet2  = 0; 
+
+#------------------------
+# Concentrations 
+#------------------------
+CLiver := ALiver / Liver
+CPlasma := APlasma / Plasma
+CPlasma_Total := CPlasma/fu
+CGut := AGut/Gut
+CRest  := ARest  / Rest
+
+#------------------------
+# Reactions / Transfers
+#------------------------
+
+# GI absorption
+AStomach -> AGut;     ksto * AStomach
+AStomach -> ALiver;  k0 * AStomach
+
+AGut -> ALiver; kabs * AGut
+AGut -> AGutMet1;  VmaxGMet1 * CGut * fu/ ((CGut * fu) + KmGMet1)        # Glu
+
+# Perfusion-limited exchanges (blood ↔ liver & rest)
+
+APlasma   -> ALiver;     QL * CPlasma * fu
+ALiver   -> APlasma;     QL * fu * CLiver/PL
+
+APlasma   -> ARest;    QRest * CPlasma * fu
+ARest  	-> APlasma;    QRest * fu * CRest/PRest
+
+# Hepatic Metabolism
+
+ALiver -> ALiverMet1 ; VmaxLMet1 * CLiver * fu/ ((CLiver * fu) + KmLMet1)        # Glu
+ALiver -> ALiverMet2;  VmaxLMet2 * CLiver * fu/ ((CLiver * fu) + KmLMet2)        # Sul
+
+
+end

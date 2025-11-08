@@ -1,0 +1,11 @@
+idModelInstance,Parameter,Value,Unit,Description,Reference
+Carrier2001_Hg_Human_PARAM,BW,70.0,,body weight,
+Carrier2001_Hg_Human_PARAM,VGIc,0.017,,,
+Carrier2001_Hg_Human_PARAM,VBc,0.067,,,
+Carrier2001_Hg_Human_PARAM,VLc,0.026,,,
+Carrier2001_Hg_Human_PARAM,VB,,,,
+Carrier2001_Hg_Human_PARAM,VGI,,,,
+Carrier2001_Hg_Human_PARAM,VL,,,,
+Carrier2001_Hg_Human_PARAM,kabs,5.544,,,
+Carrier2001_Hg_Human_PARAM,Frac,1.0,,,
+Carrier2001_Hg_Human_PARAM,kmet_liver,0.175,,,

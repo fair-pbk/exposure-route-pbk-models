@@ -1,0 +1,152 @@
+model Moreau_BPA_Human()
+
+
+#Created: Carolina Vogs, September 2025
+#Checked:
+
+#===========================================================
+# BPA PBK - Moreau et al. 2025
+# Stomach -> Duodenum -> GITissue -> Liver 
+# Perfusion-limited: Blood <-> Liver, Blood <-> Rest
+# Hepatic metabolism: intrinsic clearance
+# Plasma metabolism: set to 0 for BAP
+# urine excretion neglected as it would need to go through the kidneys first
+# https://www.ncbi.nlm.nih.gov/pubmed/40480613
+#===========================================================
+
+#------------------------
+# Body size & base volumes
+#------------------------
+BW   = 70                          # kg
+
+VLC   = 0.0233                  
+VGITissueC   = 0.019            
+
+
+
+VL   = VLC * BW                
+VGITissue   = VGITissueC * BW           
+VPlasma = 2.5178
+
+
+# Lumped Rest-of-body volume with floor
+VRest := 0.84*BW - VL - VGITissue - VPlasma 
+
+#------------------------
+# Flows 
+#------------------------
+QC   = 321.435                 # L/h (cardiac output)
+Hct  = 0.3865		       # Hematocrit
+QCPlasma = QC * (1-Hct)
+
+QGIc = 0.164	    	
+QLc = 0.097     		
+
+QGI := QGIc*QC			# GI plasma flow (L/h)
+QL := QLc*QC			# Liver plasma flow (L/h)
+
+QRest= QCPlasma - QL  - QGI   # L/h (lumped rest)
+
+#------------------------
+# Partitions (tissue:blood)
+#------------------------
+PL   = 1.79                 	# liver:blood 
+PGI  = 3.55
+PRest= 1.0                      # lumped rest:blood (can adjust if needed)
+
+#------------------------
+# GI kinetics 
+#------------------------
+ksto = 1.2			 # 1/h
+kabs = 1.2                       # 1/h  
+Fa = 0.15			 # Fraction absorbed
+#------------------------
+# Hepatic intrinsic clearance 
+#------------------------
+
+CLintC = 131.34   		 # L/h/kg Liver
+CLint = CLintC * VL  		 # L/h
+
+#------------------------
+# Blood metabolism 
+#------------------------
+
+CLintB = 0
+
+#------------------------
+# Compartments
+#------------------------
+compartment Stomach;  Stomach = 1
+compartment GITissue;   GITissue  = VGITissue
+compartment Duodenum;   Duodenum  = 1
+compartment Liver;    Liver   = VL
+compartment Plasma;    Plasma   = VPlasma
+compartment Rest;     Rest    = VRest
+
+
+#------------------------
+# Species (amount states)
+#------------------------
+substanceOnly species ASt   in Stomach
+substanceOnly species ADuodenum   in Duodenum
+substanceOnly species AGITissue  in GITissue
+substanceOnly species ALiver  in Liver
+substanceOnly species APlasma  in Plasma
+substanceOnly species ARest   in Rest
+substanceOnly species ALiverMet  in Liver   
+substanceOnly species APlasmaMet  in Plasma 
+
+#------------------------
+# Initial conditions
+#------------------------
+ASt = 0; 
+ADuodenum = 0;
+AGITissue = 0;
+ALiver = 0; 
+APlasma= 0; 
+ARest = 0
+ALiverMet = 0;
+APlasmaMet = 0;
+
+#------------------------
+# Concentrations 
+#------------------------
+CGITissue   := AGITissue  / GITissue 
+CLiver  := ALiver / Liver
+CPlasma  := APlasma / Plasma
+CRest := ARest   / Rest
+
+
+# Hepatic metabolism (intrinsic clearance on liver-venous conc)
+Met := CLint * (CLiver/PL)   
+
+#------------------------
+# GI transfers & absorptions
+#------------------------
+# OralDose -> Ast; Fa*(OralDose * BW * 1000)/MW 
+
+ASt -> ADuodenum;     ksto * ASt
+
+ADuodenum -> AGITissue;  kabs * ADuodenum 
+
+AGITissue -> ALiver;  QGI * CGITissue/PGI
+APlasma -> AGITissue; QGI * CPlasma
+
+#------------------------
+# Perfusion-limited exchanges
+#------------------------
+# Liver ↔ Blood 
+APlasma -> ALiver;   QL   * CPlasma
+ALiver -> APlasma;   (QL + QGI)  * CLiver/PL
+
+# Rest ↔ Blood
+APlasma -> ARest;     QRest * CPlasma
+ARest   -> APlasma;   QRest * CRest/PRest
+APlasma -> APlasmaMet; CLintB * CPlasma
+
+#------------------------
+# Hepatic metabolism sink (parent → AMet)
+#------------------------
+ALiver -> ALiverMet;   CLint * (CLiver/PL)   
+
+end

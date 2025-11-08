@@ -1,0 +1,238 @@
+model Mukherjee2014_Human_PBK()
+
+#Created: Carolina Vogs, September 2025
+#Checked:
+
+#===========================================================
+# Mukherjee, D., et al. (2014)
+# Human PBK for oral absorption (Mukherjee 2014 core): GI (GI→Fast/Slow; Slow→Colon; Fast→Gut)
+# Perfusion-limited: Gut ↔ Blood, Liver ↔ Blood, Rest ↔ Blood
+# Parent metabolism in liver (1st order by default, MM optional)
+# 10.1371/journal.pone.0113632 
+#===========================================================
+
+#------------------------
+# Body size & base volumes
+#------------------------
+BW   = 70                                # kg
+VLc  = 0.026                             # L/kg (liver)
+VBc  = 0.074                             # L/kg (blood)
+VGc  = 0.009                             # L/kg (small intestine tissue)
+
+VL   = VLc*BW                            # L (liver)
+VB   = VBc*BW                            # L (blood)
+VG   = VGc*BW                            # L (gut tissue)
+VSt = 0.2				 # L (added myself based on Shin et al - Bisphenols)
+VSpleen = 0.2				 # L (added myself based on Shin et al - Bisphenols)
+VBile = 0.5				 # L (added myself - not exactly sure what value to use) 
+
+# Lumped Rest-of-body volume 
+VRest = 0.84*BW - VL - VB - VG - VSt - VSpleen      # L (non-blood, non-liver, non-GI tissue water)
+
+
+#------------------------
+# Flows (human)
+#------------------------
+QC  = 15*BW^0.74                         # L/h (cardiac output)
+QLc = 0.046                              # liver fraction
+QGc = 0.181                              # gut tissue (small intestine) fraction
+
+QL   = QLc*QC                            # L/h (liver)
+QG   = QGc*QC                            # L/h (gut tissue)
+QSpleen = 4.602				 # L/h (added based on Shin et al - Bisphenols)
+QSt = 2.298			 # L/h (added based on Shin et al - Bisphenols)
+QRest = QC - (QL + QG + QSt + QSpleen)                   # L/h (lumped rest)
+
+QBile = 0.031     			 # L/h   bile flow (750 mL/day)
+QLhep = QL - QSt - QG - QSpleen
+
+#------------------------
+# Partition (tissue:blood)
+#------------------------
+PL    = 4.56                             # liver : blood
+PRest = 1                            	 # rest : blood
+PG    = 6.56				 # took myself from Mendez-Catala et al. 
+PStomach = 1.30
+PSpleen = 0.81
+
+#------------------------
+# GI ktetics - all given as 1/min
+#------------------------
+ktFL  = 20.0 * 60      # 1/h   GI → Fast lumen 
+ktSL  = 0.05 * 60      # 1/h   GI → Slow lumen 
+kt  = 3.45 * 60        # 1/h   Slow lumen → Colon
+kabsFL = 15.45 * 60    # 1/h   Fast lumen absorption → Gut tissue (according to article)
+kabsSL = 0             # 1/h   Small lumen absorption → Gut tissue (according to article)
+
+kfe   = 0.0004 * 60   # 1/h   Colon → feces (according to article)
+kbiliary = 0.76 * 60  # 1/h   Liver → bile (according to article)
+
+#------------------------
+# Gut metabolism of parent - has not been added in the code
+#------------------------
+VmaxGZEA := 8056	# pmol/h	
+KmGZEA := 579		# µM
+
+#------------------------
+# Liver metabolism of parent 
+#------------------------
+VLkg = VLc*1000						# gram/kg BW 
+
+CLintLMet1C := 4.776*10^(-3)				# ml/min per g liver	
+CLintLMet1 := CLintLMet1C * VLkg * BW * 60/1000 	#L/h
+
+CLintLMet2C := 2.36*10^(-2)				# ml/min per g liver	
+CLintLMet2 := CLintLMet2C * VLkg * BW * 60/1000 	# L/h
+
+CLintLMet3C := 7.057*10^(-3)				# ml/min per g liver
+CLintLMet3 := CLintLMet3C * VLkg * BW * 60/1000 	# L/h
+	
+CLintLMet4C := 5*10^(-6)				# ml/min per g liver	
+CLintLMet4 := CLintLMet4C * VLkg * BW * 60/1000 	# L/h
+
+
+#------------------------
+# Compartments (volumes)
+#------------------------
+compartment GILumen;          GILumen   = 1
+compartment Fast;             Fast = 1
+compartment Slow;             Slow = 1
+compartment Colon;            Colon = 1
+compartment Gut;              Gut  = VG
+compartment Liver;            Liver = VL
+compartment Blood;            Blood = VB
+compartment Rest;             Rest  = VRest
+compartment Bile;             Bile  = VBile
+compartment Feces;            Feces = 1.0  		# accumulator (volume arbitrary)
+compartment Stomach;          Stomach  = VSt
+compartment Spleen;           Spleen  = VSpleen
+
+#------------------------
+# Species (amount states)
+#------------------------
+substanceOnly species AGILumen in GILumen
+substanceOnly species AFast   in Fast
+substanceOnly species ASlow   in Slow
+substanceOnly species AColon  in Colon
+
+substanceOnly species AGut    in Gut
+substanceOnly species ALiver  in Liver
+substanceOnly species ABlood  in Blood
+substanceOnly species ARest   in Rest
+substanceOnly species ASt  in Stomach
+substanceOnly species ASpleen   in Spleen
+
+substanceOnly species ABile   in Bile
+substanceOnly species AFeces  in Feces
+
+# Met1 = ZEAGLU, Met2 = alphaZOL, Met3 = betaZOL, Met4 = ZAN
+substanceOnly species ALiverMet1   in Liver   
+substanceOnly species ALiverMet2   in Liver
+substanceOnly species ALiverMet3   in Liver
+substanceOnly species ALiverMet4   in Liver 
+
+#------------------------
+# Initial conditions
+#------------------------
+AGILumen = 0 
+AFast = 0 
+ASlow = 0 
+AColon = 0
+AGut = 0 
+ALiver = 0 
+ABlood = 0 
+ARest = 0
+ABile = 0 
+AFeces = 0 
+AMet = 0
+ASt = 0
+ASpleen = 0
+
+# Met1 = ZEAGLU, Met2 = alphaZOL, Met3 = betaZOL, Met4 = ZAN
+ALiverMet1= 0
+ALiverMet2= 0
+ALiverMet3 = 0
+ALiverMet4 = 0
+
+
+#------------------------
+# Concentrations
+#------------------------
+
+CGut   := AGut   / Gut
+CLiver := ALiver / Liver
+CBlood := ABlood / Blood
+CRest  := ARest  / Rest
+CStomach := ASt/Stomach
+CSpleen := ASpleen/Spleen
+CBile := ABile/Bile
+
+
+#------------------------
+# GI fluxes 
+#------------------------
+# GI splits into fast & slow
+AGILumen   -> AFast;  ktFL * AGILumen
+AGILumen   -> ASlow;  ktSL * AGILumen
+
+# Slow → colon
+ASlow -> AColon; kt * ASlow 
+
+# Absorption from fast/slow → gut tissue
+AFast -> AGut;   kabsFL * AFast 
+ASlow -> AGut;   kabsSL * ASlow 
+
+# colon → feces
+AColon -> AFeces; kfe * AColon 
+
+#------------------------
+# Perfusion-limited exchanges
+#------------------------
+
+# Gut ↔ Blood
+ABlood -> AGut;   QG * CBlood
+AGut  -> ALiver;  QG * CGut/PG
+
+# Liver ↔ Blood
+ABlood  -> ALiver;  QLhep * CBlood
+ALiver  -> ABlood;  QL * CLiver/PL
+
+# Rest ↔ Blood
+ABlood  -> ARest; QRest * CBlood
+ARest -> ABlood;  QRest * CRest/PRest
+
+#------------------------
+# Liver metabolism (parent)
+#------------------------
+# ZEN -> ZEAGlu
+ALiver  -> ALiverMet1;  CLintLMet1* CLiver
+
+# ZEN -> alphaZOL
+ALiver  -> ALiverMet2;  CLintLMet2 * CLiver
+
+# ZEN -> betaZOL
+ALiver  -> ALiverMet3;  CLintLMet3 * CLiver
+
+# ZEN -> ZAN
+ALiver  -> ALiverMet4;  CLintLMet4 * CLiver
+
+
+
+#------------------------
+# Bile recirculation 
+#------------------------
+#I think this is wrong due to a unit mismatch in the original model -> Qbile inserted in ALiver -> ABile seems wrong
+
+ALiver -> ABile;  QBile * kbiliary * CLiver 
+ABile -> AGILumen;  QBile * CBile
+
+#------------------------
+# Stomach/Spleen
+#------------------------
+ABlood -> ASt; QSt * CBlood
+ASt -> ALiver; QSt * CStomach/PStomach
+
+ABlood -> ASpleen; QSpleen * CBlood
+ASpleen -> ALiver; QSpleen * CSpleen/PSpleen
+
+end

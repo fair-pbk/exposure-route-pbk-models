@@ -1,0 +1,185 @@
+model GilbertSandoval()
+
+#Created: Carolina Vogs, September 2025
+#Checked:
+
+#===========================================================
+# Human AFB1 PBK (Gilbert-Sandoval):
+# Stomach → SI1→…→SI7 → Colon; absorption from each SI box to Liver
+# Liver perfusion-limited + Hill metabolism (to AFQ1, AFBO on venous conc)
+# Blood ↔ Rest; 10 once-daily oral boluses; mass balance
+# https://www.ncbi.nlm.nih.gov/pubmed/32421213
+#===========================================================
+
+
+#------------------------
+# Body size & volumes
+#------------------------
+BW   = 70
+VLc  = 0.026      # L/kg liver
+VBc  = 0.079      # L/kg blood
+VSI  = 1.29       # L per SI subcompartment (×7)
+
+
+VL = VLc*BW
+VB = VBc*BW
+
+
+# Lumped Rest-of-body 
+VRest := 0.84*BW - VL - VB 
+
+#------------------------
+# Flows (human)
+#------------------------
+QC   = 15*BW^0.74
+QLc  = 0.227
+QL   = QLc*QC
+QRest= QC - QL
+
+#------------------------
+# Partitions
+#------------------------
+PL = 1.07      # liver:blood (AFB1)
+PRest= 1.0     # lumped rest:blood (effective)
+
+#------------------------
+# GI ktetics & absorption
+#------------------------
+ksto = 2.8       # 1/h  Stomach → SI1
+kt  = 2.19       # 1/h  SIi → SI(i+1), i=1..6
+kfe  = 0.02      # 1/h  Colon → Feces (sink inside system for MB tracktg)
+
+kabs  = 5.05        # 1/h  segment absorption rate constant 
+kabsSI1 := kabs*VSI # L/h  
+kabsSI2 := kabs*VSI
+kabsSI3 := kabs*VSI
+kabsSI4 := kabs*VSI
+kabsSI5 := kabs*VSI
+kabsSI6 := kabs*VSI
+kabsSI7 := kabs*VSI
+
+#------------------------
+# Liver Michaelis-Menten metabolism (to AFQ1 & AFBO) 
+#------------------------
+# Met1 = AFQ1, Met2 = AFBO
+
+MPL        = 39.46*1000        # mg microsomal / kg liver
+VmaxMet1c  = 0.003469          # µmol/(mg microsomal)/min
+VmaxMet2c  = 0.000542          # µmol/(mg microsomal)/min
+nMet1     = 1.2
+nMet2     = 1.1
+S50Met1   = 427               # µmol/L (effective Hill S50)
+S50Met2    = 197               # µmol/L
+
+# Scale Vmax to whole liver (µmol/h)
+VmaxMet1 := VmaxMet1c * 60 * MPL * VL
+VmaxMet2 := VmaxMet2c * 60 * MPL * VL
+
+#------------------------
+# Compartments
+#------------------------
+compartment Stomach; Stomach = 1
+compartment SI1;     SI1     = VSI
+compartment SI2;     SI2     = VSI
+compartment SI3;     SI3     = VSI
+compartment SI4;     SI4     = VSI
+compartment SI5;     SI5     = VSI
+compartment SI6;     SI6     = VSI
+compartment SI7;     SI7     = VSI
+compartment Colon;   Colon   = 1
+compartment Liver;   Liver   = VL
+compartment Blood;   Blood   = VB
+compartment Rest;    Rest    = VRest
+compartment Feces;   Feces   = 1
+
+
+#------------------------
+# Species (amounts)
+#------------------------
+substanceOnly species ASt   in Stomach
+substanceOnly species ASI1  in SI1
+substanceOnly species ASI2  in SI2
+substanceOnly species ASI3  in SI3
+substanceOnly species ASI4  in SI4
+substanceOnly species ASI5  in SI5
+substanceOnly species ASI6  in SI6
+substanceOnly species ASI7  in SI7
+substanceOnly species AColon  in Colon
+substanceOnly species AFeaces  in Feaces
+substanceOnly species ALiver  in Liver
+substanceOnly species ABlood  in Blood
+substanceOnly species ARest in Rest
+substanceOnly species ALiverMet1 in Liver		#AFQ1
+substanceOnly species ALiverMet2 in Liver		#AFBO
+
+#------------------------
+# Initial conditions
+#------------------------
+ASt=0; ASI1=0; ASI2=0; ASI3=0; ASI4=0; ASI5=0; ASI6=0; ASI7=0
+AColon=0; AFeaces=0; ALiver=0; ABlood=0; ARest=0; ALiverMet1=0; ALiverMet2=0
+
+#------------------------
+# Concentrations
+#------------------------
+CSt  := ASt / Stomach
+CSI1 := ASI1/ SI1
+CSI2 := ASI2/ SI2
+CSI3 := ASI3/ SI3
+CSI4 := ASI4/ SI4
+CSI5 := ASI5/ SI5
+CSI6 := ASI6/ SI6
+CSI7 := ASI7/ SI7
+
+CLiver := ALiver/ Liver
+CBlood := ABlood/ Blood
+CRest:= ARest/Rest
+
+
+# Hill metabolism rates (µmol/h) on venous liver concentration
+# Met1 = AFQ1, Met2 = AFBO
+
+MetLiver1 := (VmaxMet1 * (CLiver/PL)^nMet1) / (S50Met1^nMet1 + (CLiver/PL)^nMet1) 	#AFQ1
+MetLiver2:= (VmaxMet2 * (CLiver/PL)^nMet2) / (S50Met2^nMet2 + (CLiver/PL)^nMet2)	#AFBO
+
+#------------------------
+# GI transfers
+#------------------------
+ASt  -> ASI1; ksto*ASt
+ASI1 -> ASI2; kt*ASI1
+ASI2 -> ASI3; kt*ASI2
+ASI3 -> ASI4; kt*ASI3
+ASI4 -> ASI5; kt*ASI4
+ASI5 -> ASI6; kt*ASI5
+ASI6 -> ASI7; kt*ASI6
+ASI7 -> AColon; kt*ASI7
+
+# Absorptions (each SI box → Liver, portal)
+ASI1 -> ALiver; kabsSI1*CSI1
+ASI2 -> ALiver; kabsSI2*CSI2
+ASI3 -> ALiver; kabsSI3*CSI3
+ASI4 -> ALiver; kabsSI4*CSI4
+ASI5 -> ALiver; kabsSI5*CSI5
+ASI6 -> ALiver; kabsSI6*CSI6
+ASI7 -> ALiver; kabsSI7*CSI7
+
+# Colon to feces 
+AColon -> AFeaces; kfe*AColon
+
+#------------------------
+# Perfusion-limited exchanges
+#------------------------
+ABlood -> ALiver;  QL*CBlood
+ALiver -> ABlood;  QL*CLiver/PL
+
+ABlood -> ARest; QRest*CBlood
+ARest-> ABlood;  QRest*CRest/PRest
+
+#------------------------
+# Liver metabolism to metabolites
+#------------------------
+
+# Met1 = AFQ1, Met2 = AFBO
+ALiver -> ALiverMet1; (VmaxMet1 * (CLiver/PL)^nMet1) / (S50Met1^nMet1 + (CLiver/PL)^nMet1) 
+ALiver -> ALiverMet2; (VmaxMet2 * (CLiver/PL)^nMet2) / (S50Met2^nMet2 + (CLiver/PL)^nMet2)
+
+end

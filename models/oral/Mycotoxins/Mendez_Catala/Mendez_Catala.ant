@@ -1,0 +1,313 @@
+model Mandez_Catal_2021_Human_PBK()
+
+
+#Created: Carolina Vogs, September 2025
+#Checked:
+
+#===========================================================
+# Mendez-Catala, D. M., et al. (2021)
+# Human PBK for oral absorption (administration → blood) with 7 SI boxes + Rest
+# Parent only, perfusion-limited tissues
+# 10.1002/mnfr.202100443 
+#===========================================================
+
+#------------------------
+# Physiology 
+#------------------------
+ ### Body size
+BW      = 70              # {kg}
+VLc     = 0.026           # liver fraction of BW {L/kg}
+VBc     = 0.074           # blood fraction of BW {L/kg}
+VSITissuec    = 0.009     # small intestine tissue fraction {L/kg}
+VMB     = 0.0018 	  # feaces fraction of BW {L/kg}
+
+const VSITissue :=  VSITissuec*BW       # {L}
+const VL :=  VLc*BW          # {L}
+const VB :=  VBc*BW          # {L}
+
+# Volumes 
+VSI     = 1.29            # {L} per SI sub-compartment
+const VSI1 :=  VSI
+const VSI2 :=  VSI
+const VSI3 :=  VSI
+const VSI4 :=  VSI
+const VSI5 :=  VSI
+const VSI6 :=  VSI
+const VSI7 :=  VSI
+
+
+VRest := 0.84*BW - VL - VB - VSITissue 
+
+### Fraction of Flow Rates
+QSIc    = 0.181
+QLc     = 0.046
+
+### Flow Rates
+const QC := 15*BW^0.74      # {L/h} cardiac output
+const QL := QLc*QC          # {L/h}
+const QSI := QSIc*QC         # {L/h}
+const QRest := (1 - QLc - QSIc)*QC  # {L/h}
+
+#------------------------
+# Partitioning 
+#------------------------
+PL      = 6.56            # liver:blood
+PSI     = 6.65 		  # sI:blood
+PRest   = 1           	  # effective lumped rest:blood
+
+#------------------------
+# GI transfer & absorption
+#------------------------
+ksto    = 2.8              # {/h}    stomach → SI1
+kt1     = 2.19             # {/h}    SIi → SI(i+1), i=1..6
+kt2     = 2.19             # {/h}    SIi → SI(i+1), i=1..6
+kt3     = 2.19             # {/h}    SIi → SI(i+1), i=1..6
+kt4     = 2.19             # {/h}    SIi → SI(i+1), i=1..6
+kt5     = 2.19             # {/h}    SIi → SI(i+1), i=1..6
+kt6     = 2.19             # {/h}    SIi → SI(i+1), i=1..6
+kt7     = 0.464            # {/h}    Transfer from small to large intestinal lumen
+kfe     = 0.024            # {/h}
+
+
+# Caco-2 → in vivo Papp scaling (Sun et al.)
+# then kabsSI/kabsLI = Papp * SA
+
+PappCaco2_log = -4.9829
+const Papp_in_vivo  := 10^(0.6836*PappCaco2_log - 0.5579) * 3600/10   # {dm/h}
+SASI   = 10.3           					      # {dm^2}  # per SI sub-compartment
+
+kabsSI1  := Papp_in_vivo*SASI  # {L/h}
+kabsSI2  := Papp_in_vivo*SASI  # {L/h}
+kabsSI3  := Papp_in_vivo*SASI  # {L/h}
+kabsSI4  := Papp_in_vivo*SASI  # {L/h}
+kabsSI5  := Papp_in_vivo*SASI  # {L/h}
+kabsSI6  := Papp_in_vivo*SASI  # {L/h}
+kabsSI7  := Papp_in_vivo*SASI  # {L/h}
+
+SAinb    = 47.12           # {dm^2}  # large intestine
+kabsLI    = Papp_in_vivo*SAinb # {L/h} large intestine → Liver
+
+MW      = 318.37          # ZEN MW (µg/µmol)
+
+
+#------------------------
+# Metabolism in small intestine tissue (ZEN to ZENGLU - Met1)
+#------------------------
+S9SI = 35.2       # mg S9 SI protein/gram intestine
+SI = VSITissuec * 1000	 #small intestine in body weight (gram/kg BW)
+
+VmaxSIMet1c = 0.003469       # unscaled maximum rates of metabolism, (nmol/min/mg S9 protein)
+VmaxSIMet1 = VmaxSIMet1c/(1000*60*S9SI*SI*BW) #scaled maximum rates of metabolism
+
+KmSIMet1 = 1.174 #in vitro, S9 incubations from this study (µmol/L)
+
+#------------------------
+# Metabolism in large intestine tissue (ZEN to alphaZEL - Met2 and betaZEL - Met3)
+#------------------------
+VmaxLIMet2c = 0.054  #unscaled maximum rates of metabolism, (pmol/h/g faeces)
+VmaxLIMet3c = 0.0108 #unscaled maximum rates of metabolism, (pmol/h/g faeces)
+
+VmaxLIMet2= VmaxLIMet2c/1000000*1000*VMB*BW #scaled maximum rates of metabolism (µmol/h)
+VmaxLIMet3= VmaxLIMet3c/1000000*1000*VMB*BW #scaled maximum rates of metabolism (µmol/h)       
+
+KmLIMet2 = 135  #in vitro, anaerobic rat fecal incubations (µmol/L)
+KmLIMet3 = 163  #in vitro, anaerobic rat fecal incubations (µmol/L)
+
+#------------------------
+# Metabolism in liver  (ZEN to alphaZEL - Met2, betaZEL - Met3, ZENGLU - Met1)
+#------------------------
+
+#Scaling factors
+VLS9 = 120.7 #liver S9 protein yield, (mg S9 protein/gram liver) reference: Cubitt et al. (2011)
+L=VLc*1000   #{gram/kg BW} ;liver
+
+#unscaled maximum rates of metabolism, (pmol/min/mg S9 protein)
+VmaxLMet2c= 358.7 #reference: Malektejad et al. (2006) 
+VmaxLMet3c= 209.3 #reference: Malektejad et al. (2006)
+VmaxLMet1c=2.97 
+
+#scaled maximum rates of metabolism (µmol/h)
+VmaxLMet2 = VmaxLMet2c/1000000*60* VLS9 *L*BW
+VmaxLMet3= VmaxLMet3c/1000000*60* VLS9 *L*BW
+VmaxLMet1 = VmaxLMet1c /1000*60* VLS9 *L*BW
+
+#affinity constants, (µmol/L)
+KmLMet2 = 9  #reference: Mendez-Catala et al. (2020)
+KmLMet3 = 23 #reference: Mendez-Catala et al. (2020)
+KmLMet1 = 2.043 
+
+############################
+# Compartment
+############################
+
+compartment Stomach  = 1		# Stomach
+compartment SI1; SI1 = VSI1		# Small intestinal lumen 1
+compartment SI2; SI2 = VSI2		# Small intestinal lumen 2
+compartment SI3; SI3 = VSI3		# Small intestinal lumen 3
+compartment SI4; SI4 = VSI4		# Small intestinal lumen 4
+compartment SI5; SI5 = VSI5		# Small intestinal lumen 5
+compartment SI6; SI6 = VSI6		# Small intestinal lumen 6
+compartment SI7; SI7 = VSI7		# Small intestinal lumen 7
+compartment LI1 := BW * VMB		# Large intestinal lumen 1 
+compartment SITissue := BW * VSITissuec	# Small intestinal tissue
+compartment Liver := BW * VLc		# Liver
+compartment Blood := BW * VBc		# Blood
+compartment Rest := VRest		# Rest of Body
+compartment Feaces := 1			# Feaces
+
+ 
+
+
+############################
+# Species
+############################
+
+substanceOnly species ASt in Stomach
+substanceOnly species ASI1 in SI1
+substanceOnly species ASI2 in SI2
+substanceOnly species ASI3 in SI3
+substanceOnly species ASI4 in SI4
+substanceOnly species ASI5 in SI5
+substanceOnly species ASI6 in SI6
+substanceOnly species ASI7 in SI7
+substanceOnly species ALI1 in LI1
+substanceOnly species ASITissue in SITissue
+substanceOnly species ALiver in Liver
+substanceOnly species ABlood in Blood
+substanceOnly species ARest in Rest
+substanceOnly species AFeaces in Feaces
+
+# Met1 = ZENGLU, Met2 = alphaZEL, Met3 = betaZEL
+
+substanceOnly species ASITissueMet1 in SITissue		#(ZENGLU in SITissue)
+substanceOnly species ALI1Met2 in LI1			#(alphaZEL in large intestinal lumen)
+substanceOnly species ALI1Met3 in LI1 			#(betaZEL in large intestinal lumen)
+substanceOnly species ALiverMet2 in Liver		#(alphaZEL in liver)
+substanceOnly species ALiverMet3 in Liver	        #(betaZEL in liver)
+substanceOnly species ALiverMet1 in Liver		#(ZENGLU in liver)
+
+
+############################
+# Initial values
+############################
+
+ASt = 0
+ASI1 = 0
+ASI2 = 0
+ASI3 = 0
+ASI4 = 0
+ASI5 = 0
+ASI6 = 0
+ASI7 = 0
+ALI1 = 0
+ASITissue = 0
+ALiver = 0
+ABlood = 0
+ARest = 0
+AFeaces = 0
+
+ASITissueMet1= 0
+ALI1Met2 = 0
+ALI1Met3 = 0
+ALiverMet2 = 0
+ALiverMet3 = 0
+ALiverMet1 = 0
+
+
+
+############################
+# Concentrations
+############################
+CSI1 := ASI1/ SI1
+CSI2 := ASI2/ SI2
+CSI3 := ASI3/ SI3
+CSI4 := ASI4/ SI4
+CSI5 := ASI5/ SI5
+CSI6 := ASI6/ SI6
+CSI7 := ASI7/ SI7
+CSITissue := ASITissue/SITissue
+CLiver := ALiver/Liver
+CBlood := ABlood/Blood
+CLI1 := ALI1/(VMB*BW)
+
+
+############################
+# Metabolism
+############################
+
+## Small Intestine Tissue
+# Hill metabolism rates (µmol/h) on venous SI concentration
+SITissueMet1 := (VmaxSIMet1 * (CSITissue/PSI)) / (KmSIMet1 + (CSITissue/PSI))
+
+## Large Intestine Tissue
+# Hill metabolism rates (µmol/h) on arterial LI concentration -> to alphaZEN
+L1Met2 := (VmaxLIMet2*CLI1)/(KmLIMet2 + CLI1)
+
+# Hill metabolism rates (µmol/h) on arterial LI concentration -> to betaZEN
+L1Met3 := (VmaxLIMet3*CLI1)/(KmLIMet3 + CLI1)
+
+## Liver
+
+LiverMet2= VmaxLMet2* (CLiver/PL) /(KmLMet2+ (CLiver/PL))
+LiverMet3= VmaxLMet3* (CLiver/PL) /(KmLMet3+ (CLiver/PL))
+LiverMet1= VmaxLMet1* (CLiver/PL)/(KmLMet1+ (CLiver/PL))
+
+
+############################
+# Model equations
+############################
+
+#------------------------
+# GI transfers
+#------------------------
+
+ASt -> ASI1; ksto*ASt  
+ASI1 -> ASI2;  kt1*ASI1     
+ASI2 -> ASI3;  kt2*ASI2  
+ASI3 -> ASI4;  kt3*ASI3   
+ASI4 -> ASI5;  kt4*ASI4                      
+ASI5 -> ASI6;  kt5*ASI5   
+ASI6 -> ASI7;  kt6*ASI6  
+ASI7 -> ALI1;  kt7*ASI7   
+
+# Absorptions (each SI box → SI Tissue)
+ASI1 -> ASITissue;  kabsSI1*CSI1 
+ASI2 -> ASITissue;  kabsSI2*CSI2 
+ASI3 -> ASITissue;  kabsSI3*CSI3 
+ASI4 -> ASITissue;  kabsSI4*CSI4                          
+ASI5 -> ASITissue;  kabsSI5*CSI5 
+ASI6 -> ASITissue;  kabsSI6*CSI6
+ASI7 -> ASITissue;  kabsSI7*CSI7 
+
+# Absorptions (Large intestinal lumen → Liver)
+ALI1 -> ALiver; kabsLI*CLI1
+
+# Colon to feces 
+ALI1 -> AFeaces; kfe*ALI1
+
+
+#------------------------
+# Perfusion-limited exchanges
+#------------------------
+ASITissue -> ALiver; QSI * CSITissue/PSI
+ABlood -> ASITissue; QSI * CBlood
+
+ABlood -> ALiver; QL * CBlood
+ALiver -> ABlood; (QL+QSI) * CLiver/PL
+
+ABlood -> ARest; QRest * CBlood
+ARest -> ABlood; QRest * (ARest/Rest)/PRest
+
+#------------------------
+# Metabolism
+#------------------------
+ASITissue -> ASITissueMet1; (VmaxSIMet1 * (CSITissue/PSI))/(KmSIMet1 + (CSITissue/PSI)) #(ZEN to ZENGLU)
+
+ALI1 -> ALI1Met2; (VmaxLIMet2*CLI1)/(KmLIMet2 + CLI1)			#(ZEN to alphaZEL)
+ALI1 -> ALI1Met3; (VmaxLIMet3*CLI1)/(KmLIMet3 + CLI1)                   #(ZEN to betaZEL)
+
+ALiver -> ALiverMet2; VmaxLMet2* (CLiver/PL) /(KmLMet2+ (CLiver/PL))	#(ZEN to alphaZEL)
+ALiver -> ALiverMet3; VmaxLMet3* (CLiver/PL) /(KmLMet3+ (CLiver/PL))	#(ZEN to betaZEL)
+ALiver -> ALiverMet1; VmaxLMet1* (CLiver/PL)/(KmLMet1+ (CLiver/PL))	#(ZEN to ZENGLU)
+
+end

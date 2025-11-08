@@ -1,0 +1,96 @@
+model Tebby2022_Pb_Human_Male()
+
+#Created: Thomas Gastellu, November 2025
+#Checked:
+
+#===========================================================
+# Pb PBK (Tebby et al., 2022):
+# https://doi.org/10.1016/j.scitotenv.2021.152149
+#===========================================================
+
+#------------------------
+# Body size & base volumes
+#------------------------
+
+Age = 30                        # year
+
+BW   = 70                       # kg
+VLc  = 0.025                    # L/kg (liver)
+VBc  = 0.067                    # L/kg (plasma)
+
+VL   = VLc*BW                   # L
+VB   = VBc*BW                   # L
+
+VRest := BW - VL - VB      # Lumped Rest-of-body volume L 
+
+#------------------------
+# Plasma Flows
+#------------------------
+QC    = 340*BW/24            # L/h (cardiac output)
+QLc   = 0.25
+
+QL    = QLc*QC                # L/h (liver)
+QRest = QC - QL               # L/h (rest)
+
+HtcA = 0.44
+Htc = piecewise(0.52 + Age * 14, Age < 0.01, HtcA * (1 + (0.66 - HtcA) * exp(-(Age - 0.01)*13.9)))
+
+#------------------------
+# Partition coefficients
+#------------------------
+PL = 50
+PRest = 1
+
+G = 1.2                 # Linear parameter for unbound lead in read cells
+BIND = 2.6*1000         # Maximum capacity of Pb for binding by sites in red cells (µg/L of red cell volume)
+KBIND = 0.006 * 1000   # Half-saturation concentration of lead for binding by sites in red cells (µg/L of red cell volume)
+
+#------------------------
+# Compartments (sizes)
+#------------------------
+
+compartment Liver;   Liver = VL
+compartment Blood;   Blood = VB
+compartment Rest;    Rest  = VRest
+
+
+#------------------------
+# Species (amount states)
+#------------------------
+
+substanceOnly species ALiver in Liver
+substanceOnly species ABlood in Blood
+substanceOnly species ARest  in Rest
+
+
+
+#------------------------
+# Initial conditions
+#------------------------
+ALiver = 0; 
+ABlood = 0;
+ARest = 0; 
+
+
+#------------------------
+# Concentrations
+#------------------------
+CLiver := ALiver / Liver
+CBlood := ABlood / Blood
+CRest  := ARest  / Rest
+
+#------------------------
+# Reactions / Transfers
+#------------------------
+
+# Perfusion-limited exchanges (Liver <-> Blood)
+ALiver -> ABlood;      QL * (1-Htc) * (ALiver/(VL * PL)) + Htc * (ALiver/(VL * PL)) * (G + BIND / (KBIND + (ALiver/(VL*PL))));
+
+ABlood -> ALiver;      QL * CBlood;
+
+# Perfusion-limited exchanges (Rest <-> Blood)
+ARest -> ABlood;       QRest * (1-Htc) * (ARest/(VRest * PRest)) + Htc * (ARest/(VRest * PRest)) * (G + BIND / (KBIND + (ARest/(VRest*PRest))));
+
+ABlood -> ARest;       QRest * CBlood;
+
+end

@@ -1,0 +1,153 @@
+model Ou2018_Hg_Human()
+
+#Created: Thomas Gastellu, November 2025
+#Checked:
+
+#===========================================================
+# Hg PBK (Ou et al., 2018):
+# https://doi.org/10.1016/j.envint.2018.03.018
+#===========================================================
+
+#------------------------
+# Body size & base volumes
+#------------------------
+
+Age = 30                        # year
+
+BW   = 70                       # kg
+VGut_lumenc = 0.014             # L/kg (gut lumen)
+VGc = 0.017  
+VLc  = 0.026                    # L/kg (liver)
+VRBCc  = 0.024                  # L/kg (blood)
+VPlasmac = 0.024                # L/kg (plasma)
+
+VGut_lumen = VGut_lumenc*BW     # L
+VG  = VGc*BW                  # L
+VL   = VLc*BW                   # L
+VRBC   = VRBCc*BW               # L
+VPlasma = VPlasmac*BW           # L
+
+VRest := (1-0.122)*BW - VGut_lumen - VG - VL - VRBC - VPlasma      # Lumped Rest-of-body volume L 
+
+#------------------------
+# Plasma Flows
+#------------------------
+QC    = 20*BW^0.75            # L/h (cardiac output)
+QLc   = 0.046
+QGc  = 0.181
+Qrbcc = 1.5
+
+QG    = QGc*BW               # L/h (Gut)
+QL    = QLc*QC               # L/h (liver)
+QRest = QC - QL - QGI        # L/h (rest)
+Qrbc  = Qrbcc*BW^0.75        # L/h (rbc)
+
+#------------------------
+# Partition coefficients
+#------------------------
+
+kabsc = 0.005
+kabs = kabsc * BW^0.75
+
+Frac = 0.95
+
+PGI = 1
+PL = 5
+PRBC = 14
+PRest = 1
+
+kfec = 2.0e-4;
+kfe = kfec * BW^0.75;
+
+kmet_gutlumenc = 1.0e-4;
+kmet_gutlumen = kmet_gutlumenc * BW^0.75;
+
+kmet_liverc = 1.0e-5;
+kmet_liver = kmet_liverc * BW^0.75;
+
+kbiliaryc = 1.0e-4; 
+kbiliary = kbiliaryc * BW^0.75;
+#------------------------
+# Compartments (sizes)
+#------------------------
+
+compartment Gut_lumen; Gut_lumen = VGut_lumen
+compartment Gut;       Gut = VG
+compartment Liver;     Liver = VL
+compartment Red_Blood_Cell;   Red_Blood_Cell = VRBC
+compartment Plasma;    Plasma = VPlasma
+compartment Rest;      Rest  = VRest
+compartment Feces;     Feces = 1
+
+#------------------------
+# Species (amount states)
+#------------------------
+
+substanceOnly species AGut_lumen in Gut_lumen
+substanceOnly species AGut in Gut
+substanceOnly species ALiver in Liver
+substanceOnly species ARBC in Red_Blood_Cell
+substanceOnly species APlasma in Plasma
+substanceOnly species ARest  in Rest
+substanceOnly species AFeces in Feces
+substanceOnly species ALiver_Met in Liver
+substanceOnly species AGutlumen_Met in Gut_lumen
+
+#------------------------
+# Initial conditions
+#------------------------
+AGut_lumen = 0;
+AGut = 0;
+ALiver = 0; 
+ARBC = 0;
+APlasma = 0;
+ARest = 0;
+ALiver_Met = 0;
+AGutlumen_Met = 0;
+AFeces = 0;
+
+#------------------------
+# Concentrations
+#------------------------
+CGut_lumen := AGut_lumen / Gut_lumen;
+CGI := AGI / Gut;
+CLiver := ALiver / Liver
+CRBC := ARBC / Red_Blood_Cell
+CPlasma := APlasma / Plasma
+CRest  := ARest  / Rest
+
+#------------------------
+# Reactions / Transfers
+#------------------------
+
+# Absorption (Gut lumen -> Gut)
+AGut_lumen -> AGut; kabs * CGut_lumen * Frac;
+
+# Perfusion-limited exchanges (Gut -> Liver)
+AGut -> ALiver; QGI * CGI/PGI; 
+
+# Perfusion exchanges (Plasma <-> Gut / Liver)
+APlasma -> AGut; QGI * CPlasma;
+APlasma -> ALiver; QL * CPlasma;
+
+ALiver -> APlasma; (QL + QGI) * CLiver/PL;
+
+# Perfusion-limited exchanges (Plasma <-> Rest)
+APlasma -> ARest; QRest * CPlasma;
+ARest -> APlasma; QRest * CRest/PRest;
+
+# Perfusion-limitated exchanges (Plasma <-> Red blood cells)
+APlasma -> ARBC; CPlasma * Qrbc;
+ARBC -> APlasma; Qrbc * CRBC/PRBC;
+
+# Biliary excretion (Liver -> Gut lumen)
+ALiver -> AGut_lumen; kbiliary*CLiver;
+
+# Metabolism from MeHg -> iHg (Liver and Gut lumen)
+ALiver -> ALiver_Met; kmet_liver*CLiver;
+AGut_lumen -> AGutlumen_Met; kmet_gutlumen*CGut_lumen;
+
+# Fecal excretion (Gut lumen -> Feces)
+AGut_lumen -> AFeces; kfe*CGut_lumen;
+
+end

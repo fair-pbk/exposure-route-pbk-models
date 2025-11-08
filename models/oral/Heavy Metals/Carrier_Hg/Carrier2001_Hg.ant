@@ -1,0 +1,83 @@
+model Carrier2001_Hg_Human()
+
+#Created: Thomas Gastellu, November 2025
+#Checked:
+
+#===========================================================
+# Hg PBK (Carrier et al., 2001):
+# https://doi.org/10.1006/taap.2000.9113
+#===========================================================
+
+#------------------------
+# Body size & base volumes
+#------------------------
+
+BW   = 70                       # kg
+VGIc = 0.017  
+VBc = 0.067
+VLc  = 0.026                    # L/kg (liver)
+
+VB = VBc * BW;
+VGI  = VGIc*BW                  # L
+VL   = VLc*BW                   # L
+
+#------------------------
+# Plasma Flows
+#------------------------
+
+# Model is independant of the blood-flow
+
+#------------------------
+# Partition coefficients
+#------------------------
+
+
+kabs = 5.5440
+
+Frac = 1;
+
+kmet_liver = 0.1750;
+
+#------------------------
+# Compartments (sizes)
+#------------------------
+
+compartment GI;        GI = VGI
+compartment Liver;     Liver = VL
+compartment Blood;     Blood = VB
+
+#------------------------
+# Species (amount states)
+#------------------------
+
+substanceOnly species AGI in GI
+substanceOnly species ABlood in Blood
+substanceOnly species ALiver_Met in Liver
+
+#------------------------
+# Initial conditions
+#------------------------
+
+AGI = 0;
+ABlood = 0;
+ALiver_Met = 0;
+
+#------------------------
+# Concentrations
+#------------------------
+
+CGI := AGI / GI;
+CBlood := ABlood / Blood
+
+#------------------------
+# Reactions / Transfers
+#------------------------
+
+# Absorption (Gut lumen -> Gut)
+AGI -> ABlood; kabs * AGI * Frac;
+
+# Metabolism into iHg (Blood -> Liver)
+ABlood -> ALiver_Met; ABlood * kmet_liver;
+
+
+end

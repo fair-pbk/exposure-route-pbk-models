@@ -1,0 +1,50 @@
+site_name: Harmonised exposure route PBK models repository
+site_description: PBK model repository of harmonised exposure route PBK models.
+site_url: 'https://fair-pbk.github.io/exposure-route-pbk-models/'
+site_dir: site/
+repo_url: 'https://github.com/fair-pbk/exposure-route-pbk-models'
+repo_name: fair-pbk/exposure-route-pbk-models
+edit_uri: blob/main/docs/
+
+theme:
+  name: material
+  language: en
+  features:
+    - toc.integrate
+  font:
+    text: Roboto
+  palette: 
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+extra_css:
+  - css/extra.css
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra:
+  version:
+    provider: mike
+
+plugins:
+  - search
+  - awesome-nav
+
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - js/tablesort.js
+  - js/mathjax-config.js
+  - https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js

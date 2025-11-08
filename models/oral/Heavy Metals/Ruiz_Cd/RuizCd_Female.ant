@@ -1,0 +1,144 @@
+model Ruiz2010_Cd_Human_Female()
+
+#Created: Thomas Gastellu, November 2025
+#Checked:
+
+#===========================================================
+# Cd PBK (Ruiz et al., 2010):
+# https://doi.org/10.1016/j.toxlet.2010.04.022
+#===========================================================
+
+#------------------------
+# Body size & base volumes
+#------------------------
+
+Age  = 30       # years
+
+BW   = 70       # kg
+
+# The model is independant of the volume of organs. The model is based on the transfer of doses between compartments. 
+# BW has to be conserved to estimate dietary exposure.
+
+#------------------------
+# Plasma Flows
+#------------------------
+
+# The model is not depending of blood-flow. It is not bloof-flow limited.
+
+#------------------------
+# Partition coefficients
+#------------------------
+
+# The model is not depending of partition coefficients.
+
+#------------------------
+# Rate of transfer
+#------------------------
+
+C5 = 0.10       # UNITLESS
+C6 = 0.05       # day-1
+C7 = 0.25       # UNITLESS
+C8 = 1          # µg
+C9 = 0.44       # UNITLESS
+C10 = 0.00014   # day-1
+C12 = 0.25      # UNITLESS
+C13 = 0.00003   # day-1
+C14 = 0.00016   # day-1
+C16 = 0.012     # day-1
+C17 = 0.5       # UNITLESS
+C18 = 0.00001   # day-1
+CX = 0.04       # UNITLESS
+
+
+#------------------------
+# Compartments (sizes)
+#------------------------
+compartment GI;                 
+compartment Intestinal_Tissue;  
+compartment Liver;          
+compartment Kidney;   
+compartment Plasma;     
+compartment Red_Blood_Cell;   
+compartment Metallothionein;   
+compartment Rest;        
+compartment Daily_Uptake;     
+
+
+#------------------------
+# Species (amount states)
+#------------------------
+substanceOnly species AGI in GI
+substanceOnly species ATI in Intestinal_Tissue
+substanceOnly species ALiver in Liver
+substanceOnly species AKidney in Kidney
+substanceOnly species APlasma in Plasma
+substanceOnly species ARBC in Red_Blood_Cell
+substanceOnly species AMetallothionein in Metallothionein
+substanceOnly species ARest  in Rest
+substanceOnly species ADaily_Uptake in Daily_Uptake
+
+
+#------------------------
+# Initial conditions
+#------------------------
+AGI = 0; 
+ATI = 0;
+ALiver = 0;
+AKidney = 0; 
+APlasma = 0;
+ARBC = 0;
+AMetallothionein = 0; 
+ARest = 0; 
+ADaily_Uptake = 0;
+
+#------------------------
+# Concentrations
+#------------------------
+
+## The model is depending of the dose in the compartment (not the concentration)
+
+#------------------------
+# Reactions / Transfers
+#------------------------
+
+# Dose of transfer (GI -> Intestinal Tissue)
+AGI -> ATI; C5 * AGI;
+
+# Dose of transfer (Intestinal Tissue -> Daily Uptake)
+ATI -> ADaily_Uptake; C6 * ATI;
+
+# Dose of transfer (Daily Uptake -> Metallothionein) with a limitation by C8 for the transfer
+ADaily_Uptake -> AMetallothionein; piecewise(C7 * ADaily_Uptake, (C7 * ADaily_Uptake) < C8, C8);
+
+# Dose of transfer (Daily Uptake -> Plasma)
+ADaily_Uptake -> APlasma; piecewise(ADaily_Uptake * (1 - C7), (C7 * ADaily_Uptake) < C8, ADaily_Uptake - C8);
+
+# Dose of transfer (Plasma -> Rest)
+APlasma -> ARest; C9 * APlasma;
+
+# Dose of transfer (Rest -> Plasma)
+ARest -> APlasma; C10 * ARest;
+
+# Dose of transfer (Plasma -> Liver)
+APlasma -> ALiver; C12 * APlasma;
+
+# Dose of tranfer (Liver -> Plasma)
+ALiver -> APlasma; C13 * ALiver;
+
+# Dose of transfer (Liver -> Metallothionein)
+ALiver -> AMetallothionein; C14 * ALiver;
+
+# Dose of transfer (Red blood cell -> Metallothionein)
+ARBC -> AMetallothionein; C16 * ARBC;
+
+# Dose of transfer (Metallothionein -> Kidney)
+AMetallothionein -> AKidney; C17 * AMetallothionein;
+
+# Dose of transfer (Kidney -> Plasma)
+AKidney -> APlasma; C18 * AKidney;
+
+# Dose of transfer (Plasma -> RBC)
+APlasma -> ARBC; CX * APlasma;
+
+
+end

@@ -1,0 +1,125 @@
+model Mielke2009_BPA_Human()
+
+#Created: Carolina Vogs, September 2025
+#Checked:
+
+#===========================================================
+# BPA PBPK (adult) after Mielke & Gundert-Remy 2009
+# GI Lumen (AGut) --kabs--> Liver (ALiver)
+# Perfusion-limited: Blood <-> Liver, Blood <-> Rest
+# Hepatic metabolism: BPA --UGT (BPAG), --SULT (BPAS)
+# https://www.ncbi.nlm.nih.gov/pubmed/19560527
+#===========================================================
+
+#------------------------
+# Body size & base volumes
+#------------------------
+BW      = 70                       # kg (adult male in Table 4)  
+VLc     = 0.026                    # L/kg (liver, consistent with ~1.8 L at 73 kg)
+VBc     = 0.079                    # L/kg (blood; generic adult)
+
+VL      = VLc*BW                   # L
+VB      = VBc*BW                   # L
+VRest   := 0.84*BW - VL - VB       # L (lumped rest-of-body water)
+
+
+#------------------------
+# Flows (adult human)
+#------------------------
+QL      = 99.5                     # L/h (liver blood flow)
+QC      = 300.0                    # L/h 
+QRest   = QC-QL                    # L/h 
+
+#------------------------
+# Tissue:blood partitions (adult; Table 4)
+#------------------------
+PL  = 1.46                     # liver:blood  
+PRest   = 1                    
+
+#------------------------
+# Absorption
+#------------------------
+kabs      = 2.77                     # 1/h  (t1/2,abs ≈ 0.25 h → ln2/0.25)  
+
+#------------------------
+# Hepatic metabolism (Michaelis–Menten on liver-venous conc)
+# Kuester & Sipes human hepatocyte data used by Mielke:
+#------------------------
+#to BPAG
+KmLMet1  = 8.5                      		# µmol/L
+VmaxLMet1C = 54.9		   		# nmol/min/1800 g liver
+VmaxLMet1 = (VmaxLMet1C * 1800 * 60) / 1000      # µmol/h 
+
+#to BPAS
+KmLMet2  = 8.5  					# µmol/L
+VmaxLMet2C = 0.15 * VmaxLMet1C 		   	# nmol/min/1800 g liver                    
+VmaxLMet2 = (VmaxLMet2C * 1800 * 60) / 1000   	# µmol/h  
+
+
+#------------------------
+# Compartments
+#------------------------
+compartment Gut;   Gut = 1
+compartment Liver;     Liver   = VL
+compartment Blood;     Blood   = VB
+compartment Rest;      Rest    = VRest
+
+
+
+#------------------------
+# Species (amounts)
+#------------------------
+substanceOnly species AGut in Gut
+substanceOnly species ALiver   in Liver
+substanceOnly species ABlood   in Blood
+substanceOnly species ARest    in Rest
+substanceOnly species ALiverMet1    in Liver      
+substanceOnly species ALiverMet2    in Liver    
+
+
+#------------------------
+# Initial conditions
+#------------------------
+AGut = 0
+ALiver   = 0
+ABlood   = 0
+ARest    = 0
+
+# Met1 = BAPG, Met2 = BAPS
+
+ALiverMet1    = 0
+ALiverMet2    = 0
+
+
+#------------------------
+# Concentrations 
+#------------------------
+CBlood := ABlood / Blood
+CLiver := ALiver / Liver
+CVL    := CLiver / PL
+CRest  := ARest  / Rest
+
+#------------------------
+# Reactions / Transfers
+#------------------------
+
+# Oral absorption: lumen → liver (portal)
+AGut -> ALiver;      kabs * AGut
+
+# Perfusion-limited exchanges
+ABlood   -> ALiver;      QL * CBlood
+ALiver   -> ABlood;      QL * (CLiver / PL)
+
+ABlood   -> ARest;       QRest * CBlood
+ARest    -> ABlood;      QRest * (CRest / PRest)
+
+# Hepatic metabolism (MM on liver-venous concentration)
+# BPA → BPAG
+ALiver   -> ALiverMet1;       VmaxLMet1 * (CLiver / PL)/ (KmLMet1 + (CLiver / PL))
+# BPA → BPAS
+ALiver   -> ALiverMet2;       VmaxLMet2 * (CLiver / PL) / (KmLMet2 + (CLiver / PL))
+
+
+
+
+end

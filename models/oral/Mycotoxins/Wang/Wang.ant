@@ -1,0 +1,177 @@
+model Wang2023_DON_Human()
+
+
+#Created: Carolina Vogs, September 2025
+#Checked:
+
+#===========================================================
+# DON PBK (Wang et al., human, compact):
+# Stomach → Jejunum → Ileum → LI; absorption from each segment → Intestinal tissue → liver
+# Liver perfusion-limited (venous) + intrinsic clearance; Blood ↔ Rest
+# https://www.ncbi.nlm.nih.gov/pubmed/38131302
+#===========================================================
+
+#------------------------
+# Body size & base volumes
+#------------------------
+BW   = 70                          # kg
+VLc  = 0.026                       # L/kg (liver)
+VBc  = 0.079                       # L/kg (blood)
+VITc  = 0.09			   # L/kg (intestinal tissue)
+
+
+VL   = VLc*BW                      # L
+VB   = VBc*BW                      # L
+VIT  = VITc*BW
+
+# Intestinal segment geometry (dm, dm^2, dm^3≈L)
+Ddm  = 0.5                         # dm (diameter)
+LJdm = 30.0                        # dm (jejunum length)
+LIdm = 30.0                        # dm (ileum length)
+LLIdm= 18.7                        # dm (large intestine length)
+
+VJ   = 3.14159*(Ddm/2)^2 * LJdm    # L (jejunum lumen)
+VI   = 3.14159*(Ddm/2)^2 * LIdm    # L (ileum lumen)
+VLI  = 0.561                       # L (LI lumen; Wang supplement)
+
+SAJ  = 3.14159*Ddm*LJdm            # dm^2 (surface area - jejunum lumen)
+SAI  = 3.14159*Ddm*LIdm            # dm^2 (surface area - ileum lumen)
+SALI = 3.14159*Ddm*LLIdm           # dm^2 (surface area -large intestine lumen)
+
+# Lumped Rest-of-body volume with floor
+VRest := 0.84*BW - VL - VB - VIT 
+
+#------------------------
+# Flows 
+#------------------------
+QC   = 15*BW^0.74                  # L/h (cardiac output)
+QLc  = 0.046                       # liver fraction (Wang human)
+QITc = 0.181
+
+QL   = QLc*QC                      # L/h (liver)
+QIT  = QITc*QC			   # L/h (intestinal tissue)
+QRest= QC - QL - QIT               # L/h (lumped rest)
+
+#------------------------
+# Partitions (tissue:blood)
+#------------------------
+RBP = 0.6523                      # DON blood-to-plasma ratio 
+fu = 0.862			  # unbound fraction
+
+PL   = 0.76 / RBP                 # liver:blood 
+PIT  = 0.73 / RBP		  # Intestine tissue
+PRest= 1.0  / RBP                 # lumped rest:blood 
+
+#------------------------
+# GI kinetics 
+#------------------------
+ksto = 1.99                        # 1/h  Stomach → Jejunum
+kt1 = 2.17                         # 1/h  Jejunum → Ileum
+kt2 = 0.25                         # 1/h  Ileum → large intestine
+
+# Caco-2 Papp → in vivo (Wang); kabs = Papp_in_vivo * SA  (L/h), flux = kabs * C_lumen
+
+PappDONc = 1.2883                  # (10^-4 cm/s)
+Papp_dm_h := (PappDONc/10000) * (3600/10)   # cm/s → dm/h
+
+kabsJ := Papp_dm_h * SAJ            # L/h (jejunum)
+kabsI := Papp_dm_h * SAI            # L/h (ileum)
+kabsLI:= Papp_dm_h * SALI           # L/h (large intestine)
+
+#------------------------
+# Hepatic intrinsic clearance (applied to liver venous conc)
+#------------------------
+# CLint (L/h) = 0.008 mL/min/mg * 32 mg/g * (VLc*1000 g/kg)*BW * 60/1000
+
+CLint = 0.008 * 32 * (VLc*1000)*BW * 60 / 1000   # L/h
+
+#------------------------
+# Compartments
+#------------------------
+compartment Stomach;  Stomach = 1.0
+compartment Jejunum;  Jejunum = VJ
+compartment Ileum;    Ileum   = VI
+compartment LargeLumen;   LargeLumen  = VLI
+compartment Liver;    Liver   = VL
+compartment Blood;    Blood   = VB
+compartment Rest;     Rest    = VRest
+compartment Metabolites;     Metabolites    = 1
+
+#------------------------
+# Species (amount states)
+#------------------------
+substanceOnly species ASt   in Stomach
+substanceOnly species AJ    in Jejunum
+substanceOnly species AI    in Ileum
+substanceOnly species ALI   in LargeLumen
+substanceOnly species AIT   in IntestinalTissue
+
+substanceOnly species ALiver  in Liver
+substanceOnly species ABlood  in Blood
+substanceOnly species ARest   in Rest
+
+substanceOnly species AMet  in Liver   # metabolized parent accumulator
+
+#------------------------
+# Initial conditions
+#------------------------
+ASt = 0; 
+AJ = 0; 
+AI = 0; 
+AIT = 0;
+ALI = 0;
+ALiv = 0; 
+ABlood= 0; 
+ARest = 0
+AMet = 0
+
+#------------------------
+# Concentrations 
+#------------------------
+CSt   := ASt  / Stomach
+CJ    := AJ   / Jejunum
+CI    := AI   / Ileum
+CLI   := ALI  / LargeLumen
+CIT   := AIT  / IntestinalTissue
+
+CLiver  := ALiver / Liver
+CBlood  := ABlood / Blood
+CRest := ARest   / Rest
+
+
+# Hepatic metabolism (intrinsic clearance on liver-venous conc)
+Met := CLint * (CLiver/PL)   
+
+#------------------------
+# GI transfers & absorptions
+#------------------------
+ASt -> AJ;      ksto * ASt
+AJ  -> AI;      kt1 * AJ
+AI  -> ALI;     kt2 * AI
+
+# Segment-specific absorptions to liver 
+AJ  -> AIT;    kabsJ  * CJ
+AI  -> AIT;    kabsI  * CI
+ALI -> AIT;    kabsLI * CLI
+
+#------------------------
+# Perfusion-limited exchanges
+#------------------------
+# Intestinal ↔ Blood 
+ABlood -> AIT;   QIT   * CBlood
+AIT -> ALiver;   QIT   * CIT/PIT
+
+# Liver ↔ Blood 
+ABlood -> ALiver;   QL   * CBlood
+ALiver -> ABlood;   (QL + QIT)  * CLiver/PL
+
+# Rest ↔ Blood
+ABlood -> ARest;     QRest * CBlood
+ARest   -> ABlood;   QRest * CRest/PRest
+
+#------------------------
+# Hepatic metabolism sink (parent → AMet)
+#------------------------
+ALiver -> AMet;   CLint * (CLiver/PL)   
+
+end

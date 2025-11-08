@@ -1,0 +1,131 @@
+model Chen2022_PFOS_Human()
+
+#Created: Carolina Vogs, September 2025
+#Checked:
+
+#===========================================================
+# PFOS PBK model Chen et al 2022 (based on Chou and Lin et al. 2021 - PFOS):
+# According to schematic representation: without biliary excretion
+# https://www.ncbi.nlm.nih.gov/pubmed/35194992
+#===========================================================
+
+#------------------------
+# Body size & base volumes
+#------------------------
+BW   = 70                       # kg
+VLc  = 0.026                    # L/kg (liver)
+VPlasmac  = 0.0428                   # L/kg (plasma)
+
+VL   = VLc*BW                   # L
+VPlasma   = VPlasmac*BW                   # L
+
+
+VRest := 0.93*BW - VL - VPlasma   # Lumped Rest-of-body volume L 
+
+#------------------------
+# Plasma Flows
+#------------------------
+QC    = 12.5*BW^0.75            # L/h (cardiac output)
+QPlasma   = QC*(1-Htc)		# L/h cardiac output adjusted for plasma flow
+QLc   = 0.25
+
+QL    = QLc*QPlasma                # L/h (liver)
+QRest = QPlasma - QL               # L/h (rest)
+
+Htc = 0.44
+Free = 0.025
+
+#------------------------
+# Rate constants - same values as for PFOA?
+#------------------------
+
+# Stomach -> SI
+kstoC = 3.51 				# gastric emptying time (1/(h*BW^-0.25))
+ksto  = kstoC * BW^(-0.25)		# 1/h Pay attentian original code: kstoC / BW^(-0.25)
+
+# SI -> liver
+kabsC = 2.12  				#rate of absorption of chemical from small intestine to liver (1/(h*BW^-0.25))
+kabs  = kfeC * BW^(-0.25)		# 1/h   
+
+# Stomach -> Liver
+k0C   = 1.0  				# rate of uptake from the stomach into the liver (1/(h*BW^-0.25))
+k0 = k0C * BW^(-0.25)			# 1/h Pay attention: original code k0 = k0C / BW^(-0.25)	
+
+
+kfeC = 7.06e-5 				# 1/(h*BW^-0.25)
+kfe = kfeC * BW^(-0.25)			# 1/h
+
+# SI -> Feces
+kbiliaryC = 0				# 1/(h*BW^-0.25)
+kbiliary = kbiliaryC * BW^(-0.25)	# 1/h
+
+#------------------------
+# Partition coefficients
+#------------------------
+PL = 2.67
+PRest = 1
+
+#------------------------
+# Compartments (sizes)
+#------------------------
+compartment Stomach; Stomach = 1
+compartment SI;      SI = 1
+compartment Liver;   Liver = VL
+compartment Plasma;  Plasma = VPlasma
+compartment Rest;    Rest  = VRest
+compartment Feces;   Feces  = 1
+
+
+#------------------------
+# Species (amount states)
+#------------------------
+substanceOnly species AStomach in Stomach
+substanceOnly species ASI in SI
+substanceOnly species ALiver in Liver
+substanceOnly species APlasma in Plasma
+substanceOnly species ARest  in Rest
+substanceOnly species AFeces  in Feces
+
+
+#------------------------
+# Initial conditions
+#------------------------
+AStomach = 0
+ASI = 0 
+ALiver = 0 
+APlasma = 0 		# free fraction in plasma
+ARest = 0 
+AFeces = 0
+
+
+#------------------------
+# Concentrations 
+#------------------------
+CLiver := ALiver / Liver
+CPlasma := APlasma / Plasma	# free fraction in plasma
+CPlasmaTotal := CPlasma/Free	# Total PFOS concentration in plasma
+CRest  := ARest  / Rest
+
+#------------------------
+# Reactions / Transfers
+#------------------------
+
+# Stomach -> SI & Liver
+AStomach -> ASI;    ksto * AStomach
+AStomach -> ALiver; k0 * AStomach
+
+# SI -> Liver & Feces
+ASI -> ALiver;      kabs * ASI
+ASI -> AFeces;      kfe * ASI
+
+# Liver ↔ Plasma & Feces
+APlasma -> ALiver;     QL * Free * CPlasma
+ALiver -> APlasma;     QL * Free * CLiver/PL
+ALiver -> AFeces;      kbiliary * ALiver
+
+# Rest ↔ Plasma
+APlasma   -> ARest;    QRest * Free * CPlasma
+ARest  	-> APlasma;     QRest * Free * CRest/PRest
+
+
+end

@@ -1,0 +1,101 @@
+model Loccisano2011_PFOS_Human()
+
+#Created: Carolina Vogs, September 2025
+#Checked:
+
+#===========================================================
+# PFOS PBK (Loccisano et al 2011):
+# https://www.ncbi.nlm.nih.gov/pubmed/21168463
+#===========================================================
+
+#------------------------
+# Body size & base volumes
+#------------------------
+BW   = 70                       # kg
+VLc  = 0.026                    # L/kg (liver)
+VPlasmac  = 0.0428                   # L/kg (plasma)
+VGIc  = 0.0171			# L/kg (gut)
+
+VL   = VLc*BW                   # L
+VPlasma   = VPlasmac*BW                   # L
+VGI   = VGIc*BW                   # L
+
+VRest := 0.84*BW - VL - VPlasma - VGI  # Lumped Rest-of-body volume L 
+
+#------------------------
+# Plasma Flows
+#------------------------
+QC    = 12.5*BW^0.75            # L/h (cardiac output)
+QPlasma   = QC*(1-Htc)		# L/h cardiac output adjusted for plasma flow
+QLc   = 0.25
+QGIc   = 0.181
+
+QL    = QLc*QPlasma                # L/h (liver)
+QGI    = QGIc*QPlasma                # L/h (liver)
+QRest = QPlasma - QL - QGI          # L/h (rest)
+
+Htc = 0.44
+Free = 0.025
+
+#------------------------
+# Partition coefficients
+#------------------------
+PL = 3.72
+PG = 0.57
+PRest = 1
+
+#------------------------
+# Compartments (sizes)
+#------------------------
+compartment GI;      GI = VGI
+compartment Liver;   Liver = VL
+compartment Plasma;  Plasma = VPlasma
+compartment Rest;    Rest  = VRest
+
+
+#------------------------
+# Species (amount states)
+#------------------------
+substanceOnly species AGI in GI
+substanceOnly species ALiver in Liver
+substanceOnly species APlasma in Plasma
+substanceOnly species ARest  in Rest
+
+
+
+#------------------------
+# Initial conditions
+#------------------------
+AGI = 0; 
+ALiver = 0; 
+APlasma = 0; 
+ARest = 0; 
+
+
+#------------------------
+# Concentrations
+#------------------------
+CGI := AGI / GI
+CLiver := ALiver / Liver
+CPlasma := APlasma / Plasma	# free fraction in plasma
+CPlasmaTotal := CPlasma/Free	# Total PFOS concentration in plasma
+CRest  := ARest  / Rest
+
+#------------------------
+# Reactions / Transfers
+#------------------------
+
+# Perfusion-limited exchanges (GI ↔ liver)
+AGI -> ALiver;     QGI * Free * CGI/PG
+
+# Perfusion-limited exchanges (Plasma ↔ gut & liver & rest)
+APlasma   -> AGI;     QGI * Free * CPlasma
+
+APlasma   -> ALiver;     QL * Free * CPlasma
+ALiver   -> APlasma;     (QL+QGI) * Free * CLiver/PL
+
+APlasma   -> ARest;    QRest * Free * CPlasma
+ARest  	-> APlasma;     QRest * Free * CRest/PRest
+
+
+end

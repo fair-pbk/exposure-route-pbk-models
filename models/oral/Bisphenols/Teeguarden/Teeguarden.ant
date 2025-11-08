@@ -1,0 +1,152 @@
+model Teeguarden2005_BPA_Human()
+
+#Created: Carolina Vogs, September 2025
+#Checked:
+
+#===========================================================
+# BPA/BPAG PBPK (Human; Teeguarden et al., 2005)
+# Human PBK for oral absorption 
+# administration → GITract Lumen → liver <- GITract Lumen Metabolism 
+# Parent only, perfusion-limited tissues
+# GITract Lumen Metabolism BAPG → BAP
+# Hepatic Metabolism BAP → BAPG 
+# EHR of BAPG 
+# https://www.ncbi.nlm.nih.gov/pubmed/15746009
+#===========================================================
+
+#------------------------
+# Body size & base volumes
+#------------------------
+BW      = 70                      # kg
+VLc     = 0.026                   # L/kg (liver)
+VBc     = 0.079                   # L/kg (blood)
+
+
+VL      = VLc*BW                  # L
+VB      = VBc*BW                  # L
+VRest   = 0.84*BW - VL - VB       # L (lumped rest-of-body; floor if needed)
+
+
+#------------------------
+# Flows (human)
+#------------------------
+QCc    = 12.9                     # L/h/kg^0.75 (cardiac output constant)
+QC     = QCc*BW^0.75              # L/h
+QLc    = 0.23                     # fraction to liver
+QL     = QLc*QC                   # L/h
+QRest  = (1-QLc)*QC               # L/h (no separate uterus in this compact human)
+
+#------------------------
+# Partitions (tissue:blood)
+#------------------------
+PL = 1.46
+PRest  = 1
+RBP = 0.83 #Blood plasma coefficient
+
+#------------------------
+# BPA absorption 
+#------------------------
+kabsMet1C     = 10.0                    # kg^(-0.25)/h oral uptake (portal→liver)  
+kabsMet1 := kabsMet1C  * BW^(-0.25) 	     # 1/h
+
+
+#------------------------
+# hepatic metabolism - Michaelis-Menten Kinetics
+#------------------------
+
+VmaxLMetC = 850          	   # mg/h/kg^(0.75) 
+VmaxLMet= VmaxLMetC * BW^0.75  	   # mg/h
+KmLMet  = 10.0                     # mg/L
+
+MW   = 228.8                      # g/mol
+MWMet = 404.4			  # g/mol
+
+
+#------------------------
+# BPAG handling (human)
+#------------------------
+BileFrac   = 0.10                     # 10% fraction of formed BPAG routed to BileFrac (human), rest goes to the volume of distribution
+
+kehrMet1C   = 0.50                   # kg^(-0.25)/h (BPAG hydrolysis→BPA and re-entry to liver)
+kehrMet1 := kehrMet1C  * BW^(-0.25) 	  # 1/h
+
+kfeC    = 0.00                   # kg^(-0.25)/h (fecal loss from GI BPAG; ~0 for human)
+kfe := kfeC  * BW^(-0.25) 	  # 1/h
+
+#------------------------
+# Compartments (volumes)
+#------------------------
+compartment GILumen;   GILumen   = 1
+compartment Liver;     Liver     = VL
+compartment Blood;     Blood     = VB
+compartment Rest;      Rest      = VRest
+compartment Feces;     Feces     = 1          # accumulator
+
+
+
+
+#------------------------
+# Species (amount states)
+#------------------------
+substanceOnly species AGILumen in GILumen      # BPA in GI lumen (oral dose here)
+substanceOnly species ALiver   in Liver        # BPA in liver
+substanceOnly species ABlood   in Blood        # BPA in blood
+substanceOnly species ARest    in Rest         # BPA in rest
+
+substanceOnly species ALiverMet in Liver        # BPAG in Liver
+substanceOnly species AGILumenMet in GILumen    # BPAG in gut lumen (for EHR)
+substanceOnly species ABloodMet   in Blood      # cumulative BPAG to systematic distribution
+substanceOnly species AFecesMet   in Feces      # cumulative BPAG to feces
+
+#------------------------
+# Initial conditions
+#------------------------
+AGILumen = 0
+ALiver   = 0
+ABlood   = 0
+ARest    = 0
+
+ALiverMet = 0
+AGILumenMet = 0
+AFecesMet   = 0
+ABloodMet = 0
+
+#------------------------
+# Concentrations 
+#------------------------
+CBlood := ABlood / Blood
+CLiver := ALiver / Liver
+CRest  := ARest  / Rest
+CPlasma := CBlood/RBP
+
+
+#------------------------
+# BPA Transfer rates 
+#------------------------
+# mg/L ↔ umol/L conversions occur inside rate definitions below.
+
+# Absorption: GI lumen → liver (portal)
+AGILumen -> ALiver; kabsMet1 * AGILumen
+
+# Perfusion-limited exchange between blood, liver, and rest
+ABlood -> ALiver;         QL * CBlood
+ALiver -> ABlood;         QL * CLiver/PL
+
+ABlood -> ARest;          QRest * CBlood
+ARest  -> ABlood;         QRest * CRest/PRest
+
+
+# hepatic Michaelis-Menten 
+ALiver -> ALiverMet;  (MWMet/MW) * ((VmaxLMet* ((CLiver/PL))) / (KmLMet+ ((CLiver/PL))) )
+
+#1) systemic excretion of BPAG
+ALiverMet -> ABloodMet; (1 - BileFrac) * ALiverMet
+
+# EHR: 10% metabolized BPAG goes to GI lumen via BileFrac secretion and is hydrolyzed to BPA
+ALiverMet -> AGILumenMet;   BileFrac * ALiverMet
+AGILumenMet -> ALiver; AGILumenMet * kehrMet1
+AGILumenMet -> AFecesMet; AGILumenMet * kfe
+
+
+
+end
