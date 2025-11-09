@@ -57,9 +57,9 @@ def create_models_table():
             records.append({
                 "filename": filename,
                 "id": metadata['id'],
-                "route": file_dir.split(os.sep)[1],
-                "chemical_group": file_dir.split(os.sep)[2],
-                "report_path": f"models\\{report_path}\\summary.md",
+                "route": report_path.split('/')[0],
+                "chemical_group": report_path.split('/')[1],
+                "report_path": f"./models/{report_path}/summary.md",
                 "compartments": metadata['compartments'],
                 "num_species": metadata.get('num_species', 'N/A'),
                 "num_species_unannotated": num_species_unannotated,
