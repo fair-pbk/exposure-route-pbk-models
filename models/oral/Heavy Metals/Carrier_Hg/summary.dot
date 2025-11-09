@@ -1,0 +1,64 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_GI {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-GI",
+			label="GI
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AGI	[color=black,
+			fillcolor=gold,
+			href="#species-AGI",
+			label="AGI
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Liver {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Liver",
+			label="Liver
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALiver_Met	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver_Met",
+			label="ALiver_Met
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Blood {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Blood",
+			label="Blood
+[PBPKO:00464]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ABlood	[color=black,
+			fillcolor=gold,
+			href="#species-ABlood",
+			label="ABlood
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	AGI -> ABlood	[label=_J0,
+		minlen=1];
+	ABlood -> ALiver_Met	[label=_J1,
+		minlen=1];
+}

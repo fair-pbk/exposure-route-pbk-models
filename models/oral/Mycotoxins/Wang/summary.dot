@@ -1,0 +1,183 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_Stomach {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Stomach",
+			label="Stomach
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ASt	[color=black,
+			fillcolor=gold,
+			href="#species-ASt",
+			label="ASt
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Jejunum {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Jejunum",
+			label="Jejunum
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AJ	[color=black,
+			fillcolor=gold,
+			href="#species-AJ",
+			label="AJ
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Ileum {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Ileum",
+			label="Ileum
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AI	[color=black,
+			fillcolor=gold,
+			href="#species-AI",
+			label="AI
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_LargeLumen {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-LargeLumen",
+			label="LargeLumen
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALI	[color=black,
+			fillcolor=gold,
+			href="#species-ALI",
+			label="ALI
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Liver {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Liver",
+			label="Liver
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALiver	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver",
+			label="ALiver
+[PBPKO:00497]",
+			shape=box,
+			style="filled,rounded"];
+		AMet	[color=black,
+			fillcolor=gold,
+			href="#species-AMet",
+			label="AMet
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Blood {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Blood",
+			label="Blood
+[PBPKO:00464]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ABlood	[color=black,
+			fillcolor=gold,
+			href="#species-ABlood",
+			label="ABlood
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Rest {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Rest",
+			label="Rest
+[PBPKO:00450]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARest	[color=black,
+			fillcolor=gold,
+			href="#species-ARest",
+			label="ARest
+[PBPKO:00501]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Metabolites {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Metabolites",
+			label="Metabolites
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+	}
+	subgraph cluster_IntestinalTissue {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-IntestinalTissue",
+			label="IntestinalTissue
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AIT	[color=black,
+			fillcolor=gold,
+			href="#species-AIT",
+			label="AIT
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	ASt -> AJ	[label=_J0,
+		minlen=1];
+	AJ -> AI	[label=_J1];
+	AJ -> AIT	[label=_J3];
+	AI -> ALI	[label=_J2];
+	AI -> AIT	[label=_J4];
+	ALI -> AIT	[label=_J5];
+	ALiver -> AMet	[label=_J12,
+		minlen=1];
+	ALiver -> ABlood	[label=_J9];
+	ABlood -> ALiver	[label=_J8];
+	ABlood -> ARest	[label=_J10];
+	ABlood -> AIT	[label=_J6];
+	ARest -> ABlood	[label=_J11];
+	AIT -> ALiver	[label=_J7];
+}

@@ -1,0 +1,182 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_GI {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-GI",
+			label="GI
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AGI	[color=black,
+			fillcolor=gold,
+			href="#species-AGI",
+			label="AGI
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Intestinal_Tissue {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Intestinal_Tissue",
+			label="Intestinal_Tissue
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ATI	[color=black,
+			fillcolor=gold,
+			href="#species-ATI",
+			label="ATI
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Liver {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Liver",
+			label="Liver
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALiver	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver",
+			label="ALiver
+[PBPKO:00497]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Kidney {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Kidney",
+			label="Kidney
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AKidney	[color=black,
+			fillcolor=gold,
+			href="#species-AKidney",
+			label="AKidney
+[PBPKO:00498]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Plasma {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Plasma",
+			label="Plasma
+[PBPKO:00488]",
+			shape=box,
+			style="filled,rounded"
+		];
+		APlasma	[color=black,
+			fillcolor=gold,
+			href="#species-APlasma",
+			label="APlasma
+[PBPKO:00502]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Red_Blood_Cell {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Red_Blood_Cell",
+			label="Red_Blood_Cell
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARBC	[color=black,
+			fillcolor=gold,
+			href="#species-ARBC",
+			label="ARBC
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Metallothionein {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Metallothionein",
+			label="Metallothionein
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AMetallothionein	[color=black,
+			fillcolor=gold,
+			href="#species-AMetallothionein",
+			label="AMetallothionein
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Rest {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Rest",
+			label="Rest
+[PBPKO:00450]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARest	[color=black,
+			fillcolor=gold,
+			href="#species-ARest",
+			label="ARest
+[PBPKO:00501]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Daily_Uptake {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Daily_Uptake",
+			label="Daily_Uptake
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ADaily_Uptake	[color=black,
+			fillcolor=gold,
+			href="#species-ADaily_Uptake",
+			label="ADaily_Uptake
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	AGI -> ATI	[label=_J0,
+		minlen=1];
+	ATI -> ADaily_Uptake	[label=_J1];
+	ALiver -> APlasma	[label=_J7];
+	ALiver -> AMetallothionein	[label=_J8];
+	AKidney -> APlasma	[label=_J11];
+	APlasma -> ALiver	[label=_J6];
+	APlasma -> ARBC	[label=_J12];
+	APlasma -> ARest	[label=_J4];
+	ARBC -> AMetallothionein	[label=_J9];
+	AMetallothionein -> AKidney	[label=_J10];
+	ARest -> APlasma	[label=_J5];
+	ADaily_Uptake -> APlasma	[label=_J3];
+	ADaily_Uptake -> AMetallothionein	[label=_J2];
+}

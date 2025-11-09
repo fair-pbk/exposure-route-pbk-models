@@ -1,0 +1,12 @@
+/* custom.css */
+.md-content {
+    max-width: 900px; /* adjust as needed */
+    margin-left: auto;
+    margin-right: auto; /* center the content */
+}
+
+:root  > * {
+  --md-primary-fg-color:        #198754;
+  --md-primary-fg-color--light: #198754;
+  --md-primary-fg-color--dark:  #198754;
+}

@@ -1,0 +1,247 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_Stomach {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Stomach",
+			label="Stomach
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AStomach	[color=black,
+			fillcolor=gold,
+			href="#species-AStomach",
+			label="AStomach
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_SI {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-SI",
+			label="SI
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ASI	[color=black,
+			fillcolor=gold,
+			href="#species-ASI",
+			label="ASI
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ASIMet1	[color=black,
+			fillcolor=gold,
+			href="#species-ASIMet1",
+			label="ASIMet1
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ASIMet2	[color=black,
+			fillcolor=gold,
+			href="#species-ASIMet2",
+			label="ASIMet2
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Liver {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Liver",
+			label="Liver
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALiver	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver",
+			label="ALiver
+[PBPKO:00497]",
+			shape=box,
+			style="filled,rounded"];
+		ALiverMet1	[color=black,
+			fillcolor=gold,
+			href="#species-ALiverMet1",
+			label="ALiverMet1
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ALiverMet2	[color=black,
+			fillcolor=gold,
+			href="#species-ALiverMet2",
+			label="ALiverMet2
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		APVMet1	[color=black,
+			fillcolor=gold,
+			href="#species-APVMet1",
+			label="APVMet1
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		APVMet2	[color=black,
+			fillcolor=gold,
+			href="#species-APVMet2",
+			label="APVMet2
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Plasma {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Plasma",
+			label="Plasma
+[PBPKO:00488]",
+			shape=box,
+			style="filled,rounded"
+		];
+		APlasma	[color=black,
+			fillcolor=gold,
+			href="#species-APlasma",
+			label="APlasma
+[PBPKO:00502]",
+			shape=box,
+			style="filled,rounded"];
+		APlasmaMet1	[color=black,
+			fillcolor=gold,
+			href="#species-APlasmaMet1",
+			label="APlasmaMet1
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		APlasmaMet2	[color=black,
+			fillcolor=gold,
+			href="#species-APlasmaMet2",
+			label="APlasmaMet2
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Rest {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Rest",
+			label="Rest
+[PBPKO:00450]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARest	[color=black,
+			fillcolor=gold,
+			href="#species-ARest",
+			label="ARest
+[PBPKO:00501]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_GILumen {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-GILumen",
+			label="GILumen
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AGILumen	[color=black,
+			fillcolor=gold,
+			href="#species-AGILumen",
+			label="AGILumen
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		AGILumenMet1	[color=black,
+			fillcolor=gold,
+			href="#species-AGILumenMet1",
+			label="AGILumenMet1
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		AGILumenMet2	[color=black,
+			fillcolor=gold,
+			href="#species-AGILumenMet2",
+			label="AGILumenMet2
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Feces {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Feces",
+			label="Feces
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AFeces	[color=black,
+			fillcolor=gold,
+			href="#species-AFeces",
+			label="AFeces
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		AFecesMet1	[color=black,
+			fillcolor=gold,
+			href="#species-AFecesMet1",
+			label="AFecesMet1
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		AFecesMet2	[color=black,
+			fillcolor=gold,
+			href="#species-AFecesMet2",
+			label="AFecesMet2
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	AStomach -> ASI	[label=_J0];
+	AStomach -> ALiver	[label=_J1];
+	ASI -> ASIMet1	[label=_J4];
+	ASI -> ASIMet2	[label=_J8];
+	ASI -> ALiver	[label=_J2];
+	ASI -> AFeces	[label=_J3,
+		minlen=1];
+	ASIMet1 -> APVMet1	[label=_J5];
+	ASIMet2 -> APVMet2	[label=_J9];
+	ALiver -> ALiverMet1	[label=_J12];
+	ALiver -> ALiverMet2	[label=_J15];
+	ALiver -> APlasma	[label=_J19];
+	ALiverMet1 -> APlasmaMet1	[label=_J13];
+	ALiverMet1 -> AGILumenMet1	[label=_J14];
+	ALiverMet2 -> APlasmaMet2	[label=_J16];
+	ALiverMet2 -> AGILumenMet2	[label=_J17];
+	APVMet1 -> APlasmaMet1	[label=_J6];
+	APVMet1 -> AGILumenMet1	[label=_J7];
+	APVMet2 -> APlasmaMet2	[label=_J10];
+	APVMet2 -> AGILumenMet2	[label=_J11];
+	APlasma -> ALiver	[label=_J18];
+	APlasma -> ARest	[label=_J20];
+	ARest -> APlasma	[label=_J21];
+	AGILumenMet1 -> ALiver	[label=_J24];
+	AGILumenMet1 -> APlasmaMet1	[label=_J22];
+	AGILumenMet1 -> AFecesMet1	[label=_J23,
+		minlen=1];
+	AGILumenMet2 -> ALiver	[label=_J27];
+	AGILumenMet2 -> APlasmaMet2	[label=_J25];
+	AGILumenMet2 -> AFecesMet2	[label=_J26,
+		minlen=1];
+}

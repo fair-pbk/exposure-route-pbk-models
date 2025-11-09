@@ -1,0 +1,277 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_GILumen {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-GILumen",
+			label="GILumen
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AGILumen	[color=black,
+			fillcolor=gold,
+			href="#species-AGILumen",
+			label="AGILumen
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Fast {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Fast",
+			label="Fast
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AFast	[color=black,
+			fillcolor=gold,
+			href="#species-AFast",
+			label="AFast
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Slow {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Slow",
+			label="Slow
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ASlow	[color=black,
+			fillcolor=gold,
+			href="#species-ASlow",
+			label="ASlow
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Colon {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Colon",
+			label="Colon
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AColon	[color=black,
+			fillcolor=gold,
+			href="#species-AColon",
+			label="AColon
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Gut {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Gut",
+			label="Gut
+[PBPKO:00477]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AGut	[color=black,
+			fillcolor=gold,
+			href="#species-AGut",
+			label="AGut
+[PBPKO:00496]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Liver {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Liver",
+			label="Liver
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALiver	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver",
+			label="ALiver
+[PBPKO:00497]",
+			shape=box,
+			style="filled,rounded"];
+		ALiverMet1	[color=black,
+			fillcolor=gold,
+			href="#species-ALiverMet1",
+			label="ALiverMet1
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ALiverMet2	[color=black,
+			fillcolor=gold,
+			href="#species-ALiverMet2",
+			label="ALiverMet2
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ALiverMet3	[color=black,
+			fillcolor=gold,
+			href="#species-ALiverMet3",
+			label="ALiverMet3
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ALiverMet4	[color=black,
+			fillcolor=gold,
+			href="#species-ALiverMet4",
+			label="ALiverMet4
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Blood {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Blood",
+			label="Blood
+[PBPKO:00464]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ABlood	[color=black,
+			fillcolor=gold,
+			href="#species-ABlood",
+			label="ABlood
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Rest {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Rest",
+			label="Rest
+[PBPKO:00450]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARest	[color=black,
+			fillcolor=gold,
+			href="#species-ARest",
+			label="ARest
+[PBPKO:00501]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Bile {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Bile",
+			label="Bile
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ABile	[color=black,
+			fillcolor=gold,
+			href="#species-ABile",
+			label="ABile
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Feces {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Feces",
+			label="Feces
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AFeces	[color=black,
+			fillcolor=gold,
+			href="#species-AFeces",
+			label="AFeces
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Stomach {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Stomach",
+			label="Stomach
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ASt	[color=black,
+			fillcolor=gold,
+			href="#species-ASt",
+			label="ASt
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Spleen {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Spleen",
+			label="Spleen
+[PBPKO:00492]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ASpleen	[color=black,
+			fillcolor=gold,
+			href="#species-ASpleen",
+			label="ASpleen
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	AGILumen -> AFast	[label=_J0];
+	AGILumen -> ASlow	[label=_J1];
+	AFast -> AGut	[label=_J3];
+	ASlow -> AColon	[label=_J2];
+	ASlow -> AGut	[label=_J4];
+	AColon -> AFeces	[label=_J5,
+		minlen=1];
+	AGut -> ALiver	[label=_J7];
+	ALiver -> ALiverMet1	[label=_J12,
+		minlen=1];
+	ALiver -> ALiverMet2	[label=_J13,
+		minlen=2];
+	ALiver -> ALiverMet3	[label=_J14,
+		minlen=3];
+	ALiver -> ALiverMet4	[label=_J15,
+		minlen=1];
+	ALiver -> ABlood	[label=_J9];
+	ALiver -> ABile	[label=_J16];
+	ABlood -> AGut	[label=_J6];
+	ABlood -> ALiver	[label=_J8];
+	ABlood -> ARest	[label=_J10];
+	ABlood -> ASt	[label=_J18];
+	ABlood -> ASpleen	[label=_J20];
+	ARest -> ABlood	[label=_J11];
+	ABile -> AGILumen	[label=_J17];
+	ASt -> ALiver	[label=_J19];
+	ASpleen -> ALiver	[label=_J21];
+}
