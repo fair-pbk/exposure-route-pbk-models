@@ -1,7 +1,7 @@
 model Loccisano2011_PFOA_Human()
 
 #Created: Carolina Vogs, September 2025
-#Checked:
+#Checked: Joost Westerhout, November 2025
 
 #===========================================================
 # PFOA PBK (Loccisano et al 2011):
@@ -27,7 +27,7 @@ VRest := 0.84*BW - VL - VPlasma - VGI  # Lumped Rest-of-body volume L
 #------------------------
 QC    = 12.5*BW^0.75            # L/h (cardiac output)
 QPlasma   = QC*(1-Htc)		# L/h cardiac output adjusted for plasma flow
-QLc   = 0.25
+QLc   = 0.25  # JW: Note that this value is wrong, as it includes QGIc as well. This was corrected by EFSA in 2020.
 QGIc   = 0.181
 
 QL    = QLc*QPlasma                # L/h (liver)
@@ -42,7 +42,7 @@ Free = 0.02
 #------------------------
 PL = 2.2
 PG = 0.05
-PRest = 1
+PRest = 1  # JW: Value from Loccisano 2011 is 0.12
 
 #------------------------
 # Compartments (sizes)
@@ -77,7 +77,8 @@ ARest = 0;
 #------------------------
 CGI := AGI / GI
 CLiver := ALiver / Liver
-CPlasma := APlasma / Plasma
+CPlasma := APlasma / Plasma  # free concentration in plasma
+CPlasmaTotal := CPlasma/Free	# Total PFOA concentration in plasma
 CRest  := ARest  / Rest
 
 #------------------------
@@ -88,12 +89,12 @@ CRest  := ARest  / Rest
 AGI -> ALiver;     QGI * Free * CGI/PG
 
 # Perfusion-limited exchanges (Plasma ↔ gut & liver & rest)
-APlasma   -> AGI;     QGI * Free * CPlasma
+APlasma   -> AGI;     QGI * Free * CPlasmaTotal
 
-APlasma   -> ALiver;     QL * Free * CPlasma
+APlasma   -> ALiver;     QL * Free * CPlasmaTotal 
 ALiver   -> APlasma;     (QL+QGI) * Free * CLiver/PL
 
-APlasma   -> ARest;    QRest * Free * CPlasma
+APlasma   -> ARest;    QRest * Free * CPlasmaTotal
 ARest  	-> APlasma;     QRest * Free * CRest/PRest
 
 

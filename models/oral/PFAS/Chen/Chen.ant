@@ -1,7 +1,7 @@
 model Chen2022_PFOS_Human()
 
 #Created: Carolina Vogs, September 2025
-#Checked:
+#Checked: Joost Westerhout, November 2025
 
 #===========================================================
 # PFOS PBK model Chen et al 2022 (based on Chou and Lin et al. 2021 - PFOS):
@@ -14,10 +14,10 @@ model Chen2022_PFOS_Human()
 #------------------------
 BW   = 70                       # kg
 VLc  = 0.026                    # L/kg (liver)
-VPlasmac  = 0.0428                   # L/kg (plasma)
+VPlasmac  = 0.0428              # L/kg (plasma)
 
 VL   = VLc*BW                   # L
-VPlasma   = VPlasmac*BW                   # L
+VPlasma   = VPlasmac*BW         # L
 
 
 VRest := 0.93*BW - VL - VPlasma   # Lumped Rest-of-body volume L 
@@ -40,30 +40,30 @@ Free = 0.025
 #------------------------
 
 # Stomach -> SI
-kstoC = 3.51 				# gastric emptying time (1/(h*BW^-0.25))
-ksto  = kstoC * BW^(-0.25)		# 1/h Pay attentian original code: kstoC / BW^(-0.25)
+kstoC = 3.5 				# gastric emptying time (1/(h*BW^-0.25))
+ksto  = kstoC * BW^(-0.25)	# 1/h
 
 # SI -> liver
 kabsC = 2.12  				#rate of absorption of chemical from small intestine to liver (1/(h*BW^-0.25))
-kabs  = kfeC * BW^(-0.25)		# 1/h   
+kabs  = kabsC * BW^(-0.25)	# 1/h 
 
 # Stomach -> Liver
 k0C   = 1.0  				# rate of uptake from the stomach into the liver (1/(h*BW^-0.25))
-k0 = k0C * BW^(-0.25)			# 1/h Pay attention: original code k0 = k0C / BW^(-0.25)	
+k0 = k0C * BW^(-0.25)		# 1/h
 
 
 kfeC = 7.06e-5 				# 1/(h*BW^-0.25)
 kfe = kfeC * BW^(-0.25)			# 1/h
 
 # SI -> Feces
-kbiliaryC = 0				# 1/(h*BW^-0.25)
+kbiliaryC = 0.0001			# 1/(h*BW^-0.25)
 kbiliary = kbiliaryC * BW^(-0.25)	# 1/h
 
 #------------------------
 # Partition coefficients
 #------------------------
 PL = 2.67
-PRest = 1
+PRest = 1  # JW: Value from Chen 2022 humanPBPK.RDS is 0.2
 
 #------------------------
 # Compartments (sizes)
@@ -102,7 +102,7 @@ AFeces = 0
 # Concentrations 
 #------------------------
 CLiver := ALiver / Liver
-CPlasma := APlasma / Plasma	# free fraction in plasma
+CPlasma := APlasma / Plasma	# free concentration in plasma
 CPlasmaTotal := CPlasma/Free	# Total PFOS concentration in plasma
 CRest  := ARest  / Rest
 
@@ -119,12 +119,12 @@ ASI -> ALiver;      kabs * ASI
 ASI -> AFeces;      kfe * ASI
 
 # Liver ↔ Plasma & Feces
-APlasma -> ALiver;     QL * Free * CPlasma
+APlasma -> ALiver;     QL * Free * CPlasmaTotal
 ALiver -> APlasma;     QL * Free * CLiver/PL
 ALiver -> AFeces;      kbiliary * ALiver
 
 # Rest ↔ Plasma
-APlasma   -> ARest;    QRest * Free * CPlasma
+APlasma   -> ARest;    QRest * Free * CPlasmaTotal
 ARest  	-> APlasma;     QRest * Free * CRest/PRest
 
 
