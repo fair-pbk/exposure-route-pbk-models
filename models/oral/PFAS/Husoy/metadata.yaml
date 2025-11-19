@@ -796,16 +796,16 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression 'kfeC * BW' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
+    \ <initialAssignment> <math> expression 'kfeC * pow(BW, 0.001)' cannot be fully\
+    \ checked. Unit consistency reported as either no errors or further unit errors\
+    \ related to this object may not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression 'kbiliaryC * BW' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ <initialAssignment> <math> expression 'kbiliaryC * pow(BW, 0.1)' cannot be fully\
+    \ checked. Unit consistency reported as either no errors or further unit errors\
+    \ related to this object may not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -873,14 +873,14 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QGI * Free * CPlasma' cannot be fully checked.\
+    \ <kineticLaw> <math> expression 'QGI * Free * CPlasmaTotal' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
     \ to this object may not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QL * Free * CPlasma' cannot be fully checked.\
+    \ <kineticLaw> <math> expression 'QL * Free * CPlasmaTotal' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
     \ to this object may not be accurate.\n"
 - level: warning
@@ -894,9 +894,9 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QRest * Free * CPlasma' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ <kineticLaw> <math> expression 'QRest * Free * CPlasmaTotal' cannot be fully\
+    \ checked. Unit consistency reported as either no errors or further unit errors\
+    \ related to this object may not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\

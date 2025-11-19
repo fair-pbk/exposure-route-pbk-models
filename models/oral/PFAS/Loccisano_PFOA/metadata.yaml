@@ -4,7 +4,7 @@ applicability_domain:
   chemicals: []
   species: []
 num_species: 4
-num_parameters: 24
+num_parameters: 25
 num_reactions: 6
 compartments:
 - id: GI
@@ -94,6 +94,8 @@ parameters:
 - id: CLiver
   name: ''
 - id: CPlasma
+  name: ''
+- id: CPlasmaTotal
   name: ''
 - id: CRest
   name: ''
@@ -579,6 +581,20 @@ unit_consistency:
     \ consistency. In models where the units of an object have not been declared,\
     \ libSBML does not yet have the functionality to accurately verify the consistency\
     \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CPlasmaTotal' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate.\n"
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CPlasmaTotal' does not\
+    \ have a 'units' attribute.\n"
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'CRest' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
     \ accurate.\n"
@@ -703,6 +719,13 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'CPlasma / Free' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate.\n"
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression 'ARest / Rest' cannot be fully checked. Unit\
     \ consistency reported as either no errors or further unit errors related to this\
     \ object may not be accurate.\n"
@@ -717,14 +740,14 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QGI * Free * CPlasma' cannot be fully checked.\
+    \ <kineticLaw> <math> expression 'QGI * Free * CPlasmaTotal' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
     \ to this object may not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QL * Free * CPlasma' cannot be fully checked.\
+    \ <kineticLaw> <math> expression 'QL * Free * CPlasmaTotal' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
     \ to this object may not be accurate.\n"
 - level: warning
@@ -738,9 +761,9 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QRest * Free * CPlasma' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ <kineticLaw> <math> expression 'QRest * Free * CPlasmaTotal' cannot be fully\
+    \ checked. Unit consistency reported as either no errors or further unit errors\
+    \ related to this object may not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
