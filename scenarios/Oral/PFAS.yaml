@@ -1,0 +1,79 @@
+id: PFAS
+label: PFAS
+model_instances:
+  - id: Chen
+    label: Chen 2022
+    model_path: models/oral/PFAS/Chen/Chen.sbml
+    param_file: models/oral/PFAS/Chen/Chen.params.csv
+    target_mappings:
+      AGut: AStomach
+      APlasma: APlasma
+  - id: ChouLin2021
+    label: Chou Lin 2021
+    model_path: models/oral/PFAS/ChouLin/ChouLin.sbml
+    param_file: models/oral/PFAS/ChouLin/ChouLin.params.csv
+    target_mappings:
+      AGut: AStomach
+      APlasma: APlasma
+  - id: Deepika2021
+    label: Deepika 2021
+    model_path: models/oral/PFAS/Deepika/Deepika.sbml
+    param_file: models/oral/PFAS/Deepika/Deepika.params.csv
+    target_mappings:
+      AGut: AGI
+      APlasma: APlasma
+  - id: Husoy2024
+    label: Husoy 2024
+    model_path: models/oral/PFAS/Husoy/Husoy.sbml
+    param_file: models/oral/PFAS/Husoy/Husoy.params.csv
+    target_mappings:
+      AGut: AGI
+      APlasma: APlasma
+  - id: Loccisano2011_PFOA
+    label: Loccisano 2011 (PFOA)
+    model_path: models/oral/PFAS/Loccisano_PFOA/LoccisanoPFOA.sbml
+    param_file: models/oral/PFAS/Loccisano_PFOA/LoccisanoPFOA.params.csv
+    target_mappings:
+      AGut: AGI
+      APlasma: APlasma
+  - id: Loccisano2011_PFOS
+    label: Loccisano 2011 (PFOS)
+    model_path: models/oral/PFAS/Loccisano_PFOS/LoccisanoPFOS.sbml
+    param_file: models/oral/PFAS/Loccisano_PFOS/LoccisanoPFOS.params.csv
+    target_mappings:
+      AGut: AGI
+      APlasma: APlasma
+
+scenarios:
+  - id: oral_single
+    label: Oral single dose
+    duration: 4
+    evaluation_resolution: 24
+    dosing_events:
+      - type: single_bolus
+        target: AGut
+        amount: 1
+        time: 1
+    comparisons:
+      - id: APlasma
+        label: Amount in plasma
+        output: APlasma
+    time_unit: DAY
+    amount_unit: MICROGRAMS
+  - id: oral_repeated
+    label: Oral repeated dose
+    duration: 10
+    evaluation_resolution: 24
+    dosing_events:
+      - type: repeated_bolus
+        target: AGut
+        amount: 1
+        time: 0
+        interval: 1
+        until: 10
+    comparisons:
+      - id: APlasma
+        label: Amount in plasma
+        output: APlasma
+    time_unit: DAY
+    amount_unit: MICROGRAMS

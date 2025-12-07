@@ -30,6 +30,7 @@ jobs:
       - name: Create model docs pages
         run: python ./scripts/docs/create_model_docs.py
       - run: python ./scripts/docs/create_models_overview.py
+      - run: python ./scripts/run_simulation.py
       - name: Deploy GH pages
         run: mkdocs gh-deploy --config-file mkdocs.yml --force
  

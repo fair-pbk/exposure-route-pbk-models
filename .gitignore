@@ -124,6 +124,7 @@ models/**/*.xlsx
 models/**/*.sbml
 models/**/*.log
 docs/models/*
+docs/simulation/*
 docs/models-overview.md
 
 # Test outputs

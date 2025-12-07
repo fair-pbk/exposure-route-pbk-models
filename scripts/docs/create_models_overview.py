@@ -2,10 +2,10 @@ import os
 import logging
 import glob
 import yaml
-from jinja2 import Environment, FileSystemLoader
+from doc_utils import render_template
 
-models_path = './models/'
-output_path = './docs/models/'
+MODELS_PATH = './models/'
+OUTPUT_PATH = './docs/models/'
 
 # Configure logger for formatted console output
 console_logger = logging.getLogger('compile_models')
@@ -27,12 +27,12 @@ def create_models_table():
             )
             filename = os.path.basename(sbml_file)
             file_dir = os.path.dirname(sbml_file)
-            report_path = os.path.relpath(file_dir, models_path) \
+            report_path = os.path.relpath(file_dir, MODELS_PATH) \
                 .replace('\\', '/').replace(' ', '%20')
 
             # Load metadata
             metadata = None
-            output_dir = os.path.join(output_path, os.path.relpath(file_dir, models_path))
+            output_dir = os.path.join(OUTPUT_PATH, os.path.relpath(file_dir, MODELS_PATH))
             metadata_file = os.path.join(output_dir, 'metadata.yaml')
             with open(metadata_file, "r", encoding="utf-8") as f:
                 metadata = yaml.safe_load(f)
@@ -82,26 +82,6 @@ def create_models_table():
         output_file="./docs/models-overview.md",
         records=records
     )
-
-def render_template(
-    name: str,
-    **kwargs
-):
-    # Out file
-    output_file = str(kwargs.get('output_file')) if 'output_file' in kwargs \
-         else f"docs/{name}.md"
-
-    # Point to templates folder
-    env = Environment(loader=FileSystemLoader("./docs/templates"))
-    template = env.get_template(f"{name}.md.j2")
-
-    # Render
-    markdown_output = template.render(**kwargs)
-
-    # Save to file
-    os.makedirs(os.path.dirname(output_file), exist_ok=True)
-    with open(output_file, "w", encoding="utf-8") as f:
-        f.write(markdown_output)
 
 if __name__ == '__main__':
     create_models_table()

@@ -1,6 +1,5 @@
 import glob
 import os
-from pathlib import Path
 import libsbml as ls
 import logging
 import yaml
@@ -8,11 +7,11 @@ import yaml
 from sbmlpbkutils import PbkModelReportGenerator
 from sbmlpbkutils import PbkModelInfosExtractor
 
-models_path = './models/'
-output_path = './docs/models/'
+MODELS_PATH = './models/'
+OUTPUT_PATH = './docs/models/'
 
 # Configure logger for formatted console output
-console_logger = logging.getLogger('compile_models')
+console_logger = logging.getLogger('create_model_docs')
 console_logger.setLevel(logging.INFO)
 _console_handler = logging.StreamHandler()
 _console_handler.setLevel(logging.INFO)
@@ -22,15 +21,15 @@ if not console_logger.handlers:
 
 def create_reports():
     # Clear output directory
-    if os.path.exists(output_path):
-        console_logger.info(f"Clearing output directory: {output_path}")
-        for root, dirs, files in os.walk(output_path, topdown=False):
+    if os.path.exists(OUTPUT_PATH):
+        console_logger.info(f"Clearing output directory: {OUTPUT_PATH}")
+        for root, dirs, files in os.walk(OUTPUT_PATH, topdown=False):
             for name in files:
                 os.remove(os.path.join(root, name))
             for name in dirs:
                 os.rmdir(os.path.join(root, name))
     else:
-        os.makedirs(output_path, exist_ok=True)
+        os.makedirs(OUTPUT_PATH, exist_ok=True)
 
     # Generate reports for each model
     sbml_files = glob.glob('./models/**/*.sbml', recursive=True)
@@ -54,7 +53,7 @@ def create_report(sbml_file: str):
 
     # Create output directory if it does not exist
     file_dir = os.path.dirname(sbml_file)
-    output_dir = os.path.join(output_path, os.path.relpath(file_dir, models_path))
+    output_dir = os.path.join(OUTPUT_PATH, os.path.relpath(file_dir, MODELS_PATH))
     os.makedirs(output_dir, exist_ok=True)
 
     # Generate report
@@ -92,7 +91,7 @@ def get_unit_concistency_check_results(doc: ls.SBMLDocument):
 
 def get_model_metadata(sbml_file: str):
     file_dir = os.path.dirname(sbml_file)
-    output_dir = os.path.join(output_path, os.path.relpath(file_dir, models_path))
+    output_dir = os.path.join(OUTPUT_PATH, os.path.relpath(file_dir, MODELS_PATH))
     metadata_file = os.path.join(output_dir, 'metadata.yaml')
 
     console_logger.info(

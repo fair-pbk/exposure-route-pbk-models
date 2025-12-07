@@ -1,0 +1,36 @@
+# {{config.label}}
+
+{%- for scenario in config.scenarios %}
+
+## {{scenario.label}}
+
+- **Amount unit:** {{ scenario.amount_unit.value }}
+- **Time resolution:** {{ scenario.time_unit.value }}
+- **Simulation duration:** {{ scenario.duration }} {{ scenario.time_unit.value }}
+- **Evaluation resolution:** {{ scenario.evaluation_resolution }} steps per {{ scenario.time_unit.value }}
+
+### Dosing events
+{%- for event in scenario.dosing_events %}
+- **Target:** `{{ event.target }}`
+  - **Type:** {{ event.type.replace("_", " ") | title }}
+  - **Amount:** {{ event.amount }} {{ scenario.amount_unit.value }}
+  - **Time:** {{ event.time }}
+  {%- if event.duration is not none %}
+  - **Event duration:** {{ event.duration }}
+  {%- endif -%}
+  {%- if event.interval is not none %}
+  - **Repetition interval:** {{ event.interval }}
+  {%- endif -%}
+  {%- if event.until is not none %}
+  - **Repetition end time:** {{ event.until }}
+  {%- endif -%}
+{% endfor %}
+
+### Comparisons
+{%- for comparison in scenario.comparisons %}
+
+#### {{ comparison.label }}
+
+![simulation timeseries {{comparison.label}}]({{scenario.id}}-{{comparison.id}}.png)
+{% endfor -%}
+{% endfor %}
