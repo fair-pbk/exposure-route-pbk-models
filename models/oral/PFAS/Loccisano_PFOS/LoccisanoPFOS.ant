@@ -3,55 +3,54 @@ model Loccisano2011_PFOS_Human()
 #Created: Carolina Vogs, September 2025
 #Checked: Joost Westerhout, November 2025
 
-#===========================================================
-# PFOS PBK (Loccisano et al 2011):
-# https://www.ncbi.nlm.nih.gov/pubmed/21168463
-#===========================================================
+model notes ```
+PFOA PBK Loccisano et al. 2011.
+```
+model description "https://www.ncbi.nlm.nih.gov/pubmed/21168463"
 
-#------------------------
+#-------------------------
 # Body size & base volumes
-#------------------------
-BW   = 70                       # kg
-VLc  = 0.026                    # L/kg (liver)
-VPlasmac  = 0.0428                   # L/kg (plasma)
-VGIc  = 0.0171			# L/kg (gut)
+#-------------------------
+BW = 70                   # kg
+VLc = 0.026               # L/kg (liver)
+VPlasmac = 0.0428         # L/kg (plasma)
+VGIc = 0.0171             # L/kg (gut)
 
-VL   = VLc*BW                   # L
-VPlasma   = VPlasmac*BW                   # L
-VGI   = VGIc*BW                   # L
+VL := VLc * BW            # L
+VPlasma := VPlasmac * BW  # L
+VGI := VGIc * BW          # L
 
-VRest := 0.84*BW - VL - VPlasma - VGI  # Lumped Rest-of-body volume L 
+VRest := 0.84 * BW - VL - VPlasma - VGI  # Lumped Rest-of-body volume L
+
+Htc = 0.44
+Free = 0.025
 
 #------------------------
 # Plasma Flows
 #------------------------
-QC    = 12.5*BW^0.75            # L/h (cardiac output)
-QPlasma   = QC*(1-Htc)		# L/h cardiac output adjusted for plasma flow
-QLc   = 0.25  # JW: Note that this value is wrong, as it includes QGIc as well. This was corrected by EFSA in 2020.
-QGIc   = 0.181
+QC := 12.5 * BW^0.75         # L/h (cardiac output)
+QPlasma := QC*(1-Htc)        # L/h cardiac output adjusted for plasma flow
+QLc = 0.25                   # JW: Note that this value is wrong, as it includes QGIc as well. This was corrected by EFSA in 2020.
+QGIc = 0.181
 
-QL    = QLc*QPlasma                # L/h (liver)
-QGI    = QGIc*QPlasma                # L/h (liver)
-QRest = QPlasma - QL - QGI          # L/h (rest)
-
-Htc = 0.44
-Free = 0.025
+QL := QLc * QPlasma          # L/h (liver)
+QGI := QGIc * QPlasma        # L/h (liver)
+QRest := QPlasma - QL - QGI  # L/h (rest)
 
 #------------------------
 # Partition coefficients
 #------------------------
 PL = 3.72
 PG = 0.57
-PRest = 1  # JW: Value from Loccisano 2011 is 0.2
+PRest = 1                    # JW: Value from Loccisano 2011 is 0.2
 
 #------------------------
 # Compartments (sizes)
 #------------------------
-compartment GI;      GI = VGI
-compartment Liver;   Liver = VL
-compartment Plasma;  Plasma = VPlasma
-compartment Rest;    Rest  = VRest
-
+compartment GI := VGI
+compartment Liver := VL
+compartment Plasma := VPlasma
+compartment Rest := VRest
 
 #------------------------
 # Species (amount states)
@@ -59,43 +58,39 @@ compartment Rest;    Rest  = VRest
 substanceOnly species AGI in GI
 substanceOnly species ALiver in Liver
 substanceOnly species APlasma in Plasma
-substanceOnly species ARest  in Rest
-
-
+substanceOnly species ARest in Rest
 
 #------------------------
 # Initial conditions
 #------------------------
-AGI = 0; 
-ALiver = 0; 
-APlasma = 0; 
-ARest = 0; 
-
+AGI = 0;
+ALiver = 0;
+APlasma = 0;
+ARest = 0;
 
 #------------------------
 # Concentrations
 #------------------------
 CGI := AGI / GI
 CLiver := ALiver / Liver
-CPlasma := APlasma / Plasma	# free concentration in plasma
-CPlasmaTotal := CPlasma/Free	# Total PFOS concentration in plasma
-CRest  := ARest  / Rest
+CPlasma := APlasma / Plasma   # Free concentration in plasma
+CPlasmaTotal := CPlasma/Free  # Total PFOS concentration in plasma
+CRest := ARest  / Rest
 
 #------------------------
 # Reactions / Transfers
 #------------------------
 
 # Perfusion-limited exchanges (GI ↔ liver)
-AGI -> ALiver;     QGI * Free * CGI/PG
+AGI -> ALiver; QGI * Free * CGI/PG
 
 # Perfusion-limited exchanges (Plasma ↔ gut & liver & rest)
-APlasma   -> AGI;     QGI * Free * CPlasmaTotal
+APlasma -> AGI; QGI * Free * CPlasmaTotal
 
-APlasma   -> ALiver;     QL * Free * CPlasmaTotal 
-ALiver   -> APlasma;     (QL+QGI) * Free * CLiver/PL
+APlasma -> ALiver; QL * Free * CPlasmaTotal 
+ALiver -> APlasma; (QL+QGI) * Free * CLiver/PL
 
-APlasma   -> ARest;    QRest * Free * CPlasmaTotal 
-ARest  	-> APlasma;     QRest * Free * CRest/PRest
-
+APlasma -> ARest; QRest * Free * CPlasmaTotal 
+ARest -> APlasma; QRest * Free * CRest/PRest
 
 end

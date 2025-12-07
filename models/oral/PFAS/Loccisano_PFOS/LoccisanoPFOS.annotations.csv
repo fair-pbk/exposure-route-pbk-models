@@ -1,7 +1,7 @@
 element_id,sbml_type,element_name,unit,annotation_type,qualifier,URI,remark
-substanceUnits,document,model substances unit,,,,,
+substanceUnits,document,model substances unit,ug,,,,
 extentUnits,document,model extent unit,,,,,
-timeUnits,document,model time unit,,,,,
+timeUnits,document,model time unit,h,,,,
 volumeUnits,document,model volume unit,,,,,
 GI,compartment,,,rdf,BQM_IS,,
 Liver,compartment,liver,,rdf,BQM_IS,,

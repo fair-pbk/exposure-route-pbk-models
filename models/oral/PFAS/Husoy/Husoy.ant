@@ -3,62 +3,61 @@ model Husoy2024_PFOA_Human()
 #Created: Carolina Vogs, September 2025
 #Checked: Joost Westerhout, November 2025
 
-#===========================================================
-# PFOA PBK (Husoy et al. 2024):
-# https://www.ncbi.nlm.nih.gov/pubmed/37839534
-#===========================================================
+model notes ```
+PFOA PBK Husoy et al. 2024.
+```
+model description "https://www.ncbi.nlm.nih.gov/pubmed/37839534"
 
 #------------------------
 # Body size & base volumes
 #------------------------
-BW   = 70                       # kg
-VLc  = 0.026                    # L/kg (liver)
-Vplasmac  = 0.0428              # L/kg (plasma)
-VGIc  = 0.0171			# L/kg (gut) 
+BW = 70                        # kg
+VLc = 0.026                    # L/kg (liver)
+Vplasmac = 0.0428              # L/kg (plasma)
+VGIc = 0.0171                  # L/kg (gut) 
 
-VL   = VLc*BW                   # L
-Vplasma   = Vplasmac*BW         # L
-VGI   = VGIc*BW                   # L
+VL := VLc * BW                 # L
+Vplasma := Vplasmac * BW       # L
+VGI := VGIc * BW               # L
 
-VRest := 0.84*BW - VL - Vplasma - VGI  # Lumped Rest-of-body volume L 
+VRest := 0.84 * BW - VL - Vplasma - VGI  # Lumped Rest-of-body volume L 
 
 #------------------------
 # Plasma Flows
 #------------------------
-QC    = 12.5*BW^0.75            # L/h (cardiac output)
-QPlasma   = QC*(1-Htc)		# L/h cardiac output adjusted for plasma flow
-QLc   = 0.069 
-QGIc   = 0.181
+QC := 12.5 * BW^0.75            # L/h (cardiac output)
+QPlasma := QC * (1 - Htc)       # L/h cardiac output adjusted for plasma flow
+QLc = 0.069 
+QGIc = 0.181
 
-QL    = QLc*QPlasma                # L/h (liver)
-QGI    = QGIc*QPlasma                # L/h (liver)
-QRest = QPlasma - QL - QGI          # L/h (rest)
+QL := QLc * QPlasma             # L/h (liver)
+QGI := QGIc * QPlasma           # L/h (liver)
+QRest := QPlasma - QL - QGI     # L/h (rest)
 
 Htc = 0.44
 Free = 0.02
 
-kfeC = 0.00000217		# L/h/kg
-kfe = kfeC * BW^0.001			# L/h  # JW: Calculation in Husoy PBPK_PFOA_version2.r takes BW to the power of 0.001 to adjust the BW to the volume of the GI tract.
+kfeC = 0.00000217               # L/h/kg
+kfe := kfeC * BW^0.001          # L/h  # JW: Calculation in Husoy PBPK_PFOA_version2.r takes BW to the power of 0.001 to adjust the BW to the volume of the GI tract.
 
-kbiliaryC = 0.000109		# L/h/kg
-kbiliary = kbiliaryC * BW^0.1	# L/h  # JW: Calculation in Husoy PBPK_PFOA_version2.r takes BW to the power of 0.1 to adjust the BW to the volume of the liver.
+kbiliaryC = 0.000109            # L/h/kg
+kbiliary := kbiliaryC * BW^0.1  # L/h  # JW: Calculation in Husoy PBPK_PFOA_version2.r takes BW to the power of 0.1 to adjust the BW to the volume of the liver.
 
 #------------------------
 # Partition coefficients
 #------------------------
 PL = 2.2
 PG = 0.05
-PRest = 1  # JW: Value from Husoy PBPK_PFOA_version2.r is 0.12.
+PRest = 1                       # JW: Value from Husoy PBPK_PFOA_version2.r is 0.12.
 
 #------------------------
 # Compartments (sizes)
 #------------------------
-compartment GI;      GI = VGI
-compartment Liver;   Liver = VL
-compartment Plasma;  Plasma = Vplasma
-compartment Rest;    Rest  = VRest
-compartment Feces;   Feces  = 1
-
+compartment GI := VGI
+compartment Liver := VL
+compartment Plasma := Vplasma
+compartment Rest := VRest
+compartment Feces = 1
 
 #------------------------
 # Species (amount states)
@@ -66,47 +65,43 @@ compartment Feces;   Feces  = 1
 substanceOnly species AGI in GI
 substanceOnly species ALiver in Liver
 substanceOnly species APlasma in Plasma
-substanceOnly species ARest  in Rest
-substanceOnly species AFeces  in Feces
-
+substanceOnly species ARest in Rest
+substanceOnly species AFeces in Feces
 
 #------------------------
 # Initial conditions
 #------------------------
 AGI = 0 
 ALiver = 0 
-APlasma = 0 		# free fraction in plasma
+APlasma = 0     # Free fraction in plasma
 ARest = 0 
 AFeces = 0
-
 
 #------------------------
 # Concentrations 
 #------------------------
 CGI := AGI / GI
 CLiver := ALiver / Liver
-CPlasma := APlasma / Plasma		# free concentration in plasma
-CPlasmaTotal := CPlasma/Free		# Total PFOA concentration in plasma
-CRest  := ARest  / Rest
+CPlasma := APlasma / Plasma       # Free concentration in plasma
+CPlasmaTotal := CPlasma/Free      # Total PFOA concentration in plasma
+CRest := ARest / Rest
 
 #------------------------
 # Reactions / Transfers
 #------------------------
 
 # GI ↔ liver & Feces
-AGI -> ALiver;     QGI * Free * CGI/PG
-ALiver -> AGI; 	   kbiliary * Free * CLiver/PL
-AGI -> AFeces;     kfe * Free * CGI/PG
-
+AGI -> ALiver;        QGI * Free * CGI/PG
+ALiver -> AGI;        kbiliary * Free * CLiver/PL
+AGI -> AFeces;        kfe * Free * CGI/PG
 
 # Perfusion-limited exchanges (Plasma ↔ gut & liver & rest)
 APlasma   -> AGI;     QGI * Free * CPlasmaTotal 
 
-APlasma   -> ALiver;     QL * Free * CPlasmaTotal 
-ALiver   -> APlasma;     (QL+QGI) * Free * CLiver/PL
+APlasma -> ALiver;    QL * Free * CPlasmaTotal 
+ALiver -> APlasma;    (QL+QGI) * Free * CLiver/PL
 
-APlasma   -> ARest;    QRest * Free * CPlasmaTotal 
-ARest  	-> APlasma;     QRest * Free * CRest/PRest
-
+APlasma -> ARest;     QRest * Free * CPlasmaTotal 
+ARest -> APlasma;     QRest * Free * CRest/PRest
 
 end
