@@ -1,0 +1,123 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_Air {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Air",
+			label="Air
+[PBPKO:00458]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Aair	[color=black,
+			fillcolor=gold,
+			href="#species-Aair",
+			label="Aair
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Arterial {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Arterial",
+			label="Arterial
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Aart	[color=black,
+			fillcolor=gold,
+			href="#species-Aart",
+			label="Aart
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Venous {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Venous",
+			label="Venous
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Aven	[color=black,
+			fillcolor=gold,
+			href="#species-Aven",
+			label="Aven
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_RestofBody {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-RestofBody",
+			label="RestofBody
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Arest	[color=black,
+			fillcolor=gold,
+			href="#species-Arest",
+			label="Arest
+[PBPKO:00501]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Lung {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Lung",
+			label="Lung
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Alung	[color=black,
+			fillcolor=gold,
+			href="#species-Alung",
+			label="Alung
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Bloodlung {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Bloodlung",
+			label="Bloodlung
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Abloodlung	[color=black,
+			fillcolor=gold,
+			href="#species-Abloodlung",
+			label="Abloodlung
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	Aair -> Abloodlung	[label=_J0];
+	Aart -> Arest	[label=_J3];
+	Aart -> Alung	[label=_J5];
+	Aven -> Aart	[label=_J7];
+	Aven -> Abloodlung	[label=_J2];
+	Arest -> Aven	[label=_J4];
+	Alung -> Aven	[label=_J6];
+	Abloodlung -> Aair	[label=_J8];
+	Abloodlung -> Aart	[label=_J1];
+}
