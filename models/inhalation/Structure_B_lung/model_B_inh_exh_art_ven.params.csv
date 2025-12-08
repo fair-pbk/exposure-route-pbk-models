@@ -1,0 +1,11 @@
+idModelInstance,Parameter,Value,Unit,Description,Reference
+inhalation_B_art_ven_PARAM,BW,70.0,kg,body weight,
+inhalation_B_art_ven_PARAM,sc_Vblood,0.074,L/kg,,
+inhalation_B_art_ven_PARAM,sc_Vrest,0.074,L/kg,,
+inhalation_B_art_ven_PARAM,sc_Vlung,0.05,L/kg,,
+inhalation_B_art_ven_PARAM,Falv,210.0,L/h,,
+inhalation_B_art_ven_PARAM,Vair,1.0,,,
+inhalation_B_art_ven_PARAM,Fabs,0.3,,,
+inhalation_B_art_ven_PARAM,k_lung_blood,0.5,dimensionless,,
+inhalation_B_art_ven_PARAM,k_rest_blood,0.5,dimensionless,,
+inhalation_B_art_ven_PARAM,PCAir,2000.0,dimensionless,,

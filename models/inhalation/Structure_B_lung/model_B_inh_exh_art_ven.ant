@@ -1,0 +1,114 @@
+// Created by libAntimony v2.15.0
+model *inhalation_B_art_ven()
+
+  // Compartments and Species:
+  compartment Air, Arterial, Venous, RestofBody, Lung;
+  substanceOnly species Aair in Air, Aart in Arterial, Aven in Venous, Arest in RestofBody, Alung in Lung;
+
+  // Assignment Rules:
+  Vblood := BW*sc_Vblood;
+  Vrest := BW*sc_Vrest;
+  Vlung := BW*sc_Vlung;
+  Vart := Vblood/3;
+  Vven := Vblood- Vart;
+
+
+  // Reactions:
+  _J0: Aair -> Alung; Falv*(Aair/Vair)*Fabs;
+  _J1: Alung -> Aart; Qlung*(Aart/Vart);
+  _J2: Aven -> Alung; Qlung*(Alung/Vlung)/k_lung_blood;
+  _J3: Aart -> Arest; Qrest*(Aart/Vart); 
+  _J4: Arest -> Aven ; Qrest*(Arest/Vrest)/k_rest_blood;
+  _J5: Aven -> Aart; CO*(Aven/Vven);
+  _J6: Alung -> Aair; Falv*(Alung/Vlung)/PCAir;
+
+// Initial values
+  Aair = 0; 
+  Aair has MicroGM_per_L;
+  Arest = 0;
+  Arest has MicroGM_per_L;
+  Alung = 0;
+  Alung has MicroGM_per_L;
+  Aart = 0;
+  Aart has MicroGM_per_L;
+  Aven = 0;
+  Aven has MicroGM_per_L;
+
+  // Compartment initializations:
+  Vair = 1;
+  Air has L;
+  Arterial has L;
+  Venous has L;
+  RestofBody has L;
+  Lung has L;
+  
+  // Variable initializations:
+#------------------------
+# Parameters
+#------------------------
+#------------------------
+# Body size & base volumes
+#------------------------
+
+  BW = 70;
+  BW has KiloGM;
+
+  sc_Vblood = 0.074; // blood volume as a fraction of body weight
+  sc_Vblood has L_PER_KiloGM;
+
+  sc_Vrest = 0.074; // rest of body volume as a fraction of body weight
+  sc_Vrest has L_PER_KiloGM;
+
+  sc_Vlung = 0.05; // lung volume as a fraction of body weight
+  sc_Vlung has L_PER_KiloGM;
+
+#------------------------
+# Plasma Flows
+#------------------------
+  CO = 12.5*BW^0.75;  # L/h (cardiac output)
+  CO has L_PER_HR;
+
+  Qrest = CO-Qlung; 
+  Qlung = CO; 
+
+   Falv = 210;
+   Falv has L_PER_HR;
+
+// Chemicals
+#------------------------
+# Chemicals
+#------------------------
+
+  Fabs = 0.3; 
+
+  k_rest_blood = 0.5;
+  k_rest_blood has UNITLESS;
+
+  k_lung_blood = 0.5;
+  k_lung_blood has UNITLESS;
+
+  PCAir = 2000;
+  PCAir has UNITLESS;
+
+  // Other declarations:
+  var Arterial, Venous, RestofBody, CO;
+  const Air, BW, sc_Vblood, sc_Vrest, sc_Vlung, k_rest_blood, k_lung_blood, PCAir;
+  const Falv, Fabs;
+
+  // Unit definitions:
+  unit MicroGM = 1e-6 gram;
+  unit HR = 3600 second;
+  unit L = litre;
+  unit KiloGM = 1e3 gram;
+  unit L_PER_KiloGM = litre / 1e3 gram;
+  unit L_PER_HR_PER_KiloGM0P75 = litre / (3600 second * (1e3 gram)^-0);
+  unit UNITLESS = dimensionless;
+  unit L_PER_HR = litre / 3600 second;
+  unit volume = L;
+  unit substance = MicroGM;
+  unit extent = MicroGM;
+  unit time_unit = HR;
+  unit MicroGM_per_L = 1e-6 gram / litre;
+
+
+end

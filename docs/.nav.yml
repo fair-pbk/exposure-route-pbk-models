@@ -4,4 +4,5 @@ nav:
   - Models:
       - models-overview.md
       - "models/oral"
+      - "models/inhalation"
   - About: about.md
