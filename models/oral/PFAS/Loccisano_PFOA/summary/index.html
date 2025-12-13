@@ -1324,7 +1324,7 @@
   <span class="md-ellipsis">
     
   
-    Deepika_PFOS_Human
+    Deepika2021_PFOS_Human
   
 
     
@@ -1503,17 +1503,6 @@
     <span class="md-ellipsis">
       
         Assignment rules
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#initial-assignments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Initial assignments
       
     </span>
   </a>
@@ -1776,6 +1765,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../../about/" class="md-nav__link">
         
   
@@ -1840,15 +1856,15 @@
 </tr>
 <tr>
 <td style="text-align: left;">Time resolution</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">h</td>
 </tr>
 <tr>
 <td style="text-align: left;">Amounts unit</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">ug</td>
 </tr>
 <tr>
 <td style="text-align: left;">Volume unit</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L</td>
 </tr>
 <tr>
 <td style="text-align: left;">Number of compartments</td>
@@ -1860,7 +1876,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Number of parameters</td>
-<td style="text-align: left;">25 (19 external / 6 internal)</td>
+<td style="text-align: left;">25 (11 external / 14 internal)</td>
 </tr>
 </tbody>
 </table>
@@ -2003,13 +2019,6 @@
 <p><span class="arithmatex">\(\frac{d[\mathtt{ARest}]}{dt} =  \mathit{QRest}\cdot \mathit{Free}\cdot \mathit{CPlasmaTotal}
               -  \frac{\mathit{QRest}\cdot \mathit{Free}\cdot \mathit{CRest}}{\mathit{PRest}}\)</span></p>
 <h2 id="assignment-rules">Assignment rules</h2>
-<p><span class="arithmatex">\(VRest =  0.84\cdot \mathit{BW}-\mathit{VL}-\mathit{VPlasma}-\mathit{VGI}\)</span></p>
-<p><span class="arithmatex">\(CGI =  \frac{\mathit{AGI}}{\mathit{GI}}\)</span></p>
-<p><span class="arithmatex">\(CLiver =  \frac{\mathit{ALiver}}{\mathit{Liver}}\)</span></p>
-<p><span class="arithmatex">\(CPlasma =  \frac{\mathit{APlasma}}{\mathit{Plasma}}\)</span></p>
-<p><span class="arithmatex">\(CPlasmaTotal =  \frac{\mathit{CPlasma}}{\mathit{Free}}\)</span></p>
-<p><span class="arithmatex">\(CRest =  \frac{\mathit{ARest}}{\mathit{Rest}}\)</span></p>
-<h2 id="initial-assignments">Initial assignments</h2>
 <p><span class="arithmatex">\(GI =  \mathit{VGI}\)</span></p>
 <p><span class="arithmatex">\(Liver =  \mathit{VL}\)</span></p>
 <p><span class="arithmatex">\(Plasma =  \mathit{VPlasma}\)</span></p>
@@ -2017,11 +2026,17 @@
 <p><span class="arithmatex">\(VL =  \mathit{VLc}\cdot \mathit{BW}\)</span></p>
 <p><span class="arithmatex">\(VPlasma =  \mathit{VPlasmac}\cdot \mathit{BW}\)</span></p>
 <p><span class="arithmatex">\(VGI =  \mathit{VGIc}\cdot \mathit{BW}\)</span></p>
+<p><span class="arithmatex">\(VRest =  0.84\cdot \mathit{BW}-\mathit{VL}-\mathit{VPlasma}-\mathit{VGI}\)</span></p>
 <p><span class="arithmatex">\(QC =  12.5\cdot {\mathit{BW}}^{0.75}\)</span></p>
 <p><span class="arithmatex">\(QPlasma =  \mathit{QC}\cdot (1-\mathit{Htc})\)</span></p>
 <p><span class="arithmatex">\(QL =  \mathit{QLc}\cdot \mathit{QPlasma}\)</span></p>
 <p><span class="arithmatex">\(QGI =  \mathit{QGIc}\cdot \mathit{QPlasma}\)</span></p>
 <p><span class="arithmatex">\(QRest =  \mathit{QPlasma}-\mathit{QL}-\mathit{QGI}\)</span></p>
+<p><span class="arithmatex">\(CGI =  \frac{\mathit{AGI}}{\mathit{GI}}\)</span></p>
+<p><span class="arithmatex">\(CLiver =  \frac{\mathit{ALiver}}{\mathit{Liver}}\)</span></p>
+<p><span class="arithmatex">\(CPlasma =  \frac{\mathit{APlasma}}{\mathit{Plasma}}\)</span></p>
+<p><span class="arithmatex">\(CPlasmaTotal =  \frac{\mathit{CPlasma}}{\mathit{Free}}\)</span></p>
+<p><span class="arithmatex">\(CRest =  \frac{\mathit{ARest}}{\mathit{Rest}}\)</span></p>
 <h2 id="parameters">Parameters</h2>
 <table>
 <thead>
