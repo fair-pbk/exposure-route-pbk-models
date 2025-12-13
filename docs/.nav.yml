@@ -7,4 +7,5 @@ nav:
       - "models/inhalation"
   - Simulations:
       - "simulation/oral"
+      - "simulation/inhalation"
   - About: about.md
