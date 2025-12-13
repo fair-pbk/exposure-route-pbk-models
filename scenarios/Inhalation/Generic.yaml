@@ -1,0 +1,67 @@
+id: Generic
+label: Generic
+model_instances:
+  - id: model_A_inh_exh_art_ven
+    label: model_A_inh_exh_art_ven
+    model_path: models/inhalation/Generic/Structure_A_direct_blood/model_A_inh_exh_art_ven.sbml
+    param_file: models/inhalation/Generic/Structure_A_direct_blood/model_A_inh_exh_art_ven.params.csv
+    target_mappings:
+      AAir: Aair
+      AVen: Aven
+#  - id: model_B_inh_exh_art_ven
+#    label: model_B_inh_exh_art_ven
+#    model_path: models/inhalation/Generic/Structure_B_lung/model_B_inh_exh_art_ven.sbml
+#    param_file: models/inhalation/Generic/Structure_B_lung/model_B_inh_exh_art_ven.params.csv
+#    target_mappings:
+#      AAir: Aair
+#      AVen: Aven
+#  - id: model_C_inh_exh_art_ven
+#    label: model_C_inh_exh_art_ven
+#    model_path: models/inhalation/Generic/Structure_C_alveolar_lung/model_C_inh_exh_art_ven.sbml
+#    param_file: models/inhalation/Generic/Structure_C_alveolar_lung/model_C_inh_exh_art_ven.params.csv
+#    target_mappings:
+#      AAir: Aair
+#      AVen: Aven
+
+scenarios:
+  - id: inhalation_single
+    label: Inhalation single exposure
+    time_unit: HOUR
+    amount_unit: MICROGRAMS
+    duration: 96
+    evaluation_resolution: 1
+    dosing_events:
+      - type: single_continuous
+        target: AAir
+        amount: 1
+        time: 12
+        duration: 8
+    comparisons:
+      - id: AAir
+        label: Amount in air
+        output: Aair
+      - id: AVen
+        label: Amount in venous blood
+        output: AVen
+  - id: inhalation_repeated
+    label: Inhalation repeated exposure
+    time_unit: HOUR
+    amount_unit: MICROGRAMS
+    duration: 96
+    evaluation_resolution: 1
+    dosing_events:
+      - type: repeated_continuous
+        target: AAir
+        amount: 1
+        time: 12
+        duration: 8
+        interval: 24
+        until: 96
+    comparisons:
+      - id: AAir
+        label: Amount in air
+        output: Aair
+      - id: AVen
+        label: Amount in venous blood
+        output: AVen
+

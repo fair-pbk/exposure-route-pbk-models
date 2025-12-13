@@ -1,0 +1,106 @@
+model Inhalation_A_art_ven()
+
+#------------------------
+# Body size & base volumes
+#------------------------
+
+BW = 70;
+BW has KiloGM;
+
+sc_Vblood = 0.074           # Blood volume as a fraction of body weight
+sc_Vblood has L_PER_KiloGM
+
+sc_Vrest = 0.074            # Rest of body volume as a fraction of body weight
+sc_Vrest has L_PER_KiloGM
+
+Vblood := BW * sc_Vblood
+Vrest := BW * sc_Vrest
+Vart := Vblood / 3
+Vven := Vblood - Vart
+Vair = 1
+
+#------------------------
+# Plasma Flows
+#------------------------
+
+CO = 12.5 * BW^0.75         # L/h (cardiac output)
+CO has L_PER_HR
+
+Qrest = CO
+
+Falv = 210
+Falv has L_PER_HR
+
+#------------------------
+# Chemicals
+#------------------------
+
+Fabs = 0.3
+k_rest_blood = 0.5
+k_rest_blood has UNITLESS;
+PCAir = 2000
+PCAir has UNITLESS
+
+#------------------------
+# Compartments (sizes)
+#------------------------
+compartment Air = Vair
+compartment Arterial := Vart
+compartment Venous := Vven
+compartment RestofBody := Vrest
+
+Air has L
+Arterial has L
+Venous has L
+RestofBody has L
+
+#------------------------
+# Species (amount states)
+#------------------------
+substanceOnly species Aair in Air
+substanceOnly Aart in Arterial
+substanceOnly Aven in Venous
+substanceOnly Arest in RestofBody
+
+#------------------------
+# Initial conditions
+#------------------------
+Aair = 0
+Arest = 0
+Aart = 0
+Aven = 0
+
+Aair has MicroGM_per_L
+Arest has MicroGM_per_L
+Aart has MicroGM_per_L
+Aven has MicroGM_per_L
+
+#------------------------
+# Reactions / Transfers
+#------------------------
+
+Aair -> Aart;   Falv * (Aair / Vair) * Fabs
+Aart -> Arest;  Qrest * (Aart / Vart)
+Arest -> Aven;  Qrest * (Arest / Vrest) / k_rest_blood
+Aven -> Aart;   CO * (Aven / Vven)
+Aart -> Aair;   Falv * (Aart / Vart) / PCAir
+
+#------------------------
+# Unit definitions
+#------------------------
+
+unit MicroGM = 1e-6 gram;
+unit HR = 3600 second;
+unit L = litre;
+unit KiloGM = 1e3 gram;
+unit L_PER_KiloGM = litre / 1e3 gram;
+unit L_PER_HR_PER_KiloGM0P75 = litre / (3600 second * (1e3 gram)^-0);
+unit UNITLESS = dimensionless;
+unit L_PER_HR = litre / 3600 second;
+unit volume = L;
+unit substance = MicroGM;
+unit extent = MicroGM;
+unit time_unit = HR;
+unit MicroGM_per_L = 1e-6 gram / litre;
+
+end
