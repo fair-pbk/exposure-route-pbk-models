@@ -1,0 +1,291 @@
+file,id,name,bqm_is_class_id,bqm_is_class_label,bqm_is_class_iri
+model_C_inh_exh_art_ven.sbml,Aair,,,,
+model_C_inh_exh_art_ven.sbml,Aart,,,,
+model_C_inh_exh_art_ven.sbml,Aven,amount of chemical in venous blood,,,
+model_C_inh_exh_art_ven.sbml,Arest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+model_C_inh_exh_art_ven.sbml,Alung,,,,
+model_C_inh_exh_art_ven.sbml,Abloodlung,,,,
+model_B_inh_exh_art_ven.sbml,Aair,,,,
+model_B_inh_exh_art_ven.sbml,Aart,,,,
+model_B_inh_exh_art_ven.sbml,Aven,amount of chemical in venous blood,,,
+model_B_inh_exh_art_ven.sbml,Arest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+model_B_inh_exh_art_ven.sbml,Alung,,,,
+model_A_inh_exh_art_ven.sbml,Aair,,,,
+model_A_inh_exh_art_ven.sbml,Aart,,,,
+model_A_inh_exh_art_ven.sbml,Aven,amount of chemical in venous blood,,,
+model_A_inh_exh_art_ven.sbml,Arest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Wang.sbml,ASt,,,,
+Wang.sbml,AJ,,,,
+Wang.sbml,AI,,,,
+Wang.sbml,ALI,,,,
+Wang.sbml,AIT,,,,
+Wang.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Wang.sbml,ABlood,amount of chemical in blood,,,
+Wang.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Wang.sbml,AMet,,,,
+Mendez_Catala.sbml,ASt,,,,
+Mendez_Catala.sbml,ASI1,,,,
+Mendez_Catala.sbml,ASI2,,,,
+Mendez_Catala.sbml,ASI3,,,,
+Mendez_Catala.sbml,ASI4,,,,
+Mendez_Catala.sbml,ASI5,,,,
+Mendez_Catala.sbml,ASI6,,,,
+Mendez_Catala.sbml,ASI7,,,,
+Mendez_Catala.sbml,ALI1,,,,
+Mendez_Catala.sbml,ASITissue,,,,
+Mendez_Catala.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Mendez_Catala.sbml,ABlood,amount of chemical in blood,,,
+Mendez_Catala.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Mendez_Catala.sbml,AFeaces,,,,
+Mendez_Catala.sbml,ASITissueMet1,,,,
+Mendez_Catala.sbml,ALI1Met2,,,,
+Mendez_Catala.sbml,ALI1Met3,,,,
+Mendez_Catala.sbml,ALiverMet2,,,,
+Mendez_Catala.sbml,ALiverMet3,,,,
+Mendez_Catala.sbml,ALiverMet1,,,,
+Gilbert_Sandoval.sbml,ASt,,,,
+Gilbert_Sandoval.sbml,ASI1,,,,
+Gilbert_Sandoval.sbml,ASI2,,,,
+Gilbert_Sandoval.sbml,ASI3,,,,
+Gilbert_Sandoval.sbml,ASI4,,,,
+Gilbert_Sandoval.sbml,ASI5,,,,
+Gilbert_Sandoval.sbml,ASI6,,,,
+Gilbert_Sandoval.sbml,ASI7,,,,
+Gilbert_Sandoval.sbml,AColon,,,,
+Gilbert_Sandoval.sbml,AFeaces,,,,
+Gilbert_Sandoval.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Gilbert_Sandoval.sbml,ABlood,amount of chemical in blood,,,
+Gilbert_Sandoval.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Gilbert_Sandoval.sbml,ALiverMet1,,,,
+Gilbert_Sandoval.sbml,ALiverMet2,,,,
+Notenboom.sbml,ALumen,,,,
+Notenboom.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Notenboom.sbml,ABlood,amount of chemical in blood,,,
+Notenboom.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Notenboom.sbml,ALiverMet1,,,,
+Notenboom.sbml,ALiverMet2,,,,
+Mukherjee.sbml,AGILumen,,,,
+Mukherjee.sbml,AFast,,,,
+Mukherjee.sbml,ASlow,,,,
+Mukherjee.sbml,AColon,,,,
+Mukherjee.sbml,AGut,amount of chemical in gut,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Mukherjee.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Mukherjee.sbml,ABlood,amount of chemical in blood,,,
+Mukherjee.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Mukherjee.sbml,ASt,,,,
+Mukherjee.sbml,ASpleen,,,,
+Mukherjee.sbml,ABile,,,,
+Mukherjee.sbml,AFeces,,,,
+Mukherjee.sbml,ALiverMet1,,,,
+Mukherjee.sbml,ALiverMet2,,,,
+Mukherjee.sbml,ALiverMet3,,,,
+Mukherjee.sbml,ALiverMet4,,,,
+Loizou.sbml,AStomach,,,,
+Loizou.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Loizou.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Loizou.sbml,AGut,amount of chemical in gut,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Loizou.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Loizou.sbml,AGutMet1,,,,
+Loizou.sbml,ALiverMet1,,,,
+Loizou.sbml,ALiverMet2,,,,
+Hu.sbml,AStomach,,,,
+Hu.sbml,ASI,,,,
+Hu.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Hu.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Hu.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Hu.sbml,AGILumen,,,,
+Hu.sbml,AFeces,,,,
+Hu.sbml,ASIMet1,,,,
+Hu.sbml,ASIMet2,,,,
+Hu.sbml,ALiverMet1,,,,
+Hu.sbml,ALiverMet2,,,,
+Hu.sbml,APVMet1,,,,
+Hu.sbml,APVMet2,,,,
+Hu.sbml,AGILumenMet1,,,,
+Hu.sbml,AGILumenMet2,,,,
+Hu.sbml,APlasmaMet1,,,,
+Hu.sbml,APlasmaMet2,,,,
+Hu.sbml,AFecesMet1,,,,
+Hu.sbml,AFecesMet2,,,,
+Sharma.sbml,AStomach,,,,
+Sharma.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Sharma.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Sharma.sbml,AGut,amount of chemical in gut,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Sharma.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Sharma.sbml,AGutMet1,,,,
+Sharma.sbml,ALiverMet1,,,,
+Sharma.sbml,ALiverMet2,,,,
+Teeguarden.sbml,AGILumen,,,,
+Teeguarden.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Teeguarden.sbml,ABlood,amount of chemical in blood,,,
+Teeguarden.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Teeguarden.sbml,ALiverMet,,,,
+Teeguarden.sbml,AGILumenMet,,,,
+Teeguarden.sbml,ABloodMet,,,,
+Teeguarden.sbml,AFecesMet,,,,
+Mielke.sbml,AGut,amount of chemical in gut,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Mielke.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Mielke.sbml,ABlood,amount of chemical in blood,,,
+Mielke.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Mielke.sbml,ALiverMet1,,,,
+Mielke.sbml,ALiverMet2,,,,
+Moreau.sbml,ASt,,,,
+Moreau.sbml,ADuodenum,,,,
+Moreau.sbml,AGITissue,,,,
+Moreau.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Moreau.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Moreau.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Moreau.sbml,ALiverMet,,,,
+Moreau.sbml,APlasmaMet,,,,
+Karrer.sbml,AStomach,,,,
+Karrer.sbml,ASI,,,,
+Karrer.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Karrer.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Karrer.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Karrer.sbml,AGILumen,,,,
+Karrer.sbml,AFeces,,,,
+Karrer.sbml,ASIMet1,,,,
+Karrer.sbml,ASIMet2,,,,
+Karrer.sbml,ALiverMet1,,,,
+Karrer.sbml,ALiverMet2,,,,
+Karrer.sbml,APVMet1,,,,
+Karrer.sbml,APVMet2,,,,
+Karrer.sbml,AGILumenMet1,,,,
+Karrer.sbml,AGILumenMet2,,,,
+Karrer.sbml,APlasmaMet1,,,,
+Karrer.sbml,APlasmaMet2,,,,
+Karrer.sbml,AFecesMet1,,,,
+Karrer.sbml,AFecesMet2,,,,
+Shin.sbml,ASt,,,,
+Shin.sbml,AIL,,,,
+Shin.sbml,ASpleen,,,,
+Shin.sbml,ASI,,,,
+Shin.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Shin.sbml,ABlood,amount of chemical in blood,,,
+Shin.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Shin.sbml,AMet,,,,
+Deepika.sbml,AStomach,,,,
+Deepika.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Deepika.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Deepika.sbml,AGut,amount of chemical in gut,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Deepika.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Deepika.sbml,AGutMet1,,,,
+Deepika.sbml,ALiverMet1,,,,
+Deepika.sbml,ALiverMet2,,,,
+Yang.sbml,AStomach,,,,
+Yang.sbml,ASI,,,,
+Yang.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Yang.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Yang.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Yang.sbml,AGILumen,,,,
+Yang.sbml,AFeces,,,,
+Yang.sbml,ASIMet1,,,,
+Yang.sbml,ASIMet2,,,,
+Yang.sbml,ALiverMet1,,,,
+Yang.sbml,ALiverMet2,,,,
+Yang.sbml,APVMet1,,,,
+Yang.sbml,APVMet2,,,,
+Yang.sbml,AGILumenMet1,,,,
+Yang.sbml,AGILumenMet2,,,,
+Yang.sbml,APlasmaMet1,,,,
+Yang.sbml,APlasmaMet2,,,,
+Yang.sbml,AFecesMet1,,,,
+Yang.sbml,AFecesMet2,,,,
+KjellstromCd.sbml,AGI,,,,
+KjellstromCd.sbml,ATI,,,,
+KjellstromCd.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+KjellstromCd.sbml,AKidney,amount of chemical in kidney,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498
+KjellstromCd.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+KjellstromCd.sbml,ARBC,,,,
+KjellstromCd.sbml,AMetallothionein,,,,
+KjellstromCd.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+KjellstromCd.sbml,ADaily_Uptake,,,,
+BechauxCd_Male.sbml,AGI,,,,
+BechauxCd_Male.sbml,ATI,,,,
+BechauxCd_Male.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+BechauxCd_Male.sbml,AKidney,amount of chemical in kidney,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498
+BechauxCd_Male.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+BechauxCd_Male.sbml,ARBC,,,,
+BechauxCd_Male.sbml,AMetallothionein,,,,
+BechauxCd_Male.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+BechauxCd_Male.sbml,ADaily_Uptake,,,,
+BechauxCd_Female.sbml,AGI,,,,
+BechauxCd_Female.sbml,ATI,,,,
+BechauxCd_Female.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+BechauxCd_Female.sbml,AKidney,amount of chemical in kidney,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498
+BechauxCd_Female.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+BechauxCd_Female.sbml,ARBC,,,,
+BechauxCd_Female.sbml,AMetallothionein,,,,
+BechauxCd_Female.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+BechauxCd_Female.sbml,ADaily_Uptake,,,,
+Carrier2001_Hg.sbml,AGI,,,,
+Carrier2001_Hg.sbml,ABlood,amount of chemical in blood,,,
+Carrier2001_Hg.sbml,ALiver_Met,,,,
+OFlaherty2000_Pb.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+OFlaherty2000_Pb.sbml,ABlood,amount of chemical in blood,,,
+OFlaherty2000_Pb.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+RuizCd_Male.sbml,AGI,,,,
+RuizCd_Male.sbml,ATI,,,,
+RuizCd_Male.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+RuizCd_Male.sbml,AKidney,amount of chemical in kidney,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498
+RuizCd_Male.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+RuizCd_Male.sbml,ARBC,,,,
+RuizCd_Male.sbml,AMetallothionein,,,,
+RuizCd_Male.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+RuizCd_Male.sbml,ADaily_Uptake,,,,
+RuizCd_Female.sbml,AGI,,,,
+RuizCd_Female.sbml,ATI,,,,
+RuizCd_Female.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+RuizCd_Female.sbml,AKidney,amount of chemical in kidney,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498
+RuizCd_Female.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+RuizCd_Female.sbml,ARBC,,,,
+RuizCd_Female.sbml,AMetallothionein,,,,
+RuizCd_Female.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+RuizCd_Female.sbml,ADaily_Uptake,,,,
+Tebby2022_Pb.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Tebby2022_Pb.sbml,ABlood,amount of chemical in blood,,,
+Tebby2022_Pb.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+PouillotCd.sbml,AGI,,,,
+PouillotCd.sbml,ATI,,,,
+PouillotCd.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+PouillotCd.sbml,AKidney,amount of chemical in kidney,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498
+PouillotCd.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+PouillotCd.sbml,ARBC,,,,
+PouillotCd.sbml,AMetallothionein,,,,
+PouillotCd.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+PouillotCd.sbml,ADaily_Uptake,,,,
+ChouLin.sbml,AStomach,,,,
+ChouLin.sbml,ASI,,,,
+ChouLin.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+ChouLin.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+ChouLin.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+ChouLin.sbml,AFeces,,,,
+LoccisanoPFOA.sbml,AGI,,,,
+LoccisanoPFOA.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+LoccisanoPFOA.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+LoccisanoPFOA.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Husoy.sbml,AGI,,,,
+Husoy.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Husoy.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Husoy.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Husoy.sbml,AFeces,,,,
+Chen.sbml,AStomach,,,,
+Chen.sbml,ASI,,,,
+Chen.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Chen.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Chen.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Chen.sbml,AFeces,,,,
+Deepika.sbml,AGI,,,,
+Deepika.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Deepika.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Deepika.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+LoccisanoPFOS.sbml,AGI,,,,
+LoccisanoPFOS.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+LoccisanoPFOS.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+LoccisanoPFOS.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Worley.sbml,AStomach,,,,
+Worley.sbml,ASI,,,,
+Worley.sbml,ALiver,amount of chemical in liver,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Worley.sbml,APlasma,amount of chemical in plasma,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Worley.sbml,ARest,amount of chemical in rest-of-body,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Worley.sbml,AFeces,,,,
