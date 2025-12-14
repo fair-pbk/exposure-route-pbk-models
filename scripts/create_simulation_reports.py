@@ -1,7 +1,8 @@
 import os
 import logging
 import glob
-from docs.doc_utils import render_template
+
+from docs.utils import render_template
 from simulation.simulation import load_config
 
 CONFIGS_PATH = './scenarios/'

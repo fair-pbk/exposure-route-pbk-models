@@ -1,18 +1,15 @@
 import os
 import glob
+import logging
+from pathlib import Path
 import uuid
 import tellurium as te
 import libsbml as ls
-import logging
-from pathlib import Path
+from sbmlpbkutils import PbkModelValidator, AnnotationsTemplateGenerator, PbkModelAnnotator,\
+    ParametrisationsTemplateGenerator
 
-from sbmlpbkutils import PbkModelValidator
-from sbmlpbkutils import AnnotationsTemplateGenerator
-from sbmlpbkutils import PbkModelAnnotator
-from sbmlpbkutils import ParametrisationsTemplateGenerator
-
-models_path = './models/'
-output_path = './models/'
+MODELS_PATH = './models/'
+OUTPUT_PATH = './models/'
 
 # Configure logger for formatted console output
 console_logger = logging.getLogger('compile_models')
@@ -43,7 +40,7 @@ def compile_model(file: str):
         file_dir = os.path.dirname(file)
 
         # Create output directory if it does not exist
-        output_dir = os.path.join(output_path, os.path.relpath(file_dir, models_path))
+        output_dir = os.path.join(OUTPUT_PATH, os.path.relpath(file_dir, MODELS_PATH))
         os.makedirs(output_dir, exist_ok=True)
 
         # Convert Antimony to SBML
@@ -97,7 +94,7 @@ def compile_model(file: str):
             )
             model = document.getModel()
             parametrisations_template_generator = ParametrisationsTemplateGenerator()
-            (instances, parametrisations) = parametrisations_template_generator.generate(model)
+            (_, parametrisations) = parametrisations_template_generator.generate(model)
             parametrisations.to_csv(parametrisation_file, index=False)
 
         # Validate annotated SBML file

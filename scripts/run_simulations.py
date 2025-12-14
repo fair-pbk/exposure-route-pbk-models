@@ -1,7 +1,7 @@
 import glob
 import os
 import logging
-from docs.doc_utils import render_template
+from docs.utils import render_template
 from simulation.simulation import run_config
 from simulation.simulation import load_config
 
