@@ -1,6 +1,6 @@
 python-libsbml>=5.20.5
 sbmlutils>=0.9.0
-sbmlpbkutils @ git+https://github.com/jwkruisselbrink/sbml-pbk-utils.git@v0.32.0
+sbmlpbkutils @ git+https://github.com/jwkruisselbrink/sbml-pbk-utils.git@v0.35.0
 tellurium>=2.2.11.1
 antimony>=3.1.0
 seaborn==0.13.2

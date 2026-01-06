@@ -27,10 +27,10 @@
 {% endfor %}
 
 ### Comparisons
-{%- for comparison in scenario.comparisons %}
+{%- for output in scenario.outputs %}
 
-#### {{ comparison.label }}
+#### {{ output.label }}
 
-![simulation timeseries {{comparison.label}}]({{scenario.id}}-{{comparison.id}}.png)
+![simulation timeseries {{output.label}}]({{scenario.id}}_{{output.id}}.png)
 {% endfor -%}
 {% endfor %}

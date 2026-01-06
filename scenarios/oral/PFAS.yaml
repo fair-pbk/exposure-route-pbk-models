@@ -49,21 +49,23 @@ scenarios:
     label: Oral single dose
     duration: 4
     evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MICROGRAMS
     dosing_events:
       - type: single_bolus
         target: AGut
         amount: 1
         time: 1
-    comparisons:
+    outputs:
       - id: APlasma
         label: Amount in plasma
         output: APlasma
-    time_unit: DAY
-    amount_unit: MICROGRAMS
   - id: oral_repeated
     label: Oral repeated dose
     duration: 10
     evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MICROGRAMS
     dosing_events:
       - type: repeated_bolus
         target: AGut
@@ -71,9 +73,7 @@ scenarios:
         time: 0
         interval: 1
         until: 10
-    comparisons:
+    outputs:
       - id: APlasma
         label: Amount in plasma
         output: APlasma
-    time_unit: DAY
-    amount_unit: MICROGRAMS

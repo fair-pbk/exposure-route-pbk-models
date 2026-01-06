@@ -2,8 +2,7 @@ import glob
 import os
 import logging
 from docs.utils import render_template
-from simulation.simulation import run_config
-from simulation.simulation import load_config
+from sbmlpbkutils import load_config, run_config, plot_simulation_results
 
 CONFIGS_PATH = './scenarios/'
 OUTPUT_PATH = 'docs/simulation'
@@ -36,7 +35,14 @@ def create_simulation_reports(force_recompute: bool):
         run_config(
             config = config,
             out_path = out_path,
+            logger = console_logger,
             force_recompute = force_recompute
+        )
+
+        # Plot simulation results
+        plot_simulation_results(
+            config = config,
+            out_path = out_path
         )
 
         # Rendering report
