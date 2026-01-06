@@ -160,11 +160,15 @@ def create_model_report(sbml_file: str):
             f.write("\n\n")
 
         # Write assignment rules
-        initial_assignments = generator.get_initial_assigments_as_str(RenderMode.LATEX)
+        initial_assignments = generator.get_initial_assigments_as_str(RenderMode.TEXT)
         if len(initial_assignments) > 0:
             f.write("## Initial assignments\n\n")
-            for _, equation in initial_assignments.items():
-                f.write(f"${equation}$\n\n")
+            table = pd.DataFrame({
+                'variable': [ key for key, _ in initial_assignments.items() ],
+                'assignment': [ equation for _, equation in initial_assignments.items() ]
+            })
+            f.write(table.to_markdown(index=False))
+            f.write("\n\n")
 
         # Write functions
         function_defs = generator.get_function_as_str(RenderMode.LATEX)
