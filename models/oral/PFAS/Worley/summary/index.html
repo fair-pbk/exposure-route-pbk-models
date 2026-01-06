@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2166,20 +2166,72 @@
 </tbody>
 </table>
 <h2 id="initial-assignments">Initial assignments</h2>
-<p><span class="arithmatex">\(Liver =  \mathit{VL}\)</span></p>
-<p><span class="arithmatex">\(Plasma =  \mathit{VPlasma}\)</span></p>
-<p><span class="arithmatex">\(Rest =  \mathit{VRest}\)</span></p>
-<p><span class="arithmatex">\(VL =  \mathit{VLc}\cdot \mathit{BW}\)</span></p>
-<p><span class="arithmatex">\(VPlasma =  \mathit{VPlasmac}\cdot \mathit{BW}\)</span></p>
-<p><span class="arithmatex">\(QC =  12.5\cdot {\mathit{BW}}^{0.75}\)</span></p>
-<p><span class="arithmatex">\(QCP =  \mathit{QC}\cdot (1-\mathit{Htc})\)</span></p>
-<p><span class="arithmatex">\(QL =  \mathit{QLc}\cdot \mathit{QCP}\)</span></p>
-<p><span class="arithmatex">\(QRest =  \mathit{QCP}-\mathit{QL}\)</span></p>
-<p><span class="arithmatex">\(ksto =  \mathit{kstoC}\cdot {\mathit{BW}}^{-0.25}\)</span></p>
-<p><span class="arithmatex">\(kabs =  \mathit{kabsC}\cdot {\mathit{BW}}^{-0.25}\)</span></p>
-<p><span class="arithmatex">\(k0 =  \mathit{k0C}\cdot {\mathit{BW}}^{-0.25}\)</span></p>
-<p><span class="arithmatex">\(kfe =  \mathit{kfeC}\cdot {\mathit{BW}}^{-0.25}\)</span></p>
-<p><span class="arithmatex">\(kbiliary =  \mathit{kbiliaryC}\cdot {\mathit{BW}}^{-0.25}\)</span></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">variable</th>
+<th style="text-align: left;">assignment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Liver</td>
+<td style="text-align: left;">Liver = VL</td>
+</tr>
+<tr>
+<td style="text-align: left;">Plasma</td>
+<td style="text-align: left;">Plasma = VPlasma</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rest</td>
+<td style="text-align: left;">Rest = VRest</td>
+</tr>
+<tr>
+<td style="text-align: left;">VL</td>
+<td style="text-align: left;">VL = VLc * BW</td>
+</tr>
+<tr>
+<td style="text-align: left;">VPlasma</td>
+<td style="text-align: left;">VPlasma = VPlasmac * BW</td>
+</tr>
+<tr>
+<td style="text-align: left;">QC</td>
+<td style="text-align: left;">QC = 12.5 * pow(BW, 0.75)</td>
+</tr>
+<tr>
+<td style="text-align: left;">QCP</td>
+<td style="text-align: left;">QCP = QC * (1 - Htc)</td>
+</tr>
+<tr>
+<td style="text-align: left;">QL</td>
+<td style="text-align: left;">QL = QLc * QCP</td>
+</tr>
+<tr>
+<td style="text-align: left;">QRest</td>
+<td style="text-align: left;">QRest = QCP - QL</td>
+</tr>
+<tr>
+<td style="text-align: left;">ksto</td>
+<td style="text-align: left;">ksto = kstoC * pow(BW, -0.25)</td>
+</tr>
+<tr>
+<td style="text-align: left;">kabs</td>
+<td style="text-align: left;">kabs = kabsC * pow(BW, -0.25)</td>
+</tr>
+<tr>
+<td style="text-align: left;">k0</td>
+<td style="text-align: left;">k0 = k0C * pow(BW, -0.25)</td>
+</tr>
+<tr>
+<td style="text-align: left;">kfe</td>
+<td style="text-align: left;">kfe = kfeC * pow(BW, -0.25)</td>
+</tr>
+<tr>
+<td style="text-align: left;">kbiliary</td>
+<td style="text-align: left;">kbiliary = kbiliaryC * pow(BW, -0.25)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="parameters">Parameters</h2>
 <table>
 <thead>
@@ -2416,10 +2468,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["toc.integrate"], "search": "../../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["toc.integrate"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       

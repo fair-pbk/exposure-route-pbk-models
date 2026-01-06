@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2224,23 +2224,84 @@
 </tbody>
 </table>
 <h2 id="initial-assignments">Initial assignments</h2>
-<p><span class="arithmatex">\(Spleen =  \mathit{VSpleen}\)</span></p>
-<p><span class="arithmatex">\(SmallIntestine =  \mathit{VSI}\)</span></p>
-<p><span class="arithmatex">\(Liver =  \mathit{VL}\)</span></p>
-<p><span class="arithmatex">\(Blood =  \mathit{VB}\)</span></p>
-<p><span class="arithmatex">\(Rest =  \mathit{VRest}\)</span></p>
-<p><span class="arithmatex">\(VL =  \frac{1700}{1000}\)</span></p>
-<p><span class="arithmatex">\(VB =  \frac{5530}{1000}\)</span></p>
-<p><span class="arithmatex">\(VSt =  \frac{200}{1000}\)</span></p>
-<p><span class="arithmatex">\(VSpleen =  \frac{200}{1000}\)</span></p>
-<p><span class="arithmatex">\(VSI =  \frac{1700}{1000}\)</span></p>
-<p><span class="arithmatex">\(QC =  15\cdot {\mathit{BW}}^{0.75}\)</span></p>
-<p><span class="arithmatex">\(QL =  \frac{1646.7}{1000}\cdot 60\)</span></p>
-<p><span class="arithmatex">\(QSpleen =  \frac{76.7}{1000}\cdot 60\)</span></p>
-<p><span class="arithmatex">\(QSt =  \frac{38.3}{1000}\cdot 60\)</span></p>
-<p><span class="arithmatex">\(QSI =  \frac{1100}{1000}\cdot 60\)</span></p>
-<p><span class="arithmatex">\(QRest =  \mathit{QC}-\mathit{QL}-\mathit{QSpleen}-\mathit{QSt}-\mathit{QSI}\)</span></p>
-<p><span class="arithmatex">\(kabs =  0.0006\cdot 60\)</span></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">variable</th>
+<th style="text-align: left;">assignment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Spleen</td>
+<td style="text-align: left;">Spleen = VSpleen</td>
+</tr>
+<tr>
+<td style="text-align: left;">SmallIntestine</td>
+<td style="text-align: left;">SmallIntestine = VSI</td>
+</tr>
+<tr>
+<td style="text-align: left;">Liver</td>
+<td style="text-align: left;">Liver = VL</td>
+</tr>
+<tr>
+<td style="text-align: left;">Blood</td>
+<td style="text-align: left;">Blood = VB</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rest</td>
+<td style="text-align: left;">Rest = VRest</td>
+</tr>
+<tr>
+<td style="text-align: left;">VL</td>
+<td style="text-align: left;">VL = 1700 / 1000</td>
+</tr>
+<tr>
+<td style="text-align: left;">VB</td>
+<td style="text-align: left;">VB = 5530 / 1000</td>
+</tr>
+<tr>
+<td style="text-align: left;">VSt</td>
+<td style="text-align: left;">VSt = 200 / 1000</td>
+</tr>
+<tr>
+<td style="text-align: left;">VSpleen</td>
+<td style="text-align: left;">VSpleen = 200 / 1000</td>
+</tr>
+<tr>
+<td style="text-align: left;">VSI</td>
+<td style="text-align: left;">VSI = 1700 / 1000</td>
+</tr>
+<tr>
+<td style="text-align: left;">QC</td>
+<td style="text-align: left;">QC = 15 * pow(BW, 0.75)</td>
+</tr>
+<tr>
+<td style="text-align: left;">QL</td>
+<td style="text-align: left;">QL = 1646.7 / 1000 * 60</td>
+</tr>
+<tr>
+<td style="text-align: left;">QSpleen</td>
+<td style="text-align: left;">QSpleen = 76.7 / 1000 * 60</td>
+</tr>
+<tr>
+<td style="text-align: left;">QSt</td>
+<td style="text-align: left;">QSt = 38.3 / 1000 * 60</td>
+</tr>
+<tr>
+<td style="text-align: left;">QSI</td>
+<td style="text-align: left;">QSI = 1100 / 1000 * 60</td>
+</tr>
+<tr>
+<td style="text-align: left;">QRest</td>
+<td style="text-align: left;">QRest = QC - QL - QSpleen - QSt - QSI</td>
+</tr>
+<tr>
+<td style="text-align: left;">kabs</td>
+<td style="text-align: left;">kabs = 0.0006 * 60</td>
+</tr>
+</tbody>
+</table>
 <h2 id="parameters">Parameters</h2>
 <table>
 <thead>
@@ -2477,10 +2538,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["toc.integrate"], "search": "../../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["toc.integrate"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       

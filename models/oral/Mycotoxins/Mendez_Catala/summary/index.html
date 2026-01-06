@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2610,25 +2610,92 @@
 </tbody>
 </table>
 <h2 id="initial-assignments">Initial assignments</h2>
-<p><span class="arithmatex">\(SI1 =  \mathit{VSI1}\)</span></p>
-<p><span class="arithmatex">\(SI2 =  \mathit{VSI2}\)</span></p>
-<p><span class="arithmatex">\(SI3 =  \mathit{VSI3}\)</span></p>
-<p><span class="arithmatex">\(SI4 =  \mathit{VSI4}\)</span></p>
-<p><span class="arithmatex">\(SI5 =  \mathit{VSI5}\)</span></p>
-<p><span class="arithmatex">\(SI6 =  \mathit{VSI6}\)</span></p>
-<p><span class="arithmatex">\(SI7 =  \mathit{VSI7}\)</span></p>
-<p><span class="arithmatex">\(kabsLI =  \mathit{Papp\_in\_vivo}\cdot \mathit{SAinb}\)</span></p>
-<p><span class="arithmatex">\(SI =  \mathit{VSITissuec}\cdot 1000\)</span></p>
-<p><span class="arithmatex">\(VmaxSIMet1 =  \frac{\mathit{VmaxSIMet1c}}{1000\cdot 60\cdot \mathit{S9SI}\cdot \mathit{SI}\cdot \mathit{BW}}\)</span></p>
-<p><span class="arithmatex">\(VmaxLIMet2 =  \frac{\mathit{VmaxLIMet2c}}{1000000}\cdot 1000\cdot \mathit{VMB}\cdot \mathit{BW}\)</span></p>
-<p><span class="arithmatex">\(VmaxLIMet3 =  \frac{\mathit{VmaxLIMet3c}}{1000000}\cdot 1000\cdot \mathit{VMB}\cdot \mathit{BW}\)</span></p>
-<p><span class="arithmatex">\(L =  \mathit{VLc}\cdot 1000\)</span></p>
-<p><span class="arithmatex">\(VmaxLMet2 =  \frac{\mathit{VmaxLMet2c}}{1000000}\cdot 60\cdot \mathit{VLS9}\cdot \mathit{L}\cdot \mathit{BW}\)</span></p>
-<p><span class="arithmatex">\(VmaxLMet3 =  \frac{\mathit{VmaxLMet3c}}{1000000}\cdot 60\cdot \mathit{VLS9}\cdot \mathit{L}\cdot \mathit{BW}\)</span></p>
-<p><span class="arithmatex">\(VmaxLMet1 =  \frac{\mathit{VmaxLMet1c}}{1000}\cdot 60\cdot \mathit{VLS9}\cdot \mathit{L}\cdot \mathit{BW}\)</span></p>
-<p><span class="arithmatex">\(LiverMet2 =  \frac{\mathit{VmaxLMet2}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}}{\mathit{KmLMet2}+\frac{\mathit{CLiver}}{\mathit{PL}}}\)</span></p>
-<p><span class="arithmatex">\(LiverMet3 =  \frac{\mathit{VmaxLMet3}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}}{\mathit{KmLMet3}+\frac{\mathit{CLiver}}{\mathit{PL}}}\)</span></p>
-<p><span class="arithmatex">\(LiverMet1 =  \frac{\mathit{VmaxLMet1}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}}{\mathit{KmLMet1}+\frac{\mathit{CLiver}}{\mathit{PL}}}\)</span></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">variable</th>
+<th style="text-align: left;">assignment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">SI1</td>
+<td style="text-align: left;">SI1 = VSI1</td>
+</tr>
+<tr>
+<td style="text-align: left;">SI2</td>
+<td style="text-align: left;">SI2 = VSI2</td>
+</tr>
+<tr>
+<td style="text-align: left;">SI3</td>
+<td style="text-align: left;">SI3 = VSI3</td>
+</tr>
+<tr>
+<td style="text-align: left;">SI4</td>
+<td style="text-align: left;">SI4 = VSI4</td>
+</tr>
+<tr>
+<td style="text-align: left;">SI5</td>
+<td style="text-align: left;">SI5 = VSI5</td>
+</tr>
+<tr>
+<td style="text-align: left;">SI6</td>
+<td style="text-align: left;">SI6 = VSI6</td>
+</tr>
+<tr>
+<td style="text-align: left;">SI7</td>
+<td style="text-align: left;">SI7 = VSI7</td>
+</tr>
+<tr>
+<td style="text-align: left;">kabsLI</td>
+<td style="text-align: left;">kabsLI = Papp_in_vivo * SAinb</td>
+</tr>
+<tr>
+<td style="text-align: left;">SI</td>
+<td style="text-align: left;">SI = VSITissuec * 1000</td>
+</tr>
+<tr>
+<td style="text-align: left;">VmaxSIMet1</td>
+<td style="text-align: left;">VmaxSIMet1 = VmaxSIMet1c / (1000 * 60 * S9SI * SI * BW)</td>
+</tr>
+<tr>
+<td style="text-align: left;">VmaxLIMet2</td>
+<td style="text-align: left;">VmaxLIMet2 = VmaxLIMet2c / 1000000 * 1000 * VMB * BW</td>
+</tr>
+<tr>
+<td style="text-align: left;">VmaxLIMet3</td>
+<td style="text-align: left;">VmaxLIMet3 = VmaxLIMet3c / 1000000 * 1000 * VMB * BW</td>
+</tr>
+<tr>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">L = VLc * 1000</td>
+</tr>
+<tr>
+<td style="text-align: left;">VmaxLMet2</td>
+<td style="text-align: left;">VmaxLMet2 = VmaxLMet2c / 1000000 * 60 * VLS9 * L * BW</td>
+</tr>
+<tr>
+<td style="text-align: left;">VmaxLMet3</td>
+<td style="text-align: left;">VmaxLMet3 = VmaxLMet3c / 1000000 * 60 * VLS9 * L * BW</td>
+</tr>
+<tr>
+<td style="text-align: left;">VmaxLMet1</td>
+<td style="text-align: left;">VmaxLMet1 = VmaxLMet1c / 1000 * 60 * VLS9 * L * BW</td>
+</tr>
+<tr>
+<td style="text-align: left;">LiverMet2</td>
+<td style="text-align: left;">LiverMet2 = VmaxLMet2 * (CLiver / PL) / (KmLMet2 + CLiver / PL)</td>
+</tr>
+<tr>
+<td style="text-align: left;">LiverMet3</td>
+<td style="text-align: left;">LiverMet3 = VmaxLMet3 * (CLiver / PL) / (KmLMet3 + CLiver / PL)</td>
+</tr>
+<tr>
+<td style="text-align: left;">LiverMet1</td>
+<td style="text-align: left;">LiverMet1 = VmaxLMet1 * (CLiver / PL) / (KmLMet1 + CLiver / PL)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="parameters">Parameters</h2>
 <table>
 <thead>
@@ -3213,10 +3280,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["toc.integrate"], "search": "../../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["toc.integrate"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
