@@ -401,6 +401,8 @@ def export_annotations():
             file_dir = os.path.dirname(sbml_file)
             report_path = os.path.relpath(file_dir, MODELS_PATH) \
                 .replace('\\', '/').replace(' ', '%20')
+            route = report_path.split('/')[0]
+            chemical_group = report_path.split('/')[1]
 
             # Load metadata
             metadata = None
@@ -415,6 +417,8 @@ def export_annotations():
                     'file': filename,
                     'id': item['id'],
                     'name': item['name'],
+                    'route': route,
+                    'chemical_group': chemical_group,
                     'bqm_is_class_id': pbpko_bqm_is_class['id'] if pbpko_bqm_is_class else '',
                     'bqm_is_class_label': pbpko_bqm_is_class['label'] if pbpko_bqm_is_class else '',
                     'bqm_is_class_iri': pbpko_bqm_is_class['iri'] if pbpko_bqm_is_class else ''
@@ -427,6 +431,8 @@ def export_annotations():
                     'file': filename,
                     'id': item['id'],
                     'name': item['name'],
+                    'route': route,
+                    'chemical_group': chemical_group,
                     'bqm_is_class_id': pbpko_bqm_is_class['id'] if pbpko_bqm_is_class else '',
                     'bqm_is_class_label': pbpko_bqm_is_class['label'] if pbpko_bqm_is_class else '',
                     'bqm_is_class_iri': pbpko_bqm_is_class['iri'] if pbpko_bqm_is_class else ''
@@ -439,12 +445,13 @@ def export_annotations():
                     'file': filename,
                     'id': item['id'],
                     'name': item['name'],
+                    'route': route,
+                    'chemical_group': chemical_group,
                     'bqm_is_class_id': pbpko_bqm_is_class['id'] if pbpko_bqm_is_class else '',
                     'bqm_is_class_label': pbpko_bqm_is_class['label'] if pbpko_bqm_is_class else '',
                     'bqm_is_class_iri': pbpko_bqm_is_class['iri'] if pbpko_bqm_is_class else ''
                 }
                 parameter_annotations.append(record)
-
 
         except Exception as e:
             console_logger.error(
