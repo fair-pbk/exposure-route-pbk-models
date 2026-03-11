@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
@@ -979,7 +979,7 @@
   <span class="md-ellipsis">
     
   
-    BechauxCd_Female
+    BechauxCd_Male
   
 
     
@@ -2159,31 +2159,31 @@
 <tbody>
 <tr>
 <td style="text-align: left;">kabsMet1</td>
-<td style="text-align: left;">kabsMet1 = kabsMet1C * pow(BW, -0.25)</td>
+<td style="text-align: left;">kabsMet1C * pow(BW, -0.25)</td>
 </tr>
 <tr>
 <td style="text-align: left;">kehrMet1</td>
-<td style="text-align: left;">kehrMet1 = kehrMet1C * pow(BW, -0.25)</td>
+<td style="text-align: left;">kehrMet1C * pow(BW, -0.25)</td>
 </tr>
 <tr>
 <td style="text-align: left;">kfe</td>
-<td style="text-align: left;">kfe = kfeC * pow(BW, -0.25)</td>
+<td style="text-align: left;">kfeC * pow(BW, -0.25)</td>
 </tr>
 <tr>
 <td style="text-align: left;">CBlood</td>
-<td style="text-align: left;">CBlood = ABlood / Blood</td>
+<td style="text-align: left;">ABlood / Blood</td>
 </tr>
 <tr>
 <td style="text-align: left;">CLiver</td>
-<td style="text-align: left;">CLiver = ALiver / Liver</td>
+<td style="text-align: left;">ALiver / Liver</td>
 </tr>
 <tr>
 <td style="text-align: left;">CRest</td>
-<td style="text-align: left;">CRest = ARest / Rest</td>
+<td style="text-align: left;">ARest / Rest</td>
 </tr>
 <tr>
 <td style="text-align: left;">CPlasma</td>
-<td style="text-align: left;">CPlasma = CBlood / RBP</td>
+<td style="text-align: left;">CBlood / RBP</td>
 </tr>
 </tbody>
 </table>
@@ -2198,43 +2198,43 @@
 <tbody>
 <tr>
 <td style="text-align: left;">Liver</td>
-<td style="text-align: left;">Liver = VL</td>
+<td style="text-align: left;">VL</td>
 </tr>
 <tr>
 <td style="text-align: left;">Blood</td>
-<td style="text-align: left;">Blood = VB</td>
+<td style="text-align: left;">VB</td>
 </tr>
 <tr>
 <td style="text-align: left;">Rest</td>
-<td style="text-align: left;">Rest = VRest</td>
+<td style="text-align: left;">VRest</td>
 </tr>
 <tr>
 <td style="text-align: left;">VL</td>
-<td style="text-align: left;">VL = VLc * BW</td>
+<td style="text-align: left;">VLc * BW</td>
 </tr>
 <tr>
 <td style="text-align: left;">VB</td>
-<td style="text-align: left;">VB = VBc * BW</td>
+<td style="text-align: left;">VBc * BW</td>
 </tr>
 <tr>
 <td style="text-align: left;">VRest</td>
-<td style="text-align: left;">VRest = 0.84 * BW - VL - VB</td>
+<td style="text-align: left;">0.84 * BW - VL - VB</td>
 </tr>
 <tr>
 <td style="text-align: left;">QC</td>
-<td style="text-align: left;">QC = QCc * pow(BW, 0.75)</td>
+<td style="text-align: left;">QCc * pow(BW, 0.75)</td>
 </tr>
 <tr>
 <td style="text-align: left;">QL</td>
-<td style="text-align: left;">QL = QLc * QC</td>
+<td style="text-align: left;">QLc * QC</td>
 </tr>
 <tr>
 <td style="text-align: left;">QRest</td>
-<td style="text-align: left;">QRest = (1 - QLc) * QC</td>
+<td style="text-align: left;">(1 - QLc) * QC</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet</td>
-<td style="text-align: left;">VmaxLMet = VmaxLMetC * pow(BW, 0.75)</td>
+<td style="text-align: left;">VmaxLMetC * pow(BW, 0.75)</td>
 </tr>
 </tbody>
 </table>

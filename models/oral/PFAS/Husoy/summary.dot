@@ -9,7 +9,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-GI",
 			label="GI
-[-]",
+[PBPKO:00477]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -17,7 +17,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AGI",
 			label="AGI
-[-]",
+[PBPKO:00496]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -27,7 +27,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Liver",
 			label="Liver
-[-]",
+[PBPKO:00558]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -81,7 +81,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Feces",
 			label="Feces
-[-]",
+[PBPKO:00555]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -89,7 +89,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AFeces",
 			label="AFeces
-[-]",
+[PBPKO:00275]",
 			shape=box,
 			style="filled,rounded"];
 	}

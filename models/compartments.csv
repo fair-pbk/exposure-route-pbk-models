@@ -1,28 +1,8 @@
 file,id,name,bqm_is_class_id,bqm_is_class_label,bqm_is_class_iri
-model_C_inh_exh_art_ven.sbml,Air,alveolar air,PBPKO:00458,skin exposed stratum corneum compartment,http://purl.obolibrary.org/obo/PBPKO_00458
-model_C_inh_exh_art_ven.sbml,Arterial,,,,
-model_C_inh_exh_art_ven.sbml,Venous,,,,
-model_C_inh_exh_art_ven.sbml,RestofBody,,,,
-model_C_inh_exh_art_ven.sbml,Lung,lung,,,
-model_C_inh_exh_art_ven.sbml,Bloodlung,,,,
-model_B_inh_exh_art_ven.sbml,Air,alveolar air,PBPKO:00458,skin exposed stratum corneum compartment,http://purl.obolibrary.org/obo/PBPKO_00458
-model_B_inh_exh_art_ven.sbml,Arterial,,,,
-model_B_inh_exh_art_ven.sbml,Venous,,,,
-model_B_inh_exh_art_ven.sbml,RestofBody,,,,
-model_B_inh_exh_art_ven.sbml,Lung,lung,,,
-model_A_inh_exh_art_ven.sbml,Air,alveolar air,PBPKO:00458,skin exposed stratum corneum compartment,http://purl.obolibrary.org/obo/PBPKO_00458
-model_A_inh_exh_art_ven.sbml,Arterial,,,,
-model_A_inh_exh_art_ven.sbml,Venous,,,,
-model_A_inh_exh_art_ven.sbml,RestofBody,,,,
-Wang.sbml,Stomach,stomach,,,
-Wang.sbml,Jejunum,,,,
-Wang.sbml,Ileum,,,,
-Wang.sbml,LargeLumen,,,,
-Wang.sbml,Liver,liver,,,
-Wang.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
-Wang.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Wang.sbml,Metabolites,,,,
-Wang.sbml,IntestinalTissue,,,,
+Notenboom.sbml,Lumen,gut lumen,PBPKO:00478,gut lumen compartment,http://purl.obolibrary.org/obo/PBPKO_00478
+Notenboom.sbml,Liver,liver,,,
+Notenboom.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
+Notenboom.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 Mendez_Catala.sbml,Stomach,stomach,,,
 Mendez_Catala.sbml,SI1,,,,
 Mendez_Catala.sbml,SI2,,,,
@@ -37,6 +17,15 @@ Mendez_Catala.sbml,Liver,liver,,,
 Mendez_Catala.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
 Mendez_Catala.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 Mendez_Catala.sbml,Feaces,,,,
+Wang.sbml,Stomach,stomach,,,
+Wang.sbml,Jejunum,,,,
+Wang.sbml,Ileum,,,,
+Wang.sbml,LargeLumen,,,,
+Wang.sbml,Liver,liver,,,
+Wang.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
+Wang.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Wang.sbml,Metabolites,,,,
+Wang.sbml,IntestinalTissue,,,,
 Gilbert_Sandoval.sbml,Stomach,stomach,,,
 Gilbert_Sandoval.sbml,SI1,,,,
 Gilbert_Sandoval.sbml,SI2,,,,
@@ -51,10 +40,6 @@ Gilbert_Sandoval.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obol
 Gilbert_Sandoval.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 Gilbert_Sandoval.sbml,Feces,feces,,,
 Gilbert_Sandoval.sbml,Feaces,,,,
-Notenboom.sbml,Lumen,gut lumen,PBPKO:00478,gut lumen compartment,http://purl.obolibrary.org/obo/PBPKO_00478
-Notenboom.sbml,Liver,liver,,,
-Notenboom.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
-Notenboom.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 Mukherjee.sbml,GILumen,,,,
 Mukherjee.sbml,Fast,,,,
 Mukherjee.sbml,Slow,,,,
@@ -67,82 +52,6 @@ Mukherjee.sbml,Bile,,,,
 Mukherjee.sbml,Feces,feces,,,
 Mukherjee.sbml,Stomach,stomach,,,
 Mukherjee.sbml,Spleen,spleen,PBPKO:00492,spleen compartment,http://purl.obolibrary.org/obo/PBPKO_00492
-Loizou.sbml,Stomach,stomach,,,
-Loizou.sbml,Liver,liver,,,
-Loizou.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-Loizou.sbml,Gut,gut,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
-Loizou.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Hu.sbml,Stomach,stomach,,,
-Hu.sbml,SI,,,,
-Hu.sbml,Liver,liver,,,
-Hu.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-Hu.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Hu.sbml,GILumen,,,,
-Hu.sbml,Feces,feces,,,
-Sharma.sbml,Stomach,stomach,,,
-Sharma.sbml,Liver,liver,,,
-Sharma.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-Sharma.sbml,Gut,gut,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
-Sharma.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Teeguarden.sbml,GILumen,,,,
-Teeguarden.sbml,Liver,liver,,,
-Teeguarden.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
-Teeguarden.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Teeguarden.sbml,Feces,feces,,,
-Mielke.sbml,Gut,gut,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
-Mielke.sbml,Liver,liver,,,
-Mielke.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
-Mielke.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Moreau.sbml,Stomach,stomach,,,
-Moreau.sbml,GITissue,,,,
-Moreau.sbml,Duodenum,,,,
-Moreau.sbml,Liver,liver,,,
-Moreau.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-Moreau.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Karrer.sbml,Stomach,stomach,,,
-Karrer.sbml,SI,,,,
-Karrer.sbml,Liver,liver,,,
-Karrer.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-Karrer.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Karrer.sbml,GILumen,,,,
-Karrer.sbml,Feces,feces,,,
-Shin.sbml,Stomach,stomach,,,
-Shin.sbml,IntestinalLumen,,,,
-Shin.sbml,Spleen,spleen,PBPKO:00492,spleen compartment,http://purl.obolibrary.org/obo/PBPKO_00492
-Shin.sbml,SmallIntestine,,,,
-Shin.sbml,Liver,liver,,,
-Shin.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
-Shin.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Deepika.sbml,Stomach,stomach,,,
-Deepika.sbml,Liver,liver,,,
-Deepika.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-Deepika.sbml,Gut,gut,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
-Deepika.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Yang.sbml,Stomach,stomach,,,
-Yang.sbml,SI,,,,
-Yang.sbml,Liver,liver,,,
-Yang.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-Yang.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Yang.sbml,GILumen,,,,
-Yang.sbml,Feces,feces,,,
-KjellstromCd.sbml,GI,,,,
-KjellstromCd.sbml,Intestinal_Tissue,,,,
-KjellstromCd.sbml,Liver,liver,,,
-KjellstromCd.sbml,Kidney,kidney,,,
-KjellstromCd.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-KjellstromCd.sbml,Red_Blood_Cell,,,,
-KjellstromCd.sbml,Metallothionein,,,,
-KjellstromCd.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-KjellstromCd.sbml,Daily_Uptake,,,,
-BechauxCd_Male.sbml,GI,,,,
-BechauxCd_Male.sbml,Intestinal_Tissue,,,,
-BechauxCd_Male.sbml,Liver,liver,,,
-BechauxCd_Male.sbml,Kidney,kidney,,,
-BechauxCd_Male.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-BechauxCd_Male.sbml,Red_Blood_Cell,,,,
-BechauxCd_Male.sbml,Metallothionein,,,,
-BechauxCd_Male.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-BechauxCd_Male.sbml,Daily_Uptake,,,,
 BechauxCd_Female.sbml,GI,,,,
 BechauxCd_Female.sbml,Intestinal_Tissue,,,,
 BechauxCd_Female.sbml,Liver,liver,,,
@@ -152,12 +61,15 @@ BechauxCd_Female.sbml,Red_Blood_Cell,,,,
 BechauxCd_Female.sbml,Metallothionein,,,,
 BechauxCd_Female.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 BechauxCd_Female.sbml,Daily_Uptake,,,,
-Carrier2001_Hg.sbml,GI,,,,
-Carrier2001_Hg.sbml,Liver,liver,,,
-Carrier2001_Hg.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
-OFlaherty2000_Pb.sbml,Liver,liver,,,
-OFlaherty2000_Pb.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
-OFlaherty2000_Pb.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+BechauxCd_Male.sbml,GI,,,,
+BechauxCd_Male.sbml,Intestinal_Tissue,,,,
+BechauxCd_Male.sbml,Liver,liver,,,
+BechauxCd_Male.sbml,Kidney,kidney,,,
+BechauxCd_Male.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+BechauxCd_Male.sbml,Red_Blood_Cell,,,,
+BechauxCd_Male.sbml,Metallothionein,,,,
+BechauxCd_Male.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+BechauxCd_Male.sbml,Daily_Uptake,,,,
 RuizCd_Male.sbml,GI,,,,
 RuizCd_Male.sbml,Intestinal_Tissue,,,,
 RuizCd_Male.sbml,Liver,liver,,,
@@ -176,9 +88,9 @@ RuizCd_Female.sbml,Red_Blood_Cell,,,,
 RuizCd_Female.sbml,Metallothionein,,,,
 RuizCd_Female.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 RuizCd_Female.sbml,Daily_Uptake,,,,
-Tebby2022_Pb.sbml,Liver,liver,,,
-Tebby2022_Pb.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
-Tebby2022_Pb.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+OFlaherty2000_Pb.sbml,Liver,liver,,,
+OFlaherty2000_Pb.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
+OFlaherty2000_Pb.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 PouillotCd.sbml,GI,,,,
 PouillotCd.sbml,Intestinal_Tissue,,,,
 PouillotCd.sbml,Liver,liver,,,
@@ -188,38 +100,126 @@ PouillotCd.sbml,Red_Blood_Cell,,,,
 PouillotCd.sbml,Metallothionein,,,,
 PouillotCd.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 PouillotCd.sbml,Daily_Uptake,,,,
-ChouLin.sbml,Stomach,stomach,,,
-ChouLin.sbml,SI,,,,
-ChouLin.sbml,Liver,liver,,,
-ChouLin.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-ChouLin.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-ChouLin.sbml,Feces,feces,,,
-LoccisanoPFOA.sbml,GI,,,,
-LoccisanoPFOA.sbml,Liver,liver,,,
-LoccisanoPFOA.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-LoccisanoPFOA.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Husoy.sbml,GI,,,,
-Husoy.sbml,Liver,liver,,,
-Husoy.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-Husoy.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Husoy.sbml,Feces,feces,,,
-Chen.sbml,Stomach,stomach,,,
-Chen.sbml,SI,,,,
-Chen.sbml,Liver,liver,,,
-Chen.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-Chen.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Chen.sbml,Feces,feces,,,
-Deepika.sbml,GI,,,,
+Tebby2022_Pb.sbml,Liver,liver,,,
+Tebby2022_Pb.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
+Tebby2022_Pb.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Carrier2001_Hg.sbml,GI,,,,
+Carrier2001_Hg.sbml,Liver,liver,,,
+Carrier2001_Hg.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
+KjellstromCd.sbml,GI,,,,
+KjellstromCd.sbml,Intestinal_Tissue,,,,
+KjellstromCd.sbml,Liver,liver,,,
+KjellstromCd.sbml,Kidney,kidney,,,
+KjellstromCd.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+KjellstromCd.sbml,Red_Blood_Cell,,,,
+KjellstromCd.sbml,Metallothionein,,,,
+KjellstromCd.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+KjellstromCd.sbml,Daily_Uptake,,,,
+Karrer.sbml,Stomach,stomach,,,
+Karrer.sbml,SI,,,,
+Karrer.sbml,Liver,liver,,,
+Karrer.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+Karrer.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Karrer.sbml,GILumen,,,,
+Karrer.sbml,Feces,feces,,,
+Sharma.sbml,Stomach,stomach,,,
+Sharma.sbml,Liver,liver,,,
+Sharma.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+Sharma.sbml,Gut,gut,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
+Sharma.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Hu.sbml,Stomach,stomach,,,
+Hu.sbml,SI,,,,
+Hu.sbml,Liver,liver,,,
+Hu.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+Hu.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Hu.sbml,GILumen,,,,
+Hu.sbml,Feces,feces,,,
+Moreau.sbml,Stomach,stomach,,,
+Moreau.sbml,GITissue,,,,
+Moreau.sbml,Duodenum,,,,
+Moreau.sbml,Liver,liver,,,
+Moreau.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+Moreau.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Deepika.sbml,Stomach,stomach,,,
 Deepika.sbml,Liver,liver,,,
 Deepika.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+Deepika.sbml,Gut,gut,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
 Deepika.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-LoccisanoPFOS.sbml,GI,,,,
-LoccisanoPFOS.sbml,Liver,liver,,,
-LoccisanoPFOS.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-LoccisanoPFOS.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Worley.sbml,Stomach,stomach,,,
-Worley.sbml,SI,,,,
-Worley.sbml,Liver,liver,,,
-Worley.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-Worley.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Worley.sbml,Feces,feces,,,
+Shin.sbml,Stomach,stomach,,,
+Shin.sbml,IntestinalLumen,,,,
+Shin.sbml,Spleen,spleen,PBPKO:00492,spleen compartment,http://purl.obolibrary.org/obo/PBPKO_00492
+Shin.sbml,SmallIntestine,,,,
+Shin.sbml,Liver,liver,,,
+Shin.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
+Shin.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Mielke.sbml,Gut,gut,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
+Mielke.sbml,Liver,liver,,,
+Mielke.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
+Mielke.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Teeguarden.sbml,GILumen,,,,
+Teeguarden.sbml,Liver,liver,,,
+Teeguarden.sbml,Blood,blood,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
+Teeguarden.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Teeguarden.sbml,Feces,feces,,,
+Yang.sbml,Stomach,stomach,,,
+Yang.sbml,SI,,,,
+Yang.sbml,Liver,liver,,,
+Yang.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+Yang.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Yang.sbml,GILumen,,,,
+Yang.sbml,Feces,feces,,,
+Loizou.sbml,Stomach,stomach,,,
+Loizou.sbml,Liver,liver,,,
+Loizou.sbml,Plasma,blood plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+Loizou.sbml,Gut,gut,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
+Loizou.sbml,Rest,rest-of-body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Husoy.sbml,GI,Gastrointestinal tissue,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
+Husoy.sbml,Liver,Liver,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
+Husoy.sbml,Plasma,Plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+Husoy.sbml,Rest,Rest of body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Husoy.sbml,Feces,Feces,PBPKO:00555,feces compartment,http://purl.obolibrary.org/obo/PBPKO_00555
+Chen.sbml,Stomach,Stomach,PBPKO:00566,stomach compartment,http://purl.obolibrary.org/obo/PBPKO_00566
+Chen.sbml,SI,Small intestine,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Chen.sbml,Liver,Liver,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
+Chen.sbml,Plasma,Plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+Chen.sbml,Rest,Rest of the body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Chen.sbml,Feces,Feces,PBPKO:00555,feces compartment,http://purl.obolibrary.org/obo/PBPKO_00555
+LoccisanoPFOA.sbml,GI,Gastrointestinal tissue,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
+LoccisanoPFOA.sbml,Liver,Liver,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
+LoccisanoPFOA.sbml,Plasma,Plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+LoccisanoPFOA.sbml,Rest,Rest of body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Deepika.sbml,GI,Gastrointestinal tract,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
+Deepika.sbml,Liver,Liver,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
+Deepika.sbml,Plasma,Plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+Deepika.sbml,Rest,Rest of the body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+LoccisanoPFOS.sbml,GI,Gastrointestinal tissue,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
+LoccisanoPFOS.sbml,Liver,Liver,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
+LoccisanoPFOS.sbml,Plasma,Plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+LoccisanoPFOS.sbml,Rest,Rest of body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+ChouLin.sbml,Stomach,Stomach,PBPKO:00566,stomach compartment,http://purl.obolibrary.org/obo/PBPKO_00566
+ChouLin.sbml,SI,Small intestine,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+ChouLin.sbml,Liver,Liver,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
+ChouLin.sbml,Plasma,Plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+ChouLin.sbml,Rest,Rest of the body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+ChouLin.sbml,Feces,Feces,PBPKO:00555,feces compartment,http://purl.obolibrary.org/obo/PBPKO_00555
+Worley.sbml,Stomach,Stomach,PBPKO:00566,stomach compartment,http://purl.obolibrary.org/obo/PBPKO_00566
+Worley.sbml,SI,Small intestine,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Worley.sbml,Liver,Liver,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
+Worley.sbml,Plasma,Plasma,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+Worley.sbml,Rest,Rest of the body,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Worley.sbml,Feces,Feces,PBPKO:00555,feces compartment,http://purl.obolibrary.org/obo/PBPKO_00555
+model_C_inh_exh_art_ven.sbml,Air,alveolar air,PBPKO:00458,skin exposed stratum corneum compartment,http://purl.obolibrary.org/obo/PBPKO_00458
+model_C_inh_exh_art_ven.sbml,Arterial,,,,
+model_C_inh_exh_art_ven.sbml,Venous,,,,
+model_C_inh_exh_art_ven.sbml,RestofBody,,,,
+model_C_inh_exh_art_ven.sbml,Lung,lung,,,
+model_C_inh_exh_art_ven.sbml,Bloodlung,,,,
+model_B_inh_exh_art_ven.sbml,Air,alveolar air,PBPKO:00458,skin exposed stratum corneum compartment,http://purl.obolibrary.org/obo/PBPKO_00458
+model_B_inh_exh_art_ven.sbml,Arterial,,,,
+model_B_inh_exh_art_ven.sbml,Venous,,,,
+model_B_inh_exh_art_ven.sbml,RestofBody,,,,
+model_B_inh_exh_art_ven.sbml,Lung,lung,,,
+model_A_inh_exh_art_ven.sbml,Air,alveolar air,PBPKO:00458,skin exposed stratum corneum compartment,http://purl.obolibrary.org/obo/PBPKO_00458
+model_A_inh_exh_art_ven.sbml,Arterial,,,,
+model_A_inh_exh_art_ven.sbml,Venous,,,,
+model_A_inh_exh_art_ven.sbml,RestofBody,,,,

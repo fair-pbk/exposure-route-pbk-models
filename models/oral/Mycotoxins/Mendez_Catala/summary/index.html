@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
@@ -820,7 +820,7 @@
   <span class="md-ellipsis">
     
   
-    BechauxCd_Female
+    BechauxCd_Male
   
 
     
@@ -2437,175 +2437,175 @@
 <tbody>
 <tr>
 <td style="text-align: left;">LI1</td>
-<td style="text-align: left;">LI1 = BW * VMB</td>
+<td style="text-align: left;">BW * VMB</td>
 </tr>
 <tr>
 <td style="text-align: left;">SITissue</td>
-<td style="text-align: left;">SITissue = BW * VSITissuec</td>
+<td style="text-align: left;">BW * VSITissuec</td>
 </tr>
 <tr>
 <td style="text-align: left;">Liver</td>
-<td style="text-align: left;">Liver = BW * VLc</td>
+<td style="text-align: left;">BW * VLc</td>
 </tr>
 <tr>
 <td style="text-align: left;">Blood</td>
-<td style="text-align: left;">Blood = BW * VBc</td>
+<td style="text-align: left;">BW * VBc</td>
 </tr>
 <tr>
 <td style="text-align: left;">Rest</td>
-<td style="text-align: left;">Rest = VRest</td>
+<td style="text-align: left;">VRest</td>
 </tr>
 <tr>
 <td style="text-align: left;">Feaces</td>
-<td style="text-align: left;">Feaces = 1</td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr>
 <td style="text-align: left;">VSITissue</td>
-<td style="text-align: left;">VSITissue = VSITissuec * BW</td>
+<td style="text-align: left;">VSITissuec * BW</td>
 </tr>
 <tr>
 <td style="text-align: left;">VL</td>
-<td style="text-align: left;">VL = VLc * BW</td>
+<td style="text-align: left;">VLc * BW</td>
 </tr>
 <tr>
 <td style="text-align: left;">VB</td>
-<td style="text-align: left;">VB = VBc * BW</td>
+<td style="text-align: left;">VBc * BW</td>
 </tr>
 <tr>
 <td style="text-align: left;">VSI1</td>
-<td style="text-align: left;">VSI1 = VSI</td>
+<td style="text-align: left;">VSI</td>
 </tr>
 <tr>
 <td style="text-align: left;">VSI2</td>
-<td style="text-align: left;">VSI2 = VSI</td>
+<td style="text-align: left;">VSI</td>
 </tr>
 <tr>
 <td style="text-align: left;">VSI3</td>
-<td style="text-align: left;">VSI3 = VSI</td>
+<td style="text-align: left;">VSI</td>
 </tr>
 <tr>
 <td style="text-align: left;">VSI4</td>
-<td style="text-align: left;">VSI4 = VSI</td>
+<td style="text-align: left;">VSI</td>
 </tr>
 <tr>
 <td style="text-align: left;">VSI5</td>
-<td style="text-align: left;">VSI5 = VSI</td>
+<td style="text-align: left;">VSI</td>
 </tr>
 <tr>
 <td style="text-align: left;">VSI6</td>
-<td style="text-align: left;">VSI6 = VSI</td>
+<td style="text-align: left;">VSI</td>
 </tr>
 <tr>
 <td style="text-align: left;">VSI7</td>
-<td style="text-align: left;">VSI7 = VSI</td>
+<td style="text-align: left;">VSI</td>
 </tr>
 <tr>
 <td style="text-align: left;">VRest</td>
-<td style="text-align: left;">VRest = 0.84 * BW - VL - VB - VSITissue</td>
+<td style="text-align: left;">0.84 * BW - VL - VB - VSITissue</td>
 </tr>
 <tr>
 <td style="text-align: left;">QC</td>
-<td style="text-align: left;">QC = 15 * pow(BW, 0.74)</td>
+<td style="text-align: left;">15 * pow(BW, 0.74)</td>
 </tr>
 <tr>
 <td style="text-align: left;">QL</td>
-<td style="text-align: left;">QL = QLc * QC</td>
+<td style="text-align: left;">QLc * QC</td>
 </tr>
 <tr>
 <td style="text-align: left;">QSI</td>
-<td style="text-align: left;">QSI = QSIc * QC</td>
+<td style="text-align: left;">QSIc * QC</td>
 </tr>
 <tr>
 <td style="text-align: left;">QRest</td>
-<td style="text-align: left;">QRest = (1 - QLc - QSIc) * QC</td>
+<td style="text-align: left;">(1 - QLc - QSIc) * QC</td>
 </tr>
 <tr>
 <td style="text-align: left;">Papp_in_vivo</td>
-<td style="text-align: left;">Papp_in_vivo = pow(10, 0.6836 * PappCaco2_log - 0.5579) * 3600 / 10</td>
+<td style="text-align: left;">pow(10, 0.6836 * PappCaco2_log - 0.5579) * 3600 / 10</td>
 </tr>
 <tr>
 <td style="text-align: left;">kabsSI1</td>
-<td style="text-align: left;">kabsSI1 = Papp_in_vivo * SASI</td>
+<td style="text-align: left;">Papp_in_vivo * SASI</td>
 </tr>
 <tr>
 <td style="text-align: left;">kabsSI2</td>
-<td style="text-align: left;">kabsSI2 = Papp_in_vivo * SASI</td>
+<td style="text-align: left;">Papp_in_vivo * SASI</td>
 </tr>
 <tr>
 <td style="text-align: left;">kabsSI3</td>
-<td style="text-align: left;">kabsSI3 = Papp_in_vivo * SASI</td>
+<td style="text-align: left;">Papp_in_vivo * SASI</td>
 </tr>
 <tr>
 <td style="text-align: left;">kabsSI4</td>
-<td style="text-align: left;">kabsSI4 = Papp_in_vivo * SASI</td>
+<td style="text-align: left;">Papp_in_vivo * SASI</td>
 </tr>
 <tr>
 <td style="text-align: left;">kabsSI5</td>
-<td style="text-align: left;">kabsSI5 = Papp_in_vivo * SASI</td>
+<td style="text-align: left;">Papp_in_vivo * SASI</td>
 </tr>
 <tr>
 <td style="text-align: left;">kabsSI6</td>
-<td style="text-align: left;">kabsSI6 = Papp_in_vivo * SASI</td>
+<td style="text-align: left;">Papp_in_vivo * SASI</td>
 </tr>
 <tr>
 <td style="text-align: left;">kabsSI7</td>
-<td style="text-align: left;">kabsSI7 = Papp_in_vivo * SASI</td>
+<td style="text-align: left;">Papp_in_vivo * SASI</td>
 </tr>
 <tr>
 <td style="text-align: left;">CSI1</td>
-<td style="text-align: left;">CSI1 = ASI1 / SI1</td>
+<td style="text-align: left;">ASI1 / SI1</td>
 </tr>
 <tr>
 <td style="text-align: left;">CSI2</td>
-<td style="text-align: left;">CSI2 = ASI2 / SI2</td>
+<td style="text-align: left;">ASI2 / SI2</td>
 </tr>
 <tr>
 <td style="text-align: left;">CSI3</td>
-<td style="text-align: left;">CSI3 = ASI3 / SI3</td>
+<td style="text-align: left;">ASI3 / SI3</td>
 </tr>
 <tr>
 <td style="text-align: left;">CSI4</td>
-<td style="text-align: left;">CSI4 = ASI4 / SI4</td>
+<td style="text-align: left;">ASI4 / SI4</td>
 </tr>
 <tr>
 <td style="text-align: left;">CSI5</td>
-<td style="text-align: left;">CSI5 = ASI5 / SI5</td>
+<td style="text-align: left;">ASI5 / SI5</td>
 </tr>
 <tr>
 <td style="text-align: left;">CSI6</td>
-<td style="text-align: left;">CSI6 = ASI6 / SI6</td>
+<td style="text-align: left;">ASI6 / SI6</td>
 </tr>
 <tr>
 <td style="text-align: left;">CSI7</td>
-<td style="text-align: left;">CSI7 = ASI7 / SI7</td>
+<td style="text-align: left;">ASI7 / SI7</td>
 </tr>
 <tr>
 <td style="text-align: left;">CSITissue</td>
-<td style="text-align: left;">CSITissue = ASITissue / SITissue</td>
+<td style="text-align: left;">ASITissue / SITissue</td>
 </tr>
 <tr>
 <td style="text-align: left;">CLiver</td>
-<td style="text-align: left;">CLiver = ALiver / Liver</td>
+<td style="text-align: left;">ALiver / Liver</td>
 </tr>
 <tr>
 <td style="text-align: left;">CBlood</td>
-<td style="text-align: left;">CBlood = ABlood / Blood</td>
+<td style="text-align: left;">ABlood / Blood</td>
 </tr>
 <tr>
 <td style="text-align: left;">CLI1</td>
-<td style="text-align: left;">CLI1 = ALI1 / (VMB * BW)</td>
+<td style="text-align: left;">ALI1 / (VMB * BW)</td>
 </tr>
 <tr>
 <td style="text-align: left;">SITissueMet1</td>
-<td style="text-align: left;">SITissueMet1 = VmaxSIMet1 * (CSITissue / PSI) / (KmSIMet1 + CSITissue / PSI)</td>
+<td style="text-align: left;">VmaxSIMet1 * (CSITissue / PSI) / (KmSIMet1 + CSITissue / PSI)</td>
 </tr>
 <tr>
 <td style="text-align: left;">L1Met2</td>
-<td style="text-align: left;">L1Met2 = VmaxLIMet2 * CLI1 / (KmLIMet2 + CLI1)</td>
+<td style="text-align: left;">VmaxLIMet2 * CLI1 / (KmLIMet2 + CLI1)</td>
 </tr>
 <tr>
 <td style="text-align: left;">L1Met3</td>
-<td style="text-align: left;">L1Met3 = VmaxLIMet3 * CLI1 / (KmLIMet3 + CLI1)</td>
+<td style="text-align: left;">VmaxLIMet3 * CLI1 / (KmLIMet3 + CLI1)</td>
 </tr>
 </tbody>
 </table>
@@ -2620,79 +2620,79 @@
 <tbody>
 <tr>
 <td style="text-align: left;">SI1</td>
-<td style="text-align: left;">SI1 = VSI1</td>
+<td style="text-align: left;">VSI1</td>
 </tr>
 <tr>
 <td style="text-align: left;">SI2</td>
-<td style="text-align: left;">SI2 = VSI2</td>
+<td style="text-align: left;">VSI2</td>
 </tr>
 <tr>
 <td style="text-align: left;">SI3</td>
-<td style="text-align: left;">SI3 = VSI3</td>
+<td style="text-align: left;">VSI3</td>
 </tr>
 <tr>
 <td style="text-align: left;">SI4</td>
-<td style="text-align: left;">SI4 = VSI4</td>
+<td style="text-align: left;">VSI4</td>
 </tr>
 <tr>
 <td style="text-align: left;">SI5</td>
-<td style="text-align: left;">SI5 = VSI5</td>
+<td style="text-align: left;">VSI5</td>
 </tr>
 <tr>
 <td style="text-align: left;">SI6</td>
-<td style="text-align: left;">SI6 = VSI6</td>
+<td style="text-align: left;">VSI6</td>
 </tr>
 <tr>
 <td style="text-align: left;">SI7</td>
-<td style="text-align: left;">SI7 = VSI7</td>
+<td style="text-align: left;">VSI7</td>
 </tr>
 <tr>
 <td style="text-align: left;">kabsLI</td>
-<td style="text-align: left;">kabsLI = Papp_in_vivo * SAinb</td>
+<td style="text-align: left;">Papp_in_vivo * SAinb</td>
 </tr>
 <tr>
 <td style="text-align: left;">SI</td>
-<td style="text-align: left;">SI = VSITissuec * 1000</td>
+<td style="text-align: left;">VSITissuec * 1000</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxSIMet1</td>
-<td style="text-align: left;">VmaxSIMet1 = VmaxSIMet1c / (1000 * 60 * S9SI * SI * BW)</td>
+<td style="text-align: left;">VmaxSIMet1c / (1000 * 60 * S9SI * SI * BW)</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLIMet2</td>
-<td style="text-align: left;">VmaxLIMet2 = VmaxLIMet2c / 1000000 * 1000 * VMB * BW</td>
+<td style="text-align: left;">VmaxLIMet2c / 1000000 * 1000 * VMB * BW</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLIMet3</td>
-<td style="text-align: left;">VmaxLIMet3 = VmaxLIMet3c / 1000000 * 1000 * VMB * BW</td>
+<td style="text-align: left;">VmaxLIMet3c / 1000000 * 1000 * VMB * BW</td>
 </tr>
 <tr>
 <td style="text-align: left;">L</td>
-<td style="text-align: left;">L = VLc * 1000</td>
+<td style="text-align: left;">VLc * 1000</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet2</td>
-<td style="text-align: left;">VmaxLMet2 = VmaxLMet2c / 1000000 * 60 * VLS9 * L * BW</td>
+<td style="text-align: left;">VmaxLMet2c / 1000000 * 60 * VLS9 * L * BW</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet3</td>
-<td style="text-align: left;">VmaxLMet3 = VmaxLMet3c / 1000000 * 60 * VLS9 * L * BW</td>
+<td style="text-align: left;">VmaxLMet3c / 1000000 * 60 * VLS9 * L * BW</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet1</td>
-<td style="text-align: left;">VmaxLMet1 = VmaxLMet1c / 1000 * 60 * VLS9 * L * BW</td>
+<td style="text-align: left;">VmaxLMet1c / 1000 * 60 * VLS9 * L * BW</td>
 </tr>
 <tr>
 <td style="text-align: left;">LiverMet2</td>
-<td style="text-align: left;">LiverMet2 = VmaxLMet2 * (CLiver / PL) / (KmLMet2 + CLiver / PL)</td>
+<td style="text-align: left;">VmaxLMet2 * (CLiver / PL) / (KmLMet2 + CLiver / PL)</td>
 </tr>
 <tr>
 <td style="text-align: left;">LiverMet3</td>
-<td style="text-align: left;">LiverMet3 = VmaxLMet3 * (CLiver / PL) / (KmLMet3 + CLiver / PL)</td>
+<td style="text-align: left;">VmaxLMet3 * (CLiver / PL) / (KmLMet3 + CLiver / PL)</td>
 </tr>
 <tr>
 <td style="text-align: left;">LiverMet1</td>
-<td style="text-align: left;">LiverMet1 = VmaxLMet1 * (CLiver / PL) / (KmLMet1 + CLiver / PL)</td>
+<td style="text-align: left;">VmaxLMet1 * (CLiver / PL) / (KmLMet1 + CLiver / PL)</td>
 </tr>
 </tbody>
 </table>
