@@ -1,0 +1,142 @@
+model Zhao2019_Chlorpyrifos_Human()
+
+#Created: Carolina Vogs, September 2025
+#Checked:
+
+model notes ```
+Chlorpyrifos and its metabolites (Zhao et al. 2019)
+all parameters for Caucasian
+```
+model description "https://doi.org/10.1093/toxsci/kfz134"
+
+
+
+#------------------------
+# Body size & base volumes
+#------------------------
+BW      = 70                       # kg  
+VLc     = 0.026                    # L/kg 
+VBc     = 0.079                    # L/kg (blood; generic adult)       
+
+VL      := VLc * BW                  # L
+VB      := VBc * BW                  # L
+VRest   := 0.84 * BW - VL - VB       # L (lumped rest-of-body water)
+
+
+#------------------------
+# Flows (adult human)
+#------------------------
+QC      = 347.9                    # L/h  
+QLc     = 0.227                    # % of QC   
+QL	:= QLc * QC		   # L/h
+
+QRest   := QC - QL                   # L/h 
+
+#------------------------
+# Tissue:blood partitions 
+#------------------------
+PL  = 8.1                    # liver:blood  
+PRest   = 1                    
+
+#------------------------
+# Absorption
+#------------------------
+kabs      = 0.46                     # 1/h  
+
+#------------------------
+# Hepatic metabolism (Michaelis–Menten on liver-venous conc)
+# Just the reported mean values
+#------------------------
+
+#to CPFoxon
+KmLMet1  = 28.59                      		# µM
+VmaxLMet1C = 0.156	   			# nmol/min/mg microsomal protein
+VmaxLMet1 = 300	   				# µmol/h/kg liver; VmaxLMet/(1000*60*32*1000)
+
+
+#to TCP
+KmLMet2  = 4.33                      		# µM
+VmaxLMet2C = 0.234	   			# nmol/min/mg microsomal protein
+VmaxLMet2 = 449	   				# µmol/h/kg liver; VmaxLMet/(1000*60*32*1000)                 
+
+#to DAP (DEP and DETP) - same as TCP parameters
+KmLMet3  = 4.33                      		# µM
+VmaxLMet3C = 0.234	   			# nmol/min/mg microsomal protein
+VmaxLMet3 = 449			   		# µmol/h/kg liver; VmaxLMet3/(1000*60*32*1000)    
+
+
+#------------------------
+# Compartments
+#------------------------
+compartment Gut;       Gut = 1
+compartment Liver;     Liver   = VL
+compartment Blood;     Blood   = VB
+compartment Rest;      Rest    = VRest
+
+
+
+#------------------------
+# Species (amounts)
+#------------------------
+substanceOnly species AGut in Gut
+substanceOnly species ALiver   in Liver
+substanceOnly species ABlood   in Blood
+substanceOnly species ARest    in Rest
+substanceOnly species ALiverMet1    in Liver      
+substanceOnly species ALiverMet2    in Liver    
+substanceOnly species ALiverMet3    in Liver   
+
+
+#------------------------
+# Initial conditions
+#------------------------
+AGut     = 0
+ALiver   = 0
+ABlood   = 0
+ARest    = 0
+
+# Met1 = CPFoxon, Met2 = TCP, Met3 = DAP
+
+ALiverMet1    = 0
+ALiverMet2    = 0
+ALiverMet3    = 0
+
+
+#------------------------
+# Concentrations 
+#------------------------
+CBlood := ABlood / Blood
+CLiver := ALiver / Liver
+CVL    := CLiver / PL
+CRest  := ARest  / Rest
+
+#------------------------
+# Reactions / Transfers
+#------------------------
+
+# Oral absorption: lumen → liver (portal)
+AGut -> ALiver;      kabs * AGut
+
+# Perfusion-limited exchanges
+ABlood   -> ALiver;      QL * CBlood
+ALiver   -> ABlood;      QL * (CLiver / PL)
+
+ABlood   -> ARest;       QRest * CBlood
+ARest    -> ABlood;      QRest * (CRest / PRest)
+
+# Hepatic metabolism (MM on liver-venous concentration)
+# Chlorpyrifos -> CPFoxon
+ALiver   -> ALiverMet1;       VmaxLMet1 * (CLiver / PL)/ (KmLMet1 + (CLiver / PL))
+
+# Chlorpyrifos -> TCP
+ALiver   -> ALiverMet2;       VmaxLMet2 * (CLiver / PL) / (KmLMet2 + (CLiver / PL))
+
+# Chlorpyrifos -> DAP 
+# note: MM equation was added only for TCP or DAP - now it is twice accounted for
+ALiver   -> ALiverMet3;       VmaxLMet3 * (CLiver / PL) / (KmLMet3 + (CLiver / PL))
+
+
+
+
+
+end

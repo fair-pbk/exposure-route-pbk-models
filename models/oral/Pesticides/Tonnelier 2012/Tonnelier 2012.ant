@@ -1,0 +1,105 @@
+model Tonnelier2012_Chlorpyrifos_Human()
+
+#Created: Carolina Vogs, March 2026
+#Checked: 
+
+# I am not sure if this model is correct -> It has not included the venous concentration for partitioning
+
+model notes ```
+Tonnelier et al 2012 - example Chlorpyrifos
+```
+model description "https://doi.org/10.1007/s00204-011-0768-0"
+
+#------------------------
+# Body size & base volumes;
+#------------------------
+VPV = 3.2 	           # L
+BW = 70			   # from Chen et al. 2023
+VLc   = 0.026              # Liver      (L/kg bodyweight) - from Chen et al. 2023
+VL   := VLc * BW 
+
+VD = 22.42		   # L/kg -> I am unsure of this value - in the article it says Vss and also the unit would be false for the equation
+
+#------------------------
+# Plasma Flows
+#------------------------
+QPV = 6.7
+QHA = 18
+QH := QPV + QHA
+
+
+#------------------------
+# Partition coefficients
+#------------------------
+FA = 1
+kabs = 2		# 1/h
+
+#------------------------
+# Clearance
+#------------------------
+CLHint = 2.6		# hepatic clearance in µL/min/10^6 cells
+fu = 0.01760		# Unsure if this is the correct value
+CL := (QH *fu * CLHint)/(QH + fu * CLHint)
+
+CLR = 0.118 		# renal clearance in L/h
+
+#------------------------
+# Compartments (sizes)
+#------------------------
+compartment AbsorptionCompartment := 1
+compartment PV := VPV
+compartment Liver := VL
+compartment SystCompartment := VD
+compartment RenalExcretion := 1
+
+
+
+#------------------------
+# Species (amount states)
+#------------------------
+substanceOnly species AAbsComp in AbsorptionCompartment
+substanceOnly species APV in PV
+substanceOnly species ALiver in Liver
+substanceOnly species ALiverMet in Liver
+substanceOnly species ASysComp in SystCompartment
+substanceOnly species ARenalEx in RenalExcretion
+
+#------------------------
+# Initial conditions
+#------------------------
+AAbsComp = 0;
+APV = 0; 
+ALiver = 0; 
+ASysComp = 0; 
+ALiverMet = 0;
+ARenalEx = 0;
+
+#------------------------
+# Concentrations
+#------------------------
+CPV := APV / PV
+CLiver := ALiver / Liver
+CSysComp := ASysComp / SystCompartment
+
+
+#------------------------
+# Reactions / Transfers i
+#------------------------
+
+AAbsComp -> APV;      kabs * AAbsComp 		
+
+# Perfusion-limited exchanges
+APV -> ALiver;      QPV * CPV
+ASysComp -> APV;    QPV * CSysComp
+
+ASysComp -> ALiver;   QHA * CSysComp 
+ALiver -> ASysComp;   (QPV+QHA) * CLiver
+
+
+# Metabolism
+ALiver -> ALiverMet; CL * CLiver
+
+# Renal Excretion
+ASysComp -> ARenalEx; CLR * CSysComp 
+
+end

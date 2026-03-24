@@ -1,0 +1,174 @@
+model Godin_Pyrethroid_Human()
+
+
+#Created: Carolina Vogs, January 2026
+#Checked:
+
+model notes ```
+Delamethrin PBK - Godin et al. 2010
+```
+model description "https://doi.org/10.1093/toxsci/kfq051"
+
+
+#------------------------
+# Body size & base volumes
+#------------------------
+BW    = 70                            # kg
+
+VBc   = 0.07
+VLc   = 0.0233                        # Liver      (L/kg bodyweight)
+
+VB   := VBc * BW   
+VL   := VLc * BW     
+        
+         
+# Lumped Rest-of-body volume 
+VRest := 0.84*BW - VL - VB       	#(L/kg bodyweight)
+
+#------------------------
+# Blood volume fractions
+#------------------------
+BVLiverC = 0.21				# fraction 
+BVLiver := BVLiverC * VL		# L
+
+BVRestC = 0.04				# fraction ; slowly perfused tissue
+BVRest  := BVRestC * VRest		# L
+
+
+#------------------------
+# Flows 
+#------------------------
+QCc   = 14.1                    # L/h/kg^0.75 (cardiac output)
+QC    := QCc * BW^0.75
+    	
+QLc = 0.214     		
+QL := QLc*QC			# Liver flow (L/h)
+
+QRest := QC - QL 	                # L/h (lumped rest)
+
+#------------------------
+# Partitions (tissue:blood)
+#------------------------ 
+PL   = 19                 	# liver:blood        
+PRest= 1.0                      # lumped rest:blood (can adjust if needed)   
+  
+#------------------------
+# Permeability-surface area product of tissue 
+#------------------------ 
+
+PSALc = 0.288			#L/h/kg Tissue
+PSAL := PSALc * VL		#L/h
+
+PSARestc = 0.043		#L/h/kg Tissue; slowly perfused tissue
+PSARest := PSARestc * VRest	#L/h
+
+#------------------------
+# GI kinetics 
+#------------------------
+ksto = 0.42			 # 1/h       
+kabs = 1.51                      # 1/h   
+kfe  = 0.59			 # 1/h   
+
+#------------------------
+# Hepatic intrinsic clearance 
+#------------------------
+
+CLintC = 9.7   		 	 # L/h/kg BW    
+CLint = CLintC * BW  		 # L/h 
+
+#------------------------
+# Blood metabolism 
+#------------------------
+
+CLintBC = 0			 # L/h/mL Serum
+CLintB = CLintBC * (VB/2)  	 # L/h 
+
+#------------------------
+# Compartments
+#------------------------
+compartment Stomach;    Stomach = 1
+compartment Intestinal; Intestinal  = 1
+compartment LiverVC;    LiverVC   = BVLiver		# Vascular Tissue Space 
+compartment LiverIC;    LiverIC   := VL - BVLiver	# Intracellulat Tissue Space
+compartment Blood;    Blood   = VB
+compartment RestVC;     RestVC    = BVRest 
+compartment RestIC;     RestIC    := VRest - BVRest 
+compartment Fecal;     Fecal    = 1
+
+
+#------------------------
+# Species (amount states)
+#------------------------
+substanceOnly species ASt   in Stomach
+substanceOnly species AIT  in Intestinal
+substanceOnly species ALiverVC  in LiverVC
+substanceOnly species ALiverIC  in LiverIC
+substanceOnly species ABlood  in Blood
+substanceOnly species ARestVC   in RestVC
+substanceOnly species ARestIC   in RestIC
+substanceOnly species ALiverMet  in LiverIC   
+substanceOnly species ABloodMet  in Blood 
+substanceOnly species AFecal  in Fecal
+
+#------------------------
+# Initial conditions
+#------------------------
+ASt = 0; 
+AIT = 0;
+ALiverVC = 0; 
+ALiverIC = 0;
+ABlood= 0; 
+ARestVC = 0
+ARestIC = 0;
+ALiverMet = 0;
+ABloodMet = 0;
+AFecal = 0;
+
+#------------------------
+# Concentrations 
+#------------------------
+CIT  := AIT  / Intestinal 
+CLiverVC  := ALiverVC / LiverVC	 	# Vascular Tissue Space Concentration
+CLiverIC := ALiverIC /LiverIC		# Intracellulat Tissue Space Concentration
+CBlood  := ABlood / Blood
+CRestVC := ARestVC   / RestVC	 	# Vascular Tissue Space Concentration
+CRestIC := ARestIC /RestIC	        # Intracellulat Tissue Space Concentration
+
+#------------------------
+# GI transfers & absorptions
+#------------------------
+# OralDose -> Ast; Fa*(OralDose * BW * 1000)/MW 
+
+ASt -> AIT;     ksto * ASt
+
+AIT -> ALiverVC;  kabs * AIT
+AIT -> AFecal;  kfe * AIT
+
+
+#------------------------
+# Perfusion-limited exchanges
+#------------------------
+# Liver ↔ Blood 
+ABlood -> ALiverVC;     QL   * CBlood
+ALiverVC -> ABlood;   QL   * CLiverVC/PL
+
+# Rest ↔ Blood
+ABlood -> ARestVC;     QRest * CBlood
+ARestVC   -> ABlood;   QRest * CRestVC/PRest
+
+#------------------------
+# Diffusion-limited exchanges
+#------------------------
+ALiverVC -> ALiverIC;   PSAL * CLiverVC 
+ALiverIC -> ALiverVC;   PSAL * CLiverIC/PL 	# Should PCs be removed from the original code?
+
+ARestVC -> ARestIC;   PSARest * CRestVC 
+ARestIC -> ARestVC;   PSARest * CRestIC/PRest	# Should PCs be removed from the original code?
+
+#------------------------
+# Metabolism sinks 
+#------------------------
+ALiverIC -> ALiverMet;   CLint * CLiverIC/PL # Should PCs be removed from the original code?
+ABlood -> ABloodMet;   CLintB * CBlood
+
+end

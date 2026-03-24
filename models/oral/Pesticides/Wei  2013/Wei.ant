@@ -1,0 +1,179 @@
+model Wei_Permethrin_Human()
+
+
+#Created: Carolina Vogs, January 2026
+#Checked:
+
+model notes ```
+Permethrin PBK - Wei et al. 2013
+```
+model description "https://doi.org/10.1038/jes.2013.12"
+#===========================================================
+# Permethrin PBK - Wei et al. 2013
+# https://doi.org/10.1038/jes.2013.12
+#===========================================================
+
+#------------------------
+# Body size & base volumes
+#------------------------
+BW    = 78.65                       # kg
+
+VBc   = 0.07
+VLc   = 0.03                        # Liver      (L/kg bodyweight)
+
+VB   := VBc * BW   
+VL   := VLc * BW     
+        
+         
+# Lumped Rest-of-body volume 
+VRest := 0.84*BW - VL - VB       	#(L/kg bodyweight)
+
+#------------------------
+# Blood volume fractions
+#------------------------
+BVRestC = 0.04				# fraction ; slowly perfused tissue - assumed from Godin et al.
+BVRest  := BVRestC * VRest		# L
+
+
+#------------------------
+# Flows 
+#------------------------
+QCc   = 14.1                    # L/h/kg^0.75 (cardiac output)
+QC    := QCc * BW^0.75
+    	
+QLc = 0.214     		
+QL := QLc*QC			# Liver flow (L/h)
+
+QRest := QC - QL 	                # L/h (lumped rest)
+
+#------------------------
+# Partitions (tissue:blood)
+#------------------------ 
+PL   = 0.44                 	# liver:blood        
+PRest= 1.0                      # lumped rest:blood (can adjust if needed)   
+  
+#------------------------
+# Permeability-surface area product of tissue 
+#------------------------ 
+PSARestc = 0.043		#L/h/kg Tissue; slowly perfused tissue - assumed from Godin et al.
+PSARest := PSARestc * VRest	#L/h
+
+#------------------------
+# GI kinetics 
+#------------------------
+ksto = 0.70			 # 1/h  # stomach -> intestine     
+kabs = 0.90                      # 1/h 	# intestine -> liver
+k0   = 0.01			 # 1/h  # stomach -> liver 
+kfe  = 0.59			 # 1/h  # fecal excretion rate
+kur  = 0.10 			 # 1/h	# renal excretion rate
+
+#------------------------
+# Hepatic intrinsic clearance 
+#------------------------
+CLintLC = 7.320   		 # L/h/kg BW^0.75    
+CLintL = CLintBC * BW^0.75  	 # L/h 
+
+
+#------------------------
+# Blood metabolism 
+#------------------------
+
+CLintBC = 0			 # L/h/mL Serum
+CLintB = CLintBC * (VB/2)  	 # L/h 
+
+#------------------------
+# Compartments
+#------------------------
+compartment Stomach;    Stomach = 1
+compartment Intestinal; Intestinal  = 1
+compartment Liver;    Liver   = VL 
+compartment Blood;    Blood   = VB
+compartment RestVC;   RestVC  := VRest * BVRest	 
+compartment RestT;    RestT    := ((1 - BVRest) * VRest)
+compartment Fecal;    Fecal    = 1
+compartment Urine;    Urine    = 1
+compartment ExcretionCompartment;    ExcretionCompartment    = 1
+
+
+
+#------------------------
+# Species (amount states)
+#------------------------
+substanceOnly species ASt   in Stomach
+substanceOnly species AIT  in Intestinal
+substanceOnly species ALiver  in Liver
+substanceOnly species ABlood  in Blood
+substanceOnly species ARestT   in RestT
+substanceOnly species ARestVC   in RestVC
+substanceOnly species ALiverMet  in Liver
+substanceOnly species ABloodMet  in Blood
+substanceOnly species AExcr  in ExcretionCompartment 
+substanceOnly species AFecal  in Fecal
+substanceOnly species AUrine  in Urine
+
+
+#------------------------
+# Initial conditions
+#------------------------
+ASt = 0; 
+AIT = 0;
+ALiver = 0; 
+ABlood= 0; 
+ARestT = 0;
+ARestVC = 0;
+ALiverMet = 0;
+ABloodMet = 0;
+AFecal = 0;
+AUrine = 0;
+AExcr = 0;
+
+
+#------------------------
+# Concentrations 
+#------------------------
+CIT  := AIT  / Intestinal 
+CLiver  := ALiver / Liver	 	
+CBlood  := ABlood / Blood
+CRestT := ARestT   / RestT
+CRestVC := ARestVC   / RestVC	
+
+#------------------------
+# GI transfers & absorptions
+#------------------------
+ASt -> AIT;     ksto * ASt
+ASt -> ALiver; 	k0 *ASt
+
+AIT -> ALiver;  kabs * AIT
+AIT -> AFecal;  kfe * AIT
+
+#------------------------
+# Perfusion-limited exchanges
+#------------------------
+# Liver <-> Blood 
+ABlood -> ALiver;   	QL * CBlood
+ALiver -> ABlood;   	QL * CLiver/PL
+
+# Rest <-> Blood
+ABlood -> ARestVC;  	QRest * CBlood
+ARestVC -> ABlood; 	QRest * CRestVC/PRest
+
+#------------------------
+# Diffusion-limited exchanges
+#------------------------
+ARestT -> ARestVC;	PSARest * CRestT/PRest
+ARestVC -> ARestT;	PSARest * CRestVC	
+
+#------------------------
+# Met	abolism sinks 
+#------------------------
+ALiver -> AExcr;   CLintL * CLiver/PL
+ABlood -> AExcr;   CLintB * CBlood
+
+
+#------------------------
+# Urine Excretion
+#------------------------
+AExcr -> AUrine; 	kur * AExcr
+
+
+end

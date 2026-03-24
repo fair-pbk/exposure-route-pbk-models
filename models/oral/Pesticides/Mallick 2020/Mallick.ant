@@ -1,0 +1,136 @@
+model Mallick2020_Pyrethroids_Human()
+
+#Created: Carolina Vogs, January 2026
+#Checked: 
+
+model notes ```
+Pyrethroids Mallick et al 2020.
+```
+model description "https://doi.org/10.1093/toxsci/kfz211"
+
+#------------------------
+# Body size & base volumes; based on 25 y old male
+#------------------------
+BW = 81.74                    # kg
+VLc = 0.0197                  # L/kg (liver)
+VBloodc = 0.0553              # L/kg (blood)
+VGutc = 0.016                 # L/kg (gut)
+
+
+VL := VLc * BW                # L
+VBlood := VBloodc * BW      # L
+VGut := VGutc * BW            # L
+
+FTB = 0.05		      # Fraction of blood in tissue
+VRest := 0.84 * BW - VL - VBlood - VGut  # Lumped Rest-of-body volume L 
+VRestTissue := VRest * FTB
+VRestPlasma := VRest * (1 - FTB)
+
+#------------------------
+# Plasma Flows
+#------------------------
+Htc = 0.441		      # Hematocrit
+
+QC = 236.63         	      # L/h (cardiac output)
+QPlasma := QC * (1 - Htc)     # L/h cardiac output adjusted for plasma flow
+
+QGutc = 0.215                 # L/h; fraction of total plasma flow to liver
+QLhc = 0.05                   # L/h; fraction to hepatic arterial plasma
+
+QL := QLhc * QPlasma            # L/h (liver)
+QGut := QGutc * QPlasma        # L/h (liver)
+QRest := QPlasma - QL - QGut   # L/h (rest)
+
+#------------------------
+# Partition coefficients
+#------------------------
+PL = 1.0728			# according to 0.7524*exp(log(4.451/0.7524)*exp(-0.1555*SF))
+PG = 1.0728			# same liver
+PRest = 1  
+
+#------------------------
+# other chemical-specific parameters
+#------------------------
+Free = 0.1		 # Total unbound fraction
+kabs = 5		 # 1/h
+LymphAbs = 0.086	 # unitless; Lymphatic absorption
+
+PASPc = 0.05		 # L/hr/Kg^0.75; Slowly Perfused tissues permeability-area cross product
+PASP := PASPc * BW^0.75	 # L/hr;
+
+CL1C  = 7418.58	 	# L/hr/kg liver for DLM as example - other Pyrethroid values also used
+CL1   := CL1C * BW 	#L/h
+SF    = 5	 	# Empirical adjustment factor for free concentration in vivo
+
+#------------------------
+# Compartments (sizes)
+#------------------------
+compartment Lumen := 1
+compartment Gut = VGut
+compartment Liver = VL
+compartment Plasma = VBlood
+compartment RestPlasma = VRestPlasma
+compartment RestTissue = VRestTissue
+
+
+#------------------------
+# Species (amount states)
+#------------------------
+substanceOnly species ALumen in Lumen
+substanceOnly species AGut in Gut
+substanceOnly species ALiver in Liver
+substanceOnly species APlasma in Plasma
+substanceOnly species ARestPlasma in RestPlasma
+substanceOnly species ARestTissue in RestTissue
+substanceOnly species ALiverMet1 in Liver
+
+#------------------------
+# Initial conditions
+#------------------------
+ALumen = 0;
+AGut = 0; 
+ALiver = 0; 
+APlasma = 0; 
+ARestPlasma = 0; 
+ARestTissue = 0; 
+ALiverMet1 = 0;
+
+#------------------------
+# Concentrations
+#------------------------
+CGut := AGut / Gut
+CLiver := ALiver / Liver
+CPlasmaTotal := APlasma / Plasma 
+CPlasma := CPlasmaTotal * Free   	# free fraction in plasma
+CRestPlasma := ARestPlasma / RestPlasma
+CRestTissue := ARestTissue / RestTissue
+
+#------------------------
+# Reactions / Transfers i
+#------------------------
+
+ALumen -> AGut;        kabs * (1-LymphAbs) * ALumen	
+ALumen -> APlasma;     kabs * LymphAbs * ALumen 	
+
+# Perfusion-limited exchanges
+AGut -> ALiver;       QGut * Free * CGut/PG
+APlasma -> AGut;      QGut * CPlasma
+
+APlasma -> ALiver;    QL * CPlasma
+ALiver -> APlasma;    (QL+QGut) * Free * CLiver/PL
+
+# Diffusion-limited 
+
+# a) Rate of change in tissue plasma
+APlasma -> ARestPlasma;     QRest * CPlasma
+ARestPlasma -> APlasma;     QRest * Free * CRestPlasma/PRest
+
+# b) Rate of change in tissue 
+ARestPlasma -> ARestTissue;     PASP * Free * CRestPlasma/PRest
+ARestTissue-> ARestPlasma;      PASP * Free * CRestTissue
+
+# Metabolism
+ALiver -> ALiverMet1; CL1 *((Free * CLiver)/SF) 
+
+
+end

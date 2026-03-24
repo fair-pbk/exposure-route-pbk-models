@@ -1,0 +1,13 @@
+idModelInstance,Parameter,Value,Unit,Description,Reference
+Timchalk2002_Chlorpyrifos_Human_PARAM,BW,73.0,,,
+Timchalk2002_Chlorpyrifos_Human_PARAM,VLc,0.03,,,
+Timchalk2002_Chlorpyrifos_Human_PARAM,VBc,0.07,,,
+Timchalk2002_Chlorpyrifos_Human_PARAM,QC,347.9,,,
+Timchalk2002_Chlorpyrifos_Human_PARAM,QLc,0.23,,,
+Timchalk2002_Chlorpyrifos_Human_PARAM,PL,22.0,,,
+Timchalk2002_Chlorpyrifos_Human_PARAM,PRest,1.0,,,
+Timchalk2002_Chlorpyrifos_Human_PARAM,KmLMet1,2.86,,,
+Timchalk2002_Chlorpyrifos_Human_PARAM,VmaxLMet1,80.0,,,
+Timchalk2002_Chlorpyrifos_Human_PARAM,KmLMet2,24.0,,,
+Timchalk2002_Chlorpyrifos_Human_PARAM,VmaxLMet2,273.0,,,
+Timchalk2002_Chlorpyrifos_Human_PARAM,Fub,0.97,,,

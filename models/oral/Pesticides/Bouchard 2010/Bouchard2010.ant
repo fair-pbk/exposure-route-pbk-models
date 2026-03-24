@@ -1,0 +1,95 @@
+model Bouchard2010_Chlorpyrifos_Human()
+
+#Created: Carolina Vogs, January 2026
+#Checked: 
+
+
+model notes ```
+Chlorpyrifos and its metabolites (Bouchard et al. 2002):
+Note: Just amounts are computed in mol - no volumes considered
+```
+model description "https://doi.org/10.1080/15459620590922407"
+
+#===========================================================
+
+#===========================================================
+
+#------------------------
+# Body size & base volumes - not applicable
+#------------------------
+
+
+#------------------------
+# Flows (adult human) - not applicable
+#------------------------
+
+#------------------------
+# Tissue:blood partitions - not applicable
+#------------------------
+
+
+#------------------------
+# Blood metabolism - Total transfer rate of Chlorpyrifos to metabolites
+#------------------------
+kbm = 1.908                      		# 1/h
+             
+
+#------------------------
+# Other chemical-specific parameters - Transfer rates
+#------------------------
+kabs = 0.460					# 1/h; oral absorption rate
+kbr  = 3.061					# 1/h; Blood to rest transfer rate
+krb  = 0.0361					# 1/h; Rest to blood transfer rate
+
+#------------------------
+# Compartments
+#------------------------
+
+compartment Gut;       Gut     = 1
+compartment Blood;     Blood   = 1
+compartment Rest;      Rest    = 1
+
+
+
+
+#------------------------
+# Species (amounts)
+#------------------------
+substanceOnly species AGut  in Gut
+substanceOnly species ABlood   in Blood
+substanceOnly species ARest    in Rest
+substanceOnly species ABloodMetTotal   in Blood     
+
+
+#------------------------
+# Initial conditions
+#------------------------
+AGut     = 0
+ABlood   = 0		
+ARest    = 0
+
+# Total biotransformation amount of Chlorpyrifos
+
+ABloodMetTotal = 0 
+
+
+#------------------------
+# Concentrations - not applicable
+#------------------------
+
+
+#------------------------
+# Reactions / Transfers
+#------------------------
+
+AGut   -> ABlood;        kabs * AGut
+
+ABlood   -> ARest;       kbr * ABlood
+ARest    -> ABlood;      krb * ARest
+
+# Metabolism in Blood 
+ABlood -> ABloodMetTotal; kbm * ABlood
+
+
+
+end

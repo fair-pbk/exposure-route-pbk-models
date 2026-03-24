@@ -1,0 +1,12 @@
+idModelInstance,Parameter,Value,Unit,Description,Reference
+Tonnelier2012_Chlorpyrifos_Human_PARAM,VPV,3.2,,,
+Tonnelier2012_Chlorpyrifos_Human_PARAM,BW,70.0,,,
+Tonnelier2012_Chlorpyrifos_Human_PARAM,VLc,0.026,,,
+Tonnelier2012_Chlorpyrifos_Human_PARAM,VD,22.42,,,
+Tonnelier2012_Chlorpyrifos_Human_PARAM,QPV,6.7,,,
+Tonnelier2012_Chlorpyrifos_Human_PARAM,QHA,18.0,,,
+Tonnelier2012_Chlorpyrifos_Human_PARAM,FA,1.0,,,
+Tonnelier2012_Chlorpyrifos_Human_PARAM,kabs,2.0,,,
+Tonnelier2012_Chlorpyrifos_Human_PARAM,CLHint,2.6,,,
+Tonnelier2012_Chlorpyrifos_Human_PARAM,fu,0.0176,,,
+Tonnelier2012_Chlorpyrifos_Human_PARAM,CLR,0.118,,,

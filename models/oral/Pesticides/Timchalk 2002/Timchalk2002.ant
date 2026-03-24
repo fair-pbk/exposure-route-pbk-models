@@ -1,0 +1,120 @@
+model Timchalk2002_Chlorpyrifos_Human()
+
+#Created: Carolina Vogs, January 2026
+#Checked: 
+
+model notes ```
+Chlorpyrifos and its metabolites (Timchalk et al. 2002)
+```
+model description "https://doi.org/10.1093/toxsci/66.1.34"
+
+
+#------------------------
+# Body size & base volumes
+#------------------------
+BW      = 73                       # kg  
+VLc     = 0.03                     # L/kg (liver)
+VBc     = 0.07                     # L/kg (blood; generic adult)      
+
+VL      := VLc*BW                  # L
+VB      := VBc*BW                  # L
+VRest   := 0.84*BW - VL - VB       # L (lumped rest-of-body water)
+
+
+#------------------------
+# Flows (adult human)
+#------------------------
+QC      = 347.9                    # L/h    
+QLc     = 0.23                     # % cardiac output
+QL	:= QLc * QC		   # L/h    
+QRest   := QC-QL                   # L/h 
+
+#------------------------
+# Tissue:blood partitions 
+#------------------------
+PL  = 22                    # liver:blood  
+PRest   = 1                    
+
+
+#------------------------
+# Hepatic metabolism (Michaelis–Menten on liver-venous conc)
+#------------------------
+#to CPFoxon
+KmLMet1  = 2.86                      		# µmol/L
+VmaxLMet1 = 80		   			# µmol/h/kg
+
+
+#to TCP
+KmLMet2  = 24  					# µmol/L
+VmaxLMet2 = 273		   			# µmol/h/kg                   
+
+#------------------------
+# Other chemical-specific parameters
+#------------------------
+Fub = 0.97					
+
+#------------------------
+# Compartments
+#------------------------
+
+compartment Liver;     Liver   = VL
+compartment Blood;     Blood   = VB
+compartment Rest;      Rest    = VRest
+
+
+
+#------------------------
+# Species (amounts)
+#------------------------
+substanceOnly species ALiver   in Liver
+substanceOnly species ABlood   in Blood
+substanceOnly species ARest    in Rest
+substanceOnly species ALiverMet1    in Liver      
+substanceOnly species ALiverMet2    in Liver    
+
+
+#------------------------
+# Initial conditions
+#------------------------
+ALiver   = 0
+ABlood   = 0		#Fub and total fraction in blood
+ARest    = 0
+
+# Met1 = CPFoxon, Met2 = TCP
+
+ALiverMet1    = 0
+ALiverMet2    = 0
+
+
+#------------------------
+# Concentrations 
+#------------------------
+CBloodTotal := ABlood / Blood		# Total concentration in blood
+CBloodFree := CBloodTotal * (1-Fub)	# Free concentration in blood
+CBloodBound := CBloodTotal * Fub	# Bound concentration in blood
+
+CLiver := ALiver / Liver
+CVL    := CLiver / PL
+CRest  := ARest  / Rest
+
+#------------------------
+# Reactions / Transfers
+#------------------------
+
+# Perfusion-limited exchanges
+ABlood   -> ALiver;      QL * CBloodFree
+ALiver   -> ABlood;      QL * ((CLiver * (1-Fub)) / PL)
+
+ABlood   -> ARest;       QRest * CBloodFree
+ARest    -> ABlood;      QRest * ((CRest * (1-Fub)) / PRest)
+
+# Hepatic metabolism (MM on liver-venous concentration)
+# CPF -> CPFoxon
+ALiver   -> ALiverMet1;       VmaxLMet1 * (CLiver)/ (KmLMet1 + (CLiver))
+# CPF -> TCP
+ALiver   -> ALiverMet2;       VmaxLMet2 * (CLiver) / (KmLMet2 + (CLiver))
+
+
+
+
+end
