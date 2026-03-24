@@ -305,6 +305,7 @@ def collect_model_metadata(sbml_file: str):
             "chemicals": model_chemicals_metadata,
             "species": model_animal_species_metadata
         },
+        "num_compartments": model.getNumCompartments(),
         "num_species": model.getNumSpecies(),
         "num_parameters": model.getNumParameters(),
         "num_reactions": model.getNumReactions(),
@@ -342,6 +343,10 @@ def create_overview_report():
             with open(metadata_file, "r", encoding="utf-8") as f:
                 metadata = yaml.safe_load(f)
 
+            num_compartments_unannotated = len([
+                s for s in metadata.get('compartments', [])
+                if not s.get('pbpko_bqm_is_class')
+            ])
             num_species_unannotated = len([
                 s for s in metadata.get('species', [])
                 if not s.get('pbpko_bqm_is_class')
@@ -366,6 +371,8 @@ def create_overview_report():
                 "chemical_group": chemical_group,
                 "report_path": f"./models/{report_path.replace(' ', '%20')}/summary.md",
                 "compartments": metadata['compartments'],
+                "num_compartments": metadata.get('num_compartments', 'N/A'),
+                "num_compartments_unannotated": num_compartments_unannotated,
                 "num_species": metadata.get('num_species', 'N/A'),
                 "num_species_unannotated": num_species_unannotated,
                 "num_parameters": metadata.get('num_parameters', 'N/A'),
@@ -387,6 +394,22 @@ def create_overview_report():
         output_file="./docs/models-overview.md",
         records=records
     )
+
+    # Write all annotations to excel
+    console_logger.info("Creating models overview excel table.")
+    excel_file = os.path.join(OUTPUT_PATH, 'models_overview.xlsx')
+    df = pd.DataFrame(records)
+
+    # Map compartments list of objects to semicolon-separated ids for spreadsheet export
+    if 'compartments' in df.columns:
+        df['compartments'] = df['compartments'].apply(
+            lambda compartments: ";".join(str(c.get('id', '')) for c in compartments if isinstance(c, dict) and c.get('id') is not None)
+            if isinstance(compartments, list) else compartments
+        )
+
+    with pd.ExcelWriter(excel_file) as writer:
+        df.to_excel(writer, sheet_name='Models overview', index=False, header=True)
+
 
 def export_annotations():
     sbml_files = glob.glob('./models/**/*.sbml', recursive=True)
