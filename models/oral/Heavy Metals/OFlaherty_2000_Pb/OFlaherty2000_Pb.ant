@@ -1,12 +1,14 @@
 model OFlaherty2000_Pb_Human_Male()
 
 #Created: Thomas Gastellu, November 2025
-#Checked:
+#Checked: Paris Mertzimekis, February 2026
 
-#===========================================================
-# Pb PBK (OFLaherty, 2000):
-# https://doi.org/10.1093/toxsci/55.1.171
-#===========================================================
+model notes ```
+Pb PBK (OFLaherty, 2000):
+```
+model description "https://doi.org/10.1093/toxsci/55.1.171"
+
+
 
 #------------------------
 # Body size & base volumes
@@ -18,22 +20,22 @@ BW   = 70                       # kg
 VLc  = 0.025                    # L/kg (liver)
 VBc  = 0.067                    # L/kg (plasma)
 
-VL   = VLc*BW                   # L
-VB   = VBc*BW                   # L
+VL   := VLc*BW                   # L
+VB   := VBc*BW                   # L
 
 VRest := BW - VL - VB      # Lumped Rest-of-body volume L 
 
-#------------------------
+#------------------------ 
 # Plasma Flows
 #------------------------
-QC    = 340*BW/24            # L/h (cardiac output)
+QC    := 340*BW/24            # L/h (cardiac output)
 QLc   = 0.25
 
-QL    = QLc*QC                # L/h (liver)
-QRest = QC - QL               # L/h (rest)
+QL    := QLc*QC                # L/h (liver)
+QRest := QC - QL               # L/h (rest)
 
 HtcA = 0.44
-Htc = piecewise(0.52 + Age * 14, Age < 0.01, HtcA * (1 + (0.66 - HtcA) * exp(-(Age - 0.01)*13.9)))
+Htc := piecewise(0.52 + Age * 14, Age < 0.01, HtcA * (1 + (0.66 - HtcA) * exp(-(Age - 0.01)*13.9)))
 
 #------------------------
 # Partition coefficients
@@ -42,8 +44,8 @@ PL = 50
 PRest = 1
 
 G = 1.2                 # Linear parameter for unbound lead in read cells
-BIND = 2.7*1000         # Maximum capacity of Pb for binding by sites in red cells (µg/L of red cell volume)
-KBIND = 0.0075 * 1000   # Half-saturation concentration of lead for binding by sites in red cells (µg/L of red cell volume)
+BIND := 2.7*1000         # Maximum capacity of Pb for binding by sites in red cells (µg/L of red cell volume)
+KBIND := 0.0075 * 1000   # Half-saturation concentration of lead for binding by sites in red cells (µg/L of red cell volume)
 
 #------------------------
 # Compartments (sizes)

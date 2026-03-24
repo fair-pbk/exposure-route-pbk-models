@@ -1,12 +1,13 @@
 model Carrier2001_Hg_Human()
 
 #Created: Thomas Gastellu, November 2025
-#Checked:
+#Checked: Paris Mertzimekis, February 2026
 
-#===========================================================
-# Hg PBK (Carrier et al., 2001):
-# https://doi.org/10.1006/taap.2000.9113
-#===========================================================
+model notes ```
+Hg PBK (Carrier et al., 2001):
+```
+model description "https://doi.org/10.1006/taap.2000.9113"
+
 
 #------------------------
 # Body size & base volumes
@@ -17,9 +18,9 @@ VGIc = 0.017
 VBc = 0.067
 VLc  = 0.026                    # L/kg (liver)
 
-VB = VBc * BW;
-VGI  = VGIc*BW                  # L
-VL   = VLc*BW                   # L
+VB := VBc * BW;
+VGI  := VGIc*BW                  # L
+VL   := VLc*BW                   # L
 
 #------------------------
 # Plasma Flows

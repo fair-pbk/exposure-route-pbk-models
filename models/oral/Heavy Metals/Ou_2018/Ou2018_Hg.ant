@@ -1,12 +1,13 @@
 model Ou2018_Hg_Human()
 
 #Created: Thomas Gastellu, November 2025
-#Checked:
+#Checked: Paris Mertzimekis, February 2026
 
-#===========================================================
-# Hg PBK (Ou et al., 2018):
-# https://doi.org/10.1016/j.envint.2018.03.018
-#===========================================================
+model notes ```
+Hg PBK (Ou et al., 2018):
+```
+model description "https://doi.org/10.1016/j.envint.2018.03.018"
+
 
 #------------------------
 # Body size & base volumes
@@ -14,59 +15,59 @@ model Ou2018_Hg_Human()
 
 Age = 30                        # year
 
-BW   = 70                       # kg
+BW   = 70                       # kg             
 VGut_lumenc = 0.014             # L/kg (gut lumen)
 VGc = 0.017  
 VLc  = 0.026                    # L/kg (liver)
 VRBCc  = 0.024                  # L/kg (blood)
 VPlasmac = 0.024                # L/kg (plasma)
 
-VGut_lumen = VGut_lumenc*BW     # L
-VG  = VGc*BW                  # L
-VL   = VLc*BW                   # L
-VRBC   = VRBCc*BW               # L
-VPlasma = VPlasmac*BW           # L
+VGut_lumen := VGut_lumenc*BW     # L
+VG  := VGc*BW                  # L
+VL   := VLc*BW                   # L
+VRBC   := VRBCc*BW               # L
+VPlasma := VPlasmac*BW           # L
 
 VRest := BW - VGut_lumen - VG - VL - VRBC - VPlasma      # Lumped Rest-of-body volume L 
 
 #------------------------
 # Plasma Flows
 #------------------------
-QC    = 20*BW^0.75            # L/h (cardiac output)
+QC    := 20*BW^0.75            # L/h (cardiac output)
 QLc   = 0.046
 QGc  = 0.181
-Qrbcc = 1.5
+Qrbcc = 1.5                  # Maternal red cells / plasma diffusion　
 
-QG    = QGc*BW               # L/h (Gut)
-QL    = QLc*QC               # L/h (liver)
-QRest = QC - QL - QGI        # L/h (rest)
-Qrbc  = Qrbcc*BW^0.75        # L/h (rbc)
+QGI    := QGc*BW               # L/h (Gut)
+QL    := QLc*QC               # L/h (liver)
+QRest := QC - QL - QGI        # L/h (rest)
+Qrbc  := Qrbcc*BW^0.75        # L/h (rbc)
 
 #------------------------
 # Partition coefficients
 #------------------------
 
 kabsc = 0.005
-kabs = kabsc * BW^0.75
+kabs := kabsc * BW^0.75
 
 Frac = 0.95
 
 PGI = 1
 PL = 5
-PRBC = 14
+PRBC = 14          # refers to fetus, not the parent
 PRest = 1
 
 kfec = 2.0e-4;
-kfe = kfec * BW^0.75;
+kfe := kfec * BW^0.75;
 
 kmet_gutlumenc = 1.0e-4;
-kmet_gutlumen = kmet_gutlumenc * BW^0.75;
+kmet_gutlumen := kmet_gutlumenc * BW^0.75;
 
 kmet_liverc = 1.0e-5;
-kmet_liver = kmet_liverc * BW^0.75;
+kmet_liver := kmet_liverc * BW^0.75;
 
 kbiliaryc = 1.0e-4; 
-kbiliary = kbiliaryc * BW^0.75;
+kbiliary := kbiliaryc * BW^0.75;
 #------------------------
 # Compartments (sizes)
 #------------------------
@@ -110,7 +111,7 @@ AFeces = 0;
 # Concentrations
 #------------------------
 CGut_lumen := AGut_lumen / Gut_lumen;
-CGI := AGI / Gut;
+CGI := AGut / Gut;
 CLiver := ALiver / Liver
 CRBC := ARBC / Red_Blood_Cell
 CPlasma := APlasma / Plasma

@@ -1,0 +1,11 @@
+idModelInstance,Parameter,Value,Unit,Description,Reference
+Carrier2001_Hg_Human_PARAM,BW,70.0,kg,Bodyweight,
+Carrier2001_Hg_Human_PARAM,VGIc,0.017,L/kg,Volume fraction of gut,
+Carrier2001_Hg_Human_PARAM,VBc,0.067,L/kg,Volume fraction of blood,
+Carrier2001_Hg_Human_PARAM,VLc,0.026,L/kg,Volume fraction of liver,
+Carrier2001_Hg_Human_PARAM,VB,,L,Volume of blood,
+Carrier2001_Hg_Human_PARAM,VGI,,L,Volume of gastrointestinal compartment,
+Carrier2001_Hg_Human_PARAM,VL,,L,Volume of liver,
+Carrier2001_Hg_Human_PARAM,kabs,5.544,/d,Oral absorption rate constant,
+Carrier2001_Hg_Human_PARAM,Frac,1.0,dimensionless,Bioavailability,
+Carrier2001_Hg_Human_PARAM,kmet_liver,0.175,/d,Metabolism rate constant,

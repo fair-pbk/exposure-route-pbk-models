@@ -3,10 +3,10 @@ model Ruiz2010_Cd_Human_Male()
 #Created: Thomas Gastellu, November 2025
 #Checked:
 
-#===========================================================
-# Cd PBK (Ruiz et al., 2010):
-# https://doi.org/10.1016/j.toxlet.2010.04.022
-#===========================================================
+model notes ```
+Cd PBK (Ruiz et al., 2010):
+```
+model description "https://doi.org/10.1016/j.toxlet.2010.04.022"
 
 #------------------------
 # Body size & base volumes

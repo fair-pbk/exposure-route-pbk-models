@@ -1,12 +1,14 @@
 model Bechaux2014_Cd_Human_Male()
 
 #Created: Thomas Gastellu, November 2025
-#Checked:
+#Checked: Paris Mertzimekis, February 2026
 
-#===========================================================
-# Cd PBK (Pouillot et al., 2022):
-# https://doi.org/10.1016/j.toxlet.2022.07.812
-#===========================================================
+model notes ```
+Cd PBK (Pouillot et al., 2022):
+```
+model description "https://doi.org/10.1016/j.toxlet.2022.07.812"
+
+
 
 #------------------------
 # Body size & base volumes

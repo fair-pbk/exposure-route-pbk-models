@@ -1,7 +1,7 @@
 model Bechaux2014_Cd_Human_Female()
 
 #Created: Thomas Gastellu, November 2025
-#Checked:
+#Checked: Paris Mertzimekis, February 2026
 
 #===========================================================
 # Cd PBK (Bechaux et al., 2014):
@@ -45,7 +45,7 @@ C12 = 0.25      # UNITLESS
 C13 = 0.00003   # day-1
 C14 = 0.00016   # day-1
 C16 = 0.012     # day-1
-C17 = 0.5       # UNITLESS
+C17 = 0.05       # UNITLESS      #rate of transfer of cadmium in blood pool B3 to kidney! 
 C18 = 0.00001   # day-1
 CX = 0.04       # UNITLESS
 

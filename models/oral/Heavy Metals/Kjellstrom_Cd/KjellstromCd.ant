@@ -1,12 +1,13 @@
 model Kjellstrom1978_Cd_Human()
 
 #Created: Thomas Gastellu, November 2025
-#Checked:
+#Checked: Paris Mertzimekis, February 2026
 
-#===========================================================
-# Cd PBK (Kjellstrom and Nordberg, 1978):
-# https://doi.org/10.1016/0013-9351(78)90160-3 
-#===========================================================
+model notes ```
+Cd PBK (Kjellstrom and Nordberg, 1978):
+```
+model description "https://doi.org/10.1016/0013-9351(78)90160-3" 
+
 
 #------------------------
 # Body size & base volumes
@@ -45,7 +46,7 @@ C12 = 0.25      # UNITLESS
 C13 = 0.00003   # day-1
 C14 = 0.00016   # day-1
 C16 = 0.012     # day-1
-C17 = piecewise(0.95, Age < 30, 0.95 * 0.33 * (Age-30)/(80-30)) # UNITLESS C17 decreases from age 30 to age 80 by 33%
+C17 := piecewise(0.95, Age < 30, 0.95 * 0.33 * (Age-30)/(80-30)) # UNITLESS C17 decreases from age 30 to age 80 by 33%
 C18 = 0.00001   # day-1
 CX = 0.04       # UNITLESS
 
