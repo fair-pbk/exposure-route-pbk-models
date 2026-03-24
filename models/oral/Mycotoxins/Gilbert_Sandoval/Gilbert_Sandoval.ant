@@ -1,15 +1,16 @@
 model GilbertSandoval()
 
 #Created: Carolina Vogs, September 2025
-#Checked:
+#Checked: Paris Mertzimekis, February 2026
 
-#===========================================================
-# Human AFB1 PBK (Gilbert-Sandoval):
-# Stomach → SI1→…→SI7 → Colon; absorption from each SI box to Liver
-# Liver perfusion-limited + Hill metabolism (to AFQ1, AFBO on venous conc)
-# Blood ↔ Rest; 10 once-daily oral boluses; mass balance
-# https://www.ncbi.nlm.nih.gov/pubmed/32421213
-#===========================================================
+model notes ```
+Human AFB1 PBK (Gilbert-Sandoval):
+Stomach → SI1→…→SI7 → Colon; absorption from each SI box to Liver
+Liver perfusion-limited + Hill metabolism (to AFQ1, AFBO on venous conc)
+Blood ↔ Rest; 10 once-daily oral boluses; mass balance
+```
+model description "https://www.ncbi.nlm.nih.gov/pubmed/32421213"
+
 
 
 #------------------------
@@ -21,8 +22,8 @@ VBc  = 0.079      # L/kg blood
 VSI  = 1.29       # L per SI subcompartment (×7)
 
 
-VL = VLc*BW
-VB = VBc*BW
+VL := VLc*BW
+VB := VBc*BW
 
 
 # Lumped Rest-of-body 
@@ -31,10 +32,10 @@ VRest := 0.84*BW - VL - VB
 #------------------------
 # Flows (human)
 #------------------------
-QC   = 15*BW^0.74
+QC   := 15*BW^0.74
 QLc  = 0.227
-QL   = QLc*QC
-QRest= QC - QL
+QL   := QLc*QC
+QRest:= QC - QL
 
 #------------------------
 # Partitions
@@ -68,7 +69,7 @@ VmaxMet1c  = 0.003469          # µmol/(mg microsomal)/min
 VmaxMet2c  = 0.000542          # µmol/(mg microsomal)/min
 nMet1     = 1.2
 nMet2     = 1.1
-S50Met1   = 427               # µmol/L (effective Hill S50)
+S50Met1   = 427                # µmol/L (effective Hill S50)
 S50Met2    = 197               # µmol/L
 
 # Scale Vmax to whole liver (µmol/h)
@@ -105,7 +106,7 @@ substanceOnly species ASI5  in SI5
 substanceOnly species ASI6  in SI6
 substanceOnly species ASI7  in SI7
 substanceOnly species AColon  in Colon
-substanceOnly species AFeaces  in Feaces
+substanceOnly species AFeaces  in Feces
 substanceOnly species ALiver  in Liver
 substanceOnly species ABlood  in Blood
 substanceOnly species ARest in Rest

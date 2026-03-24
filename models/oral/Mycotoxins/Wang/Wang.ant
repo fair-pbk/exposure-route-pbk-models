@@ -2,14 +2,15 @@ model Wang2023_DON_Human()
 
 
 #Created: Carolina Vogs, September 2025
-#Checked:
+#Checked: Paris Mertzimekis, February 2026
 
-#===========================================================
-# DON PBK (Wang et al., human, compact):
-# Stomach → Jejunum → Ileum → LI; absorption from each segment → Intestinal tissue → liver
-# Liver perfusion-limited (venous) + intrinsic clearance; Blood ↔ Rest
-# https://www.ncbi.nlm.nih.gov/pubmed/38131302
-#===========================================================
+model notes ```
+DON PBK (Wang et al., human, compact):
+Stomach → Jejunum → Ileum → LI; absorption from each segment → Intestinal tissue → liver
+Liver perfusion-limited (venous) + intrinsic clearance; Blood ↔ Rest
+```
+model description "https://www.ncbi.nlm.nih.gov/pubmed/38131302"
+
 
 #------------------------
 # Body size & base volumes
@@ -20,9 +21,9 @@ VBc  = 0.079                       # L/kg (blood)
 VITc  = 0.09			   # L/kg (intestinal tissue)
 
 
-VL   = VLc*BW                      # L
-VB   = VBc*BW                      # L
-VIT  = VITc*BW
+VL   := VLc*BW                      # L
+VB   := VBc*BW                      # L
+VIT  := VITc*BW
 
 # Intestinal segment geometry (dm, dm^2, dm^3≈L)
 Ddm  = 0.5                         # dm (diameter)
@@ -30,13 +31,13 @@ LJdm = 30.0                        # dm (jejunum length)
 LIdm = 30.0                        # dm (ileum length)
 LLIdm= 18.7                        # dm (large intestine length)
 
-VJ   = 3.14159*(Ddm/2)^2 * LJdm    # L (jejunum lumen)
-VI   = 3.14159*(Ddm/2)^2 * LIdm    # L (ileum lumen)
-VLI  = 0.561                       # L (LI lumen; Wang supplement)
+VJ   := 3.14159*(Ddm/2)^2 * LJdm    # L (jejunum lumen)
+VI   := 3.14159*(Ddm/2)^2 * LIdm    # L (ileum lumen)
+VLI  := 0.561                       # L (LI lumen; Wang supplement)
 
-SAJ  = 3.14159*Ddm*LJdm            # dm^2 (surface area - jejunum lumen)
-SAI  = 3.14159*Ddm*LIdm            # dm^2 (surface area - ileum lumen)
-SALI = 3.14159*Ddm*LLIdm           # dm^2 (surface area -large intestine lumen)
+SAJ  := 3.14159*Ddm*LJdm            # dm^2 (surface area - jejunum lumen)
+SAI  := 3.14159*Ddm*LIdm            # dm^2 (surface area - ileum lumen)
+SALI := 3.14159*Ddm*LLIdm           # dm^2 (surface area -large intestine lumen)
 
 # Lumped Rest-of-body volume with floor
 VRest := 0.84*BW - VL - VB - VIT 
@@ -44,13 +45,13 @@ VRest := 0.84*BW - VL - VB - VIT
 #------------------------
 # Flows 
 #------------------------
-QC   = 15*BW^0.74                  # L/h (cardiac output)
-QLc  = 0.046                       # liver fraction (Wang human)
-QITc = 0.181
+QC   := 15*BW^0.74                  # L/h (cardiac output)
+QLc  := 0.046                       # liver fraction (Wang human)
+QITc := 0.181
 
-QL   = QLc*QC                      # L/h (liver)
-QIT  = QITc*QC			   # L/h (intestinal tissue)
-QRest= QC - QL - QIT               # L/h (lumped rest)
+QL   := QLc*QC                      # L/h (liver)
+QIT  := QITc*QC			    # L/h (intestinal tissue)
+QRest:= QC - QL - QIT               # L/h (lumped rest)
 
 #------------------------
 # Partitions (tissue:blood)
@@ -58,9 +59,9 @@ QRest= QC - QL - QIT               # L/h (lumped rest)
 RBP = 0.6523                      # DON blood-to-plasma ratio 
 fu = 0.862			  # unbound fraction
 
-PL   = 0.76 / RBP                 # liver:blood 
-PIT  = 0.73 / RBP		  # Intestine tissue
-PRest= 1.0  / RBP                 # lumped rest:blood 
+PL   := 0.76 / RBP                 # liver:blood 
+PIT  := 0.73 / RBP		  # Intestine tissue
+PRest:= 1.0  / RBP                 # lumped rest:blood 
 
 #------------------------
 # GI kinetics 
@@ -83,7 +84,7 @@ kabsLI:= Papp_dm_h * SALI           # L/h (large intestine)
 #------------------------
 # CLint (L/h) = 0.008 mL/min/mg * 32 mg/g * (VLc*1000 g/kg)*BW * 60/1000
 
-CLint = 0.008 * 32 * (VLc*1000)*BW * 60 / 1000   # L/h
+CLint := 0.008 * 32 * (VLc*1000)*BW * 60 / 1000   # L/h
 
 #------------------------
 # Compartments
@@ -95,7 +96,7 @@ compartment LargeLumen;   LargeLumen  = VLI
 compartment Liver;    Liver   = VL
 compartment Blood;    Blood   = VB
 compartment Rest;     Rest    = VRest
-compartment Metabolites;     Metabolites    = 1
+
 
 #------------------------
 # Species (amount states)
@@ -122,8 +123,8 @@ AIT = 0;
 ALI = 0;
 ALiv = 0; 
 ABlood= 0; 
-ARest = 0
-AMet = 0
+ARest = 0;
+AMet = 0;
 
 #------------------------
 # Concentrations 
@@ -170,7 +171,7 @@ ABlood -> ARest;     QRest * CBlood
 ARest   -> ABlood;   QRest * CRest/PRest
 
 #------------------------
-# Hepatic metabolism sink (parent → AMet)
+# Hepatic metabolism sink (parent → AMet) in µmol/h
 #------------------------
 ALiver -> AMet;   CLint * (CLiver/PL)   
 

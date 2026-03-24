@@ -2,14 +2,15 @@ model Mandez_Catal_2021_Human_PBK()
 
 
 #Created: Carolina Vogs, September 2025
-#Checked:
+#Checked: Paris Mertzimekis, February 2026
 
-#===========================================================
-# Mendez-Catala, D. M., et al. (2021)
-# Human PBK for oral absorption (administration → blood) with 7 SI boxes + Rest
-# Parent only, perfusion-limited tissues
-# 10.1002/mnfr.202100443 
-#===========================================================
+model notes ```
+Mendez-Catala, D. M., et al. (2021)
+Human PBK for oral absorption (administration → blood) with 7 SI boxes + Rest
+Parent only, perfusion-limited tissues
+```
+model description "10.1002/mnfr.202100443"
+
 
 #------------------------
 # Physiology 
@@ -27,13 +28,13 @@ const VB :=  VBc*BW          # {L}
 
 # Volumes 
 VSI     = 1.29            # {L} per SI sub-compartment
-const VSI1 :=  VSI
-const VSI2 :=  VSI
-const VSI3 :=  VSI
-const VSI4 :=  VSI
-const VSI5 :=  VSI
-const VSI6 :=  VSI
-const VSI7 :=  VSI
+const VSI1 =  VSI
+const VSI2 =  VSI
+const VSI3 =  VSI
+const VSI4 =  VSI
+const VSI5 =  VSI
+const VSI6 =  VSI
+const VSI7 =  VSI
 
 
 VRest := 0.84*BW - VL - VB - VSITissue 
@@ -52,7 +53,7 @@ const QRest := (1 - QLc - QSIc)*QC  # {L/h}
 # Partitioning 
 #------------------------
 PL      = 6.56            # liver:blood
-PSI     = 6.65 		  # sI:blood
+PSI     = 6.56 		  # sI:blood
 PRest   = 1           	  # effective lumped rest:blood
 
 #------------------------
@@ -66,7 +67,7 @@ kt4     = 2.19             # {/h}    SIi → SI(i+1), i=1..6
 kt5     = 2.19             # {/h}    SIi → SI(i+1), i=1..6
 kt6     = 2.19             # {/h}    SIi → SI(i+1), i=1..6
 kt7     = 0.464            # {/h}    Transfer from small to large intestinal lumen
-kfe     = 0.024            # {/h}
+kfe     = 0.024            # {/h}    fecal removal
 
 
 # Caco-2 → in vivo Papp scaling (Sun et al.)
@@ -85,7 +86,7 @@ kabsSI6  := Papp_in_vivo*SASI  # {L/h}
 kabsSI7  := Papp_in_vivo*SASI  # {L/h}
 
 SAinb    = 47.12           # {dm^2}  # large intestine
-kabsLI    = Papp_in_vivo*SAinb # {L/h} large intestine → Liver
+kabsLI   := Papp_in_vivo*SAinb # {L/h} large intestine → Liver
 
 MW      = 318.37          # ZEN MW (µg/µmol)
 
@@ -93,11 +94,11 @@ MW      = 318.37          # ZEN MW (µg/µmol)
 #------------------------
 # Metabolism in small intestine tissue (ZEN to ZENGLU - Met1)
 #------------------------
-S9SI = 35.2       # mg S9 SI protein/gram intestine
-SI = VSITissuec * 1000	 #small intestine in body weight (gram/kg BW)
+S9SI = 35.2       	 # mg S9 SI protein/gram intestine
+SI := VSITissuec * 1000	 #small intestine in body weight (gram/kg BW)
 
 VmaxSIMet1c = 0.003469       # unscaled maximum rates of metabolism, (nmol/min/mg S9 protein)
-VmaxSIMet1 = VmaxSIMet1c/(1000*60*S9SI*SI*BW) #scaled maximum rates of metabolism
+VmaxSIMet1 := VmaxSIMet1c/(1000*60*S9SI*SI*BW) #scaled maximum rates of metabolism
 
 KmSIMet1 = 1.174 #in vitro, S9 incubations from this study (µmol/L)
 
@@ -107,8 +108,8 @@ KmSIMet1 = 1.174 #in vitro, S9 incubations from this study (µmol/L)
 VmaxLIMet2c = 0.054  #unscaled maximum rates of metabolism, (pmol/h/g faeces)
 VmaxLIMet3c = 0.0108 #unscaled maximum rates of metabolism, (pmol/h/g faeces)
 
-VmaxLIMet2= VmaxLIMet2c/1000000*1000*VMB*BW #scaled maximum rates of metabolism (µmol/h)
-VmaxLIMet3= VmaxLIMet3c/1000000*1000*VMB*BW #scaled maximum rates of metabolism (µmol/h)       
+VmaxLIMet2:= VmaxLIMet2c/1000000*1000*VMB*BW #scaled maximum rates of metabolism (µmol/h)
+VmaxLIMet3:= VmaxLIMet3c/1000000*1000*VMB*BW #scaled maximum rates of metabolism (µmol/h)       
 
 KmLIMet2 = 135  #in vitro, anaerobic rat fecal incubations (µmol/L)
 KmLIMet3 = 163  #in vitro, anaerobic rat fecal incubations (µmol/L)
@@ -119,7 +120,7 @@ KmLIMet3 = 163  #in vitro, anaerobic rat fecal incubations (µmol/L)
 
 #Scaling factors
 VLS9 = 120.7 #liver S9 protein yield, (mg S9 protein/gram liver) reference: Cubitt et al. (2011)
-L=VLc*1000   #{gram/kg BW} ;liver
+L:=VLc*1000   #{gram/kg BW} ;liver
 
 #unscaled maximum rates of metabolism, (pmol/min/mg S9 protein)
 VmaxLMet2c= 358.7 #reference: Malektejad et al. (2006) 
@@ -127,9 +128,9 @@ VmaxLMet3c= 209.3 #reference: Malektejad et al. (2006)
 VmaxLMet1c=2.97 
 
 #scaled maximum rates of metabolism (µmol/h)
-VmaxLMet2 = VmaxLMet2c/1000000*60* VLS9 *L*BW
-VmaxLMet3= VmaxLMet3c/1000000*60* VLS9 *L*BW
-VmaxLMet1 = VmaxLMet1c /1000*60* VLS9 *L*BW
+VmaxLMet2 := VmaxLMet2c/1000000*60* VLS9 *L*BW
+VmaxLMet3 := VmaxLMet3c/1000000*60* VLS9 *L*BW
+VmaxLMet1 := VmaxLMet1c /1000*60* VLS9 *L*BW
 
 #affinity constants, (µmol/L)
 KmLMet2 = 9  #reference: Mendez-Catala et al. (2020)
@@ -153,7 +154,7 @@ compartment SITissue := BW * VSITissuec	# Small intestinal tissue
 compartment Liver := BW * VLc		# Liver
 compartment Blood := BW * VBc		# Blood
 compartment Rest := VRest		# Rest of Body
-compartment Feaces := 1			# Feaces
+compartment Feaces = 1			# Feaces
 
  
 
@@ -248,9 +249,9 @@ L1Met3 := (VmaxLIMet3*CLI1)/(KmLIMet3 + CLI1)
 
 ## Liver
 
-LiverMet2= VmaxLMet2* (CLiver/PL) /(KmLMet2+ (CLiver/PL))
-LiverMet3= VmaxLMet3* (CLiver/PL) /(KmLMet3+ (CLiver/PL))
-LiverMet1= VmaxLMet1* (CLiver/PL)/(KmLMet1+ (CLiver/PL))
+LiverMet2 := VmaxLMet2* (CLiver/PL) /(KmLMet2+ (CLiver/PL))
+LiverMet3 := VmaxLMet3* (CLiver/PL) /(KmLMet3+ (CLiver/PL))
+LiverMet1 := VmaxLMet1* (CLiver/PL)/(KmLMet1+ (CLiver/PL))
 
 
 ############################
