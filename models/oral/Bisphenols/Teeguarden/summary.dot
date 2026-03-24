@@ -9,7 +9,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-GILumen",
 			label="GILumen
-[-]",
+[PBPKO:00478]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -17,14 +17,14 @@ digraph {
 			fillcolor=gold,
 			href="#species-AGILumen",
 			label="AGILumen
-[-]",
+[PBPKO:00496]",
 			shape=box,
 			style="filled,rounded"];
 		AGILumenMet	[color=black,
 			fillcolor=gold,
 			href="#species-AGILumenMet",
 			label="AGILumenMet
-[-]",
+[PBPKO:00496]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -34,7 +34,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Liver",
 			label="Liver
-[-]",
+[PBPKO:00558]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -49,7 +49,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ALiverMet",
 			label="ALiverMet
-[-]",
+[PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -67,14 +67,14 @@ digraph {
 			fillcolor=gold,
 			href="#species-ABlood",
 			label="ABlood
-[-]",
+[PBPKO:00623]",
 			shape=box,
 			style="filled,rounded"];
 		ABloodMet	[color=black,
 			fillcolor=gold,
 			href="#species-ABloodMet",
 			label="ABloodMet
-[-]",
+[PBPKO:00623]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -102,7 +102,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Feces",
 			label="Feces
-[-]",
+[PBPKO:00555]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -110,7 +110,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AFecesMet",
 			label="AFecesMet
-[-]",
+[PBPKO:00273]",
 			shape=box,
 			style="filled,rounded"];
 	}

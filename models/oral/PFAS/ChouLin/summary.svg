@@ -63,12 +63,12 @@
 </a>
 </g>
 </g>
-<!-- AStomach -->
+<!-- AST -->
 <g id="node1" class="node">
-<title>AStomach</title>
-<g id="a_node1"><a xlink:href="#species-AStomach" xlink:title="AStomach&#10;[&#45;]">
-<path fill="gold" stroke="black" d="M543.81,-554C543.81,-554 487.81,-554 487.81,-554 481.81,-554 475.81,-548 475.81,-542 475.81,-542 475.81,-528 475.81,-528 475.81,-522 481.81,-516 487.81,-516 487.81,-516 543.81,-516 543.81,-516 549.81,-516 555.81,-522 555.81,-528 555.81,-528 555.81,-542 555.81,-542 555.81,-548 549.81,-554 543.81,-554"/>
-<text text-anchor="middle" x="515.81" y="-538.8" font-family="Arial" font-size="14.00">AStomach</text>
+<title>AST</title>
+<g id="a_node1"><a xlink:href="#species-AST" xlink:title="AST&#10;[&#45;]">
+<path fill="gold" stroke="black" d="M530.81,-554C530.81,-554 500.81,-554 500.81,-554 494.81,-554 488.81,-548 488.81,-542 488.81,-542 488.81,-528 488.81,-528 488.81,-522 494.81,-516 500.81,-516 500.81,-516 530.81,-516 530.81,-516 536.81,-516 542.81,-522 542.81,-528 542.81,-528 542.81,-542 542.81,-542 542.81,-548 536.81,-554 530.81,-554"/>
+<text text-anchor="middle" x="515.81" y="-538.8" font-family="Arial" font-size="14.00">AST</text>
 <text text-anchor="middle" x="515.81" y="-523.8" font-family="Arial" font-size="14.00">[&#45;]</text>
 </a>
 </g>
@@ -83,9 +83,9 @@
 </a>
 </g>
 </g>
-<!-- AStomach&#45;&gt;ASI -->
+<!-- AST&#45;&gt;ASI -->
 <g id="edge1" class="edge">
-<title>AStomach&#45;&gt;ASI</title>
+<title>AST&#45;&gt;ASI</title>
 <path fill="none" stroke="black" d="M495.75,-515.85C472.45,-494.78 433.86,-459.88 407.67,-436.19"/>
 <polygon fill="black" stroke="black" points="409.73,-433.34 399.96,-429.22 405.03,-438.53 409.73,-433.34"/>
 <text text-anchor="middle" x="485.81" y="-487.3" font-family="Times,serif" font-size="14.00">_J0</text>
@@ -100,9 +100,9 @@
 </a>
 </g>
 </g>
-<!-- AStomach&#45;&gt;ALiver -->
+<!-- AST&#45;&gt;ALiver -->
 <g id="edge2" class="edge">
-<title>AStomach&#45;&gt;ALiver</title>
+<title>AST&#45;&gt;ALiver</title>
 <path fill="none" stroke="black" d="M522.43,-515.76C538.04,-472.77 577.21,-364.83 595.76,-313.7"/>
 <polygon fill="black" stroke="black" points="599.07,-314.86 599.19,-304.26 592.49,-312.47 599.07,-314.86"/>
 <text text-anchor="middle" x="579.81" y="-406.3" font-family="Times,serif" font-size="14.00">_J1</text>

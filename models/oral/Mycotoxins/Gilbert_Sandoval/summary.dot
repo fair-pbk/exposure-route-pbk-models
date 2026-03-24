@@ -9,7 +9,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Stomach",
 			label="Stomach
-[-]",
+[PBPKO:00566]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -27,7 +27,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-SI1",
 			label="SI1
-[-]",
+[PBPKO:00472]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -45,7 +45,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-SI2",
 			label="SI2
-[-]",
+[PBPKO:00472]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -63,7 +63,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-SI3",
 			label="SI3
-[-]",
+[PBPKO:00472]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -81,7 +81,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-SI4",
 			label="SI4
-[-]",
+[PBPKO:00472]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -99,7 +99,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-SI5",
 			label="SI5
-[-]",
+[PBPKO:00472]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -117,7 +117,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-SI6",
 			label="SI6
-[-]",
+[PBPKO:00472]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -135,7 +135,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-SI7",
 			label="SI7
-[-]",
+[PBPKO:00472]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -171,7 +171,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Liver",
 			label="Liver
-[-]",
+[PBPKO:00558]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -211,7 +211,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ABlood",
 			label="ABlood
-[-]",
+[PBPKO:00623]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -239,18 +239,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Feces",
 			label="Feces
-[-]",
-			shape=box,
-			style="filled,rounded"
-		];
-	}
-	subgraph cluster_Feaces {
-		graph [color=black,
-			fillcolor=lightblue,
-			fontname=Arial,
-			href="#compartment-Feaces",
-			label="Feaces
-[-]",
+[PBPKO:00555]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -258,7 +247,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AFeaces",
 			label="AFeaces
-[-]",
+[PBPKO:00273]",
 			shape=box,
 			style="filled,rounded"];
 	}

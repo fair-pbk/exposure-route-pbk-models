@@ -9,7 +9,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Stomach",
 			label="Stomach
-[-]",
+[PBPKO:00566]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -27,7 +27,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Jejunum",
 			label="Jejunum
-[-]",
+[PBPKO:00482]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -45,7 +45,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Ileum",
 			label="Ileum
-[-]",
+[PBPKO:00481]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -63,7 +63,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-LargeLumen",
 			label="LargeLumen
-[-]",
+[PBPKO:00474]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -81,7 +81,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Liver",
 			label="Liver
-[-]",
+[PBPKO:00558]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -96,7 +96,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AMet",
 			label="AMet
-[-]",
+[PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -114,7 +114,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ABlood",
 			label="ABlood
-[-]",
+[PBPKO:00623]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -135,17 +135,6 @@ digraph {
 [PBPKO:00501]",
 			shape=box,
 			style="filled,rounded"];
-	}
-	subgraph cluster_Metabolites {
-		graph [color=black,
-			fillcolor=lightblue,
-			fontname=Arial,
-			href="#compartment-Metabolites",
-			label="Metabolites
-[-]",
-			shape=box,
-			style="filled,rounded"
-		];
 	}
 	subgraph cluster_IntestinalTissue {
 		graph [color=black,

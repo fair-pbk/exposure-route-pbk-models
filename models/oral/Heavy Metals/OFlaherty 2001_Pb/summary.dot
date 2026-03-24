@@ -1,0 +1,178 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_GI {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-GI",
+			label="GI
+[PBPKO:00477]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AGI_Cr3	[color=black,
+			fillcolor=gold,
+			href="#species-AGI_Cr3",
+			label="AGI_Cr3
+[PBPKO:00496]",
+			shape=box,
+			style="filled,rounded"];
+		AGI_Cr6	[color=black,
+			fillcolor=gold,
+			href="#species-AGI_Cr6",
+			label="AGI_Cr6
+[PBPKO:00496]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Liver {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Liver",
+			label="Liver
+[PBPKO:00558]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALiver_Cr3	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver_Cr3",
+			label="ALiver_Cr3
+[PBPKO:00497]",
+			shape=box,
+			style="filled,rounded"];
+		ALiver_Cr6	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver_Cr6",
+			label="ALiver_Cr6
+[PBPKO:00497]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Plasma {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Plasma",
+			label="Plasma
+[PBPKO:00488]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Aplasma_Cr3	[color=black,
+			fillcolor=gold,
+			href="#species-Aplasma_Cr3",
+			label="Aplasma_Cr3
+[PBPKO:00502]",
+			shape=box,
+			style="filled,rounded"];
+		Aplasma_Cr6	[color=black,
+			fillcolor=gold,
+			href="#species-Aplasma_Cr6",
+			label="Aplasma_Cr6
+[PBPKO:00502]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_RBC {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-RBC",
+			label="RBC
+[PBPKO:00634]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARBC_Cr3	[color=black,
+			fillcolor=gold,
+			href="#species-ARBC_Cr3",
+			label="ARBC_Cr3
+[PBPKO:00623]",
+			shape=box,
+			style="filled,rounded"];
+		ARBC_Cr6	[color=black,
+			fillcolor=gold,
+			href="#species-ARBC_Cr6",
+			label="ARBC_Cr6
+[PBPKO:00623]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Rest {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Rest",
+			label="Rest
+[PBPKO:00450]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARest_Cr3	[color=black,
+			fillcolor=gold,
+			href="#species-ARest_Cr3",
+			label="ARest_Cr3
+[PBPKO:00501]",
+			shape=box,
+			style="filled,rounded"];
+		ARest_Cr6	[color=black,
+			fillcolor=gold,
+			href="#species-ARest_Cr6",
+			label="ARest_Cr6
+[PBPKO:00501]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Feces {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Feces",
+			label="Feces
+[PBPKO:00555]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AFeces_Cr3	[color=black,
+			fillcolor=gold,
+			href="#species-AFeces_Cr3",
+			label="AFeces_Cr3
+[PBPKO:00273]",
+			shape=box,
+			style="filled,rounded"];
+		AFeces_Cr6	[color=black,
+			fillcolor=gold,
+			href="#species-AFeces_Cr6",
+			label="AFeces_Cr6
+[PBPKO:00273]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	AGI_Cr3 -> ALiver_Cr3	[label=_J2];
+	AGI_Cr3 -> AFeces_Cr3	[label=_J4,
+		minlen=1];
+	AGI_Cr6 -> AGI_Cr3	[label=_J0];
+	AGI_Cr6 -> ALiver_Cr6	[label=_J1];
+	AGI_Cr6 -> AFeces_Cr6	[label=_J3,
+		minlen=1];
+	ALiver_Cr3 -> Aplasma_Cr3	[label=_J7];
+	ALiver_Cr6 -> ALiver_Cr3	[label=_J5];
+	ALiver_Cr6 -> Aplasma_Cr6	[label=_J6];
+	Aplasma_Cr3 -> ALiver_Cr3	[label=_J10];
+	Aplasma_Cr3 -> ARBC_Cr3	[label=_J13];
+	Aplasma_Cr3 -> ARest_Cr3	[label=_J19];
+	Aplasma_Cr6 -> ALiver_Cr6	[label=_J9];
+	Aplasma_Cr6 -> Aplasma_Cr3	[label=_J8];
+	Aplasma_Cr6 -> ARBC_Cr6	[label=_J12];
+	Aplasma_Cr6 -> ARest_Cr6	[label=_J18];
+	ARBC_Cr3 -> Aplasma_Cr3	[label=_J14];
+	ARBC_Cr6 -> Aplasma_Cr6	[label=_J15];
+	ARBC_Cr6 -> ARBC_Cr3	[label=_J11];
+	ARest_Cr3 -> Aplasma_Cr3	[label=_J17];
+	ARest_Cr6 -> Aplasma_Cr6	[label=_J16];
+}

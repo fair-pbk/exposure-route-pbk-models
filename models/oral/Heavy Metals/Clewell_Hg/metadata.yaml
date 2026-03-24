@@ -1,0 +1,449 @@
+id: Clewell_Hg_Human
+name: ''
+applicability_domain:
+  chemicals: []
+  species: []
+num_compartments: 7
+num_species: 9
+num_parameters: 42
+num_reactions: 13
+compartments:
+- id: Gut_lumen
+  name: Gut lumen compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00478
+    label: gut lumen compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00478
+- id: Gut
+  name: Gut compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00477
+    label: gut compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00477
+- id: Liver
+  name: Liver compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00558
+    label: liver compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00558
+- id: Red_Blood_Cell
+  name: Red blood cells compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00634
+    label: red blood cell compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00634
+- id: Plasma
+  name: Plasma compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00488
+    label: plasma compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00488
+- id: Rest
+  name: Rest of body compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00450
+    label: rest of body compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00450
+- id: Feces
+  name: Feces compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00555
+    label: feces compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00555
+species:
+- id: AGut_lumen
+  name: Amount in gut lumen
+- id: AGut
+  name: Amount in gut
+  pbpko_bqm_is_class:
+    id: PBPKO:00496
+    label: amount in gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00496
+- id: ALiver
+  name: Amount in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00497
+    label: amount in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00497
+- id: ARBC
+  name: Amount in red blood cells
+  pbpko_bqm_is_class:
+    id: PBPKO:00623
+    label: amount in blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00623
+- id: APlasma
+  name: Amount in plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:00502
+    label: amount in plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_00502
+- id: ARest
+  name: Amount in rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00501
+    label: amount in restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00501
+- id: AFeces
+  name: Amount in feces
+  pbpko_bqm_is_class:
+    id: PBPKO:00273
+    label: amount in feces
+    iri: http://purl.obolibrary.org/obo/PBPKO_00273
+- id: ALiver_Met
+  name: Amount in liver (metabolised)
+  pbpko_bqm_is_class:
+    id: PBPKO:00497
+    label: amount in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00497
+- id: AGutlumen_Met
+  name: Amount in gut lumen (metabolised)
+  pbpko_bqm_is_class:
+    id: PBPKO:00496
+    label: amount in gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00496
+parameters:
+- id: Age
+  name: Age
+  pbpko_bqm_is_class:
+    id: PBPKO:00521
+    label: age in PBPK model
+    iri: http://purl.obolibrary.org/obo/PBPKO_00521
+- id: BW
+  name: Bodyweight
+  pbpko_bqm_is_class:
+    id: PBPKO:00008
+    label: bodyweight
+    iri: http://purl.obolibrary.org/obo/PBPKO_00008
+- id: VGut_lumenc
+  name: Gut lumen volume
+- id: VGc
+  name: Volume of gut constant
+  pbpko_bqm_is_class:
+    id: PBPKO:00509
+    label: fraction of gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00509
+- id: VLc
+  name: Volume of liver constant
+  pbpko_bqm_is_class:
+    id: PBPKO:00078
+    label: fraction of liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00078
+- id: VRBCc
+  name: Volume of red blood cells constant
+- id: VPlasmac
+  name: Volume of plasma constant
+  pbpko_bqm_is_class:
+    id: PBPKO:00104
+    label: fraction of plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_00104
+- id: VGut_lumen
+  name: Volume of gut lumen
+- id: VG
+  name: Volume of gut
+  pbpko_bqm_is_class:
+    id: PBPKO:00524
+    label: volume of gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00524
+- id: VL
+  name: Volume of liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00077
+    label: volume of liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00077
+- id: VRBC
+  name: Volume of red blood cells
+  pbpko_bqm_is_class:
+    id: PBPKO:00108
+    label: volume of blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00108
+- id: VPlasma
+  name: Volume of plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:00103
+    label: volume of plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_00103
+- id: VRest
+  name: Volume of rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00105
+    label: volume of rest body
+    iri: http://purl.obolibrary.org/obo/PBPKO_00105
+- id: QC
+  name: Cardiac output
+  pbpko_bqm_is_class:
+    id: PBPKO:00013
+    label: cardiac output rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00013
+- id: QLc
+  name: Cardiac output fraction to liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00024
+    label: blood flow rate to liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00024
+- id: QGc
+  name: Cardiac output fraction to gut
+  pbpko_bqm_is_class:
+    id: PBPKO:00513
+    label: fraction of blood flow to gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00513
+- id: Qrbcc
+  name: Cardiac output fraction red blood cells
+- id: QGI
+  name: Cardiac output to gut
+  pbpko_bqm_is_class:
+    id: PBPKO:00531
+    label: blood flow rate to gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00531
+- id: QL
+  name: Cardiac output to liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00024
+    label: blood flow rate to liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00024
+- id: QRest
+  name: Cardiac output to rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00050
+    label: blood flow rate to restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00050
+- id: Qrbc
+  name: Cardiac output rate red blood cells
+- id: kabsc
+  name: reabsorption rate in gut constant
+- id: kabs
+  name: reabsorption rate in gut
+- id: Frac
+  name: ''
+- id: PGI
+  name: Partition coefficient blood-gut
+  pbpko_bqm_is_class:
+    id: PBPKO:00572
+    label: gut blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00572
+- id: PL
+  name: Partition coefficient blood-liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00577
+    label: liver blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00577
+- id: PRBC
+  name: Partition coefficient red blood cells
+- id: PRest
+  name: Partition coefficient blood- rest body
+  pbpko_bqm_is_class:
+    id: PBPKO:00585
+    label: restbody blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00585
+- id: kfec
+  name: fecal elimination rate
+  pbpko_bqm_is_class:
+    id: PBPKO:00236
+    label: fecal elimination rate constant
+    iri: http://purl.obolibrary.org/obo/PBPKO_00236
+- id: kfe
+  name: fecal elimination rate
+  pbpko_bqm_is_class:
+    id: PBPKO:00230
+    label: fecal clearance rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00230
+- id: kmet_gutlumenc
+  name: metabolism rate constant in gut
+- id: kmet_gutlumen
+  name: Metabolism rate constant in gut
+- id: kmet_liverc
+  name: metabolism rate constant in liver
+- id: kmet_liver
+  name: metabolism rate in liver
+- id: kbiliaryc
+  name: Biliary clearance
+  pbpko_bqm_is_class:
+    id: PBPKO:00233
+    label: biliary clearance rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00233
+- id: kbiliary
+  name: Biliary clearance
+  pbpko_bqm_is_class:
+    id: PBPKO:00233
+    label: biliary clearance rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00233
+- id: CGut_lumen
+  name: Concentration in gut lumen
+- id: CGI
+  name: Concentration in gut
+  pbpko_bqm_is_class:
+    id: PBPKO:00538
+    label: concentration in gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00538
+- id: CLiver
+  name: Concentration in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00539
+    label: concentration in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00539
+- id: CRBC
+  name: Concentration in red blood cells
+  pbpko_bqm_is_class:
+    id: PBPKO:00301
+    label: concentration in blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00301
+- id: CPlasma
+  name: Concentration in plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:00549
+    label: concentration in plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_00549
+- id: CRest
+  name: Concentration in rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00548
+    label: concentration in restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00548
+unit_consistency:
+- level: error
+  msg: "In situations where a mathematical expression refers to extent, the units\
+    \ of extent should be consistent with the global extent units of the model. In\
+    \ models where the 'extentUnits' attribute has not been declared, libSBML does\
+    \ not yet have the functionality to verify accurately the consistency of the units\
+    \ in such expressions. \n"
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'QGI * CGI / PGI' in the <kineticLaw> element of the <reaction> with id '_J1'\
+    \ produces units that are inconsistent with units of earlier KineticLaw elements.\n"
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'QGI * CPlasma' in the <kineticLaw> element of the <reaction> with id '_J2'\
+    \ produces units that are inconsistent with units of earlier KineticLaw elements.\n"
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'QL * CPlasma' in the <kineticLaw> element of the <reaction> with id '_J3' produces\
+    \ units that are inconsistent with units of earlier KineticLaw elements.\n"
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ '(QL + QGI) * CLiver / PL' in the <kineticLaw> element of the <reaction> with\
+    \ id '_J4' produces units that are inconsistent with units of earlier KineticLaw\
+    \ elements.\n"
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'QRest * CPlasma' in the <kineticLaw> element of the <reaction> with id '_J5'\
+    \ produces units that are inconsistent with units of earlier KineticLaw elements.\n"
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'QRest * CRest / PRest' in the <kineticLaw> element of the <reaction> with id\
+    \ '_J6' produces units that are inconsistent with units of earlier KineticLaw\
+    \ elements.\n"
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'CPlasma * Qrbc' in the <kineticLaw> element of the <reaction> with id '_J7'\
+    \ produces units that are inconsistent with units of earlier KineticLaw elements.\n"
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'Qrbc * CRBC / PRBC' in the <kineticLaw> element of the <reaction> with id '_J8'\
+    \ produces units that are inconsistent with units of earlier KineticLaw elements.\n"
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'kbiliary * CLiver' in the <kineticLaw> element of the <reaction> with id '_J9'\
+    \ produces units that are inconsistent with units of earlier KineticLaw elements.\n"
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'kmet_liver * CLiver' in the <kineticLaw> element of the <reaction> with id\
+    \ '_J10' produces units that are inconsistent with units of earlier KineticLaw\
+    \ elements.\n"
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'VGut_lumen' are litre (exponent\
+    \ = 1, multiplier = 1, scale = 0), gram (exponent = 1, multiplier = 1, scale =\
+    \ 3).\n"
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '(1 - 0.122) * BW - VGut_lumen - VG - VL\
+    \ - VRBC - VPlasma' cannot be fully checked. Unit consistency reported as either\
+    \ no errors or further unit errors related to this object may not be accurate.\n"
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '20 * pow(BW, 0.75)' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate.\n"
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
+    \ (exponent = 1, multiplier = 1, scale = 0), second (exponent = -1, multiplier\
+    \ = 3600, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
+    \ with variable 'QGI' are gram (exponent = 1, multiplier = 1000, scale = 0).\n"
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
+    \ (exponent = 1, multiplier = 1, scale = 0), second (exponent = -1, multiplier\
+    \ = 3600, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
+    \ with variable 'Qrbc' are gram (exponent = 0.75, multiplier = 1000, scale = 0).\n"
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are dimensionless\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'kabs' are gram (exponent =\
+    \ 0.75, multiplier = 1000, scale = 0).\n"
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are dimensionless\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'kfe' are gram (exponent =\
+    \ 0.75, multiplier = 1000, scale = 0).\n"
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are dimensionless\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'kmet_gutlumen' are gram (exponent\
+    \ = 0.75, multiplier = 1000, scale = 0).\n"
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are dimensionless\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'kmet_liver' are gram (exponent\
+    \ = 0.75, multiplier = 1000, scale = 0).\n"
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are dimensionless\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'kbiliary' are gram (exponent\
+    \ = 0.75, multiplier = 1000, scale = 0).\n"
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are dimensionless\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'CGut_lumen' are gram (exponent\
+    \ = 1, multiplier = 1, scale = -6), litre (exponent = -1, multiplier = 1, scale\
+    \ = 0).\n"

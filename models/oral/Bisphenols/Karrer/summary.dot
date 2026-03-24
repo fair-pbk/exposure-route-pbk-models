@@ -9,14 +9,14 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Stomach",
 			label="Stomach
-[-]",
+[PBPKO:00566]",
 			shape=box,
 			style="filled,rounded"
 		];
-		AStomach	[color=black,
+		ASt	[color=black,
 			fillcolor=gold,
-			href="#species-AStomach",
-			label="AStomach
+			href="#species-ASt",
+			label="ASt
 [-]",
 			shape=box,
 			style="filled,rounded"];
@@ -27,7 +27,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-SI",
 			label="SI
-[-]",
+[PBPKO:00472]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -59,7 +59,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Liver",
 			label="Liver
-[-]",
+[PBPKO:00558]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -74,14 +74,14 @@ digraph {
 			fillcolor=gold,
 			href="#species-ALiverMet1",
 			label="ALiverMet1
-[-]",
+[PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
 		ALiverMet2	[color=black,
 			fillcolor=gold,
 			href="#species-ALiverMet2",
 			label="ALiverMet2
-[-]",
+[PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
 		APVMet1	[color=black,
@@ -120,14 +120,14 @@ digraph {
 			fillcolor=gold,
 			href="#species-APlasmaMet1",
 			label="APlasmaMet1
-[-]",
+[PBPKO:00502]",
 			shape=box,
 			style="filled,rounded"];
 		APlasmaMet2	[color=black,
 			fillcolor=gold,
 			href="#species-APlasmaMet2",
 			label="APlasmaMet2
-[-]",
+[PBPKO:00502]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -155,7 +155,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-GILumen",
 			label="GILumen
-[-]",
+[PBPKO:00478]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -163,21 +163,21 @@ digraph {
 			fillcolor=gold,
 			href="#species-AGILumen",
 			label="AGILumen
-[-]",
+[PBPKO:00496]",
 			shape=box,
 			style="filled,rounded"];
 		AGILumenMet1	[color=black,
 			fillcolor=gold,
 			href="#species-AGILumenMet1",
 			label="AGILumenMet1
-[-]",
+[PBPKO:00496]",
 			shape=box,
 			style="filled,rounded"];
 		AGILumenMet2	[color=black,
 			fillcolor=gold,
 			href="#species-AGILumenMet2",
 			label="AGILumenMet2
-[-]",
+[PBPKO:00496]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -187,7 +187,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Feces",
 			label="Feces
-[-]",
+[PBPKO:00555]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -195,26 +195,26 @@ digraph {
 			fillcolor=gold,
 			href="#species-AFeces",
 			label="AFeces
-[-]",
+[PBPKO:00273]",
 			shape=box,
 			style="filled,rounded"];
 		AFecesMet1	[color=black,
 			fillcolor=gold,
 			href="#species-AFecesMet1",
 			label="AFecesMet1
-[-]",
+[PBPKO:00273]",
 			shape=box,
 			style="filled,rounded"];
 		AFecesMet2	[color=black,
 			fillcolor=gold,
 			href="#species-AFecesMet2",
 			label="AFecesMet2
-[-]",
+[PBPKO:00273]",
 			shape=box,
 			style="filled,rounded"];
 	}
-	AStomach -> ASI	[label=_J0];
-	AStomach -> ALiver	[label=_J1];
+	ASt -> ASI	[label=_J0];
+	ASt -> ALiver	[label=_J1];
 	ASI -> ASIMet1	[label=_J4];
 	ASI -> ASIMet2	[label=_J8];
 	ASI -> ALiver	[label=_J2];

@@ -45,7 +45,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Liver",
 			label="Liver
-[-]",
+[PBPKO:00558]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -63,7 +63,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Kidney",
 			label="Kidney
-[-]",
+[PBPKO:00557]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -99,7 +99,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Red_Blood_Cell",
 			label="Red_Blood_Cell
-[-]",
+[PBPKO:00634]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -107,7 +107,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ARBC",
 			label="ARBC
-[-]",
+[PBPKO:00623]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -117,7 +117,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Metallothionein",
 			label="Metallothionein
-[-]",
+[PBPKO:00552]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -125,7 +125,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AMetallothionein",
 			label="AMetallothionein
-[-]",
+[PBPKO:00623]",
 			shape=box,
 			style="filled,rounded"];
 	}

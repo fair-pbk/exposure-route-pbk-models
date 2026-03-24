@@ -1,0 +1,232 @@
+id: OFlaherty2000_Pb_Human_Male
+name: ''
+applicability_domain:
+  chemicals:
+  - id: CHEBI:33585
+    label: lead molecular entity
+    iri: http://purl.obolibrary.org/obo/CHEBI_33585
+  species:
+  - id: NCBITaxon:9606
+    label: Homo sapiens
+    iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
+num_compartments: 3
+num_species: 3
+num_parameters: 21
+num_reactions: 4
+compartments:
+- id: Liver
+  name: Liver compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00558
+    label: liver compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00558
+- id: Blood
+  name: Blood compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00464
+    label: blood compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00464
+- id: Rest
+  name: Rest of body compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00450
+    label: rest of body compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00450
+species:
+- id: ALiver
+  name: Amount in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00497
+    label: amount in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00497
+- id: ABlood
+  name: Amount in blood
+  pbpko_bqm_is_class:
+    id: PBPKO:00623
+    label: amount in blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00623
+- id: ARest
+  name: Amount in rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00501
+    label: amount in restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00501
+parameters:
+- id: Age
+  name: Age
+  pbpko_bqm_is_class:
+    id: PBPKO:00521
+    label: age in PBPK model
+    iri: http://purl.obolibrary.org/obo/PBPKO_00521
+- id: BW
+  name: Bodyweight
+  pbpko_bqm_is_class:
+    id: PBPKO:00008
+    label: bodyweight
+    iri: http://purl.obolibrary.org/obo/PBPKO_00008
+- id: VLc
+  name: Volume fraction of liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00078
+    label: fraction of liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00078
+- id: VBc
+  name: Volume fraction of blood
+- id: VL
+  name: Volume of liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00077
+    label: volume of liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00077
+- id: VB
+  name: Volume of blood
+  pbpko_bqm_is_class:
+    id: PBPKO:00108
+    label: volume of blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00108
+- id: VRest
+  name: Volume of rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00105
+    label: volume of rest body
+    iri: http://purl.obolibrary.org/obo/PBPKO_00105
+- id: QC
+  name: Cardiac output
+  pbpko_bqm_is_class:
+    id: PBPKO:00013
+    label: cardiac output rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00013
+- id: QLc
+  name: Cardiac output fraction to liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00025
+    label: fraction of blood flow to liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00025
+- id: QL
+  name: Cardiac output to liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00024
+    label: blood flow rate to liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00024
+- id: QRest
+  name: Cardiac output to rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00050
+    label: blood flow rate to restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00050
+- id: HtcA
+  name: Hematocrit
+  pbpko_bqm_is_class:
+    id: PBPKO:00527
+    label: hematocrit volume
+    iri: http://purl.obolibrary.org/obo/PBPKO_00527
+- id: Htc
+  name: Hematocrit
+  pbpko_bqm_is_class:
+    id: PBPKO:00527
+    label: hematocrit volume
+    iri: http://purl.obolibrary.org/obo/PBPKO_00527
+- id: PL
+  name: Partition coefficient blood-liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00577
+    label: liver blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00577
+- id: PRest
+  name: Partition coefficient blood- rest body
+  pbpko_bqm_is_class:
+    id: PBPKO:00585
+    label: restbody blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00585
+- id: G
+  name: Linear parameter for unbound lead in red cells
+  pbpko_bqm_is_class:
+    id: PBPKO:00622
+    label: fraction unbound blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00622
+- id: BIND
+  name: Maximum capacity of sites in red cells to bind lead (mg/L of red cell volume)
+- id: KBIND
+  name: Half-saturation concentration of lead for binding by sites in red cells (mg/L
+    of red cell volume)
+- id: CLiver
+  name: Concentration in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00539
+    label: concentration in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00539
+- id: CBlood
+  name: Concentration in blood
+  pbpko_bqm_is_class:
+    id: PBPKO:00301
+    label: concentration in blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00301
+- id: CRest
+  name: Concentration in rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00548
+    label: concentration in restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00548
+unit_consistency:
+- level: error
+  msg: "In situations where a mathematical expression refers to extent, the units\
+    \ of extent should be consistent with the global extent units of the model. In\
+    \ models where the 'extentUnits' attribute has not been declared, libSBML does\
+    \ not yet have the functionality to verify accurately the consistency of the units\
+    \ in such expressions. \n"
+- level: error
+  msg: "The units of the expressions used as arguments to a function call are expected\
+    \ to match the units expected for the arguments of that function. \nReference:\
+    \ L3V2 Section 3.4\n The formula 'BW - VL' in the math element of the <assignmentRule>\
+    \ can only act on variables with the same units.\n"
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'VRest' are indeterminable.\n"
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '340 * BW / 24' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate.\n"
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'piecewise(0.52 + Age * 14, lt(Age, 0.01),\
+    \ HtcA * (1 + (0.66 - HtcA) * exp(-(Age - 0.01) * 13.9)))' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate.\n"
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '2.7 * 1000' cannot be fully checked. Unit\
+    \ consistency reported as either no errors or further unit errors related to this\
+    \ object may not be accurate.\n"
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '0.0075 * 1000' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate.\n"
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <kineticLaw> <math> expression 'QL * (1 - Htc) * (ALiver / (VL * PL)) + Htc\
+    \ * (ALiver / (VL * PL)) * (G + BIND / (KBIND + ALiver / (VL * PL)))' cannot be\
+    \ fully checked. Unit consistency reported as either no errors or further unit\
+    \ errors related to this object may not be accurate.\n"
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <kineticLaw> <math> expression 'QRest * (1 - Htc) * (ARest / (VRest * PRest))\
+    \ + Htc * (ARest / (VRest * PRest)) * (G + BIND / (KBIND + ARest / (VRest * PRest)))'\
+    \ cannot be fully checked. Unit consistency reported as either no errors or further\
+    \ unit errors related to this object may not be accurate.\n"

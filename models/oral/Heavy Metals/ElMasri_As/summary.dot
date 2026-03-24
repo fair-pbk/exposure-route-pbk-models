@@ -1,0 +1,373 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_Lumen {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Lumen",
+			label="Lumen
+[PBPKO:00478]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALumen_As3	[color=black,
+			fillcolor=gold,
+			href="#species-ALumen_As3",
+			label="ALumen_As3
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ALumen_As5	[color=black,
+			fillcolor=gold,
+			href="#species-ALumen_As5",
+			label="ALumen_As5
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Gut {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Gut",
+			label="Gut
+[PBPKO:00477]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AGut_As3	[color=black,
+			fillcolor=gold,
+			href="#species-AGut_As3",
+			label="AGut_As3
+[PBPKO:00496]",
+			shape=box,
+			style="filled,rounded"];
+		AGut_As5	[color=black,
+			fillcolor=gold,
+			href="#species-AGut_As5",
+			label="AGut_As5
+[PBPKO:00496]",
+			shape=box,
+			style="filled,rounded"];
+		AGut_AsM5	[color=black,
+			fillcolor=gold,
+			href="#species-AGut_AsM5",
+			label="AGut_AsM5
+[PBPKO:00496]",
+			shape=box,
+			style="filled,rounded"];
+		AGut_AsD5	[color=black,
+			fillcolor=gold,
+			href="#species-AGut_AsD5",
+			label="AGut_AsD5
+[PBPKO:00496]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Liver {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Liver",
+			label="Liver
+[PBPKO:00558]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALiver_As3	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver_As3",
+			label="ALiver_As3
+[PBPKO:00497]",
+			shape=box,
+			style="filled,rounded"];
+		ALiver_As5	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver_As5",
+			label="ALiver_As5
+[PBPKO:00497]",
+			shape=box,
+			style="filled,rounded"];
+		ALiver_AsM3	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver_AsM3",
+			label="ALiver_AsM3
+[PBPKO:00497]",
+			shape=box,
+			style="filled,rounded"];
+		ALiver_AsM5	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver_AsM5",
+			label="ALiver_AsM5
+[PBPKO:00497]",
+			shape=box,
+			style="filled,rounded"];
+		ALiver_AsD3	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver_AsD3",
+			label="ALiver_AsD3
+[PBPKO:00497]",
+			shape=box,
+			style="filled,rounded"];
+		ALiver_AsD5	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver_AsD5",
+			label="ALiver_AsD5
+[PBPKO:00497]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Lung {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Lung",
+			label="Lung
+[PBPKO:00559]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALung_As3	[color=black,
+			fillcolor=gold,
+			href="#species-ALung_As3",
+			label="ALung_As3
+[PBPKO:00504]",
+			shape=box,
+			style="filled,rounded"];
+		ALung_As5	[color=black,
+			fillcolor=gold,
+			href="#species-ALung_As5",
+			label="ALung_As5
+[PBPKO:00504]",
+			shape=box,
+			style="filled,rounded"];
+		ALung_AsM3	[color=black,
+			fillcolor=gold,
+			href="#species-ALung_AsM3",
+			label="ALung_AsM3
+[PBPKO:00504]",
+			shape=box,
+			style="filled,rounded"];
+		ALung_AsM5	[color=black,
+			fillcolor=gold,
+			href="#species-ALung_AsM5",
+			label="ALung_AsM5
+[PBPKO:00504]",
+			shape=box,
+			style="filled,rounded"];
+		ALung_AsD3	[color=black,
+			fillcolor=gold,
+			href="#species-ALung_AsD3",
+			label="ALung_AsD3
+[PBPKO:00504]",
+			shape=box,
+			style="filled,rounded"];
+		ALung_AsD5	[color=black,
+			fillcolor=gold,
+			href="#species-ALung_AsD5",
+			label="ALung_AsD5
+[PBPKO:00504]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Arterial {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Arterial",
+			label="Arterial
+[PBPKO:00552]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AArterial_AsD5	[color=black,
+			fillcolor=gold,
+			href="#species-AArterial_AsD5",
+			label="AArterial_AsD5
+[PBPKO:00631]",
+			shape=box,
+			style="filled,rounded"];
+		AArterial_As3	[color=black,
+			fillcolor=gold,
+			href="#species-AArterial_As3",
+			label="AArterial_As3
+[PBPKO:00631]",
+			shape=box,
+			style="filled,rounded"];
+		AArterial_As5	[color=black,
+			fillcolor=gold,
+			href="#species-AArterial_As5",
+			label="AArterial_As5
+[PBPKO:00631]",
+			shape=box,
+			style="filled,rounded"];
+		AArterial_AsM5	[color=black,
+			fillcolor=gold,
+			href="#species-AArterial_AsM5",
+			label="AArterial_AsM5
+[PBPKO:00631]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Venous {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Venous",
+			label="Venous
+[PBPKO:00561]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AVenous_As3	[color=black,
+			fillcolor=gold,
+			href="#species-AVenous_As3",
+			label="AVenous_As3
+[PBPKO:00632]",
+			shape=box,
+			style="filled,rounded"];
+		AVenous_As5	[color=black,
+			fillcolor=gold,
+			href="#species-AVenous_As5",
+			label="AVenous_As5
+[PBPKO:00632]",
+			shape=box,
+			style="filled,rounded"];
+		AVenous_AsM5	[color=black,
+			fillcolor=gold,
+			href="#species-AVenous_AsM5",
+			label="AVenous_AsM5
+[PBPKO:00632]",
+			shape=box,
+			style="filled,rounded"];
+		AVenous_AsD5	[color=black,
+			fillcolor=gold,
+			href="#species-AVenous_AsD5",
+			label="AVenous_AsD5
+[PBPKO:00632]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Rest {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Rest",
+			label="Rest
+[PBPKO:00450]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARest_As3	[color=black,
+			fillcolor=gold,
+			href="#species-ARest_As3",
+			label="ARest_As3
+[PBPKO:00501]",
+			shape=box,
+			style="filled,rounded"];
+		ARest_As5	[color=black,
+			fillcolor=gold,
+			href="#species-ARest_As5",
+			label="ARest_As5
+[PBPKO:00501]",
+			shape=box,
+			style="filled,rounded"];
+		ARest_AsM5	[color=black,
+			fillcolor=gold,
+			href="#species-ARest_AsM5",
+			label="ARest_AsM5
+[PBPKO:00501]",
+			shape=box,
+			style="filled,rounded"];
+		ARest_AsD5	[color=black,
+			fillcolor=gold,
+			href="#species-ARest_AsD5",
+			label="ARest_AsD5
+[PBPKO:00501]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Urine {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Urine",
+			label="Urine
+[PBPKO:00556]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AUrine_AsM3	[color=black,
+			fillcolor=gold,
+			href="#species-AUrine_AsM3",
+			label="AUrine_AsM3
+[PBPKO:00274]",
+			shape=box,
+			style="filled,rounded"];
+		AUrine_AsD3	[color=black,
+			fillcolor=gold,
+			href="#species-AUrine_AsD3",
+			label="AUrine_AsD3
+[PBPKO:00274]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	ALumen_As3 -> AGut_As3	[label=_J0,
+		minlen=1];
+	ALumen_As5 -> AGut_As5	[label=_J1,
+		minlen=1];
+	AGut_As3 -> ALiver_As3	[label=_J2];
+	AGut_As5 -> ALiver_As5	[label=_J3];
+	AGut_AsM5 -> ALiver_AsM5	[label=_J4];
+	AGut_AsD5 -> ALiver_AsD5	[label=_J5];
+	ALiver_As3 -> ALiver_As5	[label=_J18];
+	ALiver_As3 -> ALiver_AsM5	[label=_J20];
+	ALiver_As3 -> ALiver_AsD5	[label=_J21];
+	ALiver_As3 -> AVenous_As3	[label=_J12];
+	ALiver_As5 -> ALiver_As3	[label=_J19];
+	ALiver_As5 -> AVenous_As5	[label=_J13];
+	ALiver_AsM3 -> ALiver_AsM5	[label=_J22];
+	ALiver_AsM3 -> ALiver_AsD5	[label=_J24];
+	ALiver_AsM3 -> AUrine_AsM3	[label=_J49];
+	ALiver_AsM5 -> ALiver_AsM3	[label=_J23];
+	ALiver_AsM5 -> AVenous_AsM5	[label=_J15];
+	ALiver_AsD3 -> ALiver_AsD5	[label=_J25];
+	ALiver_AsD3 -> AUrine_AsD3	[label=_J50];
+	ALiver_AsD5 -> ALiver_AsD3	[label=_J26];
+	ALiver_AsD5 -> AVenous_AsD5	[label=_J17];
+	ALung_As3 -> ALung_As5	[label=_J37];
+	ALung_As3 -> AArterial_As3	[label=_J39];
+	ALung_As5 -> ALung_As3	[label=_J38];
+	ALung_As5 -> AArterial_As5	[label=_J40];
+	ALung_AsM3 -> ALung_AsM5	[label=_J43];
+	ALung_AsM3 -> AUrine_AsM3	[label=_J51];
+	ALung_AsM5 -> ALung_AsM3	[label=_J42];
+	ALung_AsM5 -> AArterial_AsM5	[label=_J44];
+	ALung_AsD3 -> ALung_AsD5	[label=_J47];
+	ALung_AsD3 -> AUrine_AsD3	[label=_J52];
+	ALung_AsD5 -> ALung_AsD3	[label=_J46];
+	ALung_AsD5 -> AArterial_AsD5	[label=_J48];
+	AArterial_AsD5 -> AGut_AsD5	[label=_J9];
+	AArterial_AsD5 -> ALiver_AsD5	[label=_J16];
+	AArterial_AsD5 -> ARest_AsD5	[label=_J33];
+	AArterial_As3 -> AGut_As3	[label=_J6];
+	AArterial_As3 -> ALiver_As3	[label=_J10];
+	AArterial_As3 -> ARest_As3	[label=_J27];
+	AArterial_As5 -> AGut_As5	[label=_J7];
+	AArterial_As5 -> ALiver_As5	[label=_J11];
+	AArterial_As5 -> ARest_As5	[label=_J28];
+	AArterial_AsM5 -> AGut_AsM5	[label=_J8];
+	AArterial_AsM5 -> ALiver_AsM5	[label=_J14];
+	AArterial_AsM5 -> ARest_AsM5	[label=_J31];
+	AVenous_As3 -> ALung_As3	[label=_J35];
+	AVenous_As5 -> ALiver_As5	[label=_J36];
+	AVenous_AsM5 -> ALung_AsM5	[label=_J41];
+	AVenous_AsD5 -> ALung_AsD5	[label=_J45];
+	ARest_As3 -> AVenous_As3	[label=_J29];
+	ARest_As5 -> AVenous_As5	[label=_J30];
+	ARest_AsM5 -> AVenous_AsM5	[label=_J32];
+	ARest_AsD5 -> AVenous_AsD5	[label=_J34];
+}

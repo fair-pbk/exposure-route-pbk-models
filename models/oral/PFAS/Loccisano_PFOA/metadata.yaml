@@ -9,6 +9,7 @@ applicability_domain:
   - id: NCBITaxon:9606
     label: Homo sapiens
     iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
+num_compartments: 4
 num_species: 4
 num_parameters: 25
 num_reactions: 6

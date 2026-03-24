@@ -12,36 +12,36 @@
 <g id="clust1" class="cluster">
 <title>cluster_Gut</title>
 <g id="a_clust1"><a xlink:href="#compartment-Gut" xlink:title="Gut&#10;[PBPKO:00477]">
-<path fill="lightblue" stroke="black" d="M111.44,-383C111.44,-383 427.63,-383 427.63,-383 433.63,-383 439.63,-389 439.63,-395 439.63,-395 439.63,-463 439.63,-463 439.63,-469 433.63,-475 427.63,-475 427.63,-475 111.44,-475 111.44,-475 105.44,-475 99.44,-469 99.44,-463 99.44,-463 99.44,-395 99.44,-395 99.44,-389 105.44,-383 111.44,-383"/>
-<text text-anchor="middle" x="269.54" y="-459.8" font-family="Arial" font-size="14.00">Gut</text>
-<text text-anchor="middle" x="269.54" y="-444.8" font-family="Arial" font-size="14.00">[PBPKO:00477]</text>
+<path fill="lightblue" stroke="black" d="M175.12,-383C175.12,-383 472.41,-383 472.41,-383 478.41,-383 484.41,-389 484.41,-395 484.41,-395 484.41,-463 484.41,-463 484.41,-469 478.41,-475 472.41,-475 472.41,-475 175.12,-475 175.12,-475 169.12,-475 163.12,-469 163.12,-463 163.12,-463 163.12,-395 163.12,-395 163.12,-389 169.12,-383 175.12,-383"/>
+<text text-anchor="middle" x="323.77" y="-459.8" font-family="Arial" font-size="14.00">Gut</text>
+<text text-anchor="middle" x="323.77" y="-444.8" font-family="Arial" font-size="14.00">[PBPKO:00477]</text>
 </a>
 </g>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_Liver</title>
-<g id="a_clust2"><a xlink:href="#compartment-Liver" xlink:title="Liver&#10;[&#45;]">
-<path fill="lightblue" stroke="black" d="M32.93,-8C32.93,-8 427.63,-8 427.63,-8 433.63,-8 439.63,-14 439.63,-20 439.63,-20 439.63,-338 439.63,-338 439.63,-344 433.63,-350 427.63,-350 427.63,-350 32.93,-350 32.93,-350 26.93,-350 20.93,-344 20.93,-338 20.93,-338 20.93,-20 20.93,-20 20.93,-14 26.93,-8 32.93,-8"/>
-<text text-anchor="middle" x="230.28" y="-334.8" font-family="Arial" font-size="14.00">Liver</text>
-<text text-anchor="middle" x="230.28" y="-319.8" font-family="Arial" font-size="14.00">[&#45;]</text>
+<g id="a_clust2"><a xlink:href="#compartment-Liver" xlink:title="Liver&#10;[PBPKO:00558]">
+<path fill="lightblue" stroke="black" d="M31.77,-8C31.77,-8 472.41,-8 472.41,-8 478.41,-8 484.41,-14 484.41,-20 484.41,-20 484.41,-338 484.41,-338 484.41,-344 478.41,-350 472.41,-350 472.41,-350 31.77,-350 31.77,-350 25.77,-350 19.77,-344 19.77,-338 19.77,-338 19.77,-20 19.77,-20 19.77,-14 25.77,-8 31.77,-8"/>
+<text text-anchor="middle" x="252.09" y="-334.8" font-family="Arial" font-size="14.00">Liver</text>
+<text text-anchor="middle" x="252.09" y="-319.8" font-family="Arial" font-size="14.00">[PBPKO:00558]</text>
 </a>
 </g>
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_Blood</title>
 <g id="a_clust3"><a xlink:href="#compartment-Blood" xlink:title="Blood&#10;[PBPKO:00464]">
-<path fill="lightblue" stroke="black" d="M472.57,-133C472.57,-133 744.28,-133 744.28,-133 750.28,-133 756.28,-139 756.28,-145 756.28,-145 756.28,-213 756.28,-213 756.28,-219 750.28,-225 744.28,-225 744.28,-225 472.57,-225 472.57,-225 466.57,-225 460.57,-219 460.57,-213 460.57,-213 460.57,-145 460.57,-145 460.57,-139 466.57,-133 472.57,-133"/>
-<text text-anchor="middle" x="608.42" y="-209.8" font-family="Arial" font-size="14.00">Blood</text>
-<text text-anchor="middle" x="608.42" y="-194.8" font-family="Arial" font-size="14.00">[PBPKO:00464]</text>
+<path fill="lightblue" stroke="black" d="M516.18,-133C516.18,-133 813.48,-133 813.48,-133 819.48,-133 825.48,-139 825.48,-145 825.48,-145 825.48,-213 825.48,-213 825.48,-219 819.48,-225 813.48,-225 813.48,-225 516.18,-225 516.18,-225 510.18,-225 504.18,-219 504.18,-213 504.18,-213 504.18,-145 504.18,-145 504.18,-139 510.18,-133 516.18,-133"/>
+<text text-anchor="middle" x="664.83" y="-209.8" font-family="Arial" font-size="14.00">Blood</text>
+<text text-anchor="middle" x="664.83" y="-194.8" font-family="Arial" font-size="14.00">[PBPKO:00464]</text>
 </a>
 </g>
 </g>
 <g id="clust4" class="cluster">
 <title>cluster_Rest</title>
 <g id="a_clust4"><a xlink:href="#compartment-Rest" xlink:title="Rest&#10;[PBPKO:00450]">
-<path fill="lightblue" stroke="black" d="M496.12,-8C496.12,-8 812.32,-8 812.32,-8 818.32,-8 824.32,-14 824.32,-20 824.32,-20 824.32,-88 824.32,-88 824.32,-94 818.32,-100 812.32,-100 812.32,-100 496.12,-100 496.12,-100 490.12,-100 484.12,-94 484.12,-88 484.12,-88 484.12,-20 484.12,-20 484.12,-14 490.12,-8 496.12,-8"/>
-<text text-anchor="middle" x="654.22" y="-84.8" font-family="Arial" font-size="14.00">Rest</text>
-<text text-anchor="middle" x="654.22" y="-69.8" font-family="Arial" font-size="14.00">[PBPKO:00450]</text>
+<path fill="lightblue" stroke="black" d="M516.18,-8C516.18,-8 813.48,-8 813.48,-8 819.48,-8 825.48,-14 825.48,-20 825.48,-20 825.48,-88 825.48,-88 825.48,-94 819.48,-100 813.48,-100 813.48,-100 516.18,-100 516.18,-100 510.18,-100 504.18,-94 504.18,-88 504.18,-88 504.18,-20 504.18,-20 504.18,-14 510.18,-8 516.18,-8"/>
+<text text-anchor="middle" x="664.83" y="-84.8" font-family="Arial" font-size="14.00">Rest</text>
+<text text-anchor="middle" x="664.83" y="-69.8" font-family="Arial" font-size="14.00">[PBPKO:00450]</text>
 </a>
 </g>
 </g>
@@ -49,9 +49,9 @@
 <g id="node1" class="node">
 <title>AGut</title>
 <g id="a_node1"><a xlink:href="#species-AGut" xlink:title="AGut&#10;[PBPKO:00496]">
-<path fill="gold" stroke="black" d="M314.25,-429C314.25,-429 225.25,-429 225.25,-429 219.25,-429 213.25,-423 213.25,-417 213.25,-417 213.25,-403 213.25,-403 213.25,-397 219.25,-391 225.25,-391 225.25,-391 314.25,-391 314.25,-391 320.25,-391 326.25,-397 326.25,-403 326.25,-403 326.25,-417 326.25,-417 326.25,-423 320.25,-429 314.25,-429"/>
-<text text-anchor="middle" x="269.75" y="-413.8" font-family="Arial" font-size="14.00">AGut</text>
-<text text-anchor="middle" x="269.75" y="-398.8" font-family="Arial" font-size="14.00">[PBPKO:00496]</text>
+<path fill="gold" stroke="black" d="M367.79,-429C367.79,-429 278.79,-429 278.79,-429 272.79,-429 266.79,-423 266.79,-417 266.79,-417 266.79,-403 266.79,-403 266.79,-397 272.79,-391 278.79,-391 278.79,-391 367.79,-391 367.79,-391 373.79,-391 379.79,-397 379.79,-403 379.79,-403 379.79,-417 379.79,-417 379.79,-423 373.79,-429 367.79,-429"/>
+<text text-anchor="middle" x="323.29" y="-413.8" font-family="Arial" font-size="14.00">AGut</text>
+<text text-anchor="middle" x="323.29" y="-398.8" font-family="Arial" font-size="14.00">[PBPKO:00496]</text>
 </a>
 </g>
 </g>
@@ -59,100 +59,100 @@
 <g id="node2" class="node">
 <title>ALiver</title>
 <g id="a_node2"><a xlink:href="#species-ALiver" xlink:title="ALiver&#10;[PBPKO:00497]">
-<path fill="gold" stroke="black" d="M314.25,-304C314.25,-304 225.25,-304 225.25,-304 219.25,-304 213.25,-298 213.25,-292 213.25,-292 213.25,-278 213.25,-278 213.25,-272 219.25,-266 225.25,-266 225.25,-266 314.25,-266 314.25,-266 320.25,-266 326.25,-272 326.25,-278 326.25,-278 326.25,-292 326.25,-292 326.25,-298 320.25,-304 314.25,-304"/>
-<text text-anchor="middle" x="269.75" y="-288.8" font-family="Arial" font-size="14.00">ALiver</text>
-<text text-anchor="middle" x="269.75" y="-273.8" font-family="Arial" font-size="14.00">[PBPKO:00497]</text>
+<path fill="gold" stroke="black" d="M367.79,-304C367.79,-304 278.79,-304 278.79,-304 272.79,-304 266.79,-298 266.79,-292 266.79,-292 266.79,-278 266.79,-278 266.79,-272 272.79,-266 278.79,-266 278.79,-266 367.79,-266 367.79,-266 373.79,-266 379.79,-272 379.79,-278 379.79,-278 379.79,-292 379.79,-292 379.79,-298 373.79,-304 367.79,-304"/>
+<text text-anchor="middle" x="323.29" y="-288.8" font-family="Arial" font-size="14.00">ALiver</text>
+<text text-anchor="middle" x="323.29" y="-273.8" font-family="Arial" font-size="14.00">[PBPKO:00497]</text>
 </a>
 </g>
 </g>
 <!-- AGut&#45;&gt;ALiver -->
 <g id="edge1" class="edge">
 <title>AGut&#45;&gt;ALiver</title>
-<path fill="none" stroke="black" d="M269.75,-390.85C269.75,-370.68 269.75,-337.86 269.75,-314.31"/>
-<polygon fill="black" stroke="black" points="273.25,-314.22 269.75,-304.22 266.25,-314.22 273.25,-314.22"/>
-<text text-anchor="middle" x="280.75" y="-362.3" font-family="Times,serif" font-size="14.00">_J0</text>
+<path fill="none" stroke="black" d="M323.29,-390.85C323.29,-370.68 323.29,-337.86 323.29,-314.31"/>
+<polygon fill="black" stroke="black" points="326.79,-314.22 323.29,-304.22 319.79,-314.22 326.79,-314.22"/>
+<text text-anchor="middle" x="334.29" y="-362.3" font-family="Times,serif" font-size="14.00">_J0</text>
 </g>
 <!-- ALiverMet1 -->
 <g id="node3" class="node">
 <title>ALiverMet1</title>
-<g id="a_node3"><a xlink:href="#species-ALiverMet1" xlink:title="ALiverMet1&#10;[&#45;]">
-<path fill="gold" stroke="black" d="M185.75,-179C185.75,-179 123.75,-179 123.75,-179 117.75,-179 111.75,-173 111.75,-167 111.75,-167 111.75,-153 111.75,-153 111.75,-147 117.75,-141 123.75,-141 123.75,-141 185.75,-141 185.75,-141 191.75,-141 197.75,-147 197.75,-153 197.75,-153 197.75,-167 197.75,-167 197.75,-173 191.75,-179 185.75,-179"/>
-<text text-anchor="middle" x="154.75" y="-163.8" font-family="Arial" font-size="14.00">ALiverMet1</text>
-<text text-anchor="middle" x="154.75" y="-148.8" font-family="Arial" font-size="14.00">[&#45;]</text>
+<g id="a_node3"><a xlink:href="#species-ALiverMet1" xlink:title="ALiverMet1&#10;[PBPKO:00497]">
+<path fill="gold" stroke="black" d="M224.79,-179C224.79,-179 135.79,-179 135.79,-179 129.79,-179 123.79,-173 123.79,-167 123.79,-167 123.79,-153 123.79,-153 123.79,-147 129.79,-141 135.79,-141 135.79,-141 224.79,-141 224.79,-141 230.79,-141 236.79,-147 236.79,-153 236.79,-153 236.79,-167 236.79,-167 236.79,-173 230.79,-179 224.79,-179"/>
+<text text-anchor="middle" x="180.29" y="-163.8" font-family="Arial" font-size="14.00">ALiverMet1</text>
+<text text-anchor="middle" x="180.29" y="-148.8" font-family="Arial" font-size="14.00">[PBPKO:00497]</text>
 </a>
 </g>
 </g>
 <!-- ALiver&#45;&gt;ALiverMet1 -->
 <g id="edge2" class="edge">
 <title>ALiver&#45;&gt;ALiverMet1</title>
-<path fill="none" stroke="black" d="M252.78,-265.85C233.24,-244.96 201.01,-210.48 178.87,-186.8"/>
-<polygon fill="black" stroke="black" points="181.17,-184.14 171.78,-179.22 176.06,-188.92 181.17,-184.14"/>
-<text text-anchor="middle" x="247.75" y="-237.3" font-family="Times,serif" font-size="14.00">_J5</text>
+<path fill="none" stroke="black" d="M302.19,-265.85C277.59,-244.69 236.77,-209.58 209.22,-185.88"/>
+<polygon fill="black" stroke="black" points="211.34,-183.09 201.48,-179.22 206.78,-188.4 211.34,-183.09"/>
+<text text-anchor="middle" x="292.29" y="-237.3" font-family="Times,serif" font-size="14.00">_J5</text>
 </g>
 <!-- ALiverMet2 -->
 <g id="node4" class="node">
 <title>ALiverMet2</title>
-<g id="a_node4"><a xlink:href="#species-ALiverMet2" xlink:title="ALiverMet2&#10;[&#45;]">
-<path fill="gold" stroke="black" d="M336.75,-54C336.75,-54 274.75,-54 274.75,-54 268.75,-54 262.75,-48 262.75,-42 262.75,-42 262.75,-28 262.75,-28 262.75,-22 268.75,-16 274.75,-16 274.75,-16 336.75,-16 336.75,-16 342.75,-16 348.75,-22 348.75,-28 348.75,-28 348.75,-42 348.75,-42 348.75,-48 342.75,-54 336.75,-54"/>
-<text text-anchor="middle" x="305.75" y="-38.8" font-family="Arial" font-size="14.00">ALiverMet2</text>
-<text text-anchor="middle" x="305.75" y="-23.8" font-family="Arial" font-size="14.00">[&#45;]</text>
+<g id="a_node4"><a xlink:href="#species-ALiverMet2" xlink:title="ALiverMet2&#10;[PBPKO:00497]">
+<path fill="gold" stroke="black" d="M367.79,-54C367.79,-54 278.79,-54 278.79,-54 272.79,-54 266.79,-48 266.79,-42 266.79,-42 266.79,-28 266.79,-28 266.79,-22 272.79,-16 278.79,-16 278.79,-16 367.79,-16 367.79,-16 373.79,-16 379.79,-22 379.79,-28 379.79,-28 379.79,-42 379.79,-42 379.79,-48 373.79,-54 367.79,-54"/>
+<text text-anchor="middle" x="323.29" y="-38.8" font-family="Arial" font-size="14.00">ALiverMet2</text>
+<text text-anchor="middle" x="323.29" y="-23.8" font-family="Arial" font-size="14.00">[PBPKO:00497]</text>
 </a>
 </g>
 </g>
 <!-- ALiver&#45;&gt;ALiverMet2 -->
 <g id="edge3" class="edge">
 <title>ALiver&#45;&gt;ALiverMet2</title>
-<path fill="none" stroke="black" d="M272.39,-265.76C278.61,-222.95 294.17,-115.73 301.63,-64.34"/>
-<polygon fill="black" stroke="black" points="305.12,-64.66 303.09,-54.26 298.19,-63.66 305.12,-64.66"/>
-<text text-anchor="middle" x="302.75" y="-156.3" font-family="Times,serif" font-size="14.00">_J6</text>
+<path fill="none" stroke="black" d="M323.29,-265.76C323.29,-222.95 323.29,-115.73 323.29,-64.34"/>
+<polygon fill="black" stroke="black" points="326.79,-64.26 323.29,-54.26 319.79,-64.26 326.79,-64.26"/>
+<text text-anchor="middle" x="334.29" y="-156.3" font-family="Times,serif" font-size="14.00">_J6</text>
 </g>
 <!-- ABlood -->
 <g id="node5" class="node">
 <title>ABlood</title>
-<g id="a_node5"><a xlink:href="#species-ABlood" xlink:title="ABlood&#10;[&#45;]">
-<path fill="gold" stroke="black" d="M577.75,-179C577.75,-179 541.75,-179 541.75,-179 535.75,-179 529.75,-173 529.75,-167 529.75,-167 529.75,-153 529.75,-153 529.75,-147 535.75,-141 541.75,-141 541.75,-141 577.75,-141 577.75,-141 583.75,-141 589.75,-147 589.75,-153 589.75,-153 589.75,-167 589.75,-167 589.75,-173 583.75,-179 577.75,-179"/>
-<text text-anchor="middle" x="559.75" y="-163.8" font-family="Arial" font-size="14.00">ABlood</text>
-<text text-anchor="middle" x="559.75" y="-148.8" font-family="Arial" font-size="14.00">[&#45;]</text>
+<g id="a_node5"><a xlink:href="#species-ABlood" xlink:title="ABlood&#10;[PBPKO:00623]">
+<path fill="gold" stroke="black" d="M709.79,-179C709.79,-179 620.79,-179 620.79,-179 614.79,-179 608.79,-173 608.79,-167 608.79,-167 608.79,-153 608.79,-153 608.79,-147 614.79,-141 620.79,-141 620.79,-141 709.79,-141 709.79,-141 715.79,-141 721.79,-147 721.79,-153 721.79,-153 721.79,-167 721.79,-167 721.79,-173 715.79,-179 709.79,-179"/>
+<text text-anchor="middle" x="665.29" y="-163.8" font-family="Arial" font-size="14.00">ABlood</text>
+<text text-anchor="middle" x="665.29" y="-148.8" font-family="Arial" font-size="14.00">[PBPKO:00623]</text>
 </a>
 </g>
 </g>
 <!-- ALiver&#45;&gt;ABlood -->
 <g id="edge4" class="edge">
 <title>ALiver&#45;&gt;ABlood</title>
-<path fill="none" stroke="black" d="M326.34,-267.6C360.85,-256.92 405.52,-241.87 443.75,-225 470.56,-213.17 499.43,-197.25 521.66,-184.26"/>
-<polygon fill="black" stroke="black" points="523.61,-187.17 530.44,-179.07 520.05,-181.14 523.61,-187.17"/>
-<text text-anchor="middle" x="430.75" y="-237.3" font-family="Times,serif" font-size="14.00">_J2</text>
+<path fill="none" stroke="black" d="M373.86,-265.97C406.52,-254.31 449.93,-238.79 488.29,-225 527.5,-210.9 571.56,-194.97 605.92,-182.53"/>
+<polygon fill="black" stroke="black" points="607.13,-185.81 615.34,-179.12 604.74,-179.23 607.13,-185.81"/>
+<text text-anchor="middle" x="472.29" y="-237.3" font-family="Times,serif" font-size="14.00">_J2</text>
 </g>
 <!-- ABlood&#45;&gt;ALiver -->
 <g id="edge5" class="edge">
 <title>ABlood&#45;&gt;ALiver</title>
-<path fill="none" stroke="black" d="M541.74,-179.12C520.63,-199.27 483.67,-231.25 445.75,-248.5 411.55,-264.05 370.53,-272.83 336.71,-277.76"/>
-<polygon fill="black" stroke="black" points="335.89,-274.34 326.46,-279.18 336.84,-281.28 335.89,-274.34"/>
-<text text-anchor="middle" x="483.75" y="-237.3" font-family="Times,serif" font-size="14.00">_J1</text>
+<path fill="none" stroke="black" d="M634.46,-179.05C599.74,-198.68 541.11,-229.76 487.29,-248.5 456.03,-259.39 420.2,-267.6 390.02,-273.38"/>
+<polygon fill="black" stroke="black" points="389.21,-269.97 380.02,-275.24 390.49,-276.85 389.21,-269.97"/>
+<text text-anchor="middle" x="533.29" y="-237.3" font-family="Times,serif" font-size="14.00">_J1</text>
 </g>
 <!-- ARest -->
 <g id="node6" class="node">
 <title>ARest</title>
 <g id="a_node6"><a xlink:href="#species-ARest" xlink:title="ARest&#10;[PBPKO:00501]">
-<path fill="gold" stroke="black" d="M698.25,-54C698.25,-54 609.25,-54 609.25,-54 603.25,-54 597.25,-48 597.25,-42 597.25,-42 597.25,-28 597.25,-28 597.25,-22 603.25,-16 609.25,-16 609.25,-16 698.25,-16 698.25,-16 704.25,-16 710.25,-22 710.25,-28 710.25,-28 710.25,-42 710.25,-42 710.25,-48 704.25,-54 698.25,-54"/>
-<text text-anchor="middle" x="653.75" y="-38.8" font-family="Arial" font-size="14.00">ARest</text>
-<text text-anchor="middle" x="653.75" y="-23.8" font-family="Arial" font-size="14.00">[PBPKO:00501]</text>
+<path fill="gold" stroke="black" d="M709.79,-54C709.79,-54 620.79,-54 620.79,-54 614.79,-54 608.79,-48 608.79,-42 608.79,-42 608.79,-28 608.79,-28 608.79,-22 614.79,-16 620.79,-16 620.79,-16 709.79,-16 709.79,-16 715.79,-16 721.79,-22 721.79,-28 721.79,-28 721.79,-42 721.79,-42 721.79,-48 715.79,-54 709.79,-54"/>
+<text text-anchor="middle" x="665.29" y="-38.8" font-family="Arial" font-size="14.00">ARest</text>
+<text text-anchor="middle" x="665.29" y="-23.8" font-family="Arial" font-size="14.00">[PBPKO:00501]</text>
 </a>
 </g>
 </g>
 <!-- ABlood&#45;&gt;ARest -->
 <g id="edge6" class="edge">
 <title>ABlood&#45;&gt;ARest</title>
-<path fill="none" stroke="black" d="M573.62,-140.85C589.44,-120.14 615.47,-86.08 633.55,-62.42"/>
-<polygon fill="black" stroke="black" points="636.53,-64.29 639.82,-54.22 630.97,-60.04 636.53,-64.29"/>
-<text text-anchor="middle" x="608.75" y="-112.3" font-family="Times,serif" font-size="14.00">_J3</text>
+<path fill="none" stroke="black" d="M665.29,-140.85C665.29,-120.68 665.29,-87.86 665.29,-64.31"/>
+<polygon fill="black" stroke="black" points="668.79,-64.22 665.29,-54.22 661.79,-64.22 668.79,-64.22"/>
+<text text-anchor="middle" x="676.29" y="-112.3" font-family="Times,serif" font-size="14.00">_J3</text>
 </g>
 <!-- ARest&#45;&gt;ABlood -->
 <g id="edge7" class="edge">
 <title>ARest&#45;&gt;ABlood</title>
-<path fill="none" stroke="black" d="M651.4,-54.31C648.12,-73.45 640.56,-103.43 623.75,-123.5 617.08,-131.46 608.14,-137.96 599.06,-143.12"/>
-<polygon fill="black" stroke="black" points="597.27,-140.1 590.02,-147.83 600.51,-146.31 597.27,-140.1"/>
-<text text-anchor="middle" x="643.75" y="-112.3" font-family="Times,serif" font-size="14.00">_J4</text>
+<path fill="none" stroke="black" d="M677.23,-54.19C687.35,-71.95 699.08,-99.7 691.29,-123.5 690.33,-126.45 689.01,-129.37 687.48,-132.17"/>
+<polygon fill="black" stroke="black" points="684.46,-130.41 682.03,-140.72 690.36,-134.17 684.46,-130.41"/>
+<text text-anchor="middle" x="704.29" y="-112.3" font-family="Times,serif" font-size="14.00">_J4</text>
 </g>
 </g>
 </svg>

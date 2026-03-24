@@ -1,88 +1,205 @@
 file,id,name,route,chemical_group,bqm_is_class_id,bqm_is_class_label,bqm_is_class_iri
-Notenboom.sbml,ALumen,,oral,Mycotoxins,,,
-Notenboom.sbml,ALiver,amount of chemical in liver,oral,Mycotoxins,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
-Notenboom.sbml,ABlood,amount of chemical in blood,oral,Mycotoxins,,,
-Notenboom.sbml,ARest,amount of chemical in rest-of-body,oral,Mycotoxins,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-Notenboom.sbml,ALiverMet1,,oral,Mycotoxins,,,
-Notenboom.sbml,ALiverMet2,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ASt,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ASI1,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ASI2,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ASI3,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ASI4,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ASI5,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ASI6,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ASI7,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ALI1,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ASITissue,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ALiver,amount of chemical in liver,oral,Mycotoxins,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
-Mendez_Catala.sbml,ABlood,amount of chemical in blood,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ARest,amount of chemical in rest-of-body,oral,Mycotoxins,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-Mendez_Catala.sbml,AFeaces,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ASITissueMet1,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ALI1Met2,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ALI1Met3,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ALiverMet2,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ALiverMet3,,oral,Mycotoxins,,,
-Mendez_Catala.sbml,ALiverMet1,,oral,Mycotoxins,,,
-Wang.sbml,ASt,,oral,Mycotoxins,,,
-Wang.sbml,AJ,,oral,Mycotoxins,,,
-Wang.sbml,AI,,oral,Mycotoxins,,,
-Wang.sbml,ALI,,oral,Mycotoxins,,,
-Wang.sbml,AIT,,oral,Mycotoxins,,,
-Wang.sbml,ALiver,amount of chemical in liver,oral,Mycotoxins,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
-Wang.sbml,ABlood,amount of chemical in blood,oral,Mycotoxins,,,
-Wang.sbml,ARest,amount of chemical in rest-of-body,oral,Mycotoxins,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-Wang.sbml,AMet,,oral,Mycotoxins,,,
-Gilbert_Sandoval.sbml,ASt,,oral,Mycotoxins,,,
-Gilbert_Sandoval.sbml,ASI1,,oral,Mycotoxins,,,
-Gilbert_Sandoval.sbml,ASI2,,oral,Mycotoxins,,,
-Gilbert_Sandoval.sbml,ASI3,,oral,Mycotoxins,,,
-Gilbert_Sandoval.sbml,ASI4,,oral,Mycotoxins,,,
-Gilbert_Sandoval.sbml,ASI5,,oral,Mycotoxins,,,
-Gilbert_Sandoval.sbml,ASI6,,oral,Mycotoxins,,,
-Gilbert_Sandoval.sbml,ASI7,,oral,Mycotoxins,,,
-Gilbert_Sandoval.sbml,AColon,,oral,Mycotoxins,,,
-Gilbert_Sandoval.sbml,AFeaces,,oral,Mycotoxins,,,
-Gilbert_Sandoval.sbml,ALiver,amount of chemical in liver,oral,Mycotoxins,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
-Gilbert_Sandoval.sbml,ABlood,amount of chemical in blood,oral,Mycotoxins,,,
-Gilbert_Sandoval.sbml,ARest,amount of chemical in rest-of-body,oral,Mycotoxins,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-Gilbert_Sandoval.sbml,ALiverMet1,,oral,Mycotoxins,,,
-Gilbert_Sandoval.sbml,ALiverMet2,,oral,Mycotoxins,,,
-Mukherjee.sbml,AGILumen,,oral,Mycotoxins,,,
-Mukherjee.sbml,AFast,,oral,Mycotoxins,,,
-Mukherjee.sbml,ASlow,,oral,Mycotoxins,,,
-Mukherjee.sbml,AColon,,oral,Mycotoxins,,,
-Mukherjee.sbml,AGut,amount of chemical in gut,oral,Mycotoxins,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
-Mukherjee.sbml,ALiver,amount of chemical in liver,oral,Mycotoxins,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
-Mukherjee.sbml,ABlood,amount of chemical in blood,oral,Mycotoxins,,,
-Mukherjee.sbml,ARest,amount of chemical in rest-of-body,oral,Mycotoxins,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-Mukherjee.sbml,ASt,,oral,Mycotoxins,,,
-Mukherjee.sbml,ASpleen,,oral,Mycotoxins,,,
-Mukherjee.sbml,ABile,,oral,Mycotoxins,,,
-Mukherjee.sbml,AFeces,,oral,Mycotoxins,,,
-Mukherjee.sbml,ALiverMet1,,oral,Mycotoxins,,,
-Mukherjee.sbml,ALiverMet2,,oral,Mycotoxins,,,
-Mukherjee.sbml,ALiverMet3,,oral,Mycotoxins,,,
-Mukherjee.sbml,ALiverMet4,,oral,Mycotoxins,,,
-BechauxCd_Female.sbml,AGI,,oral,Heavy%20Metals,,,
-BechauxCd_Female.sbml,ATI,,oral,Heavy%20Metals,,,
-BechauxCd_Female.sbml,ALiver,amount of chemical in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
-BechauxCd_Female.sbml,AKidney,amount of chemical in kidney,oral,Heavy%20Metals,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498
-BechauxCd_Female.sbml,APlasma,amount of chemical in plasma,oral,Heavy%20Metals,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
-BechauxCd_Female.sbml,ARBC,,oral,Heavy%20Metals,,,
-BechauxCd_Female.sbml,AMetallothionein,,oral,Heavy%20Metals,,,
-BechauxCd_Female.sbml,ARest,amount of chemical in rest-of-body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-BechauxCd_Female.sbml,ADaily_Uptake,,oral,Heavy%20Metals,,,
-BechauxCd_Male.sbml,AGI,,oral,Heavy%20Metals,,,
-BechauxCd_Male.sbml,ATI,,oral,Heavy%20Metals,,,
-BechauxCd_Male.sbml,ALiver,amount of chemical in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
-BechauxCd_Male.sbml,AKidney,amount of chemical in kidney,oral,Heavy%20Metals,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498
-BechauxCd_Male.sbml,APlasma,amount of chemical in plasma,oral,Heavy%20Metals,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
-BechauxCd_Male.sbml,ARBC,,oral,Heavy%20Metals,,,
-BechauxCd_Male.sbml,AMetallothionein,,oral,Heavy%20Metals,,,
-BechauxCd_Male.sbml,ARest,amount of chemical in rest-of-body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-BechauxCd_Male.sbml,ADaily_Uptake,,oral,Heavy%20Metals,,,
+Notenboom.sbml,ALumen,Amount in gut lumen,oral,Mycotoxins,,,
+Notenboom.sbml,ALiver,Amount in liver,oral,Mycotoxins,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Notenboom.sbml,ABlood,Amount in blood,oral,Mycotoxins,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+Notenboom.sbml,ARest,Amount in rest of body,oral,Mycotoxins,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Notenboom.sbml,ALiverMet1,Amount of metabolite in liver,oral,Mycotoxins,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Notenboom.sbml,ALiverMet2,Amount of metabolite in liver,oral,Mycotoxins,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Mendez_Catala.sbml,ASt,Amount in stomach,oral,Mycotoxins,,,
+Mendez_Catala.sbml,ASI1,Amount in small intestine,oral,Mycotoxins,,,
+Mendez_Catala.sbml,ASI2,Amount in small intestine,oral,Mycotoxins,,,
+Mendez_Catala.sbml,ASI3,Amount in small intestine,oral,Mycotoxins,,,
+Mendez_Catala.sbml,ASI4,Amount in small intestine,oral,Mycotoxins,,,
+Mendez_Catala.sbml,ASI5,Amount in small intestine,oral,Mycotoxins,,,
+Mendez_Catala.sbml,ASI6,Amount in small intestine,oral,Mycotoxins,,,
+Mendez_Catala.sbml,ASI7,Amount in small intestine,oral,Mycotoxins,,,
+Mendez_Catala.sbml,ALI1,Amount in large intestine,oral,Mycotoxins,,,
+Mendez_Catala.sbml,ASITissue,Amount in small intestine tissue,oral,Mycotoxins,,,
+Mendez_Catala.sbml,ALiver,Amount in liver,oral,Mycotoxins,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Mendez_Catala.sbml,ABlood,Amount in blood,oral,Mycotoxins,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+Mendez_Catala.sbml,ARest,Amount in rest of body,oral,Mycotoxins,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Mendez_Catala.sbml,AFeaces,Amount in feces,oral,Mycotoxins,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
+Mendez_Catala.sbml,ASITissueMet1,Amount of metabolite in small intestine tissue,oral,Mycotoxins,,,
+Mendez_Catala.sbml,ALI1Met2,Amount of metabolite in large intestine,oral,Mycotoxins,,,
+Mendez_Catala.sbml,ALI1Met3,Amount of metabolite in large intestine,oral,Mycotoxins,,,
+Mendez_Catala.sbml,ALiverMet2,Amount of metabolite in liver,oral,Mycotoxins,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Mendez_Catala.sbml,ALiverMet3,Amount of metabolite in liver,oral,Mycotoxins,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Mendez_Catala.sbml,ALiverMet1,Amount of metabolite in liver,oral,Mycotoxins,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Wang.sbml,ASt,Amount in stomach,oral,Mycotoxins,,,
+Wang.sbml,AJ,Amount in jejunum,oral,Mycotoxins,,,
+Wang.sbml,AI,Amount in ileum,oral,Mycotoxins,,,
+Wang.sbml,ALI,amount in large intestine,oral,Mycotoxins,,,
+Wang.sbml,AIT,Amount in intestinal tissue,oral,Mycotoxins,,,
+Wang.sbml,ALiver,Amount in liver,oral,Mycotoxins,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Wang.sbml,ABlood,Amount in blood,oral,Mycotoxins,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+Wang.sbml,ARest,Amount in rest of body,oral,Mycotoxins,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Wang.sbml,AMet,Amount metabolised,oral,Mycotoxins,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Gilbert_Sandoval.sbml,ASt,Amount in stomach,oral,Mycotoxins,,,
+Gilbert_Sandoval.sbml,ASI1,Amount in small intestine,oral,Mycotoxins,,,
+Gilbert_Sandoval.sbml,ASI2,Amount in small intestine,oral,Mycotoxins,,,
+Gilbert_Sandoval.sbml,ASI3,Amount in small intestine,oral,Mycotoxins,,,
+Gilbert_Sandoval.sbml,ASI4,Amount in small intestine,oral,Mycotoxins,,,
+Gilbert_Sandoval.sbml,ASI5,Amount in small intestine,oral,Mycotoxins,,,
+Gilbert_Sandoval.sbml,ASI6,Amount in small intestine,oral,Mycotoxins,,,
+Gilbert_Sandoval.sbml,ASI7,Amount in small intestine,oral,Mycotoxins,,,
+Gilbert_Sandoval.sbml,AColon,Amount in colon,oral,Mycotoxins,,,
+Gilbert_Sandoval.sbml,AFeaces,Amount in feces,oral,Mycotoxins,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
+Gilbert_Sandoval.sbml,ALiver,Amount in liver,oral,Mycotoxins,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Gilbert_Sandoval.sbml,ABlood,Amount in blood,oral,Mycotoxins,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+Gilbert_Sandoval.sbml,ARest,Amount in rest of body,oral,Mycotoxins,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Gilbert_Sandoval.sbml,ALiverMet1,Amount in liver (metabolised),oral,Mycotoxins,,,
+Gilbert_Sandoval.sbml,ALiverMet2,Amount in liver (metabolised),oral,Mycotoxins,,,
+Mukherjee.sbml,AGILumen,Amount in GI lumen,oral,Mycotoxins,,,
+Mukherjee.sbml,AFast,Amount in fast GI lumen,oral,Mycotoxins,,,
+Mukherjee.sbml,ASlow,Amount in slow GI lumen,oral,Mycotoxins,,,
+Mukherjee.sbml,AColon,Amount in colon,oral,Mycotoxins,,,
+Mukherjee.sbml,AGut,Amount in gut,oral,Mycotoxins,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Mukherjee.sbml,ALiver,Amount in liver,oral,Mycotoxins,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Mukherjee.sbml,ABlood,Amount in blood,oral,Mycotoxins,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+Mukherjee.sbml,ARest,Amount in rest of body,oral,Mycotoxins,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Mukherjee.sbml,ASt,Amount in stomach,oral,Mycotoxins,,,
+Mukherjee.sbml,ASpleen,Amount in spleen,oral,Mycotoxins,,,
+Mukherjee.sbml,ABile,Amount in Bile (may be removed),oral,Mycotoxins,,,
+Mukherjee.sbml,AFeces,Amount in feces,oral,Mycotoxins,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
+Mukherjee.sbml,ALiverMet1,Amount of metabolite in liver,oral,Mycotoxins,,,
+Mukherjee.sbml,ALiverMet2,Amount of metabolite in liver,oral,Mycotoxins,,,
+Mukherjee.sbml,ALiverMet3,Amount of metabolite in liver,oral,Mycotoxins,,,
+Mukherjee.sbml,ALiverMet4,Amount of metabolite in liver,oral,Mycotoxins,,,
+Timchalk.sbml,ALiver,,oral,Pesticides,,,
+Timchalk.sbml,ABlood,,oral,Pesticides,,,
+Timchalk.sbml,ARest,,oral,Pesticides,,,
+Timchalk.sbml,ALiverMet1,,oral,Pesticides,,,
+Timchalk.sbml,ALiverMet2,,oral,Pesticides,,,
+Mallick.sbml,ALumen,,oral,Pesticides,,,
+Mallick.sbml,AGut,,oral,Pesticides,,,
+Mallick.sbml,ALiver,,oral,Pesticides,,,
+Mallick.sbml,APlasma,,oral,Pesticides,,,
+Mallick.sbml,ARestPlasma,,oral,Pesticides,,,
+Mallick.sbml,ARestTissue,,oral,Pesticides,,,
+Mallick.sbml,ALiverMet1,,oral,Pesticides,,,
+Chen.sbml,ASt,,oral,Pesticides,,,
+Chen.sbml,AIT,,oral,Pesticides,,,
+Chen.sbml,ALiver,,oral,Pesticides,,,
+Chen.sbml,ABlood,,oral,Pesticides,,,
+Chen.sbml,ARest,,oral,Pesticides,,,
+Chen.sbml,ALiverMet1,,oral,Pesticides,,,
+Chen.sbml,ALiverMet2,,oral,Pesticides,,,
+Moreau_Deltamethrin.sbml,ASt,,oral,Pesticides,,,
+Moreau_Deltamethrin.sbml,ADuodenum,,oral,Pesticides,,,
+Moreau_Deltamethrin.sbml,AGITissue,,oral,Pesticides,,,
+Moreau_Deltamethrin.sbml,ALiver,,oral,Pesticides,,,
+Moreau_Deltamethrin.sbml,APlasma,,oral,Pesticides,,,
+Moreau_Deltamethrin.sbml,ARest,,oral,Pesticides,,,
+Moreau_Deltamethrin.sbml,ALiverMet,,oral,Pesticides,,,
+Moreau_Deltamethrin.sbml,APlasmaMet,,oral,Pesticides,,,
+Moreau_Deltamethrin.sbml,AUrine,,oral,Pesticides,,,
+Moreau_Carbaryl.sbml,ASt,,oral,Pesticides,,,
+Moreau_Carbaryl.sbml,ADuodenum,,oral,Pesticides,,,
+Moreau_Carbaryl.sbml,AGITissue,,oral,Pesticides,,,
+Moreau_Carbaryl.sbml,ALiver,,oral,Pesticides,,,
+Moreau_Carbaryl.sbml,APlasma,,oral,Pesticides,,,
+Moreau_Carbaryl.sbml,ARest,,oral,Pesticides,,,
+Moreau_Carbaryl.sbml,ALiverMet,,oral,Pesticides,,,
+Moreau_Carbaryl.sbml,APlasmaMet,,oral,Pesticides,,,
+Moreau_Carbaryl.sbml,AUrine,,oral,Pesticides,,,
+Tonnelier.sbml,AAbsComp,,oral,Pesticides,,,
+Tonnelier.sbml,APV,,oral,Pesticides,,,
+Tonnelier.sbml,ALiver,,oral,Pesticides,,,
+Tonnelier.sbml,ALiverMet,,oral,Pesticides,,,
+Tonnelier.sbml,ASysComp,,oral,Pesticides,,,
+Tonnelier.sbml,ARenalEx,,oral,Pesticides,,,
+Bouchard.sbml,AGut,,oral,Pesticides,,,
+Bouchard.sbml,ABlood,,oral,Pesticides,,,
+Bouchard.sbml,ARest,,oral,Pesticides,,,
+Bouchard.sbml,ABloodMetTotal,,oral,Pesticides,,,
+Zwartsen.sbml,ASL,,oral,Pesticides,,,
+Zwartsen.sbml,AIL,,oral,Pesticides,,,
+Zwartsen.sbml,ALiver,,oral,Pesticides,,,
+Zwartsen.sbml,ABlood,,oral,Pesticides,,,
+Zwartsen.sbml,ARest,,oral,Pesticides,,,
+Zwartsen.sbml,ALiverMet1,,oral,Pesticides,,,
+Zwartsen.sbml,ALiverMet2,,oral,Pesticides,,,
+Zhao.sbml,AGut,,oral,Pesticides,,,
+Zhao.sbml,ALiver,,oral,Pesticides,,,
+Zhao.sbml,ABlood,,oral,Pesticides,,,
+Zhao.sbml,ARest,,oral,Pesticides,,,
+Zhao.sbml,ALiverMet1,,oral,Pesticides,,,
+Zhao.sbml,ALiverMet2,,oral,Pesticides,,,
+Zhao.sbml,ALiverMet3,,oral,Pesticides,,,
+Wei.sbml,ASt,,oral,Pesticides,,,
+Wei.sbml,AIT,,oral,Pesticides,,,
+Wei.sbml,ALiver,,oral,Pesticides,,,
+Wei.sbml,ABlood,,oral,Pesticides,,,
+Wei.sbml,ARestT,,oral,Pesticides,,,
+Wei.sbml,ARestVC,,oral,Pesticides,,,
+Wei.sbml,ALiverMet,,oral,Pesticides,,,
+Wei.sbml,ABloodMet,,oral,Pesticides,,,
+Wei.sbml,AExcr,,oral,Pesticides,,,
+Wei.sbml,AFecal,,oral,Pesticides,,,
+Wei.sbml,AUrine,,oral,Pesticides,,,
+Godin.sbml,ASt,,oral,Pesticides,,,
+Godin.sbml,AIT,,oral,Pesticides,,,
+Godin.sbml,ALiverVC,,oral,Pesticides,,,
+Godin.sbml,ALiverIC,,oral,Pesticides,,,
+Godin.sbml,ABlood,,oral,Pesticides,,,
+Godin.sbml,ARestVC,,oral,Pesticides,,,
+Godin.sbml,ARestIC,,oral,Pesticides,,,
+Godin.sbml,ALiverMet,,oral,Pesticides,,,
+Godin.sbml,ABloodMet,,oral,Pesticides,,,
+Godin.sbml,AFecal,,oral,Pesticides,,,
+OFlaherty2000_Pb.sbml,ALiver,Amount in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+OFlaherty2000_Pb.sbml,ABlood,Amount in blood,oral,Heavy%20Metals,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+OFlaherty2000_Pb.sbml,ARest,Amount in rest of body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+BechauxCd_Female.sbml,AGI,Amount in gastrointestinal compartment,oral,Heavy%20Metals,,,
+BechauxCd_Female.sbml,ATI,Amount in intestinal tissue,oral,Heavy%20Metals,,,
+BechauxCd_Female.sbml,ALiver,Amoun in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+BechauxCd_Female.sbml,AKidney,Amoun in kidney,oral,Heavy%20Metals,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498
+BechauxCd_Female.sbml,APlasma,Amount in plasma,oral,Heavy%20Metals,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+BechauxCd_Female.sbml,ARBC,Amount in red blood cells,oral,Heavy%20Metals,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+BechauxCd_Female.sbml,AMetallothionein,Amount in mettalothioneine bloood,oral,Heavy%20Metals,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+BechauxCd_Female.sbml,ARest,Amount in rest of body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+BechauxCd_Female.sbml,ADaily_Uptake,Amount of daily uptake,oral,Heavy%20Metals,,,
+BechauxCd_Male.sbml,AGI,Amount in gastrointestinal compartment,oral,Heavy%20Metals,,,
+BechauxCd_Male.sbml,ATI,Amount in intestinal tissue,oral,Heavy%20Metals,,,
+BechauxCd_Male.sbml,ALiver,Amoun in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+BechauxCd_Male.sbml,AKidney,Amoun in kidney,oral,Heavy%20Metals,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498
+BechauxCd_Male.sbml,APlasma,Amount in plasma,oral,Heavy%20Metals,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+BechauxCd_Male.sbml,ARBC,Amount in red blood cells,oral,Heavy%20Metals,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+BechauxCd_Male.sbml,AMetallothionein,Amount in mettalothioneine bloood,oral,Heavy%20Metals,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+BechauxCd_Male.sbml,ARest,Amount in rest of body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+BechauxCd_Male.sbml,ADaily_Uptake,Amount of daily uptake,oral,Heavy%20Metals,,,
+ElMasri_2008_As.sbml,ALumen_As3,Amount of As3+ in lumen,oral,Heavy%20Metals,,,
+ElMasri_2008_As.sbml,ALumen_As5,Amount of As5+ in lumen,oral,Heavy%20Metals,,,
+ElMasri_2008_As.sbml,AGut_As3,Amount of As3+ in gut,oral,Heavy%20Metals,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+ElMasri_2008_As.sbml,AGut_As5,Amount of As5+ in gut,oral,Heavy%20Metals,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+ElMasri_2008_As.sbml,AGut_AsM5,Amount of MMA5 in gut,oral,Heavy%20Metals,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+ElMasri_2008_As.sbml,AGut_AsD5,Amount of DMA5 in Gut,oral,Heavy%20Metals,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+ElMasri_2008_As.sbml,AArterial_AsD5,Amount of DMA5 in arterial blood,oral,Heavy%20Metals,PBPKO:00631,amount in arterial blood,http://purl.obolibrary.org/obo/PBPKO_00631
+ElMasri_2008_As.sbml,ALiver_As3,Amount of As3+ in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+ElMasri_2008_As.sbml,ALiver_As5,Amount of As5+ in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+ElMasri_2008_As.sbml,ALiver_AsM3,Amount of MMA3 in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+ElMasri_2008_As.sbml,ALiver_AsM5,Amount of MMA5 in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+ElMasri_2008_As.sbml,ALiver_AsD3,Amount of DMA3 in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+ElMasri_2008_As.sbml,ALiver_AsD5,Amount od DMA5 in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+ElMasri_2008_As.sbml,ARest_As3,Amount of As3+ in rest of the body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+ElMasri_2008_As.sbml,ARest_As5,Amount of As5+ in rest of the body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+ElMasri_2008_As.sbml,ARest_AsM5,Amount of MMA5 in rest of the body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+ElMasri_2008_As.sbml,ARest_AsD5,Amount of DMA5 in rest of the body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+ElMasri_2008_As.sbml,AArterial_As3,Amount of As3+ in arterial blood,oral,Heavy%20Metals,PBPKO:00631,amount in arterial blood,http://purl.obolibrary.org/obo/PBPKO_00631
+ElMasri_2008_As.sbml,AArterial_As5,Amount of As5+ in arterial blood,oral,Heavy%20Metals,PBPKO:00631,amount in arterial blood,http://purl.obolibrary.org/obo/PBPKO_00631
+ElMasri_2008_As.sbml,AArterial_AsM5,Amount of MMA5 in arterial blood,oral,Heavy%20Metals,PBPKO:00631,amount in arterial blood,http://purl.obolibrary.org/obo/PBPKO_00631
+ElMasri_2008_As.sbml,AVenous_As3,Amount of As3+ in venous blood,oral,Heavy%20Metals,PBPKO:00632,amount in venous blood,http://purl.obolibrary.org/obo/PBPKO_00632
+ElMasri_2008_As.sbml,AVenous_As5,Amount of As5+ in venous blood,oral,Heavy%20Metals,PBPKO:00632,amount in venous blood,http://purl.obolibrary.org/obo/PBPKO_00632
+ElMasri_2008_As.sbml,AVenous_AsM5,Amount of MMA5 in venous blood,oral,Heavy%20Metals,PBPKO:00632,amount in venous blood,http://purl.obolibrary.org/obo/PBPKO_00632
+ElMasri_2008_As.sbml,AVenous_AsD5,Amount of DMA5 in venous blood,oral,Heavy%20Metals,PBPKO:00632,amount in venous blood,http://purl.obolibrary.org/obo/PBPKO_00632
+ElMasri_2008_As.sbml,ALung_As3,Amount of As3+ in lung,oral,Heavy%20Metals,PBPKO:00504,amount in lung,http://purl.obolibrary.org/obo/PBPKO_00504
+ElMasri_2008_As.sbml,ALung_As5,Amount of As5+ in lung,oral,Heavy%20Metals,PBPKO:00504,amount in lung,http://purl.obolibrary.org/obo/PBPKO_00504
+ElMasri_2008_As.sbml,ALung_AsM3,Amount of MMA3 in lung,oral,Heavy%20Metals,PBPKO:00504,amount in lung,http://purl.obolibrary.org/obo/PBPKO_00504
+ElMasri_2008_As.sbml,ALung_AsM5,Amount of MMA5 in lung,oral,Heavy%20Metals,PBPKO:00504,amount in lung,http://purl.obolibrary.org/obo/PBPKO_00504
+ElMasri_2008_As.sbml,ALung_AsD3,Amount of DMA3 in lung,oral,Heavy%20Metals,PBPKO:00504,amount in lung,http://purl.obolibrary.org/obo/PBPKO_00504
+ElMasri_2008_As.sbml,ALung_AsD5,Amount of DMA5 in lung,oral,Heavy%20Metals,PBPKO:00504,amount in lung,http://purl.obolibrary.org/obo/PBPKO_00504
+ElMasri_2008_As.sbml,AUrine_AsM3,Cumulative amount of MMA3 in urine,oral,Heavy%20Metals,PBPKO:00274,cumulative amount in urine,http://purl.obolibrary.org/obo/PBPKO_00274
+ElMasri_2008_As.sbml,AUrine_AsD3,Cumulative amount of DMA3 in urine,oral,Heavy%20Metals,PBPKO:00274,cumulative amount in urine,http://purl.obolibrary.org/obo/PBPKO_00274
 RuizCd_Male.sbml,AGI,,oral,Heavy%20Metals,,,
 RuizCd_Male.sbml,ATI,,oral,Heavy%20Metals,,,
 RuizCd_Male.sbml,ALiver,amount of chemical in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
@@ -101,88 +218,119 @@ RuizCd_Female.sbml,ARBC,,oral,Heavy%20Metals,,,
 RuizCd_Female.sbml,AMetallothionein,,oral,Heavy%20Metals,,,
 RuizCd_Female.sbml,ARest,amount of chemical in rest-of-body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
 RuizCd_Female.sbml,ADaily_Uptake,,oral,Heavy%20Metals,,,
-OFlaherty2000_Pb.sbml,ALiver,amount of chemical in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
-OFlaherty2000_Pb.sbml,ABlood,amount of chemical in blood,oral,Heavy%20Metals,,,
-OFlaherty2000_Pb.sbml,ARest,amount of chemical in rest-of-body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-PouillotCd.sbml,AGI,,oral,Heavy%20Metals,,,
-PouillotCd.sbml,ATI,,oral,Heavy%20Metals,,,
-PouillotCd.sbml,ALiver,amount of chemical in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
-PouillotCd.sbml,AKidney,amount of chemical in kidney,oral,Heavy%20Metals,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498
-PouillotCd.sbml,APlasma,amount of chemical in plasma,oral,Heavy%20Metals,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
-PouillotCd.sbml,ARBC,,oral,Heavy%20Metals,,,
-PouillotCd.sbml,AMetallothionein,,oral,Heavy%20Metals,,,
-PouillotCd.sbml,ARest,amount of chemical in rest-of-body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-PouillotCd.sbml,ADaily_Uptake,,oral,Heavy%20Metals,,,
-Tebby2022_Pb.sbml,ALiver,amount of chemical in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
-Tebby2022_Pb.sbml,ABlood,amount of chemical in blood,oral,Heavy%20Metals,,,
-Tebby2022_Pb.sbml,ARest,amount of chemical in rest-of-body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-Carrier2001_Hg.sbml,AGI,,oral,Heavy%20Metals,,,
-Carrier2001_Hg.sbml,ABlood,amount of chemical in blood,oral,Heavy%20Metals,,,
-Carrier2001_Hg.sbml,ALiver_Met,,oral,Heavy%20Metals,,,
-KjellstromCd.sbml,AGI,,oral,Heavy%20Metals,,,
-KjellstromCd.sbml,ATI,,oral,Heavy%20Metals,,,
-KjellstromCd.sbml,ALiver,amount of chemical in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
-KjellstromCd.sbml,AKidney,amount of chemical in kidney,oral,Heavy%20Metals,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498
-KjellstromCd.sbml,APlasma,amount of chemical in plasma,oral,Heavy%20Metals,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
-KjellstromCd.sbml,ARBC,,oral,Heavy%20Metals,,,
-KjellstromCd.sbml,AMetallothionein,,oral,Heavy%20Metals,,,
-KjellstromCd.sbml,ARest,amount of chemical in rest-of-body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-KjellstromCd.sbml,ADaily_Uptake,,oral,Heavy%20Metals,,,
-Karrer.sbml,AStomach,,oral,Bisphenols,,,
-Karrer.sbml,ASI,,oral,Bisphenols,,,
+Ou2018_Hg.sbml,AGut_lumen,Amount in gut lumen,oral,Heavy%20Metals,,,
+Ou2018_Hg.sbml,AGut,Amount in gut,oral,Heavy%20Metals,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Ou2018_Hg.sbml,ALiver,Amount in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Ou2018_Hg.sbml,ARBC,Amount in red blood cells,oral,Heavy%20Metals,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+Ou2018_Hg.sbml,APlasma,Amount in plasma,oral,Heavy%20Metals,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Ou2018_Hg.sbml,ARest,Amount in rest of body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Ou2018_Hg.sbml,AFeces,Amount in feces,oral,Heavy%20Metals,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
+Ou2018_Hg.sbml,ALiver_Met,Amount in liver (metabolised),oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Ou2018_Hg.sbml,AGutlumen_Met,Amount in gut lumen (metabolised),oral,Heavy%20Metals,,,
+Clewell1999_Hg.sbml,AGut_lumen,Amount in gut lumen,oral,Heavy%20Metals,,,
+Clewell1999_Hg.sbml,AGut,Amount in gut,oral,Heavy%20Metals,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Clewell1999_Hg.sbml,ALiver,Amount in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Clewell1999_Hg.sbml,ARBC,Amount in red blood cells,oral,Heavy%20Metals,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+Clewell1999_Hg.sbml,APlasma,Amount in plasma,oral,Heavy%20Metals,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Clewell1999_Hg.sbml,ARest,Amount in rest of body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Clewell1999_Hg.sbml,AFeces,Amount in feces,oral,Heavy%20Metals,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
+Clewell1999_Hg.sbml,ALiver_Met,Amount in liver (metabolised),oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Clewell1999_Hg.sbml,AGutlumen_Met,Amount in gut lumen (metabolised),oral,Heavy%20Metals,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+PouillotCd.sbml,AGI,Amount in gut,oral,Heavy%20Metals,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+PouillotCd.sbml,ATI,Amount in intestinal tissue,oral,Heavy%20Metals,,,
+PouillotCd.sbml,ALiver,Amount in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+PouillotCd.sbml,AKidney,Amount in kidney,oral,Heavy%20Metals,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498
+PouillotCd.sbml,APlasma,Amount in plasma,oral,Heavy%20Metals,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+PouillotCd.sbml,ARBC,Amount in red blood cells,oral,Heavy%20Metals,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+PouillotCd.sbml,AMetallothionein,Amount in metallothionein blood,oral,Heavy%20Metals,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+PouillotCd.sbml,ARest,Amount in rest of body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+PouillotCd.sbml,ADaily_Uptake,Amount of daily uptake,oral,Heavy%20Metals,,,
+OFlaherty_2001_Cr.sbml,AGI_Cr3,Amount in gut,oral,Heavy%20Metals,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+OFlaherty_2001_Cr.sbml,AGI_Cr6,Amount in gut,oral,Heavy%20Metals,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+OFlaherty_2001_Cr.sbml,ALiver_Cr3,Amount in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+OFlaherty_2001_Cr.sbml,ALiver_Cr6,Amount in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+OFlaherty_2001_Cr.sbml,Aplasma_Cr3,Amount in plasma,oral,Heavy%20Metals,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+OFlaherty_2001_Cr.sbml,Aplasma_Cr6,Amount in plasma,oral,Heavy%20Metals,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+OFlaherty_2001_Cr.sbml,ARBC_Cr3,Amount in red blood cells,oral,Heavy%20Metals,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+OFlaherty_2001_Cr.sbml,ARBC_Cr6,Amount in red blood cells,oral,Heavy%20Metals,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+OFlaherty_2001_Cr.sbml,ARest_Cr3,Amount in rest of body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+OFlaherty_2001_Cr.sbml,ARest_Cr6,Amount in rest of body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+OFlaherty_2001_Cr.sbml,AFeces_Cr3,Amount in feces,oral,Heavy%20Metals,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
+OFlaherty_2001_Cr.sbml,AFeces_Cr6,Amount in feces,oral,Heavy%20Metals,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
+Tebby2022_Pb.sbml,ALiver,Amount in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Tebby2022_Pb.sbml,ABlood,Amount in blood,oral,Heavy%20Metals,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+Tebby2022_Pb.sbml,ARest,Amount in rest of body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Carrier2001_Hg.sbml,AGI,Amount in gastrointestinal compartment,oral,Heavy%20Metals,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Carrier2001_Hg.sbml,ABlood,Amount in blood,oral,Heavy%20Metals,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+Carrier2001_Hg.sbml,ALiver_Met,Amount in liver (metabolised),oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+KjellstromCd.sbml,AGI,Amount in gut,oral,Heavy%20Metals,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+KjellstromCd.sbml,ATI,Amount in intestinal tissue,oral,Heavy%20Metals,,,
+KjellstromCd.sbml,ALiver,Amount in liver,oral,Heavy%20Metals,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+KjellstromCd.sbml,AKidney,Amount in kidney,oral,Heavy%20Metals,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498
+KjellstromCd.sbml,APlasma,Amount in plasma,oral,Heavy%20Metals,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+KjellstromCd.sbml,ARBC,Amount in red blood cells,oral,Heavy%20Metals,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+KjellstromCd.sbml,AMetallothionein,Amount in metallothionein blood,oral,Heavy%20Metals,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+KjellstromCd.sbml,ARest,Amount in rest of body,oral,Heavy%20Metals,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+KjellstromCd.sbml,ADaily_Uptake,Amount of daily uptake,oral,Heavy%20Metals,,,
+Karrer.sbml,ASt,,oral,Bisphenols,,,
+Karrer.sbml,ASI,Amount in small intestine,oral,Bisphenols,,,
 Karrer.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
 Karrer.sbml,APlasma,amount of chemical in plasma,oral,Bisphenols,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
 Karrer.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-Karrer.sbml,AGILumen,,oral,Bisphenols,,,
-Karrer.sbml,AFeces,,oral,Bisphenols,,,
-Karrer.sbml,ASIMet1,,oral,Bisphenols,,,
-Karrer.sbml,ASIMet2,,oral,Bisphenols,,,
-Karrer.sbml,ALiverMet1,,oral,Bisphenols,,,
-Karrer.sbml,ALiverMet2,,oral,Bisphenols,,,
-Karrer.sbml,APVMet1,,oral,Bisphenols,,,
-Karrer.sbml,APVMet2,,oral,Bisphenols,,,
-Karrer.sbml,AGILumenMet1,,oral,Bisphenols,,,
-Karrer.sbml,AGILumenMet2,,oral,Bisphenols,,,
-Karrer.sbml,APlasmaMet1,,oral,Bisphenols,,,
-Karrer.sbml,APlasmaMet2,,oral,Bisphenols,,,
-Karrer.sbml,AFecesMet1,,oral,Bisphenols,,,
-Karrer.sbml,AFecesMet2,,oral,Bisphenols,,,
-Sharma.sbml,AStomach,,oral,Bisphenols,,,
+Karrer.sbml,AGILumen,Amount in GI lumen,oral,Bisphenols,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Karrer.sbml,AFeces,Amount in feces,oral,Bisphenols,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
+Karrer.sbml,ASIMet1,Amount in small intestine,oral,Bisphenols,,,
+Karrer.sbml,ASIMet2,Amount in small intestine,oral,Bisphenols,,,
+Karrer.sbml,ALiverMet1,Amount in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Karrer.sbml,ALiverMet2,Amount in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Karrer.sbml,APVMet1,Amount in portal vein,oral,Bisphenols,,,
+Karrer.sbml,APVMet2,Amount in portal vein,oral,Bisphenols,,,
+Karrer.sbml,AGILumenMet1,Amount in GI lumen,oral,Bisphenols,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Karrer.sbml,AGILumenMet2,Amount in GI lumen,oral,Bisphenols,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Karrer.sbml,APlasmaMet1,Amount in plasma,oral,Bisphenols,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Karrer.sbml,APlasmaMet2,Amount in plasma,oral,Bisphenols,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Karrer.sbml,AFecesMet1,Amount in feces,oral,Bisphenols,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
+Karrer.sbml,AFecesMet2,Amount in feces,oral,Bisphenols,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
+Sharma.sbml,ASt,,oral,Bisphenols,,,
 Sharma.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
 Sharma.sbml,APlasma,amount of chemical in plasma,oral,Bisphenols,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
 Sharma.sbml,AGut,amount of chemical in gut,oral,Bisphenols,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
 Sharma.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-Sharma.sbml,AGutMet1,,oral,Bisphenols,,,
-Sharma.sbml,ALiverMet1,,oral,Bisphenols,,,
-Sharma.sbml,ALiverMet2,,oral,Bisphenols,,,
-Hu.sbml,AStomach,,oral,Bisphenols,,,
-Hu.sbml,ASI,,oral,Bisphenols,,,
+Sharma.sbml,AGutMet1,Amount in gut,oral,Bisphenols,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Sharma.sbml,ALiverMet1,Amoun in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Sharma.sbml,ALiverMet2,Amount in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Hu.sbml,ASt,,oral,Bisphenols,,,
+Hu.sbml,ASI,Amount in small intestine,oral,Bisphenols,,,
 Hu.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
 Hu.sbml,APlasma,amount of chemical in plasma,oral,Bisphenols,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
 Hu.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-Hu.sbml,AGILumen,,oral,Bisphenols,,,
-Hu.sbml,AFeces,,oral,Bisphenols,,,
-Hu.sbml,ASIMet1,,oral,Bisphenols,,,
-Hu.sbml,ASIMet2,,oral,Bisphenols,,,
-Hu.sbml,ALiverMet1,,oral,Bisphenols,,,
-Hu.sbml,ALiverMet2,,oral,Bisphenols,,,
-Hu.sbml,APVMet1,,oral,Bisphenols,,,
-Hu.sbml,APVMet2,,oral,Bisphenols,,,
-Hu.sbml,AGILumenMet1,,oral,Bisphenols,,,
-Hu.sbml,AGILumenMet2,,oral,Bisphenols,,,
-Hu.sbml,APlasmaMet1,,oral,Bisphenols,,,
-Hu.sbml,APlasmaMet2,,oral,Bisphenols,,,
-Hu.sbml,AFecesMet1,,oral,Bisphenols,,,
-Hu.sbml,AFecesMet2,,oral,Bisphenols,,,
-Moreau.sbml,ASt,,oral,Bisphenols,,,
-Moreau.sbml,ADuodenum,,oral,Bisphenols,,,
-Moreau.sbml,AGITissue,,oral,Bisphenols,,,
-Moreau.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
-Moreau.sbml,APlasma,amount of chemical in plasma,oral,Bisphenols,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
-Moreau.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-Moreau.sbml,ALiverMet,,oral,Bisphenols,,,
-Moreau.sbml,APlasmaMet,,oral,Bisphenols,,,
-Deepika.sbml,AStomach,,oral,Bisphenols,,,
+Hu.sbml,AGILumen,Amount in GI lumen,oral,Bisphenols,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Hu.sbml,AFeces,Amount in feces,oral,Bisphenols,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
+Hu.sbml,ASIMet1,Amount in small intestine,oral,Bisphenols,,,
+Hu.sbml,ASIMet2,Amount in small intestine,oral,Bisphenols,,,
+Hu.sbml,ALiverMet1,Amount in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Hu.sbml,ALiverMet2,Amount in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Hu.sbml,APVMet1,Amount in portal vein,oral,Bisphenols,,,
+Hu.sbml,APVMet2,Amount in portal vein,oral,Bisphenols,,,
+Hu.sbml,AGILumenMet1,Amount in GI lumen,oral,Bisphenols,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Hu.sbml,AGILumenMet2,Amount in GI lumen,oral,Bisphenols,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Hu.sbml,APlasmaMet1,Amount in plasma,oral,Bisphenols,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Hu.sbml,APlasmaMet2,Amount in plasma,oral,Bisphenols,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Hu.sbml,AFecesMet1,Amount in feces,oral,Bisphenols,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
+Hu.sbml,AFecesMet2,Amount in feces,oral,Bisphenols,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
+Christensen.sbml,ASt,,oral,Bisphenols,,,
+Christensen.sbml,ABlood,,oral,Bisphenols,,,
+Christensen.sbml,AExcr,,oral,Bisphenols,,,
+Moreau.sbml,ASt,amount in stomach,oral,Bisphenols,,,
+Moreau.sbml,ADuodenum,amount in duodenum,oral,Bisphenols,,,
+Moreau.sbml,AGITissue,amount in intestinal tissue,oral,Bisphenols,,,
+Moreau.sbml,ALiver,amount in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Moreau.sbml,APlasma,amount in plasma,oral,Bisphenols,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Moreau.sbml,ARest,amount in rest,oral,Bisphenols,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
+Moreau.sbml,ALiverMet,amount of metabolite in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Moreau.sbml,APlasmaMet,amount of metabolite in plasma,oral,Bisphenols,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Moreau.sbml,AUrine,amount in urine,oral,Bisphenols,PBPKO:00272,amount in urine,http://purl.obolibrary.org/obo/PBPKO_00272
+Deepika.sbml,ASt,,oral,Bisphenols,,,
 Deepika.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
 Deepika.sbml,APlasma,amount of chemical in plasma,oral,Bisphenols,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
 Deepika.sbml,AGut,amount of chemical in gut,oral,Bisphenols,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
@@ -190,47 +338,47 @@ Deepika.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,PBPKO:0050
 Deepika.sbml,AGutMet1,,oral,Bisphenols,,,
 Deepika.sbml,ALiverMet1,,oral,Bisphenols,,,
 Deepika.sbml,ALiverMet2,,oral,Bisphenols,,,
-Shin.sbml,ASt,,oral,Bisphenols,,,
-Shin.sbml,AIL,,oral,Bisphenols,,,
-Shin.sbml,ASpleen,,oral,Bisphenols,,,
-Shin.sbml,ASI,,oral,Bisphenols,,,
+Shin.sbml,ASt,Amount in stomach,oral,Bisphenols,,,
+Shin.sbml,AIL,Amount in GI lumen,oral,Bisphenols,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Shin.sbml,ASpleen,Amount in spleen,oral,Bisphenols,,,
+Shin.sbml,ASI,Amount in small intestine,oral,Bisphenols,,,
 Shin.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
-Shin.sbml,ABlood,amount of chemical in blood,oral,Bisphenols,,,
+Shin.sbml,ABlood,amount of chemical in blood,oral,Bisphenols,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
 Shin.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-Shin.sbml,AMet,,oral,Bisphenols,,,
+Shin.sbml,AMet,Amount in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
 Mielke.sbml,AGut,amount of chemical in gut,oral,Bisphenols,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
 Mielke.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
-Mielke.sbml,ABlood,amount of chemical in blood,oral,Bisphenols,,,
+Mielke.sbml,ABlood,amount of chemical in blood,oral,Bisphenols,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
 Mielke.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-Mielke.sbml,ALiverMet1,,oral,Bisphenols,,,
-Mielke.sbml,ALiverMet2,,oral,Bisphenols,,,
-Teeguarden.sbml,AGILumen,,oral,Bisphenols,,,
+Mielke.sbml,ALiverMet1,Amount in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Mielke.sbml,ALiverMet2,Amount in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Teeguarden.sbml,AGILumen,Amount in GI lumen,oral,Bisphenols,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
 Teeguarden.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
-Teeguarden.sbml,ABlood,amount of chemical in blood,oral,Bisphenols,,,
+Teeguarden.sbml,ABlood,amount of chemical in blood,oral,Bisphenols,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
 Teeguarden.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-Teeguarden.sbml,ALiverMet,,oral,Bisphenols,,,
-Teeguarden.sbml,AGILumenMet,,oral,Bisphenols,,,
-Teeguarden.sbml,ABloodMet,,oral,Bisphenols,,,
-Teeguarden.sbml,AFecesMet,,oral,Bisphenols,,,
-Yang.sbml,AStomach,,oral,Bisphenols,,,
-Yang.sbml,ASI,,oral,Bisphenols,,,
+Teeguarden.sbml,ALiverMet,Amount of metabolite in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Teeguarden.sbml,AGILumenMet,Amount of metabolite in GI lumen,oral,Bisphenols,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Teeguarden.sbml,ABloodMet,Amount of metabolite in blood,oral,Bisphenols,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623
+Teeguarden.sbml,AFecesMet,Amount of metabolite in feces,oral,Bisphenols,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
+Yang.sbml,ASt,,oral,Bisphenols,,,
+Yang.sbml,ASI,Amount in small intestine,oral,Bisphenols,,,
 Yang.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
 Yang.sbml,APlasma,amount of chemical in plasma,oral,Bisphenols,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
 Yang.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-Yang.sbml,AGILumen,,oral,Bisphenols,,,
-Yang.sbml,AFeces,,oral,Bisphenols,,,
-Yang.sbml,ASIMet1,,oral,Bisphenols,,,
-Yang.sbml,ASIMet2,,oral,Bisphenols,,,
-Yang.sbml,ALiverMet1,,oral,Bisphenols,,,
-Yang.sbml,ALiverMet2,,oral,Bisphenols,,,
-Yang.sbml,APVMet1,,oral,Bisphenols,,,
-Yang.sbml,APVMet2,,oral,Bisphenols,,,
-Yang.sbml,AGILumenMet1,,oral,Bisphenols,,,
-Yang.sbml,AGILumenMet2,,oral,Bisphenols,,,
-Yang.sbml,APlasmaMet1,,oral,Bisphenols,,,
-Yang.sbml,APlasmaMet2,,oral,Bisphenols,,,
-Yang.sbml,AFecesMet1,,oral,Bisphenols,,,
-Yang.sbml,AFecesMet2,,oral,Bisphenols,,,
+Yang.sbml,AGILumen,Amount in GI lumen,oral,Bisphenols,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496
+Yang.sbml,AFeces,Amount in feces,oral,Bisphenols,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
+Yang.sbml,ASIMet1,Amount of metabolite in small intestine,oral,Bisphenols,,,
+Yang.sbml,ASIMet2,Amount of metabolite in small intestine,oral,Bisphenols,,,
+Yang.sbml,ALiverMet1,Amount of metabolite in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Yang.sbml,ALiverMet2,Amount of metabolite in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
+Yang.sbml,APVMet1,Amount of metabolite in portal vein,oral,Bisphenols,,,
+Yang.sbml,APVMet2,Amount of metabolite in portal vein,oral,Bisphenols,,,
+Yang.sbml,AGILumenMet1,Amount of metabolite in GI lumen,oral,Bisphenols,,,
+Yang.sbml,AGILumenMet2,Amount of metabolite in GI lumen,oral,Bisphenols,,,
+Yang.sbml,APlasmaMet1,Amount of metabolite in plasma,oral,Bisphenols,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Yang.sbml,APlasmaMet2,AMount of metabolite in plasma,oral,Bisphenols,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
+Yang.sbml,AFecesMet1,Amount of metabolite in feces,oral,Bisphenols,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
+Yang.sbml,AFecesMet2,Amount of metabolite in feces,oral,Bisphenols,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273
 Loizou.sbml,AStomach,,oral,Bisphenols,,,
 Loizou.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
 Loizou.sbml,APlasma,amount of chemical in plasma,oral,Bisphenols,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
@@ -244,7 +392,7 @@ Husoy.sbml,ALiver,Amount in the liver,oral,PFAS,PBPKO:00497,amount in liver,http
 Husoy.sbml,APlasma,Amount in plasma,oral,PFAS,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
 Husoy.sbml,ARest,Amount in the rest of the body,oral,PFAS,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
 Husoy.sbml,AFeces,Amount in feces,oral,PFAS,PBPKO:00275,cumulative amount in feces,http://purl.obolibrary.org/obo/PBPKO_00275
-Chen.sbml,AStomach,Amount in the stomach,oral,PFAS,,,
+Chen.sbml,AST,Amount in the stomach,oral,PFAS,,,
 Chen.sbml,ASI,Amount in the small intestine,oral,PFAS,,,
 Chen.sbml,ALiver,Liver,oral,PFAS,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
 Chen.sbml,APlasma,Amount in plasma,oral,PFAS,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
@@ -262,13 +410,13 @@ LoccisanoPFOS.sbml,AGI,Amount in the gut,oral,PFAS,PBPKO:00496,amount in gut,htt
 LoccisanoPFOS.sbml,ALiver,Amount in the liver,oral,PFAS,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
 LoccisanoPFOS.sbml,APlasma,Amount in plasma,oral,PFAS,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
 LoccisanoPFOS.sbml,ARest,Amount in the rest of the body,oral,PFAS,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
-ChouLin.sbml,AStomach,Amount in the stomach,oral,PFAS,,,
+ChouLin.sbml,AST,Amount in the stomach,oral,PFAS,,,
 ChouLin.sbml,ASI,Amount in the small intestine,oral,PFAS,,,
 ChouLin.sbml,ALiver,Amount in the liver,oral,PFAS,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
 ChouLin.sbml,APlasma,Amount in plasma,oral,PFAS,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502
 ChouLin.sbml,ARest,Amount in the rest of the body,oral,PFAS,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501
 ChouLin.sbml,AFeces,Amount in feces,oral,PFAS,PBPKO:00275,cumulative amount in feces,http://purl.obolibrary.org/obo/PBPKO_00275
-Worley.sbml,AStomach,Amount in the stomach,oral,PFAS,,,
+Worley.sbml,ASt,,oral,PFAS,,,
 Worley.sbml,ASI,Amount in the small intestine,oral,PFAS,,,
 Worley.sbml,ALiver,Amount in the liver,oral,PFAS,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497
 Worley.sbml,APlasma,Amount in plasma,oral,PFAS,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502

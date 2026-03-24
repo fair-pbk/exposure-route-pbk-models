@@ -1,0 +1,64 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_Stomach {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Stomach",
+			label="Stomach
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ASt	[color=black,
+			fillcolor=gold,
+			href="#species-ASt",
+			label="ASt
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Blood {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Blood",
+			label="Blood
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ABlood	[color=black,
+			fillcolor=gold,
+			href="#species-ABlood",
+			label="ABlood
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Bladder {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Bladder",
+			label="Bladder
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AExcr	[color=black,
+			fillcolor=gold,
+			href="#species-AExcr",
+			label="AExcr
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	ASt -> ABlood	[label=_J0,
+		minlen=1];
+	ABlood -> AExcr	[label=_J1,
+		minlen=1];
+}

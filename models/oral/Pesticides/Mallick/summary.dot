@@ -1,0 +1,133 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_Lumen {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Lumen",
+			label="Lumen
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALumen	[color=black,
+			fillcolor=gold,
+			href="#species-ALumen",
+			label="ALumen
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Gut {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Gut",
+			label="Gut
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AGut	[color=black,
+			fillcolor=gold,
+			href="#species-AGut",
+			label="AGut
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Liver {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Liver",
+			label="Liver
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALiver	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver",
+			label="ALiver
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ALiverMet1	[color=black,
+			fillcolor=gold,
+			href="#species-ALiverMet1",
+			label="ALiverMet1
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Plasma {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Plasma",
+			label="Plasma
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		APlasma	[color=black,
+			fillcolor=gold,
+			href="#species-APlasma",
+			label="APlasma
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_RestPlasma {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-RestPlasma",
+			label="RestPlasma
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARestPlasma	[color=black,
+			fillcolor=gold,
+			href="#species-ARestPlasma",
+			label="ARestPlasma
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_RestTissue {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-RestTissue",
+			label="RestTissue
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARestTissue	[color=black,
+			fillcolor=gold,
+			href="#species-ARestTissue",
+			label="ARestTissue
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	ALumen -> AGut	[label=_J0];
+	ALumen -> APlasma	[label=_J1];
+	AGut -> ALiver	[label=_J2];
+	ALiver -> ALiverMet1	[label=_J10,
+		minlen=1];
+	ALiver -> APlasma	[label=_J5];
+	APlasma -> AGut	[label=_J3];
+	APlasma -> ALiver	[label=_J4];
+	APlasma -> ARestPlasma	[label=_J6];
+	ARestPlasma -> APlasma	[label=_J7];
+	ARestPlasma -> ARestTissue	[label=_J8];
+	ARestTissue -> ARestPlasma	[label=_J9];
+}

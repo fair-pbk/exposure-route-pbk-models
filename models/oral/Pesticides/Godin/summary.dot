@@ -1,0 +1,181 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_Stomach {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Stomach",
+			label="Stomach
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ASt	[color=black,
+			fillcolor=gold,
+			href="#species-ASt",
+			label="ASt
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Intestinal {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Intestinal",
+			label="Intestinal
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AIT	[color=black,
+			fillcolor=gold,
+			href="#species-AIT",
+			label="AIT
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_LiverVC {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-LiverVC",
+			label="LiverVC
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALiverVC	[color=black,
+			fillcolor=gold,
+			href="#species-ALiverVC",
+			label="ALiverVC
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_LiverIC {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-LiverIC",
+			label="LiverIC
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALiverIC	[color=black,
+			fillcolor=gold,
+			href="#species-ALiverIC",
+			label="ALiverIC
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ALiverMet	[color=black,
+			fillcolor=gold,
+			href="#species-ALiverMet",
+			label="ALiverMet
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Blood {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Blood",
+			label="Blood
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ABlood	[color=black,
+			fillcolor=gold,
+			href="#species-ABlood",
+			label="ABlood
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ABloodMet	[color=black,
+			fillcolor=gold,
+			href="#species-ABloodMet",
+			label="ABloodMet
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_RestVC {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-RestVC",
+			label="RestVC
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARestVC	[color=black,
+			fillcolor=gold,
+			href="#species-ARestVC",
+			label="ARestVC
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_RestIC {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-RestIC",
+			label="RestIC
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARestIC	[color=black,
+			fillcolor=gold,
+			href="#species-ARestIC",
+			label="ARestIC
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Fecal {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Fecal",
+			label="Fecal
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AFecal	[color=black,
+			fillcolor=gold,
+			href="#species-AFecal",
+			label="AFecal
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	ASt -> AIT	[label=_J0,
+		minlen=1];
+	AIT -> ALiverVC	[label=_J1];
+	AIT -> AFecal	[label=_J2,
+		minlen=1];
+	ALiverVC -> ALiverIC	[label=_J7];
+	ALiverVC -> ABlood	[label=_J4];
+	ALiverIC -> ALiverVC	[label=_J8];
+	ALiverIC -> ALiverMet	[label=_J11,
+		minlen=1];
+	ABlood -> ALiverVC	[label=_J3];
+	ABlood -> ABloodMet	[label=_J12,
+		minlen=1];
+	ABlood -> ARestVC	[label=_J5];
+	ARestVC -> ABlood	[label=_J6];
+	ARestVC -> ARestIC	[label=_J9];
+	ARestIC -> ARestVC	[label=_J10];
+}

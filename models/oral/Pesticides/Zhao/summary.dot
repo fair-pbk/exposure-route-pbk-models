@@ -1,0 +1,111 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_Gut {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Gut",
+			label="Gut
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AGut	[color=black,
+			fillcolor=gold,
+			href="#species-AGut",
+			label="AGut
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Liver {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Liver",
+			label="Liver
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALiver	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver",
+			label="ALiver
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ALiverMet1	[color=black,
+			fillcolor=gold,
+			href="#species-ALiverMet1",
+			label="ALiverMet1
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ALiverMet2	[color=black,
+			fillcolor=gold,
+			href="#species-ALiverMet2",
+			label="ALiverMet2
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ALiverMet3	[color=black,
+			fillcolor=gold,
+			href="#species-ALiverMet3",
+			label="ALiverMet3
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Blood {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Blood",
+			label="Blood
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ABlood	[color=black,
+			fillcolor=gold,
+			href="#species-ABlood",
+			label="ABlood
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Rest {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Rest",
+			label="Rest
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARest	[color=black,
+			fillcolor=gold,
+			href="#species-ARest",
+			label="ARest
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	AGut -> ALiver	[label=_J0,
+		minlen=1];
+	ALiver -> ALiverMet1	[label=_J5,
+		minlen=1];
+	ALiver -> ALiverMet2	[label=_J6,
+		minlen=2];
+	ALiver -> ALiverMet3	[label=_J7,
+		minlen=3];
+	ALiver -> ABlood	[label=_J2];
+	ABlood -> ALiver	[label=_J1];
+	ABlood -> ARest	[label=_J3];
+	ARest -> ABlood	[label=_J4];
+}

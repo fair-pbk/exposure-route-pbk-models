@@ -13,10 +13,10 @@ digraph {
 			shape=box,
 			style="filled,rounded"
 		];
-		AStomach	[color=black,
+		ASt	[color=black,
 			fillcolor=gold,
-			href="#species-AStomach",
-			label="AStomach
+			href="#species-ASt",
+			label="ASt
 [-]",
 			shape=box,
 			style="filled,rounded"];
@@ -114,8 +114,8 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 	}
-	AStomach -> ALiver	[label=_J1];
-	AStomach -> AGut	[label=_J0];
+	ASt -> ALiver	[label=_J1];
+	ASt -> AGut	[label=_J0];
 	ALiver -> ALiverMet1	[label=_J8,
 		minlen=1];
 	ALiver -> ALiverMet2	[label=_J9,

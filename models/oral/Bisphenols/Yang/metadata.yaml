@@ -1,18 +1,37 @@
 id: Yang2015_BPA_Human
 name: ''
 applicability_domain:
-  chemicals: []
-  species: []
+  chemicals:
+  - id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  species:
+  - id: NCBITaxon:9606
+    label: Homo sapiens
+    iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
+num_compartments: 7
 num_species: 19
 num_parameters: 60
 num_reactions: 28
 compartments:
 - id: Stomach
   name: stomach
+  pbpko_bqm_is_class:
+    id: PBPKO:00566
+    label: stomach compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00566
 - id: SI
-  name: ''
+  name: Small intestine compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00472
+    label: small intestine compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00472
 - id: Liver
   name: liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00558
+    label: liver compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00558
 - id: Plasma
   name: blood plasma
   pbpko_bqm_is_class:
@@ -26,14 +45,22 @@ compartments:
     label: rest of body compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00450
 - id: GILumen
-  name: ''
+  name: GI lumen compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00478
+    label: gut lumen compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00478
 - id: Feces
   name: feces
+  pbpko_bqm_is_class:
+    id: PBPKO:00555
+    label: feces compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00555
 species:
-- id: AStomach
+- id: ASt
   name: ''
 - id: ASI
-  name: ''
+  name: Amount in small intestine
 - id: ALiver
   name: amount of chemical in liver
   pbpko_bqm_is_class:
@@ -53,33 +80,65 @@ species:
     label: amount in restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00501
 - id: AGILumen
-  name: ''
+  name: Amount in GI lumen
+  pbpko_bqm_is_class:
+    id: PBPKO:00496
+    label: amount in gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00496
 - id: AFeces
-  name: ''
+  name: Amount in feces
+  pbpko_bqm_is_class:
+    id: PBPKO:00273
+    label: amount in feces
+    iri: http://purl.obolibrary.org/obo/PBPKO_00273
 - id: ASIMet1
-  name: ''
+  name: Amount of metabolite in small intestine
 - id: ASIMet2
-  name: ''
+  name: Amount of metabolite in small intestine
 - id: ALiverMet1
-  name: ''
+  name: Amount of metabolite in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00497
+    label: amount in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00497
 - id: ALiverMet2
-  name: ''
+  name: Amount of metabolite in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00497
+    label: amount in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00497
 - id: APVMet1
-  name: ''
+  name: Amount of metabolite in portal vein
 - id: APVMet2
-  name: ''
+  name: Amount of metabolite in portal vein
 - id: AGILumenMet1
-  name: ''
+  name: Amount of metabolite in GI lumen
 - id: AGILumenMet2
-  name: ''
+  name: Amount of metabolite in GI lumen
 - id: APlasmaMet1
-  name: ''
+  name: Amount of metabolite in plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:00502
+    label: amount in plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_00502
 - id: APlasmaMet2
-  name: ''
+  name: AMount of metabolite in plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:00502
+    label: amount in plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_00502
 - id: AFecesMet1
-  name: ''
+  name: Amount of metabolite in feces
+  pbpko_bqm_is_class:
+    id: PBPKO:00273
+    label: amount in feces
+    iri: http://purl.obolibrary.org/obo/PBPKO_00273
 - id: AFecesMet2
-  name: ''
+  name: Amount of metabolite in feces
+  pbpko_bqm_is_class:
+    id: PBPKO:00273
+    label: amount in feces
+    iri: http://purl.obolibrary.org/obo/PBPKO_00273
 parameters:
 - id: BW
   name: body weight
@@ -88,130 +147,252 @@ parameters:
     label: bodyweight
     iri: http://purl.obolibrary.org/obo/PBPKO_00008
 - id: VLc
-  name: ''
+  name: Volume fraction to bodyweight - liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00078
+    label: fraction of liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00078
 - id: VPlasmac
-  name: ''
+  name: Volume fraction to bodyweight - Plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:00104
+    label: fraction of plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_00104
 - id: VL
-  name: ''
+  name: Volume of liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00077
+    label: volume of liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00077
 - id: VPlasma
-  name: ''
+  name: Volume of plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:00103
+    label: volume of plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_00103
 - id: VRest
-  name: ''
+  name: Volume of rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00105
+    label: volume of rest body
+    iri: http://purl.obolibrary.org/obo/PBPKO_00105
 - id: enterocytes
-  name: ''
+  name: Small intestine enterocyte processing volume
 - id: QC
-  name: ''
+  name: Cardiac output
+  pbpko_bqm_is_class:
+    id: PBPKO:00013
+    label: cardiac output rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00013
 - id: QLc
-  name: ''
+  name: Fraction of blood to liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00025
+    label: fraction of blood flow to liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00025
 - id: QL
-  name: ''
+  name: Blood flow to liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00024
+    label: blood flow rate to liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00024
 - id: QRest
-  name: ''
+  name: Blood flow to rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00050
+    label: blood flow rate to restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00050
 - id: PL
-  name: ''
+  name: Partition coefficient - liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00577
+    label: liver blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00577
 - id: PRest
-  name: ''
+  name: Partition coefficient - rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00585
+    label: restbody blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00585
 - id: kstoC
-  name: ''
+  name: Gastric emptying constant
 - id: ksto
-  name: ''
+  name: Gastric emptying rate
+  pbpko_bqm_is_class:
+    id: PBPKO:00143
+    label: gastric emptying rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00143
 - id: k0C
-  name: ''
+  name: Uptake from stomach to liver constant
 - id: k0
-  name: ''
+  name: Uptake rate from stomach to liver
 - id: kabsC
-  name: ''
+  name: Uptake from enterocytes to liver
 - id: kabs
-  name: ''
+  name: Uptake rate from enterocytes to liver
 - id: kfeC
-  name: ''
+  name: Fecal elimination constant
+  pbpko_bqm_is_class:
+    id: PBPKO:00236
+    label: fecal elimination rate constant
+    iri: http://purl.obolibrary.org/obo/PBPKO_00236
 - id: kfe
-  name: ''
+  name: Fecal elimination rate
+  pbpko_bqm_is_class:
+    id: PBPKO:00230
+    label: fecal clearance rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00230
 - id: kfeMet1C
-  name: ''
+  name: Fecal elimination constant
+  pbpko_bqm_is_class:
+    id: PBPKO:00236
+    label: fecal elimination rate constant
+    iri: http://purl.obolibrary.org/obo/PBPKO_00236
 - id: kfeMet1
-  name: ''
+  name: Fecal elimination rate
+  pbpko_bqm_is_class:
+    id: PBPKO:00230
+    label: fecal clearance rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00230
 - id: kabsMet1C
-  name: ''
+  name: Transport constant of metabolite from enterocytes to serum
 - id: kabsMet1
-  name: ''
+  name: Transport rate of metabolite from enterocytes to serum
 - id: kabsMet2C
-  name: ''
+  name: Transport constant of metabolite from enterocytes to serum
 - id: kabsMet2
-  name: ''
+  name: Transport rate of metabolite from enterocytes to serum
 - id: EHRrateC
-  name: ''
+  name: Enterohepatic recirculation constant of metabolite
 - id: EHRrate
-  name: ''
+  name: Enterohepatic recirculation rate of metabolite
 - id: kehrMet1C
-  name: ''
+  name: EHR constant of metabolite due to biliary excretion
 - id: kehrMet1
-  name: ''
+  name: EHR rate of metabolite due to biliary excretion
 - id: kehrMet2C
-  name: ''
+  name: EHR constant of metabolite due to biliary excretion
 - id: kehrMet2
-  name: ''
+  name: EHR rate of metabolite due to biliary excretion
 - id: BileFracSIMet1
-  name: ''
+  name: '% of metabolite that goes to bile'
 - id: BileFracSIMet2
-  name: ''
+  name: '% of metabolite that goes to bile'
 - id: fGutMet1
-  name: ''
+  name: correction factor
 - id: KmGILumenMet1
-  name: ''
+  name: Glucuronidation Km
+  pbpko_bqm_is_class:
+    id: PBPKO:00212
+    label: Michaelis constant  intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00212
 - id: VmaxGILumenMet1c
-  name: ''
+  name: Glucuronidation constant - Vmax
+  pbpko_bqm_is_class:
+    id: PBPKO:00212
+    label: Michaelis constant  intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00212
 - id: VmaxGILumenMet1
-  name: ''
+  name: Glucuronidation Vmax
+  pbpko_bqm_is_class:
+    id: PBPKO:00212
+    label: Michaelis constant  intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00212
 - id: fGutMet2
-  name: ''
+  name: correction fraction
 - id: KmGILumenMet2
-  name: ''
+  name: Sulfation - Km
+  pbpko_bqm_is_class:
+    id: PBPKO:00212
+    label: Michaelis constant  intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00212
 - id: VmaxGILumenMet2c
-  name: ''
+  name: Sulfation constant - Vmax
+  pbpko_bqm_is_class:
+    id: PBPKO:00212
+    label: Michaelis constant  intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00212
 - id: VmaxGILumenMet2
-  name: ''
+  name: Sulfation - Vmax
+  pbpko_bqm_is_class:
+    id: PBPKO:00212
+    label: Michaelis constant  intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00212
 - id: BileFracLMet1
-  name: ''
+  name: '% of metabolite that goes to bile'
 - id: BileFracLMet2
-  name: ''
+  name: '% of metabolite that goes to bile'
 - id: fLiverMet1
-  name: ''
+  name: Switch on/off
 - id: KmLMet1
-  name: ''
+  name: Glucuronidation- Km
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
 - id: VmaxLMet1c
-  name: ''
+  name: Glucuronidation constant - Vmax
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
 - id: VmaxLMet1
-  name: ''
+  name: Glucuronidation - Vmax
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
 - id: fLiverMet2
-  name: ''
+  name: Switch on/off
 - id: KmLMet2
-  name: ''
+  name: Sulfation - Km
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
 - id: VmaxLMet2c
-  name: ''
+  name: Sulfation constant - Vmax
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
 - id: VmaxLMet2
-  name: ''
+  name: Sulfation - Vmax
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
 - id: CSt
-  name: ''
+  name: Concentration in stomach
 - id: CSI
-  name: ''
+  name: concentration in small intestine
 - id: CLiver
-  name: ''
+  name: Concentration in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00539
+    label: concentration in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00539
 - id: CPlasma
-  name: ''
+  name: Concentration in plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:00549
+    label: concentration in plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_00549
 - id: CRest
-  name: ''
+  name: Concentration in rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00548
+    label: concentration in restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00548
 - id: ABile
-  name: ''
+  name: Concentration in bile
 - id: CGut
-  name: ''
+  name: Concentration in gut
+  pbpko_bqm_is_class:
+    id: PBPKO:00538
+    label: concentration in gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00538
 unit_consistency:
-- level: error
-  msg: "In situations where a mathematical expression refers to time, the units of\
-    \ time should be consistent with the global time units of the model. In models\
-    \ where the 'timeUnits' attribute has not been declared, libSBML does not yet\
-    \ have the functionality to verify accurately the consistency of the units in\
-    \ such expressions. \n"
 - level: error
   msg: "In situations where a mathematical expression refers to extent, the units\
     \ of extent should be consistent with the global extent units of the model. In\
@@ -219,654 +400,38 @@ unit_consistency:
     \ not yet have the functionality to verify accurately the consistency of the units\
     \ in such expressions. \n"
 - level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <compartment> 'Stomach' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: 'If the attribute ''units'' on a Compartment object having a ''spatialDimensions''
-    attribute value of ''3'' has not been set, then the unit of measurement associated
-    with the compartment''s size is determined by the value of the enclosing Model
-    object''s ''volumeUnits'' attribute. If neither the Compartment object''s ''units''
-    nor the enclosing Model object''s ''volumeUnits'' attributes are set, the unit
-    of compartment size is undefined.
-
-    Reference: L3V2 Section 4.5.4
-
-    '
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <compartment> 'SI' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: 'If the attribute ''units'' on a Compartment object having a ''spatialDimensions''
-    attribute value of ''3'' has not been set, then the unit of measurement associated
-    with the compartment''s size is determined by the value of the enclosing Model
-    object''s ''volumeUnits'' attribute. If neither the Compartment object''s ''units''
-    nor the enclosing Model object''s ''volumeUnits'' attributes are set, the unit
-    of compartment size is undefined.
-
-    Reference: L3V2 Section 4.5.4
-
-    '
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <compartment> 'Liver' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: 'If the attribute ''units'' on a Compartment object having a ''spatialDimensions''
-    attribute value of ''3'' has not been set, then the unit of measurement associated
-    with the compartment''s size is determined by the value of the enclosing Model
-    object''s ''volumeUnits'' attribute. If neither the Compartment object''s ''units''
-    nor the enclosing Model object''s ''volumeUnits'' attributes are set, the unit
-    of compartment size is undefined.
-
-    Reference: L3V2 Section 4.5.4
-
-    '
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <compartment> 'Plasma' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: 'If the attribute ''units'' on a Compartment object having a ''spatialDimensions''
-    attribute value of ''3'' has not been set, then the unit of measurement associated
-    with the compartment''s size is determined by the value of the enclosing Model
-    object''s ''volumeUnits'' attribute. If neither the Compartment object''s ''units''
-    nor the enclosing Model object''s ''volumeUnits'' attributes are set, the unit
-    of compartment size is undefined.
-
-    Reference: L3V2 Section 4.5.4
-
-    '
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <compartment> 'Rest' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: 'If the attribute ''units'' on a Compartment object having a ''spatialDimensions''
-    attribute value of ''3'' has not been set, then the unit of measurement associated
-    with the compartment''s size is determined by the value of the enclosing Model
-    object''s ''volumeUnits'' attribute. If neither the Compartment object''s ''units''
-    nor the enclosing Model object''s ''volumeUnits'' attributes are set, the unit
-    of compartment size is undefined.
-
-    Reference: L3V2 Section 4.5.4
-
-    '
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <compartment> 'GILumen' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: 'If the attribute ''units'' on a Compartment object having a ''spatialDimensions''
-    attribute value of ''3'' has not been set, then the unit of measurement associated
-    with the compartment''s size is determined by the value of the enclosing Model
-    object''s ''volumeUnits'' attribute. If neither the Compartment object''s ''units''
-    nor the enclosing Model object''s ''volumeUnits'' attributes are set, the unit
-    of compartment size is undefined.
-
-    Reference: L3V2 Section 4.5.4
-
-    '
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <compartment> 'Feces' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: 'If the attribute ''units'' on a Compartment object having a ''spatialDimensions''
-    attribute value of ''3'' has not been set, then the unit of measurement associated
-    with the compartment''s size is determined by the value of the enclosing Model
-    object''s ''volumeUnits'' attribute. If neither the Compartment object''s ''units''
-    nor the enclosing Model object''s ''volumeUnits'' attributes are set, the unit
-    of compartment size is undefined.
-
-    Reference: L3V2 Section 4.5.4
-
-    '
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'AStomach' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'AStomach' does not have a substanceUnits attribute, nor does its enclosing\
-    \ <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'ASI' cannot be fully checked. Unit consistency reported as\
-    \ either no errors or further unit errors related to this object may not be accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'ASI' does not have a substanceUnits attribute, nor does its enclosing <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'ALiver' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'ALiver' does not have a substanceUnits attribute, nor does its enclosing <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'APlasma' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'APlasma' does not have a substanceUnits attribute, nor does its enclosing <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'ARest' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'ARest' does not have a substanceUnits attribute, nor does its enclosing <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'AGILumen' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'AGILumen' does not have a substanceUnits attribute, nor does its enclosing\
-    \ <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'AFeces' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'AFeces' does not have a substanceUnits attribute, nor does its enclosing <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'ASIMet1' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'ASIMet1' does not have a substanceUnits attribute, nor does its enclosing <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'ASIMet2' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'ASIMet2' does not have a substanceUnits attribute, nor does its enclosing <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'ALiverMet1' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'ALiverMet1' does not have a substanceUnits attribute, nor does its enclosing\
-    \ <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'ALiverMet2' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'ALiverMet2' does not have a substanceUnits attribute, nor does its enclosing\
-    \ <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'APVMet1' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'APVMet1' does not have a substanceUnits attribute, nor does its enclosing <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'APVMet2' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'APVMet2' does not have a substanceUnits attribute, nor does its enclosing <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'AGILumenMet1' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'AGILumenMet1' does not have a substanceUnits attribute, nor does its enclosing\
-    \ <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'AGILumenMet2' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'AGILumenMet2' does not have a substanceUnits attribute, nor does its enclosing\
-    \ <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'APlasmaMet1' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'APlasmaMet1' does not have a substanceUnits attribute, nor does its enclosing\
-    \ <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'APlasmaMet2' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'APlasmaMet2' does not have a substanceUnits attribute, nor does its enclosing\
-    \ <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'AFecesMet1' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'AFecesMet1' does not have a substanceUnits attribute, nor does its enclosing\
-    \ <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'AFecesMet2' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
-    \ the unit of measurement associated with the species' quantity is determined\
-    \ by the value of the enclosing Model object's 'substanceUnits' attribute. If\
-    \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
-    \ object's 'substanceUnits' attribute are set, then the unit of that species'\
-    \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'AFecesMet2' does not have a substanceUnits attribute, nor does its enclosing\
-    \ <model>.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'BW' cannot be fully checked. Unit consistency reported as\
-    \ either no errors or further unit errors related to this object may not be accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'BW' does not have a 'units'\
-    \ attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'VLc' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VLc' does not have a\
-    \ 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'VPlasmac' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VPlasmac' does not have\
-    \ a 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'VL' cannot be fully checked. Unit consistency reported as\
-    \ either no errors or further unit errors related to this object may not be accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VL' does not have a 'units'\
-    \ attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'VPlasma' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VPlasma' does not have\
-    \ a 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'VRest' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VRest' does not have\
-    \ a 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'enterocytes' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'enterocytes' does not\
-    \ have a 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'QC' cannot be fully checked. Unit consistency reported as\
-    \ either no errors or further unit errors related to this object may not be accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'QC' does not have a 'units'\
-    \ attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'QLc' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'QLc' does not have a\
-    \ 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'QL' cannot be fully checked. Unit consistency reported as\
-    \ either no errors or further unit errors related to this object may not be accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'QL' does not have a 'units'\
-    \ attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'QRest' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'QRest' does not have\
-    \ a 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'PL' cannot be fully checked. Unit consistency reported as\
-    \ either no errors or further unit errors related to this object may not be accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'PL' does not have a 'units'\
-    \ attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'PRest' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'PRest' does not have\
-    \ a 'units' attribute.\n"
+  msg: "The units of the expressions used as arguments to a function call are expected\
+    \ to match the units expected for the arguments of that function. \nReference:\
+    \ L3V2 Section 3.4\n The formula 'BW - VL' in the math element of the <assignmentRule>\
+    \ can only act on variables with the same units.\n"
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'BileFracSIMet1 * APVMet1' in the <kineticLaw> element of the <reaction> with\
+    \ id '_J7' produces units that are inconsistent with units of earlier KineticLaw\
+    \ elements.\n"
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'BileFracSIMet2 * APVMet2' in the <kineticLaw> element of the <reaction> with\
+    \ id '_J11' produces units that are inconsistent with units of earlier KineticLaw\
+    \ elements.\n"
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'BileFracLMet1 * ALiverMet1' in the <kineticLaw> element of the <reaction> with\
+    \ id '_J14' produces units that are inconsistent with units of earlier KineticLaw\
+    \ elements.\n"
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'BileFracLMet2 * ALiverMet2' in the <kineticLaw> element of the <reaction> with\
+    \ id '_J17' produces units that are inconsistent with units of earlier KineticLaw\
+    \ elements.\n"
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -887,20 +452,6 @@ unit_consistency:
     \ consistency. In models where the units of an object have not been declared,\
     \ libSBML does not yet have the functionality to accurately verify the consistency\
     \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'ksto' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'ksto' does not have a\
-    \ 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'k0C' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
     \ accurate.\n"
@@ -909,19 +460,6 @@ unit_consistency:
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'k0C' does not have a\
     \ 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'k0' cannot be fully checked. Unit consistency reported as\
-    \ either no errors or further unit errors related to this object may not be accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'k0' does not have a 'units'\
-    \ attribute.\n"
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -942,20 +480,6 @@ unit_consistency:
     \ consistency. In models where the units of an object have not been declared,\
     \ libSBML does not yet have the functionality to accurately verify the consistency\
     \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'kabs' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'kabs' does not have a\
-    \ 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'kfeC' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
     \ accurate.\n"
@@ -963,20 +487,6 @@ unit_consistency:
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'kfeC' does not have a\
-    \ 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'kfe' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'kfe' does not have a\
     \ 'units' attribute.\n"
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
@@ -998,20 +508,6 @@ unit_consistency:
     \ consistency. In models where the units of an object have not been declared,\
     \ libSBML does not yet have the functionality to accurately verify the consistency\
     \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'kfeMet1' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'kfeMet1' does not have\
-    \ a 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'kabsMet1C' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
     \ accurate.\n"
@@ -1019,20 +515,6 @@ unit_consistency:
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'kabsMet1C' does not have\
-    \ a 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'kabsMet1' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'kabsMet1' does not have\
     \ a 'units' attribute.\n"
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
@@ -1054,20 +536,6 @@ unit_consistency:
     \ consistency. In models where the units of an object have not been declared,\
     \ libSBML does not yet have the functionality to accurately verify the consistency\
     \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'kabsMet2' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'kabsMet2' does not have\
-    \ a 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'EHRrateC' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
     \ accurate.\n"
@@ -1075,20 +543,6 @@ unit_consistency:
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'EHRrateC' does not have\
-    \ a 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'EHRrate' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'EHRrate' does not have\
     \ a 'units' attribute.\n"
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
@@ -1152,48 +606,6 @@ unit_consistency:
     \ consistency. In models where the units of an object have not been declared,\
     \ libSBML does not yet have the functionality to accurately verify the consistency\
     \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'BileFracSIMet1' cannot be fully checked. Unit consistency\
-    \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'BileFracSIMet1' does\
-    \ not have a 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'BileFracSIMet2' cannot be fully checked. Unit consistency\
-    \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'BileFracSIMet2' does\
-    \ not have a 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'fGutMet1' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'fGutMet1' does not have\
-    \ a 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'KmGILumenMet1' cannot be fully checked. Unit consistency\
     \ reported as either no errors or further unit errors related to this object may\
     \ not be accurate.\n"
@@ -1236,20 +648,6 @@ unit_consistency:
     \ consistency. In models where the units of an object have not been declared,\
     \ libSBML does not yet have the functionality to accurately verify the consistency\
     \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'fGutMet2' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'fGutMet2' does not have\
-    \ a 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'KmGILumenMet2' cannot be fully checked. Unit consistency\
     \ reported as either no errors or further unit errors related to this object may\
     \ not be accurate.\n"
@@ -1286,48 +684,6 @@ unit_consistency:
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VmaxGILumenMet2' does\
     \ not have a 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'BileFracLMet1' cannot be fully checked. Unit consistency\
-    \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'BileFracLMet1' does not\
-    \ have a 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'BileFracLMet2' cannot be fully checked. Unit consistency\
-    \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'BileFracLMet2' does not\
-    \ have a 'units' attribute.\n"
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'fLiverMet1' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'fLiverMet1' does not\
-    \ have a 'units' attribute.\n"
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -1524,90 +880,40 @@ unit_consistency:
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CGut' does not have a\
     \ 'units' attribute.\n"
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'VRest' are indeterminable.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression 'VL' cannot be fully checked. Unit consistency\
-    \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression 'VPlasma' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression 'VRest' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression 'VLc * BW' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression 'VPlasmac * BW' cannot be fully checked.\
+    \ <assignmentRule> <math> expression '15.87 * pow(BW, 0.75)' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
     \ to this object may not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression '15.87 * pow(BW, 0.75)' cannot be fully\
-    \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate.\n"
+    \ <assignmentRule> <math> expression 'kstoC / pow(BW, 0.25)' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression 'QLc * QC' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
+    \ <assignmentRule> <math> expression 'k0C / pow(BW, 0.25)' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression 'QC - QL' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression 'kstoC / pow(BW, 0.25)' cannot be fully\
-    \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression 'k0C / pow(BW, 0.25)' cannot be fully\
-    \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression 'kabsC / pow(BW, 0.25)' cannot be fully\
-    \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression '0.84 * BW - VL - VPlasma' cannot be fully\
-    \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate.\n"
+    \ <assignmentRule> <math> expression 'kabsC / pow(BW, 0.25)' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -1619,9 +925,9 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression 'kfeMet1C / pow(BW, 0.25) * pow(BW, 0.25)'\
-    \ cannot be fully checked. Unit consistency reported as either no errors or further\
-    \ unit errors related to this object may not be accurate.\n"
+    \ <assignmentRule> <math> expression 'kfeMet1C / pow(BW, 0.25)' cannot be fully\
+    \ checked. Unit consistency reported as either no errors or further unit errors\
+    \ related to this object may not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -1689,93 +995,9 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression 'AStomach / Stomach' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression 'ASI / SI' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression 'ALiver / Liver' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression 'APlasma / Plasma' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression 'ARest / Rest' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression 'AGILumen / GILumen' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression 'ASI / enterocytes' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'ksto * AStomach' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'k0 * AStomach' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'kabs * ASI' cannot be fully checked. Unit consistency\
-    \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'kfe * ASI' cannot be fully checked. Unit consistency\
-    \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
     \ <kineticLaw> <math> expression 'VmaxGILumenMet1 * CGut / (KmGILumenMet1 + CGut)'\
     \ cannot be fully checked. Unit consistency reported as either no errors or further\
     \ unit errors related to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'kabsMet1 * ASIMet1' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -1787,13 +1009,6 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'BileFracSIMet1 * APVMet1' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
     \ <kineticLaw> <math> expression 'VmaxGILumenMet2 * CGut / (KmGILumenMet2 + CGut)'\
     \ cannot be fully checked. Unit consistency reported as either no errors or further\
     \ unit errors related to this object may not be accurate.\n"
@@ -1801,23 +1016,9 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'kabsMet2 * ASIMet2' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
     \ <kineticLaw> <math> expression '(1 - BileFracSIMet2) * APVMet2' cannot be fully\
     \ checked. Unit consistency reported as either no errors or further unit errors\
     \ related to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'BileFracSIMet2 * APVMet2' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -1836,13 +1037,6 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'BileFracLMet1 * ALiverMet1' cannot be fully\
-    \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
     \ <kineticLaw> <math> expression 'VmaxLMet2 * (CLiver / PL) / (KmLMet2 + CLiver\
     \ / PL)' cannot be fully checked. Unit consistency reported as either no errors\
     \ or further unit errors related to this object may not be accurate.\n"
@@ -1853,13 +1047,6 @@ unit_consistency:
     \ <kineticLaw> <math> expression '(1 - BileFracLMet2) * ALiverMet2' cannot be\
     \ fully checked. Unit consistency reported as either no errors or further unit\
     \ errors related to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'BileFracLMet2 * ALiverMet2' cannot be fully\
-    \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -1892,35 +1079,7 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'AGILumenMet1 * EHRrate' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'AGILumenMet1 * kfeMet1' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
     \ <kineticLaw> <math> expression 'AGILumenMet1 * kehrMet1' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'AGILumenMet2 * EHRrate' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'AGILumenMet2 * kfeMet1' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
     \ to this object may not be accurate.\n"
 - level: warning

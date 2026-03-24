@@ -9,7 +9,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Stomach",
 			label="Stomach
-[-]",
+[PBPKO:00566]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -27,7 +27,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-IntestinalLumen",
 			label="IntestinalLumen
-[-]",
+[PBPKO:00478]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -35,7 +35,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AIL",
 			label="AIL
-[-]",
+[PBPKO:00496]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -63,7 +63,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-SmallIntestine",
 			label="SmallIntestine
-[-]",
+[PBPKO:00472]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -81,7 +81,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Liver",
 			label="Liver
-[-]",
+[PBPKO:00558]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -96,7 +96,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AMet",
 			label="AMet
-[-]",
+[PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -114,7 +114,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ABlood",
 			label="ABlood
-[-]",
+[PBPKO:00623]",
 			shape=box,
 			style="filled,rounded"];
 	}

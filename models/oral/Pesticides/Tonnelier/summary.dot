@@ -1,0 +1,113 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_AbsorptionCompartment {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-AbsorptionCompartment",
+			label="AbsorptionCompartment
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AAbsComp	[color=black,
+			fillcolor=gold,
+			href="#species-AAbsComp",
+			label="AAbsComp
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_PV {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-PV",
+			label="PV
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		APV	[color=black,
+			fillcolor=gold,
+			href="#species-APV",
+			label="APV
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Liver {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Liver",
+			label="Liver
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALiver	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver",
+			label="ALiver
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ALiverMet	[color=black,
+			fillcolor=gold,
+			href="#species-ALiverMet",
+			label="ALiverMet
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_SystCompartment {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-SystCompartment",
+			label="SystCompartment
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ASysComp	[color=black,
+			fillcolor=gold,
+			href="#species-ASysComp",
+			label="ASysComp
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_RenalExcretion {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-RenalExcretion",
+			label="RenalExcretion
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARenalEx	[color=black,
+			fillcolor=gold,
+			href="#species-ARenalEx",
+			label="ARenalEx
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	AAbsComp -> APV	[label=_J0,
+		minlen=1];
+	APV -> ALiver	[label=_J1];
+	ALiver -> ALiverMet	[label=_J5,
+		minlen=1];
+	ALiver -> ASysComp	[label=_J4];
+	ASysComp -> APV	[label=_J2];
+	ASysComp -> ALiver	[label=_J3];
+	ASysComp -> ARenalEx	[label=_J6,
+		minlen=1];
+}

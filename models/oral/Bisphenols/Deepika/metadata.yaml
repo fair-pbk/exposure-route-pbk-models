@@ -3,6 +3,7 @@ name: ''
 applicability_domain:
   chemicals: []
   species: []
+num_compartments: 5
 num_species: 8
 num_parameters: 38
 num_reactions: 10
@@ -30,7 +31,7 @@ compartments:
     label: rest of body compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00450
 species:
-- id: AStomach
+- id: ASt
   name: ''
 - id: ALiver
   name: amount of chemical in liver
@@ -262,9 +263,8 @@ unit_consistency:
     \ consistency. In models where the units of an object have not been declared,\
     \ libSBML does not yet have the functionality to accurately verify the consistency\
     \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <species> 'AStomach' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ of the <species> 'ASt' cannot be fully checked. Unit consistency reported as\
+    \ either no errors or further unit errors related to this object may not be accurate.\n"
 - level: error
   msg: "If the attribute 'substanceUnits' in a Species object has not been set, then\
     \ the unit of measurement associated with the species' quantity is determined\
@@ -272,8 +272,7 @@ unit_consistency:
     \ neither the Species object's 'substanceUnits' attribute nor the enclosing Model\
     \ object's 'substanceUnits' attribute are set, then the unit of that species'\
     \ quantity is undefined.\nReference: L3V2 Section 4.6.5\n The <species> with id\
-    \ 'AStomach' does not have a substanceUnits attribute, nor does its enclosing\
-    \ <model>.\n"
+    \ 'ASt' does not have a substanceUnits attribute, nor does its enclosing <model>.\n"
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -951,20 +950,6 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression 'VLc * BW' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression 'VPlasmac * BW' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
     \ <initialAssignment> <math> expression 'VGc * BW' cannot be fully checked. Unit\
     \ consistency reported as either no errors or further unit errors related to this\
     \ object may not be accurate.\n"
@@ -1021,28 +1006,42 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression '22750 / 1000 * pow(BW, 0.75)' cannot\
-    \ be fully checked. Unit consistency reported as either no errors or further unit\
-    \ errors related to this object may not be accurate.\n"
+    \ <assignmentRule> <math> expression 'VLc * BW' cannot be fully checked. Unit\
+    \ consistency reported as either no errors or further unit errors related to this\
+    \ object may not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression '680095.6 / 1000 * pow(BW, 0.75)' cannot\
-    \ be fully checked. Unit consistency reported as either no errors or further unit\
-    \ errors related to this object may not be accurate.\n"
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression '11657 / 1000 * pow(BW, 0.75)' cannot\
-    \ be fully checked. Unit consistency reported as either no errors or further unit\
-    \ errors related to this object may not be accurate.\n"
+    \ <assignmentRule> <math> expression 'VPlasmac * BW' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '0.84 * BW - VL - VPlasma - VG' cannot be\
+    \ fully checked. Unit consistency reported as either no errors or further unit\
+    \ errors related to this object may not be accurate.\n"
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '22750 / (1000 * pow(BW, 0.75))' cannot be\
+    \ fully checked. Unit consistency reported as either no errors or further unit\
+    \ errors related to this object may not be accurate.\n"
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '680095.6 / (1000 * pow(BW, 0.75))' cannot\
+    \ be fully checked. Unit consistency reported as either no errors or further unit\
+    \ errors related to this object may not be accurate.\n"
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '11657 / (1000 * pow(BW, 0.75))' cannot be\
     \ fully checked. Unit consistency reported as either no errors or further unit\
     \ errors related to this object may not be accurate.\n"
 - level: warning
@@ -1084,16 +1083,16 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'ksto * AStomach' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
+    \ <kineticLaw> <math> expression 'ksto * ASt' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'k0 * AStomach' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
+    \ <kineticLaw> <math> expression 'k0 * ASt' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate.\n"
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\

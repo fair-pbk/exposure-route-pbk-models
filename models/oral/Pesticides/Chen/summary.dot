@@ -1,0 +1,121 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_Stomach {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Stomach",
+			label="Stomach
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ASt	[color=black,
+			fillcolor=gold,
+			href="#species-ASt",
+			label="ASt
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Intestinal {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Intestinal",
+			label="Intestinal
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AIT	[color=black,
+			fillcolor=gold,
+			href="#species-AIT",
+			label="AIT
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Liver {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Liver",
+			label="Liver
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALiver	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver",
+			label="ALiver
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ALiverMet1	[color=black,
+			fillcolor=gold,
+			href="#species-ALiverMet1",
+			label="ALiverMet1
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ALiverMet2	[color=black,
+			fillcolor=gold,
+			href="#species-ALiverMet2",
+			label="ALiverMet2
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Blood {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Blood",
+			label="Blood
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ABlood	[color=black,
+			fillcolor=gold,
+			href="#species-ABlood",
+			label="ABlood
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Rest {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Rest",
+			label="Rest
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARest	[color=black,
+			fillcolor=gold,
+			href="#species-ARest",
+			label="ARest
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	ASt -> AIT	[label=_J0];
+	ASt -> ALiver	[label=_J1];
+	AIT -> ALiver	[label=_J2];
+	ALiver -> ALiverMet1	[label=_J7,
+		minlen=1];
+	ALiver -> ALiverMet2	[label=_J8,
+		minlen=2];
+	ALiver -> ABlood	[label=_J4];
+	ABlood -> ALiver	[label=_J3];
+	ABlood -> ARest	[label=_J5];
+	ARest -> ABlood	[label=_J6];
+}

@@ -3,6 +3,7 @@ name: ''
 applicability_domain:
   chemicals: []
   species: []
+num_compartments: 9
 num_species: 9
 num_parameters: 15
 num_reactions: 13

@@ -9,7 +9,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Stomach",
 			label="Stomach
-[-]",
+[PBPKO:00566]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -45,7 +45,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Duodenum",
 			label="Duodenum
-[-]",
+[PBPKO:00471]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -63,7 +63,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Liver",
 			label="Liver
-[-]",
+[PBPKO:00558]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -78,7 +78,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ALiverMet",
 			label="ALiverMet
-[-]",
+[PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -103,7 +103,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-APlasmaMet",
 			label="APlasmaMet
-[-]",
+[PBPKO:00502]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -125,11 +125,29 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 	}
+	subgraph cluster_Urine {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Urine",
+			label="Urine
+[PBPKO:00556]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AUrine	[color=black,
+			fillcolor=gold,
+			href="#species-AUrine",
+			label="AUrine
+[PBPKO:00272]",
+			shape=box,
+			style="filled,rounded"];
+	}
 	ASt -> ADuodenum	[label=_J0,
 		minlen=1];
 	AGITissue -> ALiver	[label=_J2];
 	ADuodenum -> AGITissue	[label=_J1];
-	ALiver -> ALiverMet	[label=_J9,
+	ALiver -> ALiverMet	[label=_J10,
 		minlen=1];
 	ALiver -> APlasma	[label=_J5];
 	APlasma -> AGITissue	[label=_J3];
@@ -137,5 +155,7 @@ digraph {
 	APlasma -> APlasmaMet	[label=_J8,
 		minlen=1];
 	APlasma -> ARest	[label=_J6];
+	APlasma -> AUrine	[label=_J9,
+		minlen=2];
 	ARest -> APlasma	[label=_J7];
 }
