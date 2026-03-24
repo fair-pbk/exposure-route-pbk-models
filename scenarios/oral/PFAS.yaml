@@ -6,42 +6,42 @@ model_instances:
     model_path: models/oral/PFAS/Chen/Chen.sbml
     param_file: models/oral/PFAS/Chen/Chen.params.csv
     target_mappings:
-      AGut: AStomach
+      Oral: AST
       APlasma: APlasma
   - id: ChouLin2021
     label: Chou Lin 2021
     model_path: models/oral/PFAS/ChouLin/ChouLin.sbml
     param_file: models/oral/PFAS/ChouLin/ChouLin.params.csv
     target_mappings:
-      AGut: AStomach
+      Oral: ASt
       APlasma: APlasma
   - id: Deepika2021
     label: Deepika 2021
     model_path: models/oral/PFAS/Deepika/Deepika.sbml
     param_file: models/oral/PFAS/Deepika/Deepika.params.csv
     target_mappings:
-      AGut: AGI
+      Oral: AGI
       APlasma: APlasma
   - id: Husoy2024
     label: Husoy 2024
     model_path: models/oral/PFAS/Husoy/Husoy.sbml
     param_file: models/oral/PFAS/Husoy/Husoy.params.csv
     target_mappings:
-      AGut: AGI
+      Oral: AGI
       APlasma: APlasma
   - id: Loccisano2011_PFOA
     label: Loccisano 2011 (PFOA)
     model_path: models/oral/PFAS/Loccisano_PFOA/LoccisanoPFOA.sbml
     param_file: models/oral/PFAS/Loccisano_PFOA/LoccisanoPFOA.params.csv
     target_mappings:
-      AGut: AGI
+      Oral: AGI
       APlasma: APlasma
   - id: Loccisano2011_PFOS
     label: Loccisano 2011 (PFOS)
     model_path: models/oral/PFAS/Loccisano_PFOS/LoccisanoPFOS.sbml
     param_file: models/oral/PFAS/Loccisano_PFOS/LoccisanoPFOS.params.csv
     target_mappings:
-      AGut: AGI
+      Oral: AGI
       APlasma: APlasma
 
 scenarios:
@@ -53,7 +53,7 @@ scenarios:
     amount_unit: MICROGRAMS
     dosing_events:
       - type: single_bolus
-        target: AGut
+        target: Oral
         amount: 1
         time: 1
     outputs:
@@ -68,7 +68,7 @@ scenarios:
     amount_unit: MICROGRAMS
     dosing_events:
       - type: repeated_bolus
-        target: AGut
+        target: Oral
         amount: 1
         time: 0
         interval: 1
