@@ -331,7 +331,9 @@ def create_overview_report():
             filename = os.path.basename(sbml_file)
             file_dir = os.path.dirname(sbml_file)
             report_path = os.path.relpath(file_dir, MODELS_PATH) \
-                .replace('\\', '/').replace(' ', '%20')
+                .replace('\\', '/')
+            route = report_path.split('/')[0]
+            chemical_group = report_path.split('/')[1]
 
             # Load metadata
             metadata = None
@@ -360,9 +362,9 @@ def create_overview_report():
             records.append({
                 "filename": filename,
                 "id": metadata['id'],
-                "route": report_path.split('/')[0],
-                "chemical_group": report_path.split('/')[1],
-                "report_path": f"./models/{report_path}/summary.md",
+                "route": route,
+                "chemical_group": chemical_group,
+                "report_path": f"./models/{report_path.replace(' ', '%20')}/summary.md",
                 "compartments": metadata['compartments'],
                 "num_species": metadata.get('num_species', 'N/A'),
                 "num_species_unannotated": num_species_unannotated,
