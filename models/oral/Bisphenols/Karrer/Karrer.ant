@@ -1,28 +1,28 @@
-model Karrer2018_BPA_Human()
+AStmodel Karrer2018_BPA_Human()
 
 #Created: Carolina Vogs, September 2025
-#Checked:
+#Checked: Paris Mertzimekis, December 2025
 
-# ===========================================================
-# BPA PBPK (Karrer et al. 2018)
-# Human PBK for oral absorption 
-# administration → Stomach → SI → liver <- GI Lumen Metabolism
-# Parent only, perfusion-limited tissues
-# GI Lumen Metabolism BAPG → BAP
-# Hepatic Metabolism BAP → BAPG & BAPS
-# EHR of BAPG from liver to GI Lumen, hydrolyzed to BAP, EHR of hydrolyzed BAPG to liver
-# https://www.ncbi.nlm.nih.gov/pubmed/29995627
-# ===========================================================
+model notes ```
+BPA PBPK (Karrer et al. 2018)
+Human PBK for oral absorption 
+administration → Stomach → SI → liver <- GI Lumen Metabolism
+Parent only, perfusion-limited tissues
+GI Lumen Metabolism BAPG → BAP
+Hepatic Metabolism BAP → BAPG & BAPS
+EHR of BAPG from liver to GI Lumen, hydrolyzed to BAP, EHR of hydrolyzed BAPG to liver
+```
+model description "https://www.ncbi.nlm.nih.gov/pubmed/29995627"
 
 # ------------------------
 # Body size 
 # ------------------------
 BW   = 70                                    # kg
-VLc  = 0.026   
-VPlasmac = 0.0435  
+VLc  = 0.0233   
+VPlasmac = 0.04  
 
-VL   = VLc*BW  
-VPlasma = VPlasmac*BW
+VL   := VLc*BW  
+VPlasma := VPlasmac*BW
  
 VRest := 0.84*BW - VL - VPlasma  
 
@@ -35,14 +35,14 @@ enterocytes = 0.1223       # L (volume of distribution in SI)
 # ------------------------
 # Cardiac output & flows
 # ------------------------
-QC  = 15.87*BW^0.75                  # L/h
+QC  := 15.87*BW^0.75                  # L/h  (5.9 L/min -> 354 L/hour. But, 15.87*BW(=70)^0.75 =  384
 # Flow fractions; adjust to sum ≤ 1
 QLc = 0.24; 
 
 # Flows:
-QL = QLc*QC; 
+QL := QLc*QC; 
 # Residual to ensure sum flows ≤ QC:
-QRest = QC - QL
+QRest := QC - QL
 
 # ------------------------
 # Tissue:serum partition coefficients
@@ -56,13 +56,13 @@ PRest = 1
 
 # BAP relevant parameters
 kstoC   = 3.50		       # 1/h/bw^-0.25, Gastric emptying 
-ksto   = kstoC / BW^(0.25)    # 1/h 
+ksto   := kstoC / BW^(0.25)    # 1/h 
 
 k0C  = 0	  	       # 1/h/bw^-0.25, uptake from the stomach into the liver  
-k0   = k0C / BW^(0.25)         # 1/h gastric emptying (adult scaling; Karrer Table 8)
+k0   := k0C / BW^(0.25)         # 1/h gastric emptying (adult scaling; Karrer Table 8)
 
-kabsC = 2.1			# uptake enterocyte → portal/liver, 1/h/bw^-0.25 
-kabs = kabsC / BW^(0.25)  	# 1/h uptake enterocyte → portal/liver 
+kabsC = 50			# uptake enterocyte → portal/liver, 1/h/bw^-0.25 . (2.1 is the uptake from small intestine to liver)
+kabs := kabsC / BW^(0.25)  	# 1/h uptake enterocyte → portal/liver 
 
 kfeC = 0			# (1/h/BW^(-0.25) Fecal elimination of BPA from small intestine 
 kfe := kfeC / BW^(0.25)		# 1/h
@@ -82,7 +82,10 @@ kabsMet2 := kabsMet2C / BW^(0.25) # 1/h
 EHRrateC = 0.2; 		# (1/h/bw^-0.25) |EHR of BPAG
 EHRrate := EHRrateC / BW^(0.25)	# 1/h
 
-kehrMet1C = 0.2 		# (1/h/bw^-0.25) EHR of BPA due to biliary excretion of BPAGkehrMet1 := kehrMet1C / BW^(0.25)kehrMet2C = 0.0 		# (1/h/bw^-0.25) EHR of BPA due to biliary excretion of BPAS
+kehrMet1C = 0.2 		# (1/h/bw^-0.25) EHR of BPA due to biliary excretion of BPAG
+kehrMet1 := kehrMet1C / BW^(0.25)
+
+kehrMet2C = 0.0 		# (1/h/bw^-0.25) EHR of BPA due to biliary excretion of BPAS
 kehrMet2 := kehrMet2C / BW^(0.25)
 
 #------------------------
@@ -141,7 +144,7 @@ compartment Feces;            Feces    = 1
 #------------------------
 # Species (amounts; BPA unless noted)
 #------------------------
-substanceOnly species AStomach   in Stomach
+substanceOnly species ASt   in Stomach
 substanceOnly species ASI   	 in SI
 substanceOnly species ALiver     in Liver
 substanceOnly species APlasma    in Plasma
@@ -167,7 +170,7 @@ substanceOnly species AFecesMet2  in Feces
 #------------------------
 # Initial conditions
 #------------------------
-AStomach = 0; 
+ASt = 0; 
 ASI = 0; 
 ALiver = 0; 
 APlasma = 0; 
@@ -192,7 +195,7 @@ AFecesMet2 = 0;
 #------------------------
 # Concentrations 
 #------------------------
-CSt       := AStomach / Stomach
+CSt       := ASt / Stomach
 CSI  	  := ASI / SI
 CLiver    := ALiver / Liver
 CPlasma   := APlasma / Plasma
@@ -209,10 +212,10 @@ CGut  	  := ASI/enterocytes
 #------------------------
 
 # Oral: Stomach → small intestine
-AStomach     -> ASI;    ksto * AStomach
+ASt     -> ASI;    ksto * ASt
 
 # Oral: Stomach → portal
-AStomach     -> ALiver;    k0 * AStomach
+ASt     -> ALiver;    k0 * ASt
 
 # Small Intestine  → liver
 ASI -> ALiver;     kabs * ASI

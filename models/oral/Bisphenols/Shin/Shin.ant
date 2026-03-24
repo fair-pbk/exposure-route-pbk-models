@@ -2,25 +2,26 @@ model Shin2004_BPA_Human()
 
 
 #Created: Carolina Vogs, September 2025
-#Checked:
+#Checked: Paris Mertzimekis, December 2025
 
-#===========================================================
-# BPA PBK - Shin et al. 2004
-# SILume -> SITissue -> Liver <- Spleen, Stomach via portal vein
-# Perfusion-limited: Blood <-> Liver, Blood <-> Rest
-# Hepatic metabolism: intrinsic clearance
-# https://www.ncbi.nlm.nih.gov/pubmed/15513896
-#===========================================================
+model notes ```
+BPA PBK - Shin et al. 2004
+SILume -> SITissue -> Liver <- Spleen, Stomach via portal vein
+Perfusion-limited: Blood <-> Liver, Blood <-> Rest
+Hepatic metabolism: intrinsic clearance
+```
+model description "https://www.ncbi.nlm.nih.gov/pubmed/15513896"
+
 
 #------------------------
 # Body size & base volumes
 #------------------------
 BW   = 70                          # kg
-VL   = 1700/1000                   # L
-VB   = 5530/1000                    # L
-VSt  = 200/1000               # L
-VSpleen  = 200/1000                # L
-VSI = 1700/1000			   # L
+VL   := 1700/1000                  # L
+VB   := 5530/1000                  # L; was not given in article and based on VBc = 0.079
+VSt  := 200/1000              	   # L
+VSpleen  := 200/1000               # L
+VSI := 1700/1000		   # L
 
 
 # Lumped Rest-of-body volume with floor
@@ -29,13 +30,13 @@ VRest := 0.84*BW - VL - VB - VSt - VSI - VSpleen
 #------------------------
 # Flows 
 #------------------------
-QC   = 15*BW^0.75                  # L/h (cardiac output)
-QL   = 1646.7/1000*60              # from ml/min to L/h (liver)
-QSpleen   = 76.7/1000*60           # from ml/min to L/h (Spleen)
-QSt  = 38.3/1000*60           # from ml/min to L/h (Stomach)
-QSI  = 1100/1000*60          	   # from ml/min to L/h (Small intestine)
+QC   := 15*BW^0.74                  # L/h (cardiac output)
+QL   := 1646.7/(1000*60)            # from ml/min to L/h (liver)
+QSpleen   := 76.7/(1000*60)         # from ml/min to L/h (Spleen)
+QSt  := 38.3/(1000*60)              # from ml/min to L/h (Stomach)
+QSI  := 1100/(1000*60)              # from ml/min to L/h (Small intestine)
 
-QRest= QC - QL  - QSpleen - QSt - QSI    # L/h (lumped rest)
+QRest := QC - QL  - QSpleen - QSt - QSI    # L/h (lumped rest)
 
 #------------------------
 # Partitions (tissue:blood)
@@ -50,18 +51,18 @@ PRest= 1.0                         	# effective lumped rest:blood (can adjust if
 #------------------------
 # GI kinetics 
 #------------------------
-kabs = 0.0006 * 60                       # 1/h  
+kabs := 0.0006 * 60                     # 1/h  
 
 #------------------------
 # Hepatic intrinsic clearance 
 #------------------------
 
-CLint = 116.6   # L/h
+CLint = 116.6   			# L/h
 
 #------------------------
 # Compartments
 #------------------------
-compartment Stomach;  Stomach = 1.0
+compartment Stomach;   Stomach = VSt
 compartment IntestinalLumen;  IntestinalLumen = 1
 compartment Spleen;   Spleen  = VSpleen
 compartment SmallIntestine;   SmallIntestine  = VSI
@@ -73,7 +74,7 @@ compartment Rest;     Rest    = VRest
 #------------------------
 # Species (amount states)
 #------------------------
-substanceOnly species ASt   in Stomach
+substanceOnly species ASt    in Stomach
 substanceOnly species AIL    in IntestinalLumen
 substanceOnly species ASpleen in Spleen
 substanceOnly species ASI   in SmallIntestine
@@ -86,6 +87,7 @@ substanceOnly species AMet  in Liver
 #------------------------
 # Initial conditions
 #------------------------
+ASt = 0;
 AIL = 0; 
 ASI = 0; 
 ASpleen = 0; 
@@ -104,11 +106,11 @@ CSI   := ASI  / SmallIntestine
 CSpleen := ASpleen / Spleen
 CSt := ASt / Stomach
 CLiver  := ALiver / Liver
-CBlood  := ABlood / Blood * RBS
+CBlood  := ABlood / (Blood * RBS)
 CRest := ARest   / Rest
 
 
-# Hepatic metabolism (intrinsic clearance on liver-venous conc)
+# Hepatic metabolism (intrinsic clearance on liver-venous conc) - mg/h
 Met := CLint * (CLiver/PL)   
 
 #------------------------

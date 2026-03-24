@@ -1,0 +1,12 @@
+idModelInstance,Parameter,Value,Unit,Description,Reference
+Mielke2009_BPA_Human_PARAM,BW,73.0,kg,body weight,
+Mielke2009_BPA_Human_PARAM,VLc,0.024,L/kg,Volume fraction of liver to bodyweight,
+Mielke2009_BPA_Human_PARAM,VBc,0.079,L/kg,Volume fraction of blood to bodyweight,
+Mielke2009_BPA_Human_PARAM,QL,99.5,L/h,Blood flow rate to liver,
+Mielke2009_BPA_Human_PARAM,QC,390.0,L/h,Cardiac output,
+Mielke2009_BPA_Human_PARAM,PL,1.46,dimensionless,Partition coefficient - liver,
+Mielke2009_BPA_Human_PARAM,PRest,1.0,dimensionless,Partition coefficient - rest of body,
+Mielke2009_BPA_Human_PARAM,kabs,1.2,/h,absorption constant rate,
+Mielke2009_BPA_Human_PARAM,KmLMet1,8.5,umol/L,Glucuronidation - Km,
+Mielke2009_BPA_Human_PARAM,VmaxLMet1C,54.9,,Glucuronidation - Vmax,
+Mielke2009_BPA_Human_PARAM,KmLMet2,8.5,umol/L,Sulfation - Km,

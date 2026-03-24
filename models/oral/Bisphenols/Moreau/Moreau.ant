@@ -4,74 +4,92 @@ model Moreau_BPA_Human()
 #Created: Carolina Vogs, September 2025
 #Checked:
 
-#===========================================================
-# BPA PBK - Moreau et al. 2025
-# Stomach -> Duodenum -> GITissue -> Liver 
-# Perfusion-limited: Blood <-> Liver, Blood <-> Rest
-# Hepatic metabolism: intrinsic clearance
-# Plasma metabolism: set to 0 for BAP
-# urine excretion neglected as it would need to go through the kidneys first
-# https://www.ncbi.nlm.nih.gov/pubmed/40480613
-#===========================================================
+model notes ```
+BPA PBK - Moreau et al. 2025
+Stomach -> Duodenum -> GITissue -> Liver 
+Perfusion-limited: Blood <-> Liver, Blood <-> Rest
+Hepatic metabolism: intrinsic clearance
+Plasma metabolism: set to 0 for BAP
+```
+model description "https://www.ncbi.nlm.nih.gov/pubmed/40480613"
 
+# Parameter values associated with paper extracted from online source: https://data.mendeley.com/datasets/mf5pg3zxh6/1
+
+
+MW = 228.29			     # molecular weight g/mol
 #------------------------
 # Body size & base volumes
 #------------------------
-BW   = 70                          # kg
+BW   = 61.72                          # kg
 
-VLC   = 0.0233                  
-VGITissueC   = 0.019            
-
-
-
-VL   = VLC * BW                
-VGITissue   = VGITissueC * BW           
-VPlasma = 2.5178
+VLC   = 0.0233                        # Liver      (L/kg bodyweight)
+VGITissueC   = 0.019                  # GI tissue  (L/kg bodyweight)
 
 
-# Lumped Rest-of-body volume with floor
-VRest := 0.84*BW - VL - VGITissue - VPlasma 
+
+VL   := VLC * BW                
+VGITissue   := VGITissueC * BW           
+VPlasma = 2.5178                      # Plasma     (L/kg bodyweight)
+
+VUrineC = 20			      # Urinary volume per day (mL/kg/day)
+VUrine := (VUrineC * BW)/24/1000.     # Urinary volume per hour (L/h)
+
+# Lumped Rest-of-body volume 
+VRest := 0.84*BW - VL - VGITissue - VPlasma       #(L/kg bodyweight)
 
 #------------------------
 # Flows 
 #------------------------
 QC   = 321.435                 # L/h (cardiac output)
 Hct  = 0.3865		       # Hematocrit
-QCPlasma = QC * (1-Hct)
+QCPlasma := QC * (1-Hct)
 
 QGIc = 0.164	    	
 QLc = 0.097     		
 
-QGI := QGIc*QC			# GI plasma flow (L/h)
-QL := QLc*QC			# Liver plasma flow (L/h)
+QGI := QGIc * QC		# GI plasma flow (L/h)
+QL := QLc * QC			# Liver plasma flow (L/h)
 
-QRest= QCPlasma - QL  - QGI   # L/h (lumped rest)
+QRest := QCPlasma - QL  - QGI   # L/h (lumped rest)
 
 #------------------------
 # Partitions (tissue:blood)
-#------------------------
-PL   = 1.79                 	# liver:blood 
-PGI  = 3.55
-PRest= 1.0                      # lumped rest:blood (can adjust if needed)
+#------------------------ 
+PL   = 1.79                 	# liver:blood       
+PGI  = 3.55                     # GI : blood         
+PRest= 1.0                      # lumped rest:blood (can adjust if needed)      
 
 #------------------------
 # GI kinetics 
 #------------------------
-ksto = 1.2			 # 1/h
-kabs = 1.2                       # 1/h  
-Fa = 0.15			 # Fraction absorbed
+ksto = 1.2			 # 1/h       
+kabs = 1.2                       # 1/h       
+Fa = 0.15			 # Fraction absorbed    
+
 #------------------------
 # Hepatic intrinsic clearance 
 #------------------------
 
-CLintC = 131.34   		 # L/h/kg Liver
-CLint = CLintC * VL  		 # L/h
+CLintLC = 131.34   		# L/h/kg Liver    
+CLintL := CLintLC * VL  	# L/h 
 
 #------------------------
-# Blood metabolism 
+# Hepatic clearance saturable metabolism
+#------------------------
+# KM = 0.134				# mg/L
+# VmaxLiverC = 3.45			# mg/h/kg^0.75
+# VmaxLiver := VmaxLiverC * BW^0.75	# mg/h
+
+#------------------------
+# Blood metabolism and urine excretion
 #------------------------
 
 CLintB = 0
+
+Free = 0.1				# not provided, assumed 0.1
+GFR = 7.7964				# L/h
+CLUC := GFR				# L/h
+CLU := Free * GFR			# L/h
 
 #------------------------
 # Compartments
@@ -82,6 +100,7 @@ compartment Duodenum;   Duodenum  = 1
 compartment Liver;    Liver   = VL
 compartment Plasma;    Plasma   = VPlasma
 compartment Rest;     Rest    = VRest
+compartment Urine;     Urine    = VUrine
 
 
 #------------------------
@@ -95,6 +114,7 @@ substanceOnly species APlasma  in Plasma
 substanceOnly species ARest   in Rest
 substanceOnly species ALiverMet  in Liver   
 substanceOnly species APlasmaMet  in Plasma 
+substanceOnly species AUrine  in Urine
 
 #------------------------
 # Initial conditions
@@ -107,6 +127,7 @@ APlasma= 0;
 ARest = 0
 ALiverMet = 0;
 APlasmaMet = 0;
+AUrine = 0;
 
 #------------------------
 # Concentrations 
@@ -115,10 +136,11 @@ CGITissue   := AGITissue  / GITissue
 CLiver  := ALiver / Liver
 CPlasma  := APlasma / Plasma
 CRest := ARest   / Rest
+CUrine := AUrine/ Urine
 
 
 # Hepatic metabolism (intrinsic clearance on liver-venous conc)
-Met := CLint * (CLiver/PL)   
+Met := CLintL * (CLiver/PL)   
 
 #------------------------
 # GI transfers & absorptions
@@ -143,10 +165,11 @@ ALiver -> APlasma;   (QL + QGI)  * CLiver/PL
 APlasma -> ARest;     QRest * CPlasma
 ARest   -> APlasma;   QRest * CRest/PRest
 APlasma -> APlasmaMet; CLintB * CPlasma
+APlasma -> AUrine;	CLU * APlasma
 
 #------------------------
-# Hepatic metabolism sink (parent → AMet)
+# Hepatic metabolism sink (parent -> AMet)
 #------------------------
-ALiver -> ALiverMet;   CLint * (CLiver/PL)   
+ALiver -> ALiverMet;   CLintL * (CLiver/PL)   
 
 end

@@ -1,15 +1,16 @@
 model Deepika_2022_BisphenolA_Human()
 
 #Created: Carolina Vogs, September 2025
-#Checked:
+#Checked: Paris Mertzimekis, December 2025
 
 #===========================================================
 # BAP PBK (Deepika 2022):
-# Human PBK for oral absorption (administration → stomach → gut → liver → blood) 
+# Human PBK for oral absorption (administration -> stomach -> gut -> liver -> blood) 
 # Parent only, perfusion-limited tissues
-# Intestinal Metabolism BAP → BAPG 
-# Hepatic Metabolism BAP → BAPG and BAPS
+# Intestinal Metabolism BAP -> BAPG 
+# Hepatic Metabolism BAP -> BAPG and BAPS
 # https://www.ncbi.nlm.nih.gov/pubmed/35995217
+# parameters taken from Table S1, Table 1 or https://doi.org/10.1016/j.scitotenv.2017.12.023
 #===========================================================
 
 #------------------------
@@ -20,8 +21,8 @@ VLc  = 0.026                    # L/kg (liver)
 VPlasmac  = 0.0428              # L/kg (plasma)
 VGc  = 0.017			# L/kg (gut)
 
-VL   = VLc*BW                   # L
-VPlasma = VPlasmac*BW           # L
+VL   := VLc*BW                  # L
+VPlasma := VPlasmac*BW          # L
 VG = VGc*BW           		# L
 
 VRest := 0.84*BW - VL - VPlasma - VG  # Lumped Rest-of-body volume L 
@@ -30,9 +31,9 @@ VRest := 0.84*BW - VL - VPlasma - VG  # Lumped Rest-of-body volume L
 # Blood Flows
 #------------------------
 QC    = 20*BW^0.75            # L/h (cardiac output)
-QLc   = 0.026
+QLc   = 0.25
 QGc   = 0.016
-    
+	
 QL    = QLc*QC                # L/h (liver)
 QG    = QGc*QC                # L/h (gut)
 QRest = (1 - QLc - QGc)*QC    # L/h (rest)
@@ -58,18 +59,18 @@ kabs = kabsC * BW ^(-0.25)	# L/h
 # Intestinal metabolism - Michaelis-Menten Kinetic
 #------------------------
 VmaxGMet1C = 1.4			# nmol/min/mg of protein
-VmaxGMet1 = 22750/1000 * BW^0.75	# µmol/h/kg
+VmaxGMet1 := 22750/(1000 * BW^0.75)	# µmol/h/kg
 KmGMet1 = 58				# µmol
 
 #------------------------
 # Hepatic metabolism - Michaelis-Menten Kinetic
 #------------------------
 VmaxLMet1C = 4.71			# nmol/min/mg of protein
-VmaxLMet1 = 680095.6/1000 * BW^0.75	# µmol/h/kg
+VmaxLMet1 := 680095.6/(1000 * BW^0.75)	# µmol/h/kg
 KmLMet1 = 45.8				# µmol
 
 VmaxLMet2C = 149			# nmol/h/g liver
-VmaxLMet2 = 11657/1000 * BW^0.75	# µmol/h/kg
+VmaxLMet2 := 11657/(1000 * BW^0.75)	# µmol/h/kg
 KmLMet2 = 10.1				# µmol
 
 
@@ -92,7 +93,7 @@ compartment Rest;    Rest  = VRest
 #------------------------
 # Species (amount states)
 #------------------------
-substanceOnly species AStomach in Stomach
+substanceOnly species ASt in Stomach
 substanceOnly species ALiver in Liver
 substanceOnly species APlasma in Plasma
 substanceOnly species AGut in Gut
@@ -108,7 +109,7 @@ substanceOnly species ALiverMet2  in Liver
 #------------------------
 # Initial conditions
 #------------------------
-AStomach = 0; 
+ASt = 0; 
 ALiver = 0; 
 APlasma = 0; 
 AGut = 0;
@@ -131,13 +132,13 @@ CRest  := ARest  / Rest
 #------------------------
 
 # GI absorption
-AStomach -> AGut;     ksto * AStomach
-AStomach -> ALiver;  k0 * AStomach
+ASt -> AGut;     ksto * ASt
+ASt -> ALiver;  k0 * ASt
 
 AGut -> ALiver; kabs * AGut
 AGut -> AGutMet1;  VmaxGMet1 * CGut * fup/ ((CGut * fup) + KmGMet1)        # Glu
 
-# Perfusion-limited exchanges (blood ↔ liver & rest)
+# Perfusion-limited exchanges (blood <-> liver & rest)
 
 APlasma   -> ALiver;     QL * CPlasma * fup
 ALiver   -> APlasma;     QL * fup * CLiver/PL
