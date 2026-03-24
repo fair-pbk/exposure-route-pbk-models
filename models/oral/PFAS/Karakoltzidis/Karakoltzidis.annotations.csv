@@ -1,0 +1,9 @@
+element_id,sbml_type,element_name,unit,annotation_type,qualifier,URI,remark
+substanceUnits,document,model substances unit,,,,,
+extentUnits,document,model extent unit,,,,,
+timeUnits,document,model time unit,,,,,
+volumeUnits,document,model volume unit,,,,,
+Karakoltzidis2025_PFOA_Human,model,,,rdf,BQB_HAS_PROPERTY,,
+Karakoltzidis2025_PFOA_Human,model,,,rdf,BQB_HAS_TAXON,,
+MW,parameter,,,rdf,BQM_IS,,
+MW,parameter,,,rdf,BQB_IS,,

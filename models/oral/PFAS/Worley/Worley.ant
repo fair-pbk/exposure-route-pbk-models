@@ -81,7 +81,7 @@ compartment Feces;   Feces  = 1
 #------------------------
 # Species (amount states)
 #------------------------
-substanceOnly species AStomach in Stomach
+substanceOnly species ASt in Stomach
 substanceOnly species ASI in SI
 substanceOnly species ALiver in Liver
 substanceOnly species APlasma in Plasma
@@ -92,7 +92,7 @@ substanceOnly species AFeces  in Feces
 #------------------------
 # Initial conditions
 #------------------------
-AStomach = 0
+ASt = 0
 ASI = 0 
 ALiver = 0 
 APlasma = 0 	# free fraction in plasma
@@ -113,8 +113,8 @@ CRest  := ARest  / Rest
 #------------------------
 
 # Stomach -> SI & Liver
-AStomach -> ASI;    ksto * AStomach
-AStomach -> ALiver; k0 * AStomach
+ASt -> ASI;    ksto * ASt
+ASt -> ALiver; k0 * ASt
 
 # SI -> Liver & Feces
 ASI -> ALiver;      kabs * ASI

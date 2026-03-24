@@ -83,13 +83,13 @@ CRest := ARest / Rest
 #------------------------
 
 # Perfusion-limited exchanges (Plasma ↔ gut & liver & rest)
-APlasma -> AGI;      QG * Free * CPlasma
+APlasma -> AGI;      QG * Free * CPlasmaTotal
 AGI -> APlasma;      QG * Free * CGI/PG
 
-APlasma -> ALiver;   QL * Free * CPlasma
+APlasma -> ALiver;   QL * Free * CPlasmaTotal
 ALiver -> APlasma;   (QL+QG) * Free * CLiver/PL
 
-APlasma -> ARest;    QRest * Free * CPlasma
+APlasma -> ARest;    QRest * Free * CPlasmaTotal
 ARest -> APlasma;    QRest * Free * CRest/PRest
 
 end

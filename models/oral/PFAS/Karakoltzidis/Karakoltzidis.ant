@@ -1,0 +1,413 @@
+model Karakoltzidis2025_PFOA_Human()
+
+#Created: Carolina Vogs, January 2026
+#Checked:
+
+#===========================================================
+# PFOA (Karakoltzidis et al. 2025):
+# https://www.sciencedirect.com/science/article/pii/S0013935125011983
+#===========================================================
+
+MW = 414.07;                # g/mol for PFOA
+
+#------------------------
+# Body size & base volumes (L)
+#------------------------
+BW = 70
+
+VGI = 1.737
+VBlood = 1.382
+VPV = 1.037
+VLiver = 2.357
+VSpleen = 0.147
+VPanc = 0.1036
+VRest := BW - VGI - VBlood - Vliver - VSpleen - VPanc - VPV
+
+#------------------------
+# Volumes of sub-compartments (L)
+#------------------------
+BVGI_Int = 0.1737000
+BVGI_RBC = 0.2026741
+BVGI_Cell = 1.1290500
+BVGI_Vas = 0.2310259
+
+BVPV_Int = 0.4996566
+BVPV_RBC = 0.2310134
+
+BVLiver_Int = 0.4996566
+BVLiver_RBC = 0.2310134
+BVLiver_Cell = 1.6263300
+BVLiver_Vas = 0.54211
+
+BVSpleen_Int = 0.03273013
+BVSpleen_RBC = 0.01577987
+BVSpleen_Cell = 0.09849000
+BVSpleen_Vas = 0.01803013
+
+BVPanc_Int = 0.02306695
+BVPanc_RBC = 0.01112105
+BVPanc_Cell = 0.06941200
+BVPanc_Vas = 0.01270695
+
+BVRest_Int: = 0.130535777 * VRest
+BVRest_RBC:= 0.010043935 * VRest
+BVRest_Cell: = 0.859419553 * VRest
+BVRest_Vas := 0.23 * VRest
+
+#------------------------
+# Flows (adult human) in L/h
+#------------------------
+Hct = 0.4667221
+
+Qtot = 351.2377
+QGI = 55.02361
+QPV = 55.02361
+QLiver = 23.84357
+QSpleen = 11.00472
+QPanc = 3.668241
+QRest := Qtot - (QGI + QLiver + QSpleen + QPanc)
+
+#------------------------
+# Tissue:blood partitions
+#------------------------
+PGI = 0.5
+PL = 1.1
+PSpleen = 0.93
+PPanc = 0.43
+PRest = 1
+P_RBC = 0.0001
+PPV = 1                 # not given; asummed 1:1 between blood:plasma
+
+#------------------------
+# Permeability surface area product of tissue
+# unknown values -> I asked authors
+#------------------------
+PSAL_PV_RBC = 1
+PSAL_Liver_RBC = 1
+PSAL_Liver_Cell = 1
+PSAL_Spleen_RBC = 1
+PSAL_Spleen_Cell = 1
+PSAL_Panc_RBC = 1
+PSAL_Panc_Cell = 1
+PSAL_Rest_RBC = 1
+PSAL_Rest_Cell = 1
+
+#------------------------
+# Other chemical-specific parameters - Transfer rates
+#------------------------
+kstoC = 2           # kg^0.25/h; absorption rate stomach -> intestinal
+ksto := kstoC * BW^(-0.25)
+
+kabsC = 3           # kg^0.25/h; absorption rate
+kabs := kabsC * BW^(-0.25)
+
+kunabsC  = 3.061    # kg^0.25/h; unabsorption rate
+kunabs := kunabsC * BW^(-0.25)
+
+kfeC  = 0.0361      # kg^0.25/h; fecal excretion rate
+kfe := kfeC * BW^(-0.25)
+
+kbiliaryC = 0.015    # kg^0.25/h; biliary excretion rate
+kbiliary := kbiliaryC * BW^(-0.25)
+
+kbiliary_effluxC = 0.05     # kg^0.25/h; biliary excretion rate
+kbiliary_efflux := kbiliary_effluxC * BW^(-0.25)
+
+Free = 0.001        # a range of values is given; mean taken
+
+#------------------------
+# Transporter parameters
+#------------------------
+
+# Scaling Factors
+Prot_per_hep_pg = 675                # pg/hepatocyte
+Hep_per_g_liver = 1.175E8            # hepatocytes/g liver
+Liver_density = 1051                 # g/L
+Prot_per_hep_mg := Prot_per_hep_pg * 1E-9
+Liver_mass_g := VLiver * Liver_density
+
+# Total mg protein in liver
+Liver_protein_mg := Prot_per_hep_mg * Hep_per_g_liver * Liver_mass_g
+
+SFLiver = 0.018            # scaling factor
+
+# Transporter values
+
+# Transper 1 - OATP1B1
+KMLiverTrans1 = 52.65       # µg/L
+VmaxLiverTrans1C = 2305     # pmol/mgprotein * min
+VmaxLiverTrans1 := VmaxLiverTrans1C * Liver_protein_mg * 60 * SFLiver * MW * 1e-6    # µg/h
+
+# Transper 2 - OATP1B3
+KMLiverTrans2= 91.61        # µg/L
+VmaxLiverTrans2C= 2694      # pmol/mgprotein * min
+VmaxLiverTrans2 := VmaxLiverTrans2C * Liver_protein_mg * 60 * SFLiver * MW * 1e-6   # µg/h
+
+# Transper 3 - OATP2B1
+KMLiverTrans3 = 148.68      # µg/L
+VmaxLiverTrans3C = 1493     # pmol/mgprotein * min
+VmaxLiverTrans3 := VmaxLiverTrans3C * Liver_protein_mg * 60 * SFLiver * MW * 1e-6   # µg/h
+
+# Transper 4 - NTCP
+KMLiverTrans4 = 458.72      # µg/L
+VmaxLiverTrans4C = 2995     # pmol/mgprotein * min
+VmaxLiverTrans4 := VmaxLiverTrans4C * Liver_protein_mg * 60 * SFLiver * MW * 1e-6   # µg/h
+
+#------------------------
+# Compartments
+#------------------------
+
+compartment Stomach;   Stomach = 1
+compartment GILumen;   GILumen = 1
+compartment GI_Int;    GI_Int     := (VGI * (BVGI_Int + BVGI_Vas))
+compartment GI_RBC;    GI_RBC     := (VGI * BVGI_Vas)
+compartment GI_Cell;   GI_Cell    := (VGI * BVGI_Cell)
+
+compartment PortalVein_Int;   PortalVein_Int     = VPV
+compartment PortalVein_RBC;   PortalVein_RBC     = VPV
+
+compartment Blood_Int;     Blood_Int  = VBlood
+compartment Blood_RBC;     Blood_RBC  = VBlood
+
+compartment Liver_Int;     Liver_Int  := (VLiver* (BVLiver_Int + BVLiver_Vas))
+compartment Liver_RBC;     Liver_RBC  := (VLiver * BVLiver_Vas)
+compartment Liver_Cell;    Liver_Cell := (VLiver * BVLiver_Cell)
+
+compartment Spleen_Int;    Spleen_Int := (VSpleen * (BVSpleen_Int + BVSpleen_Vas))
+compartment Spleen_RBC;    Spleen_RBC := (VSpleen * BVLSpleen_Vas)
+compartment Spleen_Cell;   Spleen_Cell = VSpleen * BVSpleen_Cell
+
+compartment Pancreas_Int;  Pancreas_Int := VPanc * (BVPanc_Int + BVPanc_Vas)
+compartment Pancreas_RBC;  Pancreas_RBC := VPanc + BVPanc_Vas
+compartment Pancreas_Cell;  Pancreas_Cell := VPanc * BVPanc_Cell
+
+compartment Rest_Int;      Rest_Int := VRest * (BVRest_Int + BVRest_Vas)
+compartment Rest_RBC;      Rest_RBC := VRest+ BVRest_Vas
+compartment Rest_Cell;     Rest_Cell := VRest * BVRest_Cell
+
+compartment Bile;   Bile    = 1
+compartment Feces;   Feces  = 1
+
+#------------------------
+# Species (amounts)
+#------------------------
+substanceOnly species ASt  in Stomach
+substanceOnly species AGILumen  in GILumen
+
+substanceOnly species AGI_Int  in GI_Int   # plasma + interstitial
+substanceOnly species AGI_RBC  in GI_RBC    # vascular RBC
+substanceOnly species AGI_Cell in GI_Cell    # enterocytes
+
+substanceOnly species APV_Int  in PortalVein_Int   # plasma + interstitial
+substanceOnly species APV_RBC  in PortalVein_RBC   # vascular RBC
+
+substanceOnly species ABlood_Int  in Blood_Int   # plasma + interstitial
+substanceOnly species ABlood_RBC  in Blood_RBC   # vascular RBC
+
+substanceOnly species ALiver_Int  in Liver_Int   # plasma + interstitial
+substanceOnly species ALiver_RBC  in Liver_RBC   # vascular RBC
+substanceOnly species ALiver_Cell in Liver_Cell   # hepatocytes
+
+substanceOnly species ALiverTrans1  in Liver_Cell
+substanceOnly species ALiverTrans2  in Liver_Cell
+substanceOnly species ALiverTrans3  in Liver_Cell
+substanceOnly species ALiverTrans4  in Liver_Cell
+
+substanceOnly species ASpleen_Int  in Spleen_Int   # plasma + interstitial
+substanceOnly species ASpleen_RBC  in Spleen_RBC   # vascular RBC
+substanceOnly species ASpleen_Cell in Spleen_Cell   # cellular
+
+substanceOnly species APanc_Int  in Pancreas_Int   # plasma + interstitial
+substanceOnly species APanc_RBC  in Pancreas_RBC   # vascular RBC
+substanceOnly species APanc_Cell in Pancreas_Cell   # cellular
+
+substanceOnly species ARest_Int  in Rest_Int   # plasma + interstitial
+substanceOnly species ARest_RBC  in Rest_RBC   # vascular RBC
+substanceOnly species ARest_Cell in Rest_Cell   # cellular
+
+substanceOnly species ABile in Bile
+substanceOnly species AFeces in Feces
+
+#------------------------
+# Initial conditions
+#------------------------
+ASt = 0;
+AGILumen = 0;
+
+AGI_Int = 0;
+AGI_RBC = 0;
+AGI_Cell = 0;
+
+APV_Int = 0;
+APV_RBC = 0;
+
+ABlood_Int  = 0;
+ABlood_RBC  = 0;
+
+ALiver_Int  = 0;
+ALiver_RBC  = 0;
+ALiver_Cell = 0;
+
+ALiverTrans1  = 0;
+ALiverTrans2  = 0;
+ALiverTrans3  = 0;
+ALiverTrans4  = 0;
+
+ASpleen_Int  = 0;
+ASpleen_RBC  = 0;
+ASpleen_Cell = 0;
+
+APanc_Int  = 0;
+APanc_RBC  = 0;
+APanc_Cell = 0;
+
+ARest_Int  = 0;
+ARest_RBC  = 0;
+ARest_Cell = 0;
+
+ABile in Bile = 0;
+AFeces in Feces = 0;
+
+#------------------------
+# Concentrations
+#------------------------
+
+CGI_Int := AGI_Int/(VGI * (BVGI_Int + BVGI_Vas) * (1 - Hct))
+CGI_RBC := AGI_RBC/(VGI * BVGI_Vas * Hct)
+CGI_Cell := AGI_Cell/(VGI * BVGI_Cell)
+
+CPV_Int := APV_Int/VPV
+CPV_RBC := APV_RBC/VPV
+
+CBlood_Int := ABlood_Int/VBlood
+CBlood_RBC := ABlood_RBC/VBlood
+
+CLiver_Int := ALiver_Int/VLiver_Int
+CLiver_RBC := ALiver_RBC/VLiver_RBC
+CLiver_Cell := ALiver_Cell/VLiver_Cell
+
+CSpleen_Int := ASpleen_Int/(VSpleen * (BVSpleen_Int + BVSpleen_Vas) * (1 - Hct))
+CSpleen_RBC := ASpleen_RBC/(VSpleen * BVSpleen_Vas * Hct)
+CSpleen_Cell := ASpleen_Cell/(VSpleen * BVSpleen_Cell)
+
+CPanc_Int := APanc_Int/(VPanc * (BVPanc_Int + BVPanc_Vas) * (1 - Hct))
+CPanc_RBC := APanc_RBC/(VPanc * BVPanc_Vas * Hct)
+CPanc_Cell := APanc_Cell/(VPanc * BVPanc_Cell)
+
+CRest_Int := ARest_Int/(VRest * (BVRest_Int + BVRest_Vas) * (1 - Hct))
+CRest_RBC := ARest_RBC/(VRest * BVRest_Vas * Hct)
+CRest_Cell := ARest_Cell/(VRest * BVRest_Cell)
+
+#------------------------
+# Reactions / Transfers - Stomach & Lumen
+#------------------------
+
+ASt   -> AGILumen;        	ksto * ASt
+
+AGILumen  -> AFeces;      	kunabs * AGILumen
+AGILumen -> AGI_Int; 		kabs * AGILumen
+
+#------------------------
+# Permeability & Perfusion-limited - Gut
+#------------------------
+
+# Inflow from Arterial sub-compartments - Perfusion-limited
+ABlood_Int -> AGI_Int;		QGI * (1 - Hct) * CBlood_Int
+ABlood_RBC -> AGI_RBC;		QGI * Hct * CBlood_RBC
+
+# Diffusion-limited: Int <-> RBC & Int <-> Cell
+AGI_Int -> AGI_RBC; 		PSAL_GI_RBC * Free * CGI_Int
+AGI_RBC -> AGI_Int; 		PSAL_GI_RBC * Free * CGI_RBC/P_RBC
+
+AGI_Int -> AGI_Cell; 		PSAL_GI_Cell * Free * CGI_Int
+AGI_Cell -> AGI_Int; 		PSAL_GI_Cell * Free * CGI_Cell/PGI
+
+# Outflow to portal vein sub-compartments - Perfusion-limited
+AGI_Int -> APV_Int; 		QGI * (1 - Hct) * CGI_Int
+AGI_RBC -> APV_RBC; 		QGI * Hct * CGI_RBC
+
+#------------------------
+# Permeability & Perfusion-limited - Portal Vein
+#------------------------
+
+# Diffusion-limited: Int <-> RBC
+APV_Int -> APV_RBC;         PSAL_PV_RBC * Free * CPV_Int
+APV_RBC -> APV_Int;         PSAL_PV_RBC * Free * CPV_RBC/PPV
+
+
+# Outflow to liver sub-compartments
+APV_Int -> ALiver_Int;      QPV * (1 - Hct) * CPV_Int
+APV_RBC -> ALiver_RBC;      QPV * Hct * CPV_RBC
+
+#------------------------
+# Permeability & Perfusion-limited - Liver
+#------------------------
+
+# Inflow from Int sub-compartments (arterial, spleen & pancreas) - Perfusion-limited
+ABlood_Int -> ALiver_Int;	QLiver * (1 - Hct) * CBlood_Int
+ASpleen_Int -> ALiver_Int;	QSpleen * (1 - Hct) * CSpleen_Int
+APanc_Int -> ALiver_Int;	QPanc * (1 - Hct) * CPanc_Int
+
+# Inflow from RBC  sub-compartments (arterial, spleen & pancreas) - Perfusion-limited
+ABlood_RBC -> ALiver_RBC;	QLiver * Hct * CBlood_RBC
+ASpleen_RBC -> ALiver_RBC;	QSpleen * Hct * CSpleen_RBC
+APanc_RBC -> ALiver_RBC;	QPanc * Hct * CPanc_RBC
+
+# Diffusion-limited: Int <-> RBC & Int <-> Cell
+ALiver_Int -> ALiver_RBC;   PSAL_Liver_RBC * Free * CLiver_Int
+ALiver_RBC -> ALiver_Int;   PSAL_Liver_RBC * Free * CLiver_RBC/P_RBC
+
+ALiver_Int -> ALiver_Cell;  PSAL_Liver_Cell * Free * CLiver_Int
+ALiver_Cell -> ALiver_Int;  PSAL_Liver_Cell * Free * CLiver_Cell/PLiver
+
+# Transporter: Liver_Int -> Liver_Cell
+ALiverTrans1 = (VmaxLiverTrans1 * CLiver_Int)/(KMLiverTrans1 + CLiver_Int)  # OATP1B1
+ALiverTrans2 = (VmaxLiverTrans2 * CLiver_Int)/(KMLiverTrans2 + CLiver_Int)  # OATP1B3
+ALiverTrans3 = (VmaxLiverTrans3 * CLiver_Int)/(KMLiverTrans3 + CLiver_Int)  # OATP2B1
+ALiverTrans4 = (VmaxLiverTrans4 * CLiver_Int)/(KMLiverTrans4 + CLiver_Int)  # NTCP
+ALiver_Int -> ALiver_Cell;	ALiverTrans1 + ALiverTrans2 + ALiverTrans3 + ALiverTrans4
+
+# Biliary Excretion
+ALiver_Int -> ABile;        kbiliary * ALiver_Int
+ABile -> ABlood_Int;        kbiliary_efflux * ABile
+ABile -> AFeces;            kfe * ABile
+
+# Outflow from Int and RBC  sub-compartments - perfusion limited
+ALiver_RBC -> ABlood_RBC;   (QLiver + QPV + QPanc + QSpleen) * Hct * CLiver_RBC
+ALiver_Int -> ABlood_Int;   (QLiver + QPV + QPanc + QSpleen) * (1-Hct) * CLiver_Int
+
+#------------------------
+# Permeability & Perfusion-limited - Spleen, Pancreas, Rest of Body
+#------------------------
+# Inflows - Perfusion-limited
+ABlood_Int -> ASpleen_Int;	QSpleen * (1 - Hct) * CBlood_Int
+ABlood_Int -> APanc_Int;	QPanc * (1 - Hct) * CBlood_Int
+ABlood_Int -> ARest_Int;	QRest * (1 - Hct) * CBlood_Int
+
+ABlood_RBC -> ASpleen_RBC;	QSpleen * Hct * CBlood_RBC
+ABlood_RBC -> APanc_RBC;	QPanc * Hct * CBlood_RBC
+ABlood_RBC -> ARest_RBC;	QRest * Hct * CBlood_RBC
+
+# Diffusion-limited: Int <-> RBC & Int <-> Cell
+# Spleen
+ASpleen_Int -> ASpleen_RBC;     PSAL_Spleen_RBC * Free * CSpleen_Int
+ASpleen_RBC -> ASpleen_Int;     PSAL_Spleen_RBC * Free * CSpleen_RBC/P_RBC
+
+ASpleen_Int -> ASpleen_Cell;    PSAL_Spleen_Cell * Free * CSpleen_Int
+ASpleen_Cell -> ASpleen_Int;    PSAL_Spleen_Cell * Free * CSpleen_Cell/PSpleen
+
+# Pancreas
+APanc_Int -> APanc_RBC;     PSAL_Panc_RBC * Free * CPanc_Int
+APanc_RBC -> APanc_Int;     PSAL_Panc_RBC * Free * CPanc_RBC/P_RBC
+
+APanc_Int -> APanc_Cell;    PSAL_Panc_Cell * Free * CPanc_Int
+APanc_Cell -> APanc_Int;    PSAL_Panc_Cell * Free * CPanc_Cell/PPanc
+
+# Rest of Body
+ARest_Int -> ARest_RBC;     PSAL_Rest_RBC * Free * CRest_Int
+ARest_RBC -> ARest_Int;     PSAL_Rest_RBC * Free * CRest_RBC/P_RBC
+
+ARest_Int -> ARest_Cell;    PSAL_Rest_Cell * Free * CRest_Int
+ARest_Cell -> ARest_Int;    PSAL_Rest_Cell * Free * CRest_Cell/PRest
+
+end
