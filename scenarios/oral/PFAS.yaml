@@ -13,7 +13,7 @@ model_instances:
     model_path: models/oral/PFAS/ChouLin/ChouLin.sbml
     param_file: models/oral/PFAS/ChouLin/ChouLin.params.csv
     target_mappings:
-      Oral: ASt
+      Oral: AST
       APlasma: APlasma
   - id: Deepika2021
     label: Deepika 2021
