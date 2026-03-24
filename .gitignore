@@ -129,8 +129,11 @@ docs/models-overview.md
 
 # Test outputs
 __testoutputs__/
-
 __generate_term_definitions__
 
 # Git
 .orig
+
+# Misc
+*.DS_Store
+
