@@ -205,11 +205,19 @@
          <lastmod>2026-03-25</lastmod>
     </url>
     <url>
-         <loc>https://fair-pbk.github.io/exposure-route-pbk-models/simulation/oral/PFOA/</loc>
+         <loc>https://fair-pbk.github.io/exposure-route-pbk-models/simulation/oral/Bisphenols/BPA/</loc>
          <lastmod>2026-03-25</lastmod>
     </url>
     <url>
-         <loc>https://fair-pbk.github.io/exposure-route-pbk-models/simulation/oral/PFOS/</loc>
+         <loc>https://fair-pbk.github.io/exposure-route-pbk-models/simulation/oral/PFAS/PFOA/</loc>
+         <lastmod>2026-03-25</lastmod>
+    </url>
+    <url>
+         <loc>https://fair-pbk.github.io/exposure-route-pbk-models/simulation/oral/PFAS/PFOS/</loc>
+         <lastmod>2026-03-25</lastmod>
+    </url>
+    <url>
+         <loc>https://fair-pbk.github.io/exposure-route-pbk-models/simulation/oral/Pesticides/CPS/</loc>
          <lastmod>2026-03-25</lastmod>
     </url>
 </urlset>

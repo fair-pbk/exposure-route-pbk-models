@@ -1,14 +1,8 @@
-id: Sharma_2018_BisphenolA_Human
+id: Sharma2018_BPA_Human
 name: ''
 applicability_domain:
-  chemicals:
-  - id: CHEBI:33216
-    label: bisphenol A
-    iri: http://purl.obolibrary.org/obo/CHEBI_33216
-  species:
-  - id: NCBITaxon:9606
-    label: Homo sapiens
-    iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
+  chemicals: []
+  species: []
 num_compartments: 5
 num_species: 8
 num_parameters: 38

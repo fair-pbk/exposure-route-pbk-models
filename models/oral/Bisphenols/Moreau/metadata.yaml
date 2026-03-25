@@ -1,14 +1,8 @@
-id: Moreau_BPA_Human
+id: Moreau2025_BPA_Human
 name: ''
 applicability_domain:
-  chemicals:
-  - id: CHEBI:33216
-    label: bisphenol A
-    iri: http://purl.obolibrary.org/obo/CHEBI_33216
-  species:
-  - id: NCBITaxon:9606
-    label: Homo sapiens
-    iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
+  chemicals: []
+  species: []
 num_compartments: 7
 num_species: 9
 num_parameters: 37
