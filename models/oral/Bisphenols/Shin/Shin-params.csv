@@ -1,9 +1,0 @@
-idModelInstance,Parameter,Value,Unit,Description,Reference
-Shin2004_BPA_Human_PARAM,BW,70.0,kg,body weight,
-Shin2004_BPA_Human_PARAM,RBS,1.1,dimensionless,Blood serum ratio,
-Shin2004_BPA_Human_PARAM,PL,5.7,dimensionless,Partition coefficient - liver,
-Shin2004_BPA_Human_PARAM,PSpleen,2.8,dimensionless,Partition coefficient - spleen,
-Shin2004_BPA_Human_PARAM,PSt,4.6,dimensionless,Partition coefficient - stomach,
-Shin2004_BPA_Human_PARAM,PSI,45.96,dimensionless,Partition coefficient - small intestine,
-Shin2004_BPA_Human_PARAM,PRest,1.0,dimensionless,Partition coefficient - rest of body,
-Shin2004_BPA_Human_PARAM,CLint,116.6,L/h,Hepatic intrinsic clearance,

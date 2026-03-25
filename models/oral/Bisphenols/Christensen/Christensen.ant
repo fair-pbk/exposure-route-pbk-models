@@ -9,14 +9,12 @@ BPA PBPK (adult) after Christensen et al. 2013
 ```
 model description "10.1038/jes.2013.81"
 
-
 #------------------------
 # Body size & base volumes 
 #------------------------
+
 BW = 60
 VD     = 0.15                   # L/kg (apparent blood volume of distribution)     
-
-
 
 #------------------------
 # Flows - not applicable
@@ -25,34 +23,31 @@ VD     = 0.15                   # L/kg (apparent blood volume of distribution)
 #------------------------
 # Tissue:blood partitions - not applicable
 #------------------------
-           
 
 #------------------------
 # Absorption
 #------------------------
+
 F1      = 1                    # fixed value - Fractional constants
 F2      = 1                    # fixed value - Fractional constants
 k1	:= 0.9/60	 	# Elemination constant 1/min
 k2	:= 0.9/60 	 	# Elemination constant 1/min
 
-
 #------------------------
 # Compartments
 #------------------------
+
 compartment Stomach;       Stomach = 1			
 compartment Blood;         Blood   := VD * BW
 compartment Bladder;       Bladder = 1
 
-
-
-
 #------------------------
 # Species (amounts)
 #------------------------
+
 substanceOnly species ASt   in Stomach
 substanceOnly species ABlood in Blood
 substanceOnly species AExcr in Bladder
- 
 
 #------------------------
 # Initial conditions
@@ -62,20 +57,17 @@ ASt   = 0
 ABlood  = 0
 AExcr = 0
 
-
-
 #------------------------
 # Concentrations 
 #------------------------
-CBlood := ABlood / Blood
 
+CBlood := ABlood / Blood
 
 #------------------------
 # Reactions / Transfers
 #------------------------
 
 ASt -> ABlood;     F1*k1*ASt
-
 ABlood -> AExcr;    F2*k2*ABlood
 
 end

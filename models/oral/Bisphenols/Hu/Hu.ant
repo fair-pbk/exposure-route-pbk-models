@@ -17,31 +17,27 @@ model description "https://www.ncbi.nlm.nih.gov/pubmed/36649768"
 # ------------------------
 # Body size
 # ------------------------
-BW   = 60                                    # kg
+
+BW   = 60           # kg
 VLc  = 0.0233
 VPlasmac = 0.04
-
 VL   := VLc*BW
 VPlasma := VPlasmac*BW
-
 VRest := 0.84*BW - VL - VPlasma
-
 
 # Small-intestinal enterocyte “processing” volume (for gut glucuronidation)
 enterocytes = 0.1223       # L (volume of distribution in SI)
 
-
-
 # ------------------------
 # Cardiac output & flows
 # ------------------------
+
 QC  = 354                 # L/h
 # Flow fractions; adjust to sum ≤ 1
 QLc = 0.24;
 
 # Flows:
 QL := QLc*QC;
-
 QRest := QC - QL
 
 # ------------------------
@@ -106,7 +102,6 @@ KmGILumenMet2   = 10100  				# nM
 VmaxGILumenMet2c = 149          			# nmol/h/kg liver
 VmaxGILumenMet2  := fGutMet2 * BW^0.75 * (VmaxGILumenMet2c * BW/ BW^0.75)     	# nmol/h
 
-
 #------------------------
 # Hepatic metabolism - Met1 - BPAG, Met2 - BPAS
 #------------------------
@@ -125,7 +120,6 @@ KmLMet2   = 10100                              # nM  (hepatic sulfation Km)
 VmaxLMet2c= 149                                # nmol/h/g liver (hepatic sulfation Vmax)
 VmaxLMet2 := fLiverMet2 * BW^0.75 * (VmaxLMet2c * VLc * 1000 * BW/ BW^0.75)         # nmol/h
 
-
 #------------------------
 # Compartments
 #------------------------
@@ -137,7 +131,6 @@ compartment Rest;             Rest    = VRest
 compartment GILumen;          GILumen   = 1
 compartment Feces;            Feces    = 1
 
-
 #------------------------
 # Species (amounts; BPA unless noted)
 #------------------------
@@ -148,7 +141,6 @@ substanceOnly species APlasma    in Plasma
 substanceOnly species ARest      in Rest
 substanceOnly species AGILumen   in GILumen
 substanceOnly species AFeces     in Feces
-
 
 # Conjugates - Met1 - BPAG, Met2 - BPAS
 substanceOnly species ASIMet1 in SI			#BPA to BPAG
@@ -174,7 +166,6 @@ APlasma = 0;
 ARest = 0;
 AGILumen = 0;
 AFeces = 0;
-
 
 ASIMet1= 0;
 ASIMet2 = 0;
@@ -238,8 +229,6 @@ APVMet1 -> APlasmaMet1;  (1-BileFracSIMet1)* APVMet1
 # 10% of BPAG is secreted by the bile duct
 APVMet1 -> AGILumenMet1;   BileFracSIMet1* APVMet1
 
-
-
 # B) Small Intestine  → Sulfation → BPA to BPAS in "enterocytes”
 ASI -> ASIMet2;  (VmaxGILumenMet2 * CGut/ (KmGILumenMet2 + CGut))
 
@@ -251,7 +240,6 @@ APVMet2 -> APlasmaMet2; (1-BileFracSIMet2)*APVMet2
 
 # 0% of BPAS secreted by bile duct
 APVMet2 -> AGILumenMet2;   BileFracSIMet2 * APVMet2
-
 
 #------------------------
 # Hepatic Metabolism
@@ -310,7 +298,5 @@ AGILumenMet2 -> AFecesMet2; AGILumenMet2 * kfeMet
 
 # Uptake rate of BPA into the liver from the gut (EHR compartment for BPAG)
 AGILumenMet2 -> ALiver; AGILumenMet2 * kehrMet2
-
-
 
 end

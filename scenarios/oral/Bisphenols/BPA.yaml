@@ -1,0 +1,165 @@
+id: BPA
+label: BPA
+model_instances:
+  - id: Mielke
+    label: Mielke 2009
+    model_path: models/oral/Bisphenols/Mielke/Mielke.sbml
+    param_file: models/oral/Bisphenols/Mielke/Mielke.params.csv
+    target_mappings:
+      Oral: AGut
+      ABlood: ABlood
+      CBlood: '[ABlood]'
+  - id: Teeguarden
+    label: Teeguarden 2005
+    model_path: models/oral/Bisphenols/Teeguarden/Teeguarden.sbml
+    param_file: models/oral/Bisphenols/Teeguarden/Teeguarden.params.csv
+    target_mappings:
+      Oral: AGILumen
+      ABlood: ABlood
+      CBlood: '[ABlood]'
+  - id: Yang
+    label: Yang 2015
+    model_path: models/oral/Bisphenols/Yang/Yang.sbml
+    param_file: models/oral/Bisphenols/Yang/Yang.params.csv
+    target_mappings:
+      Oral: ASt
+      ABlood: APlasma
+      CBlood: '[APlasma]'
+  - id: Moreau
+    label: Moreau 2025
+    model_path: models/oral/Bisphenols/Moreau/Moreau.sbml
+    param_file: models/oral/Bisphenols/Moreau/Moreau.params.csv
+    target_mappings:
+      Oral: ASt
+      ABlood: APlasma
+      CBlood: '[APlasma]'
+  - id: Shin
+    label: Shin 2004
+    model_path: models/oral/Bisphenols/Shin/Shin.sbml
+    param_file: models/oral/Bisphenols/Shin/Shin.params.csv
+    target_mappings:
+      Oral: ASt
+      ABlood: ABlood
+      CBlood: '[ABlood]'
+#  - id: Deepika
+#    label: Deepika 2022
+#    model_path: models/oral/Bisphenols/Deepika/Deepika.sbml
+#    param_file: models/oral/Bisphenols/Deepika/Deepika.params.csv
+#    target_mappings:
+#      Oral: ASt
+#      ABlood: APlasma
+#      CBlood: '[APlasma]'
+#  - id: Christensen
+#    label: Christensen 2025
+#    model_path: models/oral/Bisphenols/Christensen/Christensen.sbml
+#    param_file: models/oral/Bisphenols/Christensen/Christensen.params.csv
+#    target_mappings:
+#      Oral: ASt
+#      ABlood: ABlood
+#      CBlood: '[ABlood]'
+  - id: Karrer
+    label: Karrer 2018
+    model_path: models/oral/Bisphenols/Karrer/Karrer.sbml
+    param_file: models/oral/Bisphenols/Karrer/Karrer.params.csv
+    target_mappings:
+      Oral: ASt
+      ABlood: APlasma
+      CBlood: '[APlasma]'
+  - id: Hu
+    label: Hu 2023
+    model_path: models/oral/Bisphenols/Hu/Hu.sbml
+    param_file: models/oral/Bisphenols/Hu/Hu.params.csv
+    target_mappings:
+      Oral: ASt
+      ABlood: APlasma
+      CBlood: '[APlasma]'
+
+scenarios:
+  - id: BPA_scenario_1
+    label: BPA Scenario 1
+    duration: 50
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 228.3
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 6
+        time: 0
+        interval: 1
+    outputs:
+      - id: ABlood
+        label: Amount in Blood
+        output: ABlood
+      - id: CBlood
+        label: Concentration in Blood
+        output: CBlood
+  - id: BPA_scenario_2
+    label: BPA Scenario 2
+    duration: 50
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 228.3
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 0.03
+        time: 0
+        interval: 1
+    outputs:
+      - id: ABlood
+        label: Amount in Blood
+        output: ABlood
+      - id: CBlood
+        label: Concentration in Blood
+        output: CBlood
+  - id: BPA_scenario_3
+    label: BPA Scenario 3
+    duration: 50
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 228.3
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 0.09
+        time: 0
+        interval: 1
+    outputs:
+      - id: ABlood
+        label: Amount in Blood
+        output: ABlood
+      - id: CBlood
+        label: Concentration in Blood
+        output: CBlood
+  - id: BPA_scenario_4
+    label: BPA Scenario 4
+    duration: 50
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 228.3
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 60
+        time: 0
+        interval: 1
+    outputs:
+      - id: ABlood
+        label: Amount in plasma
+        output: ABlood
+      - id: CBlood
+        label: Concentration in plasma
+        output: CBlood

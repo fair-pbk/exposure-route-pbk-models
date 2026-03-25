@@ -1,4 +1,4 @@
-model Deepika_2022_BisphenolA_Human()
+model Deepika2022_BPA_Human()
 
 #Created: Carolina Vogs, September 2025
 #Checked: Paris Mertzimekis, December 2025
@@ -16,15 +16,15 @@ model Deepika_2022_BisphenolA_Human()
 #------------------------
 # Body size & base volumes
 #------------------------
-BW   = 70                       # kg
-VLc  = 0.026                    # L/kg (liver)
-VPlasmac  = 0.0428              # L/kg (plasma)
-VGc  = 0.017			# L/kg (gut)
+BW          = 70                    # kg
 
-VL   := VLc*BW                  # L
+VLc         = 0.026                 # L/kg (liver)
+VPlasmac    = 0.0428                # L/kg (plasma)
+VGc         = 0.017                 # L/kg (gut)
+
+VL      := VLc*BW               # L
 VPlasma := VPlasmac*BW          # L
-VG = VGc*BW           		# L
-
+VG      := VGc*BW               # L
 VRest := 0.84*BW - VL - VPlasma - VG  # Lumped Rest-of-body volume L 
 
 #------------------------
@@ -33,7 +33,7 @@ VRest := 0.84*BW - VL - VPlasma - VG  # Lumped Rest-of-body volume L
 QC    = 20*BW^0.75            # L/h (cardiac output)
 QLc   = 0.25
 QGc   = 0.016
-	
+
 QL    = QLc*QC                # L/h (liver)
 QG    = QGc*QC                # L/h (gut)
 QRest = (1 - QLc - QGc)*QC    # L/h (rest)
@@ -54,7 +54,6 @@ ksto = kstoC * BW ^(-0.25)	# L/h
 kabsC        = 9                # L/h/kg^(-0.25)
 kabs = kabsC * BW ^(-0.25)	# L/h
 
-
 #------------------------
 # Intestinal metabolism - Michaelis-Menten Kinetic
 #------------------------
@@ -73,7 +72,6 @@ VmaxLMet2C = 149			# nmol/h/g liver
 VmaxLMet2 := 11657/(1000 * BW^0.75)	# µmol/h/kg
 KmLMet2 = 10.1				# µmol
 
-
 #------------------------
 # Partition coefficients
 #------------------------
@@ -89,7 +87,6 @@ compartment Plasma;  Plasma = VPlasma
 compartment Gut;  Gut = VG
 compartment Rest;    Rest  = VRest
  
-
 #------------------------
 # Species (amount states)
 #------------------------
@@ -104,7 +101,6 @@ substanceOnly species ARest  in Rest
 substanceOnly species AGutMet1   in Gut
 substanceOnly species ALiverMet1   in Liver
 substanceOnly species ALiverMet2  in Liver
-
 
 #------------------------
 # Initial conditions
@@ -147,9 +143,7 @@ APlasma   -> ARest;    QRest * CPlasma * fup
 ARest  	-> APlasma;    QRest * fup * CRest/PRest
 
 # Hepatic Metabolism
-
 ALiver -> ALiverMet1 ; VmaxLMet1 * CLiver * fup/ ((CLiver * fup) + KmLMet1)        # Glu
 ALiver -> ALiverMet2;  VmaxLMet2 * CLiver * fup/ ((CLiver * fup) + KmLMet2)        # Sul
-
 
 end

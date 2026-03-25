@@ -21,7 +21,7 @@ BW   = 5            # kg
 VLc  = 0.03
 VPlasmac = 0.0627
 
-VL   := VLc*BW
+VL      := VLc*BW
 VPlasma := VPlasmac*BW
 
 VRest := BW - VL - VPlasma
@@ -36,9 +36,8 @@ QC  := 15.87*BW^0.75            # L/h
 QLc = 0.194;
 
 # Flows:
-QL := QLc * QC;                 # L/h
-
-QRest := QC - QL                # L/h
+QL      := QLc * QC;            # L/h
+QRest   := QC - QL              # L/h
 
 # ------------------------
 # Tissue:serum partition coefficients
@@ -66,65 +65,63 @@ kfe := kfeC / BW^(0.25)		# 1/h
 # Parameters for Met1 and Met2 including EHR for Met1
 # Met1 - BPAG, Met2 - BPAS
 
-kfeMet1C = 0				# (1/h/BW^(-0.25) Fecal elimination of BPGA from small intestine
-kfeMet1 := kfeMet1C / BW^(0.25)		# 1/h
+kfeMet1C = 0                        # (1/h/BW^(-0.25) Fecal elimination of BPGA from small intestine
+kfeMet1 := kfeMet1C / BW^(0.25)     # 1/h
 
-kabsMet1C = 50				# (1/h/BW^-0.25)|Transport of BPAG from enterocytes into serum
-kabsMet1 := kabsMet1C / BW^(0.25) 	# 1/h
+kabsMet1C = 50                      # (1/h/BW^-0.25)|Transport of BPAG from enterocytes into serum
+kabsMet1 := kabsMet1C / BW^(0.25)   # 1/h
 
-kabsMet2C = 0				# (1/h/BW^-0.25)|Transport of BPAS from enterocytes into serum
-kabsMet2 := kabsMet2C / BW^(0.25) 	# 1/h
+kabsMet2C = 0                       # (1/h/BW^-0.25)|Transport of BPAS from enterocytes into serum
+kabsMet2 := kabsMet2C / BW^(0.25)   # 1/h
 
-EHRrateC = 0.2; 			# (1/h/bw^-0.25) EHR of BPAG
-EHRrate := EHRrateC / BW^(0.25)		# 1/h
+EHRrateC = 0.2;                     # (1/h/bw^-0.25) EHR of BPAG
+EHRrate := EHRrateC / BW^(0.25)     # 1/h
 
-kehrMet1C = 0	 			# (1/h/bw^-0.25) EHR of BPA due to biliary excretion of BPAG
-kehrMet1 := kehrMet1C / BW^(0.25)	#1/h
+kehrMet1C = 0                       # (1/h/bw^-0.25) EHR of BPA due to biliary excretion of BPAG
+kehrMet1 := kehrMet1C / BW^(0.25)   # 1/h
 
-kehrMet2C = 0	 			# (1/h/bw^-0.25) EHR of BPA due to biliary excretion of BPAS
-kehrMet2 := kehrMet2C / BW^(0.25)	# 1/h
+kehrMet2C = 0                       # (1/h/bw^-0.25) EHR of BPA due to biliary excretion of BPAS
+kehrMet2 := kehrMet2C / BW^(0.25)   # 1/h
 
 #------------------------
 # Intestinal metabolism
 #------------------------
 # Met1 - BPAG, Met2 - BPAS
 
-BileFracSIMet1 = 0.1			# 10% of formed BPAG goes to bile
-BileFracSIMet2 = 0			# 0% of formed BPAS goes to bile
+BileFracSIMet1 = 0.1            # 10% of formed BPAG goes to bile
+BileFracSIMet2 = 0              # 0% of formed BPAS goes to bile
 
 # GI glucuronidation of BPA in the small intestine
-fGutMet1 = 1 							# correction factor
-KmGILumenMet1   = 58400                                 	# nM   (GI glucuronidation Km)
-VmaxGILumenMet1c = 22750                               		# nmol/h/BW^0.75
+fGutMet1 = 1                                    # correction factor
+KmGILumenMet1   = 58400                         # nM   (GI glucuronidation Km)
+VmaxGILumenMet1c = 22750                        # nmol/h/BW^0.75
 VmaxGILumenMet1 := fGutMet1 * VmaxGILumenMet1c * BW^0.75 	# nmol/h
 
 # GI sulfation of BPA in the small intestine - not modelled
-fGutMet2 = 0 							# correction factor
-KmGILumenMet2   = 4700						# nM
-VmaxGILumenMet2c = 0          					# nmol/h/kg^0.75 (GI Vmax)
-VmaxGILumenMet2  := fGutMet2 * VmaxGILumenMet2c * BW^0.75      	# nmol/h
-
+fGutMet2 = 0                                    # correction factor
+KmGILumenMet2   = 4700                          # nM
+VmaxGILumenMet2c = 0                            # nmol/h/kg^0.75 (GI Vmax)
+VmaxGILumenMet2  := fGutMet2 * VmaxGILumenMet2c * BW^0.75   # nmol/h
 
 #------------------------
 # Hepatic metabolism
 #------------------------
 # Met1 - BPAG, Met2 - BPAS
 
-BileFracLMet1 = 0.1		# 10% of formed BPAG goes to bile
-BileFracLMet2 = 0		# 0% of formed BPAS goes to bile
+BileFracLMet1 = 0.1         # 10% of formed BPAG goes to bile
+BileFracLMet2 = 0           # 0% of formed BPAS goes to bile
 
 # Glucuronidation of BPA in the liver
-fLiverMet1 = 1 						# correction factor
-KmLMet1    = 45800                             		# nM  (hepatic glucuronidation Km)
-VmaxLMet1c = 707537                            		# nmol/h/kg^0.75
-VmaxLMet1 := fLiverMet1 *VmaxLMet1c  * BW^0.75  	# nmol/h
+fLiverMet1 = 1                                  # correction factor
+KmLMet1    = 45800                              # nM  (hepatic glucuronidation Km)
+VmaxLMet1c = 707537                             # nmol/h/kg^0.75
+VmaxLMet1 := fLiverMet1 *VmaxLMet1c  * BW^0.75  # nmol/h
 
 # Sulfation of BPA in the liver
 fLiverMet2 = 1 					   	# correction factor
 KmLMet2   = 4700                               		# nM  (hepatic sulfation Km)
 VmaxLMet2c= 0                                  		# nmol/h/kg^0.75
 VmaxLMet2 := fLiverMet2 * BW^0.75 * VmaxLMet2c         	# nmol/h
-
 
 #------------------------
 # Compartments
@@ -137,7 +134,6 @@ compartment Rest;             Rest    = VRest
 compartment GILumen;          GILumen   = 1
 compartment Feces;            Feces    = 1
 
-
 #------------------------
 # Species (amounts; BPA unless noted)
 #------------------------
@@ -148,7 +144,6 @@ substanceOnly species APlasma    in Plasma
 substanceOnly species ARest      in Rest
 substanceOnly species AGILumen   in GILumen
 substanceOnly species AFeces     in Feces
-
 
 # Conjugates
 substanceOnly species ASIMet1 in SI			#BPA to BPAG
@@ -237,8 +232,6 @@ APVMet1 -> APlasmaMet1;  (1-BileFracSIMet1)* APVMet1
 # 10% of BPAG is secreted by the bile duct
 APVMet1 -> AGILumenMet1;   BileFracSIMet1* APVMet1
 
-
-
 # B) Small Intestine  -> Sulfation -> BPA to BPAS in "enterocytes”
 ASI -> ASIMet2;  (VmaxGILumenMet2 * CGut/ (KmGILumenMet2 + CGut))
 
@@ -250,7 +243,6 @@ APVMet2 -> APlasmaMet2; (1-BileFracSIMet2)*APVMet2
 
 # 0% of BPAS secreted by the bile duct
 APVMet2 -> AGILumenMet2;   BileFracSIMet2 * APVMet2
-
 
 #------------------------
 # Hepatic Metabolism
@@ -309,7 +301,5 @@ AGILumenMet2 -> AFecesMet2; AGILumenMet2 * kfeMet1
 
 # Uptake rate of BPA into the liver from the gut (EHR compartment for BPAG)
 AGILumenMet2 -> ALiver; AGILumenMet2 * kehrMet2
-
-
 
 end
