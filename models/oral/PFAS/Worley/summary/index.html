@@ -2052,17 +2052,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#initial-assignments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Initial assignments
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2297,15 +2286,62 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oral
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Oral
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../../../simulation/oral/PFAS/" class="md-nav__link">
+      <a href="../../../../../simulation/oral/PFOA/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    PFAS
+    PFOA
   
 
     
@@ -2314,6 +2350,42 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../simulation/oral/PFOS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PFOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2446,7 +2518,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Number of parameters</td>
-<td style="text-align: left;">29 (24 external / 5 internal)</td>
+<td style="text-align: left;">29 (13 external / 16 internal)</td>
 </tr>
 </tbody>
 </table>
@@ -2646,37 +2718,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">VRest</td>
-<td style="text-align: left;">0.93 * BW - VL - VPlasma</td>
-</tr>
-<tr>
-<td style="text-align: left;">CLiver</td>
-<td style="text-align: left;">ALiver / Liver</td>
-</tr>
-<tr>
-<td style="text-align: left;">CPlasma</td>
-<td style="text-align: left;">APlasma / Plasma</td>
-</tr>
-<tr>
-<td style="text-align: left;">CPlasmaTotal</td>
-<td style="text-align: left;">CPlasma / Free</td>
-</tr>
-<tr>
-<td style="text-align: left;">CRest</td>
-<td style="text-align: left;">ARest / Rest</td>
-</tr>
-</tbody>
-</table>
-<h2 id="initial-assignments">Initial assignments</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">variable</th>
-<th style="text-align: left;">assignment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
 <td style="text-align: left;">Liver</td>
 <td style="text-align: left;">VL</td>
 </tr>
@@ -2695,6 +2736,10 @@
 <tr>
 <td style="text-align: left;">VPlasma</td>
 <td style="text-align: left;">VPlasmac * BW</td>
+</tr>
+<tr>
+<td style="text-align: left;">VRest</td>
+<td style="text-align: left;">0.93 * BW - VL - VPlasma</td>
 </tr>
 <tr>
 <td style="text-align: left;">QC</td>
@@ -2731,6 +2776,22 @@
 <tr>
 <td style="text-align: left;">kbiliary</td>
 <td style="text-align: left;">kbiliaryC * pow(BW, -0.25)</td>
+</tr>
+<tr>
+<td style="text-align: left;">CLiver</td>
+<td style="text-align: left;">ALiver / Liver</td>
+</tr>
+<tr>
+<td style="text-align: left;">CPlasma</td>
+<td style="text-align: left;">APlasma / Plasma</td>
+</tr>
+<tr>
+<td style="text-align: left;">CPlasmaTotal</td>
+<td style="text-align: left;">CPlasma / Free</td>
+</tr>
+<tr>
+<td style="text-align: left;">CRest</td>
+<td style="text-align: left;">ARest / Rest</td>
 </tr>
 </tbody>
 </table>
