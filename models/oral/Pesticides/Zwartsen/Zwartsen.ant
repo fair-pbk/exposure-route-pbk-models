@@ -6,7 +6,7 @@ model Zwartsen_2025_Chlorpyrifos_Human()
 model notes ```
 Chlorpyrifos PBK (Zwartsen et al 2025):
 ```
-model description "https://doi.org/10.14573/altex.2412051 "
+model description "https://doi.org/10.14573/altex.2412051"
 
 
 #------------------------
@@ -14,7 +14,7 @@ model description "https://doi.org/10.14573/altex.2412051 "
 #------------------------
 BW   = 70                       # kg
 VLc  = 0.0257                   # L/kg (liver)
-VBloodc  = 0.074          	# L/kg (Blood); sum of arterial and venous blood
+VBloodc  = 0.074                # L/kg (Blood); sum of arterial and venous blood
 
 VL   := VLc*BW                  # L
 VBlood := VBloodc*BW           	# L
@@ -24,44 +24,51 @@ VRest := 0.84*BW - VL - VBlood   # Lumped Rest-of-body volume L
 #------------------------
 # Blood Flows
 #------------------------
-QC    := 15*BW^0.74            # L/h (cardiac output)
+QC    := 15*BW^0.74             # L/h (cardiac output)
 QLc   = 0.227
 	
 QL    := QLc*QC                # L/h (liver)
 
-QRest := (1 - QLc )*QC    # L/h (rest)
+QRest := (1 - QLc )*QC         # L/h (rest)
 
 #------------------------
 # Absorption & hepatic metabolism
 #------------------------
-Fa = 0.35			# average fraction from literature
+Fa = 0.35                       # average fraction from literature
 
-Free = 0.021			# unbound fraction in plasma
-ksto 	 = 5.23755e-6		# 1/h stomach lumen -> Intestinal lumen
+Free = 0.021                    # unbound fraction in plasma
+ksto 	 = 5.23755e-6           # 1/h stomach lumen -> Intestinal lumen
 kabsSL   = 0.97718              # 1/h
-kabsIL   = 0.978132		# 1/h 
+kabsIL   = 0.978132             # 1/h 
 
 fup = 0.021
 #------------------------
 # Hepatic metabolism - biochemical parameters
 #------------------------
 
-CYP1_Abundance = 52 	# CYP1A2 abundance (pmolCYP/mg protein) (calculated based on database in Simcyp; sum of EM, PM and UM)CYP2_Abundance = 15.8 	# CYP2B6 abundance (pmolCYP/mg protein) (calculated based on database in Simcyp; sum of EM, PM and UM)CYP3_Abundance = 5.4 	# CYP2C19 abundance (pmolCYP/mg protein)(calculated based on database in Simcyp; sum of EM, PM and UM)CYP4_Abundance = 137 	# CYP3A4 abundance (pmolCYP/mg protein) (calculated based on database in Simcyp; sum of EM, PM and UM)
+CYP1_Abundance = 52 	# CYP1A2 abundance (pmolCYP/mg protein) (calculated based on database in Simcyp; sum of EM, PM and UM)
+CYP2_Abundance = 15.8 	# CYP2B6 abundance (pmolCYP/mg protein) (calculated based on database in Simcyp; sum of EM, PM and UM)
+CYP3_Abundance = 5.4 	# CYP2C19 abundance (pmolCYP/mg protein)(calculated based on database in Simcyp; sum of EM, PM and UM)
+CYP4_Abundance = 137 	# CYP3A4 abundance (pmolCYP/mg protein) (calculated based on database in Simcyp; sum of EM, PM and UM)
 
-SFCYP1	= 0.072 		# Scaling factor CYP1A2 ISEF (Vmax) (non compound-specific) (Zhao et al., 2022)SFCYP2	= 0.476 		# Scaling factor CYP2B6 ISEF (Vmax) (non compound-specific) (Zhao et al., 2022)SFCYP3	= 0.209 		# Scaling factor CYP2C19 ISEF (Vmax)(non compound-specific)(Zhao et al., 2022)SFCYP4	= 0.107 		# Scaling factor CYP3A4 ISEF (Vmax) (non compound-specific) (Zhao et al., 2022)MPL = 32 			# Scaling factor of human liver microsome in mg to gram liver (mg microsomal protein /g liver) (Al-Malahmeh, A. J et al., 2017) (Barter et al., 2007)
+SFCYP1	= 0.072         # Scaling factor CYP1A2 ISEF (Vmax) (non compound-specific) (Zhao et al., 2022)
+SFCYP2	= 0.476         # Scaling factor CYP2B6 ISEF (Vmax) (non compound-specific) (Zhao et al., 2022)
+SFCYP3	= 0.209         # Scaling factor CYP2C19 ISEF (Vmax)(non compound-specific)(Zhao et al., 2022)
+SFCYP4	= 0.107         # Scaling factor CYP3A4 ISEF (Vmax) (non compound-specific) (Zhao et al., 2022)
+MPL = 32                # Scaling factor of human liver microsome in mg to gram liver (mg microsomal protein /g liver) (Al-Malahmeh, A. J et al., 2017) (Barter et al., 2007)
 
 #------------------------
 # Hepatic metabolism - Michaelis-Menten Kinetic - Pathway 1
 #------------------------
 
 # to CPFoxon by CYP1A2
-KmLMet1_CYP1  = 0.61                      							   # µM
-VmaxLMet1_CYP1C = 3.963	   									   # pmol/min/pmol CYP
+KmLMet1_CYP1  = 0.61            # µM
+VmaxLMet1_CYP1C = 3.963         # pmol/min/pmol CYP
 VmaxLMet1_CYP1 := VmaxLMet1_CYP1C * SFCYP1 * CYP1_Abundance/(1000000 * 60 * MPL * VL * 1000)	   # µmol/h/kg liver; VmaxLMet/(1000*60*32*1000)
 
 # to CPFoxon by CYP2B6
-KmLMet1_CYP2  = 0.14                      							   # µM
-VmaxLMet1_CYP2C = 7.755	   									   # pmol/min/pmol CYP
+KmLMet1_CYP2  = 0.14            # µM
+VmaxLMet1_CYP2C = 7.755         # pmol/min/pmol CYP
 VmaxLMet1_CYP2 := VmaxLMet1_CYP2C * SFCYP2 * CYP2_Abundance/(1000000 * 60 * MPL * VL * 1000)	   # µmol/h/kg liver; VmaxLMet/(1000*60*32*1000)
 
 # to CPFoxon by CYP2C19

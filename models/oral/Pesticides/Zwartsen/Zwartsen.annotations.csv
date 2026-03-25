@@ -1,8 +1,8 @@
 element_id,sbml_type,element_name,unit,annotation_type,qualifier,URI,remark
-substanceUnits,document,model substances unit,,,,,
-extentUnits,document,model extent unit,,,,,
-timeUnits,document,model time unit,,,,,
-volumeUnits,document,model volume unit,,,,,
+substanceUnits,document,model substances unit,umol,,,,
+extentUnits,document,model extent unit,umol,,,,
+timeUnits,document,model time unit,h,,,,
+volumeUnits,document,model volume unit,L,,,,
 Zwartsen_2025_Chlorpyrifos_Human,model,,,rdf,BQB_HAS_PROPERTY,,
 Zwartsen_2025_Chlorpyrifos_Human,model,,,rdf,BQB_HAS_TAXON,,
 StomachLumen,compartment,,,rdf,BQM_IS,,

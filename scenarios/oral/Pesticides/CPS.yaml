@@ -1,0 +1,125 @@
+id: CPS
+label: CPS
+model_instances:
+  - id: Timchalk
+    label: Timchalk 2002
+    model_path: models/oral/Pesticides/Timchalk/Timchalk.sbml
+    param_file: models/oral/Pesticides/Timchalk/Timchalk.params.csv
+    target_mappings:
+      Oral: ALiver
+      ABlood: ABlood
+      CBlood: '[ABlood]'
+#  - id: Bouchard
+#    label: Bouchard 2010
+#    model_path: models/oral/Pesticides/Bouchard/Bouchard.sbml
+#    param_file: models/oral/Pesticides/Bouchard/Bouchard.params.csv
+#    target_mappings:
+#      Oral: AGut
+#      ABlood: ABlood
+#      CBlood: '[ABlood]'
+  - id: Zhao
+    label: Zhao 2019
+    model_path: models/oral/Pesticides/Zhao/Zhao.sbml
+    param_file: models/oral/Pesticides/Zhao/Zhao.params.csv
+    target_mappings:
+      Oral: AGut
+      ABlood: ABlood
+      CBlood: '[ABlood]'
+  - id: Zwartsen
+    label: Zwartsen 2025
+    model_path: models/oral/Pesticides/Zwartsen/Zwartsen.sbml
+    param_file: models/oral/Pesticides/Zwartsen/Zwartsen.params.csv
+    target_mappings:
+      Oral: ASL
+      ABlood: ABlood
+      CBlood: '[ABlood]'
+
+scenarios:
+  - id: CPS_scenario_1
+    label: Chlorpyrifos Scenario 1
+    duration: 100
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 305.59
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 30
+        time: 0
+        interval: 1
+    outputs:
+      - id: ABlood
+        label: Amount in Blood
+        output: ABlood
+      - id: CBlood
+        label: Concentration in Blood
+        output: CBlood
+  - id: CPS_scenario_2
+    label: Chlorpyrifos Scenario 2
+    duration: 100
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 305.59
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 0.0108
+        time: 0
+        interval: 1
+    outputs:
+      - id: ABlood
+        label: Amount in Blood
+        output: ABlood
+      - id: CBlood
+        label: Concentration in Blood
+        output: CBlood
+  - id: CPS_scenario_3
+    label: Chlorpyrifos Scenario 3
+    duration: 100
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 305.59
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 120
+        time: 0
+        interval: 1
+    outputs:
+      - id: ABlood
+        label: Amount in Blood
+        output: ABlood
+      - id: CBlood
+        label: Concentration in Blood
+        output: CBlood
+  - id: CPS_scenario_4
+    label: Chlorpyrifos Scenario 4
+    duration: 100
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 305.59
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 1200
+        time: 0
+        interval: 1
+    outputs:
+      - id: ABlood
+        label: Amount in plasma
+        output: ABlood
+      - id: CBlood
+        label: Concentration in plasma
+        output: CBlood
