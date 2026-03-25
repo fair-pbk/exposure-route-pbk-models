@@ -1,0 +1,100 @@
+id: PFOS
+label: PFOS
+model_instances:
+  - id: Loccisano
+    label: Loccisano 2011
+    model_path: models/oral/PFAS/Loccisano_PFOS/LoccisanoPFOS.sbml
+    param_file: models/oral/PFAS/Loccisano_PFOS/LoccisanoPFOS.params.csv
+    target_mappings:
+      Oral: AGI
+      APlasma: APlasma
+      CPlasma: '[APlasma]'
+  - id: Deepika
+    label: Deepika 2021
+    model_path: models/oral/PFAS/Deepika/Deepika.sbml
+    param_file: models/oral/PFAS/Deepika/Deepika.params.csv
+    target_mappings:
+      Oral: AGI
+      APlasma: APlasma
+      CPlasma: '[APlasma]'
+  - id: ChouLin
+    label: ChouLin 2019
+    model_path: models/oral/PFAS/ChouLin/ChouLin.sbml
+    param_file: models/oral/PFAS/ChouLin/ChouLin.params.csv
+    target_mappings:
+      Oral: AST
+      APlasma: APlasma
+      CPlasma: '[APlasma]'
+  - id: Chen
+    label: Chen 2022
+    model_path: models/oral/PFAS/Chen/Chen.sbml
+    param_file: models/oral/PFAS/Chen/Chen.params.csv
+    target_mappings:
+      Oral: AST
+      APlasma: APlasma
+      CPlasma: '[APlasma]'
+
+scenarios:
+  - id: scenario_1
+    label: PFOS Scenario 1
+    duration: 10
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 0.000006
+        time: 0
+        interval: 1
+    outputs:
+      - id: APlasma
+        label: Amount in plasma
+        output: APlasma
+      - id: CPlasma
+        label: Concentration in plasma
+        output: CPlasma
+  - id: scenario_2
+    label: PFOS Scenario 2
+    duration: 100
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 0.0036
+        time: 0
+        interval: 1
+    outputs:
+      - id: APlasma
+        label: Amount in plasma
+        output: APlasma
+      - id: CPlasma
+        label: Concentration in plasma
+        output: CPlasma
+  - id: scenario_3
+    label: PFOS Scenario 3
+    duration: 10000
+    evaluation_resolution: 1
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 0.036
+        time: 0
+        interval: 1
+    outputs:
+      - id: APlasma
+        label: Amount in plasma
+        output: APlasma
+      - id: CPlasma
+        label: Concentration in plasma
+        output: CPlasma

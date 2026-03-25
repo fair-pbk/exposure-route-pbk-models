@@ -1,0 +1,92 @@
+id: PFOA
+label: PFOA
+model_instances:
+  - id: Loccisano
+    label: Loccisano 2011 (PFOA)
+    model_path: models/oral/PFAS/Loccisano_PFOA/LoccisanoPFOA.sbml
+    param_file: models/oral/PFAS/Loccisano_PFOA/LoccisanoPFOA.params.csv
+    target_mappings:
+      Oral: AGI
+      APlasma: APlasma
+      CPlasma: '[APlasma]'
+  - id: Husoy
+    label: Husoy 2024
+    model_path: models/oral/PFAS/Husoy/Husoy.sbml
+    param_file: models/oral/PFAS/Husoy/Husoy.params.csv
+    target_mappings:
+      Oral: AGI
+      APlasma: APlasma
+      CPlasma: '[APlasma]'
+  - id: Worley
+    label: Worley 2024
+    model_path: models/oral/PFAS/Worley/Worley.sbml
+    param_file: models/oral/PFAS/Worley/Worley.params.csv
+    target_mappings:
+      Oral: ASt
+      APlasma: APlasma
+      CPlasma: '[APlasma]'
+
+scenarios:
+  - id: scenario_1
+    label: PFOA Scenario 1
+    duration: 10
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 0.0000996
+        time: 0
+        interval: 1
+    outputs:
+      - id: APlasma
+        label: Amount in plasma
+        output: APlasma
+      - id: CPlasma
+        label: Concentration in plasma
+        output: CPlasma
+  - id: scenario_2
+    label: PFOA Scenario 2
+    duration: 100
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 0.0000012
+        time: 0
+        interval: 1
+    outputs:
+      - id: APlasma
+        label: Amount in plasma
+        output: APlasma
+      - id: CPlasma
+        label: Concentration in plasma
+        output: CPlasma
+  - id: scenario_3
+    label: PFOA Scenario 3
+    duration: 10000
+    evaluation_resolution: 1
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 0.000012
+        time: 0
+        interval: 1
+    outputs:
+      - id: APlasma
+        label: Amount in plasma
+        output: APlasma
+      - id: CPlasma
+        label: Concentration in plasma
+        output: CPlasma
