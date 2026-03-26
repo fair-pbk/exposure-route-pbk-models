@@ -1,5 +1,7 @@
 idModelInstance,Parameter,Value,Unit,Description,Reference
-Christensen2013_BPA_Human_PARAM,BW,60.0,,,
-Christensen2013_BPA_Human_PARAM,VD,0.15,,,
-Christensen2013_BPA_Human_PARAM,F1,1.0,,,
-Christensen2013_BPA_Human_PARAM,F2,1.0,,,
+Christensen2013_BPA_Human_PARAM,BW,60.0,kg,,
+Christensen2013_BPA_Human_PARAM,VD,0.15,L/kg,,
+Christensen2013_BPA_Human_PARAM,F1,1.0,DIMENSIONLESS,,
+Christensen2013_BPA_Human_PARAM,F2,1.0,DIMENSIONLESS,,
+Christensen2013_BPA_Human_PARAM,k1,0.9,/h,,
+Christensen2013_BPA_Human_PARAM,k2,0.9,/h,,

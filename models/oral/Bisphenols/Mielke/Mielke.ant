@@ -5,8 +5,8 @@ model Mielke2009_BPA_Human()
 
 model notes ```
 BPA PBPK (adult) after Mielke & Gundert-Remy 2009
-# Perfusion-limited: Blood <-> Liver, Blood <-> Rest
-# Hepatic metabolism: BPA --UGT (BPAG), --SULT (BPAS)
+- Perfusion-limited: Blood <-> Liver, Blood <-> Rest
+- Hepatic metabolism: BPA --UGT (BPAG), --SULT (BPAS)
 ```
 model description "https://www.ncbi.nlm.nih.gov/pubmed/19560527"
 
@@ -19,8 +19,7 @@ VBc     = 0.079                    # L/kg (blood; generic adult, was not given i
 
 VL      := VLc*BW                   # L
 VB      := VBc*BW                   # L
-VRest   := 0.84 * BW - VL - VB     # L (lumped rest-of-body water)
-
+VRest   := BW * (0.84 - VLc - VBc)  # L (lumped rest-of-body water)
 
 #------------------------
 # Flows (adult human)
@@ -38,29 +37,29 @@ PRest   = 1
 #------------------------
 # Absorption
 #------------------------
-kabs      = 1.2                    # 1/h  (calculated t1/2,abs ≈ 0.25 h → ln2/0.25)
+kabs = 1.2                    # 1/h  (calculated t1/2,abs ≈ 0.25 h → ln2/0.25)
 
 #------------------------
 # Hepatic metabolism (Michaelis–Menten on liver-venous conc)
 # Kuester & Sipes human hepatocyte data used by Mielke:
 #------------------------
 #to BPAG
-KmLMet1  = 8.5                                  # µmol/L
-VmaxLMet1C = 54.9                               # nmol/min/1800 g liver
-VmaxLMet1 := (VmaxLMet1C * 1800 * 60) / 1000    # µmol/h
+KmLMet1     = 8.5                               # µmol/L
+VmaxLMet1C  = 54.9                              # nmol/min/g liver
+VmaxLMet1   := VmaxLMet1C * VL * 60             # µmol/h
 
 #to BPAS
 KmLMet2     = 8.5                               # µmol/L
-VmaxLMet2C  := 0.15 * VmaxLMet1C                # nmol/min/1800 g liver
-VmaxLMet2   := (VmaxLMet2C * 1800 * 60) / 1000  # µmol/h
+VmaxLMet2C  := 0.15 * VmaxLMet1C                # nmol/min/g liver
+VmaxLMet2   := VmaxLMet2C  * VL * 60            # µmol/h
 
 #------------------------
 # Compartments
 #------------------------
-compartment Gut;   Gut = 1         # authors call it dosing compartment
-compartment Liver; Liver   = VL
-compartment Blood; Blood   = VB
-compartment Rest;  Rest    = VRest
+compartment Gut;   Gut      = 1         # authors call it dosing compartment
+compartment Liver; Liver    := VL
+compartment Blood; Blood    := VB
+compartment Rest;  Rest     := VRest
 
 #------------------------
 # Species (amounts)
@@ -82,8 +81,8 @@ ARest    = 0
 
 # Met1 = BAPG, Met2 = BAPS
 
-ALiverMet1    = 0
-ALiverMet2    = 0
+ALiverMet1 = 0
+ALiverMet2 = 0
 
 #------------------------
 # Concentrations
@@ -109,8 +108,8 @@ ARest    -> ABlood;     QRest * (CRest / PRest)
 
 # Hepatic metabolism (MM on liver-venous concentration)
 # BPA → BPAG
-ALiver   -> ALiverMet1;       VmaxLMet1 * (CLiver / PL)/ (KmLMet1 + (CLiver / PL))
+ALiver   -> ALiverMet1; VmaxLMet1 * (CLiver / PL)/ (KmLMet1 + (CLiver / PL))
 # BPA → BPAS
-ALiver   -> ALiverMet2;       VmaxLMet2 * (CLiver / PL) / (KmLMet2 + (CLiver / PL))
+ALiver   -> ALiverMet2; VmaxLMet2 * (CLiver / PL) / (KmLMet2 + (CLiver / PL))
 
 end

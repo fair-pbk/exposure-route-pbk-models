@@ -5,7 +5,7 @@ model Christensen2013_BPA_Human()
 
 model notes ```
 BPA PBPK (adult) after Christensen et al. 2013
-2-compartment model
+- 2-compartment model
 ```
 model description "10.1038/jes.2013.81"
 
@@ -14,7 +14,7 @@ model description "10.1038/jes.2013.81"
 #------------------------
 
 BW = 60
-VD     = 0.15                   # L/kg (apparent blood volume of distribution)     
+VD = 0.15                   # L/kg (apparent blood volume of distribution)     
 
 #------------------------
 # Flows - not applicable
@@ -28,24 +28,24 @@ VD     = 0.15                   # L/kg (apparent blood volume of distribution)
 # Absorption
 #------------------------
 
-F1      = 1                    # fixed value - Fractional constants
-F2      = 1                    # fixed value - Fractional constants
-k1	:= 0.9/60	 	# Elemination constant 1/min
-k2	:= 0.9/60 	 	# Elemination constant 1/min
+F1 = 1          # fixed value - Fractional constants
+F2 = 1          # fixed value - Fractional constants
+k1 = 0.9 * 60   # Elimination constant /h
+k2 = 0.9 * 60   # Elimination constant /h
 
 #------------------------
 # Compartments
 #------------------------
 
-compartment Stomach;       Stomach = 1			
-compartment Blood;         Blood   := VD * BW
+compartment Stomach;       Stomach = 1
+compartment Blood;         Blood := VD * BW
 compartment Bladder;       Bladder = 1
 
 #------------------------
 # Species (amounts)
 #------------------------
 
-substanceOnly species ASt   in Stomach
+substanceOnly species ASt in Stomach
 substanceOnly species ABlood in Blood
 substanceOnly species AExcr in Bladder
 
@@ -53,8 +53,8 @@ substanceOnly species AExcr in Bladder
 # Initial conditions
 #------------------------
 
-ASt   = 0
-ABlood  = 0
+ASt = 0
+ABlood = 0
 AExcr = 0
 
 #------------------------

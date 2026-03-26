@@ -5,34 +5,34 @@ model Teeguarden2005_BPA_Human()
 
 model notes ```
 BPA/BPAG PBPK (Human; Teeguarden et al., 2005)
-Human PBK for oral absorption 
-administration → GITract Lumen → liver <- GITract Lumen Metabolism 
-Parent only, perfusion-limited tissues
-GITract Lumen Metabolism BAPG → BAP
-Hepatic Metabolism BAP → BAPG 
-EHR of BAPG 
+- Human PBK for oral absorption 
+- Administration → GITract Lumen → liver <- GITract Lumen Metabolism 
+- Parent only, perfusion-limited tissues
+- GITract Lumen Metabolism BAPG → BAP
+- Hepatic Metabolism BAP → BAPG 
+- EHR of BAPG 
 ```
 model description "https://www.ncbi.nlm.nih.gov/pubmed/15746009"
 
 #------------------------
 # Body size & base volumes
 #------------------------
-BW      = 78                      # kg (60.7 for women)
-VLc     = 0.026                   # L/kg (liver)
-VBc     = 0.079                   # L/kg (blood)
+BW      = 78                        # kg (60.7 for women)
+VLc     = 0.026                     # L/kg (liver)
+VBc     = 0.079                     # L/kg (blood)
 
-VL      := VLc*BW                  # L
-VB      := VBc*BW                  # L
-VRest   := 0.84*BW - VL - VB       # L (lumped rest-of-body; floor if needed)
+VL      := VLc*BW                   # L
+VB      := VBc*BW                   # L
+VRest   := BW * (0.84 - VLc - VBc)  # Lumped Rest-of-body volume L 
 
 #------------------------
 # Flows (human)
 #------------------------
-QCc    = 12.9                     # L/h/kg^0.75 (cardiac output constant)
-QC     := QCc*BW^0.75              # L/h
-QLc    := 0.23                     # fraction to liver
-QL     := QLc*QC                   # L/h
-QRest  := (1-QLc) * QC             # L/h (no separate uterus in this compact human)
+QCc    = 12.9                       # L/h/kg^0.75 (cardiac output constant)
+QC     := QCc*BW^0.75               # L/h
+QLc    := 0.23                      # fraction to liver
+QL     := QLc*QC                    # L/h
+QRest  := (1-QLc) * QC              # L/h (no separate uterus in this compact human)
 
 #------------------------
 # Partitions (tissue:blood)
@@ -44,7 +44,7 @@ RBP = 0.83                          # Blood plasma coefficient
 #------------------------
 # BPA absorption 
 #------------------------
-kabsMet1C = 10.0                    # kg^(-0.25)/h oral uptake (portal→liver)  
+kabsMet1C = 10.0                    # kg^(0.25)/h oral uptake (portal→liver)  
 kabsMet1 := kabsMet1C  * BW^(-0.25) # 1/h
 
 #------------------------
@@ -52,44 +52,44 @@ kabsMet1 := kabsMet1C  * BW^(-0.25) # 1/h
 #------------------------
 
 VmaxLMetC = 850                     # mg/h/kg^(0.75) 
-VmaxLMet:= VmaxLMetC * BW^0.75 	    # mg/h
+VmaxLMet := VmaxLMetC * BW^0.75     # mg/h
 KmLMet  = 10.0                      # mg/L
 
-MW   = 228.8                        # g/mol
+MW = 228.8                          # g/mol
 MWMet = 404.4                       # g/mol
 
 #------------------------
 # BPAG handling (human)
 #------------------------
-BileFrac   = 0.10                   # 10% fraction of formed BPAG routed to BileFrac (human), rest goes to the volume of distribution
+BileFrac = 0.10                     # 10% fraction of formed BPAG routed to BileFrac (human), rest goes to the volume of distribution
 
-kehrMet1C   = 0.50                  # kg^(-0.25)/h (BPAG hydrolysis→BPA and re-entry to liver)
+kehrMet1C = 0.50                    # kg^(0.25)/h (BPAG hydrolysis→BPA and re-entry to liver)
 kehrMet1 := kehrMet1C  * BW^(-0.25) # 1/h
 
-kfeC    = 0.00                      # kg^(-0.25)/h (fecal loss from GI BPAG; ~0 for human)
+kfeC = 0.00                         # kg^(0.25)/h (fecal loss from GI BPAG; ~0 for human)
 kfe := kfeC * BW^(-0.25)            # 1/h
 
 #------------------------
 # Compartments (volumes)
 #------------------------
 compartment GILumen;   GILumen   = 1
-compartment Liver;     Liver     = VL
-compartment Blood;     Blood     = VB
-compartment Rest;      Rest      = VRest
-compartment Feces;     Feces     = 1          # accumulator
+compartment Liver;     Liver     := VL
+compartment Blood;     Blood     := VB
+compartment Rest;      Rest      := VRest
+compartment Feces;     Feces     = 1            # accumulator
 
 #------------------------
 # Species (amount states)
 #------------------------
-substanceOnly species AGILumen in GILumen      # BPA in GI lumen (oral dose here)
-substanceOnly species ALiver   in Liver        # BPA in liver
-substanceOnly species ABlood   in Blood        # BPA in blood
-substanceOnly species ARest    in Rest         # BPA in rest
+substanceOnly species AGILumen in GILumen       # BPA in GI lumen (oral dose here)
+substanceOnly species ALiver   in Liver         # BPA in liver
+substanceOnly species ABlood   in Blood         # BPA in blood
+substanceOnly species ARest    in Rest          # BPA in rest
 
 substanceOnly species ALiverMet in Liver        # BPAG in Liver
 substanceOnly species AGILumenMet in GILumen    # BPAG in gut lumen (for EHR)
-substanceOnly species ABloodMet   in Blood      # cumulative BPAG to systemic distribution
-substanceOnly species AFecesMet   in Feces      # cumulative BPAG to feces
+substanceOnly species ABloodMet in Blood        # cumulative BPAG to systemic distribution
+substanceOnly species AFecesMet in Feces        # cumulative BPAG to feces
 
 #------------------------
 # Initial conditions
@@ -110,7 +110,7 @@ ABloodMet = 0
 CBlood := ABlood / Blood
 CLiver := ALiver / Liver
 CRest  := ARest  / Rest
-CPlasma := CBlood/RBP
+CPlasma := CBlood / RBP
 
 #------------------------
 # BPA Transfer rates 
@@ -128,13 +128,12 @@ ABlood -> ARest;          QRest * CBlood
 ARest  -> ABlood;         QRest * CRest/PRest
 
 # hepatic Michaelis-Menten 
-ALiver -> ALiverMet;  (MWMet/MW) * ((VmaxLMet* ((CLiver/PL))) / (KmLMet+ ((CLiver/PL))) )
-
 # 1) systemic excretion of BPAG
-ALiverMet -> ABloodMet; (1 - BileFrac) * ALiverMet
+ALiver -> ABloodMet; (1 - BileFrac) * (MWMet/MW) * ((VmaxLMet* ((CLiver/PL))) / (KmLMet+ ((CLiver/PL))) )
 
 # 2) EHR: 10% metabolized BPAG goes to GI lumen via BileFrac secretion and is hydrolyzed to BPA
-ALiverMet -> AGILumenMet;   BileFrac * ALiverMet
+ALiver -> AGILumenMet;   BileFrac * (MWMet/MW) * ((VmaxLMet* ((CLiver/PL))) / (KmLMet+ ((CLiver/PL))) )
+
 AGILumenMet -> ALiver; AGILumenMet * kehrMet1
 AGILumenMet -> AFecesMet; AGILumenMet * kfe
 

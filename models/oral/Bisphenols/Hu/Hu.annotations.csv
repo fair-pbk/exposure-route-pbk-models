@@ -1,6 +1,6 @@
 element_id,sbml_type,element_name,unit,annotation_type,qualifier,URI,remark
 substanceUnits,document,model substances unit,nmol,,,,
-extentUnits,document,model extent unit,,,,,
+extentUnits,document,model extent unit,nmol,,,,
 timeUnits,document,model time unit,h,,,,
 volumeUnits,document,model volume unit,L,,,,
 Hu2023_BPA_Human,model,,,rdf,BQB_IS_DESCRIBED_BY,https://www.ncbi.nlm.nih.gov/pubmed/36649768,
@@ -13,8 +13,8 @@ Plasma,compartment,blood plasma,L,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPK
 Rest,compartment,rest-of-body,L,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_00450,
 GILumen,compartment,GI lumen compartment,L,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_00478,
 Feces,compartment,feces,L,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_00555,
-AStomach,species,Amount in stomach,nmol,rdf,BQM_IS,,
-AStomach,species,,,rdf,BQB_IS,http://purl.obolibrary.org/obo/CHEBI_33216,
+ASt,species,Amount in stomach,nmol,rdf,BQM_IS,,
+ASt,species,,,rdf,BQB_IS,http://purl.obolibrary.org/obo/CHEBI_33216,
 ASI,species,Amount in small intestine,nmol,rdf,BQM_IS,,
 ASI,species,,,rdf,BQB_IS,http://purl.obolibrary.org/obo/CHEBI_33216,
 ALiver,species,amount of chemical in liver,nmol,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_00497,

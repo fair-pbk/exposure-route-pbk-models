@@ -5,75 +5,74 @@ model Moreau2025_BPA_Human()
 
 model notes ```
 BPA PBK - Moreau et al. 2025
-Stomach -> Duodenum -> GITissue -> Liver
-Perfusion-limited: Blood <-> Liver, Blood <-> Rest
-Hepatic metabolism: intrinsic clearance
-Plasma metabolism: set to 0 for BAP
+- Stomach -> Duodenum -> GITissue -> Liver
+- Perfusion-limited: Blood <-> Liver, Blood <-> Rest
+- Hepatic metabolism: intrinsic clearance
+- Plasma metabolism: set to 0 for BAP
 ```
 model description "https://www.ncbi.nlm.nih.gov/pubmed/40480613"
 
 # Parameter values associated with paper extracted from online source: https://data.mendeley.com/datasets/mf5pg3zxh6/1
 
-MW = 228.29                         # Molecular weight g/mol
 #------------------------
 # Body size & base volumes
 #------------------------
 BW = 61.72                          # kg
 
-VLC = 0.0233                        # Liver (L/kg bodyweight)
-VGITissueC = 0.019                  # GI tissue (L/kg bodyweight)
+VLc = 0.0233                        # Liver (L/kg bodyweight)
+VGITissuec = 0.019                  # GI tissue (L/kg bodyweight)
 
-VL := VLC * BW
-VGITissue := VGITissueC * BW
+VL := VLc * BW
+VGITissue := VGITissuec * BW
 VPlasma = 2.5178                    # Plasma (L/kg bodyweight)
 
-VUrineC = 20                        # Urinary volume per day (mL/kg/day)
-VUrine := (VUrineC * BW)/24/1000    # Urinary volume per hour (L/h)
+VUrineC = 20/1000                   # Urinary volume per day (L/kg/d)
+VUrine := (VUrineC * BW)/24         # Urinary volume per hour (L/h)
 
 # Lumped Rest-of-body volume
-VRest := 0.84*BW - VL - VGITissue - VPlasma     # (L/kg bodyweight)
+VRest := BW * (0.84 - VLc - VGITissuec) - VPlasma  # Lumped Rest-of-body volume L 
 
 #------------------------
 # Flows
 #------------------------
-QC   = 321.435                 # L/h (cardiac output)
-Hct  = 0.3865		       # Hematocrit
+QC = 321.435                    # L/h (cardiac output)
+Hct = 0.3865                    # Hematocrit
 QCPlasma := QC * (1-Hct)
 
 QGIc = 0.164
 QLc = 0.097
 
-QGI := QGIc * QC		# GI plasma flow (L/h)
-QL := QLc * QC			# Liver plasma flow (L/h)
+QGI := QGIc * QC                # GI plasma flow (L/h)
+QL := QLc * QC                  # Liver plasma flow (L/h)
 
 QRest := QCPlasma - QL  - QGI   # L/h (lumped rest)
 
 #------------------------
 # Partitions (tissue:blood)
 #------------------------
-PL   = 1.79                 	# liver:blood
+PL   = 1.79                     # liver:blood
 PGI  = 3.55                     # GI : blood
 PRest= 1.0                      # lumped rest:blood (can adjust if needed)
 
 #------------------------
 # GI kinetics
 #------------------------
-ksto = 1.2			 # 1/h
-kabs = 1.2                       # 1/h
-Fa = 0.15			 # Fraction absorbed
+ksto = 1.2           # 1/h
+kabs = 1.2           # 1/h
+Fa = 0.15            # Fraction absorbed
 
 #------------------------
 # Hepatic intrinsic clearance
 #------------------------
 
-CLintLC = 131.34   		# L/h/kg Liver
-CLintL := CLintLC * VL  	# L/h
+CLintLC = 131.34        # L/h/kg Liver
+CLintL := CLintLC * VL  # L/h
 
 #------------------------
 # Hepatic clearance saturable metabolism
 #------------------------
-# KM = 0.134				# mg/L
-# VmaxLiverC = 3.45			# mg/h/kg^0.75
+# KM = 0.134            # mg/L
+# VmaxLiverC = 3.45     # mg/h/kg^0.75
 # VmaxLiver := VmaxLiverC * BW^0.75	# mg/h
 
 #------------------------
@@ -82,34 +81,34 @@ CLintL := CLintLC * VL  	# L/h
 
 CLintB = 0
 
-Free = 0.1				# not provided, assumed 0.1
-GFR = 7.7964				# L/h
-CLUC := GFR				# L/h
-CLU := Free * GFR			# L/h
+Free = 0.1              # not provided, assumed 0.1
+GFR = 7.7964            # L/h
+CLUC := GFR             # L/h
+CLU := Free * GFR       # L/h
 
 #------------------------
 # Compartments
 #------------------------
-compartment Stomach;  Stomach = 1
-compartment GITissue;   GITissue  = VGITissue
-compartment Duodenum;   Duodenum  = 1
-compartment Liver;    Liver   = VL
-compartment Plasma;    Plasma   = VPlasma
-compartment Rest;     Rest    = VRest
-compartment Urine;     Urine    = VUrine
+compartment Stomach; Stomach = 1
+compartment GITissue; GITissue := VGITissue
+compartment Duodenum; Duodenum = 1
+compartment Liver; Liver := VL
+compartment Plasma; Plasma := VPlasma
+compartment Rest; Rest := VRest
+compartment Urine; Urine := VUrine
 
 #------------------------
 # Species (amount states)
 #------------------------
-substanceOnly species ASt   in Stomach
-substanceOnly species ADuodenum   in Duodenum
-substanceOnly species AGITissue  in GITissue
-substanceOnly species ALiver  in Liver
-substanceOnly species APlasma  in Plasma
-substanceOnly species ARest   in Rest
-substanceOnly species ALiverMet  in Liver
-substanceOnly species APlasmaMet  in Plasma
-substanceOnly species AUrine  in Urine
+substanceOnly species ASt in Stomach
+substanceOnly species ADuodenum in Duodenum
+substanceOnly species AGITissue in GITissue
+substanceOnly species ALiver in Liver
+substanceOnly species APlasma in Plasma
+substanceOnly species ARest in Rest
+substanceOnly species ALiverMet in Liver
+substanceOnly species APlasmaMet in Plasma
+substanceOnly species AUrine in Urine
 
 #------------------------
 # Initial conditions
@@ -133,33 +132,30 @@ CPlasma     := APlasma / Plasma
 CRest       := ARest / Rest
 CUrine      := AUrine/ Urine
 
-# Hepatic metabolism (intrinsic clearance on liver-venous conc)
-Met := CLintL * (CLiver/PL)
-
 #------------------------
 # GI transfers & absorptions
 #------------------------
 # OralDose -> Ast; Fa*(OralDose * BW * 1000)/MW
 
-ASt -> ADuodenum;     ksto * ASt
+ASt       -> ADuodenum; ksto * ASt
 
-ADuodenum -> AGITissue;  kabs * ADuodenum
+ADuodenum -> AGITissue; kabs * ADuodenum
 
-AGITissue -> ALiver;  QGI * CGITissue/PGI
-APlasma -> AGITissue; QGI * CPlasma
+AGITissue -> ALiver;    QGI * CGITissue/PGI
+APlasma   -> AGITissue; QGI * CPlasma
 
 #------------------------
 # Perfusion-limited exchanges
 #------------------------
 # Liver ↔ Blood
-APlasma -> ALiver;   QL   * CPlasma
-ALiver -> APlasma;   (QL + QGI)  * CLiver/PL
+APlasma -> ALiver;      QL * CPlasma
+ALiver  -> APlasma;     (QL + QGI) * CLiver/PL
 
 # Rest ↔ Blood
-APlasma -> ARest;     QRest * CPlasma
-ARest   -> APlasma;   QRest * CRest/PRest
-APlasma -> APlasmaMet; CLintB * CPlasma
-APlasma -> AUrine;	CLU * APlasma
+APlasma -> ARest;       QRest * CPlasma
+ARest   -> APlasma;     QRest * CRest/PRest
+APlasma -> APlasmaMet;  CLintB * CPlasma
+APlasma -> AUrine;      CLU * CPlasma
 
 #------------------------
 # Hepatic metabolism sink (parent -> AMet)
