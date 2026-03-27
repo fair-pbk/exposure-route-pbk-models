@@ -3,14 +3,12 @@ model Notenboom2023_DON_Human()
 #Created: Carolina Vogs, September 2025
 #Checked: Paris Mertzimekis, February 2026
 
-
 model notes ```
 DON PBK (Notenboom 2023):
 GI lumen --kabs--> Liver --Cl_met--> Metabolites
 Blood <-> Liver, Blood <-> Rest (perfusion-limited)
 ```
 model description "https://www.ncbi.nlm.nih.gov/pubmed/37755995"
-
 
 #------------------------
 # Body size & base volumes
@@ -22,22 +20,22 @@ VBc  = 0.079                    # L/kg (blood)
 VL   := VLc*BW                  # L
 VB   := VBc*BW                  # L
 
-VLum = 1.29                     # Lumen volume L 
+VLum = 1.29                     # Lumen volume L
 
-VRest := 0.84*BW - VL - VB  # Lumped Rest-of-body volume L 
+VRest := 0.84*BW - VL - VB      # Lumped Rest-of-body volume L
 
 #------------------------
 # Blood Flows
 #------------------------
-QC    := 15*BW^0.74            # L/h (cardiac output)
+QC    := 15*BW^0.74             # L/h (cardiac output)
 QLc   = 0.227
-QL    := QLc*QC                # L/h (liver)
-QRest := (1 - QLc)*QC          # L/h (rest)
+QL    := QLc*QC                 # L/h (liver)
+QRest := (1 - QLc)*QC           # L/h (rest)
 
 #------------------------
 # Absorption & hepatic metabolism
 #------------------------
-kabs        = 22               # 1/h  (effective GI→liver absorption)
+kabs      = 22                  # 1/h  (effective GI→liver absorption)
 
 # Metabolic clearance (L/h/kg → scaled to BW)
 CLintMet1 := 0.07*BW           # L/h  (DON → DON-3-GlcA)    # written in publication
@@ -46,7 +44,7 @@ CLintMet2 := 0.32*BW           # L/h  (DON → DON-15-GlcA)   # written in publi
 #------------------------
 # Partition coefficients
 #------------------------
-PL = 0.52                 # ICF (https://academic.oup.com/annweh/article/55/8/841/265635) model that was used as starting point PL is measured 5.7, estimated 8.2.  In article it is given as 0.52 for DON.
+PL = 0.52                 # ICF (https://academic.oup.com/annweh/article/55/8/841/265635) model that was used as starting point PL is measured 5.7, estimated 8.2. In article it is given as 0.52 for DON.
 PRest = 1
 
 #------------------------
@@ -56,7 +54,6 @@ compartment Lumen;   Lumen = VLum
 compartment Liver;   Liver = VL
 compartment Blood;   Blood = VB
 compartment Rest;    Rest  = VRest
- 
 
 #------------------------
 # Species (amount states)
@@ -68,16 +65,15 @@ substanceOnly species ARest  in Rest
 substanceOnly species ALiverMet1  in Liver
 substanceOnly species ALiverMet2  in Liver
 
-
 #------------------------
 # Initial conditions
 #------------------------
-ALumen = 0; 
-ALiver = 0; 
-ABlood = 0; 
-ARest = 0; 
-ALiverMet1 = 0; 
-ALiverMet2 = 0; 
+ALumen = 0;
+ALiver = 0;
+ABlood = 0;
+ARest = 0;
+ALiverMet1 = 0;
+ALiverMet2 = 0;
 
 #------------------------
 # Concentrations (µmol/L)
@@ -92,17 +88,17 @@ CRest  := ARest  / Rest
 #------------------------
 
 # GI absorption (first-order amount → liver)
-ALumen -> ALiver;     kabs * ALumen
+ALumen  -> ALiver;      kabs * ALumen
 
 # Perfusion-limited exchanges (blood ↔ liver & rest)
-ABlood   -> ALiver;     QL * CBlood
-ALiver   -> ABlood;     QL * CLiver/PL
+ABlood  -> ALiver;      QL * CBlood
+ALiver  -> ABlood;      QL * CLiver / PL
 
-ABlood   -> ARest;    QRest * CBlood
-ARest  	-> ABlood;     QRest * CRest/PRest
+ABlood  -> ARest;       QRest * CBlood
+ARest   -> ABlood;      QRest * CRest / PRest
 
-# Hepatic metabolism 
-ALiver   -> ALiverMet1;    CLintMet1  * CLiver
-ALiver   -> ALiverMet2;    CLintMet2 * CLiver
+# Hepatic metabolism
+ALiver  -> ALiverMet1;  CLintMet1 * CLiver
+ALiver  -> ALiverMet2;  CLintMet2 * CLiver
 
 end

@@ -1,0 +1,87 @@
+id: DON
+label: DON
+model_instances:
+  - id: Notenboom
+    label: Notenboom 2023
+    model_path: models/oral/Mycotoxins/Notenboom/Notenboom.sbml
+    param_file: models/oral/Mycotoxins/Notenboom/Notenboom.params.csv
+    target_mappings:
+      Oral: ALumen
+      ABlood: ABlood
+      CBlood: '[ABlood]'
+  - id: Wang
+    label: Wang 2023
+    model_path: models/oral/Mycotoxins/Wang/Wang.sbml
+    param_file: models/oral/Mycotoxins/Wang/Wang.params.csv
+    target_mappings:
+      Oral: ASt
+      ABlood: ABlood
+      CBlood: '[ABlood]'
+
+scenarios:
+  - id: DON_scenario_1
+    label: DON Scenario 1
+    duration: 10
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 296.3
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 0.174
+        time: 0
+        interval: 1
+    outputs:
+      - id: ABlood
+        label: Amount in Blood
+        output: ABlood
+      - id: CBlood
+        label: Concentration in Blood
+        output: CBlood
+  - id: DON_scenario_2
+    label: DON Scenario 2
+    duration: 10
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 296.3
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 0.1362
+        time: 0
+        interval: 1
+    outputs:
+      - id: ABlood
+        label: Amount in Blood
+        output: ABlood
+      - id: CBlood
+        label: Concentration in Blood
+        output: CBlood
+  - id: DON_scenario_3
+    label: DON Scenario 3
+    duration: 10
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 296.3
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 1.74
+        time: 0
+        interval: 1
+    outputs:
+      - id: ABlood
+        label: Amount in Blood
+        output: ABlood
+      - id: CBlood
+        label: Concentration in Blood
+        output: CBlood
