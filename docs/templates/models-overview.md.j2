@@ -1,9 +1,9 @@
 # Overview
 
-| Id | Route | Chemical Group | Compartments | Species | Parameters | Unit consistency checks |
+| Model | Route | Chemical Group | Compartments | Species | Parameters | Unit consistency checks |
 | ---| ----- | -------------- | ------------ | ------- | ---------- | ----------------------- |
 {% for record in records -%}
-| [{{record["id"]}}]({{record["report_path"]}}) | {{record["route"]}} | {{record["chemical_group"]}} |
+| [{{record["name"]}}]({{record["report_path"]}}) | {{record["route"]}} | {{record["chemical_group"]}} |
 {%- for compartment in record["compartments"] -%}
 {%- if compartment["pbpko_bqm_is_class"] -%}
 [{{compartment["pbpko_bqm_is_class"]["label"]}}]({{compartment["pbpko_bqm_is_class"]["iri"]}}){% if not loop.last %}, {% endif %}

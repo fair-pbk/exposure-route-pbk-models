@@ -1,11 +1,15 @@
-flatten_single_child_sections: true
+#flatten_single_child_sections: true
 nav:
   - Home: index.md
+  - models-overview.md
   - Models:
-      - models-overview.md
-      - "models/oral"
-      - "models/inhalation"
+      - Oral:
+        - glob: "models/oral/*"
+          flatten_single_child_sections: true
+      - Inhalation:
+        - glob: "models/inhalation/*"
+          flatten_single_child_sections: true
   - Simulations:
-      - "simulation/oral"
+      - "simulation/*"
   - Downloads: downloads.md
   - About: about.md

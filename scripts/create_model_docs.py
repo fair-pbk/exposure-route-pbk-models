@@ -1,6 +1,8 @@
 import glob
 import os
+import re
 import logging
+import zipfile
 from pathlib import Path
 import libsbml as ls
 import yaml
@@ -59,6 +61,9 @@ def create_model_report(sbml_file: str):
     output_dir = os.path.join(OUTPUT_PATH, os.path.relpath(file_dir, MODELS_PATH))
     os.makedirs(output_dir, exist_ok=True)
 
+    report_title = Path(sbml_file).stem
+    report_title = re.sub(r'(\D)(\d)', r'\1 \2', report_title)
+
     # Get model from file
     document = ls.readSBML(sbml_file)
     model = document.getModel()
@@ -70,20 +75,11 @@ def create_model_report(sbml_file: str):
     # Open the file in write mode
     with open(report_file, mode="w", encoding="utf-8") as f:
         # Write the title
-        f.write(f"# {Path(sbml_file).stem}\n\n")
+        f.write(f"# {report_title}\n\n")
 
         if model.isSetNotes():
             f.write("## Notes\n\n")
             f.write(f"{model.getNotesString()}\n\n")
-
-        # Write the model creators table
-        f.write("## Creators\n\n")
-        table = generator.get_model_creators()
-        if table is not None:
-            f.write(table.to_markdown())
-            f.write("\n\n")
-        else:
-            f.write("*not specified*\n\n")
 
         # Write the model overview table
         f.write("## Overview\n\n")
@@ -229,6 +225,9 @@ def collect_model_metadata(sbml_file: str):
     model = document.getModel()
     infos_extractor = PbkModelInfosExtractor(document)
 
+    name = re.sub(r'(\D)(\d)', r'\1 \2', Path(sbml_file).stem) \
+        if not model.getName() else model.getName() 
+
     # Collect compartment metadata
     compartments_metadata = []
     compartment_infos = infos_extractor.get_compartment_infos()
@@ -300,7 +299,7 @@ def collect_model_metadata(sbml_file: str):
     # Create metadata dictionary
     metadata = {
         "id": model.getId(),
-        "name": model.getName(),
+        "name": name,
         "applicability_domain": {
             "chemicals": model_chemicals_metadata,
             "species": model_animal_species_metadata
@@ -331,8 +330,7 @@ def create_overview_report():
             )
             filename = os.path.basename(sbml_file)
             file_dir = os.path.dirname(sbml_file)
-            report_path = os.path.relpath(file_dir, MODELS_PATH) \
-                .replace('\\', '/')
+            report_path = os.path.relpath(file_dir, MODELS_PATH).replace('\\', '/')
             route = report_path.split('/')[0]
             chemical_group = report_path.split('/')[1]
 
@@ -367,6 +365,7 @@ def create_overview_report():
             records.append({
                 "filename": filename,
                 "id": metadata['id'],
+                "name": metadata['name'],
                 "route": route,
                 "chemical_group": chemical_group,
                 "report_path": f"./models/{report_path.replace(' ', '%20')}/summary.md",
@@ -410,6 +409,33 @@ def create_overview_report():
     with pd.ExcelWriter(excel_file) as writer:
         df.to_excel(writer, sheet_name='Models overview', index=False, header=True)
 
+def export_models_zip():
+    zip_file = os.path.join(OUTPUT_PATH, 'models.zip')
+    allowed_extensions = (
+        '.ant',
+        '.sbml',
+        '.annotations.csv',
+        '.params.csv'
+    )
+
+    if not os.path.isdir(MODELS_PATH):
+        console_logger.error('Models path does not exist: %s', MODELS_PATH)
+        return
+
+    os.makedirs(OUTPUT_PATH, exist_ok=True)
+
+    console_logger.info('Creating zip archive [%s] from models folder [%s].', zip_file, MODELS_PATH)
+    with zipfile.ZipFile(zip_file, 'w', zipfile.ZIP_DEFLATED) as archive:
+        for root, _, files in os.walk(MODELS_PATH):
+            for filename in files:
+                if filename.endswith(allowed_extensions):
+                    full_path = os.path.join(root, filename)
+                    archive_path = os.path.relpath(full_path, MODELS_PATH)
+                    archive.write(full_path, archive_path)
+                    console_logger.debug('Added file to zip: %s', archive_path)
+
+    console_logger.info('Zip archive created: %s', zip_file)
+
 
 def export_annotations():
     sbml_files = glob.glob('./models/**/*.sbml', recursive=True)
@@ -425,7 +451,7 @@ def export_annotations():
             filename = os.path.basename(sbml_file)
             file_dir = os.path.dirname(sbml_file)
             report_path = os.path.relpath(file_dir, MODELS_PATH) \
-                .replace('\\', '/').replace(' ', '%20')
+                .replace('\\', '/')
             route = report_path.split('/')[0]
             chemical_group = report_path.split('/')[1]
 
@@ -511,3 +537,4 @@ if __name__ == '__main__':
     create_model_reports()
     create_overview_report()
     export_annotations()
+    export_models_zip()
