@@ -1,0 +1,95 @@
+id: Mercury
+label: Mercury
+model_instances:
+  - id: Carrier2001
+    label: Carrier 2001
+    model_path: models/oral/Heavy Metals/Carrier2001/Carrier2001.sbml
+    param_file: models/oral/Heavy Metals/Carrier2001/Carrier2001.params.csv
+    target_mappings:
+      Oral: AGI
+      APlasma: ABlood
+      CPlasma: '[ABlood]'
+  - id: Clewell1999
+    label: Clewell 1999
+    model_path: models/oral/Heavy Metals/Clewell1999/Clewell1999.sbml
+    param_file: models/oral/Heavy Metals/Clewell1999/Clewell1999.params.csv
+    target_mappings:
+      Oral: AGut
+      APlasma: APlasma
+      CPlasma: '[APlasma]'
+  - id: Ou2018
+    label: Ou 2018
+    model_path: models/oral/Heavy Metals/Ou2018/Ou2018.sbml
+    param_file: models/oral/Heavy Metals/Ou2018/Ou2018.params.csv
+    target_mappings:
+      Oral: AGut
+      APlasma: APlasma
+      CPlasma: '[APlasma]'
+
+scenarios:
+  - id: Mercury_scenario_1
+    label: Mercury Scenario 1
+    duration: 10
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 200.59
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 0.096
+        time: 0
+        interval: 1
+    outputs:
+      - id: APlasma
+        label: Amount in Plasma
+        output: APlasma
+      - id: CPlasma
+        label: Concentration in Plasma
+        output: CPlasma
+  - id: Mercury_scenario_2
+    label: Mercury Scenario 2
+    duration: 100
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 200.59
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 0.006
+        time: 0
+        interval: 1
+    outputs:
+      - id: APlasma
+        label: Amount in Plasma
+        output: APlasma
+      - id: CPlasma
+        label: Concentration in Plasma
+        output: CPlasma
+  - id: Mercury_scenario_3
+    label: Mercury Scenario 3
+    duration: 1000
+    evaluation_resolution: 1
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 200.59
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 0.96
+        time: 0
+        interval: 1
+    outputs:
+      - id: APlasma
+        label: Amount in Plasma
+        output: APlasma
+      - id: CPlasma
+        label: Concentration in Plasma
+        output: CPlasma

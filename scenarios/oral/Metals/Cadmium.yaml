@@ -1,0 +1,119 @@
+id: Cadmium
+label: Cadmium
+model_instances:
+  - id: KjellstromNordberg1978
+    label: Kjellstrom Nordberg 1978
+    model_path: models/oral/Heavy Metals/KjellstromNordberg1978/KjellstromNordberg1978.sbml
+    param_file: models/oral/Heavy Metals/KjellstromNordberg1978/KjellstromNordberg1978.params.csv
+    target_mappings:
+      Oral: AGI
+      APlasma: APlasma
+      CPlasma: '[APlasma]'
+  - id: Ruiz2010_Female
+    label: Ruiz 2010 (female)
+    model_path: models/oral/Heavy Metals/Ruiz2010/Ruiz2010_Female.sbml
+    param_file: models/oral/Heavy Metals/Ruiz2010/Ruiz2010_Female.params.csv
+    target_mappings:
+      Oral: AGI
+      APlasma: APlasma
+      CPlasma: '[APlasma]'
+  - id: Ruiz2010_Male
+    label: Ruiz 2010 (male)
+    model_path: models/oral/Heavy Metals/Ruiz2010/Ruiz2010_Male.sbml
+    param_file: models/oral/Heavy Metals/Ruiz2010/Ruiz2010_Male.params.csv
+    target_mappings:
+      Oral: AGI
+      APlasma: APlasma
+      CPlasma: '[APlasma]'
+  - id: Bechaux2014_Female
+    label: Bechaux 2014 (female)
+    model_path: models/oral/Heavy Metals/Bechaux2014/Bechaux2014_Female.sbml
+    param_file: models/oral/Heavy Metals/Bechaux2014/Bechaux2014_Female.params.csv
+    target_mappings:
+      Oral: AGI
+      APlasma: APlasma
+      CPlasma: '[APlasma]'
+  - id: Bechaux2014_Male
+    label: Bechaux 2014 (male)
+    model_path: models/oral/Heavy Metals/Bechaux2014/Bechaux2014_Male.sbml
+    param_file: models/oral/Heavy Metals/Bechaux2014/Bechaux2014_Male.params.csv
+    target_mappings:
+      Oral: AGI
+      APlasma: APlasma
+      CPlasma: '[APlasma]'
+  - id: Pouillot2022
+    label: Pouillot2022
+    model_path: models/oral/Heavy Metals/Pouillot2022/Pouillot2022.sbml
+    param_file: models/oral/Heavy Metals/Pouillot2022/Pouillot2022.params.csv
+    target_mappings:
+      Oral: AGI
+      APlasma: APlasma
+      CPlasma: '[APlasma]'
+
+scenarios:
+  - id: Cadmium_scenario_1
+    label: Cadmium Scenario 1
+    duration: 100
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 112.411
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 4.285714286
+        time: 0
+        interval: 1
+    outputs:
+      - id: APlasma
+        label: Amount in Plasma
+        output: APlasma
+      - id: CPlasma
+        label: Concentration in Plasma
+        output: CPlasma
+  - id: Cadmium_scenario_2
+    label: Cadmium Scenario 2
+    duration: 100
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 112.411
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 0.06
+        time: 0
+        interval: 1
+    outputs:
+      - id: APlasma
+        label: Amount in Plasma
+        output: APlasma
+      - id: CPlasma
+        label: Concentration in Plasma
+        output: CPlasma
+  - id: Cadmium_scenario_3
+    label: Cadmium Scenario 3
+    duration: 1000
+    evaluation_resolution: 1
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 112.411
+    parameters:
+        BW: 60
+    dosing_events:
+      - type: repeated_bolus
+        target: Oral
+        amount: 42.85714286
+        time: 0
+        interval: 1
+    outputs:
+      - id: APlasma
+        label: Amount in Plasma
+        output: APlasma
+      - id: CPlasma
+        label: Concentration in Plasma
+        output: CPlasma

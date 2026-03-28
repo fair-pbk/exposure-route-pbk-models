@@ -1,0 +1,638 @@
+model *ElMasri2008_As_Human()
+
+// Checked by : Paris Mertzimekis, February 2026
+
+model notes ```
+Arsene ElMasri et al. 2008
+```
+model description "XXX"
+
+  // Compartments and Species:
+  compartment Lumen, Gut, Liver, Lung, Arterial, Venous, Rest, Urine;
+  substanceOnly species ALumen_As3 in Lumen, ALumen_As5 in Lumen, AGut_As3 in Gut;
+  substanceOnly species AGut_As5 in Gut, AGut_AsM5 in Gut, AGut_AsD5 in Gut;
+  substanceOnly species AArterial_AsD5 in Arterial, ALiver_As3 in Liver, ALiver_As5 in Liver;
+  substanceOnly species ALiver_AsM3 in Liver, ALiver_AsM5 in Liver, ALiver_AsD3 in Liver;
+  substanceOnly species ALiver_AsD5 in Liver, ARest_As3 in Rest, ARest_As5 in Rest;
+  substanceOnly species ARest_AsM5 in Rest, ARest_AsD5 in Rest, AArterial_As3 in Arterial;
+  substanceOnly species AArterial_As5 in Arterial, AArterial_AsM5 in Arterial;
+  substanceOnly species AVenous_As3 in Venous, AVenous_As5 in Venous, AVenous_AsM5 in Venous;
+  substanceOnly species AVenous_AsD5 in Venous, ALung_As3 in Lung, ALung_As5 in Lung;
+  substanceOnly species ALung_AsM3 in Lung, ALung_AsM5 in Lung, ALung_AsD3 in Lung;
+  substanceOnly species ALung_AsD5 in Lung, AUrine_AsM3 in Urine, AUrine_AsD3 in Urine;
+
+  // Assignment Rules:
+  VRest := BW - 0.76 - VGut - VL - VLung - VB;
+  CLumen_As3 := ALumen_As3/Lumen;
+  CLumen_As5 := ALumen_As5/Lumen;
+  CGut_As3 := AGut_As3/Gut;
+  CGut_As5 := AGut_As5/Gut;
+  CGut_AsM5 := AGut_AsM5/Gut;
+  CGut_AsD5 := AGut_AsD5/Gut;
+  CLiver_As3 := ALiver_As3/Liver;
+  CLiver_As5 := ALiver_As5/Liver;
+  CLiver_AsM3 := ALiver_AsM3/Liver;
+  CLiver_AsM5 := ALiver_AsM5/Liver;
+  CLiver_AsD3 := ALiver_AsD3/Liver;
+  CLiver_AsD5 := ALiver_AsD5/Liver;
+  CRest_As3 := ARest_As3/Rest;
+  CRest_As5 := ARest_As5/Rest;
+  CRest_AsM5 := ARest_AsM5/Rest;
+  CRest_AsD5 := ARest_AsD5/Rest;
+  CArterial_As3 := AArterial_As3/Arterial;
+  CArterial_As5 := AArterial_As5/Arterial;
+  CArterial_AsM5 := AArterial_AsM5/Arterial;
+  CArterial_AsD5 := AArterial_AsD5/Arterial;
+  CVenous_As3 := AVenous_As3/Venous;
+  CVenous_As5 := AVenous_As5/Venous;
+  CVenous_AsM5 := AVenous_AsM5/Venous;
+  CVenous_AsD5 := AVenous_AsD5/Venous;
+  CLung_As3 := ALung_As3/Lung;
+  CLung_As5 := ALung_As5/Lung;
+  CLung_AsM3 := ALung_AsM3/Lung;
+  CLung_AsM5 := ALung_AsM5/Lung;
+  CLung_AsD3 := ALung_AsD3/Lung;
+  CLung_AsD5 := ALung_AsD5/Lung;
+
+  // Reactions:
+  _J0: ALumen_As3 -> AGut_As3; ALumen_As3*Ka_As3*Frac;
+  _J1: ALumen_As5 -> AGut_As5; ALumen_As5*Ka_As5*Frac;
+  _J2: AGut_As3 -> ALiver_As3; QGut*AGut_As3/(VGut*PG_As3);
+  _J3: AGut_As5 -> ALiver_As5; QGut*AGut_As5/(VGut*PG_As5);
+  _J4: AGut_AsM5 -> ALiver_AsM5; QGut*AGut_AsM5/(VGut*PG_AsM);
+  _J5: AGut_AsD5 -> ALiver_AsD5; QGut*AGut_AsD5/(VGut*PG_AsD);
+  _J6: AArterial_As3 -> AGut_As3; QGut*AArterial_As3/VArt;
+  _J7: AArterial_As5 -> AGut_As5; QGut*AArterial_As5/VArt;
+  _J8: AArterial_AsM5 -> AGut_AsM5; QGut*AArterial_AsM5/VArt;
+  _J9: AArterial_AsD5 -> AGut_AsD5; QGut*AArterial_AsD5/VArt;
+  _J10: AArterial_As3 -> ALiver_As3; QL*AArterial_As3/VArt;
+  _J11: AArterial_As5 -> ALiver_As5; QL*AArterial_As5/VArt;
+  _J12: ALiver_As3 -> AVenous_As3; (QL + QGut)*ALiver_As3/(VL*PL_As3);
+  _J13: ALiver_As5 -> AVenous_As5; (QL + QGut)*ALiver_As5/(VL*PL_As5);
+  _J14: AArterial_AsM5 -> ALiver_AsM5; QL*AArterial_AsM5/VArt;
+  _J15: ALiver_AsM5 -> AVenous_AsM5; (QL + QGut)*ALiver_AsM5/(VL*PL_AsM);
+  _J16: AArterial_AsD5 -> ALiver_AsD5; QL*AArterial_AsD5/VArt;
+  _J17: ALiver_AsD5 -> AVenous_AsD5; (QL + QGut)*ALiver_AsD5/(VL*PL_AsD);
+  _J18: ALiver_As3 -> ALiver_As5; ALiver_As3*kox_As3;
+  _J19: ALiver_As5 -> ALiver_As3; ALiver_As5*kred_As5;
+  _J20: ALiver_As3 -> ALiver_AsM5; V_As3_MMA*ALiver_As3/VL/((K_As3_MMA + ALiver_As3/VL)*(1 + ALiver_AsM3/VL/Kinh));
+  _J21: ALiver_As3 -> ALiver_AsD5; V_As3_DMA*ALiver_As3/VL/(K_As3_DMA + ALiver_As3/VL);
+  _J22: ALiver_AsM3 -> ALiver_AsM5; kox_M3*ALiver_AsM3;
+  _J23: ALiver_AsM5 -> ALiver_AsM3; kred_M5*ALiver_AsM5;
+  _J24: ALiver_AsM3 -> ALiver_AsD5; V_M3_DMA*ALiver_AsM3/VL/((K_M3_DMA + ALiver_AsM3/VL)*(1 + ALiver_As3/VL/Kinh));
+  _J25: ALiver_AsD3 -> ALiver_AsD5; kox_D3*ALiver_AsD3;
+  _J26: ALiver_AsD5 -> ALiver_AsD3; kred_D5*ALiver_AsD5;
+  _J27: AArterial_As3 -> ARest_As3; QRest*AArterial_As3/VArt;
+  _J28: AArterial_As5 -> ARest_As5; QRest*AArterial_As5/VArt;
+  _J29: ARest_As3 -> AVenous_As3; QRest*ARest_As3/(VRest*PRest_As3);
+  _J30: ARest_As5 -> AVenous_As5; QRest*ARest_As5/(VRest*PRest_As5);
+  _J31: AArterial_AsM5 -> ARest_AsM5; QRest*AArterial_AsM5/VArt;
+  _J32: ARest_AsM5 -> AVenous_AsM5; QRest*ARest_AsM5/(VRest*PRest_AsM);
+  _J33: AArterial_AsD5 -> ARest_AsD5; QRest*AArterial_AsD5/VArt;
+  _J34: ARest_AsD5 -> AVenous_AsD5; QRest*ARest_AsD5/(VRest*PRest_AsD);
+  _J35: AVenous_As3 -> ALung_As3; QLung*AVenous_As3/VVen;
+  _J36: AVenous_As5 -> ALiver_As5; QLung*AVenous_As5/VVen;
+  _J37: ALung_As3 -> ALung_As5; kox_As3*ALung_As3;
+  _J38: ALung_As5 -> ALung_As3; kred_As5*ALung_As5;
+  _J39: ALung_As3 -> AArterial_As3; QLung*ALung_As3/(VLung*PLung_As3);
+  _J40: ALung_As5 -> AArterial_As5; QLung*ALung_As5/(VLung*PLung_As5);
+  _J41: AVenous_AsM5 -> ALung_AsM5; QLung*AVenous_AsM5/VVen;
+  _J42: ALung_AsM5 -> ALung_AsM3; kred_M5*ALung_AsM5;
+  _J43: ALung_AsM3 -> ALung_AsM5; kox_M3*ALung_AsM3;
+  _J44: ALung_AsM5 -> AArterial_AsM5; QLung*ALung_AsM5/(VLung*PLung_AsM);
+  _J45: AVenous_AsD5 -> ALung_AsD5; QLung*AVenous_AsD5/VVen;
+  _J46: ALung_AsD5 -> ALung_AsD3; kred_D5*ALung_AsD5;
+  _J47: ALung_AsD3 -> ALung_AsD5; kox_D3*ALung_AsD3;
+  _J48: ALung_AsD5 -> AArterial_AsD5; QLung*ALung_AsD5/(VLung*PLung_AsD);
+  _J49: ALiver_AsM3 -> AUrine_AsM3; Kurine_MMA*(ALiver_AsM3/PL_AsM);
+  _J50: ALiver_AsD3 -> AUrine_AsD3; Kurine_DMA*(ALiver_AsD3/PL_AsD);
+  _J51: ALung_AsM3 -> AUrine_AsM3; Kurine_MMA*ALung_AsM3/PLung_AsM;
+  _J52: ALung_AsD3 -> AUrine_AsD3; Kurine_DMA*ALung_AsD3/PLung_AsD;
+
+  // Species initializations:
+  ALumen_As3 = 0;
+  ALumen_As3 has MOL_per_L;
+  ALumen_As5 = 0;
+  ALumen_As5 has MOL_per_L;
+  AGut_As3 = 0;
+  AGut_As3 has MOL_per_L;
+  AGut_As5 = 0;
+  AGut_As5 has MOL_per_L;
+  AGut_AsM5 = 0;
+  AGut_AsM5 has MOL_per_L;
+  AGut_AsD5 = 0;
+  AGut_AsD5 has MOL_per_L;
+  AArterial_AsD5 = 0;
+  AArterial_AsD5 has MOL_per_L;
+  ALiver_As3 = 0;
+  ALiver_As3 has MOL_per_L;
+  ALiver_As5 = 0;
+  ALiver_As5 has MOL_per_L;
+  ALiver_AsM3 = 0;
+  ALiver_AsM3 has MOL_per_L;
+  ALiver_AsM5 = 0;
+  ALiver_AsM5 has MOL_per_L;
+  ALiver_AsD3 = 0;
+  ALiver_AsD3 has MOL_per_L;
+  ALiver_AsD5 = 0;
+  ALiver_AsD5 has MOL_per_L;
+  ARest_As3 = 0;
+  ARest_As3 has MOL_per_L;
+  ARest_As5 = 0;
+  ARest_As5 has MOL_per_L;
+  ARest_AsM5 = 0;
+  ARest_AsM5 has MOL_per_L;
+  ARest_AsD5 = 0;
+  ARest_AsD5 has MOL_per_L;
+  AArterial_As3 = 0;
+  AArterial_As3 has MOL_per_L;
+  AArterial_As5 = 0;
+  AArterial_As5 has MOL_per_L;
+  AArterial_AsM5 = 0;
+  AArterial_AsM5 has MOL_per_L;
+  AVenous_As3 = 0;
+  AVenous_As3 has MOL_per_L;
+  AVenous_As5 = 0;
+  AVenous_As5 has MOL_per_L;
+  AVenous_AsM5 = 0;
+  AVenous_AsM5 has MOL_per_L;
+  AVenous_AsD5 = 0;
+  AVenous_AsD5 has MOL_per_L;
+  ALung_As3 = 0;
+  ALung_As3 has MOL_per_L;
+  ALung_As5 = 0;
+  ALung_As5 has MOL_per_L;
+  ALung_AsM3 = 0;
+  ALung_AsM3 has MOL_per_L;
+  ALung_AsM5 = 0;
+  ALung_AsM5 has MOL_per_L;
+  ALung_AsD3 = 0;
+  ALung_AsD3 has MOL_per_L;
+  ALung_AsD5 = 0;
+  ALung_AsD5 has MOL_per_L;
+  AUrine_AsM3 = 0;
+  AUrine_AsM3 has MOL_per_L;
+  AUrine_AsD3 = 0;
+  AUrine_AsD3 has MOL_per_L;
+
+  // Compartment initializations:
+  Lumen = 1;
+  Lumen has L;
+  Gut = VGut;
+  Gut has L;
+  Liver = VL;
+  Liver has L;
+  Lung = VLung;
+  Lung has L;
+  Arterial = VArt;
+  Arterial has L;
+  Venous = VVen;
+  Venous has L;
+  Rest = VRest;
+  Rest has L;
+  Urine = 1;
+  Urine has L;
+
+  // Variable initializations:
+  VGut = 1.2;
+  VGut has L;
+  VL = 1.82;
+  VL has L;
+  VLung = 0.56;
+  VLung has L;
+  VArt := VB/2;
+  VArt has L;
+  VVen := VB/2;
+  VVen has L;
+  VRest has L;
+  Age = 30;
+  Age has YR;
+  BW = 70;
+  BW has KiloGM;
+  VB = 5.53;
+  VB has L;
+  QGut := 1*60;
+  QGut has L_PER_HR;
+  QL := 0.31*60;
+  QL has L_PER_HR;
+  QLung := 5.2*60;
+  QLung has L_PER_HR;
+  QRest := QLung - QGut - QL;
+  QRest has L_PER_HR;
+  PG_As5 = 2.7;
+  PG_As5 has UNITLESS;
+  PG_As3 = 8.3;
+  PG_As3 has UNITLESS;
+  PG_AsM = 2.2;
+  PG_AsM has UNITLESS;
+  PG_AsD = 2.1;
+  PG_AsD has UNITLESS;
+  PRest_As5 = 1;
+  PRest_As5 has UNITLESS;
+  PRest_As3 = 1;
+  PRest_As3 has UNITLESS;
+  PRest_AsM = 1;
+  PRest_AsM has UNITLESS;
+  PRest_AsD = 1;
+  PRest_AsD has UNITLESS;
+  PL_As5 = 15.8;
+  PL_As5 has UNITLESS;
+  PL_As3 = 16.5;
+  PL_As3 has UNITLESS;
+  PL_AsM = 3.3;
+  PL_AsM has UNITLESS;
+  PL_AsD = 3.3;
+  PL_AsD has UNITLESS;
+  PLung_As5 = 2.1;
+  PLung_As5 has UNITLESS;
+  PLung_As3 = 6.7;
+  PLung_As3 has UNITLESS;
+  PLung_AsM = 1.3;
+  PLung_AsM has UNITLESS;
+  PLung_AsD = 1.3;
+  PLung_AsD has UNITLESS;
+  Ka_As3 := 0.004*60;
+  Ka_As3 has PER_H;
+  Ka_As5 := 0.003*60;
+  Ka_As5 has PER_H;
+  Frac = 0.8;
+  Frac has UNITLESS;
+  kred_As5 = 0.003*60;
+  kred_As5 has PER_H;
+  kox_As3 = 0.25;
+  kox_As3 has PER_H;
+  V_As3_MMA = 5.3e-7*60;
+  V_As3_MMA has MOL_PER_HR;
+  V_As3_DMA = 2e-6*60;
+  V_As3_DMA has MOL_PER_HR;
+  K_As3_MMA = 3e-06;
+  K_As3_MMA has MOL_PER_L;
+  K_As3_DMA = 3e-06;
+  K_As3_DMA has MOL_PER_L;
+  Kinh = 4e-05;
+  Kinh has MOL_PER_L;
+  Kurine_As := 0.07*60;
+  Kurine_As has PER_H;
+  kox_M3 = 0.63;
+  kox_M3 has UNITLESS;
+  kred_M5 := 0.008*60;
+  kred_M5 has PER_H;
+  V_M3_DMA := 6.6e-7*60;
+  V_M3_DMA has MOL_PER_HR;
+  K_M3_DMA = 3e-06;
+  K_M3_DMA has MOL_PER_L;
+  Kurine_MMA := 0.3*60;
+  Kurine_MMA has PER_H;
+  kox_D3 = 0.65;
+  kox_D3 has UNITLESS;
+  kred_D5 := 0.004*60;
+  kred_D5 has PER_H;
+  Kurine_DMA := 0.13*60;
+  Kurine_DMA has PER_H;
+  CLumen_As3 has MOL_PER_L;
+  CLumen_As5 has MOL_PER_L;
+  CGut_As3 has MOL_PER_L;
+  CGut_As5 has MOL_PER_L;
+  CGut_AsM5 has MOL_PER_L;
+  CGut_AsD5 has MOL_PER_L;
+  CLiver_As3 has MOL_PER_L;
+  CLiver_As5 has MOL_PER_L;
+  CLiver_AsM3 has MOL_PER_L;
+  CLiver_AsM5 has MOL_PER_L;
+  CLiver_AsD3 has MOL_PER_L;
+  CLiver_AsD5 has MOL_PER_L;
+  CRest_As3 has MOL_PER_L;
+  CRest_As5 has MOL_PER_L;
+  CRest_AsM5 has MOL_PER_L;
+  CRest_AsD5 has MOL_PER_L;
+  CArterial_As3 has MOL_PER_L;
+  CArterial_As5 has MOL_PER_L;
+  CArterial_AsM5 has MOL_PER_L;
+  CArterial_AsD5 has MOL_PER_L;
+  CVenous_As3 has MOL_PER_L;
+  CVenous_As5 has MOL_PER_L;
+  CVenous_AsM5 has MOL_PER_L;
+  CVenous_AsD5 has MOL_PER_L;
+  CLung_As3 has MOL_PER_L;
+  CLung_As5 has MOL_PER_L;
+  CLung_AsM3 has MOL_PER_L;
+  CLung_AsM5 has MOL_PER_L;
+  CLung_AsD3 has MOL_PER_L;
+  CLung_AsD5 has MOL_PER_L;
+
+  // Other declarations:
+  var VRest, CLumen_As3, CLumen_As5, CGut_As3, CGut_As5, CGut_AsM5, CGut_AsD5;
+  var CLiver_As3, CLiver_As5, CLiver_AsM3, CLiver_AsM5, CLiver_AsD3, CLiver_AsD5;
+  var CRest_As3, CRest_As5, CRest_AsM5, CRest_AsD5, CArterial_As3, CArterial_As5;
+  var CArterial_AsM5, CArterial_AsD5, CVenous_As3, CVenous_As5, CVenous_AsM5;
+  var CVenous_AsD5, CLung_As3, CLung_As5, CLung_AsM3, CLung_AsM5, CLung_AsD3;
+  var CLung_AsD5;
+  const Lumen, Gut, VGut, Liver, VL, Lung, VLung, Arterial, VArt, Venous;
+  const VVen, Rest, Urine, Age, BW, VB, QGut, QL, QLung, QRest, PG_As5, PG_As3;
+  const PG_AsM, PG_AsD, PRest_As5, PRest_As3, PRest_AsM, PRest_AsD, PL_As5;
+  const PL_As3, PL_AsM, PL_AsD, PLung_As5, PLung_As3, PLung_AsM, PLung_AsD;
+  const Ka_As3, Ka_As5, Frac, kred_As5, kox_As3, V_As3_MMA, V_As3_DMA, K_As3_MMA;
+  const K_As3_DMA, Kinh, Kurine_As, kox_M3, kred_M5, V_M3_DMA, K_M3_DMA, Kurine_MMA;
+  const kox_D3, kred_D5, Kurine_DMA;
+
+  // Unit definitions:
+  unit UNITLESS = dimensionless;
+  unit L = dimensionless;
+  unit HR = 3600 second;
+  unit MOL = mole;
+  unit KiloGM = 1e3 gram;
+  unit YR = 3.15576e+07 second;
+  unit L_PER_HR = litre / 3600 second;
+  unit MOL_PER_L = mole / litre;
+  unit PER_H = 1 / 3600 second;
+  unit MOL_PER_HR = mole / 3600 second;
+  unit volume = L;
+  unit substance = MOL;
+  unit extent = MOL;
+  unit time_unit = HR;
+  unit MOL_per_L = mole / dimensionless;
+
+  // Display Names:
+  Lumen is "Compartment of lumen";
+  Gut is "Compartment of Gut";
+  VGut is "Volume of gut";
+  Liver is "Compartment of liver";
+  VL is "Volume of liver";
+  Lung is "Compartment of lung";
+  VLung is "Volume of lung";
+  Arterial is "Compartment of arterial blood";
+  VArt is "Volume of arterial blood";
+  Venous is "Compartment of venous blood";
+  VVen is "Volume of venous blood";
+  Rest is "Compartment of rest of the body";
+  VRest is "Volume of rest of the body";
+  Urine is "Compartment of urine";
+  ALumen_As3 is "Amount of As3+ in lumen";
+  ALumen_As5 is "Amount of As5+ in lumen";
+  AGut_As3 is "Amount of As3+ in gut";
+  AGut_As5 is "Amount of As5+ in gut";
+  AGut_AsM5 is "Amount of MMA5 in gut";
+  AGut_AsD5 is "Amount of DMA5 in Gut";
+  AArterial_AsD5 is "Amount of DMA5 in arterial blood";
+  ALiver_As3 is "Amount of As3+ in liver";
+  ALiver_As5 is "Amount of As5+ in liver";
+  ALiver_AsM3 is "Amount of MMA3 in liver";
+  ALiver_AsM5 is "Amount of MMA5 in liver";
+  ALiver_AsD3 is "Amount of DMA3 in liver";
+  ALiver_AsD5 is "Amount od DMA5 in liver";
+  ARest_As3 is "Amount of As3+ in rest of the body";
+  ARest_As5 is "Amount of As5+ in rest of the body";
+  ARest_AsM5 is "Amount of MMA5 in rest of the body";
+  ARest_AsD5 is "Amount of DMA5 in rest of the body";
+  AArterial_As3 is "Amount of As3+ in arterial blood";
+  AArterial_As5 is "Amount of As5+ in arterial blood";
+  AArterial_AsM5 is "Amount of MMA5 in arterial blood";
+  AVenous_As3 is "Amount of As3+ in venous blood";
+  AVenous_As5 is "Amount of As5+ in venous blood";
+  AVenous_AsM5 is "Amount of MMA5 in venous blood";
+  AVenous_AsD5 is "Amount of DMA5 in venous blood";
+  ALung_As3 is "Amount of As3+ in lung";
+  ALung_As5 is "Amount of As5+ in lung";
+  ALung_AsM3 is "Amount of MMA3 in lung";
+  ALung_AsM5 is "Amount of MMA5 in lung";
+  ALung_AsD3 is "Amount of DMA3 in lung";
+  ALung_AsD5 is "Amount of DMA5 in lung";
+  AUrine_AsM3 is "Cumulative amount of MMA3 in urine";
+  AUrine_AsD3 is "Cumulative amount of DMA3 in urine";
+  BW is "Bodyweight";
+  VB is "Volume of blood";
+  QGut is "Blood-flow to gut";
+  QL is "Blood-flow to liver";
+  QLung is "Blood-flow to lung - Cardiac output";
+  QRest is "Blood-flow to the rest of the body";
+  PG_As5 is "Partition coefficient Gut / Plasma of As5+";
+  PG_As3 is "Partition coefficient Gut / Plasma of As3+";
+  PG_AsM is "Partition coefficient Gut / Plasma of MMA";
+  PG_AsD is "Partition coefficient Gut / Plasma of DMA";
+  PRest_As5 is "Partition coefficient Restbody / Plasma of As5+";
+  PRest_As3 is "Partition coefficient Restbody / Plasma of As3+";
+  PRest_AsM is "Partition coefficient Restbody / Plasma of MMA";
+  PRest_AsD is "Partition coefficient Restbody / Plasma of DMA";
+  PL_As5 is "Partition coefficient Liver / Plasma of As5+";
+  PL_As3 is "Partition coefficient Liver / Plasma of As3+";
+  PL_AsM is "Partition coefficient Liver / Plasma of MMA";
+  PL_AsD is "Partition coefficient Liver / Plasma of DMA";
+  PLung_As5 is "Partition coefficient Lung / Plasma of As5+";
+  PLung_As3 is "Partition coefficient Lung / Plasma of As3+";
+  PLung_AsM is "Partition coefficient Lung / Plasma of MMA";
+  PLung_AsD is "Partition coefficient Lung / Plasma of DMA";
+  Ka_As3 is "Oral absorption of As3+";
+  Ka_As5 is "Oral absorption of As5+";
+  Frac is "Fraction of absorption";
+  kred_As5 is "Reduction factor of As5+";
+  kox_As3 is "Oxydation factor of As3+";
+  V_As3_MMA is "Maximum metabolism from As3+ to MMA";
+  V_As3_DMA is "Maximum metabolism from As3+ to DMA";
+  K_As3_MMA is "Michaelis-Menten binding constant from As3+ to MMA";
+  K_As3_DMA is "Michaelis-Menten binding constant from As3+ to DMA";
+  Kinh is "Non-competitive inhibition constant";
+  Kurine_As is "Urinal excretion factor of iAs";
+  kox_M3 is "Oxydation factor of MMA3 to MM5";
+  kred_M5 is "Reduction factor of MMA5 to MM3";
+  V_M3_DMA is "Maximum metabolism from MMA3 to DMA";
+  K_M3_DMA is "Michaelis-Menten binding from MMA3 to DMA";
+  Kurine_MMA is "Urinal excretion factor of MMA";
+  kox_D3 is "Oxydation factor of DMA3 to DMA5";
+  kred_D5 is "Reduction factor of DMA5 to DMA3";
+  Kurine_DMA is "Urinal excretion factor of DMA";
+  CLumen_As3 is "Concentration of As3+ in lumen";
+  CLumen_As5 is "Concentration of As5+ in lumen";
+  CGut_As3 is "Concentration of As3+ in gut";
+  CGut_As5 is "Concentration of As5+ in gut";
+  CGut_AsM5 is "Concentration of MMA5 in gut";
+  CGut_AsD5 is "Concentration of DMA5 in gut";
+  CLiver_As3 is "Concentration of As3+ in liver";
+  CLiver_As5 is "Concentration of As5+ in liver";
+  CLiver_AsM3 is "Concentration of MMA3 in liver";
+  CLiver_AsM5 is "Concentration of MMA5 in liver";
+  CLiver_AsD3 is "Concentration of DMA3 in liver";
+  CLiver_AsD5 is "Concentration of DMA5 in liver";
+  CRest_As3 is "Concentration of As3+ in the rest of the body";
+  CRest_As5 is "Concentration of As5+ in the rest of the body";
+  CRest_AsM5 is "Concentration of MMA5 in the rest of the body";
+  CRest_AsD5 is "Concentration of DMA5 in the rest of the body";
+  CArterial_As3 is "Concentration of As3+ in arterial blood";
+  CArterial_As5 is "Concentration of As5+ in arterial blood";
+  CArterial_AsM5 is "Concentration of MMA5 in arterial blood";
+  CArterial_AsD5 is "Concentration of DMA5 in arterial blood";
+  CVenous_As3 is "Concentration of As3+ in venous blood";
+  CVenous_As5 is "Concentration of As5+ in venous blood";
+  CVenous_AsM5 is "Concentration of MMA5 in venous blood";
+  CVenous_AsD5 is "Concentration of DMA5 in venous blood";
+  CLung_As3 is "Concentration of As3+ in lung";
+  CLung_As5 is "Concentration of As5+ in lung";
+  CLung_AsM3 is "Concentration of MMA3 in lung";
+  CLung_AsM5 is "Concentration of MMA5 in lung";
+  CLung_AsD3 is "Concentration of DMA3 in lung";
+  CLung_AsD5 is "Concentration of DMA5 in lung";
+
+  // CV terms:
+  Lumen model_source "http://purl.obolibrary.org/obo/PBPKO_00478"
+  Gut model_source "http://purl.obolibrary.org/obo/PBPKO_00477"
+  VGut model_source "http://purl.obolibrary.org/obo/PBPKO_00524"
+  Liver model_source "http://purl.obolibrary.org/obo/PBPKO_00558"
+  VL model_source "http://purl.obolibrary.org/obo/PBPKO_00077"
+  Lung model_source "http://purl.obolibrary.org/obo/PBPKO_00559"
+  VLung model_source "http://purl.obolibrary.org/obo/PBPKO_00097"
+  Arterial model_source "http://purl.obolibrary.org/obo/PBPKO_00552"
+  VArt model_source "http://purl.obolibrary.org/obo/PBPKO_00121"
+  Venous model_source "http://purl.obolibrary.org/obo/PBPKO_00561"
+  VVen model_source "http://purl.obolibrary.org/obo/PBPKO_00122"
+  Rest model_source "http://purl.obolibrary.org/obo/PBPKO_00450"
+  VRest model_source "http://purl.obolibrary.org/obo/PBPKO_00105"
+  Urine model_source "http://purl.obolibrary.org/obo/PBPKO_00556"
+  ALumen_As3 identity "http://purl.obolibrary.org/obo/CHEBI_35828"
+  ALumen_As5 identity "http://purl.obolibrary.org/obo/CHEBI_35829"
+  AGut_As3 model_source "http://purl.obolibrary.org/obo/PBPKO_00496"
+  AGut_As3 identity "http://purl.obolibrary.org/obo/CHEBI_35828"
+  AGut_As5 model_source "http://purl.obolibrary.org/obo/PBPKO_00496"
+  AGut_As5 identity "http://purl.obolibrary.org/obo/CHEBI_35829"
+  AGut_AsM5 model_source "http://purl.obolibrary.org/obo/PBPKO_00496"
+  AGut_AsM5 identity "http://purl.obolibrary.org/obo/CHEBI_29852"
+  AGut_AsD5 model_source "http://purl.obolibrary.org/obo/PBPKO_00496"
+  AGut_AsD5 identity "http://purl.obolibrary.org/obo/CHEBI_48765"
+  AArterial_AsD5 model_source "http://purl.obolibrary.org/obo/PBPKO_00631"
+  AArterial_AsD5 identity "http://purl.obolibrary.org/obo/CHEBI_48765"
+  ALiver_As3 model_source "http://purl.obolibrary.org/obo/PBPKO_00497"
+  ALiver_As3 identity "http://purl.obolibrary.org/obo/CHEBI_35828"
+  ALiver_As5 model_source "http://purl.obolibrary.org/obo/PBPKO_00497"
+  ALiver_As5 identity "http://purl.obolibrary.org/obo/CHEBI_35829"
+  ALiver_AsM3 model_source "http://purl.obolibrary.org/obo/PBPKO_00497"
+  ALiver_AsM3 identity "http://purl.obolibrary.org/obo/CHEBI_17826"
+  ALiver_AsM5 model_source "http://purl.obolibrary.org/obo/PBPKO_00497"
+  ALiver_AsM5 identity "http://purl.obolibrary.org/obo/CHEBI_29852"
+  ALiver_AsD3 model_source "http://purl.obolibrary.org/obo/PBPKO_00497"
+  ALiver_AsD3 identity "http://purl.obolibrary.org/obo/CHEBI_23808"
+  ALiver_AsD5 model_source "http://purl.obolibrary.org/obo/PBPKO_00497"
+  ALiver_AsD5 identity "http://purl.obolibrary.org/obo/CHEBI_48765"
+  ARest_As3 model_source "http://purl.obolibrary.org/obo/PBPKO_00501"
+  ARest_As3 identity "http://purl.obolibrary.org/obo/CHEBI_35828"
+  ARest_As5 model_source "http://purl.obolibrary.org/obo/PBPKO_00501"
+  ARest_As5 identity "http://purl.obolibrary.org/obo/CHEBI_35829"
+  ARest_AsM5 model_source "http://purl.obolibrary.org/obo/PBPKO_00501"
+  ARest_AsM5 identity "http://purl.obolibrary.org/obo/CHEBI_29852"
+  ARest_AsD5 model_source "http://purl.obolibrary.org/obo/PBPKO_00501"
+  ARest_AsD5 identity "http://purl.obolibrary.org/obo/CHEBI_48765"
+  AArterial_As3 model_source "http://purl.obolibrary.org/obo/PBPKO_00631"
+  AArterial_As3 identity "http://purl.obolibrary.org/obo/CHEBI_35828"
+  AArterial_As5 model_source "http://purl.obolibrary.org/obo/PBPKO_00631"
+  AArterial_As5 identity "http://purl.obolibrary.org/obo/CHEBI_35829"
+  AArterial_AsM5 model_source "http://purl.obolibrary.org/obo/PBPKO_00631"
+  AArterial_AsM5 identity "http://purl.obolibrary.org/obo/CHEBI_29852"
+  AVenous_As3 model_source "http://purl.obolibrary.org/obo/PBPKO_00632"
+  AVenous_As3 identity "http://purl.obolibrary.org/obo/CHEBI_35828"
+  AVenous_As5 model_source "http://purl.obolibrary.org/obo/PBPKO_00632"
+  AVenous_As5 identity "http://purl.obolibrary.org/obo/CHEBI_35829"
+  AVenous_AsM5 model_source "http://purl.obolibrary.org/obo/PBPKO_00632"
+  AVenous_AsM5 identity "http://purl.obolibrary.org/obo/CHEBI_29852"
+  AVenous_AsD5 model_source "http://purl.obolibrary.org/obo/PBPKO_00632"
+  AVenous_AsD5 identity "http://purl.obolibrary.org/obo/CHEBI_48765"
+  ALung_As3 model_source "http://purl.obolibrary.org/obo/PBPKO_00504"
+  ALung_As3 identity "http://purl.obolibrary.org/obo/CHEBI_35828"
+  ALung_As5 model_source "http://purl.obolibrary.org/obo/PBPKO_00504"
+  ALung_As5 identity "http://purl.obolibrary.org/obo/CHEBI_35829"
+  ALung_AsM3 model_source "http://purl.obolibrary.org/obo/PBPKO_00504"
+  ALung_AsM3 identity "http://purl.obolibrary.org/obo/CHEBI_17826"
+  ALung_AsM5 model_source "http://purl.obolibrary.org/obo/PBPKO_00504"
+  ALung_AsM5 identity "http://purl.obolibrary.org/obo/CHEBI_29852"
+  ALung_AsD3 model_source "http://purl.obolibrary.org/obo/PBPKO_00504"
+  ALung_AsD3 identity "http://purl.obolibrary.org/obo/CHEBI_23808"
+  ALung_AsD5 model_source "http://purl.obolibrary.org/obo/PBPKO_00504"
+  ALung_AsD5 identity "http://purl.obolibrary.org/obo/CHEBI_48765"
+  AUrine_AsM3 model_source "http://purl.obolibrary.org/obo/PBPKO_00274"
+  AUrine_AsM3 identity "http://purl.obolibrary.org/obo/CHEBI_17826"
+  AUrine_AsD3 model_source "http://purl.obolibrary.org/obo/PBPKO_00274"
+  AUrine_AsD3 identity "http://purl.obolibrary.org/obo/CHEBI_23808"
+  Age model_source "http://purl.obolibrary.org/obo/PBPKO_00521"
+  BW model_source "http://purl.obolibrary.org/obo/PBPKO_00008"
+  VB model_source "http://purl.obolibrary.org/obo/PBPKO_00108"
+  QGut model_source "http://purl.obolibrary.org/obo/PBPKO_00531"
+  QL model_source "http://purl.obolibrary.org/obo/PBPKO_00024"
+  QLung model_source "http://purl.obolibrary.org/obo/PBPKO_00013"
+  QRest model_source "http://purl.obolibrary.org/obo/PBPKO_00050"
+  PG_As5 model_source "http://purl.obolibrary.org/obo/PBPKO_00572"
+  PG_As5 identity "http://purl.obolibrary.org/obo/CHEBI_35829"
+  PG_As3 model_source "http://purl.obolibrary.org/obo/PBPKO_00572"
+  PG_As3 identity "http://purl.obolibrary.org/obo/CHEBI_35828"
+  PG_AsM model_source "http://purl.obolibrary.org/obo/PBPKO_00572"
+  PG_AsM identity "http://purl.obolibrary.org/obo/CHEBI_29852"
+  PG_AsD model_source "http://purl.obolibrary.org/obo/PBPKO_00572"
+  PG_AsD identity "http://purl.obolibrary.org/obo/CHEBI_48765"
+  PRest_As5 model_source "http://purl.obolibrary.org/obo/PBPKO_00585"
+  PRest_As5 identity "http://purl.obolibrary.org/obo/CHEBI_35829"
+  PRest_As3 model_source "http://purl.obolibrary.org/obo/PBPKO_00585"
+  PRest_As3 identity "http://purl.obolibrary.org/obo/CHEBI_35828"
+  PRest_AsM model_source "http://purl.obolibrary.org/obo/PBPKO_00585"
+  PRest_AsM identity "http://purl.obolibrary.org/obo/CHEBI_29852"
+  PRest_AsD model_source "http://purl.obolibrary.org/obo/PBPKO_00585"
+  PRest_AsD identity "http://purl.obolibrary.org/obo/CHEBI_48765"
+  PL_As5 model_source "http://purl.obolibrary.org/obo/PBPKO_00577"
+  PL_As5 identity "http://purl.obolibrary.org/obo/CHEBI_35829"
+  PL_As3 model_source "http://purl.obolibrary.org/obo/PBPKO_00577"
+  PL_As3 identity "http://purl.obolibrary.org/obo/CHEBI_35828"
+  PL_AsM model_source "http://purl.obolibrary.org/obo/PBPKO_00577"
+  PL_AsM identity "http://purl.obolibrary.org/obo/CHEBI_29852"
+  PL_AsD model_source "http://purl.obolibrary.org/obo/PBPKO_00577"
+  PL_AsD identity "http://purl.obolibrary.org/obo/CHEBI_48765"
+  PLung_As5 model_source "http://purl.obolibrary.org/obo/PBPKO_00579"
+  PLung_As5 identity "http://purl.obolibrary.org/obo/CHEBI_35829"
+  PLung_As3 model_source "http://purl.obolibrary.org/obo/PBPKO_00579"
+  PLung_As3 identity "http://purl.obolibrary.org/obo/CHEBI_35828"
+  PLung_AsM model_source "http://purl.obolibrary.org/obo/PBPKO_00579"
+  PLung_AsM identity "http://purl.obolibrary.org/obo/CHEBI_29852"
+  PLung_AsD model_source "http://purl.obolibrary.org/obo/PBPKO_00579"
+  PLung_AsD identity "http://purl.obolibrary.org/obo/CHEBI_48765"
+  Ka_As3 model_source "http://purl.obolibrary.org/obo/PBPKO_00141"
+  Ka_As3 identity "http://purl.obolibrary.org/obo/CHEBI_35828"
+  Ka_As5 model_source "http://purl.obolibrary.org/obo/PBPKO_00141"
+  Ka_As5 identity "http://purl.obolibrary.org/obo/CHEBI_35829"
+  Frac model_source "http://purl.obolibrary.org/obo/PBPKO_00263"
+  V_As3_MMA model_source "http://purl.obolibrary.org/obo/PBPKO_00613"
+  V_As3_MMA identity "http://purl.obolibrary.org/obo/CHEBI_35828"
+  V_As3_DMA model_source "http://purl.obolibrary.org/obo/PBPKO_00613"
+  V_As3_DMA identity "http://purl.obolibrary.org/obo/CHEBI_35828"
+  K_As3_MMA model_source "http://biomodels.net/SBO/SBO_0000027"
+  K_As3_MMA identity "http://purl.obolibrary.org/obo/CHEBI_35828"
+  K_As3_DMA model_source "http://biomodels.net/SBO/SBO_0000027"
+  K_As3_DMA identity "http://purl.obolibrary.org/obo/CHEBI_35828"
+  Kinh model_source "http://purl.obolibrary.org/obo/PBPKO_00222"
+  Kinh identity "http://purl.obolibrary.org/obo/CHEBI_190436"
+  Kurine_As model_source "http://purl.obolibrary.org/obo/PBPKO_00534"
+  Kurine_As identity "http://purl.obolibrary.org/obo/CHEBI_190436"
+  V_M3_DMA model_source "http://purl.obolibrary.org/obo/PBPKO_00613"
+  V_M3_DMA identity "http://purl.obolibrary.org/obo/CHEBI_29852"
+  K_M3_DMA model_source "http://biomodels.net/SBO/SBO_0000027"
+  K_M3_DMA identity "http://purl.obolibrary.org/obo/CHEBI_29852"
+  Kurine_MMA model_source "http://purl.obolibrary.org/obo/PBPKO_00534"
+  Kurine_MMA identity "http://purl.obolibrary.org/obo/CHEBI_29852"
+  Kurine_DMA model_source "http://purl.obolibrary.org/obo/PBPKO_00534"
+  Kurine_DMA identity "http://purl.obolibrary.org/obo/CHEBI_48765"
+  CGut_As3 model_source "http://purl.obolibrary.org/obo/PBPKO_00538"
+  CGut_As5 model_source "http://purl.obolibrary.org/obo/PBPKO_00538"
+  CGut_AsM5 model_source "http://purl.obolibrary.org/obo/PBPKO_00538"
+  CGut_AsD5 model_source "http://purl.obolibrary.org/obo/PBPKO_00538"
+  CLiver_As3 model_source "http://purl.obolibrary.org/obo/PBPKO_00539"
+  CLiver_As5 model_source "http://purl.obolibrary.org/obo/PBPKO_00539"
+  CLiver_AsM3 model_source "http://purl.obolibrary.org/obo/PBPKO_00539"
+  CLiver_AsM5 model_source "http://purl.obolibrary.org/obo/PBPKO_00539"
+  CLiver_AsD3 model_source "http://purl.obolibrary.org/obo/PBPKO_00539"
+  CLiver_AsD5 model_source "http://purl.obolibrary.org/obo/PBPKO_00539"
+  CRest_As3 model_source "http://purl.obolibrary.org/obo/PBPKO_00548"
+  CRest_As5 model_source "http://purl.obolibrary.org/obo/PBPKO_00548"
+  CRest_AsM5 model_source "http://purl.obolibrary.org/obo/PBPKO_00548"
+  CRest_AsD5 model_source "http://purl.obolibrary.org/obo/PBPKO_00548"
+  CLung_As3 model_source "http://purl.obolibrary.org/obo/PBPKO_00543"
+  CLung_As5 model_source "http://purl.obolibrary.org/obo/PBPKO_00543"
+  CLung_AsM3 model_source "http://purl.obolibrary.org/obo/PBPKO_00543"
+  CLung_AsM5 model_source "http://purl.obolibrary.org/obo/PBPKO_00543"
+  CLung_AsD3 model_source "http://purl.obolibrary.org/obo/PBPKO_00543"
+  CLung_AsD5 model_source "http://purl.obolibrary.org/obo/PBPKO_00543"
+
+  model hasTaxon "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+  model hasProperty "http://purl.obolibrary.org/obo/CHEBI_190436"
+end
