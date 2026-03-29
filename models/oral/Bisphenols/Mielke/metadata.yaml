@@ -1,5 +1,5 @@
 id: Mielke2009_BPA_Human
-name: ''
+name: Mielke
 applicability_domain:
   chemicals:
   - id: CHEBI:33216
@@ -20,24 +20,28 @@ compartments:
     id: PBPKO:00477
     label: gut compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00477
+  unit: L
 - id: Liver
   name: liver
   pbpko_bqm_is_class:
     id: PBPKO:00558
     label: liver compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00558
+  unit: L
 - id: Blood
   name: blood
   pbpko_bqm_is_class:
     id: PBPKO:00464
     label: blood compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00464
+  unit: L
 - id: Rest
   name: rest-of-body
   pbpko_bqm_is_class:
     id: PBPKO:00450
     label: rest of body compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00450
+  unit: L
 species:
 - id: AGut
   name: amount of chemical in gut
@@ -45,36 +49,66 @@ species:
     id: PBPKO:00496
     label: amount in gut
     iri: http://purl.obolibrary.org/obo/PBPKO_00496
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: umol
 - id: ALiver
   name: amount of chemical in liver
   pbpko_bqm_is_class:
     id: PBPKO:00497
     label: amount in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: umol
 - id: ABlood
   name: amount of chemical in blood
   pbpko_bqm_is_class:
     id: PBPKO:00623
     label: amount in blood
     iri: http://purl.obolibrary.org/obo/PBPKO_00623
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: umol
 - id: ARest
   name: amount of chemical in rest-of-body
   pbpko_bqm_is_class:
     id: PBPKO:00501
     label: amount in restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00501
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: umol
 - id: ALiverMet1
   name: Amount in liver
   pbpko_bqm_is_class:
     id: PBPKO:00497
     label: amount in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:76967
+    label: human xenobiotic metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_76967
+  unit: umol
 - id: ALiverMet2
   name: Amount in liver
   pbpko_bqm_is_class:
     id: PBPKO:00497
     label: amount in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:167305
+    label: bisphenol A sulfate
+    iri: http://purl.obolibrary.org/obo/CHEBI_167305
+  unit: umol
 parameters:
 - id: BW
   name: body weight
@@ -82,131 +116,289 @@ parameters:
     id: PBPKO:00008
     label: bodyweight
     iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  unit: kg
 - id: VLc
   name: Volume fraction of liver to bodyweight
   pbpko_bqm_is_class:
     id: PBPKO:00078
     label: fraction of liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00078
+  unit: L/kg
 - id: VBc
   name: Volume fraction of blood to bodyweight
+  unit: L/kg
 - id: VL
   name: Volume of liver
   pbpko_bqm_is_class:
     id: PBPKO:00077
     label: volume of liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00077
+  unit: L
 - id: VB
   name: Volume of blood
   pbpko_bqm_is_class:
     id: PBPKO:00108
     label: volume of blood
     iri: http://purl.obolibrary.org/obo/PBPKO_00108
+  unit: L
 - id: VRest
   name: Volume of rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00105
     label: volume of rest body
     iri: http://purl.obolibrary.org/obo/PBPKO_00105
+  unit: L
 - id: QL
   name: Blood flow rate to liver
   pbpko_bqm_is_class:
     id: PBPKO:00024
     label: blood flow rate to liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00024
+  unit: L/h
 - id: QC
   name: Cardiac output
   pbpko_bqm_is_class:
     id: PBPKO:00013
     label: cardiac output rate
     iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  unit: L/h
 - id: QRest
   name: Blood flow rate to rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00050
     label: blood flow rate to restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00050
+  unit: L/h
 - id: PL
   name: Partition coefficient - liver
   pbpko_bqm_is_class:
     id: PBPKO:00577
     label: liver blood partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00577
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: dimensionless
 - id: PRest
   name: Partition coefficient - rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00585
     label: restbody blood partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00585
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: dimensionless
 - id: kabs
   name: absorption constant rate
+  unit: /h
 - id: KmLMet1
   name: Glucuronidation - Km
   pbpko_bqm_is_class:
     id: PBPKO:00214
     label: Michaelis constant  liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:76967
+    label: human xenobiotic metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_76967
+  unit: umol/L
 - id: VmaxLMet1C
   name: Glucuronidation - Vmax
   pbpko_bqm_is_class:
     id: PBPKO:00214
     label: Michaelis constant  liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:76967
+    label: human xenobiotic metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_76967
+  unit: ''
 - id: VmaxLMet1
   name: Glucuronidation - Vmax
   pbpko_bqm_is_class:
     id: PBPKO:00214
     label: Michaelis constant  liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:76967
+    label: human xenobiotic metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_76967
+  unit: ''
 - id: KmLMet2
   name: Sulfation - Km
   pbpko_bqm_is_class:
     id: PBPKO:00214
     label: Michaelis constant  liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: umol/L
 - id: VmaxLMet2C
   name: Sulfation - Vmax
   pbpko_bqm_is_class:
     id: PBPKO:00214
     label: Michaelis constant  liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: ''
 - id: VmaxLMet2
   name: Sulfation - Vmax
   pbpko_bqm_is_class:
     id: PBPKO:00214
     label: Michaelis constant  liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: ''
 - id: CBlood
   name: Concentration in blood
   pbpko_bqm_is_class:
     id: PBPKO:00301
     label: concentration in blood
     iri: http://purl.obolibrary.org/obo/PBPKO_00301
+  unit: umol/L
 - id: CLiver
   name: Concentration in liver
   pbpko_bqm_is_class:
     id: PBPKO:00539
     label: concentration in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00539
+  unit: umol/L
 - id: CVL
   name: Concentration in liver (Aliver/PL)
   pbpko_bqm_is_class:
     id: PBPKO:00539
     label: concentration in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00539
+  unit: umol/L
 - id: CRest
   name: Concentration in rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00548
     label: concentration in restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00548
+  unit: umol/L
+parameterisations:
+- filename: Mielke.params.csv
+  model_id: Mielke2009_BPA_Human
+  parameters:
+  - id: BW
+    value: 73.0
+    unit: kg
+    reference: ''
+    bqm_is:
+      id: PBPKO:00008
+      label: bodyweight
+      iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  - id: VLc
+    value: 0.024
+    unit: L/kg
+    reference: ''
+    bqm_is:
+      id: PBPKO:00078
+      label: fraction of liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00078
+  - id: VBc
+    value: 0.079
+    unit: L/kg
+    reference: ''
+  - id: QL
+    value: 99.5
+    unit: L/h
+    reference: ''
+    bqm_is:
+      id: PBPKO:00024
+      label: blood flow rate to liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00024
+  - id: QC
+    value: 390.0
+    unit: L/h
+    reference: ''
+    bqm_is:
+      id: PBPKO:00013
+      label: cardiac output rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  - id: PL
+    value: 1.46
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00577
+      label: liver blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00577
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  - id: PRest
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00585
+      label: restbody blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00585
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  - id: kabs
+    value: 1.2
+    unit: /h
+    reference: ''
+  - id: KmLMet1
+    value: 8.5
+    unit: umol/L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:76967
+      label: human xenobiotic metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_76967
+  - id: VmaxLMet1C
+    value: 54.9
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:76967
+      label: human xenobiotic metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_76967
+  - id: KmLMet2
+    value: 8.5
+    unit: umol/L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
 unit_consistency:
 - level: error
-  msg: "In situations where a mathematical expression refers to extent, the units\
-    \ of extent should be consistent with the global extent units of the model. In\
-    \ models where the 'extentUnits' attribute has not been declared, libSBML does\
-    \ not yet have the functionality to verify accurately the consistency of the units\
-    \ in such expressions. \n"
+  msg: In situations where a mathematical expression refers to extent, the units of
+    extent should be consistent with the global extent units of the model. In models
+    where the 'extentUnits' attribute has not been declared, libSBML does not yet
+    have the functionality to verify accurately the consistency of the units in such
+    expressions.
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -215,12 +407,12 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'VmaxLMet1C' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VmaxLMet1C' does not\
-    \ have a 'units' attribute.\n"
+    \ have a 'units' attribute."
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -229,12 +421,12 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'VmaxLMet1' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VmaxLMet1' does not have\
-    \ a 'units' attribute.\n"
+    \ a 'units' attribute."
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -243,12 +435,12 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'VmaxLMet2C' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VmaxLMet2C' does not\
-    \ have a 'units' attribute.\n"
+    \ have a 'units' attribute."
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -257,51 +449,51 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'VmaxLMet2' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VmaxLMet2' does not have\
-    \ a 'units' attribute.\n"
+    \ a 'units' attribute."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '0.84 * BW - VL - VB' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression 'VmaxLMet1C * 1800 * 60 / 1000' cannot be\
     \ fully checked. Unit consistency reported as either no errors or further unit\
-    \ errors related to this object may not be accurate.\n"
+    \ errors related to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '0.15 * VmaxLMet1C' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression 'VmaxLMet2C * 1800 * 60 / 1000' cannot be\
     \ fully checked. Unit consistency reported as either no errors or further unit\
-    \ errors related to this object may not be accurate.\n"
+    \ errors related to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <kineticLaw> <math> expression 'VmaxLMet1 * (CLiver / PL) / (KmLMet1 + CLiver\
     \ / PL)' cannot be fully checked. Unit consistency reported as either no errors\
-    \ or further unit errors related to this object may not be accurate.\n"
+    \ or further unit errors related to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <kineticLaw> <math> expression 'VmaxLMet2 * (CLiver / PL) / (KmLMet2 + CLiver\
     \ / PL)' cannot be fully checked. Unit consistency reported as either no errors\
-    \ or further unit errors related to this object may not be accurate.\n"
+    \ or further unit errors related to this object may not be accurate."

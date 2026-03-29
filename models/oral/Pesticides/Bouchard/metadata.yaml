@@ -1,5 +1,5 @@
 id: Bouchard2010_Chlorpyrifos_Human
-name: ''
+name: Bouchard
 applicability_domain:
   chemicals: []
   species: []
@@ -10,28 +10,59 @@ num_reactions: 4
 compartments:
 - id: Gut
   name: ''
+  unit: ''
 - id: Blood
   name: ''
+  unit: ''
 - id: Rest
   name: ''
+  unit: ''
 species:
 - id: AGut
   name: ''
+  unit: ''
 - id: ABlood
   name: ''
+  unit: ''
 - id: ARest
   name: ''
+  unit: ''
 - id: ABloodMetTotal
   name: ''
+  unit: ''
 parameters:
 - id: kbm
   name: ''
+  unit: ''
 - id: kabs
   name: ''
+  unit: ''
 - id: kbr
   name: ''
+  unit: ''
 - id: krb
   name: ''
+  unit: ''
+parameterisations:
+- filename: Bouchard.params.csv
+  model_id: Bouchard2010_Chlorpyrifos_Human
+  parameters:
+  - id: kbm
+    value: 1.908
+    unit: ''
+    reference: ''
+  - id: kabs
+    value: 0.46
+    unit: ''
+    reference: ''
+  - id: kbr
+    value: 3.061
+    unit: ''
+    reference: ''
+  - id: krb
+    value: 0.0361
+    unit: ''
+    reference: ''
 unit_consistency:
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
@@ -41,12 +72,12 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'kbm' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'kbm' does not have a\
-    \ 'units' attribute.\n"
+    \ 'units' attribute."
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -55,12 +86,12 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'kabs' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'kabs' does not have a\
-    \ 'units' attribute.\n"
+    \ 'units' attribute."
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -69,12 +100,12 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'kbr' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'kbr' does not have a\
-    \ 'units' attribute.\n"
+    \ 'units' attribute."
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -83,37 +114,37 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'krb' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'krb' does not have a\
-    \ 'units' attribute.\n"
+    \ 'units' attribute."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <kineticLaw> <math> expression 'kabs * AGut' cannot be fully checked. Unit consistency\
     \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
+    \ not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <kineticLaw> <math> expression 'kbr * ABlood' cannot be fully checked. Unit\
     \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
+    \ object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <kineticLaw> <math> expression 'krb * ARest' cannot be fully checked. Unit consistency\
     \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
+    \ not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <kineticLaw> <math> expression 'kbm * ABlood' cannot be fully checked. Unit\
     \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
+    \ object may not be accurate."

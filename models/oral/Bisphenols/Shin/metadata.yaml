@@ -1,5 +1,5 @@
 id: Shin2004_BPA_Human
-name: ''
+name: Shin
 applicability_domain:
   chemicals:
   - id: CHEBI:33216
@@ -20,79 +20,126 @@ compartments:
     id: PBPKO:00566
     label: stomach compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00566
+  unit: L
 - id: IntestinalLumen
   name: GI lumen compartment
   pbpko_bqm_is_class:
     id: PBPKO:00478
     label: gut lumen compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00478
+  unit: L
 - id: Spleen
   name: spleen
   pbpko_bqm_is_class:
     id: PBPKO:00492
     label: spleen compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00492
+  unit: L
 - id: SmallIntestine
   name: Small intestine compartment
   pbpko_bqm_is_class:
     id: PBPKO:00472
     label: small intestine compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00472
+  unit: L
 - id: Liver
   name: liver
   pbpko_bqm_is_class:
     id: PBPKO:00558
     label: liver compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00558
+  unit: L
 - id: Blood
   name: blood
   pbpko_bqm_is_class:
     id: PBPKO:00464
     label: blood compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00464
+  unit: L
 - id: Rest
   name: rest-of-body
   pbpko_bqm_is_class:
     id: PBPKO:00450
     label: rest of body compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00450
+  unit: L
 species:
 - id: ASt
   name: Amount in stomach
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: mg
 - id: AIL
   name: Amount in GI lumen
   pbpko_bqm_is_class:
     id: PBPKO:00496
     label: amount in gut
     iri: http://purl.obolibrary.org/obo/PBPKO_00496
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: mg
 - id: ASpleen
   name: Amount in spleen
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: mg
 - id: ASI
   name: Amount in small intestine
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: mg
 - id: ALiver
   name: amount of chemical in liver
   pbpko_bqm_is_class:
     id: PBPKO:00497
     label: amount in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: mg
 - id: ABlood
   name: amount of chemical in blood
   pbpko_bqm_is_class:
     id: PBPKO:00623
     label: amount in blood
     iri: http://purl.obolibrary.org/obo/PBPKO_00623
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: mg
 - id: ARest
   name: amount of chemical in rest-of-body
   pbpko_bqm_is_class:
     id: PBPKO:00501
     label: amount in restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00501
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: mg
 - id: AMet
   name: Amount in liver
   pbpko_bqm_is_class:
     id: PBPKO:00497
     label: amount in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:76967
+    label: human xenobiotic metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_76967
+  unit: mg
 parameters:
 - id: BW
   name: body weight
@@ -100,237 +147,366 @@ parameters:
     id: PBPKO:00008
     label: bodyweight
     iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  unit: kg
 - id: VL
   name: Volume of liver
   pbpko_bqm_is_class:
     id: PBPKO:00077
     label: volume of liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00077
+  unit: L
 - id: VB
   name: Volume of blood
   pbpko_bqm_is_class:
     id: PBPKO:00108
     label: volume of blood
     iri: http://purl.obolibrary.org/obo/PBPKO_00108
+  unit: L
 - id: VSt
   name: Volume of stomach
   pbpko_bqm_is_class:
     id: PBPKO:00067
     label: volume of stomach
     iri: http://purl.obolibrary.org/obo/PBPKO_00067
+  unit: L
 - id: VSpleen
   name: Volume of spleen
   pbpko_bqm_is_class:
     id: PBPKO:00095
     label: volume of spleen
     iri: http://purl.obolibrary.org/obo/PBPKO_00095
+  unit: L
 - id: VSI
   name: Volume of small intestine
   pbpko_bqm_is_class:
     id: PBPKO:00071
     label: volume of small intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00071
+  unit: L
 - id: VRest
   name: Volume of rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00105
     label: volume of rest body
     iri: http://purl.obolibrary.org/obo/PBPKO_00105
+  unit: L
 - id: QC
   name: Cardiac output
   pbpko_bqm_is_class:
     id: PBPKO:00013
     label: cardiac output rate
     iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  unit: L/h
 - id: QL
   name: Blood flow to liver
   pbpko_bqm_is_class:
     id: PBPKO:00024
     label: blood flow rate to liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00024
+  unit: L/h
 - id: QSpleen
   name: Blood flow to spleen
   pbpko_bqm_is_class:
     id: PBPKO:00042
     label: blood flow rate to spleen
     iri: http://purl.obolibrary.org/obo/PBPKO_00042
+  unit: L/h
 - id: QSt
   name: Blood flow to stomach
   pbpko_bqm_is_class:
     id: PBPKO:00014
     label: blood flow rate to stomach
     iri: http://purl.obolibrary.org/obo/PBPKO_00014
+  unit: L/h
 - id: QSI
   name: Blood flow to small intestine
   pbpko_bqm_is_class:
     id: PBPKO:00018
     label: blood flow rate to small intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00018
+  unit: L/h
 - id: QRest
   name: Blood flow to rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00050
     label: blood flow rate to restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00050
+  unit: L/h
 - id: RBS
   name: Blood serum ratio
+  unit: dimensionless
 - id: PL
   name: Partition coefficient - liver
   pbpko_bqm_is_class:
     id: PBPKO:00577
     label: liver blood partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00577
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: dimensionless
 - id: PSpleen
   name: Partition coefficient - spleen
   pbpko_bqm_is_class:
     id: PBPKO:00589
     label: spleen blood partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00589
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: dimensionless
 - id: PSt
   name: Partition coefficient - stomach
   pbpko_bqm_is_class:
     id: PBPKO:00590
     label: stomach blood partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00590
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: dimensionless
 - id: PSI
   name: Partition coefficient - small intestine
+  unit: dimensionless
 - id: PRest
   name: Partition coefficient - rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00585
     label: restbody blood partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00585
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: dimensionless
 - id: kabs
   name: Uptake from GI
+  unit: /h
 - id: CLint
   name: Hepatic intrinsic clearance
   pbpko_bqm_is_class:
     id: PBPKO:00234
     label: hepatic clearance rate
     iri: http://purl.obolibrary.org/obo/PBPKO_00234
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: L/h
 - id: CIL
   name: Concentration in GI lumen
   pbpko_bqm_is_class:
     id: PBPKO:00538
     label: concentration in gut
     iri: http://purl.obolibrary.org/obo/PBPKO_00538
+  unit: mg/L
 - id: CSI
   name: Concentration in small intestine
+  unit: mg/L
 - id: CSpleen
   name: Concentration in spleen
+  unit: mg/L
 - id: CSt
   name: Concentration in stomach
+  unit: mg/L
 - id: CLiver
   name: Concentration in liver
   pbpko_bqm_is_class:
     id: PBPKO:00539
     label: concentration in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00539
+  unit: mg/L
 - id: CBlood
   name: Concentration in blood
   pbpko_bqm_is_class:
     id: PBPKO:00301
     label: concentration in blood
     iri: http://purl.obolibrary.org/obo/PBPKO_00301
+  unit: mg/L
 - id: CRest
   name: Concentration in rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00548
     label: concentration in restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00548
+  unit: mg/L
 - id: Met
   name: Hepatic metabolism - intrinsic clearance
+  unit: dimensionless
+parameterisations:
+- filename: Shin.params.csv
+  model_id: Shin2004_BPA_Human
+  parameters:
+  - id: BW
+    value: 70.0
+    unit: kg
+    reference: ''
+    bqm_is:
+      id: PBPKO:00008
+      label: bodyweight
+      iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  - id: RBS
+    value: 1.1
+    unit: dimensionless
+    reference: ''
+  - id: PL
+    value: 5.7
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00577
+      label: liver blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00577
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  - id: PSpleen
+    value: 2.8
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00589
+      label: spleen blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00589
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  - id: PSt
+    value: 4.6
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00590
+      label: stomach blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00590
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  - id: PSI
+    value: 45.96
+    unit: dimensionless
+    reference: ''
+  - id: PRest
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00585
+      label: restbody blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00585
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  - id: CLint
+    value: 116.6
+    unit: L/h
+    reference: ''
+    bqm_is:
+      id: PBPKO:00234
+      label: hepatic clearance rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_00234
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
 unit_consistency:
 - level: error
-  msg: "In situations where a mathematical expression refers to extent, the units\
-    \ of extent should be consistent with the global extent units of the model. In\
-    \ models where the 'extentUnits' attribute has not been declared, libSBML does\
-    \ not yet have the functionality to verify accurately the consistency of the units\
-    \ in such expressions. \n"
+  msg: In situations where a mathematical expression refers to extent, the units of
+    extent should be consistent with the global extent units of the model. In models
+    where the 'extentUnits' attribute has not been declared, libSBML does not yet
+    have the functionality to verify accurately the consistency of the units in such
+    expressions.
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '1700 / 1000' cannot be fully checked. Unit\
     \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
+    \ object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '5530 / 1000' cannot be fully checked. Unit\
     \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
+    \ object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '200 / 1000' cannot be fully checked. Unit\
     \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
+    \ object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '200 / 1000' cannot be fully checked. Unit\
     \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
+    \ object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '1700 / 1000' cannot be fully checked. Unit\
     \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
+    \ object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '0.84 * BW - VL - VB - VSt - VSI - VSpleen'\
     \ cannot be fully checked. Unit consistency reported as either no errors or further\
-    \ unit errors related to this object may not be accurate.\n"
+    \ unit errors related to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '15 * pow(BW, 0.74)' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '1646.7 / (1000 * 60)' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '76.7 / (1000 * 60)' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '38.3 / (1000 * 60)' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '1100 / (1000 * 60)' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '0.0006 * 60' cannot be fully checked. Unit\
     \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
+    \ object may not be accurate."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -338,4 +514,4 @@ unit_consistency:
     \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
     \ expression of the <assignmentRule> with variable 'Met' are second (exponent\
     \ = -1, multiplier = 3600, scale = 0), gram (exponent = 1, multiplier = 0.001,\
-    \ scale = 0).\n"
+    \ scale = 0)."

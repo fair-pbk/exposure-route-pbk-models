@@ -1,5 +1,5 @@
 id: GilbertSandoval
-name: ''
+name: Gilbert_Sandoval
 applicability_domain:
   chemicals:
   - id: CHEBI:2504
@@ -20,121 +20,209 @@ compartments:
     id: PBPKO:00566
     label: stomach compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00566
+  unit: L
 - id: SI1
   name: Small intestine compartment
   pbpko_bqm_is_class:
     id: PBPKO:00472
     label: small intestine compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00472
+  unit: L
 - id: SI2
   name: Small intestine compartment
   pbpko_bqm_is_class:
     id: PBPKO:00472
     label: small intestine compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00472
+  unit: L
 - id: SI3
   name: Small intestine compartment
   pbpko_bqm_is_class:
     id: PBPKO:00472
     label: small intestine compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00472
+  unit: L
 - id: SI4
   name: Small intestine compartment
   pbpko_bqm_is_class:
     id: PBPKO:00472
     label: small intestine compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00472
+  unit: L
 - id: SI5
   name: Small intestine compartment
   pbpko_bqm_is_class:
     id: PBPKO:00472
     label: small intestine compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00472
+  unit: L
 - id: SI6
   name: Small intestine compartment
   pbpko_bqm_is_class:
     id: PBPKO:00472
     label: small intestine compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00472
+  unit: L
 - id: SI7
   name: Small intestine compartment
   pbpko_bqm_is_class:
     id: PBPKO:00472
     label: small intestine compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00472
+  unit: L
 - id: Colon
   name: Colon compartment
+  unit: L
 - id: Liver
   name: Liver compartment
   pbpko_bqm_is_class:
     id: PBPKO:00558
     label: liver compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00558
+  unit: L
 - id: Blood
   name: Blood compartment
   pbpko_bqm_is_class:
     id: PBPKO:00464
     label: blood compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00464
+  unit: L
 - id: Rest
   name: Rest of body compartment
   pbpko_bqm_is_class:
     id: PBPKO:00450
     label: rest of body compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00450
+  unit: L
 - id: Feces
   name: Feces compartment
   pbpko_bqm_is_class:
     id: PBPKO:00555
     label: feces compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00555
+  unit: L
 species:
 - id: ASt
   name: Amount in stomach
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: ng
 - id: ASI1
   name: Amount in small intestine
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: ng
 - id: ASI2
   name: Amount in small intestine
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: ng
 - id: ASI3
   name: Amount in small intestine
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: ng
 - id: ASI4
   name: Amount in small intestine
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: ng
 - id: ASI5
   name: Amount in small intestine
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: ng
 - id: ASI6
   name: Amount in small intestine
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: ng
 - id: ASI7
   name: Amount in small intestine
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: ng
 - id: AColon
   name: Amount in colon
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: ng
 - id: AFeaces
   name: Amount in feces
   pbpko_bqm_is_class:
     id: PBPKO:00273
     label: amount in feces
     iri: http://purl.obolibrary.org/obo/PBPKO_00273
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: ng
 - id: ALiver
   name: Amount in liver
   pbpko_bqm_is_class:
     id: PBPKO:00497
     label: amount in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: ng
 - id: ABlood
   name: Amount in blood
   pbpko_bqm_is_class:
     id: PBPKO:00623
     label: amount in blood
     iri: http://purl.obolibrary.org/obo/PBPKO_00623
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: ng
 - id: ARest
   name: Amount in rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00501
     label: amount in restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00501
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: ng
 - id: ALiverMet1
   name: Amount in liver (metabolised)
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: ng
 - id: ALiverMet2
   name: Amount in liver (metabolised)
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: ng
 parameters:
 - id: BW
   name: Bodyweight
@@ -142,278 +230,520 @@ parameters:
     id: PBPKO:00008
     label: bodyweight
     iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  unit: kg
 - id: VLc
   name: Volume fraction of liver
   pbpko_bqm_is_class:
     id: PBPKO:00078
     label: fraction of liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00078
+  unit: dimensionless
 - id: VBc
   name: Volume fraction of blood
+  unit: dimensionless
 - id: VSI
   name: Volume of small intestine
   pbpko_bqm_is_class:
     id: PBPKO:00071
     label: volume of small intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00071
+  unit: L
 - id: VL
   name: Volume of liver
   pbpko_bqm_is_class:
     id: PBPKO:00077
     label: volume of liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00077
+  unit: L
 - id: VB
   name: Volume of blood
   pbpko_bqm_is_class:
     id: PBPKO:00108
     label: volume of blood
     iri: http://purl.obolibrary.org/obo/PBPKO_00108
+  unit: L
 - id: VRest
   name: Volume of rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00105
     label: volume of rest body
     iri: http://purl.obolibrary.org/obo/PBPKO_00105
+  unit: L
 - id: QC
   name: Cardiac output
   pbpko_bqm_is_class:
     id: PBPKO:00013
     label: cardiac output rate
     iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  unit: L/h
 - id: QLc
   name: Cardiac output fraction to liver
   pbpko_bqm_is_class:
     id: PBPKO:00025
     label: fraction of blood flow to liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00025
+  unit: dimensionless
 - id: QL
   name: Cardiac output to liver
   pbpko_bqm_is_class:
     id: PBPKO:00024
     label: blood flow rate to liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00024
+  unit: L/h
 - id: QRest
   name: Cardiac output to rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00050
     label: blood flow rate to restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00050
+  unit: L/h
 - id: PL
   name: Partition coefficient blood-liver
   pbpko_bqm_is_class:
     id: PBPKO:00577
     label: liver blood partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00577
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: dimensionless
 - id: PRest
   name: Partition coefficient blood- rest body
   pbpko_bqm_is_class:
     id: PBPKO:00585
     label: restbody blood partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00585
+  chebi_bqb_is_class:
+    id: CHEBI:2504
+    label: aflatoxin B1
+    iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  unit: dimensionless
 - id: ksto
   name: stomach emptying rate
+  unit: /h
 - id: kt
   name: Transfer rate to next compartment within the intestines
+  unit: /h
 - id: kfe
   name: Excretion rate to feces
   pbpko_bqm_is_class:
     id: PBPKO:00236
     label: fecal elimination rate constant
     iri: http://purl.obolibrary.org/obo/PBPKO_00236
+  unit: /h
 - id: kabs
   name: Absorption rate in small intestine
   pbpko_bqm_is_class:
     id: PBPKO:00142
     label: absorption rate constant intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00142
+  unit: /h
 - id: kabsSI1
   name: Absorption rate in small intestine
   pbpko_bqm_is_class:
     id: PBPKO:00142
     label: absorption rate constant intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00142
+  unit: /h
 - id: kabsSI2
   name: Absorption rate in small intestine
   pbpko_bqm_is_class:
     id: PBPKO:00142
     label: absorption rate constant intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00142
+  unit: /h
 - id: kabsSI3
   name: Absorption rate in small intestine
   pbpko_bqm_is_class:
     id: PBPKO:00142
     label: absorption rate constant intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00142
+  unit: /h
 - id: kabsSI4
   name: Absorption rate in small intestine
   pbpko_bqm_is_class:
     id: PBPKO:00142
     label: absorption rate constant intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00142
+  unit: /h
 - id: kabsSI5
   name: Absorption rate in small intestine
   pbpko_bqm_is_class:
     id: PBPKO:00142
     label: absorption rate constant intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00142
+  unit: /h
 - id: kabsSI6
   name: Absorption rate in small intestine
   pbpko_bqm_is_class:
     id: PBPKO:00142
     label: absorption rate constant intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00142
+  unit: /h
 - id: kabsSI7
   name: Absorption rate in small intestine
   pbpko_bqm_is_class:
     id: PBPKO:00142
     label: absorption rate constant intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00142
+  unit: /h
 - id: MPL
   name: '{mg microsomal protein/kg liver}'
+  unit: mg/kg
 - id: VmaxMet1c
   name: Vmax constant
   pbpko_bqm_is_class:
     id: SBO:0000027
     label: Michaelis constant
     iri: http://biomodels.net/SBO/SBO_0000027
+  chebi_bqb_is_class:
+    id: CHEBI:78582
+    label: aflatoxin Q1
+    iri: http://purl.obolibrary.org/obo/CHEBI_78582
+  unit: ''
 - id: VmaxMet2c
   name: Vmax constant
   pbpko_bqm_is_class:
     id: SBO:0000027
     label: Michaelis constant
     iri: http://biomodels.net/SBO/SBO_0000027
+  chebi_bqb_is_class:
+    id: CHEBI:30725
+    label: aflatoxin B1 exo-8,9-epoxide
+    iri: http://purl.obolibrary.org/obo/CHEBI_30725
+  unit: ''
 - id: nMet1
   name: Hill coefficient
+  unit: dimensionless
 - id: nMet2
   name: Hill coefficient
+  unit: dimensionless
 - id: S50Met1
   name: effective Hill S50
+  unit: umol/L
 - id: S50Met2
   name: effective Hill S50
+  unit: umol/L
 - id: VmaxMet1
   name: Vmax
   pbpko_bqm_is_class:
     id: SBO:0000027
     label: Michaelis constant
     iri: http://biomodels.net/SBO/SBO_0000027
+  chebi_bqb_is_class:
+    id: CHEBI:78582
+    label: aflatoxin Q1
+    iri: http://purl.obolibrary.org/obo/CHEBI_78582
+  unit: ''
 - id: VmaxMet2
   name: Vmax
   pbpko_bqm_is_class:
     id: SBO:0000027
     label: Michaelis constant
     iri: http://biomodels.net/SBO/SBO_0000027
+  chebi_bqb_is_class:
+    id: CHEBI:30725
+    label: aflatoxin B1 exo-8,9-epoxide
+    iri: http://purl.obolibrary.org/obo/CHEBI_30725
+  unit: ''
 - id: CSt
   name: Concentration in stomach
+  unit: umol/L
 - id: CSI1
   name: Concentration in small intestine
+  unit: umol/L
 - id: CSI2
   name: Concentration in small intestine
+  unit: umol/L
 - id: CSI3
   name: Concentration in small intestine
+  unit: umol/L
 - id: CSI4
   name: Concentration in small intestine
+  unit: umol/L
 - id: CSI5
   name: Concentration in small intestine
+  unit: umol/L
 - id: CSI6
   name: Concentration in small intestine
+  unit: umol/L
 - id: CSI7
   name: Concentration in small intestine
+  unit: umol/L
 - id: CLiver
   name: Concentration in liver
   pbpko_bqm_is_class:
     id: PBPKO:00539
     label: concentration in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00539
+  unit: umol/L
 - id: CBlood
   name: Concentration in blood
   pbpko_bqm_is_class:
     id: PBPKO:00301
     label: concentration in blood
     iri: http://purl.obolibrary.org/obo/PBPKO_00301
+  unit: umol/L
 - id: CRest
   name: Concentration in rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00548
     label: concentration in restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00548
+  unit: umol/L
 - id: MetLiver1
   name: Metabolite concentration
+  unit: umol/L
 - id: MetLiver2
   name: Metabolite concentration
+  unit: umol/L
+parameterisations:
+- filename: Gilbert_Sandoval.params.csv
+  model_id: GilbertSandoval
+  parameters:
+  - id: BW
+    value: 70.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00008
+      label: bodyweight
+      iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  - id: VLc
+    value: 0.026
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00078
+      label: fraction of liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00078
+  - id: VBc
+    value: 0.079
+    unit: ''
+    reference: ''
+  - id: VSI
+    value: 1.29
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00071
+      label: volume of small intestine
+      iri: http://purl.obolibrary.org/obo/PBPKO_00071
+  - id: VL
+    value: null
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00077
+      label: volume of liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00077
+  - id: VB
+    value: null
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00108
+      label: volume of blood
+      iri: http://purl.obolibrary.org/obo/PBPKO_00108
+  - id: QC
+    value: null
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00013
+      label: cardiac output rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  - id: QLc
+    value: 0.227
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00025
+      label: fraction of blood flow to liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00025
+  - id: QL
+    value: null
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00024
+      label: blood flow rate to liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00024
+  - id: QRest
+    value: null
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00050
+      label: blood flow rate to restbody
+      iri: http://purl.obolibrary.org/obo/PBPKO_00050
+  - id: PL
+    value: 1.07
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00577
+      label: liver blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00577
+    bqb_is:
+      id: CHEBI:2504
+      label: aflatoxin B1
+      iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  - id: PRest
+    value: 1.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00585
+      label: restbody blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00585
+    bqb_is:
+      id: CHEBI:2504
+      label: aflatoxin B1
+      iri: http://purl.obolibrary.org/obo/CHEBI_2504
+  - id: ksto
+    value: 2.8
+    unit: ''
+    reference: ''
+  - id: kt
+    value: 2.19
+    unit: ''
+    reference: ''
+  - id: kfe
+    value: 0.02
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00236
+      label: fecal elimination rate constant
+      iri: http://purl.obolibrary.org/obo/PBPKO_00236
+  - id: kabs
+    value: 5.05
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00142
+      label: absorption rate constant intestine
+      iri: http://purl.obolibrary.org/obo/PBPKO_00142
+  - id: MPL
+    value: null
+    unit: ''
+    reference: ''
+  - id: VmaxMet1c
+    value: 0.003469
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: SBO:0000027
+      label: Michaelis constant
+      iri: http://biomodels.net/SBO/SBO_0000027
+    bqb_is:
+      id: CHEBI:78582
+      label: aflatoxin Q1
+      iri: http://purl.obolibrary.org/obo/CHEBI_78582
+  - id: VmaxMet2c
+    value: 0.000542
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: SBO:0000027
+      label: Michaelis constant
+      iri: http://biomodels.net/SBO/SBO_0000027
+    bqb_is:
+      id: CHEBI:30725
+      label: aflatoxin B1 exo-8,9-epoxide
+      iri: http://purl.obolibrary.org/obo/CHEBI_30725
+  - id: nMet1
+    value: 1.2
+    unit: ''
+    reference: ''
+  - id: nMet2
+    value: 1.1
+    unit: ''
+    reference: ''
+  - id: S50Met1
+    value: 427.0
+    unit: ''
+    reference: ''
+  - id: S50Met2
+    value: 197.0
+    unit: ''
+    reference: ''
 unit_consistency:
 - level: error
-  msg: "In situations where a mathematical expression refers to extent, the units\
-    \ of extent should be consistent with the global extent units of the model. In\
-    \ models where the 'extentUnits' attribute has not been declared, libSBML does\
-    \ not yet have the functionality to verify accurately the consistency of the units\
-    \ in such expressions. \n"
+  msg: In situations where a mathematical expression refers to extent, the units of
+    extent should be consistent with the global extent units of the model. In models
+    where the 'extentUnits' attribute has not been declared, libSBML does not yet
+    have the functionality to verify accurately the consistency of the units in such
+    expressions.
 - level: error
   msg: "The unit of measurement associated with the mathematical formula in the MathML\
     \ math element of every KineticLaw object in a model should be identical to all\
     \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
     \ 'kabsSI1 * CSI1' in the <kineticLaw> element of the <reaction> with id '_J8'\
-    \ produces units that are inconsistent with units of earlier KineticLaw elements.\n"
+    \ produces units that are inconsistent with units of earlier KineticLaw elements."
 - level: error
   msg: "The unit of measurement associated with the mathematical formula in the MathML\
     \ math element of every KineticLaw object in a model should be identical to all\
     \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
     \ 'kabsSI2 * CSI2' in the <kineticLaw> element of the <reaction> with id '_J9'\
-    \ produces units that are inconsistent with units of earlier KineticLaw elements.\n"
+    \ produces units that are inconsistent with units of earlier KineticLaw elements."
 - level: error
   msg: "The unit of measurement associated with the mathematical formula in the MathML\
     \ math element of every KineticLaw object in a model should be identical to all\
     \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
     \ 'kabsSI3 * CSI3' in the <kineticLaw> element of the <reaction> with id '_J10'\
-    \ produces units that are inconsistent with units of earlier KineticLaw elements.\n"
+    \ produces units that are inconsistent with units of earlier KineticLaw elements."
 - level: error
   msg: "The unit of measurement associated with the mathematical formula in the MathML\
     \ math element of every KineticLaw object in a model should be identical to all\
     \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
     \ 'kabsSI4 * CSI4' in the <kineticLaw> element of the <reaction> with id '_J11'\
-    \ produces units that are inconsistent with units of earlier KineticLaw elements.\n"
+    \ produces units that are inconsistent with units of earlier KineticLaw elements."
 - level: error
   msg: "The unit of measurement associated with the mathematical formula in the MathML\
     \ math element of every KineticLaw object in a model should be identical to all\
     \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
     \ 'kabsSI5 * CSI5' in the <kineticLaw> element of the <reaction> with id '_J12'\
-    \ produces units that are inconsistent with units of earlier KineticLaw elements.\n"
+    \ produces units that are inconsistent with units of earlier KineticLaw elements."
 - level: error
   msg: "The unit of measurement associated with the mathematical formula in the MathML\
     \ math element of every KineticLaw object in a model should be identical to all\
     \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
     \ 'kabsSI6 * CSI6' in the <kineticLaw> element of the <reaction> with id '_J13'\
-    \ produces units that are inconsistent with units of earlier KineticLaw elements.\n"
+    \ produces units that are inconsistent with units of earlier KineticLaw elements."
 - level: error
   msg: "The unit of measurement associated with the mathematical formula in the MathML\
     \ math element of every KineticLaw object in a model should be identical to all\
     \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
     \ 'kabsSI7 * CSI7' in the <kineticLaw> element of the <reaction> with id '_J14'\
-    \ produces units that are inconsistent with units of earlier KineticLaw elements.\n"
+    \ produces units that are inconsistent with units of earlier KineticLaw elements."
 - level: error
   msg: "The unit of measurement associated with the mathematical formula in the MathML\
     \ math element of every KineticLaw object in a model should be identical to all\
     \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
     \ 'QL * CBlood' in the <kineticLaw> element of the <reaction> with id '_J16' produces\
-    \ units that are inconsistent with units of earlier KineticLaw elements.\n"
+    \ units that are inconsistent with units of earlier KineticLaw elements."
 - level: error
   msg: "The unit of measurement associated with the mathematical formula in the MathML\
     \ math element of every KineticLaw object in a model should be identical to all\
     \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
     \ 'QL * CLiver / PL' in the <kineticLaw> element of the <reaction> with id '_J17'\
-    \ produces units that are inconsistent with units of earlier KineticLaw elements.\n"
+    \ produces units that are inconsistent with units of earlier KineticLaw elements."
 - level: error
   msg: "The unit of measurement associated with the mathematical formula in the MathML\
     \ math element of every KineticLaw object in a model should be identical to all\
     \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
     \ 'QRest * CBlood' in the <kineticLaw> element of the <reaction> with id '_J18'\
-    \ produces units that are inconsistent with units of earlier KineticLaw elements.\n"
+    \ produces units that are inconsistent with units of earlier KineticLaw elements."
 - level: error
   msg: "The unit of measurement associated with the mathematical formula in the MathML\
     \ math element of every KineticLaw object in a model should be identical to all\
     \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
     \ 'QRest * CRest / PRest' in the <kineticLaw> element of the <reaction> with id\
     \ '_J19' produces units that are inconsistent with units of earlier KineticLaw\
-    \ elements.\n"
+    \ elements."
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -422,12 +752,12 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'VmaxMet1c' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VmaxMet1c' does not have\
-    \ a 'units' attribute.\n"
+    \ a 'units' attribute."
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -436,12 +766,12 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'VmaxMet2c' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VmaxMet2c' does not have\
-    \ a 'units' attribute.\n"
+    \ a 'units' attribute."
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -450,12 +780,12 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'VmaxMet1' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VmaxMet1' does not have\
-    \ a 'units' attribute.\n"
+    \ a 'units' attribute."
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -464,47 +794,47 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'VmaxMet2' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VmaxMet2' does not have\
-    \ a 'units' attribute.\n"
+    \ a 'units' attribute."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <initialAssignment> <math> expression '39.46 * 1000' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
     \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
     \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
     \ expression of the <assignmentRule> with variable 'VL' are gram (exponent = 1,\
-    \ multiplier = 1000, scale = 0).\n"
+    \ multiplier = 1000, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
     \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
     \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
     \ expression of the <assignmentRule> with variable 'VB' are gram (exponent = 1,\
-    \ multiplier = 1000, scale = 0).\n"
+    \ multiplier = 1000, scale = 0)."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '0.84 * BW - VL - VB' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '15 * pow(BW, 0.74)' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -512,7 +842,7 @@ unit_consistency:
     \ (exponent = -1, multiplier = 3600, scale = 0) but the units returned by the\
     \ <math> expression of the <assignmentRule> with variable 'kabsSI1' are second\
     \ (exponent = -1, multiplier = 3600, scale = 0), litre (exponent = 1, multiplier\
-    \ = 1, scale = 0).\n"
+    \ = 1, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -520,7 +850,7 @@ unit_consistency:
     \ (exponent = -1, multiplier = 3600, scale = 0) but the units returned by the\
     \ <math> expression of the <assignmentRule> with variable 'kabsSI2' are second\
     \ (exponent = -1, multiplier = 3600, scale = 0), litre (exponent = 1, multiplier\
-    \ = 1, scale = 0).\n"
+    \ = 1, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -528,7 +858,7 @@ unit_consistency:
     \ (exponent = -1, multiplier = 3600, scale = 0) but the units returned by the\
     \ <math> expression of the <assignmentRule> with variable 'kabsSI3' are second\
     \ (exponent = -1, multiplier = 3600, scale = 0), litre (exponent = 1, multiplier\
-    \ = 1, scale = 0).\n"
+    \ = 1, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -536,7 +866,7 @@ unit_consistency:
     \ (exponent = -1, multiplier = 3600, scale = 0) but the units returned by the\
     \ <math> expression of the <assignmentRule> with variable 'kabsSI4' are second\
     \ (exponent = -1, multiplier = 3600, scale = 0), litre (exponent = 1, multiplier\
-    \ = 1, scale = 0).\n"
+    \ = 1, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -544,7 +874,7 @@ unit_consistency:
     \ (exponent = -1, multiplier = 3600, scale = 0) but the units returned by the\
     \ <math> expression of the <assignmentRule> with variable 'kabsSI5' are second\
     \ (exponent = -1, multiplier = 3600, scale = 0), litre (exponent = 1, multiplier\
-    \ = 1, scale = 0).\n"
+    \ = 1, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -552,7 +882,7 @@ unit_consistency:
     \ (exponent = -1, multiplier = 3600, scale = 0) but the units returned by the\
     \ <math> expression of the <assignmentRule> with variable 'kabsSI6' are second\
     \ (exponent = -1, multiplier = 3600, scale = 0), litre (exponent = 1, multiplier\
-    \ = 1, scale = 0).\n"
+    \ = 1, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -560,21 +890,21 @@ unit_consistency:
     \ (exponent = -1, multiplier = 3600, scale = 0) but the units returned by the\
     \ <math> expression of the <assignmentRule> with variable 'kabsSI7' are second\
     \ (exponent = -1, multiplier = 3600, scale = 0), litre (exponent = 1, multiplier\
-    \ = 1, scale = 0).\n"
+    \ = 1, scale = 0)."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression 'VmaxMet1c * 60 * MPL * VL' cannot be fully\
     \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate.\n"
+    \ related to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression 'VmaxMet2c * 60 * MPL * VL' cannot be fully\
     \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate.\n"
+    \ related to this object may not be accurate."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -582,7 +912,7 @@ unit_consistency:
     \ (exponent = 1, multiplier = 1, scale = -6), litre (exponent = -1, multiplier\
     \ = 1, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
     \ with variable 'CSt' are gram (exponent = 1, multiplier = 1, scale = -9), litre\
-    \ (exponent = -1, multiplier = 1, scale = 0).\n"
+    \ (exponent = -1, multiplier = 1, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -590,7 +920,7 @@ unit_consistency:
     \ (exponent = 1, multiplier = 1, scale = -6), litre (exponent = -1, multiplier\
     \ = 1, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
     \ with variable 'CSI1' are gram (exponent = 1, multiplier = 1, scale = -9), litre\
-    \ (exponent = -1, multiplier = 1, scale = 0).\n"
+    \ (exponent = -1, multiplier = 1, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -598,7 +928,7 @@ unit_consistency:
     \ (exponent = 1, multiplier = 1, scale = -6), litre (exponent = -1, multiplier\
     \ = 1, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
     \ with variable 'CSI2' are gram (exponent = 1, multiplier = 1, scale = -9), litre\
-    \ (exponent = -1, multiplier = 1, scale = 0).\n"
+    \ (exponent = -1, multiplier = 1, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -606,7 +936,7 @@ unit_consistency:
     \ (exponent = 1, multiplier = 1, scale = -6), litre (exponent = -1, multiplier\
     \ = 1, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
     \ with variable 'CSI3' are gram (exponent = 1, multiplier = 1, scale = -9), litre\
-    \ (exponent = -1, multiplier = 1, scale = 0).\n"
+    \ (exponent = -1, multiplier = 1, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -614,7 +944,7 @@ unit_consistency:
     \ (exponent = 1, multiplier = 1, scale = -6), litre (exponent = -1, multiplier\
     \ = 1, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
     \ with variable 'CSI4' are gram (exponent = 1, multiplier = 1, scale = -9), litre\
-    \ (exponent = -1, multiplier = 1, scale = 0).\n"
+    \ (exponent = -1, multiplier = 1, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -622,7 +952,7 @@ unit_consistency:
     \ (exponent = 1, multiplier = 1, scale = -6), litre (exponent = -1, multiplier\
     \ = 1, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
     \ with variable 'CSI5' are gram (exponent = 1, multiplier = 1, scale = -9), litre\
-    \ (exponent = -1, multiplier = 1, scale = 0).\n"
+    \ (exponent = -1, multiplier = 1, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -630,7 +960,7 @@ unit_consistency:
     \ (exponent = 1, multiplier = 1, scale = -6), litre (exponent = -1, multiplier\
     \ = 1, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
     \ with variable 'CSI6' are gram (exponent = 1, multiplier = 1, scale = -9), litre\
-    \ (exponent = -1, multiplier = 1, scale = 0).\n"
+    \ (exponent = -1, multiplier = 1, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -638,7 +968,7 @@ unit_consistency:
     \ (exponent = 1, multiplier = 1, scale = -6), litre (exponent = -1, multiplier\
     \ = 1, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
     \ with variable 'CSI7' are gram (exponent = 1, multiplier = 1, scale = -9), litre\
-    \ (exponent = -1, multiplier = 1, scale = 0).\n"
+    \ (exponent = -1, multiplier = 1, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -646,7 +976,7 @@ unit_consistency:
     \ (exponent = 1, multiplier = 1, scale = -6), litre (exponent = -1, multiplier\
     \ = 1, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
     \ with variable 'CLiver' are gram (exponent = 1, multiplier = 1, scale = -9),\
-    \ litre (exponent = -1, multiplier = 1, scale = 0).\n"
+    \ litre (exponent = -1, multiplier = 1, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -654,7 +984,7 @@ unit_consistency:
     \ (exponent = 1, multiplier = 1, scale = -6), litre (exponent = -1, multiplier\
     \ = 1, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
     \ with variable 'CBlood' are gram (exponent = 1, multiplier = 1, scale = -9),\
-    \ litre (exponent = -1, multiplier = 1, scale = 0).\n"
+    \ litre (exponent = -1, multiplier = 1, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -662,7 +992,7 @@ unit_consistency:
     \ (exponent = 1, multiplier = 1, scale = -6), litre (exponent = -1, multiplier\
     \ = 1, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
     \ with variable 'CRest' are gram (exponent = 1, multiplier = 1, scale = -9), litre\
-    \ (exponent = -1, multiplier = 1, scale = 0).\n"
+    \ (exponent = -1, multiplier = 1, scale = 0)."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -670,7 +1000,7 @@ unit_consistency:
     \ <assignmentRule> <math> expression 'VmaxMet1 * pow(CLiver / PL, nMet1) / (pow(S50Met1,\
     \ nMet1) + pow(CLiver / PL, nMet1))' cannot be fully checked. Unit consistency\
     \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
+    \ not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -678,7 +1008,7 @@ unit_consistency:
     \ <assignmentRule> <math> expression 'VmaxMet2 * pow(CLiver / PL, nMet2) / (pow(S50Met2,\
     \ nMet2) + pow(CLiver / PL, nMet2))' cannot be fully checked. Unit consistency\
     \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
+    \ not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -686,7 +1016,7 @@ unit_consistency:
     \ <kineticLaw> <math> expression 'VmaxMet1 * pow(CLiver / PL, nMet1) / (pow(S50Met1,\
     \ nMet1) + pow(CLiver / PL, nMet1))' cannot be fully checked. Unit consistency\
     \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
+    \ not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -694,4 +1024,4 @@ unit_consistency:
     \ <kineticLaw> <math> expression 'VmaxMet2 * pow(CLiver / PL, nMet2) / (pow(S50Met2,\
     \ nMet2) + pow(CLiver / PL, nMet2))' cannot be fully checked. Unit consistency\
     \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
+    \ not be accurate."

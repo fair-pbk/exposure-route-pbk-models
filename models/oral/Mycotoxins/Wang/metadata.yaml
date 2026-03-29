@@ -1,5 +1,5 @@
 id: Wang2023_DON_Human
-name: ''
+name: Wang
 applicability_domain:
   chemicals:
   - id: CHEBI:10022
@@ -20,79 +20,128 @@ compartments:
     id: PBPKO:00566
     label: stomach compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00566
+  unit: L
 - id: Jejunum
   name: Jejunum compartment
   pbpko_bqm_is_class:
     id: PBPKO:00482
     label: jejunum compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00482
+  unit: L
 - id: Ileum
   name: Ileum compartment
   pbpko_bqm_is_class:
     id: PBPKO:00481
     label: ileum compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00481
+  unit: L
 - id: LargeLumen
   name: Large intestine lumen compartment
   pbpko_bqm_is_class:
     id: PBPKO:00474
     label: large intestine compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00474
+  unit: L
 - id: Liver
   name: Liver compartment
   pbpko_bqm_is_class:
     id: PBPKO:00558
     label: liver compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00558
+  unit: L
 - id: Blood
   name: Blood compartment
   pbpko_bqm_is_class:
     id: PBPKO:00464
     label: blood compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00464
+  unit: L
 - id: Rest
   name: Rest of body compartment
   pbpko_bqm_is_class:
     id: PBPKO:00450
     label: rest of body compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00450
+  unit: L
 - id: IntestinalTissue
   name: Intestinal tissue compartment
+  unit: L
 species:
 - id: ASt
   name: Amount in stomach
+  chebi_bqb_is_class:
+    id: CHEBI:10022
+    label: deoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  unit: umol
 - id: AJ
   name: Amount in jejunum
+  chebi_bqb_is_class:
+    id: CHEBI:10022
+    label: deoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  unit: umol
 - id: AI
   name: Amount in ileum
+  chebi_bqb_is_class:
+    id: CHEBI:10022
+    label: deoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  unit: umol
 - id: ALI
   name: amount in large intestine
+  unit: umol
 - id: AIT
   name: Amount in intestinal tissue
+  chebi_bqb_is_class:
+    id: CHEBI:10022
+    label: deoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  unit: umol
 - id: ALiver
   name: Amount in liver
   pbpko_bqm_is_class:
     id: PBPKO:00497
     label: amount in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:10022
+    label: deoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  unit: umol
 - id: ABlood
   name: Amount in blood
   pbpko_bqm_is_class:
     id: PBPKO:00623
     label: amount in blood
     iri: http://purl.obolibrary.org/obo/PBPKO_00623
+  chebi_bqb_is_class:
+    id: CHEBI:10022
+    label: deoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  unit: umol
 - id: ARest
   name: Amount in rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00501
     label: amount in restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00501
+  chebi_bqb_is_class:
+    id: CHEBI:10022
+    label: deoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  unit: umol
 - id: AMet
   name: Amount metabolised
   pbpko_bqm_is_class:
     id: PBPKO:00497
     label: amount in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:10022
+    label: deoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  unit: umol
 parameters:
 - id: BW
   name: Bodyweight
@@ -100,220 +149,392 @@ parameters:
     id: PBPKO:00008
     label: bodyweight
     iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  unit: kg
 - id: VLc
   name: Volume fraction of liver
   pbpko_bqm_is_class:
     id: PBPKO:00078
     label: fraction of liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00078
+  unit: dimensionless
 - id: VBc
   name: Volume fraction of blood
+  unit: dimensionless
 - id: VITc
   name: Volume fraction of intestinal tissue
   pbpko_bqm_is_class:
     id: PBPKO:00070
     label: fraction of intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00070
+  unit: dimensionless
 - id: VL
   name: Volume of liver
   pbpko_bqm_is_class:
     id: PBPKO:00077
     label: volume of liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00077
+  unit: L
 - id: VB
   name: Volume of blood
   pbpko_bqm_is_class:
     id: PBPKO:00108
     label: volume of blood
     iri: http://purl.obolibrary.org/obo/PBPKO_00108
+  unit: L
 - id: VIT
   name: Volume of Intestinal tissue
   pbpko_bqm_is_class:
     id: PBPKO:00069
     label: volume of intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00069
+  unit: L
 - id: Ddm
   name: Intestinal segment geometry - diameter
+  unit: dm
 - id: LJdm
   name: Intestinal segment geometry - jejunum length
+  unit: dm
 - id: LIdm
   name: Intestinal segment geometry - ileum length
+  unit: dm
 - id: LLIdm
   name: Intestinal segment geometry - large intestine length
+  unit: dm
 - id: VJ
   name: Volume of jejunum
   pbpko_bqm_is_class:
     id: PBPKO:00425
     label: volume of jejunum
     iri: http://purl.obolibrary.org/obo/PBPKO_00425
+  unit: L
 - id: VI
   name: Volume of ileum
   pbpko_bqm_is_class:
     id: PBPKO:00426
     label: volume of ileum
     iri: http://purl.obolibrary.org/obo/PBPKO_00426
+  unit: L
 - id: VLI
   name: Volume of large intestine lumen
   pbpko_bqm_is_class:
     id: PBPKO:00073
     label: volume of large intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00073
+  unit: L
 - id: SAJ
   name: Surface area - jejunum lumen
   pbpko_bqm_is_class:
     id: PBPKO:00010
     label: surface area
     iri: http://purl.obolibrary.org/obo/PBPKO_00010
+  unit: dm^2
 - id: SAI
   name: Surface area - ileum lumen
   pbpko_bqm_is_class:
     id: PBPKO:00010
     label: surface area
     iri: http://purl.obolibrary.org/obo/PBPKO_00010
+  unit: dm^2
 - id: SALI
   name: Surface area - large intestine lumen
   pbpko_bqm_is_class:
     id: PBPKO:00010
     label: surface area
     iri: http://purl.obolibrary.org/obo/PBPKO_00010
+  unit: dm^2
 - id: VRest
   name: Volume of rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00105
     label: volume of rest body
     iri: http://purl.obolibrary.org/obo/PBPKO_00105
+  unit: L
 - id: QC
   name: Cardiac output
   pbpko_bqm_is_class:
     id: PBPKO:00013
     label: cardiac output rate
     iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  unit: L/h
 - id: QLc
   name: Cardiac output fraction to liver
   pbpko_bqm_is_class:
     id: PBPKO:00025
     label: fraction of blood flow to liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00025
+  unit: dimensionless
 - id: QITc
   name: Cardiac output fraction to intestinal tissue
   pbpko_bqm_is_class:
     id: PBPKO:00017
     label: fraction of blood flow to intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00017
+  unit: dimensionless
 - id: QL
   name: Cardiac output to liver
   pbpko_bqm_is_class:
     id: PBPKO:00024
     label: blood flow rate to liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00024
+  unit: L/h
 - id: QIT
   name: Cardiac output to intestinal tissue
   pbpko_bqm_is_class:
     id: PBPKO:00016
     label: blood flow rate to intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00016
+  unit: L/h
 - id: QRest
   name: Cardiac output to rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00050
     label: blood flow rate to restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00050
+  unit: L/h
 - id: RBP
   name: Blood to plasma ratio
+  unit: dimensionless
 - id: fu
   name: Fraction unbound
   pbpko_bqm_is_class:
     id: PBPKO:00591
     label: fraction unbound plasma
     iri: http://purl.obolibrary.org/obo/PBPKO_00591
+  chebi_bqb_is_class:
+    id: CHEBI:10022
+    label: deoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  unit: dimensionless
 - id: PL
   name: Partition coefficient blood-liver
   pbpko_bqm_is_class:
     id: PBPKO:00577
     label: liver blood partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00577
+  chebi_bqb_is_class:
+    id: CHEBI:10022
+    label: deoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  unit: dimensionless
 - id: PIT
   name: Partition coefficient intestinal tissue - blood
   pbpko_bqm_is_class:
     id: PBPKO:00574
     label: intestine blood partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00574
+  chebi_bqb_is_class:
+    id: CHEBI:10022
+    label: deoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  unit: dimensionless
 - id: PRest
   name: Partition coefficient blood- rest body
   pbpko_bqm_is_class:
     id: PBPKO:00585
     label: restbody blood partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00585
+  chebi_bqb_is_class:
+    id: CHEBI:10022
+    label: deoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  unit: dimensionless
 - id: ksto
   name: Kinetic constant stomach to jejunum
+  unit: /h
 - id: kt1
   name: Kinetic constant jejunum to ileum
+  unit: /h
 - id: kt2
   name: Kinetic constant ileum to large intestine
+  unit: /h
 - id: PappDONc
   name: Intestinal absorption rate
   pbpko_bqm_is_class:
     id: PBPKO:00142
     label: absorption rate constant intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00142
+  chebi_bqb_is_class:
+    id: CHEBI:10022
+    label: deoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  unit: ''
 - id: Papp_dm_h
   name: Intestinal absorption rate
   pbpko_bqm_is_class:
     id: PBPKO:00142
     label: absorption rate constant intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00142
+  chebi_bqb_is_class:
+    id: CHEBI:10022
+    label: deoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  unit: dm/h
 - id: kabsJ
   name: Absorption rate jejunum
+  unit: L/h
 - id: kabsI
   name: Absorption rate ileum
+  unit: L/h
 - id: kabsLI
   name: Absorption rate large intestine
+  unit: L/h
 - id: CLint
   name: Hepatic intrinsic clearance
   pbpko_bqm_is_class:
     id: PBPKO:00235
     label: intrinsic clearance rate
     iri: http://purl.obolibrary.org/obo/PBPKO_00235
+  chebi_bqb_is_class:
+    id: CHEBI:10022
+    label: deoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  unit: L/h
 - id: ALiv
   name: Amount in liver
   pbpko_bqm_is_class:
     id: PBPKO:00497
     label: amount in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  unit: umol
 - id: CSt
   name: Concentration in stomach
+  unit: umol/L
 - id: CJ
   name: Concentration in jejunum
+  unit: umol/L
 - id: CI
   name: Concentration in ileum
+  unit: umol/L
 - id: CLI
   name: Concentration in large intestine
+  unit: umol/L
 - id: CIT
   name: Concentration in intestinal tissue
+  unit: umol/L
 - id: CLiver
   name: Concentration in liver
   pbpko_bqm_is_class:
     id: PBPKO:00539
     label: concentration in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00539
+  unit: umol/L
 - id: CBlood
   name: Concentration in blood
   pbpko_bqm_is_class:
     id: PBPKO:00301
     label: concentration in blood
     iri: http://purl.obolibrary.org/obo/PBPKO_00301
+  unit: umol/L
 - id: CRest
   name: Concentration in rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00548
     label: concentration in restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00548
+  unit: umol/L
 - id: Met
   name: Hepatic metabolism
   pbpko_bqm_is_class:
     id: PBPKO:00234
     label: hepatic clearance rate
     iri: http://purl.obolibrary.org/obo/PBPKO_00234
+  unit: umol/L
+parameterisations:
+- filename: Wang.params.csv
+  model_id: Wang2023_DON_Human
+  parameters:
+  - id: BW
+    value: 70.0
+    unit: kg
+    reference: ''
+    bqm_is:
+      id: PBPKO:00008
+      label: bodyweight
+      iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  - id: VLc
+    value: 0.026
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00078
+      label: fraction of liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00078
+  - id: VBc
+    value: 0.079
+    unit: dimensionless
+    reference: ''
+  - id: VITc
+    value: 0.09
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00070
+      label: fraction of intestine
+      iri: http://purl.obolibrary.org/obo/PBPKO_00070
+  - id: Ddm
+    value: 0.5
+    unit: dm
+    reference: ''
+  - id: LJdm
+    value: 30.0
+    unit: dm
+    reference: ''
+  - id: LIdm
+    value: 30.0
+    unit: dm
+    reference: ''
+  - id: LLIdm
+    value: 18.7
+    unit: dm
+    reference: ''
+  - id: RBP
+    value: 0.6523
+    unit: dimensionless
+    reference: ''
+  - id: fu
+    value: 0.862
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00591
+      label: fraction unbound plasma
+      iri: http://purl.obolibrary.org/obo/PBPKO_00591
+    bqb_is:
+      id: CHEBI:10022
+      label: deoxynivalenol
+      iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  - id: ksto
+    value: 1.99
+    unit: /h
+    reference: ''
+  - id: kt1
+    value: 2.17
+    unit: /h
+    reference: ''
+  - id: kt2
+    value: 0.25
+    unit: /h
+    reference: ''
+  - id: PappDONc
+    value: 1.2883
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00142
+      label: absorption rate constant intestine
+      iri: http://purl.obolibrary.org/obo/PBPKO_00142
+    bqb_is:
+      id: CHEBI:10022
+      label: deoxynivalenol
+      iri: http://purl.obolibrary.org/obo/CHEBI_10022
+  - id: ALiv
+    value: 0.0
+    unit: umol
+    reference: ''
+    bqm_is:
+      id: PBPKO:00497
+      label: amount in liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00497
 unit_consistency:
 - level: warning
   msg: "As a principle of best modeling practice, the size of a <compartment> should\
@@ -321,20 +542,20 @@ unit_consistency:
     \ of models between different simulation and analysis systems, and helps make\
     \ it easier to detect potential errors in models.\n The <compartment> with the\
     \ id 'IntestinalTissue' does not have a 'size' attribute, nor is its initial value\
-    \ set by an <initialAssignment> or <assignmentRule>.\n"
+    \ set by an <initialAssignment> or <assignmentRule>."
 - level: warning
   msg: "As a principle of best modeling practice, the <species> should set an initial\
     \ value (amount or concentration) rather than be left undefined. Doing so improves\
     \ the portability of models between different simulation and analysis systems,\
     \ and helps make it easier to detect potential errors in models.\n The <species>\
     \ with the id 'ALiver' does not have an 'initialConcentration' or 'initialAmount'\
-    \ attribute, nor is its initial value set by an <initialAssignment> or <assignmentRule>.\n"
+    \ attribute, nor is its initial value set by an <initialAssignment> or <assignmentRule>."
 - level: error
-  msg: "In situations where a mathematical expression refers to extent, the units\
-    \ of extent should be consistent with the global extent units of the model. In\
-    \ models where the 'extentUnits' attribute has not been declared, libSBML does\
-    \ not yet have the functionality to verify accurately the consistency of the units\
-    \ in such expressions. \n"
+  msg: In situations where a mathematical expression refers to extent, the units of
+    extent should be consistent with the global extent units of the model. In models
+    where the 'extentUnits' attribute has not been declared, libSBML does not yet
+    have the functionality to verify accurately the consistency of the units in such
+    expressions.
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -343,138 +564,138 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'PappDONc' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'PappDONc' does not have\
-    \ a 'units' attribute.\n"
+    \ a 'units' attribute."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
     \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
     \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
     \ expression of the <assignmentRule> with variable 'VL' are gram (exponent = 1,\
-    \ multiplier = 1000, scale = 0).\n"
+    \ multiplier = 1000, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
     \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
     \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
     \ expression of the <assignmentRule> with variable 'VB' are gram (exponent = 1,\
-    \ multiplier = 1000, scale = 0).\n"
+    \ multiplier = 1000, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
     \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
     \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
     \ expression of the <assignmentRule> with variable 'VIT' are gram (exponent =\
-    \ 1, multiplier = 1000, scale = 0).\n"
+    \ 1, multiplier = 1000, scale = 0)."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '3.14159 * pow(Ddm / 2, 2) * LJdm' cannot\
     \ be fully checked. Unit consistency reported as either no errors or further unit\
-    \ errors related to this object may not be accurate.\n"
+    \ errors related to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '3.14159 * pow(Ddm / 2, 2) * LIdm' cannot\
     \ be fully checked. Unit consistency reported as either no errors or further unit\
-    \ errors related to this object may not be accurate.\n"
+    \ errors related to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '0.561' cannot be fully checked. Unit consistency\
     \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
+    \ not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '3.14159 * Ddm * LJdm' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '3.14159 * Ddm * LIdm' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '3.14159 * Ddm * LLIdm' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '0.84 * BW - VL - VB - VIT' cannot be fully\
     \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate.\n"
+    \ related to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '15 * pow(BW, 0.74)' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '0.046' cannot be fully checked. Unit consistency\
     \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
+    \ not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '0.181' cannot be fully checked. Unit consistency\
     \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
+    \ not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '0.76 / RBP' cannot be fully checked. Unit\
     \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
+    \ object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '0.73 / RBP' cannot be fully checked. Unit\
     \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate.\n"
+    \ object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '1 / RBP' cannot be fully checked. Unit consistency\
     \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate.\n"
+    \ not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression 'PappDONc / 10000 * (3600/10)' cannot be\
     \ fully checked. Unit consistency reported as either no errors or further unit\
-    \ errors related to this object may not be accurate.\n"
+    \ errors related to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '0.008 * 32 * VLc * 1000 * BW * 60 / 1000'\
     \ cannot be fully checked. Unit consistency reported as either no errors or further\
-    \ unit errors related to this object may not be accurate.\n"
+    \ unit errors related to this object may not be accurate."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -482,4 +703,4 @@ unit_consistency:
     \ (exponent = 1, multiplier = 1, scale = -6), litre (exponent = -1, multiplier\
     \ = 1, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
     \ with variable 'Met' are second (exponent = -1, multiplier = 3600, scale = 0),\
-    \ mole (exponent = 1, multiplier = 1e-06, scale = 0).\n"
+    \ mole (exponent = 1, multiplier = 1e-06, scale = 0)."

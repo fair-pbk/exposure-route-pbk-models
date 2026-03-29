@@ -1,0 +1,422 @@
+id: KjellstromNordberg1978_Cd_Human
+name: KjellstromNordberg 1978
+applicability_domain:
+  chemicals:
+  - id: CHEBI:22978
+    label: cadmium molecular entity
+    iri: http://purl.obolibrary.org/obo/CHEBI_22978
+  species:
+  - id: NCBITaxon:9606
+    label: Homo sapiens
+    iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
+num_compartments: 9
+num_species: 9
+num_parameters: 15
+num_reactions: 13
+compartments:
+- id: GI
+  name: Gut compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00477
+    label: gut compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00477
+  unit: L
+- id: Intestinal_Tissue
+  name: Intestinal tissue compartment
+  unit: L
+- id: Liver
+  name: Liver compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00558
+    label: liver compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00558
+  unit: L
+- id: Kidney
+  name: Kidney compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00557
+    label: kidney compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00557
+  unit: L
+- id: Plasma
+  name: Plasma compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00488
+    label: plasma compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00488
+  unit: L
+- id: Red_Blood_Cell
+  name: Red blood cells compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00634
+    label: red blood cell compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00634
+  unit: L
+- id: Metallothionein
+  name: Metallothionein blood compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00464
+    label: blood compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00464
+  unit: L
+- id: Rest
+  name: Rest of body compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00450
+    label: rest of body compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00450
+  unit: L
+- id: Daily_Uptake
+  name: Amount of daily uptake
+  unit: L
+species:
+- id: AGI
+  name: Amount in gut
+  pbpko_bqm_is_class:
+    id: PBPKO:00496
+    label: amount in gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00496
+  chebi_bqb_is_class:
+    id: CHEBI:22978
+    label: cadmium molecular entity
+    iri: http://purl.obolibrary.org/obo/CHEBI_22978
+  unit: ug
+- id: ATI
+  name: Amount in intestinal tissue
+  chebi_bqb_is_class:
+    id: CHEBI:22978
+    label: cadmium molecular entity
+    iri: http://purl.obolibrary.org/obo/CHEBI_22978
+  unit: ug
+- id: ALiver
+  name: Amount in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00497
+    label: amount in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:22978
+    label: cadmium molecular entity
+    iri: http://purl.obolibrary.org/obo/CHEBI_22978
+  unit: ug
+- id: AKidney
+  name: Amount in kidney
+  pbpko_bqm_is_class:
+    id: PBPKO:00498
+    label: amount in kidney
+    iri: http://purl.obolibrary.org/obo/PBPKO_00498
+  chebi_bqb_is_class:
+    id: CHEBI:22978
+    label: cadmium molecular entity
+    iri: http://purl.obolibrary.org/obo/CHEBI_22978
+  unit: ug
+- id: APlasma
+  name: Amount in plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:00502
+    label: amount in plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_00502
+  chebi_bqb_is_class:
+    id: CHEBI:22978
+    label: cadmium molecular entity
+    iri: http://purl.obolibrary.org/obo/CHEBI_22978
+  unit: ug
+- id: ARBC
+  name: Amount in red blood cells
+  pbpko_bqm_is_class:
+    id: PBPKO:00623
+    label: amount in blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00623
+  chebi_bqb_is_class:
+    id: CHEBI:22978
+    label: cadmium molecular entity
+    iri: http://purl.obolibrary.org/obo/CHEBI_22978
+  unit: ug
+- id: AMetallothionein
+  name: Amount in metallothionein blood
+  pbpko_bqm_is_class:
+    id: PBPKO:00623
+    label: amount in blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00623
+  chebi_bqb_is_class:
+    id: CHEBI:22978
+    label: cadmium molecular entity
+    iri: http://purl.obolibrary.org/obo/CHEBI_22978
+  unit: ug
+- id: ARest
+  name: Amount in rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00501
+    label: amount in restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00501
+  chebi_bqb_is_class:
+    id: CHEBI:22978
+    label: cadmium molecular entity
+    iri: http://purl.obolibrary.org/obo/CHEBI_22978
+  unit: ug
+- id: ADaily_Uptake
+  name: Amount of daily uptake
+  chebi_bqb_is_class:
+    id: CHEBI:22978
+    label: cadmium molecular entity
+    iri: http://purl.obolibrary.org/obo/CHEBI_22978
+  unit: ug
+parameters:
+- id: Age
+  name: Age
+  pbpko_bqm_is_class:
+    id: PBPKO:00521
+    label: age in PBPK model
+    iri: http://purl.obolibrary.org/obo/PBPKO_00521
+  unit: y
+- id: BW
+  name: Bodyweight
+  pbpko_bqm_is_class:
+    id: PBPKO:00008
+    label: bodyweight
+    iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  unit: kg
+- id: C5
+  name: Coefficient
+  unit: dimensionless
+- id: C6
+  name: Coefficient
+  unit: /d
+- id: C7
+  name: Coefficient
+  unit: dimensionless
+- id: C8
+  name: Coefficient
+  unit: mg
+- id: C9
+  name: Coefficient
+  unit: dimensionless
+- id: C10
+  name: Coefficient
+  unit: /d
+- id: C12
+  name: Coefficient
+  unit: dimensionless
+- id: C13
+  name: Coefficient
+  unit: /d
+- id: C14
+  name: Coefficient
+  unit: /d
+- id: C16
+  name: Coefficient
+  unit: /d
+- id: C17
+  name: Coefficient
+  unit: dimensionless
+- id: C18
+  name: Coefficient
+  unit: /d
+- id: CX
+  name: Coefficient
+  unit: dimensionless
+parameterisations:
+- filename: KjellstromNordberg1978.params.csv
+  model_id: KjellstromNordberg1978_Cd_Human
+  parameters:
+  - id: Age
+    value: 30.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00521
+      label: age in PBPK model
+      iri: http://purl.obolibrary.org/obo/PBPKO_00521
+  - id: BW
+    value: 70.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00008
+      label: bodyweight
+      iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  - id: C5
+    value: 0.048
+    unit: ''
+    reference: ''
+  - id: C6
+    value: 0.05
+    unit: ''
+    reference: ''
+  - id: C7
+    value: 0.25
+    unit: ''
+    reference: ''
+  - id: C8
+    value: 1.0
+    unit: ''
+    reference: ''
+  - id: C9
+    value: 0.44
+    unit: ''
+    reference: ''
+  - id: C10
+    value: 0.00014
+    unit: ''
+    reference: ''
+  - id: C12
+    value: 0.25
+    unit: ''
+    reference: ''
+  - id: C13
+    value: 3.0e-05
+    unit: ''
+    reference: ''
+  - id: C14
+    value: 0.00016
+    unit: ''
+    reference: ''
+  - id: C16
+    value: 0.012
+    unit: ''
+    reference: ''
+  - id: C18
+    value: 1.0e-05
+    unit: ''
+    reference: ''
+  - id: CX
+    value: 0.04
+    unit: ''
+    reference: ''
+unit_consistency:
+- level: warning
+  msg: "As a principle of best modeling practice, the size of a <compartment> should\
+    \ be set to a value rather than be left undefined. Doing so improves the portability\
+    \ of models between different simulation and analysis systems, and helps make\
+    \ it easier to detect potential errors in models.\n The <compartment> with the\
+    \ id 'GI' does not have a 'size' attribute, nor is its initial value set by an\
+    \ <initialAssignment> or <assignmentRule>."
+- level: warning
+  msg: "As a principle of best modeling practice, the size of a <compartment> should\
+    \ be set to a value rather than be left undefined. Doing so improves the portability\
+    \ of models between different simulation and analysis systems, and helps make\
+    \ it easier to detect potential errors in models.\n The <compartment> with the\
+    \ id 'Intestinal_Tissue' does not have a 'size' attribute, nor is its initial\
+    \ value set by an <initialAssignment> or <assignmentRule>."
+- level: warning
+  msg: "As a principle of best modeling practice, the size of a <compartment> should\
+    \ be set to a value rather than be left undefined. Doing so improves the portability\
+    \ of models between different simulation and analysis systems, and helps make\
+    \ it easier to detect potential errors in models.\n The <compartment> with the\
+    \ id 'Liver' does not have a 'size' attribute, nor is its initial value set by\
+    \ an <initialAssignment> or <assignmentRule>."
+- level: warning
+  msg: "As a principle of best modeling practice, the size of a <compartment> should\
+    \ be set to a value rather than be left undefined. Doing so improves the portability\
+    \ of models between different simulation and analysis systems, and helps make\
+    \ it easier to detect potential errors in models.\n The <compartment> with the\
+    \ id 'Kidney' does not have a 'size' attribute, nor is its initial value set by\
+    \ an <initialAssignment> or <assignmentRule>."
+- level: warning
+  msg: "As a principle of best modeling practice, the size of a <compartment> should\
+    \ be set to a value rather than be left undefined. Doing so improves the portability\
+    \ of models between different simulation and analysis systems, and helps make\
+    \ it easier to detect potential errors in models.\n The <compartment> with the\
+    \ id 'Plasma' does not have a 'size' attribute, nor is its initial value set by\
+    \ an <initialAssignment> or <assignmentRule>."
+- level: warning
+  msg: "As a principle of best modeling practice, the size of a <compartment> should\
+    \ be set to a value rather than be left undefined. Doing so improves the portability\
+    \ of models between different simulation and analysis systems, and helps make\
+    \ it easier to detect potential errors in models.\n The <compartment> with the\
+    \ id 'Red_Blood_Cell' does not have a 'size' attribute, nor is its initial value\
+    \ set by an <initialAssignment> or <assignmentRule>."
+- level: warning
+  msg: "As a principle of best modeling practice, the size of a <compartment> should\
+    \ be set to a value rather than be left undefined. Doing so improves the portability\
+    \ of models between different simulation and analysis systems, and helps make\
+    \ it easier to detect potential errors in models.\n The <compartment> with the\
+    \ id 'Metallothionein' does not have a 'size' attribute, nor is its initial value\
+    \ set by an <initialAssignment> or <assignmentRule>."
+- level: warning
+  msg: "As a principle of best modeling practice, the size of a <compartment> should\
+    \ be set to a value rather than be left undefined. Doing so improves the portability\
+    \ of models between different simulation and analysis systems, and helps make\
+    \ it easier to detect potential errors in models.\n The <compartment> with the\
+    \ id 'Rest' does not have a 'size' attribute, nor is its initial value set by\
+    \ an <initialAssignment> or <assignmentRule>."
+- level: warning
+  msg: "As a principle of best modeling practice, the size of a <compartment> should\
+    \ be set to a value rather than be left undefined. Doing so improves the portability\
+    \ of models between different simulation and analysis systems, and helps make\
+    \ it easier to detect potential errors in models.\n The <compartment> with the\
+    \ id 'Daily_Uptake' does not have a 'size' attribute, nor is its initial value\
+    \ set by an <initialAssignment> or <assignmentRule>."
+- level: error
+  msg: In situations where a mathematical expression refers to extent, the units of
+    extent should be consistent with the global extent units of the model. In models
+    where the 'extentUnits' attribute has not been declared, libSBML does not yet
+    have the functionality to verify accurately the consistency of the units in such
+    expressions.
+- level: error
+  msg: "The units of the expressions used as arguments to a function call are expected\
+    \ to match the units expected for the arguments of that function. \nReference:\
+    \ L3V2 Section 3.4\n The formula 'lt(C7 * ADaily_Uptake, C8)' in the math element\
+    \ of the <kineticLaw> can only act on variables with the same units."
+- level: error
+  msg: "The units of the expressions used as arguments to a function call are expected\
+    \ to match the units expected for the arguments of that function. \nReference:\
+    \ L3V2 Section 3.4\n The formula 'lt(C7 * ADaily_Uptake, C8)' in the math element\
+    \ of the <kineticLaw> can only act on variables with the same units."
+- level: error
+  msg: "The units of the expressions used as arguments to a function call are expected\
+    \ to match the units expected for the arguments of that function. \nReference:\
+    \ L3V2 Section 3.4\n The formula 'ADaily_Uptake - C8' in the math element of the\
+    \ <kineticLaw> can only act on variables with the same units."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'C6 * ATI' in the <kineticLaw> element of the <reaction> with id '_J1' produces\
+    \ units that are inconsistent with units of earlier KineticLaw elements."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'C10 * ARest' in the <kineticLaw> element of the <reaction> with id '_J5' produces\
+    \ units that are inconsistent with units of earlier KineticLaw elements."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'C13 * ALiver' in the <kineticLaw> element of the <reaction> with id '_J7' produces\
+    \ units that are inconsistent with units of earlier KineticLaw elements."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'C14 * ALiver' in the <kineticLaw> element of the <reaction> with id '_J8' produces\
+    \ units that are inconsistent with units of earlier KineticLaw elements."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'C16 * ARBC' in the <kineticLaw> element of the <reaction> with id '_J9' produces\
+    \ units that are inconsistent with units of earlier KineticLaw elements."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'C18 * AKidney' in the <kineticLaw> element of the <reaction> with id '_J11'\
+    \ produces units that are inconsistent with units of earlier KineticLaw elements."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'piecewise(0.95, lt(Age, 30), 0.95 * 0.33\
+    \ * (Age - 30) / (80 - 30))' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <kineticLaw> <math> expression 'piecewise(ADaily_Uptake * (1 - C7), lt(C7 *\
+    \ ADaily_Uptake, C8), ADaily_Uptake - C8)' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."

@@ -1,5 +1,5 @@
 id: Worley2017_PFOA_Human
-name: ''
+name: Worley
 applicability_domain:
   chemicals:
   - id: CHEBI:35549
@@ -20,65 +20,97 @@ compartments:
     id: PBPKO:00566
     label: stomach compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00566
+  unit: L
 - id: SI
   name: Small intestine
   pbpko_bqm_is_class:
     id: PBPKO:00472
     label: small intestine compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00472
+  unit: L
 - id: Liver
   name: Liver
   pbpko_bqm_is_class:
     id: PBPKO:00558
     label: liver compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00558
+  unit: L
 - id: Plasma
   name: Plasma
   pbpko_bqm_is_class:
     id: PBPKO:00488
     label: plasma compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00488
+  unit: L
 - id: Rest
   name: Rest of the body
   pbpko_bqm_is_class:
     id: PBPKO:00450
     label: rest of body compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00450
+  unit: L
 - id: Feces
   name: Feces
   pbpko_bqm_is_class:
     id: PBPKO:00555
     label: feces compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00555
+  unit: L
 species:
 - id: ASt
   name: ''
+  unit: ''
 - id: ASI
   name: Amount in the small intestine
+  chebi_bqb_is_class:
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
+  unit: ug
 - id: ALiver
   name: Amount in the liver
   pbpko_bqm_is_class:
     id: PBPKO:00497
     label: amount in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
+  unit: ug
 - id: APlasma
   name: Amount in plasma
   pbpko_bqm_is_class:
     id: PBPKO:00502
     label: amount in plasma
     iri: http://purl.obolibrary.org/obo/PBPKO_00502
+  chebi_bqb_is_class:
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
+  unit: ug
 - id: ARest
   name: Amount in the rest of the body
   pbpko_bqm_is_class:
     id: PBPKO:00501
     label: amount in restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00501
+  chebi_bqb_is_class:
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
+  unit: ug
 - id: AFeces
   name: Amount in feces
   pbpko_bqm_is_class:
     id: PBPKO:00275
     label: cumulative amount in feces
     iri: http://purl.obolibrary.org/obo/PBPKO_00275
+  chebi_bqb_is_class:
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
+  unit: ug
 parameters:
 - id: BW
   name: Bodyweight
@@ -86,146 +118,303 @@ parameters:
     id: PBPKO:00008
     label: bodyweight
     iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  unit: kg
 - id: VLc
   name: Volume fraction of liver
   pbpko_bqm_is_class:
     id: PBPKO:00078
     label: fraction of liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00078
+  unit: L/kg
 - id: VPlasmac
   name: Volume fraction of plasma
   pbpko_bqm_is_class:
     id: PBPKO:00104
     label: fraction of plasma
     iri: http://purl.obolibrary.org/obo/PBPKO_00104
+  unit: L/kg
 - id: VL
   name: Liver volume
   pbpko_bqm_is_class:
     id: PBPKO:00077
     label: volume of liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00077
+  unit: L
 - id: VPlasma
   name: Volume of plasma
   pbpko_bqm_is_class:
     id: PBPKO:00103
     label: volume of plasma
     iri: http://purl.obolibrary.org/obo/PBPKO_00103
+  unit: L
 - id: VRest
   name: Volume of the rest of the body
   pbpko_bqm_is_class:
     id: PBPKO:00105
     label: volume of rest body
     iri: http://purl.obolibrary.org/obo/PBPKO_00105
+  unit: L
 - id: QC
   name: Cardiac output
   pbpko_bqm_is_class:
     id: PBPKO:00013
     label: cardiac output rate
     iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  unit: L/d
 - id: QCP
   name: Cardiac output of plasma
   pbpko_bqm_is_class:
     id: PBPKO:00528
     label: cardiac output rate of plasma
     iri: http://purl.obolibrary.org/obo/PBPKO_00528
+  unit: L/d
 - id: Htc
   name: Hematocrit
   pbpko_bqm_is_class:
     id: PBPKO:00527
     label: hematocrit volume
     iri: http://purl.obolibrary.org/obo/PBPKO_00527
+  unit: dimensionless
 - id: QLc
   name: Fraction of blood flow to liver
   pbpko_bqm_is_class:
     id: PBPKO:00025
     label: fraction of blood flow to liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00025
+  unit: dimensionless
 - id: QL
   name: Liver blood flow
   pbpko_bqm_is_class:
     id: PBPKO:00024
     label: blood flow rate to liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00024
+  unit: L/d
 - id: QRest
   name: Blood flow to rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00050
     label: blood flow rate to restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00050
+  unit: L/d
 - id: Free
   name: Unbound fraction
   pbpko_bqm_is_class:
     id: PBPKO:00149
     label: unbound fraction
     iri: http://purl.obolibrary.org/obo/PBPKO_00149
+  chebi_bqb_is_class:
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
+  unit: dimensionless
 - id: kstoC
   name: Intrinsic gastric emptying rate
+  unit: ''
 - id: ksto
   name: Gastric emptying rate
   pbpko_bqm_is_class:
     id: PBPKO:00143
     label: gastric emptying rate
     iri: http://purl.obolibrary.org/obo/PBPKO_00143
+  chebi_bqb_is_class:
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
+  unit: /d
 - id: kabsC
   name: Intrinsic absorption rate
+  unit: ''
 - id: kabs
   name: Absorption rate constant
   pbpko_bqm_is_class:
     id: PBPKO:00142
     label: absorption rate constant intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00142
+  chebi_bqb_is_class:
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
+  unit: /d
 - id: k0C
   name: Intrinsic stomach absorption rate
+  unit: ''
 - id: k0
   name: Stomach absorption rate
+  unit: /d
 - id: kfeC
   name: Intrinsic fecal excretion rate
+  unit: ''
 - id: kfe
   name: Fecal excretion rate
   pbpko_bqm_is_class:
     id: PBPKO:00236
     label: fecal elimination rate constant
     iri: http://purl.obolibrary.org/obo/PBPKO_00236
+  chebi_bqb_is_class:
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
+  unit: /d
 - id: kbiliaryC
   name: Intrinsic biliary clearance rate
+  unit: ''
 - id: kbiliary
   name: Biliary clearance rate
   pbpko_bqm_is_class:
     id: PBPKO:00233
     label: biliary clearance rate
     iri: http://purl.obolibrary.org/obo/PBPKO_00233
+  chebi_bqb_is_class:
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
+  unit: /d
 - id: PL
   name: Liver to plasma partition coefficient
   pbpko_bqm_is_class:
     id: PBPKO:00170
     label: liver plasma partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00170
+  chebi_bqb_is_class:
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
+  unit: dimensionless
 - id: PRest
   name: Rest of body to plasma partition coefficient
   pbpko_bqm_is_class:
     id: PBPKO:00518
     label: restbody plasma partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00518
+  chebi_bqb_is_class:
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
+  unit: dimensionless
 - id: CLiver
   name: Concentration in liver
   pbpko_bqm_is_class:
     id: PBPKO:00539
     label: concentration in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00539
+  unit: ug/L
 - id: CPlasma
   name: Unbound concentration in plasma
+  unit: ug/L
 - id: CPlasmaTotal
   name: Total concentration in plasma
   pbpko_bqm_is_class:
     id: PBPKO:00549
     label: concentration in plasma
     iri: http://purl.obolibrary.org/obo/PBPKO_00549
+  unit: ug/L
 - id: CRest
   name: Concentration in rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00548
     label: concentration in restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00548
+  unit: ug/L
+parameterisations:
+- filename: Worley.params.csv
+  model_id: Worley2017_PFOA_Human
+  parameters:
+  - id: BW
+    value: 70.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00008
+      label: bodyweight
+      iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  - id: VLc
+    value: 0.025
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00078
+      label: fraction of liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00078
+  - id: VPlasmac
+    value: 0.0428
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00104
+      label: fraction of plasma
+      iri: http://purl.obolibrary.org/obo/PBPKO_00104
+  - id: Htc
+    value: 0.44
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00527
+      label: hematocrit volume
+      iri: http://purl.obolibrary.org/obo/PBPKO_00527
+  - id: QLc
+    value: 0.23
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00025
+      label: fraction of blood flow to liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00025
+  - id: Free
+    value: 0.02
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00149
+      label: unbound fraction
+      iri: http://purl.obolibrary.org/obo/PBPKO_00149
+    bqb_is:
+      id: CHEBI:35549
+      label: perfluorooctanoic acid
+      iri: http://purl.obolibrary.org/obo/CHEBI_35549
+  - id: kstoC
+    value: 3.5
+    unit: ''
+    reference: ''
+  - id: kabsC
+    value: 2.12
+    unit: ''
+    reference: ''
+  - id: kfeC
+    value: 7.06e-05
+    unit: ''
+    reference: ''
+  - id: k0C
+    value: 1.0
+    unit: ''
+    reference: ''
+  - id: kbiliaryC
+    value: 0.001
+    unit: ''
+    reference: ''
+  - id: PL
+    value: 1.03
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00170
+      label: liver plasma partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00170
+    bqb_is:
+      id: CHEBI:35549
+      label: perfluorooctanoic acid
+      iri: http://purl.obolibrary.org/obo/CHEBI_35549
+  - id: PRest
+    value: 1.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00518
+      label: restbody plasma partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00518
+    bqb_is:
+      id: CHEBI:35549
+      label: perfluorooctanoic acid
+      iri: http://purl.obolibrary.org/obo/CHEBI_35549
 unit_consistency:
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
@@ -235,12 +424,12 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'kstoC' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'kstoC' does not have\
-    \ a 'units' attribute.\n"
+    \ a 'units' attribute."
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -249,12 +438,12 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'kabsC' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'kabsC' does not have\
-    \ a 'units' attribute.\n"
+    \ a 'units' attribute."
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -263,12 +452,12 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'k0C' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'k0C' does not have a\
-    \ 'units' attribute.\n"
+    \ 'units' attribute."
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -277,12 +466,12 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'kfeC' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'kfeC' does not have a\
-    \ 'units' attribute.\n"
+    \ 'units' attribute."
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
@@ -291,65 +480,65 @@ unit_consistency:
     \ of the units in mathematical expressions referring to that object. \n The units\
     \ of the <parameter> 'kbiliaryC' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
-    \ accurate.\n"
+    \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
     Reference: L3V2 Section 4.7.3\n The <parameter> with id 'kbiliaryC' does not have\
-    \ a 'units' attribute.\n"
+    \ a 'units' attribute."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '0.93 * BW - VL - VPlasma' cannot be fully\
     \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate.\n"
+    \ related to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression '12.5 * pow(BW, 0.75)' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression 'QC * (1 - Htc)' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression 'kstoC * pow(BW, -0.25)' cannot be fully\
     \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate.\n"
+    \ related to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression 'kabsC * pow(BW, -0.25)' cannot be fully\
     \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate.\n"
+    \ related to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression 'k0C * pow(BW, -0.25)' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression 'kfeC * pow(BW, -0.25)' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate.\n"
+    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
     \ <assignmentRule> <math> expression 'kbiliaryC * pow(BW, -0.25)' cannot be fully\
     \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate.\n"
+    \ related to this object may not be accurate."
