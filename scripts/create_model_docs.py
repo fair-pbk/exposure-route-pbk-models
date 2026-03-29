@@ -182,6 +182,92 @@ def create_model_report(sbml_file: str):
         else:
             f.write("*no parameters defined in the model*\n\n")
 
+def export_parameters(sbml_file: str, model: ls.Model, parameters_metadata: list):
+    file_dir = os.path.dirname(sbml_file)
+    parameter_files = sorted(
+        glob.glob(os.path.join(file_dir, '*.param.csv')) +
+        glob.glob(os.path.join(file_dir, '*.params.csv'))
+    )
+
+    if not parameter_files:
+        return []
+
+    model_id = model.getId() if hasattr(model, 'getId') else Path(sbml_file).stem
+    if not model_id:
+        model_id = Path(sbml_file).stem
+
+    metadata_lookup = {
+        str(item.get('id')): item
+        for item in parameters_metadata
+        if item.get('id')
+    }
+
+    parameterisations = []
+    for parameter_file in parameter_files:
+        try:
+            df = pd.read_csv(parameter_file, dtype=str).fillna('')
+        except Exception:
+            continue
+
+        columns = {column.strip().lower(): column for column in df.columns}
+        parameter_column = columns.get('parameter') or columns.get('id')
+        value_column = columns.get('value')
+        unit_column = columns.get('unit')
+        reference_column = columns.get('reference') or columns.get('description')
+
+        parameters = []
+        for _, row in df.iterrows():
+            parameter_id = str(row.get(parameter_column, '')).strip() if parameter_column else ''
+            metadata = metadata_lookup.get(parameter_id, {})
+            raw_value = str(row.get(value_column, '')).strip() if value_column else ''
+            unit = str(row.get(unit_column, '')).strip() if unit_column else metadata.get('unit', '')
+            reference = str(row.get(reference_column, '')) if reference_column else ''
+
+            if not raw_value:
+                console_logger.error(
+                    "No value specified for parameter [%s] in parameterisation file [%s] or model [%s].",
+                    parameter_id,
+                    os.path.basename(parameter_file),
+                    os.path.basename(sbml_file)
+                )
+                value = None
+            else:
+                try:
+                    value = float(raw_value)
+                except ValueError:
+                    console_logger.error(
+                        "Unable to parse numeric value [%s] for parameter [%s] in file [%s].",
+                        raw_value,
+                        parameter_id,
+                        os.path.basename(parameter_file)
+                    )
+                    value = None
+
+            param = {
+                'id': parameter_id,
+                'value': value,
+                'unit': unit,
+                'reference': reference
+            }
+
+            pbpko_bqm_is_class = metadata.get('pbpko_bqm_is_class')
+            chebi_bqb_is_class = metadata.get('chebi_bqb_is_class')
+            if isinstance(pbpko_bqm_is_class, dict):
+                param['bqm_is'] = dict(pbpko_bqm_is_class)
+            if isinstance(chebi_bqb_is_class, dict):
+                param['bqb_is'] = dict(chebi_bqb_is_class)
+
+            parameters.append(param)
+
+        parameterisations.append({
+            'filename': os.path.basename(parameter_file),
+            'model_id': model_id,
+            'parameters': parameters
+        })
+
+    return parameterisations
+
+
 def get_unit_concistency_check_results(doc: ls.SBMLDocument):
     results = []
     doc.setConsistencyChecks(ls.LIBSBML_CAT_UNITS_CONSISTENCY, True)
@@ -195,12 +281,12 @@ def get_unit_concistency_check_results(doc: ls.SBMLDocument):
                 and error_code != ls.UndeclaredUnits:
                 results.append({
                     "level": "error",
-                    "msg": doc.getError(i).getMessage()
+                    "msg": doc.getError(i).getMessage().strip()
                 })
             else:
                 results.append({
                     "level": "warning",
-                    "msg": doc.getError(i).getMessage()
+                    "msg": doc.getError(i).getMessage().strip()
                 })
     else:
         results.append({
@@ -242,7 +328,7 @@ def collect_model_metadata(sbml_file: str):
                 "label": str(compartment.pbpko_bqm_is_class.label[0]),
                 "iri": compartment.pbpko_bqm_is_class.iri
             }
-            record["unit"] = compartment.unit
+        record["unit"] = compartment.unit
         compartments_metadata.append(record)
 
     # Collect species metadata
@@ -259,7 +345,13 @@ def collect_model_metadata(sbml_file: str):
                 "label": str(species.pbpko_bqm_is_class.label[0]),
                 "iri": species.pbpko_bqm_is_class.iri
             }
-            record["unit"] = species.unit
+        if species.chebi_bqb_is_class is not None:
+            record["chebi_bqb_is_class"] = {
+                "id": species.chebi_bqb_is_class.name.replace("_", ":"),
+                "label": str(species.chebi_bqb_is_class.label[0]),
+                "iri": species.chebi_bqb_is_class.iri
+            }
+        record["unit"] = species.unit
         species_metadata.append(record)
 
     # Collect parameter metadata
@@ -276,7 +368,13 @@ def collect_model_metadata(sbml_file: str):
                 "label": str(parameter.pbpko_bqm_is_class.label[0]),
                 "iri": parameter.pbpko_bqm_is_class.iri
             }
-            record["unit"] = parameter.unit
+        if parameter.chebi_bqb_is_class is not None:
+            record["chebi_bqb_is_class"] = {
+                "id": parameter.chebi_bqb_is_class.name.replace("_", ":"),
+                "label": str(parameter.chebi_bqb_is_class.label[0]),
+                "iri": parameter.chebi_bqb_is_class.iri
+            }
+        record["unit"] = parameter.unit
         parameters_metadata.append(record)
 
     model_animal_species_metadata = []
@@ -299,6 +397,8 @@ def collect_model_metadata(sbml_file: str):
 
     unit_consistency_check_results = get_unit_concistency_check_results(document)
 
+    parametrisations = export_parameters(sbml_file, model, parameters_metadata)
+
     # Create metadata dictionary
     metadata = {
         "id": model.getId(),
@@ -314,6 +414,7 @@ def collect_model_metadata(sbml_file: str):
         "compartments": compartments_metadata,
         "species": species_metadata,
         "parameters": parameters_metadata,
+        "parameterisations": parametrisations,
         "unit_consistency": unit_consistency_check_results
     }
 
@@ -483,6 +584,7 @@ def export_annotations():
 
             for item in metadata.get('species', []):
                 pbpko_bqm_is_class = item.get('pbpko_bqm_is_class', None)
+                chebi_bqb_is_class = item.get('chebi_bqb_is_class', None)
                 record = {
                     'file': filename,
                     'id': item['id'],
@@ -492,12 +594,16 @@ def export_annotations():
                     'unit': item.get('unit', None),
                     'bqm_is_class_id': pbpko_bqm_is_class['id'] if pbpko_bqm_is_class else '',
                     'bqm_is_class_label': pbpko_bqm_is_class['label'] if pbpko_bqm_is_class else '',
-                    'bqm_is_class_iri': pbpko_bqm_is_class['iri'] if pbpko_bqm_is_class else ''
+                    'bqm_is_class_iri': pbpko_bqm_is_class['iri'] if pbpko_bqm_is_class else '',
+                    'bqb_is_class_id': chebi_bqb_is_class['id'] if chebi_bqb_is_class else '',
+                    'bqb_is_class_label': chebi_bqb_is_class['label'] if chebi_bqb_is_class else '',
+                    'bqb_is_class_iri': chebi_bqb_is_class['iri'] if chebi_bqb_is_class else ''
                 }
                 species_annotations.append(record)
 
             for item in metadata.get('parameters', []):
                 pbpko_bqm_is_class = item.get('pbpko_bqm_is_class', None)
+                chebi_bqb_is_class = item.get('chebi_bqb_is_class', None)
                 record = {
                     'file': filename,
                     'id': item['id'],
@@ -507,7 +613,10 @@ def export_annotations():
                     'unit': item.get('unit', None),
                     'bqm_is_class_id': pbpko_bqm_is_class['id'] if pbpko_bqm_is_class else '',
                     'bqm_is_class_label': pbpko_bqm_is_class['label'] if pbpko_bqm_is_class else '',
-                    'bqm_is_class_iri': pbpko_bqm_is_class['iri'] if pbpko_bqm_is_class else ''
+                    'bqm_is_class_iri': pbpko_bqm_is_class['iri'] if pbpko_bqm_is_class else '',
+                    'bqb_is_class_id': chebi_bqb_is_class['id'] if chebi_bqb_is_class else '',
+                    'bqb_is_class_label': chebi_bqb_is_class['label'] if chebi_bqb_is_class else '',
+                    'bqb_is_class_iri': chebi_bqb_is_class['iri'] if chebi_bqb_is_class else ''
                 }
                 parameter_annotations.append(record)
 
@@ -540,8 +649,74 @@ def export_annotations():
         df_species.to_excel(writer, sheet_name='Species', index=False, header=True)
         df_parameters.to_excel(writer, sheet_name='Parameters', index=False, header=True)
 
+
+def export_parameterisations():
+    sbml_files = glob.glob('./models/**/*.sbml', recursive=True)
+    records = []
+    for sbml_file in sbml_files:
+        try:
+            console_logger.info(
+                "Processing SBML file [%s] for parameterisations.",
+                os.path.basename(sbml_file)
+            )
+            file_dir = os.path.dirname(sbml_file)
+            report_path = os.path.relpath(file_dir, MODELS_PATH).replace('\\', '/')
+            path_parts = report_path.split('/')
+            route = path_parts[0] if len(path_parts) > 0 else ''
+            chemical_group = path_parts[1] if len(path_parts) > 1 else ''
+
+            output_dir = os.path.join(OUTPUT_PATH, os.path.relpath(file_dir, MODELS_PATH))
+            metadata_file = os.path.join(output_dir, 'metadata.yaml')
+            if not os.path.exists(metadata_file):
+                console_logger.warning(
+                    "Metadata file not found for SBML file [%s], skipping parameterisations export.",
+                    os.path.basename(sbml_file)
+                )
+                continue
+
+            with open(metadata_file, 'r', encoding='utf-8') as f:
+                metadata = yaml.safe_load(f)
+
+            for parameterisation in metadata.get('parameterisations', []):
+                filename = parameterisation.get('filename', '')
+                model_id = parameterisation.get('model_id', metadata.get('id', ''))
+                for parameter in parameterisation.get('parameters', []):
+                    bqm_is = parameter.get('bqm_is', {})
+                    bqb_is = parameter.get('bqb_is', {})
+                    records.append({
+                        'file': os.path.basename(sbml_file),
+                        'route': route,
+                        'chemical_group': chemical_group,
+                        'model_id': model_id,
+                        'parameterisation_file': filename,
+                        'parameter_id': parameter.get('id', ''),
+                        'value': parameter.get('value', None),
+                        'unit': parameter.get('unit', ''),
+                        'reference': parameter.get('reference', ''),
+                        'bqm_is_id': bqm_is.get('id', '') if isinstance(bqm_is, dict) else str(bqm_is),
+                        'bqm_is_label': bqm_is.get('label', '') if isinstance(bqm_is, dict) else '',
+                        'bqm_is_iri': bqm_is.get('iri', '') if isinstance(bqm_is, dict) else '',
+                        'bqb_is_id': bqb_is.get('id', '') if isinstance(bqb_is, dict) else str(bqb_is),
+                        'bqb_is_label': bqb_is.get('label', '') if isinstance(bqb_is, dict) else '',
+                        'bqb_is_iri': bqb_is.get('iri', '') if isinstance(bqb_is, dict) else ''
+                    })
+        except Exception as e:
+            console_logger.error(
+                "Error exporting parameterisations for SBML file [%s]: %s",
+                os.path.basename(sbml_file),
+                str(e)
+            )
+
+    excel_file = os.path.join(OUTPUT_PATH, 'parameterisations.xlsx')
+    df = pd.DataFrame(records)
+    with pd.ExcelWriter(excel_file) as writer:
+        df.to_excel(writer, sheet_name='Parameterisations', index=False, header=True)
+
+    console_logger.info('Created parameterisations excel file: %s', excel_file)
+
 if __name__ == '__main__':
     create_model_reports()
     create_overview_report()
     export_annotations()
+    export_parameterisations()
     export_models_zip()
