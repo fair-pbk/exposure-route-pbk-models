@@ -242,6 +242,7 @@ def collect_model_metadata(sbml_file: str):
                 "label": str(compartment.pbpko_bqm_is_class.label[0]),
                 "iri": compartment.pbpko_bqm_is_class.iri
             }
+            record["unit"] = compartment.unit
         compartments_metadata.append(record)
 
     # Collect species metadata
@@ -258,6 +259,7 @@ def collect_model_metadata(sbml_file: str):
                 "label": str(species.pbpko_bqm_is_class.label[0]),
                 "iri": species.pbpko_bqm_is_class.iri
             }
+            record["unit"] = species.unit
         species_metadata.append(record)
 
     # Collect parameter metadata
@@ -274,6 +276,7 @@ def collect_model_metadata(sbml_file: str):
                 "label": str(parameter.pbpko_bqm_is_class.label[0]),
                 "iri": parameter.pbpko_bqm_is_class.iri
             }
+            record["unit"] = parameter.unit
         parameters_metadata.append(record)
 
     model_animal_species_metadata = []
@@ -402,7 +405,8 @@ def create_overview_report():
     # Map compartments list of objects to semicolon-separated ids for spreadsheet export
     if 'compartments' in df.columns:
         df['compartments'] = df['compartments'].apply(
-            lambda compartments: ";".join(str(c.get('id', '')) for c in compartments if isinstance(c, dict) and c.get('id') is not None)
+            lambda compartments: ";".join(str(c.get('id', '')) \
+                for c in compartments if isinstance(c, dict) and c.get('id') is not None)
             if isinstance(compartments, list) else compartments
         )
 
@@ -470,6 +474,7 @@ def export_annotations():
                     'name': item['name'],
                     'route': route,
                     'chemical_group': chemical_group,
+                    'unit': item.get('unit', None),
                     'bqm_is_class_id': pbpko_bqm_is_class['id'] if pbpko_bqm_is_class else '',
                     'bqm_is_class_label': pbpko_bqm_is_class['label'] if pbpko_bqm_is_class else '',
                     'bqm_is_class_iri': pbpko_bqm_is_class['iri'] if pbpko_bqm_is_class else ''
@@ -484,6 +489,7 @@ def export_annotations():
                     'name': item['name'],
                     'route': route,
                     'chemical_group': chemical_group,
+                    'unit': item.get('unit', None),
                     'bqm_is_class_id': pbpko_bqm_is_class['id'] if pbpko_bqm_is_class else '',
                     'bqm_is_class_label': pbpko_bqm_is_class['label'] if pbpko_bqm_is_class else '',
                     'bqm_is_class_iri': pbpko_bqm_is_class['iri'] if pbpko_bqm_is_class else ''
@@ -498,6 +504,7 @@ def export_annotations():
                     'name': item['name'],
                     'route': route,
                     'chemical_group': chemical_group,
+                    'unit': item.get('unit', None),
                     'bqm_is_class_id': pbpko_bqm_is_class['id'] if pbpko_bqm_is_class else '',
                     'bqm_is_class_label': pbpko_bqm_is_class['label'] if pbpko_bqm_is_class else '',
                     'bqm_is_class_iri': pbpko_bqm_is_class['iri'] if pbpko_bqm_is_class else ''
