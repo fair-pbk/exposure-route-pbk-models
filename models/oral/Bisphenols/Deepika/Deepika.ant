@@ -45,8 +45,8 @@ fup = 0.965		      # 3.5% protein binding according to Edington and Ritter (2018
 #------------------------
 
 k0C = 0				# L/h/kg^(-0.25)
-k0 := k0C * BW ^(-0.25)		# L/h
-#k0 = 0 # /h
+#k0 := k0C * BW ^(-0.25)		# L/h
+k0 = 0 # /h
 
 kstoC 	   = 3.5		# L/h/kg^(-0.25)
 #ksto := kstoC * BW ^(-0.25)	# L/h

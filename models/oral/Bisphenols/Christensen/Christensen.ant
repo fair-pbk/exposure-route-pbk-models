@@ -30,8 +30,8 @@ VD     = 0.15                   # L/kg (apparent blood volume of distribution)
 
 F1      = 1                    # fixed value - Fractional constants
 F2      = 1                    # fixed value - Fractional constants
-k1	:= 0.9/60	 	# Elemination constant 1/min
-k2	:= 0.9/60 	 	# Elemination constant 1/min
+k1	= 0.9	 	# Elimination constant 1/min
+k2	= 0.9 	 	# Elimination constant 1/min
 
 #------------------------
 # Compartments
