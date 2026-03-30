@@ -25,14 +25,14 @@ model_instances:
       Oral: AST
       APlasma: APlasma
       CPlasma: '[APlasma]'
-  - id: Chen
-    label: Chen 2022
-    model_path: models/oral/PFAS/Chen/Chen.sbml
-    param_file: models/oral/PFAS/Chen/Chen.params.csv
-    target_mappings:
-      Oral: AST
-      APlasma: APlasma
-      CPlasma: '[APlasma]'
+  #- id: Chen
+  #  label: Chen 2022
+  #  model_path: models/oral/PFAS/Chen/Chen.sbml
+  #  param_file: models/oral/PFAS/Chen/Chen.params.csv
+  #  target_mappings:
+  #    Oral: AST
+  #    APlasma: APlasma
+  #    CPlasma: '[APlasma]'
 
 scenarios:
   - id: PFOS_scenario_1
