@@ -116,13 +116,13 @@ BileFracLMet2 = 0		# 0% of formed BPAS goes to bile
 fLiverMet1 = 1 				       # correction factor
 KmLMet1    = 45800                             # nM  (hepatic glucuronidation Km)
 VmaxLMet1c = 9043.2                            # nmol/h/g liver (hepatic glucuronidation)
-VmaxLMet1 := fLiverMet1 * BW^0.75 *VmaxLMet1c  * VLc * 1000 * BW / BW^0.75         # nmol/h
+VmaxLMet1 := fLiverMet1 * VmaxLMet1c* VLc * BW  * 1000          # nmol/h
 
 # Sulfation of BPA in the liver
 fLiverMet2 = 1 				       # correction factor
 KmLMet2   = 10100                              # nM  (hepatic sulfation Km)
 VmaxLMet2c= 149                                # nmol/h/g liver (hepatic sulfation Vmax)
-VmaxLMet2 := fLiverMet2 * BW^0.75 * (VmaxLMet2c * VLc * 1000 * BW/ BW^0.75)         # nmol/h
+VmaxLMet2 := fLiverMet2 * VmaxLMet2c * VLc * BW * 1000        # nmol/h
 
 #------------------------
 # Compartments
@@ -149,10 +149,6 @@ substanceOnly species AFeces     in Feces
 # Conjugates - Met1 - BPAG, Met2 - BPAS
 substanceOnly species ASIMet1 in SI			#BPA to BPAG
 substanceOnly species ASIMet2 in SI			#BPA to BPAS
-substanceOnly species ALiverMet1 in Liver		#BPA to BPAG
-substanceOnly species ALiverMet2 in Liver		#BPA to BPAS
-substanceOnly species APVMet1 in Liver
-substanceOnly species APVMet2 in Liver
 substanceOnly species AGILumenMet1 in GILumen
 substanceOnly species AGILumenMet2 in GILumen
 substanceOnly species APlasmaMet1 in Plasma
@@ -174,10 +170,6 @@ AFeces = 0;
 # Met1 - BPAG, Met2 - BPAS
 ASIMet1= 0;
 ASIMet2 = 0;
-APVMet1= 0;
-APVMet2 = 0;
-ALiverMet1= 0;
-ALiverMet2 = 0;
 AGILumenMet1 = 0;
 AGILumenMet2 = 0;
 APlasmaMet1 = 0;
@@ -225,29 +217,20 @@ ASI -> AFeces;	   kfe * ASI
 # A) Small Intestine  → Glucuronidation BAP → BPAG in "enterocytes”
 ASI -> ASIMet1;  (VmaxGILumenMet1 * CGut / (KmGILumenMet1 + CGut))
 
-# rapid absorption to the portal vein
-ASIMet1 -> APVMet1; kabsMet1 * ASIMet1
+# rapid absorption to the portal vein - 90% of BPAG to systemic circulation
+ASIMet1 -> APlasmaMet1; (1-BileFracSIMet1) * kabsMet1 * ASIMet1
 
-# 90% of BPAG to systemic circulation
-APVMet1 -> APlasmaMet1;  (1-BileFracSIMet1)* APVMet1
-
-# 10% of BPAG is secreted by the bile duct
-APVMet1 -> AGILumenMet1;   BileFracSIMet1* APVMet1
-
-
+# rapid absorption to the portal vein - 10% of BPAG is secreted by the bile duct
+ASIMet1 -> AGILumenMet1; BileFracSIMet1* kabsMet1 * ASIMet1
 
 # B) Small Intestine  → Sulfation → BPA to BPAS in "enterocytes”
 ASI -> ASIMet2;  (VmaxGILumenMet2 * CGut/ (KmGILumenMet2 + CGut))
 
-# rapid absorption to the portal vein
-ASIMet2 -> APVMet2; kabsMet2 * ASIMet2
+# rapid absorption to the portal vein - 100% of BPAS to systemic circulation
+ASIMet2 -> APlasmaMet2; (1-BileFracSIMet2) * kabsMet2 * ASIMet2
 
-# 100% of BPAS to systemic circulation
-APVMet2 -> APlasmaMet2; (1-BileFracSIMet2)*APVMet2
-
-# 0% of BPAS secreted by bile duct
-APVMet2 -> AGILumenMet2;   BileFracSIMet2 * APVMet2
-
+# rapid absorption to the portal vein - 0% of BPAS secreted to bile duct
+ASIMet2 -> AGILumenMet2; BileFracSIMet2 * kabsMet2 * ASIMet2
 
 #------------------------
 # Hepatic Metabolism
@@ -255,25 +238,19 @@ APVMet2 -> AGILumenMet2;   BileFracSIMet2 * APVMet2
 
 # A) BPA → BPAG
 
-# BPA → BPAG
-ALiver  -> ALiverMet1; ((VmaxLMet1 * (CLiver/PL) / (KmLMet1  + (CLiver/PL)) ))
+# BPA → BPAG - BPAG to volume of distribution (90%)
+ALiver  -> APlasmaMet1; (1-BileFracLMet1) * ((VmaxLMet1 * (CLiver/PL) / (KmLMet1  + (CLiver/PL)) ))
 
-# BPAG to volume of distribution (90%)
-ALiverMet1 -> APlasmaMet1; (1-BileFracLMet1) * ALiverMet1
-
-# BPAG to bile (10%)
-ALiverMet1  -> AGILumenMet1;  BileFracLMet1 * ALiverMet1
+# BPA → BPAG - BPAG to bile (10%)
+ALiver  -> AGILumenMet1; BileFracLMet1 * ((VmaxLMet1 * (CLiver/PL) / (KmLMet1  + (CLiver/PL)) ))
 
 # B) BPA → BPAS
 
-ALiver  -> ALiverMet2; (VmaxLMet2 * (CLiver/PL) / (KmLMet2 + (CLiver/PL)) )
-
 # BPAS to volume of distribution (100%)
-ALiverMet2 -> APlasmaMet2; (1-BileFracLMet2) * ALiverMet2
+ALiver  -> APlasmaMet2; (1-BileFracLMet2) * (VmaxLMet2 * (CLiver/PL) / (KmLMet2 + (CLiver/PL)) )
 
 # 0%  goes to bile
-
-ALiverMet2 -> AGILumenMet2; BileFracLMet2 * ALiverMet2
+ALiver  -> AGILumenMet2; BileFracLMet2 * (VmaxLMet2 * (CLiver/PL) / (KmLMet2 + (CLiver/PL)) )
 
 #------------------------
 # Perfusion limited BAP
