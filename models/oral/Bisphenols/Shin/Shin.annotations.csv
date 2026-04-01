@@ -85,5 +85,3 @@ CBlood,parameter,Concentration in blood,mg/L,rdf,BQM_IS,http://purl.obolibrary.o
 CBlood,parameter,,,rdf,BQB_IS,,
 CRest,parameter,Concentration in rest of body,mg/L,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_00548,
 CRest,parameter,,,rdf,BQB_IS,,
-Met,parameter,Hepatic metabolism - intrinsic clearance,UNITLESS,rdf,BQM_IS,,
-Met,parameter,,,rdf,BQB_IS,,

@@ -23,7 +23,7 @@ VBc     = 0.079                   # L/kg (blood)
 
 VL      := VLc*BW                  # L
 VB      := VBc*BW                  # L
-VRest   := 0.84*BW - VL - VB       # L (lumped rest-of-body; floor if needed)
+VRest   := BW * (0.84 - VLc - VBc)  # Lumped Rest-of-body volume L 
 
 #------------------------
 # Flows (human)
@@ -44,7 +44,7 @@ RBP = 0.83                          # Blood plasma coefficient
 #------------------------
 # BPA absorption 
 #------------------------
-kabsMet1C = 10.0                    # kg^(-0.25)/h oral uptake (portal→liver)  
+kabsMet1C = 10.0                    # kg^(0.25)/h oral uptake (portal→liver)  
 kabsMet1 := kabsMet1C  * BW^(-0.25) # 1/h
 
 #------------------------
@@ -63,10 +63,10 @@ MWMet = 404.4                       # g/mol
 #------------------------
 BileFrac   = 0.10                   # 10% fraction of formed BPAG routed to BileFrac (human), rest goes to the volume of distribution
 
-kehrMet1C   = 0.50                  # kg^(-0.25)/h (BPAG hydrolysis→BPA and re-entry to liver)
+kehrMet1C   = 0.50                  # kg^(0.25)/h (BPAG hydrolysis→BPA and re-entry to liver)
 kehrMet1 := kehrMet1C  * BW^(-0.25) # 1/h
 
-kfeC    = 0.00                      # kg^(-0.25)/h (fecal loss from GI BPAG; ~0 for human)
+kfeC    = 0.00                      # kg^(0.25)/h (fecal loss from GI BPAG; ~0 for human)
 kfe := kfeC * BW^(-0.25)            # 1/h
 
 #------------------------
@@ -110,7 +110,7 @@ ABloodMet = 0
 CBlood := ABlood / Blood
 CLiver := ALiver / Liver
 CRest  := ARest  / Rest
-CPlasma := CBlood/RBP
+CPlasma := CBlood / RBP
 
 #------------------------
 # BPA Transfer rates 
@@ -128,13 +128,12 @@ ABlood -> ARest;          QRest * CBlood
 ARest  -> ABlood;         QRest * CRest/PRest
 
 # hepatic Michaelis-Menten 
-ALiver -> ALiverMet;  (MWMet/MW) * ((VmaxLMet* ((CLiver/PL))) / (KmLMet+ ((CLiver/PL))) )
-
 # 1) systemic excretion of BPAG
-ALiverMet -> ABloodMet; (1 - BileFrac) * ALiverMet
+ALiver -> ABloodMet; (1 - BileFrac) * (MWMet/MW) * ((VmaxLMet* ((CLiver/PL))) / (KmLMet+ ((CLiver/PL))) )
 
 # 2) EHR: 10% metabolized BPAG goes to GI lumen via BileFrac secretion and is hydrolyzed to BPA
-ALiverMet -> AGILumenMet;   BileFrac * ALiverMet
+ALiver -> AGILumenMet;   BileFrac * (MWMet/MW) * ((VmaxLMet* ((CLiver/PL))) / (KmLMet+ ((CLiver/PL))) )
+
 AGILumenMet -> ALiver; AGILumenMet * kehrMet1
 AGILumenMet -> AFecesMet; AGILumenMet * kfe
 

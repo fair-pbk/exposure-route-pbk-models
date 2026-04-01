@@ -19,8 +19,6 @@ ABlood,species,amount of chemical in blood,mg,rdf,BQM_IS,http://purl.obolibrary.
 ABlood,species,,,rdf,BQB_IS,http://purl.obolibrary.org/obo/CHEBI_33216,
 ARest,species,amount of chemical in rest-of-body,mg,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_00501,
 ARest,species,,,rdf,BQB_IS,http://purl.obolibrary.org/obo/CHEBI_33216,
-ALiverMet,species,Amount of metabolite in liver,mg,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_00497,
-ALiverMet,species,,,rdf,BQB_IS,http://purl.obolibrary.org/obo/CHEBI_76967,
 AGILumenMet,species,Amount of metabolite in GI lumen,mg,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_00496,
 AGILumenMet,species,,,rdf,BQB_IS,http://purl.obolibrary.org/obo/CHEBI_76967,
 ABloodMet,species,Amount of metabolite in blood,mg,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_00623,

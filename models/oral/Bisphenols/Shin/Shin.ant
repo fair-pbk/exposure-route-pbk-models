@@ -28,10 +28,10 @@ VRest := 0.84*BW - VL - VB - VSt - VSI - VSpleen
 # Flows 
 #------------------------
 QC   := 15*BW^0.74                  # L/h (cardiac output)
-QL   := 1646.7/(1000*60)            # from ml/min to L/h (liver)
-QSpleen   := 76.7/(1000*60)         # from ml/min to L/h (Spleen)
-QSt  := 38.3/(1000*60)              # from ml/min to L/h (Stomach)
-QSI  := 1100/(1000*60)              # from ml/min to L/h (Small intestine)
+QL   := (1646.7/1000)*60            # from ml/min to L/h (liver)
+QSpleen   := (76.7/1000)*60         # from ml/min to L/h (Spleen)
+QSt  := (38.3/1000)*60              # from ml/min to L/h (Stomach)
+QSI  := (1100/1000)*60              # from ml/min to L/h (Small intestine)
 
 QRest := QC - QL  - QSpleen - QSt - QSI    # L/h (lumped rest)
 
@@ -53,19 +53,18 @@ kabs := 0.0006 * 60                     # 1/h
 #------------------------
 # Hepatic intrinsic clearance 
 #------------------------
-
 CLint = 116.6   			# L/h
 
 #------------------------
 # Compartments
 #------------------------
-compartment Stomach;   Stomach = VSt
+compartment Stomach;   Stomach := VSt
 compartment IntestinalLumen;  IntestinalLumen = 1
-compartment Spleen;   Spleen  = VSpleen
-compartment SmallIntestine;   SmallIntestine  = VSI
-compartment Liver;    Liver   = VL
-compartment Blood;    Blood   = VB
-compartment Rest;     Rest    = VRest
+compartment Spleen;   Spleen  := VSpleen
+compartment SmallIntestine;   SmallIntestine  := VSI
+compartment Liver;    Liver   := VL
+compartment Blood;    Blood   := VB
+compartment Rest;     Rest    := VRest
 
 #------------------------
 # Species (amount states)
@@ -105,15 +104,10 @@ CLiver  := ALiver / Liver
 CBlood  := ABlood / (Blood * RBS)
 CRest := ARest   / Rest
 
-
-# Hepatic metabolism (intrinsic clearance on liver-venous conc) - mg/h
-Met := CLint * (CLiver/PL)   
-
 #------------------------
 # GI transfers & absorptions
 #------------------------
 AIL -> ASI;     kabs * AIL
-
 
 ASI -> ALiver;  QSI * CSI/PSI
 ABlood -> ASI;  QSI * CBlood
