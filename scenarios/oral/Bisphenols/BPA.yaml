@@ -9,30 +9,30 @@ model_instances:
       Oral: AGut
       ABlood: ABlood
       CBlood: '[ABlood]'
-#  - id: Teeguarden
-#    label: Teeguarden 2005
-#    model_path: models/oral/Bisphenols/Teeguarden/Teeguarden.sbml
-#    param_file: models/oral/Bisphenols/Teeguarden/Teeguarden.params.csv
-#    target_mappings:
-#      Oral: AGILumen
-#      ABlood: ABlood
-#      CBlood: '[ABlood]'
-#  - id: Yang
-#    label: Yang 2015
-#    model_path: models/oral/Bisphenols/Yang/Yang.sbml
-#    param_file: models/oral/Bisphenols/Yang/Yang.params.csv
-#    target_mappings:
-#      Oral: ASt
-#      ABlood: APlasma
-#      CBlood: '[APlasma]'
-#  - id: Moreau
-#   label: Moreau 2025
-#    model_path: models/oral/Bisphenols/Moreau/Moreau.sbml
-#    param_file: models/oral/Bisphenols/Moreau/Moreau.params.csv
-#    target_mappings:
-#      Oral: ASt
-#      ABlood: APlasma
-#      CBlood: '[APlasma]'
+  - id: Teeguarden
+    label: Teeguarden 2005
+    model_path: models/oral/Bisphenols/Teeguarden/Teeguarden.sbml
+    param_file: models/oral/Bisphenols/Teeguarden/Teeguarden.params.csv
+    target_mappings:
+      Oral: AGILumen
+      ABlood: ABlood
+      CBlood: '[ABlood]'
+  - id: Yang
+    label: Yang 2015
+    model_path: models/oral/Bisphenols/Yang/Yang.sbml
+    param_file: models/oral/Bisphenols/Yang/Yang.params.csv
+    target_mappings:
+      Oral: ASt
+      ABlood: APlasma
+      CBlood: '[APlasma]'
+  - id: Moreau
+   label: Moreau 2025
+    model_path: models/oral/Bisphenols/Moreau/Moreau.sbml
+    param_file: models/oral/Bisphenols/Moreau/Moreau.params.csv
+    target_mappings:
+      Oral: ASt
+      ABlood: APlasma
+      CBlood: '[APlasma]'
   - id: Shin
     label: Shin 2004
     model_path: models/oral/Bisphenols/Shin/Shin.sbml
@@ -49,31 +49,30 @@ model_instances:
       Oral: ASt
       ABlood: APlasma
       CBlood: '[APlasma]'
-  #- id: Christensen
-  #  label: Christensen 2025
-  #  model_path: models/oral/Bisphenols/Christensen/Christensen.sbml
-  #  param_file: models/oral/Bisphenols/Christensen/Christensen.params.csv
-  #  target_mappings:
-  #    Oral: ASt
-  #    ABlood: ABlood
-  #    CBlood: '[ABlood]'
-#  - id: Karrer
-#    label: Karrer 2018
-#    model_path: models/oral/Bisphenols/Karrer/Karrer.sbml
-#    param_file: models/oral/Bisphenols/Karrer/Karrer.params.csv
-#    target_mappings:
-#      Oral: ASt
-#      ABlood: APlasma
-#      CBlood: '[APlasma]'
-#  - id: Hu
-#    label: Hu 2023
-#    model_path: models/oral/Bisphenols/Hu/Hu.sbml
-#    param_file: models/oral/Bisphenols/Hu/Hu.params.csv
-#    target_mappings:
-#      Oral: ASt
-#      ABlood: APlasma
-#      CBlood: '[APlasma]'
-
+  - id: Christensen
+    label: Christensen 2025
+    model_path: models/oral/Bisphenols/Christensen/Christensen.sbml
+    param_file: models/oral/Bisphenols/Christensen/Christensen.params.csv
+    target_mappings:
+      Oral: ASt
+      ABlood: ABlood
+      CBlood: '[ABlood]'
+  - id: Karrer
+    label: Karrer 2018
+    model_path: models/oral/Bisphenols/Karrer/Karrer.sbml
+    param_file: models/oral/Bisphenols/Karrer/Karrer.params.csv
+    target_mappings:
+      Oral: ASt
+      ABlood: APlasma
+      CBlood: '[APlasma]'
+  - id: Hu
+    label: Hu 2023
+    model_path: models/oral/Bisphenols/Hu/Hu.sbml
+    param_file: models/oral/Bisphenols/Hu/Hu.params.csv
+    target_mappings:
+      Oral: ASt
+      ABlood: APlasma
+      CBlood: '[APlasma]'
 scenarios:
   - id: BPA_scenario_1
     label: BPA Scenario 1
