@@ -13,6 +13,12 @@ model Deepika2022_BPA_Human()
 # parameters taken from Table S1, Table 1 or https://doi.org/10.1016/j.scitotenv.2017.12.023
 #===========================================================
 
+model notes ```
+The absorption and metabolism parameters should have units /h in order to be consistent 
+with the transfer equations. However, the units given in the supplemental materials of the original paper 
+are L/h/kg^-0.25. Therefore, I changed the units to /h while keeping the same values. This may result in 
+(large) deviations from the model implementation described in the paper. 
+```
 #------------------------
 # Body size & base volumes
 #------------------------
@@ -43,6 +49,7 @@ fup = 0.965		      # 3.5% protein binding according to Edington and Ritter (2018
 #------------------------
 # Absorption & hepatic metabolism
 #------------------------
+
 
 k0C = 0				# L/h/kg^(-0.25)
 #k0 := k0C * BW ^(-0.25)		# L/h
