@@ -24,7 +24,7 @@ VPlasmac = 0.04
 VL   := VLc*BW
 VPlasma := VPlasmac*BW
 
-VRest := 0.84*BW - VL - VPlasma
+VRest := BW * (0.84 - VLc - VPlasmac)  # Lumped Rest-of-body volume L 
 
 # Small-intestinal enterocyte “processing” volume (for gut glucuronidation)
 enterocytes = 0.1223       # L (volume of distribution in SI)
