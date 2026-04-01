@@ -14,24 +14,23 @@ model description "https://www.ncbi.nlm.nih.gov/pubmed/40480613"
 
 # Parameter values associated with paper extracted from online source: https://data.mendeley.com/datasets/mf5pg3zxh6/1
 
-MW = 228.29                         # Molecular weight g/mol
 #------------------------
 # Body size & base volumes
 #------------------------
 BW = 61.72                          # kg
 
-VLC = 0.0233                        # Liver (L/kg bodyweight)
-VGITissueC = 0.019                  # GI tissue (L/kg bodyweight)
+VLc = 0.0233                        # Liver (L/kg bodyweight)
+VGITissuec = 0.019                  # GI tissue (L/kg bodyweight)
 
-VL := VLC * BW
-VGITissue := VGITissueC * BW
+VL := VLc * BW
+VGITissue := VGITissuec * BW
 VPlasma = 2.5178                    # Plasma (L/kg bodyweight)
 
 VUrineC = 20                        # Urinary volume per day (mL/kg/day)
 VUrine := (VUrineC * BW)/24/1000    # Urinary volume per hour (L/h)
 
 # Lumped Rest-of-body volume
-VRest := 0.84*BW - VL - VGITissue - VPlasma     # (L/kg bodyweight)
+VRest := BW * (0.84 - VLc - VGITissuec) - VPlasma  # Lumped Rest-of-body volume L 
 
 #------------------------
 # Flows
@@ -59,7 +58,7 @@ PRest= 1.0                      # lumped rest:blood (can adjust if needed)
 # GI kinetics
 #------------------------
 ksto = 1.2			 # 1/h
-kabs = 1.2                       # 1/h
+kabs = 1.2           # 1/h
 Fa = 0.15			 # Fraction absorbed
 
 #------------------------
@@ -132,9 +131,6 @@ CLiver      := ALiver / Liver
 CPlasma     := APlasma / Plasma
 CRest       := ARest / Rest
 CUrine      := AUrine/ Urine
-
-# Hepatic metabolism (intrinsic clearance on liver-venous conc)
-Met := CLintL * (CLiver/PL)
 
 #------------------------
 # GI transfers & absorptions
