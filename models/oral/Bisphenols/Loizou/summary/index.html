@@ -651,6 +651,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1247,7 +1258,7 @@
   <span class="md-ellipsis">
     
   
-    Ruiz 2010_Female
+    Ruiz 2010_Male
   
 
     
@@ -2970,6 +2981,13 @@
 
 
 <h1 id="loizou">Loizou</h1>
+<h2 id="notes">Notes</h2>
+<p><notes>
+<br />
+<body xmlns="http://www.w3.org/1999/xhtml">
+    <p>BAP PBK (Louizou et al. 2022) </p>
+  </body></p>
+<p></notes></p>
 <h2 id="overview">Overview</h2>
 <table>
 <thead>
@@ -2981,11 +2999,11 @@
 <tbody>
 <tr>
 <td style="text-align: left;">Modelled species/orgamism(s)</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/NCBITaxon_9606</td>
 </tr>
 <tr>
 <td style="text-align: left;">Model chemical(s)</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/CHEBI_33216</td>
 </tr>
 <tr>
 <td style="text-align: left;">Input route(s)</td>
@@ -3013,7 +3031,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Number of parameters</td>
-<td style="text-align: left;">38 (32 external / 6 internal)</td>
+<td style="text-align: left;">36 (24 external / 12 internal)</td>
 </tr>
 </tbody>
 </table>
@@ -3033,14 +3051,14 @@
 <tr>
 <td style="text-align: left;">Stomach</td>
 <td style="text-align: left;">stomach</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00566</td>
 </tr>
 <tr>
 <td style="text-align: left;">Liver</td>
 <td style="text-align: left;">liver</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00558</td>
 </tr>
 <tr>
 <td style="text-align: left;">Plasma</td>
@@ -3227,41 +3245,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">VRest</td>
-<td style="text-align: left;">0.84 * BW - VL - VPlasma - VG</td>
-</tr>
-<tr>
-<td style="text-align: left;">CLiver</td>
-<td style="text-align: left;">ALiver / Liver</td>
-</tr>
-<tr>
-<td style="text-align: left;">CPlasma</td>
-<td style="text-align: left;">APlasma / Plasma</td>
-</tr>
-<tr>
-<td style="text-align: left;">CPlasma_Total</td>
-<td style="text-align: left;">CPlasma / fu</td>
-</tr>
-<tr>
-<td style="text-align: left;">CGut</td>
-<td style="text-align: left;">AGut / Gut</td>
-</tr>
-<tr>
-<td style="text-align: left;">CRest</td>
-<td style="text-align: left;">ARest / Rest</td>
-</tr>
-</tbody>
-</table>
-<h2 id="initial-assignments">Initial assignments</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">variable</th>
-<th style="text-align: left;">assignment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
 <td style="text-align: left;">Liver</td>
 <td style="text-align: left;">VL</td>
 </tr>
@@ -3290,6 +3273,10 @@
 <td style="text-align: left;">VGc * BW</td>
 </tr>
 <tr>
+<td style="text-align: left;">VRest</td>
+<td style="text-align: left;">0.84 * BW - VL - VPlasma - VG</td>
+</tr>
+<tr>
 <td style="text-align: left;">QC</td>
 <td style="text-align: left;">20 * pow(BW, 0.75)</td>
 </tr>
@@ -3305,6 +3292,33 @@
 <td style="text-align: left;">QRest</td>
 <td style="text-align: left;">(1 - QLc - QGc) * QC</td>
 </tr>
+<tr>
+<td style="text-align: left;">CLiver</td>
+<td style="text-align: left;">ALiver / Liver</td>
+</tr>
+<tr>
+<td style="text-align: left;">CPlasma</td>
+<td style="text-align: left;">APlasma / Plasma</td>
+</tr>
+<tr>
+<td style="text-align: left;">CGut</td>
+<td style="text-align: left;">AGut / Gut</td>
+</tr>
+<tr>
+<td style="text-align: left;">CRest</td>
+<td style="text-align: left;">ARest / Rest</td>
+</tr>
+</tbody>
+</table>
+<h2 id="initial-assignments">Initial assignments</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">variable</th>
+<th style="text-align: left;">assignment</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align: left;">k0</td>
 <td style="text-align: left;">k0C * pow(BW, -0.25)</td>
@@ -3427,12 +3441,6 @@
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
-<td style="text-align: left;">Hct</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
 <td style="text-align: left;">fu</td>
 <td style="text-align: left;"><em>not specified</em></td>
 <td style="text-align: left;"><em>not specified</em></td>
@@ -3548,12 +3556,6 @@
 </tr>
 <tr>
 <td style="text-align: left;">CPlasma</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">CPlasma_Total</td>
 <td style="text-align: left;"><em>not specified</em></td>
 <td style="text-align: left;"><em>not specified</em></td>
 <td style="text-align: left;"><em>not specified</em></td>

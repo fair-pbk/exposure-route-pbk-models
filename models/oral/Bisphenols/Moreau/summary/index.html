@@ -1258,7 +1258,7 @@
   <span class="md-ellipsis">
     
   
-    Ruiz 2010_Female
+    Ruiz 2010_Male
   
 
     
@@ -2985,7 +2985,7 @@
 <p><notes>
 <br />
 <body xmlns="http://www.w3.org/1999/xhtml">
-    <p>BPA PBK - Moreau et al. 2025 Stomach -&gt; Duodenum -&gt; GITissue -&gt; Liver Perfusion-limited: Blood &lt;-&gt; Liver, Blood &lt;-&gt; Rest Hepatic metabolism: intrinsic clearance Plasma metabolism: set to 0 for BAP </p>
+    <p>BPA PBK - Moreau et al. 2025 - Stomach -&gt; Duodenum -&gt; GITissue -&gt; Liver - Perfusion-limited: Blood &lt;-&gt; Liver, Blood &lt;-&gt; Rest - Hepatic metabolism: intrinsic clearance - Plasma metabolism: set to 0 for BAP </p>
   </body></p>
 <p></notes></p>
 <h2 id="overview">Overview</h2>
@@ -2999,11 +2999,11 @@
 <tbody>
 <tr>
 <td style="text-align: left;">Modelled species/orgamism(s)</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/NCBITaxon_9606</td>
 </tr>
 <tr>
 <td style="text-align: left;">Model chemical(s)</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/CHEBI_33216</td>
 </tr>
 <tr>
 <td style="text-align: left;">Input route(s)</td>
@@ -3031,7 +3031,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Number of parameters</td>
-<td style="text-align: left;">37 (20 external / 17 internal)</td>
+<td style="text-align: left;">35 (19 external / 16 internal)</td>
 </tr>
 </tbody>
 </table>
@@ -3228,7 +3228,7 @@
 <td style="text-align: left;">_J9</td>
 <td style="text-align: left;">APlasma</td>
 <td style="text-align: left;">AUrine</td>
-<td style="text-align: left;">CLU * APlasma</td>
+<td style="text-align: left;">CLU * CPlasma</td>
 </tr>
 <tr>
 <td style="text-align: left;">_J10</td>
@@ -3255,12 +3255,12 @@
                 -  \mathit{QRest}\cdot \mathit{CPlasma}
                 +  \frac{\mathit{QRest}\cdot \mathit{CRest}}{\mathit{PRest}}
                 -  \mathit{CLintB}\cdot \mathit{CPlasma}
-                -  \mathit{CLU}\cdot \mathit{APlasma}\)</span></p>
+                -  \mathit{CLU}\cdot \mathit{CPlasma}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{ARest}]}{dt} =  \mathit{QRest}\cdot \mathit{CPlasma}
               -  \frac{\mathit{QRest}\cdot \mathit{CRest}}{\mathit{PRest}}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{ALiverMet}]}{dt} =  \mathit{CLintL}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{APlasmaMet}]}{dt} =  \mathit{CLintB}\cdot \mathit{CPlasma}\)</span></p>
-<p><span class="arithmatex">\(\frac{d[\mathtt{AUrine}]}{dt} =  \mathit{CLU}\cdot \mathit{APlasma}\)</span></p>
+<p><span class="arithmatex">\(\frac{d[\mathtt{AUrine}]}{dt} =  \mathit{CLU}\cdot \mathit{CPlasma}\)</span></p>
 <h2 id="assignment-rules">Assignment rules</h2>
 <table>
 <thead>
@@ -3271,20 +3271,40 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">GITissue</td>
+<td style="text-align: left;">VGITissue</td>
+</tr>
+<tr>
+<td style="text-align: left;">Liver</td>
 <td style="text-align: left;">VL</td>
-<td style="text-align: left;">VLC * BW</td>
+</tr>
+<tr>
+<td style="text-align: left;">Plasma</td>
+<td style="text-align: left;">VPlasma</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rest</td>
+<td style="text-align: left;">VRest</td>
+</tr>
+<tr>
+<td style="text-align: left;">Urine</td>
+<td style="text-align: left;">VUrine</td>
+</tr>
+<tr>
+<td style="text-align: left;">VL</td>
+<td style="text-align: left;">VLc * BW</td>
 </tr>
 <tr>
 <td style="text-align: left;">VGITissue</td>
-<td style="text-align: left;">VGITissueC * BW</td>
+<td style="text-align: left;">VGITissuec * BW</td>
 </tr>
 <tr>
 <td style="text-align: left;">VUrine</td>
-<td style="text-align: left;">VUrineC * BW / 24 / 1000</td>
+<td style="text-align: left;">VUrineC * BW / 24</td>
 </tr>
 <tr>
 <td style="text-align: left;">VRest</td>
-<td style="text-align: left;">0.84 * BW - VL - VGITissue - VPlasma</td>
+<td style="text-align: left;">BW * (0.84 - VLc - VGITissuec) - VPlasma</td>
 </tr>
 <tr>
 <td style="text-align: left;">QCPlasma</td>
@@ -3334,10 +3354,6 @@
 <td style="text-align: left;">CUrine</td>
 <td style="text-align: left;">AUrine / Urine</td>
 </tr>
-<tr>
-<td style="text-align: left;">Met</td>
-<td style="text-align: left;">CLintL * (CLiver / PL)</td>
-</tr>
 </tbody>
 </table>
 <h2 id="initial-assignments">Initial assignments</h2>
@@ -3350,24 +3366,8 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">GITissue</td>
-<td style="text-align: left;">VGITissue</td>
-</tr>
-<tr>
-<td style="text-align: left;">Liver</td>
-<td style="text-align: left;">VL</td>
-</tr>
-<tr>
-<td style="text-align: left;">Plasma</td>
-<td style="text-align: left;">VPlasma</td>
-</tr>
-<tr>
-<td style="text-align: left;">Rest</td>
-<td style="text-align: left;">VRest</td>
-</tr>
-<tr>
-<td style="text-align: left;">Urine</td>
-<td style="text-align: left;">VUrine</td>
+<td style="text-align: left;">VUrineC</td>
+<td style="text-align: left;">20 / 1000</td>
 </tr>
 </tbody>
 </table>
@@ -3383,225 +3383,213 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">MW</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
 <td style="text-align: left;">BW</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">VLC</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">kg</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
-<td style="text-align: left;">VGITissueC</td>
+<td style="text-align: left;">VLc</td>
 <td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/kg</td>
 <td style="text-align: left;"><em>not specified</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">VGITissuec</td>
+<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/kg</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">VL</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">VGITissue</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">VPlasma</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">VUrineC</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/kg/d</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">VUrine</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">VRest</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">QC</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">Hct</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">dimensionless</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">QCPlasma</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">QGIc</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">dimensionless</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">QLc</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">dimensionless</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">QGI</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">QL</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">QRest</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">PL</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">dimensionless</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">PGI</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">dimensionless</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">PRest</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">dimensionless</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">ksto</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">kabs</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">Fa</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">dimensionless</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">CLintLC</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/h/kg</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">CLintL</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">CLintB</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">Free</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">dimensionless</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">GFR</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">CLUC</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">CLU</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">CGITissue</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">mg/L</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">CLiver</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">mg/L</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">CPlasma</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">mg/L</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">CRest</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">mg/L</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">CUrine</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">Met</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">mg/L</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 </tbody>

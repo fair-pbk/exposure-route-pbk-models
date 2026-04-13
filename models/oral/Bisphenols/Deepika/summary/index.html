@@ -567,6 +567,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -637,17 +648,6 @@
     <span class="md-ellipsis">
       
         Assignment rules
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#initial-assignments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Initial assignments
       
     </span>
   </a>
@@ -1247,7 +1247,7 @@
   <span class="md-ellipsis">
     
   
-    Ruiz 2010_Female
+    Ruiz 2010_Male
   
 
     
@@ -2970,6 +2970,13 @@
 
 
 <h1 id="deepika">Deepika</h1>
+<h2 id="notes">Notes</h2>
+<p><notes>
+<br />
+<body xmlns="http://www.w3.org/1999/xhtml">
+    <p>BAP PBK (Deepika 2022): - Human PBK for oral absorption - Administration -&gt; stomach -&gt; gut -&gt; liver -&gt; blood - Parent only, perfusion-limited tissues - Intestinal Metabolism BAP -&gt; BAPG - Hepatic Metabolism BAP -&gt; BAPG and BAPS - Parameters taken from Table S1, Table 1 or https://doi.org/10.1016/j.scitotenv.2017.12.023 - The absorption and metabolism parameters should have units /h in order to be consistent with the transfer equations. However, the units given in the supplemental materials of the original paper are L/h/kg^-0.25. Therefore, units were changed to /h while keeping the same values. This may result in (large) deviations from the model implementation described in the paper. </p>
+  </body></p>
+<p></notes></p>
 <h2 id="overview">Overview</h2>
 <table>
 <thead>
@@ -2981,11 +2988,11 @@
 <tbody>
 <tr>
 <td style="text-align: left;">Modelled species/orgamism(s)</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/NCBITaxon_9606</td>
 </tr>
 <tr>
 <td style="text-align: left;">Model chemical(s)</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/CHEBI_33216</td>
 </tr>
 <tr>
 <td style="text-align: left;">Input route(s)</td>
@@ -2997,7 +3004,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Amounts unit</td>
-<td style="text-align: left;">nmol</td>
+<td style="text-align: left;">umol</td>
 </tr>
 <tr>
 <td style="text-align: left;">Volume unit</td>
@@ -3013,7 +3020,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Number of parameters</td>
-<td style="text-align: left;">38 (26 external / 12 internal)</td>
+<td style="text-align: left;">36 (21 external / 15 internal)</td>
 </tr>
 </tbody>
 </table>
@@ -3033,31 +3040,31 @@
 <tr>
 <td style="text-align: left;">Stomach</td>
 <td style="text-align: left;">stomach</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00566</td>
 </tr>
 <tr>
 <td style="text-align: left;">Liver</td>
 <td style="text-align: left;">liver</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00558</td>
 </tr>
 <tr>
 <td style="text-align: left;">Plasma</td>
 <td style="text-align: left;">blood plasma</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00488</td>
 </tr>
 <tr>
 <td style="text-align: left;">Gut</td>
 <td style="text-align: left;">gut</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00477</td>
 </tr>
 <tr>
 <td style="text-align: left;">Rest</td>
 <td style="text-align: left;">rest-of-body</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00450</td>
 </tr>
 </tbody>
@@ -3075,51 +3082,51 @@
 <tbody>
 <tr>
 <td style="text-align: left;">ASt</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Amount of chemical in stomach</td>
+<td style="text-align: left;">umol</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">ALiver</td>
-<td style="text-align: left;">amount of chemical in liver</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Amount of chemical in liver</td>
+<td style="text-align: left;">umol</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00497</td>
 </tr>
 <tr>
 <td style="text-align: left;">APlasma</td>
-<td style="text-align: left;">amount of chemical in plasma</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Amount of chemical in plasma</td>
+<td style="text-align: left;">umol</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00502</td>
 </tr>
 <tr>
 <td style="text-align: left;">AGut</td>
-<td style="text-align: left;">amount of chemical in gut</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Amount of chemical in gut</td>
+<td style="text-align: left;">umol</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00496</td>
 </tr>
 <tr>
 <td style="text-align: left;">ARest</td>
-<td style="text-align: left;">amount of chemical in rest-of-body</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Amount of chemical in rest-of-body</td>
+<td style="text-align: left;">umol</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00501</td>
 </tr>
 <tr>
 <td style="text-align: left;">AGutMet1</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Amount of chemical in gut</td>
+<td style="text-align: left;">umol</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00496</td>
 </tr>
 <tr>
 <td style="text-align: left;">ALiverMet1</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Amount of chemical in liver</td>
+<td style="text-align: left;">umol</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00497</td>
 </tr>
 <tr>
 <td style="text-align: left;">ALiverMet2</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Amount of chemical in liver</td>
+<td style="text-align: left;">umol</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00497</td>
 </tr>
 </tbody>
 </table>
@@ -3227,65 +3234,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">VL</td>
-<td style="text-align: left;">VLc * BW</td>
-</tr>
-<tr>
-<td style="text-align: left;">VPlasma</td>
-<td style="text-align: left;">VPlasmac * BW</td>
-</tr>
-<tr>
-<td style="text-align: left;">VG</td>
-<td style="text-align: left;">VGc * BW</td>
-</tr>
-<tr>
-<td style="text-align: left;">VRest</td>
-<td style="text-align: left;">0.84 * BW - VL - VPlasma - VG</td>
-</tr>
-<tr>
-<td style="text-align: left;">VmaxGMet1</td>
-<td style="text-align: left;">22750 / (1000 * pow(BW, 0.75))</td>
-</tr>
-<tr>
-<td style="text-align: left;">VmaxLMet1</td>
-<td style="text-align: left;">680095.6 / (1000 * pow(BW, 0.75))</td>
-</tr>
-<tr>
-<td style="text-align: left;">VmaxLMet2</td>
-<td style="text-align: left;">11657 / (1000 * pow(BW, 0.75))</td>
-</tr>
-<tr>
-<td style="text-align: left;">CLiver</td>
-<td style="text-align: left;">ALiver / Liver</td>
-</tr>
-<tr>
-<td style="text-align: left;">CPlasma</td>
-<td style="text-align: left;">APlasma / Plasma</td>
-</tr>
-<tr>
-<td style="text-align: left;">CPlasma_Total</td>
-<td style="text-align: left;">CPlasma / fup</td>
-</tr>
-<tr>
-<td style="text-align: left;">CGut</td>
-<td style="text-align: left;">AGut / Gut</td>
-</tr>
-<tr>
-<td style="text-align: left;">CRest</td>
-<td style="text-align: left;">ARest / Rest</td>
-</tr>
-</tbody>
-</table>
-<h2 id="initial-assignments">Initial assignments</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">variable</th>
-<th style="text-align: left;">assignment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
 <td style="text-align: left;">Liver</td>
 <td style="text-align: left;">VL</td>
 </tr>
@@ -3300,6 +3248,22 @@
 <tr>
 <td style="text-align: left;">Rest</td>
 <td style="text-align: left;">VRest</td>
+</tr>
+<tr>
+<td style="text-align: left;">VL</td>
+<td style="text-align: left;">VLc * BW</td>
+</tr>
+<tr>
+<td style="text-align: left;">VPlasma</td>
+<td style="text-align: left;">VPlasmac * BW</td>
+</tr>
+<tr>
+<td style="text-align: left;">VG</td>
+<td style="text-align: left;">VGc * BW</td>
+</tr>
+<tr>
+<td style="text-align: left;">VRest</td>
+<td style="text-align: left;">BW * (0.84 - VLc - VPlasmac - VGc)</td>
 </tr>
 <tr>
 <td style="text-align: left;">QC</td>
@@ -3318,16 +3282,32 @@
 <td style="text-align: left;">(1 - QLc - QGc) * QC</td>
 </tr>
 <tr>
-<td style="text-align: left;">k0</td>
-<td style="text-align: left;">k0C * pow(BW, -0.25)</td>
+<td style="text-align: left;">VmaxGMet1</td>
+<td style="text-align: left;">(22750/1000) * pow(BW, 0.75)</td>
 </tr>
 <tr>
-<td style="text-align: left;">ksto</td>
-<td style="text-align: left;">kstoC * pow(BW, -0.25)</td>
+<td style="text-align: left;">VmaxLMet1</td>
+<td style="text-align: left;">680095.6 / 1000 * pow(BW, 0.75)</td>
 </tr>
 <tr>
-<td style="text-align: left;">kabs</td>
-<td style="text-align: left;">kabsC * pow(BW, -0.25)</td>
+<td style="text-align: left;">VmaxLMet2</td>
+<td style="text-align: left;">(11657/1000) * pow(BW, 0.75)</td>
+</tr>
+<tr>
+<td style="text-align: left;">CLiver</td>
+<td style="text-align: left;">ALiver / Liver</td>
+</tr>
+<tr>
+<td style="text-align: left;">CPlasma</td>
+<td style="text-align: left;">APlasma / Plasma</td>
+</tr>
+<tr>
+<td style="text-align: left;">CGut</td>
+<td style="text-align: left;">AGut / Gut</td>
+</tr>
+<tr>
+<td style="text-align: left;">CRest</td>
+<td style="text-align: left;">ARest / Rest</td>
 </tr>
 </tbody>
 </table>
@@ -3344,231 +3324,219 @@
 <tbody>
 <tr>
 <td style="text-align: left;">BW</td>
-<td style="text-align: left;">body weight</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Body weight</td>
+<td style="text-align: left;">kg</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00008</td>
 </tr>
 <tr>
 <td style="text-align: left;">VLc</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Volume fraction of liver to bodyweight</td>
+<td style="text-align: left;">L/kg</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00078</td>
 </tr>
 <tr>
 <td style="text-align: left;">VPlasmac</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Volume fraction of plasma to bodyweight</td>
+<td style="text-align: left;">L/kg</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00104</td>
 </tr>
 <tr>
 <td style="text-align: left;">VGc</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Volume fraction of gut to bodyweight</td>
+<td style="text-align: left;">L/kg</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00509</td>
 </tr>
 <tr>
 <td style="text-align: left;">VL</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Volume of liver</td>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00077</td>
 </tr>
 <tr>
 <td style="text-align: left;">VPlasma</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Volume of plasma</td>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00103</td>
 </tr>
 <tr>
 <td style="text-align: left;">VG</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Volume of gut</td>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00524</td>
 </tr>
 <tr>
 <td style="text-align: left;">VRest</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Volume of rest of body</td>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00105</td>
 </tr>
 <tr>
 <td style="text-align: left;">QC</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Cardiac output</td>
+<td style="text-align: left;">L/h</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00013</td>
 </tr>
 <tr>
 <td style="text-align: left;">QLc</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Blood flow to liver constant</td>
+<td style="text-align: left;">dimensionless</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00025</td>
 </tr>
 <tr>
 <td style="text-align: left;">QGc</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Blood flow to gut constant</td>
+<td style="text-align: left;">dimensionless</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00513</td>
 </tr>
 <tr>
 <td style="text-align: left;">QL</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Blood flow rate to liver</td>
+<td style="text-align: left;">L/h</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00024</td>
 </tr>
 <tr>
 <td style="text-align: left;">QG</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Blood flow rate to gut</td>
+<td style="text-align: left;">L/h</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00531</td>
 </tr>
 <tr>
 <td style="text-align: left;">QRest</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">Hct</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Blood flow rate to rest of body</td>
+<td style="text-align: left;">L/h</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00050</td>
 </tr>
 <tr>
 <td style="text-align: left;">fup</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">unbound fraction</td>
+<td style="text-align: left;">dimensionless</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00149</td>
 </tr>
 <tr>
 <td style="text-align: left;">k0C</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">intrinsic stomach absorption rate constant</td>
 <td style="text-align: left;"><em>not specified</em></td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">k0</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Stomach absorption rate constant</td>
+<td style="text-align: left;">/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">kstoC</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Intrinsic gastric emptying rate constant</td>
 <td style="text-align: left;"><em>not specified</em></td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">ksto</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Gastric emptying rate</td>
+<td style="text-align: left;">/h</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00143</td>
 </tr>
 <tr>
 <td style="text-align: left;">kabsC</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Intrinsic absorption rate constant</td>
 <td style="text-align: left;"><em>not specified</em></td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">kabs</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Oral absorption rate</td>
+<td style="text-align: left;">/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxGMet1C</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Glucuronidation - Vmax</td>
+<td style="text-align: left;">nmol/min/mg</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxGMet1</td>
+<td style="text-align: left;">Glucuronidation - Vmax</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
 </tr>
 <tr>
 <td style="text-align: left;">KmGMet1</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Glucuronidation - Km</td>
+<td style="text-align: left;">umol</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet1C</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Glucuronidation - Vmax</td>
+<td style="text-align: left;">nmol/min/mg</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet1</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Glucuronidation - Vmax</td>
+<td style="text-align: left;">umol/h</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
 <td style="text-align: left;">KmLMet1</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Glucuronidation - Km</td>
+<td style="text-align: left;">umol</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet2C</td>
+<td style="text-align: left;">Sulfation - Vmax</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet2</td>
+<td style="text-align: left;">Sulfation - Vmax</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
 <td style="text-align: left;">KmLMet2</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Sulfation - Km</td>
+<td style="text-align: left;">umol/L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
 <td style="text-align: left;">PL</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Partition coefficient - liver</td>
+<td style="text-align: left;">dimensionless</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00577</td>
 </tr>
 <tr>
 <td style="text-align: left;">PRest</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Partition coefficient - rest of body</td>
+<td style="text-align: left;">dimensionless</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00585</td>
 </tr>
 <tr>
 <td style="text-align: left;">CLiver</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Concentration in liver</td>
+<td style="text-align: left;">umol/L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00539</td>
 </tr>
 <tr>
 <td style="text-align: left;">CPlasma</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">CPlasma_Total</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Concentration in plasma</td>
+<td style="text-align: left;">umol/L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00549</td>
 </tr>
 <tr>
 <td style="text-align: left;">CGut</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Concentration in gut</td>
+<td style="text-align: left;">umol/L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00538</td>
 </tr>
 <tr>
 <td style="text-align: left;">CRest</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Concentration in rest of body</td>
+<td style="text-align: left;">umol/L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00548</td>
 </tr>
 </tbody>
 </table>

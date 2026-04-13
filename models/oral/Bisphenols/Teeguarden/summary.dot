@@ -49,7 +49,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ALiverMet",
 			label="ALiverMet
-[PBPKO:00497]",
+[-]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -116,13 +116,12 @@ digraph {
 	}
 	AGILumen -> ALiver	[label=_J0,
 		minlen=1];
-	AGILumenMet -> ALiver	[label=_J8];
-	AGILumenMet -> AFecesMet	[label=_J9,
+	AGILumenMet -> ALiver	[label=_J7];
+	AGILumenMet -> AFecesMet	[label=_J8,
 		minlen=1];
-	ALiver -> ALiverMet	[label=_J5];
+	ALiver -> AGILumenMet	[label=_J6];
 	ALiver -> ABlood	[label=_J2];
-	ALiverMet -> AGILumenMet	[label=_J7];
-	ALiverMet -> ABloodMet	[label=_J6,
+	ALiver -> ABloodMet	[label=_J5,
 		minlen=1];
 	ABlood -> ALiver	[label=_J1];
 	ABlood -> ARest	[label=_J3];

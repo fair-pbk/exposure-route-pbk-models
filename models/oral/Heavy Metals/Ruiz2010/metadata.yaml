@@ -1,5 +1,5 @@
-id: Ruiz2010_Cd_Human_Female
-name: Ruiz 2010_Female
+id: Ruiz2010_Cd_Human_Male
+name: Ruiz 2010_Male
 applicability_domain:
   chemicals:
   - id: CHEBI:22978
@@ -213,7 +213,7 @@ parameters:
   unit: dimensionless
 parameterisations:
 - filename: Ruiz2010_Female.params.csv
-  model_id: Ruiz2010_Cd_Human_Female
+  model_id: Ruiz2010_Cd_Human_Male
   parameters:
   - id: Age
     value: 30.0
@@ -284,7 +284,7 @@ parameterisations:
     unit: ''
     reference: ''
 - filename: Ruiz2010_Male.params.csv
-  model_id: Ruiz2010_Cd_Human_Female
+  model_id: Ruiz2010_Cd_Human_Male
   parameters:
   - id: Age
     value: 30.0

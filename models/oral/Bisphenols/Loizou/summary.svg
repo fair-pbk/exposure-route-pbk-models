@@ -11,19 +11,19 @@
 <polygon fill="white" stroke="transparent" points="-4,4 -4,-612 1068,-612 1068,4 -4,4"/>
 <g id="clust1" class="cluster">
 <title>cluster_Stomach</title>
-<g id="a_clust1"><a xlink:href="#compartment-Stomach" xlink:title="Stomach&#10;[&#45;]">
-<path fill="lightblue" stroke="black" d="M280.35,-508C280.35,-508 482.34,-508 482.34,-508 488.34,-508 494.34,-514 494.34,-520 494.34,-520 494.34,-588 494.34,-588 494.34,-594 488.34,-600 482.34,-600 482.34,-600 280.35,-600 280.35,-600 274.35,-600 268.35,-594 268.35,-588 268.35,-588 268.35,-520 268.35,-520 268.35,-514 274.35,-508 280.35,-508"/>
-<text text-anchor="middle" x="381.35" y="-584.8" font-family="Arial" font-size="14.00">Stomach</text>
-<text text-anchor="middle" x="381.35" y="-569.8" font-family="Arial" font-size="14.00">[&#45;]</text>
+<g id="a_clust1"><a xlink:href="#compartment-Stomach" xlink:title="Stomach&#10;[PBPKO:00566]">
+<path fill="lightblue" stroke="black" d="M261.52,-508C261.52,-508 503.52,-508 503.52,-508 509.52,-508 515.52,-514 515.52,-520 515.52,-520 515.52,-588 515.52,-588 515.52,-594 509.52,-600 503.52,-600 503.52,-600 261.52,-600 261.52,-600 255.52,-600 249.52,-594 249.52,-588 249.52,-588 249.52,-520 249.52,-520 249.52,-514 255.52,-508 261.52,-508"/>
+<text text-anchor="middle" x="382.52" y="-584.8" font-family="Arial" font-size="14.00">Stomach</text>
+<text text-anchor="middle" x="382.52" y="-569.8" font-family="Arial" font-size="14.00">[PBPKO:00566]</text>
 </a>
 </g>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_Liver</title>
-<g id="a_clust2"><a xlink:href="#compartment-Liver" xlink:title="Liver&#10;[&#45;]">
+<g id="a_clust2"><a xlink:href="#compartment-Liver" xlink:title="Liver&#10;[PBPKO:00558]">
 <path fill="lightblue" stroke="black" d="M355.68,-8C355.68,-8 708.32,-8 708.32,-8 714.32,-8 720.32,-14 720.32,-20 720.32,-20 720.32,-338 720.32,-338 720.32,-344 714.32,-350 708.32,-350 708.32,-350 355.68,-350 355.68,-350 349.68,-350 343.68,-344 343.68,-338 343.68,-338 343.68,-20 343.68,-20 343.68,-14 349.68,-8 355.68,-8"/>
 <text text-anchor="middle" x="532" y="-334.8" font-family="Arial" font-size="14.00">Liver</text>
-<text text-anchor="middle" x="532" y="-319.8" font-family="Arial" font-size="14.00">[&#45;]</text>
+<text text-anchor="middle" x="532" y="-319.8" font-family="Arial" font-size="14.00">[PBPKO:00558]</text>
 </a>
 </g>
 </g>

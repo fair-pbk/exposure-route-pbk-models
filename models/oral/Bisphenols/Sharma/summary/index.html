@@ -823,17 +823,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#initial-assignments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Initial assignments
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1258,7 +1247,7 @@
   <span class="md-ellipsis">
     
   
-    Ruiz 2010_Female
+    Ruiz 2010_Male
   
 
     
@@ -2985,7 +2974,7 @@
 <p><notes>
 <br />
 <body xmlns="http://www.w3.org/1999/xhtml">
-    <p>BAP PBK (Sharma 2018): Human PBK for oral absorption (administration → stomach → gut → liver → blood)  Parent only, perfusion-limited tissues Intestinal Metabolism BAP → BAPG  Hepatic Metabolism BAP → BAPG and BAPS </p>
+    <p>BAP PBK (Sharma 2018): - Human PBK for oral absorption (administration → stomach → gut → liver → blood) - Parent only, perfusion-limited tissues - Intestinal Metabolism BAP → BAPG - Hepatic Metabolism BAP → BAPG and BAPS </p>
   </body></p>
 <p></notes></p>
 <h2 id="overview">Overview</h2>
@@ -3245,6 +3234,22 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">Liver</td>
+<td style="text-align: left;">VL</td>
+</tr>
+<tr>
+<td style="text-align: left;">Plasma</td>
+<td style="text-align: left;">VPlasma</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gut</td>
+<td style="text-align: left;">VG</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rest</td>
+<td style="text-align: left;">VRest</td>
+</tr>
+<tr>
 <td style="text-align: left;">VL</td>
 <td style="text-align: left;">VLc * BW</td>
 </tr>
@@ -3258,7 +3263,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">VRest</td>
-<td style="text-align: left;">0.84 * BW - VL - VPlasma - VG</td>
+<td style="text-align: left;">BW * (0.84 - VLc - VGc - VPlasmac)</td>
 </tr>
 <tr>
 <td style="text-align: left;">QC</td>
@@ -3319,33 +3324,6 @@
 <tr>
 <td style="text-align: left;">CRest</td>
 <td style="text-align: left;">ARest / Rest</td>
-</tr>
-</tbody>
-</table>
-<h2 id="initial-assignments">Initial assignments</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">variable</th>
-<th style="text-align: left;">assignment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Liver</td>
-<td style="text-align: left;">VL</td>
-</tr>
-<tr>
-<td style="text-align: left;">Plasma</td>
-<td style="text-align: left;">VPlasma</td>
-</tr>
-<tr>
-<td style="text-align: left;">Gut</td>
-<td style="text-align: left;">VG</td>
-</tr>
-<tr>
-<td style="text-align: left;">Rest</td>
-<td style="text-align: left;">VRest</td>
 </tr>
 </tbody>
 </table>
@@ -3446,9 +3424,9 @@
 </tr>
 <tr>
 <td style="text-align: left;">Hct</td>
-<td style="text-align: left;">Hematocrit</td>
-<td style="text-align: left;">dimensionless</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00527</td>
+<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">fup</td>
@@ -3495,13 +3473,13 @@
 <tr>
 <td style="text-align: left;">VmaxGMet1C</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/min/mg</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxGMet1</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
-<td style="text-align: left;">umol/h/kg</td>
+<td style="text-align: left;"><em>not specified</em></td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
 </tr>
 <tr>
@@ -3513,13 +3491,13 @@
 <tr>
 <td style="text-align: left;">VmaxLMet1C</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/min/mg</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet1</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
-<td style="text-align: left;">umol/h/kg</td>
+<td style="text-align: left;"><em>not specified</em></td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
@@ -3531,13 +3509,13 @@
 <tr>
 <td style="text-align: left;">VmaxLMet2C</td>
 <td style="text-align: left;">Sulfation - Vmax</td>
-<td style="text-align: left;">umol/h/kg</td>
+<td style="text-align: left;"><em>not specified</em></td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet2</td>
 <td style="text-align: left;">Sulfation - Vmax</td>
-<td style="text-align: left;">umol/h/kg</td>
+<td style="text-align: left;"><em>not specified</em></td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>

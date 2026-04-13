@@ -9,7 +9,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Stomach",
 			label="Stomach
-[-]",
+[PBPKO:00566]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -27,7 +27,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Blood",
 			label="Blood
-[-]",
+[PBPKO:00464]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -35,7 +35,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ABlood",
 			label="ABlood
-[-]",
+[PBPKO:00623]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -45,7 +45,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Bladder",
 			label="Bladder
-[-]",
+[PBPKO:00402]",
 			shape=box,
 			style="filled,rounded"
 		];

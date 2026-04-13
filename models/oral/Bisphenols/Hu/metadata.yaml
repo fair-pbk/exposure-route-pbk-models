@@ -65,8 +65,12 @@ compartments:
   unit: L
 species:
 - id: ASt
-  name: ''
-  unit: ''
+  name: Amount in stomach
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: nmol
 - id: ASI
   name: Amount in small intestine
   chebi_bqb_is_class:
@@ -892,12 +896,6 @@ parameterisations:
       iri: http://purl.obolibrary.org/obo/CHEBI_167305
 unit_consistency:
 - level: error
-  msg: In situations where a mathematical expression refers to extent, the units of
-    extent should be consistent with the global extent units of the model. In models
-    where the 'extentUnits' attribute has not been declared, libSBML does not yet
-    have the functionality to verify accurately the consistency of the units in such
-    expressions.
-- level: error
   msg: "The unit of measurement associated with the mathematical formula in the MathML\
     \ math element of every KineticLaw object in a model should be identical to all\
     \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
@@ -1466,6 +1464,14 @@ unit_consistency:
     \ <kineticLaw> <math> expression '(1 - BileFracSIMet1) * APVMet1' cannot be fully\
     \ checked. Unit consistency reported as either no errors or further unit errors\
     \ related to this object may not be accurate."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are mole (exponent = 1, multiplier = 1, scale = -9), second (exponent\
+    \ = -1, multiplier = 3600, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J7') are mole (exponent =\
+    \ 1, multiplier = 1e-09, scale = 0)."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -1480,6 +1486,14 @@ unit_consistency:
     \ <kineticLaw> <math> expression '(1 - BileFracSIMet2) * APVMet2' cannot be fully\
     \ checked. Unit consistency reported as either no errors or further unit errors\
     \ related to this object may not be accurate."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are mole (exponent = 1, multiplier = 1, scale = -9), second (exponent\
+    \ = -1, multiplier = 3600, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J11') are mole (exponent\
+    \ = 1, multiplier = 1e-09, scale = 0)."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -1494,6 +1508,14 @@ unit_consistency:
     \ <kineticLaw> <math> expression '(1 - BileFracLMet1) * ALiverMet1' cannot be\
     \ fully checked. Unit consistency reported as either no errors or further unit\
     \ errors related to this object may not be accurate."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are mole (exponent = 1, multiplier = 1, scale = -9), second (exponent\
+    \ = -1, multiplier = 3600, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J14') are mole (exponent\
+    \ = 1, multiplier = 1e-09, scale = 0)."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -1508,6 +1530,14 @@ unit_consistency:
     \ <kineticLaw> <math> expression '(1 - BileFracLMet2) * ALiverMet2' cannot be\
     \ fully checked. Unit consistency reported as either no errors or further unit\
     \ errors related to this object may not be accurate."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are mole (exponent = 1, multiplier = 1, scale = -9), second (exponent\
+    \ = -1, multiplier = 3600, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J17') are mole (exponent\
+    \ = 1, multiplier = 1e-09, scale = 0)."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\

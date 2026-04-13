@@ -215,7 +215,7 @@ parameters:
     id: CHEBI:76967
     label: human xenobiotic metabolite
     iri: http://purl.obolibrary.org/obo/CHEBI_76967
-  unit: ''
+  unit: nmol/min/g
 - id: VmaxLMet1
   name: Glucuronidation - Vmax
   pbpko_bqm_is_class:
@@ -226,7 +226,7 @@ parameters:
     id: CHEBI:76967
     label: human xenobiotic metabolite
     iri: http://purl.obolibrary.org/obo/CHEBI_76967
-  unit: ''
+  unit: umol/h
 - id: KmLMet2
   name: Sulfation - Km
   pbpko_bqm_is_class:
@@ -248,7 +248,7 @@ parameters:
     id: CHEBI:33216
     label: bisphenol A
     iri: http://purl.obolibrary.org/obo/CHEBI_33216
-  unit: ''
+  unit: nmol/min/g
 - id: VmaxLMet2
   name: Sulfation - Vmax
   pbpko_bqm_is_class:
@@ -259,7 +259,7 @@ parameters:
     id: CHEBI:33216
     label: bisphenol A
     iri: http://purl.obolibrary.org/obo/CHEBI_33216
-  unit: ''
+  unit: umol/h
 - id: CBlood
   name: Concentration in blood
   pbpko_bqm_is_class:
@@ -393,82 +393,20 @@ parameterisations:
       label: bisphenol A
       iri: http://purl.obolibrary.org/obo/CHEBI_33216
 unit_consistency:
-- level: error
-  msg: In situations where a mathematical expression refers to extent, the units of
-    extent should be consistent with the global extent units of the model. In models
-    where the 'extentUnits' attribute has not been declared, libSBML does not yet
-    have the functionality to verify accurately the consistency of the units in such
-    expressions.
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'VmaxLMet1C' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VmaxLMet1C' does not\
-    \ have a 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'VmaxLMet1' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VmaxLMet1' does not have\
-    \ a 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'VmaxLMet2C' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VmaxLMet2C' does not\
-    \ have a 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'VmaxLMet2' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VmaxLMet2' does not have\
-    \ a 'units' attribute."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression '0.84 * BW - VL - VB' cannot be fully checked.\
+    \ <assignmentRule> <math> expression 'BW * (0.84 - VLc - VBc)' cannot be fully\
+    \ checked. Unit consistency reported as either no errors or further unit errors\
+    \ related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'VmaxLMet1C * VL * 60' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
     \ to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression 'VmaxLMet1C * 1800 * 60 / 1000' cannot be\
-    \ fully checked. Unit consistency reported as either no errors or further unit\
-    \ errors related to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -480,20 +418,6 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression 'VmaxLMet2C * 1800 * 60 / 1000' cannot be\
-    \ fully checked. Unit consistency reported as either no errors or further unit\
-    \ errors related to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'VmaxLMet1 * (CLiver / PL) / (KmLMet1 + CLiver\
-    \ / PL)' cannot be fully checked. Unit consistency reported as either no errors\
-    \ or further unit errors related to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'VmaxLMet2 * (CLiver / PL) / (KmLMet2 + CLiver\
-    \ / PL)' cannot be fully checked. Unit consistency reported as either no errors\
-    \ or further unit errors related to this object may not be accurate."
+    \ <assignmentRule> <math> expression 'VmaxLMet2C * VL * 60' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate."

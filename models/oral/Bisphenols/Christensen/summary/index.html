@@ -627,6 +627,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#initial-assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial assignments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1247,7 +1258,7 @@
   <span class="md-ellipsis">
     
   
-    Ruiz 2010_Female
+    Ruiz 2010_Male
   
 
     
@@ -2974,7 +2985,7 @@
 <p><notes>
 <br />
 <body xmlns="http://www.w3.org/1999/xhtml">
-    <p>BPA PBPK (adult) after Christensen et al. 2013 2-compartment model </p>
+    <p>BPA PBPK (adult) after Christensen et al. 2013 - 2-compartment model </p>
   </body></p>
 <p></notes></p>
 <h2 id="overview">Overview</h2>
@@ -2988,11 +2999,11 @@
 <tbody>
 <tr>
 <td style="text-align: left;">Modelled species/orgamism(s)</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/NCBITaxon_9606</td>
 </tr>
 <tr>
 <td style="text-align: left;">Model chemical(s)</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/CHEBI_33216</td>
 </tr>
 <tr>
 <td style="text-align: left;">Input route(s)</td>
@@ -3000,15 +3011,15 @@
 </tr>
 <tr>
 <td style="text-align: left;">Time resolution</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">h</td>
 </tr>
 <tr>
 <td style="text-align: left;">Amounts unit</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">umol</td>
 </tr>
 <tr>
 <td style="text-align: left;">Volume unit</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L</td>
 </tr>
 <tr>
 <td style="text-align: left;">Number of compartments</td>
@@ -3020,7 +3031,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Number of parameters</td>
-<td style="text-align: left;">7 (4 external / 3 internal)</td>
+<td style="text-align: left;">7 (6 external / 1 internal)</td>
 </tr>
 </tbody>
 </table>
@@ -3039,21 +3050,21 @@
 <tbody>
 <tr>
 <td style="text-align: left;">Stomach</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">stomach</td>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00566</td>
 </tr>
 <tr>
 <td style="text-align: left;">Blood</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">blood</td>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00464</td>
 </tr>
 <tr>
 <td style="text-align: left;">Bladder</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00402</td>
 </tr>
 </tbody>
 </table>
@@ -3070,20 +3081,20 @@
 <tbody>
 <tr>
 <td style="text-align: left;">ASt</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">amount of chemical in stomach</td>
+<td style="text-align: left;">umol</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">ABlood</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">amount of chemical in blood</td>
+<td style="text-align: left;">umol</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00623</td>
 </tr>
 <tr>
 <td style="text-align: left;">AExcr</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">umol</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 </tbody>
@@ -3132,16 +3143,27 @@
 <td style="text-align: left;">VD * BW</td>
 </tr>
 <tr>
+<td style="text-align: left;">CBlood</td>
+<td style="text-align: left;">ABlood / Blood</td>
+</tr>
+</tbody>
+</table>
+<h2 id="initial-assignments">Initial assignments</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">variable</th>
+<th style="text-align: left;">assignment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td style="text-align: left;">k1</td>
-<td style="text-align: left;">0.9 / 60</td>
+<td style="text-align: left;">0.9 * 60</td>
 </tr>
 <tr>
 <td style="text-align: left;">k2</td>
-<td style="text-align: left;">0.9 / 60</td>
-</tr>
-<tr>
-<td style="text-align: left;">CBlood</td>
-<td style="text-align: left;">ABlood / Blood</td>
+<td style="text-align: left;">0.9 * 60</td>
 </tr>
 </tbody>
 </table>
@@ -3158,44 +3180,44 @@
 <tbody>
 <tr>
 <td style="text-align: left;">BW</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">body weight</td>
+<td style="text-align: left;">kg</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00008</td>
 </tr>
 <tr>
 <td style="text-align: left;">VD</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/kg</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">F1</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">dimensionless</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">F2</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">dimensionless</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">k1</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">k2</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">CBlood</td>
 <td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">umol/L</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 </tbody>

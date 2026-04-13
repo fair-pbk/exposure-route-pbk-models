@@ -1258,7 +1258,7 @@
   <span class="md-ellipsis">
     
   
-    Ruiz 2010_Female
+    Ruiz 2010_Male
   
 
     
@@ -2985,7 +2985,7 @@
 <p><notes>
 <br />
 <body xmlns="http://www.w3.org/1999/xhtml">
-    <p>BPA PBPK (Karrer et al. 2018) Human PBK for oral absorption administration → Stomach → SI → liver &lt;- GI Lumen Metabolism Parent only, perfusion-limited tissues GI Lumen Metabolism BAPG → BAP Hepatic Metabolism BAP → BAPG &amp; BAPS EHR of BAPG from liver to GI Lumen, hydrolyzed to BAP, EHR of hydrolyzed BAPG to liver </p>
+    <p>BPA PBPK (Karrer et al. 2018) - Human PBK for oral absorption - Administration → Stomach → SI → liver &lt;- GI Lumen Metabolism - Parent only, perfusion-limited tissues - GI Lumen Metabolism BAPG → BAP - Hepatic Metabolism BAP → BAPG &amp; BAPS - EHR of BAPG from liver to GI Lumen, hydrolyzed to BAP, EHR of hydrolyzed BAPG to liver </p>
   </body></p>
 <p></notes></p>
 <h2 id="overview">Overview</h2>
@@ -3027,11 +3027,11 @@
 </tr>
 <tr>
 <td style="text-align: left;">Number of species</td>
-<td style="text-align: left;">19</td>
+<td style="text-align: left;">15</td>
 </tr>
 <tr>
 <td style="text-align: left;">Number of parameters</td>
-<td style="text-align: left;">60 (33 external / 27 internal)</td>
+<td style="text-align: left;">59 (33 external / 26 internal)</td>
 </tr>
 </tbody>
 </table>
@@ -3158,30 +3158,6 @@
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
-<td style="text-align: left;">ALiverMet1</td>
-<td style="text-align: left;">Amount in liver</td>
-<td style="text-align: left;">nmol</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00497</td>
-</tr>
-<tr>
-<td style="text-align: left;">ALiverMet2</td>
-<td style="text-align: left;">Amount in liver</td>
-<td style="text-align: left;">nmol</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00497</td>
-</tr>
-<tr>
-<td style="text-align: left;">APVMet1</td>
-<td style="text-align: left;">Amount in portal vein</td>
-<td style="text-align: left;">nmol</td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">APVMet2</td>
-<td style="text-align: left;">Amount in portal vein</td>
-<td style="text-align: left;">nmol</td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
 <td style="text-align: left;">AGILumenMet1</td>
 <td style="text-align: left;">Amount in GI lumen</td>
 <td style="text-align: left;">nmol</td>
@@ -3263,137 +3239,113 @@
 <tr>
 <td style="text-align: left;">_J5</td>
 <td style="text-align: left;">ASIMet1</td>
-<td style="text-align: left;">APVMet1</td>
-<td style="text-align: left;">kabsMet1 * ASIMet1</td>
+<td style="text-align: left;">APlasmaMet1</td>
+<td style="text-align: left;">(1 - BileFracSIMet1) * kabsMet1 * ASIMet1</td>
 </tr>
 <tr>
 <td style="text-align: left;">_J6</td>
-<td style="text-align: left;">APVMet1</td>
-<td style="text-align: left;">APlasmaMet1</td>
-<td style="text-align: left;">(1 - BileFracSIMet1) * APVMet1</td>
+<td style="text-align: left;">ASIMet1</td>
+<td style="text-align: left;">AGILumenMet1</td>
+<td style="text-align: left;">BileFracSIMet1 * kabsMet1 * ASIMet1</td>
 </tr>
 <tr>
 <td style="text-align: left;">_J7</td>
-<td style="text-align: left;">APVMet1</td>
-<td style="text-align: left;">AGILumenMet1</td>
-<td style="text-align: left;">BileFracSIMet1 * APVMet1</td>
-</tr>
-<tr>
-<td style="text-align: left;">_J8</td>
 <td style="text-align: left;">ASI</td>
 <td style="text-align: left;">ASIMet2</td>
 <td style="text-align: left;">VmaxGILumenMet2 * CGut / (KmGILumenMet2 + CGut)</td>
 </tr>
 <tr>
+<td style="text-align: left;">_J8</td>
+<td style="text-align: left;">ASIMet2</td>
+<td style="text-align: left;">APlasmaMet2</td>
+<td style="text-align: left;">(1 - BileFracSIMet2) * kabsMet2 * ASIMet2</td>
+</tr>
+<tr>
 <td style="text-align: left;">_J9</td>
 <td style="text-align: left;">ASIMet2</td>
-<td style="text-align: left;">APVMet2</td>
-<td style="text-align: left;">kabsMet2 * ASIMet2</td>
+<td style="text-align: left;">AGILumenMet2</td>
+<td style="text-align: left;">BileFracSIMet2 * kabsMet2 * ASIMet2</td>
 </tr>
 <tr>
 <td style="text-align: left;">_J10</td>
-<td style="text-align: left;">APVMet2</td>
-<td style="text-align: left;">APlasmaMet2</td>
-<td style="text-align: left;">(1 - BileFracSIMet2) * APVMet2</td>
+<td style="text-align: left;">ALiver</td>
+<td style="text-align: left;">APlasmaMet1</td>
+<td style="text-align: left;">(1 - BileFracLMet1) * (VmaxLMet1 * (CLiver / PL) / (KmLMet1 + CLiver / PL))</td>
 </tr>
 <tr>
 <td style="text-align: left;">_J11</td>
-<td style="text-align: left;">APVMet2</td>
-<td style="text-align: left;">AGILumenMet2</td>
-<td style="text-align: left;">BileFracSIMet2 * APVMet2</td>
+<td style="text-align: left;">ALiver</td>
+<td style="text-align: left;">AGILumenMet1</td>
+<td style="text-align: left;">BileFracLMet1 * (VmaxLMet1 * (CLiver / PL) / (KmLMet1 + CLiver / PL))</td>
 </tr>
 <tr>
 <td style="text-align: left;">_J12</td>
 <td style="text-align: left;">ALiver</td>
-<td style="text-align: left;">ALiverMet1</td>
-<td style="text-align: left;">VmaxLMet1 * (CLiver / PL) / (KmLMet1 + CLiver / PL)</td>
+<td style="text-align: left;">APlasmaMet2</td>
+<td style="text-align: left;">(1 - BileFracLMet2) * (VmaxLMet2 * (CLiver / PL) / (KmLMet2 + CLiver / PL))</td>
 </tr>
 <tr>
 <td style="text-align: left;">_J13</td>
-<td style="text-align: left;">ALiverMet1</td>
-<td style="text-align: left;">APlasmaMet1</td>
-<td style="text-align: left;">(1 - BileFracLMet1) * ALiverMet1</td>
+<td style="text-align: left;">ALiver</td>
+<td style="text-align: left;">AGILumenMet2</td>
+<td style="text-align: left;">BileFracLMet2 * (VmaxLMet2 * (CLiver / PL) / (KmLMet2 + CLiver / PL))</td>
 </tr>
 <tr>
 <td style="text-align: left;">_J14</td>
-<td style="text-align: left;">ALiverMet1</td>
-<td style="text-align: left;">AGILumenMet1</td>
-<td style="text-align: left;">BileFracLMet1 * ALiverMet1</td>
-</tr>
-<tr>
-<td style="text-align: left;">_J15</td>
-<td style="text-align: left;">ALiver</td>
-<td style="text-align: left;">ALiverMet2</td>
-<td style="text-align: left;">VmaxLMet2 * (CLiver / PL) / (KmLMet2 + CLiver / PL)</td>
-</tr>
-<tr>
-<td style="text-align: left;">_J16</td>
-<td style="text-align: left;">ALiverMet2</td>
-<td style="text-align: left;">APlasmaMet2</td>
-<td style="text-align: left;">(1 - BileFracLMet2) * ALiverMet2</td>
-</tr>
-<tr>
-<td style="text-align: left;">_J17</td>
-<td style="text-align: left;">ALiverMet2</td>
-<td style="text-align: left;">AGILumenMet2</td>
-<td style="text-align: left;">BileFracLMet2 * ALiverMet2</td>
-</tr>
-<tr>
-<td style="text-align: left;">_J18</td>
 <td style="text-align: left;">APlasma</td>
 <td style="text-align: left;">ALiver</td>
 <td style="text-align: left;">QL * CPlasma</td>
 </tr>
 <tr>
-<td style="text-align: left;">_J19</td>
+<td style="text-align: left;">_J15</td>
 <td style="text-align: left;">ALiver</td>
 <td style="text-align: left;">APlasma</td>
 <td style="text-align: left;">QL * (CLiver / PL)</td>
 </tr>
 <tr>
-<td style="text-align: left;">_J20</td>
+<td style="text-align: left;">_J16</td>
 <td style="text-align: left;">APlasma</td>
 <td style="text-align: left;">ARest</td>
 <td style="text-align: left;">QRest * CPlasma</td>
 </tr>
 <tr>
-<td style="text-align: left;">_J21</td>
+<td style="text-align: left;">_J17</td>
 <td style="text-align: left;">ARest</td>
 <td style="text-align: left;">APlasma</td>
 <td style="text-align: left;">QRest * (CRest / PRest)</td>
 </tr>
 <tr>
-<td style="text-align: left;">_J22</td>
+<td style="text-align: left;">_J18</td>
 <td style="text-align: left;">AGILumenMet1</td>
 <td style="text-align: left;">APlasmaMet1</td>
 <td style="text-align: left;">AGILumenMet1 * EHRrate</td>
 </tr>
 <tr>
-<td style="text-align: left;">_J23</td>
+<td style="text-align: left;">_J19</td>
 <td style="text-align: left;">AGILumenMet1</td>
 <td style="text-align: left;">AFecesMet1</td>
 <td style="text-align: left;">AGILumenMet1 * kfeMet</td>
 </tr>
 <tr>
-<td style="text-align: left;">_J24</td>
+<td style="text-align: left;">_J20</td>
 <td style="text-align: left;">AGILumenMet1</td>
 <td style="text-align: left;">ALiver</td>
 <td style="text-align: left;">AGILumenMet1 * kehrMet1</td>
 </tr>
 <tr>
-<td style="text-align: left;">_J25</td>
+<td style="text-align: left;">_J21</td>
 <td style="text-align: left;">AGILumenMet2</td>
 <td style="text-align: left;">APlasmaMet2</td>
 <td style="text-align: left;">AGILumenMet2 * EHRrate</td>
 </tr>
 <tr>
-<td style="text-align: left;">_J26</td>
+<td style="text-align: left;">_J22</td>
 <td style="text-align: left;">AGILumenMet2</td>
 <td style="text-align: left;">AFecesMet2</td>
 <td style="text-align: left;">AGILumenMet2 * kfeMet</td>
 </tr>
 <tr>
-<td style="text-align: left;">_J27</td>
+<td style="text-align: left;">_J23</td>
 <td style="text-align: left;">AGILumenMet2</td>
 <td style="text-align: left;">ALiver</td>
 <td style="text-align: left;">AGILumenMet2 * kehrMet2</td>
@@ -3410,8 +3362,10 @@
             -  \frac{\mathit{VmaxGILumenMet2}\cdot \mathit{CGut}}{\mathit{KmGILumenMet2}+\mathit{CGut}}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{ALiver}]}{dt} =  \mathit{k0}\cdot \mathit{ASt}
                +  \mathit{kabs}\cdot \mathit{ASI}
-               -  \frac{\mathit{VmaxLMet1}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}}{\mathit{KmLMet1}+\frac{\mathit{CLiver}}{\mathit{PL}}}
-               -  \frac{\mathit{VmaxLMet2}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}}{\mathit{KmLMet2}+\frac{\mathit{CLiver}}{\mathit{PL}}}
+               -  (1-\mathit{BileFracLMet1})\cdot \frac{\mathit{VmaxLMet1}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}}{\mathit{KmLMet1}+\frac{\mathit{CLiver}}{\mathit{PL}}}
+               -  \mathit{BileFracLMet1}\cdot \frac{\mathit{VmaxLMet1}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}}{\mathit{KmLMet1}+\frac{\mathit{CLiver}}{\mathit{PL}}}
+               -  (1-\mathit{BileFracLMet2})\cdot \frac{\mathit{VmaxLMet2}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}}{\mathit{KmLMet2}+\frac{\mathit{CLiver}}{\mathit{PL}}}
+               -  \mathit{BileFracLMet2}\cdot \frac{\mathit{VmaxLMet2}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}}{\mathit{KmLMet2}+\frac{\mathit{CLiver}}{\mathit{PL}}}
                +  \mathit{QL}\cdot \mathit{CPlasma}
                -  \mathit{QL}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}
                +  \mathit{AGILumenMet1}\cdot \mathit{kehrMet1}
@@ -3424,36 +3378,26 @@
               -  \mathit{QRest}\cdot \frac{\mathit{CRest}}{\mathit{PRest}}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{AFeces}]}{dt} =  \mathit{kfe}\cdot \mathit{ASI}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{ASIMet1}]}{dt} =  \frac{\mathit{VmaxGILumenMet1}\cdot \mathit{CGut}}{\mathit{KmGILumenMet1}+\mathit{CGut}}
-                -  \mathit{kabsMet1}\cdot \mathit{ASIMet1}\)</span></p>
+                -  (1-\mathit{BileFracSIMet1})\cdot \mathit{kabsMet1}\cdot \mathit{ASIMet1}
+                -  \mathit{BileFracSIMet1}\cdot \mathit{kabsMet1}\cdot \mathit{ASIMet1}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{ASIMet2}]}{dt} =  \frac{\mathit{VmaxGILumenMet2}\cdot \mathit{CGut}}{\mathit{KmGILumenMet2}+\mathit{CGut}}
-                -  \mathit{kabsMet2}\cdot \mathit{ASIMet2}\)</span></p>
-<p><span class="arithmatex">\(\frac{d[\mathtt{ALiverMet1}]}{dt} =  \frac{\mathit{VmaxLMet1}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}}{\mathit{KmLMet1}+\frac{\mathit{CLiver}}{\mathit{PL}}}
-                   -  (1-\mathit{BileFracLMet1})\cdot \mathit{ALiverMet1}
-                   -  \mathit{BileFracLMet1}\cdot \mathit{ALiverMet1}\)</span></p>
-<p><span class="arithmatex">\(\frac{d[\mathtt{ALiverMet2}]}{dt} =  \frac{\mathit{VmaxLMet2}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}}{\mathit{KmLMet2}+\frac{\mathit{CLiver}}{\mathit{PL}}}
-                   -  (1-\mathit{BileFracLMet2})\cdot \mathit{ALiverMet2}
-                   -  \mathit{BileFracLMet2}\cdot \mathit{ALiverMet2}\)</span></p>
-<p><span class="arithmatex">\(\frac{d[\mathtt{APVMet1}]}{dt} =  \mathit{kabsMet1}\cdot \mathit{ASIMet1}
-                -  (1-\mathit{BileFracSIMet1})\cdot \mathit{APVMet1}
-                -  \mathit{BileFracSIMet1}\cdot \mathit{APVMet1}\)</span></p>
-<p><span class="arithmatex">\(\frac{d[\mathtt{APVMet2}]}{dt} =  \mathit{kabsMet2}\cdot \mathit{ASIMet2}
-                -  (1-\mathit{BileFracSIMet2})\cdot \mathit{APVMet2}
-                -  \mathit{BileFracSIMet2}\cdot \mathit{APVMet2}\)</span></p>
-<p><span class="arithmatex">\(\frac{d[\mathtt{AGILumenMet1}]}{dt} =  \mathit{BileFracSIMet1}\cdot \mathit{APVMet1}
-                     +  \mathit{BileFracLMet1}\cdot \mathit{ALiverMet1}
+                -  (1-\mathit{BileFracSIMet2})\cdot \mathit{kabsMet2}\cdot \mathit{ASIMet2}
+                -  \mathit{BileFracSIMet2}\cdot \mathit{kabsMet2}\cdot \mathit{ASIMet2}\)</span></p>
+<p><span class="arithmatex">\(\frac{d[\mathtt{AGILumenMet1}]}{dt} =  \mathit{BileFracSIMet1}\cdot \mathit{kabsMet1}\cdot \mathit{ASIMet1}
+                     +  \mathit{BileFracLMet1}\cdot \frac{\mathit{VmaxLMet1}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}}{\mathit{KmLMet1}+\frac{\mathit{CLiver}}{\mathit{PL}}}
                      -  \mathit{AGILumenMet1}\cdot \mathit{EHRrate}
                      -  \mathit{AGILumenMet1}\cdot \mathit{kfeMet}
                      -  \mathit{AGILumenMet1}\cdot \mathit{kehrMet1}\)</span></p>
-<p><span class="arithmatex">\(\frac{d[\mathtt{AGILumenMet2}]}{dt} =  \mathit{BileFracSIMet2}\cdot \mathit{APVMet2}
-                     +  \mathit{BileFracLMet2}\cdot \mathit{ALiverMet2}
+<p><span class="arithmatex">\(\frac{d[\mathtt{AGILumenMet2}]}{dt} =  \mathit{BileFracSIMet2}\cdot \mathit{kabsMet2}\cdot \mathit{ASIMet2}
+                     +  \mathit{BileFracLMet2}\cdot \frac{\mathit{VmaxLMet2}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}}{\mathit{KmLMet2}+\frac{\mathit{CLiver}}{\mathit{PL}}}
                      -  \mathit{AGILumenMet2}\cdot \mathit{EHRrate}
                      -  \mathit{AGILumenMet2}\cdot \mathit{kfeMet}
                      -  \mathit{AGILumenMet2}\cdot \mathit{kehrMet2}\)</span></p>
-<p><span class="arithmatex">\(\frac{d[\mathtt{APlasmaMet1}]}{dt} =  (1-\mathit{BileFracSIMet1})\cdot \mathit{APVMet1}
-                    +  (1-\mathit{BileFracLMet1})\cdot \mathit{ALiverMet1}
+<p><span class="arithmatex">\(\frac{d[\mathtt{APlasmaMet1}]}{dt} =  (1-\mathit{BileFracSIMet1})\cdot \mathit{kabsMet1}\cdot \mathit{ASIMet1}
+                    +  (1-\mathit{BileFracLMet1})\cdot \frac{\mathit{VmaxLMet1}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}}{\mathit{KmLMet1}+\frac{\mathit{CLiver}}{\mathit{PL}}}
                     +  \mathit{AGILumenMet1}\cdot \mathit{EHRrate}\)</span></p>
-<p><span class="arithmatex">\(\frac{d[\mathtt{APlasmaMet2}]}{dt} =  (1-\mathit{BileFracSIMet2})\cdot \mathit{APVMet2}
-                    +  (1-\mathit{BileFracLMet2})\cdot \mathit{ALiverMet2}
+<p><span class="arithmatex">\(\frac{d[\mathtt{APlasmaMet2}]}{dt} =  (1-\mathit{BileFracSIMet2})\cdot \mathit{kabsMet2}\cdot \mathit{ASIMet2}
+                    +  (1-\mathit{BileFracLMet2})\cdot \frac{\mathit{VmaxLMet2}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}}{\mathit{KmLMet2}+\frac{\mathit{CLiver}}{\mathit{PL}}}
                     +  \mathit{AGILumenMet2}\cdot \mathit{EHRrate}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{AFecesMet1}]}{dt} =  \mathit{AGILumenMet1}\cdot \mathit{kfeMet}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{AFecesMet2}]}{dt} =  \mathit{AGILumenMet2}\cdot \mathit{kfeMet}\)</span></p>
@@ -3466,6 +3410,18 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align: left;">Liver</td>
+<td style="text-align: left;">VL</td>
+</tr>
+<tr>
+<td style="text-align: left;">Plasma</td>
+<td style="text-align: left;">VPlasma</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rest</td>
+<td style="text-align: left;">VRest</td>
+</tr>
 <tr>
 <td style="text-align: left;">VL</td>
 <td style="text-align: left;">VLc * BW</td>
@@ -3508,7 +3464,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">kfeMet</td>
-<td style="text-align: left;">kfeMetC / pow(BW, 0.25) * pow(BW, 0.25)</td>
+<td style="text-align: left;">kfeMetC / pow(BW, 0.25)</td>
 </tr>
 <tr>
 <td style="text-align: left;">kabsMet1</td>
@@ -3532,19 +3488,19 @@
 </tr>
 <tr>
 <td style="text-align: left;">VmaxGILumenMet1</td>
-<td style="text-align: left;">fGutMet1 * pow(BW, 0.75) * (VmaxGILumenMet1c * BW / pow(BW, 0.75))</td>
+<td style="text-align: left;">fGutMet1 * VmaxGILumenMet1c * BW</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxGILumenMet2</td>
-<td style="text-align: left;">fGutMet2 * pow(BW, 0.75) * (VmaxGILumenMet2c * BW / pow(BW, 0.75))</td>
+<td style="text-align: left;">fGutMet2 * VmaxGILumenMet2c * BW</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet1</td>
-<td style="text-align: left;">fLiverMet1 * pow(BW, 0.75) * VmaxLMet1c * VLc * 1000 * BW / pow(BW, 0.75)</td>
+<td style="text-align: left;">fLiverMet1 * VmaxLMet1c * VLc * BW</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet2</td>
-<td style="text-align: left;">fLiverMet2 * pow(BW, 0.75) * (VmaxLMet2c * VLc * 1000 * BW / pow(BW, 0.75))</td>
+<td style="text-align: left;">fLiverMet2 * VmaxLMet2c * VLc * BW</td>
 </tr>
 <tr>
 <td style="text-align: left;">CSt</td>
@@ -3567,10 +3523,6 @@
 <td style="text-align: left;">ARest / Rest</td>
 </tr>
 <tr>
-<td style="text-align: left;">ABile</td>
-<td style="text-align: left;">AGILumen / GILumen</td>
-</tr>
-<tr>
 <td style="text-align: left;">CGut</td>
 <td style="text-align: left;">ASI / enterocytes</td>
 </tr>
@@ -3586,16 +3538,12 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Liver</td>
-<td style="text-align: left;">VL</td>
+<td style="text-align: left;">VmaxLMet1c</td>
+<td style="text-align: left;">9043.2 * 1000</td>
 </tr>
 <tr>
-<td style="text-align: left;">Plasma</td>
-<td style="text-align: left;">VPlasma</td>
-</tr>
-<tr>
-<td style="text-align: left;">Rest</td>
-<td style="text-align: left;">VRest</td>
+<td style="text-align: left;">VmaxLMet2c</td>
+<td style="text-align: left;">149 * 1000</td>
 </tr>
 </tbody>
 </table>
@@ -3691,7 +3639,7 @@
 <tr>
 <td style="text-align: left;">kstoC</td>
 <td style="text-align: left;">intrinsic gastric emptying rate constant</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">/h.kg^0.25</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
@@ -3703,7 +3651,7 @@
 <tr>
 <td style="text-align: left;">k0C</td>
 <td style="text-align: left;">Uptake from stomach to liver constant</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">/h.kg^0.25</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
@@ -3715,7 +3663,7 @@
 <tr>
 <td style="text-align: left;">kabsC</td>
 <td style="text-align: left;">Uptake from enterocytes to liver</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">/h.kg^0.25</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
@@ -3727,7 +3675,7 @@
 <tr>
 <td style="text-align: left;">kfeC</td>
 <td style="text-align: left;">intrinsic fecal elimination rate constant</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">/h.kg^0.25</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00236</td>
 </tr>
 <tr>
@@ -3739,7 +3687,7 @@
 <tr>
 <td style="text-align: left;">kfeMetC</td>
 <td style="text-align: left;">Intrinsic fecal elimination rate constant</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">/h.kg^0.25</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00236</td>
 </tr>
 <tr>
@@ -3751,7 +3699,7 @@
 <tr>
 <td style="text-align: left;">kabsMet1C</td>
 <td style="text-align: left;">Transport from enterocytes to serum</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">/h.kg^0.25</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
@@ -3763,7 +3711,7 @@
 <tr>
 <td style="text-align: left;">kabsMet2C</td>
 <td style="text-align: left;">Transport from enterocytes to serum constant</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">/h.kg^0.25</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
@@ -3775,7 +3723,7 @@
 <tr>
 <td style="text-align: left;">EHRrateC</td>
 <td style="text-align: left;">intrinsic enterohepatic recirculation</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">/h.kg^0.25</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
@@ -3787,7 +3735,7 @@
 <tr>
 <td style="text-align: left;">kehrMet1C</td>
 <td style="text-align: left;">intrinsic EHR due to biliary excretion</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">/h.kg^0.25</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
@@ -3799,7 +3747,7 @@
 <tr>
 <td style="text-align: left;">kehrMet2C</td>
 <td style="text-align: left;">intrinsic EHR due to biliary excretion</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">/h.kg^0.25</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
@@ -3829,19 +3777,19 @@
 <tr>
 <td style="text-align: left;">KmGILumenMet1</td>
 <td style="text-align: left;">Glucuronidation - Km</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxGILumenMet1c</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/h/kg</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxGILumenMet1</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/h</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
 </tr>
 <tr>
@@ -3853,19 +3801,19 @@
 <tr>
 <td style="text-align: left;">KmGILumenMet2</td>
 <td style="text-align: left;">Glucuronidation - Km</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxGILumenMet2c</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/h/kg</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxGILumenMet2</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/h</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
 </tr>
 <tr>
@@ -3889,19 +3837,19 @@
 <tr>
 <td style="text-align: left;">KmLMet1</td>
 <td style="text-align: left;">Glucuronidation - Km</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet1c</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/h/L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet1</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/h</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
@@ -3913,61 +3861,55 @@
 <tr>
 <td style="text-align: left;">KmLMet2</td>
 <td style="text-align: left;">Sulfation - Km</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet2c</td>
 <td style="text-align: left;">Sulfation - Vmax</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/h/L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet2</td>
 <td style="text-align: left;">Sulfation - Vmax</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/h</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
 <td style="text-align: left;">CSt</td>
 <td style="text-align: left;">Concentration in stomach</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/L</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">CSI</td>
 <td style="text-align: left;">Concentration in small intestine</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/L</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">CLiver</td>
 <td style="text-align: left;">Concentration in liver</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00539</td>
 </tr>
 <tr>
 <td style="text-align: left;">CPlasma</td>
 <td style="text-align: left;">Concentration in plasma</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00549</td>
 </tr>
 <tr>
 <td style="text-align: left;">CRest</td>
 <td style="text-align: left;">Concentration in rest of body</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00548</td>
-</tr>
-<tr>
-<td style="text-align: left;">ABile</td>
-<td style="text-align: left;">Concentration in GI lumen</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00538</td>
 </tr>
 <tr>
 <td style="text-align: left;">CGut</td>
 <td style="text-align: left;">Concentration in enterocytes (Amount in small intestine/ enterocytes)</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">nmol/L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00538</td>
 </tr>
 </tbody>

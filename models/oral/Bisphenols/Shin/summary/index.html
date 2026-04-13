@@ -851,17 +851,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#initial-assignments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Initial assignments
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1258,7 +1247,7 @@
   <span class="md-ellipsis">
     
   
-    Ruiz 2010_Female
+    Ruiz 2010_Male
   
 
     
@@ -2985,7 +2974,7 @@
 <p><notes>
 <br />
 <body xmlns="http://www.w3.org/1999/xhtml">
-    <p>BPA PBK - Shin et al. 2004 SILume -&gt; SITissue -&gt; Liver &lt;- Spleen, Stomach via portal vein Perfusion-limited: Blood &lt;-&gt; Liver, Blood &lt;-&gt; Rest Hepatic metabolism: intrinsic clearance </p>
+    <p>BPA PBK - Shin et al. 2004 - SILume -&gt; SITissue -&gt; Liver &lt;- Spleen, Stomach via portal vein - Perfusion-limited: Blood &lt;-&gt; Liver, Blood &lt;-&gt; Rest - Hepatic metabolism: intrinsic clearance </p>
   </body></p>
 <p></notes></p>
 <h2 id="overview">Overview</h2>
@@ -3031,7 +3020,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Number of parameters</td>
-<td style="text-align: left;">29 (8 external / 21 internal)</td>
+<td style="text-align: left;">28 (8 external / 20 internal)</td>
 </tr>
 </tbody>
 </table>
@@ -3273,6 +3262,30 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">Stomach</td>
+<td style="text-align: left;">VSt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Spleen</td>
+<td style="text-align: left;">VSpleen</td>
+</tr>
+<tr>
+<td style="text-align: left;">SmallIntestine</td>
+<td style="text-align: left;">VSI</td>
+</tr>
+<tr>
+<td style="text-align: left;">Liver</td>
+<td style="text-align: left;">VL</td>
+</tr>
+<tr>
+<td style="text-align: left;">Blood</td>
+<td style="text-align: left;">VB</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rest</td>
+<td style="text-align: left;">VRest</td>
+</tr>
+<tr>
 <td style="text-align: left;">VL</td>
 <td style="text-align: left;">1700 / 1000</td>
 </tr>
@@ -3302,19 +3315,19 @@
 </tr>
 <tr>
 <td style="text-align: left;">QL</td>
-<td style="text-align: left;">1646.7 / (1000 * 60)</td>
+<td style="text-align: left;">1646.7 / 1000 * 60</td>
 </tr>
 <tr>
 <td style="text-align: left;">QSpleen</td>
-<td style="text-align: left;">76.7 / (1000 * 60)</td>
+<td style="text-align: left;">76.7 / 1000 * 60</td>
 </tr>
 <tr>
 <td style="text-align: left;">QSt</td>
-<td style="text-align: left;">38.3 / (1000 * 60)</td>
+<td style="text-align: left;">38.3 / 1000 * 60</td>
 </tr>
 <tr>
 <td style="text-align: left;">QSI</td>
-<td style="text-align: left;">1100 / (1000 * 60)</td>
+<td style="text-align: left;">(1100/1000) * 60</td>
 </tr>
 <tr>
 <td style="text-align: left;">QRest</td>
@@ -3351,45 +3364,6 @@
 <tr>
 <td style="text-align: left;">CRest</td>
 <td style="text-align: left;">ARest / Rest</td>
-</tr>
-<tr>
-<td style="text-align: left;">Met</td>
-<td style="text-align: left;">CLint * (CLiver / PL)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="initial-assignments">Initial assignments</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">variable</th>
-<th style="text-align: left;">assignment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Stomach</td>
-<td style="text-align: left;">VSt</td>
-</tr>
-<tr>
-<td style="text-align: left;">Spleen</td>
-<td style="text-align: left;">VSpleen</td>
-</tr>
-<tr>
-<td style="text-align: left;">SmallIntestine</td>
-<td style="text-align: left;">VSI</td>
-</tr>
-<tr>
-<td style="text-align: left;">Liver</td>
-<td style="text-align: left;">VL</td>
-</tr>
-<tr>
-<td style="text-align: left;">Blood</td>
-<td style="text-align: left;">VB</td>
-</tr>
-<tr>
-<td style="text-align: left;">Rest</td>
-<td style="text-align: left;">VRest</td>
 </tr>
 </tbody>
 </table>
@@ -3571,12 +3545,6 @@
 <td style="text-align: left;">Concentration in rest of body</td>
 <td style="text-align: left;">mg/L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00548</td>
-</tr>
-<tr>
-<td style="text-align: left;">Met</td>
-<td style="text-align: left;">Hepatic metabolism - intrinsic clearance</td>
-<td style="text-align: left;">dimensionless</td>
-<td style="text-align: left;"><em>not specified</em></td>
 </tr>
 </tbody>
 </table>

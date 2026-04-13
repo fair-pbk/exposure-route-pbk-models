@@ -70,34 +70,6 @@ digraph {
 [PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
-		ALiverMet1	[color=black,
-			fillcolor=gold,
-			href="#species-ALiverMet1",
-			label="ALiverMet1
-[PBPKO:00497]",
-			shape=box,
-			style="filled,rounded"];
-		ALiverMet2	[color=black,
-			fillcolor=gold,
-			href="#species-ALiverMet2",
-			label="ALiverMet2
-[PBPKO:00497]",
-			shape=box,
-			style="filled,rounded"];
-		APVMet1	[color=black,
-			fillcolor=gold,
-			href="#species-APVMet1",
-			label="APVMet1
-[-]",
-			shape=box,
-			style="filled,rounded"];
-		APVMet2	[color=black,
-			fillcolor=gold,
-			href="#species-APVMet2",
-			label="APVMet2
-[-]",
-			shape=box,
-			style="filled,rounded"];
 	}
 	subgraph cluster_Plasma {
 		graph [color=black,
@@ -216,32 +188,28 @@ digraph {
 	ASt -> ASI	[label=_J0];
 	ASt -> ALiver	[label=_J1];
 	ASI -> ASIMet1	[label=_J4];
-	ASI -> ASIMet2	[label=_J8];
+	ASI -> ASIMet2	[label=_J7];
 	ASI -> ALiver	[label=_J2];
 	ASI -> AFeces	[label=_J3,
 		minlen=1];
-	ASIMet1 -> APVMet1	[label=_J5];
-	ASIMet2 -> APVMet2	[label=_J9];
-	ALiver -> ALiverMet1	[label=_J12];
-	ALiver -> ALiverMet2	[label=_J15];
-	ALiver -> APlasma	[label=_J19];
-	ALiverMet1 -> APlasmaMet1	[label=_J13];
-	ALiverMet1 -> AGILumenMet1	[label=_J14];
-	ALiverMet2 -> APlasmaMet2	[label=_J16];
-	ALiverMet2 -> AGILumenMet2	[label=_J17];
-	APVMet1 -> APlasmaMet1	[label=_J6];
-	APVMet1 -> AGILumenMet1	[label=_J7];
-	APVMet2 -> APlasmaMet2	[label=_J10];
-	APVMet2 -> AGILumenMet2	[label=_J11];
-	APlasma -> ALiver	[label=_J18];
-	APlasma -> ARest	[label=_J20];
-	ARest -> APlasma	[label=_J21];
-	AGILumenMet1 -> ALiver	[label=_J24];
-	AGILumenMet1 -> APlasmaMet1	[label=_J22];
-	AGILumenMet1 -> AFecesMet1	[label=_J23,
+	ASIMet1 -> APlasmaMet1	[label=_J5];
+	ASIMet1 -> AGILumenMet1	[label=_J6];
+	ASIMet2 -> APlasmaMet2	[label=_J8];
+	ASIMet2 -> AGILumenMet2	[label=_J9];
+	ALiver -> APlasma	[label=_J15];
+	ALiver -> APlasmaMet1	[label=_J10];
+	ALiver -> APlasmaMet2	[label=_J12];
+	ALiver -> AGILumenMet1	[label=_J11];
+	ALiver -> AGILumenMet2	[label=_J13];
+	APlasma -> ALiver	[label=_J14];
+	APlasma -> ARest	[label=_J16];
+	ARest -> APlasma	[label=_J17];
+	AGILumenMet1 -> ALiver	[label=_J20];
+	AGILumenMet1 -> APlasmaMet1	[label=_J18];
+	AGILumenMet1 -> AFecesMet1	[label=_J19,
 		minlen=1];
-	AGILumenMet2 -> ALiver	[label=_J27];
-	AGILumenMet2 -> APlasmaMet2	[label=_J25];
-	AGILumenMet2 -> AFecesMet2	[label=_J26,
+	AGILumenMet2 -> ALiver	[label=_J23];
+	AGILumenMet2 -> APlasmaMet2	[label=_J21];
+	AGILumenMet2 -> AFecesMet2	[label=_J22,
 		minlen=1];
 }

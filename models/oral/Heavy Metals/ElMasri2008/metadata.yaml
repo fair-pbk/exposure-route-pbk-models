@@ -77,14 +77,14 @@ species:
     id: CHEBI:35828
     label: arsenic(3+)
     iri: http://purl.obolibrary.org/obo/CHEBI_35828
-  unit: mol
+  unit: mol/
 - id: ALumen_As5
   name: Amount of As5+ in lumen
   chebi_bqb_is_class:
     id: CHEBI:35829
     label: arsenic(5+)
     iri: http://purl.obolibrary.org/obo/CHEBI_35829
-  unit: mol
+  unit: mol/
 - id: AGut_As3
   name: Amount of As3+ in gut
   pbpko_bqm_is_class:
@@ -95,7 +95,7 @@ species:
     id: CHEBI:35828
     label: arsenic(3+)
     iri: http://purl.obolibrary.org/obo/CHEBI_35828
-  unit: mol
+  unit: mol/
 - id: AGut_As5
   name: Amount of As5+ in gut
   pbpko_bqm_is_class:
@@ -106,7 +106,7 @@ species:
     id: CHEBI:35829
     label: arsenic(5+)
     iri: http://purl.obolibrary.org/obo/CHEBI_35829
-  unit: mol
+  unit: mol/
 - id: AGut_AsM5
   name: Amount of MMA5 in gut
   pbpko_bqm_is_class:
@@ -117,7 +117,7 @@ species:
     id: CHEBI:29852
     label: methylarsonic acid
     iri: http://purl.obolibrary.org/obo/CHEBI_29852
-  unit: mol
+  unit: mol/
 - id: AGut_AsD5
   name: Amount of DMA5 in Gut
   pbpko_bqm_is_class:
@@ -128,7 +128,7 @@ species:
     id: CHEBI:48765
     label: dimethylarsinic acid
     iri: http://purl.obolibrary.org/obo/CHEBI_48765
-  unit: mol
+  unit: mol/
 - id: AArterial_AsD5
   name: Amount of DMA5 in arterial blood
   pbpko_bqm_is_class:
@@ -139,7 +139,7 @@ species:
     id: CHEBI:48765
     label: dimethylarsinic acid
     iri: http://purl.obolibrary.org/obo/CHEBI_48765
-  unit: mol
+  unit: mol/
 - id: ALiver_As3
   name: Amount of As3+ in liver
   pbpko_bqm_is_class:
@@ -150,7 +150,7 @@ species:
     id: CHEBI:35828
     label: arsenic(3+)
     iri: http://purl.obolibrary.org/obo/CHEBI_35828
-  unit: mol
+  unit: mol/
 - id: ALiver_As5
   name: Amount of As5+ in liver
   pbpko_bqm_is_class:
@@ -161,7 +161,7 @@ species:
     id: CHEBI:35829
     label: arsenic(5+)
     iri: http://purl.obolibrary.org/obo/CHEBI_35829
-  unit: mol
+  unit: mol/
 - id: ALiver_AsM3
   name: Amount of MMA3 in liver
   pbpko_bqm_is_class:
@@ -172,7 +172,7 @@ species:
     id: CHEBI:17826
     label: methylarsonous acid
     iri: http://purl.obolibrary.org/obo/CHEBI_17826
-  unit: mol
+  unit: mol/
 - id: ALiver_AsM5
   name: Amount of MMA5 in liver
   pbpko_bqm_is_class:
@@ -183,7 +183,7 @@ species:
     id: CHEBI:29852
     label: methylarsonic acid
     iri: http://purl.obolibrary.org/obo/CHEBI_29852
-  unit: mol
+  unit: mol/
 - id: ALiver_AsD3
   name: Amount of DMA3 in liver
   pbpko_bqm_is_class:
@@ -194,7 +194,7 @@ species:
     id: CHEBI:23808
     label: dimethylarsinous acid
     iri: http://purl.obolibrary.org/obo/CHEBI_23808
-  unit: mol
+  unit: mol/
 - id: ALiver_AsD5
   name: Amount od DMA5 in liver
   pbpko_bqm_is_class:
@@ -205,7 +205,7 @@ species:
     id: CHEBI:48765
     label: dimethylarsinic acid
     iri: http://purl.obolibrary.org/obo/CHEBI_48765
-  unit: mol
+  unit: mol/
 - id: ARest_As3
   name: Amount of As3+ in rest of the body
   pbpko_bqm_is_class:
@@ -216,7 +216,7 @@ species:
     id: CHEBI:35828
     label: arsenic(3+)
     iri: http://purl.obolibrary.org/obo/CHEBI_35828
-  unit: mol
+  unit: mol/
 - id: ARest_As5
   name: Amount of As5+ in rest of the body
   pbpko_bqm_is_class:
@@ -227,7 +227,7 @@ species:
     id: CHEBI:35829
     label: arsenic(5+)
     iri: http://purl.obolibrary.org/obo/CHEBI_35829
-  unit: mol
+  unit: mol/
 - id: ARest_AsM5
   name: Amount of MMA5 in rest of the body
   pbpko_bqm_is_class:
@@ -238,7 +238,7 @@ species:
     id: CHEBI:29852
     label: methylarsonic acid
     iri: http://purl.obolibrary.org/obo/CHEBI_29852
-  unit: mol
+  unit: mol/
 - id: ARest_AsD5
   name: Amount of DMA5 in rest of the body
   pbpko_bqm_is_class:
@@ -249,7 +249,7 @@ species:
     id: CHEBI:48765
     label: dimethylarsinic acid
     iri: http://purl.obolibrary.org/obo/CHEBI_48765
-  unit: mol
+  unit: mol/
 - id: AArterial_As3
   name: Amount of As3+ in arterial blood
   pbpko_bqm_is_class:
@@ -260,7 +260,7 @@ species:
     id: CHEBI:35828
     label: arsenic(3+)
     iri: http://purl.obolibrary.org/obo/CHEBI_35828
-  unit: mol
+  unit: mol/
 - id: AArterial_As5
   name: Amount of As5+ in arterial blood
   pbpko_bqm_is_class:
@@ -271,7 +271,7 @@ species:
     id: CHEBI:35829
     label: arsenic(5+)
     iri: http://purl.obolibrary.org/obo/CHEBI_35829
-  unit: mol
+  unit: mol/
 - id: AArterial_AsM5
   name: Amount of MMA5 in arterial blood
   pbpko_bqm_is_class:
@@ -282,7 +282,7 @@ species:
     id: CHEBI:29852
     label: methylarsonic acid
     iri: http://purl.obolibrary.org/obo/CHEBI_29852
-  unit: mol
+  unit: mol/
 - id: AVenous_As3
   name: Amount of As3+ in venous blood
   pbpko_bqm_is_class:
@@ -293,7 +293,7 @@ species:
     id: CHEBI:35828
     label: arsenic(3+)
     iri: http://purl.obolibrary.org/obo/CHEBI_35828
-  unit: mol
+  unit: mol/
 - id: AVenous_As5
   name: Amount of As5+ in venous blood
   pbpko_bqm_is_class:
@@ -304,7 +304,7 @@ species:
     id: CHEBI:35829
     label: arsenic(5+)
     iri: http://purl.obolibrary.org/obo/CHEBI_35829
-  unit: mol
+  unit: mol/
 - id: AVenous_AsM5
   name: Amount of MMA5 in venous blood
   pbpko_bqm_is_class:
@@ -315,7 +315,7 @@ species:
     id: CHEBI:29852
     label: methylarsonic acid
     iri: http://purl.obolibrary.org/obo/CHEBI_29852
-  unit: mol
+  unit: mol/
 - id: AVenous_AsD5
   name: Amount of DMA5 in venous blood
   pbpko_bqm_is_class:
@@ -326,7 +326,7 @@ species:
     id: CHEBI:48765
     label: dimethylarsinic acid
     iri: http://purl.obolibrary.org/obo/CHEBI_48765
-  unit: mol
+  unit: mol/
 - id: ALung_As3
   name: Amount of As3+ in lung
   pbpko_bqm_is_class:
@@ -337,7 +337,7 @@ species:
     id: CHEBI:35828
     label: arsenic(3+)
     iri: http://purl.obolibrary.org/obo/CHEBI_35828
-  unit: mol
+  unit: mol/
 - id: ALung_As5
   name: Amount of As5+ in lung
   pbpko_bqm_is_class:
@@ -348,7 +348,7 @@ species:
     id: CHEBI:35829
     label: arsenic(5+)
     iri: http://purl.obolibrary.org/obo/CHEBI_35829
-  unit: mol
+  unit: mol/
 - id: ALung_AsM3
   name: Amount of MMA3 in lung
   pbpko_bqm_is_class:
@@ -359,7 +359,7 @@ species:
     id: CHEBI:17826
     label: methylarsonous acid
     iri: http://purl.obolibrary.org/obo/CHEBI_17826
-  unit: mol
+  unit: mol/
 - id: ALung_AsM5
   name: Amount of MMA5 in lung
   pbpko_bqm_is_class:
@@ -370,7 +370,7 @@ species:
     id: CHEBI:29852
     label: methylarsonic acid
     iri: http://purl.obolibrary.org/obo/CHEBI_29852
-  unit: mol
+  unit: mol/
 - id: ALung_AsD3
   name: Amount of DMA3 in lung
   pbpko_bqm_is_class:
@@ -381,7 +381,7 @@ species:
     id: CHEBI:23808
     label: dimethylarsinous acid
     iri: http://purl.obolibrary.org/obo/CHEBI_23808
-  unit: mol
+  unit: mol/
 - id: ALung_AsD5
   name: Amount of DMA5 in lung
   pbpko_bqm_is_class:
@@ -392,7 +392,7 @@ species:
     id: CHEBI:48765
     label: dimethylarsinic acid
     iri: http://purl.obolibrary.org/obo/CHEBI_48765
-  unit: mol
+  unit: mol/
 - id: AUrine_AsM3
   name: Cumulative amount of MMA3 in urine
   pbpko_bqm_is_class:
@@ -403,7 +403,7 @@ species:
     id: CHEBI:17826
     label: methylarsonous acid
     iri: http://purl.obolibrary.org/obo/CHEBI_17826
-  unit: mol
+  unit: mol/
 - id: AUrine_AsD3
   name: Cumulative amount of DMA3 in urine
   pbpko_bqm_is_class:
@@ -414,7 +414,7 @@ species:
     id: CHEBI:23808
     label: dimethylarsinous acid
     iri: http://purl.obolibrary.org/obo/CHEBI_23808
-  unit: mol
+  unit: mol/
 parameters:
 - id: VRest
   name: Volume of rest of the body
