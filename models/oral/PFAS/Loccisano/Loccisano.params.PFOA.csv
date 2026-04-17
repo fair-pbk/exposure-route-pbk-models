@@ -1,0 +1,12 @@
+idModelInstance,Parameter,Value,Unit,Description,Reference
+Loccisano2011_PFAS_Human_PARAM_PFOA,BW,70.0,,body weight,
+Loccisano2011_PFAS_Human_PARAM_PFOA,VLc,0.026,,,
+Loccisano2011_PFAS_Human_PARAM_PFOA,VPlasmac,0.0428,,,
+Loccisano2011_PFAS_Human_PARAM_PFOA,VGIc,0.0171,,,
+Loccisano2011_PFAS_Human_PARAM_PFOA,Htc,0.44,,hematocrit,
+Loccisano2011_PFAS_Human_PARAM_PFOA,Free,0.02,,,
+Loccisano2011_PFAS_Human_PARAM_PFOA,QLc,0.25,,,
+Loccisano2011_PFAS_Human_PARAM_PFOA,QGIc,0.181,,,
+Loccisano2011_PFAS_Human_PARAM_PFOA,PL,2.2,,,
+Loccisano2011_PFAS_Human_PARAM_PFOA,PG,0.05,,,
+Loccisano2011_PFAS_Human_PARAM_PFOA,PRest,1.0,,,

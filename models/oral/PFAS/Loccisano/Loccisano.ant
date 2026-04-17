@@ -1,10 +1,10 @@
-model Loccisano2011_PFOA_Human()
+model Loccisano2011_PFAS_Human()
 
 #Created: Carolina Vogs, September 2025
 #Checked: Joost Westerhout, November 2025
 
 model notes ```
-PFOA PBK Loccisano et al. 2011.
+PFAS PBK Loccisano et al. 2011. with default parameters for PFOA.
 ```
 model description "https://www.ncbi.nlm.nih.gov/pubmed/21168463"
 
@@ -26,7 +26,7 @@ VRest := 0.84 * BW - VL - VPlasma - VGI  # Lumped Rest-of-body volume L
 #------------------------
 QC := 12.5 * BW^0.75          # L/h (cardiac output)
 QPlasma := QC * (1 - Htc)     # L/h cardiac output adjusted for plasma flow
-QLc = 0.25                    # JW: Note that this value is wrong, as it includes QGIc as well. This was corrected by EFSA in 2020.
+QLc = 0.25                    # Note that this value is wrong, as it includes QGIc as well. This was corrected by EFSA in 2020.
 QGIc = 0.181
 
 QL := QLc * QPlasma           # L/h (liver)
@@ -41,7 +41,7 @@ Free = 0.02
 #------------------------
 PL = 2.2
 PG = 0.05
-PRest = 1  # JW: Value from Loccisano 2011 is 0.12
+PRest = 1  # Value from Loccisano 2011 is 0.12
 
 #------------------------
 # Compartments (sizes)

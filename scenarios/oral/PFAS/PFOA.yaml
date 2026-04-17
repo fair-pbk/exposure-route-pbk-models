@@ -2,9 +2,9 @@ id: PFOA
 label: PFOA
 model_instances:
   - id: Loccisano
-    label: Loccisano 2011 (PFOA)
-    model_path: models/oral/PFAS/Loccisano_PFOA/LoccisanoPFOA.sbml
-    param_file: models/oral/PFAS/Loccisano_PFOA/LoccisanoPFOA.params.csv
+    label: Loccisano 2011
+    model_path: models/oral/PFAS/Loccisano/Loccisano.sbml
+    param_file: models/oral/PFAS/Loccisano/Loccisano.params.PFOA.csv
     target_mappings:
       Oral: AGI
       APlasma: APlasma

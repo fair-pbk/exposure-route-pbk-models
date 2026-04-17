@@ -3,8 +3,8 @@ label: PFOS
 model_instances:
   - id: Loccisano
     label: Loccisano 2011
-    model_path: models/oral/PFAS/Loccisano_PFOS/LoccisanoPFOS.sbml
-    param_file: models/oral/PFAS/Loccisano_PFOS/LoccisanoPFOS.params.csv
+    model_path: models/oral/PFAS/Loccisano/Loccisano.sbml
+    param_file: models/oral/PFAS/Loccisano/Loccisano.params.PFOS.csv
     target_mappings:
       Oral: AGI
       APlasma: APlasma

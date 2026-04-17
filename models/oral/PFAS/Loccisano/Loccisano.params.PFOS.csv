@@ -1,0 +1,12 @@
+idModelInstance,Parameter,Value,Unit,Description,Reference
+Loccisano2011_PFAS_Human_PARAM_PFOS,BW,70.0,kg,body weight,
+Loccisano2011_PFAS_Human_PARAM_PFOS,VLc,0.026,L/kg,Volume fraction of liver,
+Loccisano2011_PFAS_Human_PARAM_PFOS,VPlasmac,0.0428,L/kg,Volume fraction of plasma,
+Loccisano2011_PFAS_Human_PARAM_PFOS,VGIc,0.0171,L/kg,Volume fraction of gastrointestinal tissue,
+Loccisano2011_PFAS_Human_PARAM_PFOS,Htc,0.44,dimensionless,Hematocrit,
+Loccisano2011_PFAS_Human_PARAM_PFOS,Free,0.025,dimensionless,Fraction of blood flow to liver,
+Loccisano2011_PFAS_Human_PARAM_PFOS,QLc,0.25,dimensionless,Fraction of blood flow to gastrointestinal tract,
+Loccisano2011_PFAS_Human_PARAM_PFOS,QGIc,0.181,dimensionless,Fraction unbound in plasma,
+Loccisano2011_PFAS_Human_PARAM_PFOS,PL,3.72,dimensionless,Liver to plasma partition coefficient,
+Loccisano2011_PFAS_Human_PARAM_PFOS,PG,0.57,dimensionless,Gastrointestinal tract tissue to plasma partition coefficient,
+Loccisano2011_PFAS_Human_PARAM_PFOS,PRest,1.0,dimensionless,Rest of the body to plasma partition coefficient,
