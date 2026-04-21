@@ -37,7 +37,6 @@ QLc   = 0.25
 QGc   = 0.016
 
 QL    := QLc*QC                # L/h (liver)
-QG    := QGc*QC                # L/h (gut)
 QRest := (1 - QLc - QGc)*QC    # L/h (rest)
 
 fup = 0.965                    # 3.5% protein binding according to Edington and Ritter (2018)
@@ -46,35 +45,28 @@ fup = 0.965                    # 3.5% protein binding according to Edington and 
 # Absorption & hepatic metabolism
 #------------------------
 
-k0C = 0                         # L/h/kg^(-0.25)
-#k0 := k0C * BW ^(-0.25)        # L/h
-k0 = 0                          # /h
-
-kstoC = 3.5                     # L/h/kg^(-0.25)
+#kstoC = 3.5                     # L/h/kg^(-0.25)
 #ksto := kstoC * BW ^(-0.25)    # L/h
 ksto = 3.5                      # /h
 
-kabsC = 9                       # L/h/kg^(-0.25)
+#kabsC = 9                       # L/h/kg^(-0.25)
 #kabs := kabsC * BW ^(-0.25)    # L/h
 kabs = 9                        # /h
 
 #------------------------
 # Intestinal metabolism - Michaelis-Menten Kinetic
 #------------------------
-VmaxGMet1C = 1.4                        # nmol/min/mg of protein
 VmaxGMet1 := (22750/1000) * BW^0.75     # µmol/h
-KmGMet1 = 58                            # µmol
+KmGMet1 = 58                            # µmol/L
 
 #------------------------
 # Hepatic metabolism - Michaelis-Menten Kinetic
 #------------------------
-VmaxLMet1C = 4.71                       # nmol/min/mg of protein
 VmaxLMet1 := (680095.6/1000) * BW^0.75  # µmol/h
-KmLMet1 = 45.8                          # µmol
+KmLMet1 = 45.8                          # µmol/L
 
-VmaxLMet2C = 149                        # nmol/h/g liver
 VmaxLMet2 := (11657/1000) * BW^0.75     # µmol/h
-KmLMet2 = 10.1                          # µmol
+KmLMet2 = 10.1                          # µmol/L
 
 #------------------------
 # Partition coefficients
@@ -132,8 +124,6 @@ CRest := ARest / Rest
 
 # GI absorption
 ASt -> AGut;          ksto * ASt
-ASt -> ALiver;        k0 * ASt
-
 AGut -> ALiver;       kabs * AGut
 AGut -> AGutMet1;     VmaxGMet1 * CGut * fup / ((CGut * fup) + KmGMet1)     # Glu
 
