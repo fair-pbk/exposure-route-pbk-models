@@ -141,7 +141,6 @@ substanceOnly species ASI       in SI
 substanceOnly species ALiver    in Liver
 substanceOnly species APlasma   in Plasma
 substanceOnly species ARest     in Rest
-substanceOnly species AGILumen  in GILumen
 substanceOnly species AFeces    in Feces
 
 # Conjugates
@@ -166,7 +165,6 @@ ASI = 0;
 ALiver = 0;
 APlasma = 0;
 ARest = 0;
-AGILumen = 0;
 AFeces = 0;
 
 # Met1 - BPAG, Met2 - BPAS
