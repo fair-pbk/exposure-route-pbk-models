@@ -114,7 +114,7 @@ BileFracLMet2 = 0		# 0% of formed BPAS goes to bile
 # Glucuronidation of BPA in the liver
 fLiverMet1 = 1                                          # correction factor
 KmLMet1    = 45800                                      # nM (hepatic glucuronidation Km)
-VmaxLMet1c = 9043.2*1000                                # nmol/h/L liver (hepatic glucuronidation)
+VmaxLMet1c = 9040*1000                                # nmol/h/L liver (hepatic glucuronidation)
 VmaxLMet1 := fLiverMet1 * VmaxLMet1c* VLc * BW          # nmol/h
 
 # Sulfation of BPA in the liver
