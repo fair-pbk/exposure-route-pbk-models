@@ -114,17 +114,17 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 	}
-	ASt -> ALiver	[label=_J1];
-	ASt -> AGut	[label=_J0];
-	ALiver -> ALiverMet1	[label=_J8,
+	ASt -> AGut	[label=_J0,
 		minlen=1];
-	ALiver -> ALiverMet2	[label=_J9,
+	ALiver -> ALiverMet1	[label=_J7,
+		minlen=1];
+	ALiver -> ALiverMet2	[label=_J8,
 		minlen=2];
-	ALiver -> APlasma	[label=_J5];
-	APlasma -> ALiver	[label=_J4];
-	APlasma -> ARest	[label=_J6];
-	AGut -> ALiver	[label=_J2];
-	AGut -> AGutMet1	[label=_J3,
+	ALiver -> APlasma	[label=_J4];
+	APlasma -> ALiver	[label=_J3];
+	APlasma -> ARest	[label=_J5];
+	AGut -> ALiver	[label=_J1];
+	AGut -> AGutMet1	[label=_J2,
 		minlen=1];
-	ARest -> APlasma	[label=_J7];
+	ARest -> APlasma	[label=_J6];
 }

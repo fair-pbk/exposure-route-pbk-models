@@ -61,6 +61,10 @@ Mallick.sbml,Liver,,oral,Pesticides,,,,
 Mallick.sbml,Plasma,,oral,Pesticides,,,,
 Mallick.sbml,RestPlasma,,oral,Pesticides,,,,
 Mallick.sbml,RestTissue,,oral,Pesticides,,,,
+Loccisano.sbml,GI,Gastrointestinal tissue,oral,PFAS,L,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
+Loccisano.sbml,Liver,Liver,oral,PFAS,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
+Loccisano.sbml,Plasma,Plasma,oral,PFAS,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+Loccisano.sbml,Rest,Rest of body,oral,PFAS,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 Deepika.sbml,GI,Gastrointestinal tract,oral,PFAS,L,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
 Deepika.sbml,Liver,Liver,oral,PFAS,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
 Deepika.sbml,Plasma,Plasma,oral,PFAS,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
@@ -83,19 +87,11 @@ Chen.sbml,Liver,Liver,oral,PFAS,L,PBPKO:00558,liver compartment,http://purl.obol
 Chen.sbml,Plasma,Plasma,oral,PFAS,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
 Chen.sbml,Rest,Rest of the body,oral,PFAS,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 Chen.sbml,Feces,Feces,oral,PFAS,L,PBPKO:00555,feces compartment,http://purl.obolibrary.org/obo/PBPKO_00555
-LoccisanoPFOS.sbml,GI,Gastrointestinal tissue,oral,PFAS,L,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
-LoccisanoPFOS.sbml,Liver,Liver,oral,PFAS,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
-LoccisanoPFOS.sbml,Plasma,Plasma,oral,PFAS,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-LoccisanoPFOS.sbml,Rest,Rest of body,oral,PFAS,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 Husoy.sbml,GI,Gastrointestinal tissue,oral,PFAS,L,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
 Husoy.sbml,Liver,Liver,oral,PFAS,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
 Husoy.sbml,Plasma,Plasma,oral,PFAS,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
 Husoy.sbml,Rest,Rest of body,oral,PFAS,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 Husoy.sbml,Feces,Feces,oral,PFAS,L,PBPKO:00555,feces compartment,http://purl.obolibrary.org/obo/PBPKO_00555
-LoccisanoPFOA.sbml,GI,Gastrointestinal tissue,oral,PFAS,L,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
-LoccisanoPFOA.sbml,Liver,Liver,oral,PFAS,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
-LoccisanoPFOA.sbml,Plasma,Plasma,oral,PFAS,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-LoccisanoPFOA.sbml,Rest,Rest of body,oral,PFAS,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 ElMasri2008.sbml,Lumen,Compartment of lumen,oral,Heavy Metals,dimensionless,PBPKO:00478,gut lumen compartment,http://purl.obolibrary.org/obo/PBPKO_00478
 ElMasri2008.sbml,Gut,Compartment of Gut,oral,Heavy Metals,dimensionless,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
 ElMasri2008.sbml,Liver,Compartment of liver,oral,Heavy Metals,dimensionless,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558

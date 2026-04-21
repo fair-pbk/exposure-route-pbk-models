@@ -10,7 +10,7 @@ applicability_domain:
     label: Homo sapiens
     iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
 num_compartments: 7
-num_species: 19
+num_species: 18
 num_parameters: 59
 num_reactions: 24
 compartments:
@@ -102,17 +102,6 @@ species:
     id: PBPKO:00501
     label: amount in restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00501
-  chebi_bqb_is_class:
-    id: CHEBI:33216
-    label: bisphenol A
-    iri: http://purl.obolibrary.org/obo/CHEBI_33216
-  unit: nmol
-- id: AGILumen
-  name: Amount in GI lumen
-  pbpko_bqm_is_class:
-    id: PBPKO:00496
-    label: amount in gut
-    iri: http://purl.obolibrary.org/obo/PBPKO_00496
   chebi_bqb_is_class:
     id: CHEBI:33216
     label: bisphenol A

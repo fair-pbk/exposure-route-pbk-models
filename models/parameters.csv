@@ -332,6 +332,31 @@ Mallick.sbml,CPlasmaTotal,,oral,Pesticides,,,,,,,
 Mallick.sbml,CPlasma,,oral,Pesticides,,,,,,,
 Mallick.sbml,CRestPlasma,,oral,Pesticides,,,,,,,
 Mallick.sbml,CRestTissue,,oral,Pesticides,,,,,,,
+Loccisano.sbml,BW,Bodyweight,oral,PFAS,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
+Loccisano.sbml,VLc,Volume fraction of liver,oral,PFAS,L/kg,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
+Loccisano.sbml,VPlasmac,Volume fraction of plasma,oral,PFAS,L/kg,PBPKO:00104,fraction of plasma,http://purl.obolibrary.org/obo/PBPKO_00104,,,
+Loccisano.sbml,VGIc,Volume fraction of gastrointestinal tissue,oral,PFAS,L/kg,PBPKO:00509,fraction of gut,http://purl.obolibrary.org/obo/PBPKO_00509,,,
+Loccisano.sbml,VL,Volume of liver,oral,PFAS,L,PBPKO:00077,volume of liver,http://purl.obolibrary.org/obo/PBPKO_00077,,,
+Loccisano.sbml,VPlasma,Volume of plasma,oral,PFAS,L,PBPKO:00103,volume of plasma,http://purl.obolibrary.org/obo/PBPKO_00103,,,
+Loccisano.sbml,VGI,Volume of gastrointestinal tissue,oral,PFAS,L,PBPKO:00524,volume of gut,http://purl.obolibrary.org/obo/PBPKO_00524,,,
+Loccisano.sbml,VRest,Volume of the rest of the body,oral,PFAS,L,PBPKO:00105,volume of rest body,http://purl.obolibrary.org/obo/PBPKO_00105,,,
+Loccisano.sbml,QC,Cardiac output,oral,PFAS,L/d,PBPKO:00013,cardiac output rate,http://purl.obolibrary.org/obo/PBPKO_00013,,,
+Loccisano.sbml,QPlasma,Cardiac output adjusted for plasma,oral,PFAS,L/d,PBPKO:00528,cardiac output rate of plasma,http://purl.obolibrary.org/obo/PBPKO_00528,,,
+Loccisano.sbml,Htc,Hematocrit,oral,PFAS,dimensionless,PBPKO:00527,hematocrit volume,http://purl.obolibrary.org/obo/PBPKO_00527,,,
+Loccisano.sbml,QLc,Fraction of blood flow to liver,oral,PFAS,dimensionless,PBPKO:00025,fraction of blood flow to liver,http://purl.obolibrary.org/obo/PBPKO_00025,,,
+Loccisano.sbml,QGIc,Fraction of blood flow to gastrointestinal tract,oral,PFAS,dimensionless,PBPKO:00513,fraction of blood flow to gut,http://purl.obolibrary.org/obo/PBPKO_00513,,,
+Loccisano.sbml,QL,Liver blood flow,oral,PFAS,L/d,PBPKO:00024,blood flow rate to liver,http://purl.obolibrary.org/obo/PBPKO_00024,,,
+Loccisano.sbml,QGI,Blood flow rate to gastrointestinal tract,oral,PFAS,L/d,PBPKO:00531,blood flow rate to gut,http://purl.obolibrary.org/obo/PBPKO_00531,,,
+Loccisano.sbml,QRest,Blood flow rate to rest of the body,oral,PFAS,L/d,PBPKO:00050,blood flow rate to restbody,http://purl.obolibrary.org/obo/PBPKO_00050,,,
+Loccisano.sbml,Free,Fraction unbound in plasma,oral,PFAS,dimensionless,PBPKO:00591,fraction unbound plasma,http://purl.obolibrary.org/obo/PBPKO_00591,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
+Loccisano.sbml,PL,Liver to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00170,liver plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00170,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
+Loccisano.sbml,PG,Gastrointestinal tract tissue to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00166,gut plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00166,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
+Loccisano.sbml,PRest,Rest of the body to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00518,restbody plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00518,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
+Loccisano.sbml,CGI,Concentration in the gastrointestinal tract,oral,PFAS,ug/L,PBPKO:00538,concentration in gut,http://purl.obolibrary.org/obo/PBPKO_00538,,,
+Loccisano.sbml,CLiver,Concentration in the liver,oral,PFAS,ug/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
+Loccisano.sbml,CPlasma,Free concentration in plasma,oral,PFAS,ug/L,,,,,,
+Loccisano.sbml,CPlasmaTotal,Total concentration in plasma,oral,PFAS,ug/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
+Loccisano.sbml,CRest,Concentration in rest of body,oral,PFAS,ug/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
 Deepika.sbml,BW,bodyweight,oral,PFAS,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
 Deepika.sbml,VLc,Volume fraction of liver,oral,PFAS,L/kg,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
 Deepika.sbml,VPlasmac,Volume fraction of plasma,oral,PFAS,L/kg,PBPKO:00104,fraction of plasma,http://purl.obolibrary.org/obo/PBPKO_00104,,,
@@ -444,31 +469,6 @@ Chen.sbml,CLiver,Concentration in liver,oral,PFAS,ug/L,PBPKO:00539,concentration
 Chen.sbml,CPlasma,Unbound concentration in plasma,oral,PFAS,ug/L,,,,,,
 Chen.sbml,CPlasmaTotal,Total concentration in plasma,oral,PFAS,ug/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
 Chen.sbml,CRest,Concentration in rest of body,oral,PFAS,ug/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
-LoccisanoPFOS.sbml,BW,Bodyweight,oral,PFAS,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
-LoccisanoPFOS.sbml,VLc,Volume fraction of the liver,oral,PFAS,L/kg,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
-LoccisanoPFOS.sbml,VPlasmac,Volume fraction of plasma,oral,PFAS,L/kg,PBPKO:00104,fraction of plasma,http://purl.obolibrary.org/obo/PBPKO_00104,,,
-LoccisanoPFOS.sbml,VGIc,Volume fraction of gastrointestinal tissue,oral,PFAS,L/kg,PBPKO:00509,fraction of gut,http://purl.obolibrary.org/obo/PBPKO_00509,,,
-LoccisanoPFOS.sbml,VL,Volume of liver,oral,PFAS,L,PBPKO:00077,volume of liver,http://purl.obolibrary.org/obo/PBPKO_00077,,,
-LoccisanoPFOS.sbml,VPlasma,Volume of plasma,oral,PFAS,L,PBPKO:00103,volume of plasma,http://purl.obolibrary.org/obo/PBPKO_00103,,,
-LoccisanoPFOS.sbml,VGI,Volume of gastrointestinal tissue,oral,PFAS,L,PBPKO:00524,volume of gut,http://purl.obolibrary.org/obo/PBPKO_00524,,,
-LoccisanoPFOS.sbml,VRest,Volume of the rest of the body,oral,PFAS,L,PBPKO:00105,volume of rest body,http://purl.obolibrary.org/obo/PBPKO_00105,,,
-LoccisanoPFOS.sbml,Htc,Hematocrit,oral,PFAS,dimensionless,PBPKO:00527,hematocrit volume,http://purl.obolibrary.org/obo/PBPKO_00527,,,
-LoccisanoPFOS.sbml,Free,Fraction unbound,oral,PFAS,dimensionless,PBPKO:00149,unbound fraction,http://purl.obolibrary.org/obo/PBPKO_00149,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-LoccisanoPFOS.sbml,QC,Cardiac output,oral,PFAS,L/d,PBPKO:00013,cardiac output rate,http://purl.obolibrary.org/obo/PBPKO_00013,,,
-LoccisanoPFOS.sbml,QPlasma,Cardiac output of plasma,oral,PFAS,L/d,PBPKO:00528,cardiac output rate of plasma,http://purl.obolibrary.org/obo/PBPKO_00528,,,
-LoccisanoPFOS.sbml,QLc,Fraction of blood flow to liver,oral,PFAS,dimensionless,PBPKO:00025,fraction of blood flow to liver,http://purl.obolibrary.org/obo/PBPKO_00025,,,
-LoccisanoPFOS.sbml,QGIc,Fraction of blood flow to gastrointestinal tissue,oral,PFAS,dimensionless,PBPKO:00513,fraction of blood flow to gut,http://purl.obolibrary.org/obo/PBPKO_00513,,,
-LoccisanoPFOS.sbml,QL,Liver blood flow,oral,PFAS,L/d,PBPKO:00024,blood flow rate to liver,http://purl.obolibrary.org/obo/PBPKO_00024,,,
-LoccisanoPFOS.sbml,QGI,Gastrointestinal tissue blood flow,oral,PFAS,L/d,PBPKO:00531,blood flow rate to gut,http://purl.obolibrary.org/obo/PBPKO_00531,,,
-LoccisanoPFOS.sbml,QRest,Blood flow rate to rest of body,oral,PFAS,L/d,PBPKO:00050,blood flow rate to restbody,http://purl.obolibrary.org/obo/PBPKO_00050,,,
-LoccisanoPFOS.sbml,PL,Liver to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00170,liver plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00170,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-LoccisanoPFOS.sbml,PG,Gastrointestinal tissue to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00166,gut plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00166,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-LoccisanoPFOS.sbml,PRest,Rest of the body to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00518,restbody plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00518,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-LoccisanoPFOS.sbml,CGI,Concentration in gastrointestinal tissue,oral,PFAS,ug/L,PBPKO:00538,concentration in gut,http://purl.obolibrary.org/obo/PBPKO_00538,,,
-LoccisanoPFOS.sbml,CLiver,Concentration in liver,oral,PFAS,ug/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
-LoccisanoPFOS.sbml,CPlasma,Free concentration in plasma,oral,PFAS,ug/L,,,,,,
-LoccisanoPFOS.sbml,CPlasmaTotal,Total concentration in plasma,oral,PFAS,ug/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
-LoccisanoPFOS.sbml,CRest,Concentration in rest of body,oral,PFAS,ug/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
 Husoy.sbml,BW,Bodyweight,oral,PFAS,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
 Husoy.sbml,VLc,Liver volume fraction,oral,PFAS,L/kg,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
 Husoy.sbml,Vplasmac,Volume fraction of plasma,oral,PFAS,L/kg,PBPKO:00104,fraction of plasma,http://purl.obolibrary.org/obo/PBPKO_00104,,,
@@ -498,31 +498,6 @@ Husoy.sbml,CLiver,Concentration in liver,oral,PFAS,ug/L,PBPKO:00539,concentratio
 Husoy.sbml,CPlasma,Unbound concentration in plasma,oral,PFAS,ug/L,,,,,,
 Husoy.sbml,CPlasmaTotal,Total concentration in plasma,oral,PFAS,ug/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
 Husoy.sbml,CRest,Concentration in rest of the body,oral,PFAS,ug/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
-LoccisanoPFOA.sbml,BW,Bodyweight,oral,PFAS,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
-LoccisanoPFOA.sbml,VLc,Volume fraction of liver,oral,PFAS,L/kg,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
-LoccisanoPFOA.sbml,VPlasmac,Volume fraction of plasma,oral,PFAS,L/kg,PBPKO:00104,fraction of plasma,http://purl.obolibrary.org/obo/PBPKO_00104,,,
-LoccisanoPFOA.sbml,VGIc,Volume fraction of gastrointestinal tissue,oral,PFAS,L/kg,PBPKO:00509,fraction of gut,http://purl.obolibrary.org/obo/PBPKO_00509,,,
-LoccisanoPFOA.sbml,VL,Volume of liver,oral,PFAS,L,PBPKO:00077,volume of liver,http://purl.obolibrary.org/obo/PBPKO_00077,,,
-LoccisanoPFOA.sbml,VPlasma,Volume of plasma,oral,PFAS,L,PBPKO:00103,volume of plasma,http://purl.obolibrary.org/obo/PBPKO_00103,,,
-LoccisanoPFOA.sbml,VGI,Volume of gastrointestinal tissue,oral,PFAS,L,PBPKO:00524,volume of gut,http://purl.obolibrary.org/obo/PBPKO_00524,,,
-LoccisanoPFOA.sbml,VRest,Volume of the rest of the body,oral,PFAS,L,PBPKO:00105,volume of rest body,http://purl.obolibrary.org/obo/PBPKO_00105,,,
-LoccisanoPFOA.sbml,QC,Cardiac output,oral,PFAS,L/d,PBPKO:00013,cardiac output rate,http://purl.obolibrary.org/obo/PBPKO_00013,,,
-LoccisanoPFOA.sbml,QPlasma,Cardiac output adjusted for plasma,oral,PFAS,L/d,PBPKO:00528,cardiac output rate of plasma,http://purl.obolibrary.org/obo/PBPKO_00528,,,
-LoccisanoPFOA.sbml,Htc,Hematocrit,oral,PFAS,dimensionless,PBPKO:00527,hematocrit volume,http://purl.obolibrary.org/obo/PBPKO_00527,,,
-LoccisanoPFOA.sbml,QLc,Fraction of blood flow to liver,oral,PFAS,dimensionless,PBPKO:00025,fraction of blood flow to liver,http://purl.obolibrary.org/obo/PBPKO_00025,,,
-LoccisanoPFOA.sbml,QGIc,Fraction of blood flow to gastrointestinal tract,oral,PFAS,dimensionless,PBPKO:00513,fraction of blood flow to gut,http://purl.obolibrary.org/obo/PBPKO_00513,,,
-LoccisanoPFOA.sbml,QL,Liver blood flow,oral,PFAS,L/d,PBPKO:00024,blood flow rate to liver,http://purl.obolibrary.org/obo/PBPKO_00024,,,
-LoccisanoPFOA.sbml,QGI,Blood flow rate to gastrointestinal tract,oral,PFAS,L/d,PBPKO:00531,blood flow rate to gut,http://purl.obolibrary.org/obo/PBPKO_00531,,,
-LoccisanoPFOA.sbml,QRest,Blood flow rate to rest of the body,oral,PFAS,L/d,PBPKO:00050,blood flow rate to restbody,http://purl.obolibrary.org/obo/PBPKO_00050,,,
-LoccisanoPFOA.sbml,Free,Fraction unbound in plasma,oral,PFAS,dimensionless,PBPKO:00591,fraction unbound plasma,http://purl.obolibrary.org/obo/PBPKO_00591,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
-LoccisanoPFOA.sbml,PL,Liver to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00170,liver plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00170,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
-LoccisanoPFOA.sbml,PG,Gastrointestinal tract tissue to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00166,gut plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00166,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
-LoccisanoPFOA.sbml,PRest,Rest of the body to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00518,restbody plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00518,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
-LoccisanoPFOA.sbml,CGI,Concentration in the gastrointestinal tract,oral,PFAS,ug/L,PBPKO:00538,concentration in gut,http://purl.obolibrary.org/obo/PBPKO_00538,,,
-LoccisanoPFOA.sbml,CLiver,Concentration in the liver,oral,PFAS,ug/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
-LoccisanoPFOA.sbml,CPlasma,Free concentration in plasma,oral,PFAS,ug/L,,,,,,
-LoccisanoPFOA.sbml,CPlasmaTotal,Total concentration in plasma,oral,PFAS,ug/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
-LoccisanoPFOA.sbml,CRest,Concentration in rest of body,oral,PFAS,ug/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
 ElMasri2008.sbml,VRest,Volume of rest of the body,oral,Heavy Metals,dimensionless,PBPKO:00105,volume of rest body,http://purl.obolibrary.org/obo/PBPKO_00105,,,
 ElMasri2008.sbml,BW,Bodyweight,oral,Heavy Metals,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
 ElMasri2008.sbml,VGut,Volume of gut,oral,Heavy Metals,dimensionless,PBPKO:00524,volume of gut,http://purl.obolibrary.org/obo/PBPKO_00524,,,
@@ -959,23 +934,15 @@ Deepika.sbml,QC,Cardiac output,oral,Bisphenols,L/h,PBPKO:00013,cardiac output ra
 Deepika.sbml,QLc,Blood flow to liver constant,oral,Bisphenols,dimensionless,PBPKO:00025,fraction of blood flow to liver,http://purl.obolibrary.org/obo/PBPKO_00025,,,
 Deepika.sbml,QGc,Blood flow to gut constant,oral,Bisphenols,dimensionless,PBPKO:00513,fraction of blood flow to gut,http://purl.obolibrary.org/obo/PBPKO_00513,,,
 Deepika.sbml,QL,Blood flow rate to liver,oral,Bisphenols,L/h,PBPKO:00024,blood flow rate to liver,http://purl.obolibrary.org/obo/PBPKO_00024,,,
-Deepika.sbml,QG,Blood flow rate to gut,oral,Bisphenols,L/h,PBPKO:00531,blood flow rate to gut,http://purl.obolibrary.org/obo/PBPKO_00531,,,
 Deepika.sbml,QRest,Blood flow rate to rest of body,oral,Bisphenols,L/h,PBPKO:00050,blood flow rate to restbody,http://purl.obolibrary.org/obo/PBPKO_00050,,,
 Deepika.sbml,fup,unbound fraction,oral,Bisphenols,dimensionless,PBPKO:00149,unbound fraction,http://purl.obolibrary.org/obo/PBPKO_00149,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Deepika.sbml,k0C,intrinsic stomach absorption rate constant,oral,Bisphenols,,,,,,,
-Deepika.sbml,k0,Stomach absorption rate constant,oral,Bisphenols,/h,,,,,,
-Deepika.sbml,kstoC,Intrinsic gastric emptying rate constant,oral,Bisphenols,,,,,,,
 Deepika.sbml,ksto,Gastric emptying rate,oral,Bisphenols,/h,PBPKO:00143,gastric emptying rate,http://purl.obolibrary.org/obo/PBPKO_00143,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Deepika.sbml,kabsC,Intrinsic absorption rate constant,oral,Bisphenols,,,,,,,
 Deepika.sbml,kabs,Oral absorption rate,oral,Bisphenols,/h,,,,,,
-Deepika.sbml,VmaxGMet1C,Glucuronidation - Vmax,oral,Bisphenols,nmol/min/mg,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Deepika.sbml,VmaxGMet1,Glucuronidation - Vmax,oral,Bisphenols,,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Deepika.sbml,KmGMet1,Glucuronidation - Km,oral,Bisphenols,umol,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Deepika.sbml,VmaxLMet1C,Glucuronidation - Vmax,oral,Bisphenols,nmol/min/mg,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Deepika.sbml,VmaxGMet1,Glucuronidation - Vmax,oral,Bisphenols,umol/h,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Deepika.sbml,KmGMet1,Glucuronidation - Km,oral,Bisphenols,umol/L,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
 Deepika.sbml,VmaxLMet1,Glucuronidation - Vmax,oral,Bisphenols,umol/h,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Deepika.sbml,KmLMet1,Glucuronidation - Km,oral,Bisphenols,umol,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Deepika.sbml,VmaxLMet2C,Sulfation - Vmax,oral,Bisphenols,,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Deepika.sbml,VmaxLMet2,Sulfation - Vmax,oral,Bisphenols,,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Deepika.sbml,KmLMet1,Glucuronidation - Km,oral,Bisphenols,umol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Deepika.sbml,VmaxLMet2,Sulfation - Vmax,oral,Bisphenols,umol/h,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
 Deepika.sbml,KmLMet2,Sulfation - Km,oral,Bisphenols,umol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
 Deepika.sbml,PL,Partition coefficient - liver,oral,Bisphenols,dimensionless,PBPKO:00577,liver blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00577,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Deepika.sbml,PRest,Partition coefficient - rest of body,oral,Bisphenols,dimensionless,PBPKO:00585,restbody blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00585,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216

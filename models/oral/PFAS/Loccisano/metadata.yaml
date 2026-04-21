@@ -1,14 +1,8 @@
-id: Loccisano2011_PFOS_Human
-name: LoccisanoPFOS
+id: Loccisano2011_PFAS_Human
+name: Loccisano
 applicability_domain:
-  chemicals:
-  - id: CHEBI:39421
-    label: perfluorooctane-1-sulfonic acid
-    iri: http://purl.obolibrary.org/obo/CHEBI_39421
-  species:
-  - id: NCBITaxon:9606
-    label: Homo sapiens
-    iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
+  chemicals: []
+  species: []
 num_compartments: 4
 num_species: 4
 num_parameters: 25
@@ -50,9 +44,9 @@ species:
     label: amount in gut
     iri: http://purl.obolibrary.org/obo/PBPKO_00496
   chebi_bqb_is_class:
-    id: CHEBI:39421
-    label: perfluorooctane-1-sulfonic acid
-    iri: http://purl.obolibrary.org/obo/CHEBI_39421
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
   unit: ug
 - id: ALiver
   name: Amount in the liver
@@ -61,9 +55,9 @@ species:
     label: amount in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00497
   chebi_bqb_is_class:
-    id: CHEBI:39421
-    label: perfluorooctane-1-sulfonic acid
-    iri: http://purl.obolibrary.org/obo/CHEBI_39421
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
   unit: ug
 - id: APlasma
   name: Amount in plasma
@@ -72,9 +66,9 @@ species:
     label: amount in plasma
     iri: http://purl.obolibrary.org/obo/PBPKO_00502
   chebi_bqb_is_class:
-    id: CHEBI:39421
-    label: perfluorooctane-1-sulfonic acid
-    iri: http://purl.obolibrary.org/obo/CHEBI_39421
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
   unit: ug
 - id: ARest
   name: Amount in the rest of the body
@@ -83,9 +77,9 @@ species:
     label: amount in restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00501
   chebi_bqb_is_class:
-    id: CHEBI:39421
-    label: perfluorooctane-1-sulfonic acid
-    iri: http://purl.obolibrary.org/obo/CHEBI_39421
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
   unit: ug
 parameters:
 - id: BW
@@ -96,7 +90,7 @@ parameters:
     iri: http://purl.obolibrary.org/obo/PBPKO_00008
   unit: kg
 - id: VLc
-  name: Volume fraction of the liver
+  name: Volume fraction of liver
   pbpko_bqm_is_class:
     id: PBPKO:00078
     label: fraction of liver
@@ -144,24 +138,6 @@ parameters:
     label: volume of rest body
     iri: http://purl.obolibrary.org/obo/PBPKO_00105
   unit: L
-- id: Htc
-  name: Hematocrit
-  pbpko_bqm_is_class:
-    id: PBPKO:00527
-    label: hematocrit volume
-    iri: http://purl.obolibrary.org/obo/PBPKO_00527
-  unit: dimensionless
-- id: Free
-  name: Fraction unbound
-  pbpko_bqm_is_class:
-    id: PBPKO:00149
-    label: unbound fraction
-    iri: http://purl.obolibrary.org/obo/PBPKO_00149
-  chebi_bqb_is_class:
-    id: CHEBI:39421
-    label: perfluorooctane-1-sulfonic acid
-    iri: http://purl.obolibrary.org/obo/CHEBI_39421
-  unit: dimensionless
 - id: QC
   name: Cardiac output
   pbpko_bqm_is_class:
@@ -170,12 +146,19 @@ parameters:
     iri: http://purl.obolibrary.org/obo/PBPKO_00013
   unit: L/d
 - id: QPlasma
-  name: Cardiac output of plasma
+  name: Cardiac output adjusted for plasma
   pbpko_bqm_is_class:
     id: PBPKO:00528
     label: cardiac output rate of plasma
     iri: http://purl.obolibrary.org/obo/PBPKO_00528
   unit: L/d
+- id: Htc
+  name: Hematocrit
+  pbpko_bqm_is_class:
+    id: PBPKO:00527
+    label: hematocrit volume
+    iri: http://purl.obolibrary.org/obo/PBPKO_00527
+  unit: dimensionless
 - id: QLc
   name: Fraction of blood flow to liver
   pbpko_bqm_is_class:
@@ -184,7 +167,7 @@ parameters:
     iri: http://purl.obolibrary.org/obo/PBPKO_00025
   unit: dimensionless
 - id: QGIc
-  name: Fraction of blood flow to gastrointestinal tissue
+  name: Fraction of blood flow to gastrointestinal tract
   pbpko_bqm_is_class:
     id: PBPKO:00513
     label: fraction of blood flow to gut
@@ -198,19 +181,30 @@ parameters:
     iri: http://purl.obolibrary.org/obo/PBPKO_00024
   unit: L/d
 - id: QGI
-  name: Gastrointestinal tissue blood flow
+  name: Blood flow rate to gastrointestinal tract
   pbpko_bqm_is_class:
     id: PBPKO:00531
     label: blood flow rate to gut
     iri: http://purl.obolibrary.org/obo/PBPKO_00531
   unit: L/d
 - id: QRest
-  name: Blood flow rate to rest of body
+  name: Blood flow rate to rest of the body
   pbpko_bqm_is_class:
     id: PBPKO:00050
     label: blood flow rate to restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00050
   unit: L/d
+- id: Free
+  name: Fraction unbound in plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:00591
+    label: fraction unbound plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_00591
+  chebi_bqb_is_class:
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
+  unit: dimensionless
 - id: PL
   name: Liver to plasma partition coefficient
   pbpko_bqm_is_class:
@@ -218,20 +212,20 @@ parameters:
     label: liver plasma partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00170
   chebi_bqb_is_class:
-    id: CHEBI:39421
-    label: perfluorooctane-1-sulfonic acid
-    iri: http://purl.obolibrary.org/obo/CHEBI_39421
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
   unit: dimensionless
 - id: PG
-  name: Gastrointestinal tissue to plasma partition coefficient
+  name: Gastrointestinal tract tissue to plasma partition coefficient
   pbpko_bqm_is_class:
     id: PBPKO:00166
     label: gut plasma partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00166
   chebi_bqb_is_class:
-    id: CHEBI:39421
-    label: perfluorooctane-1-sulfonic acid
-    iri: http://purl.obolibrary.org/obo/CHEBI_39421
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
   unit: dimensionless
 - id: PRest
   name: Rest of the body to plasma partition coefficient
@@ -240,19 +234,19 @@ parameters:
     label: restbody plasma partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00518
   chebi_bqb_is_class:
-    id: CHEBI:39421
-    label: perfluorooctane-1-sulfonic acid
-    iri: http://purl.obolibrary.org/obo/CHEBI_39421
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
   unit: dimensionless
 - id: CGI
-  name: Concentration in gastrointestinal tissue
+  name: Concentration in the gastrointestinal tract
   pbpko_bqm_is_class:
     id: PBPKO:00538
     label: concentration in gut
     iri: http://purl.obolibrary.org/obo/PBPKO_00538
   unit: ug/L
 - id: CLiver
-  name: Concentration in liver
+  name: Concentration in the liver
   pbpko_bqm_is_class:
     id: PBPKO:00539
     label: concentration in liver
@@ -276,12 +270,12 @@ parameters:
     iri: http://purl.obolibrary.org/obo/PBPKO_00548
   unit: ug/L
 parameterisations:
-- filename: LoccisanoPFOS.params.csv
-  model_id: Loccisano2011_PFOS_Human
+- filename: Loccisano.params.csv
+  model_id: Loccisano2011_PFAS_Human
   parameters:
   - id: BW
     value: 70.0
-    unit: ''
+    unit: kg
     reference: ''
     bqm_is:
       id: PBPKO:00008
@@ -289,7 +283,7 @@ parameterisations:
       iri: http://purl.obolibrary.org/obo/PBPKO_00008
   - id: VLc
     value: 0.026
-    unit: ''
+    unit: L/kg
     reference: ''
     bqm_is:
       id: PBPKO:00078
@@ -297,7 +291,7 @@ parameterisations:
       iri: http://purl.obolibrary.org/obo/PBPKO_00078
   - id: VPlasmac
     value: 0.0428
-    unit: ''
+    unit: L/kg
     reference: ''
     bqm_is:
       id: PBPKO:00104
@@ -305,7 +299,7 @@ parameterisations:
       iri: http://purl.obolibrary.org/obo/PBPKO_00104
   - id: VGIc
     value: 0.0171
-    unit: ''
+    unit: L/kg
     reference: ''
     bqm_is:
       id: PBPKO:00509
@@ -313,27 +307,15 @@ parameterisations:
       iri: http://purl.obolibrary.org/obo/PBPKO_00509
   - id: Htc
     value: 0.44
-    unit: ''
+    unit: dimensionless
     reference: ''
     bqm_is:
       id: PBPKO:00527
       label: hematocrit volume
       iri: http://purl.obolibrary.org/obo/PBPKO_00527
-  - id: Free
-    value: 0.025
-    unit: ''
-    reference: ''
-    bqm_is:
-      id: PBPKO:00149
-      label: unbound fraction
-      iri: http://purl.obolibrary.org/obo/PBPKO_00149
-    bqb_is:
-      id: CHEBI:39421
-      label: perfluorooctane-1-sulfonic acid
-      iri: http://purl.obolibrary.org/obo/CHEBI_39421
   - id: QLc
     value: 0.25
-    unit: ''
+    unit: dimensionless
     reference: ''
     bqm_is:
       id: PBPKO:00025
@@ -341,48 +323,60 @@ parameterisations:
       iri: http://purl.obolibrary.org/obo/PBPKO_00025
   - id: QGIc
     value: 0.181
-    unit: ''
+    unit: dimensionless
     reference: ''
     bqm_is:
       id: PBPKO:00513
       label: fraction of blood flow to gut
       iri: http://purl.obolibrary.org/obo/PBPKO_00513
+  - id: Free
+    value: 0.02
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00591
+      label: fraction unbound plasma
+      iri: http://purl.obolibrary.org/obo/PBPKO_00591
+    bqb_is:
+      id: CHEBI:35549
+      label: perfluorooctanoic acid
+      iri: http://purl.obolibrary.org/obo/CHEBI_35549
   - id: PL
-    value: 3.72
-    unit: ''
+    value: 2.2
+    unit: dimensionless
     reference: ''
     bqm_is:
       id: PBPKO:00170
       label: liver plasma partition coefficient
       iri: http://purl.obolibrary.org/obo/PBPKO_00170
     bqb_is:
-      id: CHEBI:39421
-      label: perfluorooctane-1-sulfonic acid
-      iri: http://purl.obolibrary.org/obo/CHEBI_39421
+      id: CHEBI:35549
+      label: perfluorooctanoic acid
+      iri: http://purl.obolibrary.org/obo/CHEBI_35549
   - id: PG
-    value: 0.57
-    unit: ''
+    value: 0.05
+    unit: dimensionless
     reference: ''
     bqm_is:
       id: PBPKO:00166
       label: gut plasma partition coefficient
       iri: http://purl.obolibrary.org/obo/PBPKO_00166
     bqb_is:
-      id: CHEBI:39421
-      label: perfluorooctane-1-sulfonic acid
-      iri: http://purl.obolibrary.org/obo/CHEBI_39421
+      id: CHEBI:35549
+      label: perfluorooctanoic acid
+      iri: http://purl.obolibrary.org/obo/CHEBI_35549
   - id: PRest
     value: 1.0
-    unit: ''
+    unit: dimensionless
     reference: ''
     bqm_is:
       id: PBPKO:00518
       label: restbody plasma partition coefficient
       iri: http://purl.obolibrary.org/obo/PBPKO_00518
     bqb_is:
-      id: CHEBI:39421
-      label: perfluorooctane-1-sulfonic acid
-      iri: http://purl.obolibrary.org/obo/CHEBI_39421
+      id: CHEBI:35549
+      label: perfluorooctanoic acid
+      iri: http://purl.obolibrary.org/obo/CHEBI_35549
 unit_consistency:
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\

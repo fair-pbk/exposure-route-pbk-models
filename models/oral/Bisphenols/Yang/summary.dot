@@ -159,13 +159,6 @@ digraph {
 			shape=box,
 			style="filled,rounded"
 		];
-		AGILumen	[color=black,
-			fillcolor=gold,
-			href="#species-AGILumen",
-			label="AGILumen
-[PBPKO:00496]",
-			shape=box,
-			style="filled,rounded"];
 		AGILumenMet1	[color=black,
 			fillcolor=gold,
 			href="#species-AGILumenMet1",

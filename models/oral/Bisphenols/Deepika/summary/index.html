@@ -1993,42 +1993,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../PFAS/Loccisano_PFOA/summary/" class="md-nav__link">
+      <a href="../../../PFAS/Loccisano/summary/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    LoccisanoPFOA
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../PFAS/Loccisano_PFOS/summary/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    LoccisanoPFOS
+    Loccisano
   
 
     
@@ -3020,7 +2992,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Number of parameters</td>
-<td style="text-align: left;">36 (21 external / 15 internal)</td>
+<td style="text-align: left;">28 (14 external / 14 internal)</td>
 </tr>
 </tbody>
 </table>
@@ -3149,54 +3121,48 @@
 </tr>
 <tr>
 <td style="text-align: left;">_J1</td>
-<td style="text-align: left;">ASt</td>
-<td style="text-align: left;">ALiver</td>
-<td style="text-align: left;">k0 * ASt</td>
-</tr>
-<tr>
-<td style="text-align: left;">_J2</td>
 <td style="text-align: left;">AGut</td>
 <td style="text-align: left;">ALiver</td>
 <td style="text-align: left;">kabs * AGut</td>
 </tr>
 <tr>
-<td style="text-align: left;">_J3</td>
+<td style="text-align: left;">_J2</td>
 <td style="text-align: left;">AGut</td>
 <td style="text-align: left;">AGutMet1</td>
 <td style="text-align: left;">VmaxGMet1 * CGut * fup / (CGut * fup + KmGMet1)</td>
 </tr>
 <tr>
-<td style="text-align: left;">_J4</td>
+<td style="text-align: left;">_J3</td>
 <td style="text-align: left;">APlasma</td>
 <td style="text-align: left;">ALiver</td>
 <td style="text-align: left;">QL * CPlasma * fup</td>
 </tr>
 <tr>
-<td style="text-align: left;">_J5</td>
+<td style="text-align: left;">_J4</td>
 <td style="text-align: left;">ALiver</td>
 <td style="text-align: left;">APlasma</td>
 <td style="text-align: left;">QL * fup * CLiver / PL</td>
 </tr>
 <tr>
-<td style="text-align: left;">_J6</td>
+<td style="text-align: left;">_J5</td>
 <td style="text-align: left;">APlasma</td>
 <td style="text-align: left;">ARest</td>
 <td style="text-align: left;">QRest * CPlasma * fup</td>
 </tr>
 <tr>
-<td style="text-align: left;">_J7</td>
+<td style="text-align: left;">_J6</td>
 <td style="text-align: left;">ARest</td>
 <td style="text-align: left;">APlasma</td>
 <td style="text-align: left;">QRest * fup * CRest / PRest</td>
 </tr>
 <tr>
-<td style="text-align: left;">_J8</td>
+<td style="text-align: left;">_J7</td>
 <td style="text-align: left;">ALiver</td>
 <td style="text-align: left;">ALiverMet1</td>
 <td style="text-align: left;">VmaxLMet1 * CLiver * fup / (CLiver * fup + KmLMet1)</td>
 </tr>
 <tr>
-<td style="text-align: left;">_J9</td>
+<td style="text-align: left;">_J8</td>
 <td style="text-align: left;">ALiver</td>
 <td style="text-align: left;">ALiverMet2</td>
 <td style="text-align: left;">VmaxLMet2 * CLiver * fup / (CLiver * fup + KmLMet2)</td>
@@ -3204,10 +3170,8 @@
 </tbody>
 </table>
 <h2 id="odes">ODEs</h2>
-<p><span class="arithmatex">\(\frac{d[\mathtt{ASt}]}{dt} = -  \mathit{ksto}\cdot \mathit{ASt}
-            -  \mathit{k0}\cdot \mathit{ASt}\)</span></p>
-<p><span class="arithmatex">\(\frac{d[\mathtt{ALiver}]}{dt} =  \mathit{k0}\cdot \mathit{ASt}
-               +  \mathit{kabs}\cdot \mathit{AGut}
+<p><span class="arithmatex">\(\frac{d[\mathtt{ASt}]}{dt} = -  \mathit{ksto}\cdot \mathit{ASt}\)</span></p>
+<p><span class="arithmatex">\(\frac{d[\mathtt{ALiver}]}{dt} =  \mathit{kabs}\cdot \mathit{AGut}
                +  \mathit{QL}\cdot \mathit{CPlasma}\cdot \mathit{fup}
                -  \frac{\mathit{QL}\cdot \mathit{fup}\cdot \mathit{CLiver}}{\mathit{PL}}
                -  \frac{\mathit{VmaxLMet1}\cdot \mathit{CLiver}\cdot \mathit{fup}}{\mathit{CLiver}\cdot \mathit{fup}+\mathit{KmLMet1}}
@@ -3272,10 +3236,6 @@
 <tr>
 <td style="text-align: left;">QL</td>
 <td style="text-align: left;">QLc * QC</td>
-</tr>
-<tr>
-<td style="text-align: left;">QG</td>
-<td style="text-align: left;">QGc * QC</td>
 </tr>
 <tr>
 <td style="text-align: left;">QRest</td>
@@ -3395,12 +3355,6 @@
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00024</td>
 </tr>
 <tr>
-<td style="text-align: left;">QG</td>
-<td style="text-align: left;">Blood flow rate to gut</td>
-<td style="text-align: left;">L/h</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00531</td>
-</tr>
-<tr>
 <td style="text-align: left;">QRest</td>
 <td style="text-align: left;">Blood flow rate to rest of body</td>
 <td style="text-align: left;">L/h</td>
@@ -3413,34 +3367,10 @@
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00149</td>
 </tr>
 <tr>
-<td style="text-align: left;">k0C</td>
-<td style="text-align: left;">intrinsic stomach absorption rate constant</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">k0</td>
-<td style="text-align: left;">Stomach absorption rate constant</td>
-<td style="text-align: left;">/h</td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">kstoC</td>
-<td style="text-align: left;">Intrinsic gastric emptying rate constant</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
 <td style="text-align: left;">ksto</td>
 <td style="text-align: left;">Gastric emptying rate</td>
 <td style="text-align: left;">/h</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00143</td>
-</tr>
-<tr>
-<td style="text-align: left;">kabsC</td>
-<td style="text-align: left;">Intrinsic absorption rate constant</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">kabs</td>
@@ -3449,28 +3379,16 @@
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
-<td style="text-align: left;">VmaxGMet1C</td>
-<td style="text-align: left;">Glucuronidation - Vmax</td>
-<td style="text-align: left;">nmol/min/mg</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
-</tr>
-<tr>
 <td style="text-align: left;">VmaxGMet1</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">umol/h</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
 </tr>
 <tr>
 <td style="text-align: left;">KmGMet1</td>
 <td style="text-align: left;">Glucuronidation - Km</td>
-<td style="text-align: left;">umol</td>
+<td style="text-align: left;">umol/L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
-</tr>
-<tr>
-<td style="text-align: left;">VmaxLMet1C</td>
-<td style="text-align: left;">Glucuronidation - Vmax</td>
-<td style="text-align: left;">nmol/min/mg</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet1</td>
@@ -3481,19 +3399,13 @@
 <tr>
 <td style="text-align: left;">KmLMet1</td>
 <td style="text-align: left;">Glucuronidation - Km</td>
-<td style="text-align: left;">umol</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
-</tr>
-<tr>
-<td style="text-align: left;">VmaxLMet2C</td>
-<td style="text-align: left;">Sulfation - Vmax</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">umol/L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet2</td>
 <td style="text-align: left;">Sulfation - Vmax</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">umol/h</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
 </tr>
 <tr>

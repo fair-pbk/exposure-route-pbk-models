@@ -804,7 +804,7 @@ parameterisations:
       label: human xenobiotic metabolite
       iri: http://purl.obolibrary.org/obo/CHEBI_76967
   - id: VmaxLMet1c
-    value: 9043.2
+    value: 9040000.0
     unit: nmol/h/L
     reference: ''
     bqm_is:
@@ -832,7 +832,7 @@ parameterisations:
       label: bisphenol A sulfate
       iri: http://purl.obolibrary.org/obo/CHEBI_167305
   - id: VmaxLMet2c
-    value: 149.0
+    value: 149000.0
     unit: nmol/h/L
     reference: ''
     bqm_is:
@@ -848,7 +848,7 @@ unit_consistency:
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression '9043.2 * 1000' cannot be fully checked.\
+    \ <initialAssignment> <math> expression '9040 * 1000' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
     \ to this object may not be accurate."
 - level: warning

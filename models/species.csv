@@ -81,6 +81,10 @@ Mallick.sbml,APlasma,,oral,Pesticides,,,,,,,
 Mallick.sbml,ARestPlasma,,oral,Pesticides,,,,,,,
 Mallick.sbml,ARestTissue,,oral,Pesticides,,,,,,,
 Mallick.sbml,ALiverMet1,,oral,Pesticides,,,,,,,
+Loccisano.sbml,AGI,Amount in the gut,oral,PFAS,ug,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
+Loccisano.sbml,ALiver,Amount in the liver,oral,PFAS,ug,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
+Loccisano.sbml,APlasma,Amount in plasma,oral,PFAS,ug,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
+Loccisano.sbml,ARest,Amount in the rest of the body,oral,PFAS,ug,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
 Deepika.sbml,AGI,Amount in gastrointestinal tract,oral,PFAS,ug,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 Deepika.sbml,ALiver,Amount in liver,oral,PFAS,ug,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 Deepika.sbml,APlasma,Amount in plasma,oral,PFAS,ug,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
@@ -103,19 +107,11 @@ Chen.sbml,ALiver,Liver,oral,PFAS,ug,PBPKO:00497,amount in liver,http://purl.obol
 Chen.sbml,APlasma,Amount in plasma,oral,PFAS,ug,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 Chen.sbml,ARest,Amount in the rest of the body,oral,PFAS,ug,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 Chen.sbml,AFeces,Amount in the feces,oral,PFAS,ug,PBPKO:00275,cumulative amount in feces,http://purl.obolibrary.org/obo/PBPKO_00275,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-LoccisanoPFOS.sbml,AGI,Amount in the gut,oral,PFAS,ug,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-LoccisanoPFOS.sbml,ALiver,Amount in the liver,oral,PFAS,ug,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-LoccisanoPFOS.sbml,APlasma,Amount in plasma,oral,PFAS,ug,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-LoccisanoPFOS.sbml,ARest,Amount in the rest of the body,oral,PFAS,ug,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 Husoy.sbml,AGI,Amount in the gut,oral,PFAS,ug,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
 Husoy.sbml,ALiver,Amount in the liver,oral,PFAS,ug,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
 Husoy.sbml,APlasma,Amount in plasma,oral,PFAS,ug,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
 Husoy.sbml,ARest,Amount in the rest of the body,oral,PFAS,ug,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
 Husoy.sbml,AFeces,Amount in feces,oral,PFAS,ug,PBPKO:00275,cumulative amount in feces,http://purl.obolibrary.org/obo/PBPKO_00275,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
-LoccisanoPFOA.sbml,AGI,Amount in the gut,oral,PFAS,ug,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
-LoccisanoPFOA.sbml,ALiver,Amount in the liver,oral,PFAS,ug,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
-LoccisanoPFOA.sbml,APlasma,Amount in plasma,oral,PFAS,ug,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
-LoccisanoPFOA.sbml,ARest,Amount in the rest of the body,oral,PFAS,ug,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
 ElMasri2008.sbml,ALumen_As3,Amount of As3+ in lumen,oral,Heavy Metals,mol/,,,,CHEBI:35828,arsenic(3+),http://purl.obolibrary.org/obo/CHEBI_35828
 ElMasri2008.sbml,ALumen_As5,Amount of As5+ in lumen,oral,Heavy Metals,mol/,,,,CHEBI:35829,arsenic(5+),http://purl.obolibrary.org/obo/CHEBI_35829
 ElMasri2008.sbml,AGut_As3,Amount of As3+ in gut,oral,Heavy Metals,mol/,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:35828,arsenic(3+),http://purl.obolibrary.org/obo/CHEBI_35828
@@ -246,7 +242,6 @@ Yang.sbml,ASI,Amount in small intestine,oral,Bisphenols,nmol,,,,CHEBI:33216,bisp
 Yang.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,nmol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Yang.sbml,APlasma,amount of chemical in plasma,oral,Bisphenols,nmol,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Yang.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,nmol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Yang.sbml,AGILumen,Amount in GI lumen,oral,Bisphenols,nmol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Yang.sbml,AFeces,Amount in feces,oral,Bisphenols,nmol,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Yang.sbml,ASIMet1,Amount of metabolite in small intestine,oral,Bisphenols,nmol,,,,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
 Yang.sbml,ASIMet2,Amount of metabolite in small intestine,oral,Bisphenols,nmol,,,,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
