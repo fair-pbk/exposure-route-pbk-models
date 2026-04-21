@@ -78,7 +78,7 @@ model_instances:
 scenarios:
   - id: BPA_scenario_1
     label: BPA Scenario 1
-    duration: 50
+    duration: 10
     evaluation_resolution: 24
     time_unit: DAY
     amount_unit: MILLIGRAMS
@@ -100,7 +100,7 @@ scenarios:
         output: CBlood
   - id: BPA_scenario_2
     label: BPA Scenario 2
-    duration: 50
+    duration: 10
     evaluation_resolution: 24
     time_unit: DAY
     amount_unit: MILLIGRAMS
