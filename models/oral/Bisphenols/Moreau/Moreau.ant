@@ -42,8 +42,8 @@ QCPlasma := QC * (1-Hct)
 QGIc = 0.164
 QLc = 0.097
 
-QGI := QGIc * QC                # GI plasma flow (L/h)
-QL := QLc * QC                  # Liver plasma flow (L/h)
+QGI := QGIc * QCPlasma                # GI plasma flow (L/h)
+QL := QLc * QCPlasma                  # Liver plasma flow (L/h)
 
 QRest := QCPlasma - QL  - QGI   # L/h (lumped rest)
 
