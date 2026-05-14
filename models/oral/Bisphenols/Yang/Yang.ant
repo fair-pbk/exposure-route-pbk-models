@@ -18,8 +18,8 @@ model description "https://www.ncbi.nlm.nih.gov/pubmed/26522835"
 # Body size
 # ------------------------
 BW   = 5            # kg
-VLc  = 0.03         # L/kg
-VPlasmac = 0.0627   # L/kg
+VLc  = 0.026         # L/kg
+VPlasmac = 0.0435   # L/kg
 
 VL      := VLc*BW                       # L
 VPlasma := VPlasmac*BW                  # L
@@ -32,7 +32,7 @@ enterocytes = 0.1223            # L (volume of distribution in SI)
 # Cardiac output & flows
 # ------------------------
 QC := 15.87 * BW^0.75           # L/h
-QLc = 0.194;
+QLc = 0.24;
 
 # Flows:
 QL := QLc * QC;                 # L/h
@@ -118,9 +118,9 @@ VmaxLMet1 := fLiverMet1 *VmaxLMet1c  * BW^0.75      # nmol/h
 
 # Sulfation of BPA in the liver
 fLiverMet2 = 1                                      # correction factor
-KmLMet2   = 4700                                    # nM (hepatic sulfation Km)
-VmaxLMet2c= 0                                       # nmol/h/kg^0.75
-VmaxLMet2 := fLiverMet2 * BW^0.75 * VmaxLMet2c      # nmol/h
+KmLMet2   = 10100                                   # nM (hepatic sulfation Km)
+VmaxLMet2c= 11657                                   # nmol/h/kg^0.75
+VmaxLMet2 := fLiverMet2 * VmaxLMet2c * BW^0.75      # nmol/h
 
 #------------------------
 # Compartments

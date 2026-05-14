@@ -94,14 +94,14 @@ BileFracSIMet2 = 0              # 0% of formed BPAS goes to bile
 # GI glucuronidation of BPA in the small intestine
 fGutMet1 = 1                                            # correction factor
 KmGILumenMet1   = 58400                                 # nM   (GI glucuronidation Km)
-VmaxGILumenMet1c = 361                                  # nmol/h/kg (GI Vmax)
-VmaxGILumenMet1 := fGutMet1 * VmaxGILumenMet1c * BW     # nmol/h
+VmaxGILumenMet1c = 361                                  # nmol/h/g  (GI Vmax)
+VmaxGILumenMet1 := fGutMet1 * VmaxGILumenMet1c * BW * 1000     # nmol/h
 
 # GI sulfation of BPA in the small intestine - not modelled
 fGutMet2 = 0                                            # correction factor
 KmGILumenMet2   = 0.001                                 # nM
-VmaxGILumenMet2c = 0.001                                # nmol/h/kg (GI Vmax)
-VmaxGILumenMet2  := fGutMet2 * VmaxGILumenMet2c * BW    # nmol/h
+VmaxGILumenMet2c = 0.001                                # nmol/h/g (GI Vmax)
+VmaxGILumenMet2  := fGutMet2 * VmaxGILumenMet2c * BW * 1000    # nmol/h
 
 #------------------------
 # Hepatic metabolism
@@ -114,14 +114,14 @@ BileFracLMet2 = 0		# 0% of formed BPAS goes to bile
 # Glucuronidation of BPA in the liver
 fLiverMet1 = 1                                          # correction factor
 KmLMet1    = 45800                                      # nM (hepatic glucuronidation Km)
-VmaxLMet1c = 9040*1000                                # nmol/h/L liver (hepatic glucuronidation)
-VmaxLMet1 := fLiverMet1 * VmaxLMet1c* VLc * BW          # nmol/h
+VmaxLMet1c = 9040                                       # nmol/h/g liver (hepatic glucuronidation)
+VmaxLMet1 := fLiverMet1 * VmaxLMet1c* VLc * BW * 1000     # nmol/h
 
 # Sulfation of BPA in the liver
 fLiverMet2 = 1                                          # correction factor
 KmLMet2   = 10100                                       # nM  (hepatic sulfation Km)
-VmaxLMet2c= 149*1000                                    # nmol/h/L liver (hepatic sulfation Vmax)
-VmaxLMet2 := fLiverMet2 * VmaxLMet2c * VLc * BW         # nmol/h
+VmaxLMet2c= 149                                          # nmol/h/g liver (hepatic sulfation Vmax)
+VmaxLMet2 := fLiverMet2 * VmaxLMet2c * VLc * BW * 1000        # nmol/h
 
 #------------------------
 # Compartments
@@ -142,7 +142,6 @@ substanceOnly species ASI       in SI
 substanceOnly species ALiver    in Liver
 substanceOnly species APlasma   in Plasma
 substanceOnly species ARest     in Rest
-substanceOnly species AGILumen  in GILumen
 substanceOnly species AFeces    in Feces
 
 # Conjugates - Met1 - BPAG, Met2 - BPAS
@@ -163,7 +162,6 @@ ASI = 0;
 ALiver = 0;
 APlasma = 0;
 ARest = 0;
-AGILumen = 0;
 AFeces = 0;
 
 # Met1 - BPAG, Met2 - BPAS
