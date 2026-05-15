@@ -68,8 +68,8 @@ model_instances:
       CBlood: '[APlasma]'
   - id: Hu
     label: Hu 2023
-    model_path: models/oral/Bisphenols/Hu/Hu.sbml
-    param_file: models/oral/Bisphenols/Hu/Hu.params.csv
+    model_path: models/oral/Bisphenols/Karrer/Karrer.sbml
+    param_file: models/oral/Bisphenols/Karrer/Hu.params.csv
     target_mappings:
       Oral: ASt
       ABlood: APlasma
