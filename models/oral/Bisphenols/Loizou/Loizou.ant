@@ -38,14 +38,14 @@ fu = 0.965                     # 3.5% protein binding according to Edington and 
 # Absorption & hepatic metabolism
 #------------------------
 
-k0C = 0                     # L/h/kg^(-0.25)
-k0 = k0C * BW ^(-0.25)      # L/h
+k0C = 0                     # 1/h/kg^(-0.25)
+k0 = k0C * BW ^(-0.25)      # 1/h
 
-kstoC = 3.5                 # L/h/kg^(-0.25)
-ksto = kstoC * BW ^(-0.25)  # L/h
+kstoC = 3.5                 # 1/h/kg^(-0.25)
+ksto = kstoC * BW ^(-0.25)  # 1/h
 
-kabsC = 9                   # L/h/kg^(-0.25)
-kabs = kabsC * BW ^(-0.25)  # L/h
+kabsC = 9                   # 1/h/kg^(-0.25)
+kabs = kabsC * BW ^(-0.25)  # 1/h
 
 #------------------------
 # Intestinal metabolism - Michaelis-Menten Kinetic

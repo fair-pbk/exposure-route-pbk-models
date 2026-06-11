@@ -86,7 +86,6 @@ substanceOnly species ALiver   in Liver         # BPA in liver
 substanceOnly species ABlood   in Blood         # BPA in blood
 substanceOnly species ARest    in Rest          # BPA in rest
 
-substanceOnly species ALiverMet in Liver        # BPAG in Liver
 substanceOnly species AGILumenMet in GILumen    # BPAG in gut lumen (for EHR)
 substanceOnly species ABloodMet in Blood        # cumulative BPAG to systemic distribution
 substanceOnly species AFecesMet in Feces        # cumulative BPAG to feces
@@ -99,7 +98,6 @@ ALiver   = 0
 ABlood   = 0
 ARest    = 0
 
-ALiverMet = 0
 AGILumenMet = 0
 AFecesMet   = 0
 ABloodMet = 0

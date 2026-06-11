@@ -146,8 +146,6 @@ substanceOnly species AFeces    in Feces
 # Conjugates
 substanceOnly species ASIMet1 in SI         # BPA to BPAG
 substanceOnly species ASIMet2 in SI         # BPA to BPAS
-substanceOnly species ALiverMet1 in Liver   # BPA to BPAG
-substanceOnly species ALiverMet2 in Liver   # BPA to BPAS
 substanceOnly species APVMet1 in Liver
 substanceOnly species APVMet2 in Liver
 substanceOnly species AGILumenMet1 in GILumen
@@ -172,8 +170,6 @@ ASIMet1= 0;
 ASIMet2 = 0;
 APVMet1= 0;
 APVMet2 = 0;
-ALiverMet1= 0;
-ALiverMet2 = 0;
 AGILumenMet1 = 0;
 AGILumenMet2 = 0;
 APlasmaMet1 = 0;

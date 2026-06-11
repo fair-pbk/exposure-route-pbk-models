@@ -65,8 +65,8 @@ Fa = 0.15            # Fraction absorbed
 # Hepatic intrinsic clearance
 #------------------------
 
-CLintLC = 131.34        # L/h/kg Liver
-CLintL := CLintLC * VL  # L/h
+CLintLC = 131.34            # L/h/kg Liver
+CLintL := CLintLC * VL * 1  # L/h
 
 #------------------------
 # Hepatic clearance saturable metabolism
@@ -83,7 +83,6 @@ CLintB = 0
 
 Free = 0.1              # not provided, assumed 0.1
 GFR = 7.7964            # L/h
-CLUC := GFR             # L/h
 CLU := Free * GFR       # L/h
 
 #------------------------
