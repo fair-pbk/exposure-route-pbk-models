@@ -1,3 +1,4 @@
+import argparse
 import glob
 import os
 import logging
@@ -16,8 +17,7 @@ _console_handler.setFormatter(logging.Formatter('[%(levelname)s] %(message)s'))
 if not console_logger.handlers:
     console_logger.addHandler(_console_handler)
 
-def create_simulation_reports(force_recompute: bool):
-    configs = glob.glob(f'./{CONFIGS_PATH}/**/*.yaml', recursive=True)
+def create_simulation_reports(configs: list[str], force_recompute: bool):
     for file in configs:
         file_dir = os.path.dirname(file)
 
@@ -54,4 +54,14 @@ def create_simulation_reports(force_recompute: bool):
         )
 
 if __name__ == '__main__':
-    create_simulation_reports(True)
+    parser = argparse.ArgumentParser(description='Run PBK simulation scenarios.')
+    parser.add_argument('--configs', '-c', nargs='+', default=None,
+                        help='Specific YAML config file(s) to run. If not specified, all configs in CONFIGS_PATH are used.')
+    args = parser.parse_args()
+
+    if args.configs:
+        configs = args.configs
+    else:
+        configs = glob.glob(f'./{CONFIGS_PATH}/**/*.yaml', recursive=True)
+
+    create_simulation_reports(configs, True)
