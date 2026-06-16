@@ -124,8 +124,8 @@ def create_model_report(sbml_file: str):
         transfer_equations = list(generator.get_transfer_equations_as_str(RenderMode.TEXT).values())
         table = pd.DataFrame({
             'id': [ x['id'] for x in transfer_equations ],
-            'from': [ x['reactants'][0] for x in transfer_equations ],
-            'to': [ x['products'][0] for x in transfer_equations ],
+            'from': [ (x['reactants'][0] if len(x['reactants']) > 0 else '') for x in transfer_equations ],
+            'to': [ (x['products'][0] if len(x['products']) > 0 else '') for x in transfer_equations ],
             'equation': [ f"{x['equation']}" for x in transfer_equations ]
         })
         f.write(table.to_markdown(index=False))
