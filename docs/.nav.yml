@@ -6,6 +6,9 @@ nav:
       - Oral:
         - glob: "models/oral/*"
           flatten_single_child_sections: true
+      - Dermal:
+        - glob: "models/dermal/*"
+          flatten_single_child_sections: true
       - Inhalation:
         - glob: "models/inhalation/*"
           flatten_single_child_sections: true
