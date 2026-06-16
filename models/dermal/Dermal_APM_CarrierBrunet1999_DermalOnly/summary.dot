@@ -1,0 +1,84 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_Skin {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Skin",
+			label="Skin
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ASkin	[color=black,
+			fillcolor=gold,
+			href="#species-ASkin",
+			label="ASkin
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_RestBody {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-RestBody",
+			label="RestBody
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARestBody	[color=black,
+			fillcolor=gold,
+			href="#species-ARestBody",
+			label="ARestBody
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Urine {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Urine",
+			label="Urine
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AUrine	[color=black,
+			fillcolor=gold,
+			href="#species-AUrine",
+			label="AUrine
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_NonObservedExcr {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-NonObservedExcr",
+			label="NonObservedExcr
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ANonObservedExcr	[color=black,
+			fillcolor=gold,
+			href="#species-ANonObservedExcr",
+			label="ANonObservedExcr
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	ASkin -> ARestBody	[label=R_absorb,
+		minlen=1];
+	ARestBody -> AUrine	[label=R_elim_obs,
+		minlen=1];
+	ARestBody -> ANonObservedExcr	[label=R_elim_unobs,
+		minlen=2];
+}

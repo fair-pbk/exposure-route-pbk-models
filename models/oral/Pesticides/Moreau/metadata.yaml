@@ -1,5 +1,5 @@
-id: Moreau_Deltamethrin_Human
-name: Moreau_Deltamethrin
+id: Moreau_Carbaryl_Human
+name: Moreau_Carbaryl
 applicability_domain:
   chemicals: []
   species: []
@@ -171,7 +171,7 @@ parameters:
   unit: ''
 parameterisations:
 - filename: Moreau_Carbaryl.params.csv
-  model_id: Moreau_Deltamethrin_Human
+  model_id: Moreau_Carbaryl_Human
   parameters:
   - id: MW
     value: 151.165
@@ -254,7 +254,7 @@ parameterisations:
     unit: ''
     reference: ''
 - filename: Moreau_Deltamethrin.params.csv
-  model_id: Moreau_Deltamethrin_Human
+  model_id: Moreau_Carbaryl_Human
   parameters:
   - id: MW
     value: 505.21

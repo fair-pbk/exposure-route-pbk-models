@@ -1,0 +1,103 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_default_compartment {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-default_compartment",
+			label="default_compartment
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Asurfacedepot	[color=black,
+			fillcolor=gold,
+			href="#species-Asurfacedepot",
+			label="Asurfacedepot
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Blood {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Blood",
+			label="Blood
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		CBlood	[color=black,
+			fillcolor=gold,
+			href="#species-CBlood",
+			label="CBlood
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_RestBody {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-RestBody",
+			label="RestBody
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		CRestbody	[color=black,
+			fillcolor=gold,
+			href="#species-CRestbody",
+			label="CRestbody
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_SC {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-SC",
+			label="SC
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ASC	[color=black,
+			fillcolor=gold,
+			href="#species-ASC",
+			label="ASC
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_VE {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-VE",
+			label="VE
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AVE	[color=black,
+			fillcolor=gold,
+			href="#species-AVE",
+			label="AVE
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	Asurfacedepot -> ASC	[label=Jsurf,
+		minlen=1];
+	CBlood -> CRestbody	[label=Jb_rest];
+	CBlood -> AVE	[label=Jblood_to_VE];
+	CRestbody -> CBlood	[label=Jr_blood];
+	ASC -> AVE	[label=Jsc];
+	AVE -> CBlood	[label=JVE_to_blood];
+}

@@ -1,0 +1,64 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_Stratum_Corneum {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Stratum_Corneum",
+			label="Stratum_Corneum
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		C_SC	[color=black,
+			fillcolor=gold,
+			href="#species-C_SC",
+			label="C_SC
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Viable_Epidermis {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Viable_Epidermis",
+			label="Viable_Epidermis
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		C_VE	[color=black,
+			fillcolor=gold,
+			href="#species-C_VE",
+			label="C_VE
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Dermis {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Dermis",
+			label="Dermis
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		C_Dermis	[color=black,
+			fillcolor=gold,
+			href="#species-C_Dermis",
+			label="C_Dermis
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	C_SC -> C_VE	[label=J_sc_ve,
+		minlen=1];
+	C_VE -> C_Dermis	[label=J_ve_de,
+		minlen=1];
+}
