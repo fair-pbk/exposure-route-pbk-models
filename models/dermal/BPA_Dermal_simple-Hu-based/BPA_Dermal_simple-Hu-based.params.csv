@@ -20,8 +20,5 @@ BPA_Dermal_PBK_Hu_layered_PARAM,P_follicle,0.001055,dm/h,Follicle permeability c
 BPA_Dermal_PBK_Hu_layered_PARAM,PCFO,1.0,dimensionless,follicle/SSD partition term,
 BPA_Dermal_PBK_Hu_layered_PARAM,PCRestbody,1.2,dimensionless,tissue-to-blood partition coefficient (lumped Rest of Body),
 BPA_Dermal_PBK_Hu_layered_PARAM,CLUrine,10.0,dimensionless,renal clearance rate,
-BPA_Dermal_PBK_Hu_layered_PARAM,DOSE_d,1000.0,ng/kg,total amount applied to SSD,
-BPA_Dermal_PBK_Hu_layered_PARAM,add_period,,h,dosing parameter,
-BPA_Dermal_PBK_Hu_layered_PARAM,exp_period,,h,dosing parameter,
 BPA_Dermal_PBK_Hu_layered_PARAM,Free,1.0,,,
 BPA_Dermal_PBK_Hu_layered_PARAM,SC_dx,,cm,Thickness,

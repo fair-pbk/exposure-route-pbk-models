@@ -1,20 +1,14 @@
-
-model Husoy2023_Dermal
-
-#Created: Monika Witala, February 2026 (version 3)
-#Checked:
+//Created: Monika Witala, February 2026 (version 3)
+//Checked:
 
 model Husoy2023_Dermal
 
 model notes ```
-
- PFOA PBK (Husøy et al. 2023):
- followed Husøy values when creating (Human model, dermal only exp, simplified)
- based on approach in the paper, computations basen on Husøy R code
- Model description https://doi.org/10.1016/j.envres.2023.117341
-
+PFOA PBK (Husøy et al. 2023):
+followed Husøy values when creating (Human model, dermal only exp, simplified)
+based on approach in the paper, computations basen on Husøy R code
+Model description https://doi.org/10.1016/j.envres.2023.117341
 ```
-
 
 // ============================================================
 // Compartments and Species
@@ -25,9 +19,7 @@ compartment RestBody;
 compartment Kidney;
 compartment Urine;
 
-
 // Species
-
 substanceOnly species ASkin in Skin
 substanceOnly species APlasma in Plasma
 substanceOnly species ARestbody in RestBody
@@ -41,9 +33,9 @@ BW = 70;                        // kg, male average BW
 QOP = 390;                      // L/h (plasma cardiac output)
 
 // Flow fractions
-QSkin = 0.05 * QOP;             // L/h
-QKidney = 0.175 * QOP;          // L/h
-QRest := QOP - QSkin - QKidney; // L/h (mass balance preserved)
+QSkin := 0.05 * QOP;             // L/h
+QKidney := 0.175 * QOP;          // L/h
+QRest := QOP - QSkin - QKidney;  // L/h (mass balance preserved)
 
 // Volumes (scaled to BW)
 VSkinC = 2.5;                   // L
@@ -89,24 +81,12 @@ kurine := kurinec * BW^(-0.25); // L/h
 // ============================================================
 // Dermal Physiology & Exposure
 // ============================================================
-DermConc = 0.5;     // µg/cm²
 SkinArea = 972;     // cm²
 AbsPFOA = 0.016;    // absorbed fraction
-Tinput = 24;        // h exposure duration
-Tinterval = 24;     // h interval
-
-DermalDose := DermConc * SkinArea * AbsPFOA;  // µg/day
-DOSEskin := DermalDose / Tinput;              // µg/h
-
-DoseOn := piecewise(1, time - Tinterval*floor(time/Tinterval) < Tinput, 0);
-Input2 := DOSEskin * DoseOn;
 
 // ============================================================
 // Reactions (Arrow notation)
 // ============================================================
-
-// Dermal absorption
-J0: -> ASkin; Input2;
 
 // Skin ↔ Plasma
 J1: ASkin -> APlasma; QSkin * (CVskin - Ctotal);

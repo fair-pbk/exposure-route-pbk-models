@@ -1,0 +1,102 @@
+
+id: BPA
+label: BPA
+model_instances:
+#  - id: Hu
+#    label: Hu 2023
+#    model_path: models/dermal/BPA_Dermal_simple-Hu-based/BPA_Dermal_simple-Hu-based.sbml
+#    param_file: models/dermal/BPA_Dermal_simple-Hu-based/BPA_Dermal_simple-Hu-based.params.csv
+#    target_mappings:
+#      Dermal: AWELL
+#      APlasma: Aplasma
+#      CPlasma: '[Aplasma]'
+  - id: CarrierBrunet
+    label: Carrier Brunet 1999
+    model_path: models/dermal/Dermal_APM_CarrierBrunet1999_DermalOnly/Dermal_APM_CarrierBrunet1999_DermalOnly.sbml
+    param_file: models/dermal/Dermal_APM_CarrierBrunet1999_DermalOnly/Dermal_APM_CarrierBrunet1999_DermalOnly.params.csv
+    target_mappings:
+      Dermal: ASkin
+      APlasma: ARestBody
+      CPlasma: '[ARestBody]'
+#  - id: Karrer
+#    label: Karrer 2018
+#    model_path: models/dermal/dermal-simple-model-Karrer-based/dermal-simple-model-Karrer-based.sbml
+#    param_file: models/dermal/dermal-simple-model-Karrer-based/dermal-simple-model-Karrer-based.params.csv
+#    target_mappings:
+#      Dermal: SSD
+#      APlasma: APlasma
+#      CPlasma: '[APlasma]'
+  - id: Quindroit
+    label: Quindroit 2019
+    model_path: models/dermal/dermal-simple-Quindroit-based/dermal-simple-Quindroit-based.sbml
+    param_file: models/dermal/dermal-simple-Quindroit-based/dermal-simple-Quindroit-based.params.csv
+    target_mappings:
+      Dermal: Qsurf
+      APlasma: Cart
+      CPlasma: '[Cart]'
+  - id: Timchalk
+    label: Timchalk 2002
+    model_path: models/dermal/dermal-simple-Timchalk-based/dermal-simple-Timchalk-based.sbml
+    param_file: models/dermal/dermal-simple-Timchalk-based/dermal-simple-Timchalk-based.params.csv
+    target_mappings:
+      Dermal: ASkin
+      APlasma: AArterialBlood
+      CPlasma: '[AArterialBlood]'
+#  - id: Tonnerlier
+#    label: Tonnerlier 2012
+#    model_path: models/dermal/dermal-simple-Tonnelier-based/dermal-simple-Tonnelier-based.sbml
+#    param_file: models/dermal/dermal-simple-Tonnelier-based/dermal-simple-Tonnelier-based.params.csv
+#    target_mappings:
+#      Dermal: ASkin
+#      APlasma: _
+#      CPlasma: 'CBlood'
+  - id: TorneroVelez
+    label: Tornero Velez 2012
+    model_path: models/dermal/dermal-simple-Tornero-Velez-based/dermal-simple-Tornero-Velez-based.sbml
+    param_file: models/dermal/dermal-simple-Tornero-Velez-based/dermal-simple-Tornero-Velez-based.params.csv
+    target_mappings:
+      Dermal: Asurfacedepot
+      APlasma: CRestbody
+      CPlasma: '[CRestbody]'
+#  - id: Dancik
+#    label: Dancik 2013
+#    model_path: models/dermal/dermal-steady-state-Dancik-based/dermal-steady-state-Dancik-based.sbml
+#    param_file: models/dermal/dermal-steady-state-Dancik-based/dermal-steady-state-Dancik-based.params.csv
+#    target_mappings:
+#      Dermal: C_SC
+#      APlasma: C_dermis
+#      CPlasma: '[C_dermis]'
+  - id: Husoy
+    label: Husoy 2023
+    model_path: models/dermal/PFOA_dermal-simple-model-Husoy-based/PFOA_dermal-simple-model-Husoy-based.sbml
+    param_file: models/dermal/PFOA_dermal-simple-model-Husoy-based/PFOA_dermal-simple-model-Husoy-based.params.csv
+    target_mappings:
+      Dermal: ASkin
+      APlasma: APlasma
+      CPlasma: '[APlasma]'
+
+scenarios:
+  - id: dermal_scenario_1
+    label: Dermal Scenario 1
+    duration: 10
+    evaluation_resolution: 24
+    time_unit: DAY
+    amount_unit: MILLIGRAMS
+    molar_mass: 228.3
+    dosing_events:
+      - type: repeated_continuous
+        target: Dermal
+        amount: 1000
+        time: 0
+        interval: 1
+        duration: 8
+    outputs:
+      - id: Dermal
+        label: Dermal exposure
+        output: Dermal exposure
+      - id: APlasma
+        label: Amount in Plasma
+        output: APlasma
+      - id: CPlasma
+        label: Concentration in Plasma
+        output: CPlasma

@@ -2,55 +2,51 @@
 model Dermal_PBK_Tonnelier_Simplified()
 
 model notes ```
-
- Tonnelier et al. 2012: generic PBTK model that,
- based on in vitro liver metabolism data, minimal renal
- excretion and a chronic exposure, is able to assess the
- bioaccumulative potential of a chemical.
- Model description https://doi:10.1007/s00204-011-0768-0
-
+Tonnelier et al. 2012: generic PBTK model that,
+based on in vitro liver metabolism data, minimal renal
+excretion and a chronic exposure, is able to assess the
+bioaccumulative potential of a chemical.
+Model description https://doi:10.1007/s00204-011-0768-0
 ```
-// Compartments
-compartment Skin = 1;
-compartment Blood = 5;
-compartment Liver = 1.5;
 
-// Species
-species ASkin in Skin;
-species CBlood in Blood;
-species CLiver in Liver;
+  // Compartments
+  compartment Skin = 1;
+  compartment Blood = 5;
+  compartment Liver = 1.5;
+  compartment Elimination = 1;
 
-// Parameters
-DOSE_derm = 0.01;      // dermal input rate
-k_abs = 0.5;           // dermal absorption rate (h^-1)
+  // Species
+  species ASkin in Skin;
+  species CBlood in Blood;
+  species CLiver in Liver;
 
-Qhepatic = 90;              // hepatic blood flow (L/h)
-VBlood = 5;             // systemic blood volume
-VLiver = 1.5;           // liver volume
+  // Parameters
+  k_abs = 0.5;           // dermal absorption rate (h^-1)
 
-CL_R = 0.2;            // renal clearance (L/h)
-CL_int = 1.0;           // intrinsic hepatic clearance
-fu = 0.1;              // fraction unbound
+  Qhepatic = 90;              // hepatic blood flow (L/h)
+  VBlood = 5;             // systemic blood volume
+  VLiver = 1.5;           // liver volume
 
-// Hepatic clearance
-CL_H := (Qhepatic * fu * CL_int) / (Qhepatic + fu * CL_int);
+  CL_R = 0.2;            // renal clearance (L/h)
+  CL_int = 1.0;           // intrinsic hepatic clearance
+  fu = 0.1;              // fraction unbound
 
-// Reactions
+  // Hepatic clearance
+  CL_H := (Qhepatic * fu * CL_int) / (Qhepatic + fu * CL_int);
 
-// Dermal exposure
-R1: -> ASkin ; DOSE_derm
+  // Reactions
 
-// Absorption into blood
-R2: ASkin -> CBlood ; k_abs*ASkin
+  // Absorption into blood
+  R2: ASkin -> CBlood ; k_abs*ASkin
 
-// Blood ↔ Liver exchange
-R3: CBlood -> CLiver ; Qhepatic*CBlood/VBlood
-R4: CLiver -> CBlood ; Qhepatic*CLiver/VLiver
+  // Blood ↔ Liver exchange
+  R3: CBlood -> CLiver ; Qhepatic*CBlood/VBlood
+  R4: CLiver -> CBlood ; Qhepatic*CLiver/VLiver
 
-// Hepatic metabolism
-R5: CLiver -> ; CL_H*CLiver/VLiver
+  // Hepatic metabolism
+  R5: CLiver -> ; CL_H*CLiver/VLiver
 
-// Renal clearance
-R6: CBlood -> ; CL_R*CBlood/VBlood
+  // Renal clearance
+  R6: CBlood -> ; CL_R*CBlood/VBlood
 
 end

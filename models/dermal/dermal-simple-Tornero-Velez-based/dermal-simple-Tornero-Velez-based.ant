@@ -1,16 +1,11 @@
-
 model permethrin_dermal_minPBK()
 
 model notes ```
-
- Tornero-Velez et al. 2012, substance is permethrin (cis, and trans): generic PBTK model that,
- based provisional model of permethrin disposition with structures for managing
- oral, dermal, and inhalation routes of exposure.. Here we focus on only dermal.
- Model description https://doi:10.1093/toxsci/kfs236
-
-
+Tornero-Velez et al. 2012, substance is permethrin (cis, and trans): generic PBTK model that,
+based provisional model of permethrin disposition with structures for managing
+oral, dermal, and inhalation routes of exposure.. Here we focus on only dermal.
+Model description https://doi:10.1093/toxsci/kfs236
 ```
-
 
 // =====================
 // COMPARTMENTS (L)
@@ -21,7 +16,6 @@ compartment RestBody = 64.5;    // BW - blood
 // Skin subcompartments (derived, Skin =  ca 2.6 in paper )
 compartment SC = 0.26;  //10% of skin in paper
 compartment VE = 0.52;  //20% of skin
-
 
 // =====================
 // SPECIES (amounts, µmol)

@@ -1,8 +1,8 @@
 element_id,sbml_type,element_name,unit,annotation_type,qualifier,URI,remark
 substanceUnits,document,model substances unit,,,,,
 extentUnits,document,model extent unit,,,,,
-timeUnits,document,model time unit,,,,,
-volumeUnits,document,model volume unit,,,,,
+timeUnits,document,model time unit,h,,,,
+volumeUnits,document,model volume unit,L,,,,
 Dermal_PBK_Tonnelier_Simplified,model,,,rdf,BQB_HAS_PROPERTY,,
 Dermal_PBK_Tonnelier_Simplified,model,,,rdf,BQB_HAS_TAXON,,
 Skin,compartment,,,rdf,BQM_IS,,

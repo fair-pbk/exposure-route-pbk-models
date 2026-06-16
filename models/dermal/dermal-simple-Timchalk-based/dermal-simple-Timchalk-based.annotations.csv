@@ -1,6 +1,6 @@
 element_id,sbml_type,element_name,unit,annotation_type,qualifier,URI,remark
 substanceUnits,document,model substances unit,mg,,,,
-extentUnits,document,model extent unit,,,,,
+extentUnits,document,model extent unit,mg,,,,
 timeUnits,document,model time unit,h,,,,
 volumeUnits,document,model volume unit,L,,,,
 Dermal_CPF_Timchalk2002_Simplified,model,,,rdf,BQB_HAS_PROPERTY,http://purl.obolibrary.org/obo/CHEBI_34631,

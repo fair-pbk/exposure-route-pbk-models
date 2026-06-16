@@ -1,12 +1,9 @@
-
 model Dermal_Diffusion_Dancik2013
 
 model notes ```
-
- Dancik et al. 2013: transient model of chemical penetration through the stratum corneum,
- viable epidermis and dermis. Based on equations in the paper.
- Model description https://doi:10.1016/j.addr.2012.01.006
-
+Dancik et al. 2013: transient model of chemical penetration through the stratum corneum,
+viable epidermis and dermis. Based on equations in the paper.
+Model description https://doi:10.1016/j.addr.2012.01.006
 ```
 
 // Compartments (skin layers)
@@ -14,19 +11,15 @@ compartment Stratum_Corneum = 1;    // Stratum corneum
 compartment Viable_Epidermis = 1;    // Viable epidermis
 compartment Dermis = 1;    // Dermis
 
-
 // Species (antimony exposure concentration), concentrationof chemical in:
 species C_SC in Stratum_Corneum;
 species C_VE in Viable_Epidermis;
 species C_Dermis in Dermis;
 
-
 // Initial conditions
 C_SC = Dose_surface;
 C_VE = 0;
 C_Dermis = 0;
-
-
 
 // Diffusion fluxes between layers
 J_sc_ve: C_SC -> C_VE; P_SC_VE*(C_SC - C_VE);
@@ -34,7 +27,6 @@ J_ve_de: C_VE -> C_Dermis; P_VE_Dermis*(C_VE - C_Dermis);
 
 // Dermal clearance to systemic circulation
 J_de_blood: C_Dermis -> ; k_clear*C_Dermis;
-
 
 // Parameters
 Dose_surface = 1;        // initial dermal load
@@ -53,10 +45,9 @@ layer_thick_VE = 0.01;
 K_SC_w = 10;
 K_VE_w = 1;
 
-
 // Permeabilities
-P_SC_VE = (D_SC*K_SC_w)/layer_thick_SC;
-P_VE_Dermis = (D_VE*K_VE_w)/layer_thick_VE;
+P_SC_VE := (D_SC*K_SC_w)/layer_thick_SC;
+P_VE_Dermis := (D_VE*K_VE_w)/layer_thick_VE;
 
 // Systemic clearance from dermis
 k_clear = 0.001;

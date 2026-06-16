@@ -1,5 +1,4 @@
 idModelInstance,Parameter,Value,Unit,Description,Reference
-Dermal_PBK_Quindroit_Simplified_PARAM,DOSE_derm,0.01,,,
 Dermal_PBK_Quindroit_Simplified_PARAM,k_ds,0.0025,,,
 Dermal_PBK_Quindroit_Simplified_PARAM,k_dv,0.25,,,
 Dermal_PBK_Quindroit_Simplified_PARAM,Q_total,300.0,,,

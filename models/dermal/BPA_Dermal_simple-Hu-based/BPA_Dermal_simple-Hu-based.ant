@@ -4,12 +4,10 @@
 model BPA_Dermal_PBK_Hu_layered
 
 model notes ```
-
  BPA (BPS; BPF, BPAF bisphenols adjustements) PBK (Hu et al. 2023):
  followed Hu values and BPA when creating (Human model, dermal only exp)
  based on approach in the paper, computations based on Hu R code
  Model description http://dx.doi.org/10.1016/j.scitotenv.2023.161639
-
 ```
 
   /////////////////////////////////////////////////////////
@@ -45,18 +43,13 @@ model notes ```
   pskin  = 2.15                // [-] VE/blood (also used for follicle/blood)
 
   P_follicle = 10.55e-4        // [dm/h]
-  PCFO = 1                      // [-] follicle/SSD partition term
+  PCFO = 1                     // [-] follicle/SSD partition term
 
   // Distribution
   PCRestbody = 1.2                  // [-]
 
   // Excretion (minimal sink, no urine species)
   CLUrine = 10                  // [L/h]
-
-  // Dosing schedule (Hu-like)
-  DOSE_d = 1000                  // total amount applied to SSD (adjust); divide by MW to have in (nmol/kg/d)
-  add_period = 1/60             // [h]
-  exp_period = 13/6             // [h]
 
   Free = 1                      // plasma free fraction (value justfor testing now)
 
@@ -101,12 +94,13 @@ model notes ```
   /////////////////////////////////////////////////////////
   // 3) Compartments and species (species are ONLY reactions-driven?)
   /////////////////////////////////////////////////////////
-  compartment SurfaceDepot = VSSD
-  compartment ExposedVE = VexposedVE
-  compartment Follicle = Vfollicle
-  compartment UnexposedSkin = Vskin_unexp
-  compartment Plasma = Vplasma
-  compartment Restbody = Vrestbody
+  compartment SurfaceDepot := VSSD
+  compartment ExposedVE := VexposedVE
+  compartment Follicle := Vfollicle
+  compartment UnexposedSkin := Vskin_unexp
+  compartment Plasma := Vplasma
+  compartment Restbody := Vrestbody
+  compartment Urine = 1
 
   // Species
   substanceOnly species AWELL in SurfaceDepot        // surface depot amount
@@ -115,6 +109,7 @@ model notes ```
   substanceOnly species Askin_unexp in UnexposedSkin // unexposed perfused skin amount
   substanceOnly species Aplasma in Plasma
   substanceOnly species ARestbody in Restbody
+  substanceOnly species AUrine in Urine
 
   // Initial amounts
   AWELL = 0
@@ -123,6 +118,7 @@ model notes ```
   Askin_unexp = 0
   Aplasma = 0
   ARestbody = 0
+  AUrine = 0
 
   /////////////////////////////////////////////////////////
   // 4) SC interior node variables (NOT species)
@@ -131,10 +127,8 @@ model notes ```
   CSC06 = 0; CSC07 = 0; CSC08 = 0; CSC09 = 0
 
   /////////////////////////////////////////////////////////
-  // 5) Dosing window + concentrations
+  // 5) Concentrations
   /////////////////////////////////////////////////////////
-  ExposureOn := piecewise(1, time <= exp_period, 0)
-  Rdose := piecewise(DOSE_d/add_period, time <= add_period, 0)
 
   Cplasma := Aplasma / Vplasma
 
@@ -160,8 +154,6 @@ model notes ```
 
   JFO := P_follicle * (CSSD - CFO/PCFO)
 
-  
-
   /////////////////////////////////////////////////////////
   // 7) SC node ODEs (rate rules on variables), 00- SSD boundary/ 10 VE boundary
   /////////////////////////////////////////////////////////
@@ -178,9 +170,6 @@ model notes ```
   /////////////////////////////////////////////////////////
   // 8) Reactions (ALL species changes written in arrows)
   /////////////////////////////////////////////////////////
-
-  // Dose into surface depot
-  -> AWELL; Rdose
 
   // Surface depot to exposed skin (net through SC)
   AWELL -> AVE; JSC10*Area_exposed_skin*(1 - Area_exposed_follicle)
@@ -205,5 +194,6 @@ model notes ```
   ARestbody   -> Aplasma; Qrest * (ARestbody / Vrestbody) / PCRestbody
 
   // Excretion
-  Aplasma -> ; CLUrine * (Aplasma / Vplasma)
+  Aplasma -> AUrine; CLUrine * (Aplasma / Vplasma)
+
 end
