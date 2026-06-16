@@ -1,0 +1,11 @@
+idModelInstance,Parameter,Value,Unit,Description,Reference
+Dermal_Diffusion_Dancik2013_PARAM,Dose_surface,1.0,,,
+Dermal_Diffusion_Dancik2013_PARAM,P_SC_VE,,,,
+Dermal_Diffusion_Dancik2013_PARAM,P_VE_Dermis,,,,
+Dermal_Diffusion_Dancik2013_PARAM,k_clear,0.001,,,
+Dermal_Diffusion_Dancik2013_PARAM,D_SC,1e-08,,,
+Dermal_Diffusion_Dancik2013_PARAM,D_VE,1e-06,,,
+Dermal_Diffusion_Dancik2013_PARAM,layer_thick_SC,0.002,,,
+Dermal_Diffusion_Dancik2013_PARAM,layer_thick_VE,0.01,,,
+Dermal_Diffusion_Dancik2013_PARAM,K_SC_w,10.0,,,
+Dermal_Diffusion_Dancik2013_PARAM,K_VE_w,1.0,,,

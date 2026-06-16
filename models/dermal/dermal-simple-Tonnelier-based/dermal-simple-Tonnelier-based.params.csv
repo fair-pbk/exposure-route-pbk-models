@@ -1,0 +1,9 @@
+idModelInstance,Parameter,Value,Unit,Description,Reference
+Dermal_PBK_Tonnelier_Simplified_PARAM,DOSE_derm,0.01,,,
+Dermal_PBK_Tonnelier_Simplified_PARAM,k_abs,0.5,,,
+Dermal_PBK_Tonnelier_Simplified_PARAM,Qhepatic,90.0,,,
+Dermal_PBK_Tonnelier_Simplified_PARAM,VBlood,5.0,,,
+Dermal_PBK_Tonnelier_Simplified_PARAM,VLiver,1.5,,,
+Dermal_PBK_Tonnelier_Simplified_PARAM,CL_R,0.2,,,
+Dermal_PBK_Tonnelier_Simplified_PARAM,CL_int,1.0,,,
+Dermal_PBK_Tonnelier_Simplified_PARAM,fu,0.1,,,

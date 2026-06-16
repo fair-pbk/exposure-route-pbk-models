@@ -1,0 +1,108 @@
+
+model permethrin_dermal_minPBK()
+
+model notes ```
+
+ Tornero-Velez et al. 2012, substance is permethrin (cis, and trans): generic PBTK model that,
+ based provisional model of permethrin disposition with structures for managing
+ oral, dermal, and inhalation routes of exposure.. Here we focus on only dermal.
+ Model description https://doi:10.1093/toxsci/kfs236
+
+
+```
+
+
+// =====================
+// COMPARTMENTS (L)
+// =====================
+compartment Blood = 5.5;        // from Table 1
+compartment RestBody = 64.5;    // BW - blood
+
+// Skin subcompartments (derived, Skin =  ca 2.6 in paper )
+compartment SC = 0.26;  //10% of skin in paper
+compartment VE = 0.52;  //20% of skin
+
+
+// =====================
+// SPECIES (amounts, µmol)
+// =====================
+
+// --- Dermal (amount-based) ---
+species Asurfacedepot;   // amount on skin surface
+species ASC in SC;             // stratum corneum
+species AVE in VE;             // viable epidermis
+
+// --- Systemic ---
+species CBlood in Blood;
+species CRestbody in RestBody;
+
+// =====================
+// PARAMETERS
+// =====================
+
+// Dermal transfer (empirical, Tornero-Velez)
+Kd_SC = 0.0015;     // surface → SC (h-1)
+Kd_VE = 0.01;       // SC → VE (h-1)
+
+// Blood flows
+CO = 398;           // cardiac output (L/h)
+Qskin = 20;         // ca 5% of CO → skin blood flow (L/h)
+
+// Lumped partition coefficient (derived)
+Prestbody = 50;     // cis-permethrin, estimad
+
+// Clearance (human cis, Table 2)
+CL = 1.86;          // L/h/kg
+
+// =====================
+// Derived concentrations
+// =====================
+
+C_Arterial_blood := CBlood / Blood;
+C_VE := AVE / VE;
+
+// =====================
+// DERMAL ABSORPTION
+// =====================
+
+// Surface → SC
+Jsurf: Asurfacedepot -> ASC; Kd_SC * Asurfacedepot;
+
+// SC → VE
+Jsc: ASC -> AVE; Kd_VE * ASC;
+
+// Blood → VE (arterial inflow)
+Jblood_to_VE: CBlood -> AVE; Qskin * C_Arterial_blood;
+
+// VE → Blood (venous outflow)
+JVE_to_blood: AVE -> CBlood; Qskin * (C_VE / Prestbody);
+
+// =====================
+// SYSTEMIC DISTRIBUTION
+// =====================
+
+// Blood ↔ RestBody 
+Jb_rest: CBlood -> CRestbody; CO * (CBlood/Blood - CRestbody/(Prestbody*RestBody));
+
+Jr_blood: CRestbody -> CBlood; CO * (CRestbody/(Prestbody*RestBody) - CBlood/Blood);
+
+
+// =====================
+// CLEARANCE (SIMPLIFIED)
+// =====================
+Metabolism: CBlood -> ; CL * CBlood/Blood;
+
+
+// =====================
+// INITIAL CONDITIONS
+// =====================
+
+Asurfacedepot = 100;   // µmol applied dose
+
+ASC = 0;
+AVE = 0;
+
+CBlood = 0;
+CRestbody = 0;
+
+end

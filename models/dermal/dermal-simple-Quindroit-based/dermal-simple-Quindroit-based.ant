@@ -1,0 +1,61 @@
+
+model Dermal_PBK_Quindroit_Simplified()
+
+model notes ```
+
+ Quindroit et al. 2019: generic PBTK model that, here dermal exposure only
+ minimal excretion
+ Model description https://doi:
+
+```
+
+
+  // Compartments (volumes in liters)
+  compartment SkinSurface = 1;     // SkinSurface, StratumCorneum: conceptual 'compartments' for dermal layers (set to 1 L for modeling convenience)  
+  compartment StratumCorneum = 1;
+  compartment Skin = 2;            // vascularized skin (L), volume of the vascularized skin under exposure (~2 L for ~10% BSA exposure)
+  compartment ArterialBlood = 1.5; // arterial blood (L)
+  compartment VenousBlood = 3.5;   // venous blood (L)
+  compartment RestOfBody = 39;     // lumped rest-of-body (L)
+
+  // Species (amounts in mg)
+  species Qsurf in SkinSurface;    // amount on skin surface (mg)
+  species Qsc in StratumCorneum;   // amount in stratum corneum (mg)
+  species Cskin in Skin;           // amount in skin tissue (mg)
+  species Cart in ArterialBlood;   // amount in arterial blood (mg)
+  species Cven in VenousBlood;     // amount in venous blood (mg)
+  species Crest in RestOfBody;     // amount in rest-of-body (mg)
+
+  // Parameters
+  // Exposure and skin absorption rates (from Quindroit 2019;Table 2, footnote e[1], via Tornero-Velez 2012 for permethrin)
+  DOSE_derm = 0.01;   // constant dermal input rate (mg/h)
+  k_ds = 0.0025;      // surface -> SC diffusion rate (1/h)
+  k_dv = 0.25;        // SC -> skin uptake rate (1/h)
+
+  // Physiological flows and partitioning (approximate values for human, 70 kg)
+  Q_total = 300;       // total cardiac output (L/h)
+  F_skin = 15;         // skin blood flow (L/h) ~5% of cardiac output
+  F_rest := Q_total - F_skin;  // rest-of-body blood flow (L/h)
+  PC_skin = 12.0;      // skin:blood partition coefficient (unitless, high for lipophilic permethrin)
+  PC_rest = 10.0;      // rest-of-body:blood partition coefficient (unitless, moderate for combined tissues)
+  CL_urine = 0.2;      // urinary clearance of parent compound (L/h)
+
+  // Reactions (mass-balance processes)
+  // Dermal dosing onto skin surface
+  R1: -> Qsurf; DOSE_derm;
+
+  // Transdermal absorption (diffusion through skin layers)
+  R2: Qsurf -> Qsc;  k_ds * Qsurf;
+  R3: Qsc -> Cskin;  k_dv * Qsc;
+
+  // Blood-tissue distribution (perfusion-limited)
+  R4: Cart -> Qskin;  F_skin * Cart / ArterialBlood;        
+  R5: Qskin -> Cven;  F_skin * Qskin / (Skin * PC_skin);
+  R6: Cart -> Qrest;  F_rest * Cart / ArterialBlood;
+  R7: Qrest -> Cven;  F_rest * Qrest / (RestOfBody * PC_rest);
+  R8: Cven -> Cart;  Q_total * Cven / VenousBlood;   // circulation (venous return to arterial)
+
+  // Elimination from blood (urinary excretion of parent)
+  R9: Cven -> ;  CL_urine * Cven / VenousBlood;
+
+end

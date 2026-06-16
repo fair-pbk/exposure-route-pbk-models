@@ -1,0 +1,38 @@
+
+model Dermal_APM_CarrierBrunet1999_DermalOnly()
+
+model notes ```
+
+ Carrier and Brunet-based 1999: generic kinetic model
+ Here only dermal exposure
+ Model description https://10.1093/toxsci/47.1.23
+
+```
+
+  // Compartments (volume in L)
+  compartment Skin = 1;
+  compartment RestBody = 1;
+  compartment Urine = 1;
+  compartment NonObservedExcr = 1;
+
+  // Species (amounts in mg)
+  species ASkin in Skin;
+  species ARestBody in RestBody;
+  species AUrine in Urine;
+  species ANonObservedExcr in NonObservedExcr;
+
+  // Parameters (from Carrier & Brunet 1999)
+  f_abs = 0.161;      // fraction of dermal dose absorbed (unitless)
+  k_abs_bl = 0.1561;  // absorption rate from skin to blood (1/h)
+  k_o = 0.0162;       // observed elimination rate (urine) (1/h)
+  k_n = 0.0050;       // non-observed elimination rate (1/h)
+  Dose_rate = 0.2;    // external dermal dose application rate (mg/h)
+  exposure_duration = 5;  // duration of dermal exposure (h)
+
+  // Reactions (mass transfer processes)
+  R_input: -> ASkin; piecewise(f_abs * Dose_rate, time < exposure_duration, 0);
+  R_absorb: ASkin -> ARestBody; k_abs_bl * ASkin;
+  R_elim_obs: ARestBody -> AUrine; k_o * ARestBody;
+  R_elim_unobs: ARestBody -> ANonObservedExcr; k_n * ARestBody;
+
+end

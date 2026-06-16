@@ -1,0 +1,56 @@
+
+model Dermal_CPF_Timchalk2002_Simplified()
+
+#Created: Monika Witala, May-Juni 2026
+#Checked:
+
+model notes ```
+
+ Timchalk et al. 2002: generic PBTK model, simplified
+ dermal intake only, the code is based on publication description only
+ Model description https://10.1093/toxsci/66.1.34
+
+```
+
+
+ // Compartments (volume in liters)
+  compartment Skin = 4;
+  compartment ArterialBlood = 1.5;
+  compartment VenousBlood = 3.5;
+  compartment RestOfBody = 39;
+  compartment Elimination = 1;
+
+  // Species (mass amounts in mg)
+  species ASkin in Skin;
+  species AArterialBlood in ArterialBlood;
+  species AVenousBlood in VenousBlood;
+  species ARestOfBody in RestOfBody;
+  species Aurine in Elimination;  // if this species fits best for this - author has compartments 3 and liver connected to elimination..
+
+  // Initial conditions
+  ASkin = 0;
+  AArterialBlood = 0;
+  AVenousBlood = 0;
+  ARestOfBody = 0;
+  Aurine = 0;
+
+  // Physiological parameters (Timchalk et al., 2002)
+  Qtotal = 347.9;            // total cardiac output (L/h)
+  Qskin = 0.058 * Qtotal;    // skin blood flow (L/h, ~5.8% of CO)
+  Qrest := Qtotal - Qskin;   // rest-of-body blood flow (L/h)
+  SkinSurfArea = 100;        // exposed skin surface area (cm^2)
+  Kp = 4.81e-5;              // skin permeability coefficient (cm/h)
+  Pskin = 6.0;               // skin:blood partition coefficient (unitless)
+  Prest = 10.0;              // rest-of-body:blood partition coefficient (unitless)
+  Kelim = 0.017;             // elimination rate constant (1/h)
+
+  // Reactions (mass transfer and elimination)
+  R_input: -> ASkin; piecewise(Kp * SkinSurfArea, time < 24, 0);
+  R_skin_in: AArterialBlood -> ASkin; Qskin * AArterialBlood / ArterialBlood;
+  R_skin_out: ASkin -> AVenousBlood; Qskin * ASkin / (Skin * Pskin);
+  R_rest_in: AArterialBlood -> ARestOfBody; Qrest * AArterialBlood / ArterialBlood;
+  R_rest_out: ARestOfBody -> AVenousBlood; Qrest * ARestOfBody / (RestOfBody * Prest);
+  R_recirculate: AVenousBlood -> AArterialBlood; Qtotal * AVenousBlood / VenousBlood;
+  R_clear: AVenousBlood -> Aurine; Kelim * AVenousBlood;
+
+end

@@ -1,0 +1,134 @@
+
+model BPA_Dermal_Simplified_Karrer
+
+ //Created: Monika Witala, February 2026 
+ //Checked:
+
+
+model notes ```
+
+ BPA (bisphenols adjustements) PBK (Karrer et al. 2018):
+ followed Karrer values and BPA when creating (Human model, dermal only exp)
+ based on approach in the paper, computations basen on Karrer code
+ Model description https://doi.org/10.1289/EHP2739
+
+```
+
+
+  ///////////////////////////////////////////////////////////
+  // Body Size & Physiology
+  // 83–85% of Body is treated as perfused soft tissue approx
+  ////////////////////////////////////////////////////////////
+
+  BW = 70;        // kg
+  
+    // ---- Physiology (FAIR naming) ----
+  VPlasmaC = 0.0428;  //L/kg
+
+  VSkinC = 0.06; // L/kg, male 
+  
+  VPlasma := VPlasmaC * BW;      // L
+  VSkin   := VSkinC * BW;        // L
+  VRestbody := 0.84*BW - VSkin - VPlasma;  //Lumped Rest-of-body volume L
+  
+  QSkinC = 0.044;         // [-] fraction to skin, tableC2 Karrer 
+  
+  QC = 6.5 * 60;        // L/h unit, here male value otherwise scaled acc. ICRP (Karrer: QCC * 60)
+  QSkin   := QSkinC * QC;       // L/h
+  QRest = QC - QSkin        // L/h (rest)
+  
+
+  ////////////////////////////////////////////////////////////
+  // Compartments (Karrer values)
+  ////////////////////////////////////////////////////////////
+
+  compartment SurfaceDepot;  SurfaceDepot = 1  //not a typical compartment but to delay penetration..not tissue so treat as 1-volume container?
+  compartment Skin; Skin = VSkin 
+  compartment Plasma; Plasma = VPlasma  
+  compartment Restbody; Restbody = VRestbody 
+
+  ////////////////////////////////////////////////////////////
+  // Species
+  ////////////////////////////////////////////////////////////
+
+  substanceOnly species SSD in SurfaceDepot;
+  substanceOnly species ASkin in Skin;
+  substanceOnly species APlasma in Plasma;
+  substanceOnly species ARestbody in Restbody;
+
+  ////////////////////////////////////////////////////////////
+  // Parameters (Karrer adult)
+  ////////////////////////////////////////////////////////////
+
+  MW = 228.28;       // molecular weight BPA
+
+  QCP = 390;       //   L/h (plasma cardiac output)
+  //QRest := QCP - QSkin;    // QCP - QSkin
+
+  PSkin = 2.15;  // partition skin/blood
+  PRest = 2.7;  // 1
+  
+
+  kurine = 0.021;   // 0.060 * 70^(-0.25)
+
+  ////////////////////////////////////////////////////////////
+  // Dermal exposure
+  ////////////////////////////////////////////////////////////
+
+  DOSE_Skin = 500.0 // MW ;     // per kg per day (ng/kg/d) to (nmol/kg/d), test with value as TP in Karrer
+  AbsBisphenol = 0.2;  // absorption fraction to skin (extent in Karrer is Fabs?)
+  aHL = 6.0;  // h, half-life of dermal penetration as in Karrer
+  t0 = 0;     // h, start of dermal dosing
+  period = 24;   // h, end of dermal dosing
+  //t1 = t0 + period;  //h,  time of dosing occurance? reaped for distinct samples
+
+  kpen := ln(2)/aHL;
+
+  onwin := piecewise(1, (time >= t0) && (time <= t0 + period), 0);
+
+  Rate := onwin * (((DOSE_Skin / MW) * BW) / period) * AbsBisphenol;
+
+  ////////////////////////////////////////////////////////////
+  // Initial conditions
+  ////////////////////////////////////////////////////////////
+
+  SSD = 0;
+  ASkin = 0;
+  APlasma = 0;
+  ARestbody = 0;
+
+
+  ////////////////////////////////////////////////////////////
+  // Concentrations (nmol/h)
+  ////////////////////////////////////////////////////////////
+
+  CPlasma := APlasma / Plasma; //concentration of substance in the arterial plasma
+  CSkin := ASkin / VSkin;
+  // CVskin := ASkin / (VSkin * PSkin);
+  CRest := ARestbody / VRestbody;
+
+  ////////////////////////////////////////////////////////////
+  // Reactions
+  ////////////////////////////////////////////////////////////
+
+  R_DOSE_Skin:  -> SSD;  Rate;
+
+  R_pen_surfDepo:   SSD -> ASkin;  kpen * SSD; // skin penetration
+
+  R_skin_to_plasma: ASkin -> APlasma; QSkin * (CSkin/PSkin); // Skin → Plasma
+
+  R_plasma_to_skin: APlasma -> ASkin; QSkin * CPlasma; // Plasma → Skin
+
+  R_rest_to_plasma: ARestbody -> APlasma; QRest * (CRest/PRest);
+
+  R_plasma_to_rest: APlasma -> ARestbody; QRest * CPlasma;
+
+  
+  R_elim:  APlasma -> ;  kurine * CPlasma;
+
+   // Other declarations:
+  var CPlasma, CSkin, CRest, DOSE_Skin;
+  const Plasma, Skin, QSkin, QRest, PSkin;
+
+  
+end

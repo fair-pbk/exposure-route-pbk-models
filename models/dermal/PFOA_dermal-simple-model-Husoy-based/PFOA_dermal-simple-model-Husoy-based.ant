@@ -1,0 +1,132 @@
+
+model Husoy2023_Dermal
+
+#Created: Monika Witala, February 2026 (version 3)
+#Checked:
+
+model Husoy2023_Dermal
+
+model notes ```
+
+ PFOA PBK (Husøy et al. 2023):
+ followed Husøy values when creating (Human model, dermal only exp, simplified)
+ based on approach in the paper, computations basen on Husøy R code
+ Model description https://doi.org/10.1016/j.envres.2023.117341
+
+```
+
+
+// ============================================================
+// Compartments and Species
+// ============================================================
+compartment Skin;
+compartment Plasma;
+compartment RestBody;
+compartment Kidney;
+compartment Urine;
+
+
+// Species
+
+substanceOnly species ASkin in Skin
+substanceOnly species APlasma in Plasma
+substanceOnly species ARestbody in RestBody
+substanceOnly species AKidney in Kidney
+substanceOnly species AUrine in Urine
+
+// ============================================================
+// Physiological Parameters (Husøy-based)
+// ============================================================
+BW = 70;                        // kg, male average BW
+QOP = 390;                      // L/h (plasma cardiac output)
+
+// Flow fractions
+QSkin = 0.05 * QOP;             // L/h
+QKidney = 0.175 * QOP;          // L/h
+QRest := QOP - QSkin - QKidney; // L/h (mass balance preserved)
+
+// Volumes (scaled to BW)
+VSkinC = 2.5;                   // L
+VPlasmaC = 3.0;                 // L
+VRestC = 65;                    // L
+VKidneyC = 0.28;                // L  (~0.004*70 kg)
+
+VSkin := VSkinC * (BW / 70);
+VPlasma := VPlasmaC * (BW / 70);
+VRest := VRestC * (BW / 70);
+VKidney := VKidneyC * (BW / 70);
+
+// ============================================================
+// Concentration definitions
+// ============================================================
+Cskin := ASkin / VSkin;
+Ctotal := APlasma / VPlasma;
+CRest := ARestbody / VRest;
+CKidney := AKidney / VKidney;
+
+// Partition-corrected venous concentrations
+CVskin := ASkin / (VSkin * PSkin);
+CVRest := ARestbody / (VRest * PRest);
+CVKidney := AKidney / (VKidney * PKidney);
+
+// ============================================================
+// Partition coefficients & binding
+// ============================================================
+PSkin = 0.1;
+PRest = 1.0;
+PKidney = 1.05;
+
+Free = 0.02;
+FreeR = 1.0;
+FreeK := Free / PKidney;
+
+// ============================================================
+// Minimal Urinary Clearance (Husøy-based)
+// ============================================================
+kurinec = 0.00000183;           // L/h/kg
+kurine := kurinec * BW^(-0.25); // L/h
+
+// ============================================================
+// Dermal Physiology & Exposure
+// ============================================================
+DermConc = 0.5;     // µg/cm²
+SkinArea = 972;     // cm²
+AbsPFOA = 0.016;    // absorbed fraction
+Tinput = 24;        // h exposure duration
+Tinterval = 24;     // h interval
+
+DermalDose := DermConc * SkinArea * AbsPFOA;  // µg/day
+DOSEskin := DermalDose / Tinput;              // µg/h
+
+DoseOn := piecewise(1, time - Tinterval*floor(time/Tinterval) < Tinput, 0);
+Input2 := DOSEskin * DoseOn;
+
+// ============================================================
+// Reactions (Arrow notation)
+// ============================================================
+
+// Dermal absorption
+J0: -> ASkin; Input2;
+
+// Skin ↔ Plasma
+J1: ASkin -> APlasma; QSkin * (CVskin - Ctotal);
+
+// Plasma ↔ RestBody
+J2: APlasma -> ARestbody; QRest * (Free * Ctotal - FreeR * CRest);
+
+// Plasma ↔ Kidney
+J3: APlasma -> AKidney; QKidney * (Free * Ctotal - FreeK * CKidney);
+
+// Kidney → Urine
+J4: AKidney -> AUrine; kurine * CKidney;
+
+// ============================================================
+// Initial Conditions
+// ============================================================
+ASkin = 0;
+APlasma = 0;
+ARestbody = 0;
+AKidney = 0;
+AUrine = 0;
+
+end

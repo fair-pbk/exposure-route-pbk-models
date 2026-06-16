@@ -1,0 +1,209 @@
+//Created: Monika Witala, March 2026 (this version)
+//Checked:
+
+model BPA_Dermal_PBK_Hu_layered
+
+model notes ```
+
+ BPA (BPS; BPF, BPAF bisphenols adjustements) PBK (Hu et al. 2023):
+ followed Hu values and BPA when creating (Human model, dermal only exp)
+ based on approach in the paper, computations based on Hu R code
+ Model description http://dx.doi.org/10.1016/j.scitotenv.2023.161639
+
+```
+
+  /////////////////////////////////////////////////////////
+  // 1) Parameters, body physiology
+  /////////////////////////////////////////////////////////
+  BW = 70
+  BSA = 190                     // [dm2]
+
+  // Physiology / volumes
+  VplasmaC = 0.0411             // [L/kg]
+  VSkinC   = 0.038              // [L/kg]
+  VBody    = 1                  // [L/kg] simple
+
+  // Flows
+  QCC    = 5.6                  // [L/min]
+  QSkinC = 0.05                 // [-] fraction to skin
+
+  // Exposure geometry
+  Area_exposed_skin = 20/100    // [dm2] 0.2 dm2 = 20 cm2
+  Area_exposed_follicle = 0.005 // [-] follicle fraction of exposed area
+
+  // Skin thicknesses (to be harmonised?, male data to start)
+  Thickness_epidermis_finger = 545     // [um]
+  Thickness_skin_finger = 1200 + 545   // [um]
+  Thickness_SC = 185/100000            // [dm]
+  Thickness_VE := (Thickness_epidermis_finger - 185)/100000  // [dm]
+
+  // Transport / partition (set to Hu BPA values to start with)
+  D_SC = 17.28e-9              // [dm2/h]
+  u1   = 5.7e-5                // [dm/h]
+  PCSC   = 64.6                // [-] SC/SSD
+  PCSCVE = 195.12              // [-] SC/VE
+  pskin  = 2.15                // [-] VE/blood (also used for follicle/blood)
+
+  P_follicle = 10.55e-4        // [dm/h]
+  PCFO = 1                      // [-] follicle/SSD partition term
+
+  // Distribution
+  PCRestbody = 1.2                  // [-]
+
+  // Excretion (minimal sink, no urine species)
+  CLUrine = 10                  // [L/h]
+
+  // Dosing schedule (Hu-like)
+  DOSE_d = 1000                  // total amount applied to SSD (adjust); divide by MW to have in (nmol/kg/d)
+  add_period = 1/60             // [h]
+  exp_period = 13/6             // [h]
+
+  Free = 1                      // plasma free fraction (value justfor testing now)
+
+  /////////////////////////////////////////////////////////
+  // 2) Derived constants
+  /////////////////////////////////////////////////////////
+  const Vplasma := VplasmaC*BW
+  const Vskin   := VSkinC*BW
+  const Vbody_total := VBody*BW
+  const Vrestbody := Vbody_total - Vplasma - Vskin
+
+  const frac_exposed := Area_exposed_skin / BSA
+
+  // Exposed layer volumes (dm2*dm = L)
+  const VexposedSC := Area_exposed_skin * Thickness_SC
+  const VexposedVE := Area_exposed_skin * Thickness_VE
+
+  // Follicle volume (thickness approach- to be harmonised?)
+  const Thick_follicle := (388/560)*Thickness_skin_finger/100000
+  const Vfollicle := Area_exposed_skin * Area_exposed_follicle * Thick_follicle
+
+  // Unexposed perfused skin volume
+  const Vskin_unexp := Vskin - VexposedSC - VexposedVE - Vfollicle
+
+  // SSD "effective volume" (as in Hu PBK R-code)
+  const VSSD := Area_exposed_skin * 0.01
+
+  // Flows
+  const QC := QCC * 60                   // [L/h]
+  const Qskin := QSkinC*QC             // [L/h]
+  const Qskin_exposed := Qskin * frac_exposed
+  const Qskin_unexp := Qskin * (1 - frac_exposed)
+  const Qrest := QC - Qskin
+
+  // Hu split of exposed skin flow
+  const QFO := 0.25*Qskin_exposed
+  const QVE := 0.75*Qskin_exposed
+
+  // SC discretization
+  const SC_dx = Thickness_SC/10
+
+  /////////////////////////////////////////////////////////
+  // 3) Compartments and species (species are ONLY reactions-driven?)
+  /////////////////////////////////////////////////////////
+  compartment SurfaceDepot = VSSD
+  compartment ExposedVE = VexposedVE
+  compartment Follicle = Vfollicle
+  compartment UnexposedSkin = Vskin_unexp
+  compartment Plasma = Vplasma
+  compartment Restbody = Vrestbody
+
+  // Species
+  substanceOnly species AWELL in SurfaceDepot        // surface depot amount
+  substanceOnly species AVE in ExposedVE             // viable epidermis amount
+  substanceOnly species AFO in Follicle              // follicle amount
+  substanceOnly species Askin_unexp in UnexposedSkin // unexposed perfused skin amount
+  substanceOnly species Aplasma in Plasma
+  substanceOnly species ARestbody in Restbody
+
+  // Initial amounts
+  AWELL = 0
+  AVE = 0
+  AFO = 0
+  Askin_unexp = 0
+  Aplasma = 0
+  ARestbody = 0
+
+  /////////////////////////////////////////////////////////
+  // 4) SC interior node variables (NOT species)
+  /////////////////////////////////////////////////////////
+  CSC01 = 0; CSC02 = 0; CSC03 = 0; CSC04 = 0; CSC05 = 0
+  CSC06 = 0; CSC07 = 0; CSC08 = 0; CSC09 = 0
+
+  /////////////////////////////////////////////////////////
+  // 5) Dosing window + concentrations
+  /////////////////////////////////////////////////////////
+  ExposureOn := piecewise(1, time <= exp_period, 0)
+  Rdose := piecewise(DOSE_d/add_period, time <= add_period, 0)
+
+  Cplasma := Aplasma / Vplasma
+
+  // SSD -all layes creating exposure well, concentration (surface depot)
+  CSSD := (AWELL / VSSD)   //* ExposureOn
+
+  // Tissue concentrations
+  CVE := AVE / VexposedVE
+  CFO := AFO / Vfollicle
+
+  // SC boundary nodes from Hu boundary conditions
+  CSC00 := PCSC * CSSD
+  CSC10 := PCSCVE * CVE
+
+  CvVE := CVE / pskin
+  CvFO := CFO / pskin
+
+  /////////////////////////////////////////////////////////
+  // 6) Fluxes (following Hu)
+  /////////////////////////////////////////////////////////
+  JSC00 := -D_SC * (CSC01 - CSC00) / SC_dx - u1*CSC00
+  JSC10 := -D_SC * (CSC10 - CSC09) / SC_dx - u1*CSC10
+
+  JFO := P_follicle * (CSSD - CFO/PCFO)
+
+  
+
+  /////////////////////////////////////////////////////////
+  // 7) SC node ODEs (rate rules on variables), 00- SSD boundary/ 10 VE boundary
+  /////////////////////////////////////////////////////////
+  CSC01' = D_SC*(CSC00 - 2*CSC01 + CSC02)/(SC_dx^2) + u1*(CSC02 - CSC00)/(2*SC_dx)
+  CSC02' = D_SC*(CSC01 - 2*CSC02 + CSC03)/(SC_dx^2) + u1*(CSC03 - CSC01)/(2*SC_dx)
+  CSC03' = D_SC*(CSC02 - 2*CSC03 + CSC04)/(SC_dx^2) + u1*(CSC04 - CSC02)/(2*SC_dx)
+  CSC04' = D_SC*(CSC03 - 2*CSC04 + CSC05)/(SC_dx^2) + u1*(CSC05 - CSC03)/(2*SC_dx)
+  CSC05' = D_SC*(CSC04 - 2*CSC05 + CSC06)/(SC_dx^2) + u1*(CSC06 - CSC04)/(2*SC_dx)
+  CSC06' = D_SC*(CSC05 - 2*CSC06 + CSC07)/(SC_dx^2) + u1*(CSC07 - CSC05)/(2*SC_dx)
+  CSC07' = D_SC*(CSC06 - 2*CSC07 + CSC08)/(SC_dx^2) + u1*(CSC08 - CSC06)/(2*SC_dx)
+  CSC08' = D_SC*(CSC07 - 2*CSC08 + CSC09)/(SC_dx^2) + u1*(CSC09 - CSC07)/(2*SC_dx)
+  CSC09' = D_SC*(CSC08 - 2*CSC09 + CSC10)/(SC_dx^2) + u1*(CSC10 - CSC08)/(2*SC_dx)
+
+  /////////////////////////////////////////////////////////
+  // 8) Reactions (ALL species changes written in arrows)
+  /////////////////////////////////////////////////////////
+
+  // Dose into surface depot
+  -> AWELL; Rdose
+
+  // Surface depot to exposed skin (net through SC)
+  AWELL -> AVE; JSC10*Area_exposed_skin*(1 - Area_exposed_follicle)
+
+  // Surface depot to follicle
+  AWELL -> AFO; JFO*Area_exposed_skin*Area_exposed_follicle
+
+  // Blood <-> Exposed VE
+  Aplasma -> AVE; QVE * Cplasma
+  AVE -> Aplasma; QVE * (CVE / pskin)
+
+  // Blood <-> Follicle
+  Aplasma -> AFO; QFO * Cplasma
+  AFO -> Aplasma; QFO * (CFO / pskin)
+
+  // Blood <-> Unexposed skin
+  Aplasma -> Askin_unexp; Qskin_unexp * Cplasma
+  Askin_unexp -> Aplasma; Qskin_unexp * (Askin_unexp / Vskin_unexp) / pskin
+
+  // Blood <-> Restbody
+  Aplasma -> ARestbody; Qrest * (Aplasma / Vplasma)
+  ARestbody   -> Aplasma; Qrest * (ARestbody / Vrestbody) / PCRestbody
+
+  // Excretion
+  Aplasma -> ; CLUrine * (Aplasma / Vplasma)
+end

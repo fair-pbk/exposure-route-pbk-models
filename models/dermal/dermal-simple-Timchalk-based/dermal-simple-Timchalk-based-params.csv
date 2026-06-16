@@ -1,0 +1,8 @@
+idModelInstance,Parameter,Value,Unit,Description,Reference
+Dermal_CPF_Timchalk2002_Simplified_PARAM,Qtotal,347.9,L/h,Total cardiac output,
+Dermal_CPF_Timchalk2002_Simplified_PARAM,Qskin,,L/h,skin blood flow,
+Dermal_CPF_Timchalk2002_Simplified_PARAM,SkinSurfArea,100.0,cm^2,Skin Surface Area,
+Dermal_CPF_Timchalk2002_Simplified_PARAM,Kp,4.81e-05,cm/h,Skin permeability coeff,
+Dermal_CPF_Timchalk2002_Simplified_PARAM,Pskin,6.0,dimensionless,skin:blood partition coefficient (unitless),
+Dermal_CPF_Timchalk2002_Simplified_PARAM,Prest,10.0,dimensionless,rest-of-body:blood partition coefficient,
+Dermal_CPF_Timchalk2002_Simplified_PARAM,Kelim,0.017,/h,elimination rate constant,
