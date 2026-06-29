@@ -1,30 +1,58 @@
 model Dermal_PBK_Quindroit_Simplified()
 
+ //Created: Monika Witala, May (v1)/June (v2) 2026 
+ //Checked:
+
 model notes ```
+
  Quindroit et al. 2019: generic PBTK model that, here dermal exposure only
- minimal excretion
- Model description https://doi:
+ minimal excretion. The model uses quantities in mg, the concentrations in mg/L, 
+ the volumes in L, and the blood flows in L/h.
+ Skin exposure method is based on Tornero-Velez et al. 2012, model
+ Model description https://doi.org/10.1016/j.toxlet.2019.05.007
+
 ```
 
+  //----------------------------------------------------------------------------------------
   // Compartments (volumes in liters)
-  compartment SkinSurface = 1;     // SkinSurface, StratumCorneum: conceptual 'compartments' for dermal layers (set to 1 L for modeling convenience)  
-  compartment StratumCorneum = 1;
-  compartment Skin = 2;            // vascularized skin (L), volume of the vascularized skin under exposure (~2 L for ~10% BSA exposure)
-  compartment ArterialBlood = 1.5; // arterial blood (L)
-  compartment VenousBlood = 3.5;   // venous blood (L)
-  compartment RestOfBody = 39;     // lumped rest-of-body (L)
+  //-------------------------------------------------------------------------------------------
+  compartment SkinSurface;     // SkinSurface, StratumCorneum: conceptual 'compartments' for dermal layers (set to 1 L for modeling convenience)  
+  compartment StratumCorneum;
+  compartment Skin;            // vascularized skin (L), volume of the vascularized skin under exposure (~2 L for ~10% BSA exposure)
+  compartment ArterialBlood; // arterial blood (L)
+  compartment VenousBlood;   // venous blood (L)
+  compartment UrinaryTrack; 
+  compartment RestOfBody;     // lumped rest-of-body (L)
 
-  // Species (amounts in mg)
-  species Qsurf in SkinSurface;    // amount on skin surface (mg)
-  species Qsc in StratumCorneum;   // amount in stratum corneum (mg)
-  species Cskin in Skin;           // amount in skin tissue (mg)
-  species Cart in ArterialBlood;   // amount in arterial blood (mg)
-  species Cven in VenousBlood;     // amount in venous blood (mg)
-  species Crest in RestOfBody;     // amount in rest-of-body (mg)
-  species CUrine in Urine          // amount in urine (mg)
+  // Initialization
+ 
+  SkinSurface = 1;     // SkinSurface, StratumCorneum: conceptual 'compartments' for dermal layers (set to 1 L for modeling convenience)  
+  StratumCorneum = 1;
+  Skin = 2;            // vascularized skin (L), volume of the vascularized skin under exposure (~2 L for ~10% BSA exposure)
+  ArterialBlood = 1.5; // arterial blood (L)
+  VenousBlood = 3.5;   // venous blood (L)
+  RestOfBody = 39;     // lumped rest-of-body (L)
+  UrinaryTrack = 1; 
+ 
 
+
+  //-------------------------------------------------------------------------------------
+  // Species (amounts=quanties in mg)
+  //--------------------------------------------------------------------------------
+  substanceOnly Asurf in SkinSurface;    // amount on skin surface (mg), Qsurf is amount (=quantity) in paper
+  substanceOnly Asc in StratumCorneum;   // amount in stratum corneum (mg)
+  substanceOnly Askin in Skin;           // amount in skin tissue (mg)
+  substanceOnly Aart in ArterialBlood;   // amount in arterial blood (mg)
+  substanceOnly Aven in VenousBlood;     // amount in venous blood (mg)
+  substanceOnly Arest in RestOfBody;     // amount in rest-of-body (mg)
+  substanceOnly Aurine  in UrinaryTrack;   // cumulative amount excreted in urine
+
+  //--------------------------------------------------------------------------------------------------
   // Parameters
+  //---------------------------------------------------------------------------------------------
+  
   // Exposure and skin absorption rates (from Quindroit 2019;Table 2, footnote e[1], via Tornero-Velez 2012 for permethrin)
+  
   k_ds = 0.0025;      // surface -> SC diffusion rate (1/h)
   k_dv = 0.25;        // SC -> skin uptake rate (1/h)
 
@@ -36,20 +64,31 @@ model notes ```
   PC_rest = 10.0;      // rest-of-body:blood partition coefficient (unitless, moderate for combined tissues)
   CL_urine = 0.2;      // urinary clearance of parent compound (L/h)
 
+
+  // Derived concentration terms (not state variables, mg/L)
+  Cart := Aart / ArterialBlood;    // arterial blood concentration (mg/L)
+  Cven := Aven / VenousBlood;      // venous blood concentration (mg/L)
+  Cskin := Askin / Skin;           // skin tissue concentration (mg/L)
+  Crest := Arest / RestOfBody;     // rest-of-body tissue concentration (mg/L)
+
+
+  //----------------------------------------------------------------------------------------------------
   // Reactions (mass-balance processes)
+  //-------------------------------------------------------------------------------------------------
+ 
 
   // Transdermal absorption (diffusion through skin layers)
-  R2: Qsurf -> Qsc;  k_ds * Qsurf;
-  R3: Qsc -> Cskin;  k_dv * Qsc;
+  R1: Asc -> Askin; k_dv * Asc; // from SC to Skin 
+  R2: Aart -> Askin; F_skin * (Aart / ArterialBlood);     //R skin in, arterial inflow to Skin, Skin tissue exchange (F_skin) acc.to(Quindroit eq. 3)
 
   // Blood-tissue distribution (perfusion-limited)
-  R4: Cart -> Qskin;  F_skin * Cart / ArterialBlood;
-  R5: Qskin -> Cven;  F_skin * Qskin / (Skin * PC_skin);
-  R6: Cart -> Qrest;  F_rest * Cart / ArterialBlood;
-  R7: Qrest -> Cven;  F_rest * Qrest / (RestOfBody * PC_rest);
-  R8: Cven -> Cart;  Q_total * Cven / VenousBlood;   // circulation (venous return to arterial)
+     
+  R3: Aart -> Askin; F_skin * (Aart / ArterialBlood); 
+  R4: Askin -> Aven; F_skin * (Askin / (Skin * PC_skin));  
+  R5: Aart -> Arest; F_rest * (Aart / ArterialBlood); 
+  R6: Aven -> Aart; Q_total * (Aven / VenousBlood);    // circulation (venous return to arterial)
 
   // Elimination from blood (urinary excretion of parent)
-  R9: Cven -> CUrine;  CL_urine * Cven / VenousBlood;
+  R7: Aven -> Aurine; CL_urine * (Aven / VenousBlood);
 
 end

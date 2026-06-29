@@ -1,0 +1,192 @@
+
+model Dermal_PBK_Wei_Simplified()
+
+// Created: Monika Witala,  June v1 2026
+// Checked: 
+
+model notes ```
+ This is simpfified dermal-only model based on Wei et al. 2013 model;
+ Human PBK, For permethrin
+ Notes: In this implementation: Surface load on skin is in ug/cm2; SkinArea is converted from m2 to cm2
+ TransferableFraction and Cumulative dermal absorption Cum_Dermal_Abs_Fraction are entered as fractions
+ In Weis model ug is converted to mg using ug_to_mg = 0.001 
+ Model description https://doi:10.1038/jes.2013.12.
+
+```
+
+//-----------------------------------------------
+// Compartments
+//-----------------------------------------------
+
+compartment Skin;
+compartment Blood;  //model has, ven blood, Art blood and Blood as three compartments with blood
+compartment RestOfBody;
+compartment UrinaryExcretion;
+
+//----------------------------------------------
+// Species 
+//--------------------------------------------------
+
+substanceOnly species ASkin in Skin;
+substanceOnly species Blood in Blood;
+substanceOnly species ARest in RestOfBody;
+substanceOnly species AUrine in UrinaryExcretion;
+
+
+//------------------------------------------------
+// volumes
+//------------------------------------------------
+BW = 70  // kg, standard adult body weight assumption
+
+
+VBloodC = 0.070;                    // L/kg BW, blood volume fraction
+VSkinC = 0.051;                    // L/kg BW, skin volume fraction
+
+VBlood := VBloodC * BW;             // L
+VSkin := VSkinC * BW;              // L
+
+// Lumped rest-of-body volume here
+// This combines all non-skin, non-blood tissues into one compartment.
+
+VRest := (1 - VBloodC - VSkinC) * BW; // L
+
+VUrine = 1;                      // L, bookkeeping volume for cumulative urinary output
+
+
+
+//------------------------------------------------
+// Cardiac output, flows (ei et al. express cardiac output as L/h/kg^0.75)
+// tissue flows as fractions of cardiac output
+//------------------------------------------------
+
+
+QCC = 14.10;                     // L/h/kg^0.75, cardiac output coefficient
+QC := QCC * BW^0.75;       // L/h, Q_Cardiac
+ 
+QSkinC = 0.086;                    // unitless, fraction of cardiac output to skin
+
+QSkin := QSkinC * QC;        // L/h
+QRest := QC - QSkin;       // L/h, lumped flow to rest of body
+
+
+/------------------------------------------------
+// Partition coefficients, using Weis values
+// Note: PS = 5.60 is used here
+// as a simplified approximation because the rest compartment is
+// dominated by slowly perfused tissue in the original PBPK model.
+//------------------------------------------------
+
+
+PSkinBlood = 5.60;               // unitless, skin:blood partition coefficient
+PRestBlood = 5.60;               // unitless, lumped rest-of-body:blood partition coefficient
+
+
+//------------------------------------------------
+// Dermal exposure parameters; 
+// Note: Wei et al use "derm_rate = SL * SA * TF * CABF / exp_time"
+//------------------------------------------------
+
+
+SurfLoad = 35;                         // ug/cm2, surface loading; residual treatment median
+SkinExposedArea = 0.999;                 // m2, exposed dermal (skin) area; male example here as in paper
+SkinArea := SkinExposedArea * 10000;           // cm2
+
+Trasferable_Fraction = 0.10;                       // unitless, transferable surface-to-dermal fraction
+Cum_Dermal_Abs_Fraction = 0.015;                    // unitless, cumulative dermal absorption fraction
+exp_time = 14;                   // h, exposure duration
+
+ug_to_mg = 0.001;                // mg/ug
+
+// derm_rate := SurfLoad * SkinArea * TransferableFraction * Cum_Dermal_Abs_Fraction * ug_to_mg / exp_time;  // mg/h
+// comment out dermal input rows 100, 132
+
+//------------------------------------------------
+// Urinary excretion parameter, simpfified
+//------------------------------------------------
+//
+// Note: In the full model, urinary excretion is linked to metabolized
+// permethrin. In this simplified model, Kur is used as a lumped
+// urinary metabolite appearance rate from blood.
+
+K_ur = 0.100;                    // 1/h, urinary excretion rate constant as in the paper by Wei
+
+
+//------------------------------------------------
+// Concentrations
+//------------------------------------------------
+
+CSkin := ASkin / VSkin;          // mg/L
+CBlood := ABlood / VBlood;      // mg/L
+CRest := ARest / VRest;          // mg/L
+
+
+//------------------------------------------------
+// Dermal input
+//------------------------------------------------
+//
+// Dermal input is added to the skin compartment as derm_rate.
+// This follows Wei et al.'s empirical dermal absorption-rate
+// formulation based on surface loading, exposed area, transfer
+// fraction and cumulative dermal absorption.
+
+// R00: -> ASkin;   derm_rate;
+
+
+//------------------------------------------------
+// Skin-blood exchange
+//------------------------------------------------
+//
+// Notes: Flow-limited exchange structure:
+// blood to skin depends on arterial/mixed blood concentration;
+// skin to blood depends on skin venous concentration,
+// approximated as CSkin / PSkinBlood.
+
+R1: ABlood -> ASkin;   QSkin * CBlood;
+R2: ASkin -> ABlood;   QSkin * (CSkin / PSkinBlood);
+
+
+//------------------------------------------------
+// Blood-rest-of-body exchange
+//------------------------------------------------
+//
+// Note: RestOfBody is a lumped tissue compartment.
+// This replaces Wei et al.'s fat, brain, liver, slowly perfused
+// and rapidly perfused tissue compartments.
+
+R3: ABlood -> ARest; QRest * CBlood;
+
+R4: ARest -> ABloodn  QRest * (CRest / PRestBlood);
+
+
+//------------------------------------------------
+// Urinary excretion
+//------------------------------------------------
+//
+// Note: Simplified urinary metabolite-equivalent output.
+// This is not a liver metabolism module.
+// It is a reduced representation of urinary metabolite appearance.
+
+R5: ABlood -> AUrine;  K_ur * ABlood;
+
+
+//------------------------------------------------
+// Initial conditions
+//------------------------------------------------
+
+ASkin = 0;
+ABlood = 0;
+ARest = 0;
+AUrine = 0;
+
+//--------------------------------------------------------
+// Compartments, initialization 
+//----------------------------------------------------------
+
+Skin = VSkin;
+Blood = VBlood;
+RestOfBody = VRest;
+UrinaryExcretion= VUrine;
+
+
+
+end

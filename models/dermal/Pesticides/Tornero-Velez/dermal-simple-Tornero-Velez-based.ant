@@ -1,102 +1,141 @@
+
 model permethrin_dermal_minPBK()
+//Created: Monika Witala, March (v1) - June (v2) 2026 
+//Checked:
+
 
 model notes ```
-Tornero-Velez et al. 2012, substance is permethrin (cis, and trans): generic PBTK model that,
-based provisional model of permethrin disposition with structures for managing
-oral, dermal, and inhalation routes of exposure.. Here we focus on only dermal.
-Model description https://doi:10.1093/toxsci/kfs236
+
+ Tornero-Velez et al. 2012, substance is permethrin (cis, and trans): generic PBTK model that,
+ based provisional model of permethrin disposition with structures for managing
+ oral, dermal, and inhalation routes of exposure.. Here we focus on only dermal.
+ Units = A amounts(umol) ; V volumes (L); Q flows(L/h); C concentration (umol/L); K (1/h)
+ Model description https://doi:10.1093/toxsci/kfs236
+
+
 ```
 
-// =====================
-// COMPARTMENTS (L)
-// =====================
-compartment Blood = 5.5;        // from Table 1
-compartment RestBody = 64.5;    // BW - blood
 
-// Skin subcompartments (derived, Skin =  ca 2.6 in paper )
-compartment SC = 0.26;  //10% of skin in paper
-compartment VE = 0.52;  //20% of skin
+// --------------------------------------------------------------------------------
+// COMPARTMENTS (L), subcompartments
+// -----------------------------------------------------------------------------------------
+     
+compartment SkinSurface;     // exposed surface Area
+compartment StratumCorneum;
+compartment ViableEpidermis;            // vascularized skin (L), volume of the vascularized skin under exposure (~2 L for ~10% BSA exposure)
+compartment ArterialBlood; // arterial blood (L)
+compartment VenousBlood;   // venous blood (L)
+compartment UrinaryExcretion; 
+compartment RestOfBody;     // lumped rest-of-body (L)
 
-// =====================
-// SPECIES (amounts, µmol)
-// =====================
 
-// --- Dermal (amount-based) ---
-species Asurfacedepot;   // amount on skin surface
-species ASC in SC;             // stratum corneum
-species AVE in VE;             // viable epidermis
+// Initialization (derived, Skin =  ca 2.6 in paper )
+SkinSurface = 1.0;  //L (conceptual depot for applied dose on skin surface)
+StratumCorneum = 0.26;  //10% of skin in paper
+ViableEpidermis = 0.52;  //20% of skin
+ArterialBlood = 1.5;   // L (arterial blood; fraction of total ~5.5 L blood volume)
+VenousBlood = 4.0;   // L (venous blood; remainder of total blood volume)
+RestOfBody = 64.5;    // BW - blood
 
-// --- Systemic ---
-species CBlood in Blood;
-species CRestbody in RestBody;
+UrinaryExcretion = 1;
+
+
+//-------------------------------------------------------------------------------------
+// Species (amounts= umol in paper)
+//--------------------------------------------------------------------------------
+substanceOnly Asurfacedepot in SkinSurface;    // amount of permethrin on skin surface (µmol) 
+substanceOnly Asc in StratumCorneum;   // amount in stratum corneum 
+substanceOnly Askin in ViableEpidermis;           // amount in skin tissue 
+substanceOnly Aart in ArterialBlood;   // amount in arterial blood 
+substanceOnly Aven in VenousBlood;     // amount in venous blood 
+substanceOnly Arest in RestOfBody;     // amount in rest-of-body 
+substanceOnly Aurine  in UrinaryExcretion;   // amount excreted in urine
+
+// Dermal uptake removed from ant-file
+
 
 // =====================
 // PARAMETERS
 // =====================
 
-// Dermal transfer (empirical, Tornero-Velez)
-Kd_SC = 0.0015;     // surface → SC (h-1)
+// Dermal transfer param (empirical, Tornero-Velez)
+Kd_SC = 0.0015;     // surface → SC (h-1), diffusion rate const
 Kd_VE = 0.01;       // SC → VE (h-1)
 
-// Blood flows
-CO = 398;           // cardiac output (L/h)
+// – Physiological flows (human, 70 kg):
+CO = 398;           // cardiac output (L/h), total cardiac output (approx. 5.7 L/h/kg * 70 kg, per human data in Tornero-Velez Table 1)
 Qskin = 20;         // ca 5% of CO → skin blood flow (L/h)
 
+Qrest := CO - Qskin;  // L/h, rest-of-body blood flow (remaining cardiac output to other tissues)
+
 // Lumped partition coefficient (derived)
-Prestbody = 50;     // cis-permethrin, estimad
+PC_VEblood = 50; // Viable epidermis:blood partition coefficient (assumed high for lipophilic cis-permethrin, ~estimated)
+Prestbody = 50;     // Rest-of-body:blood partition coefficient (lumped tissue average; here using same value as skin for cis-PM)
+BW        = 70;     // kg, body weight (human)
 
 // Clearance (human cis, Table 2)
-CL = 1.86;          // L/h/kg
+CL_hep    = 1.86;   // L/h/kg, hepatic clearance of cis-permethrin (from Tornero-Velez 2012, Table 2, human in vitro)
+CL_total := CL_hep * BW;  // L/h, scaled systemic clearance (for 70 kg human) ~130 L/h
+
+
 
 // =====================
 // Derived concentrations
 // =====================
 
-C_Arterial_blood := CBlood / Blood;
-C_VE := AVE / VE;
+// Derived concentrations (for clarity, not independent state variables)
+CArt := Aart / ArterialBlood;       // arterial blood concentration (µmol/L)
+Cven := Aven / VenousBlood;         // venous blood concentration (µmol/L)
+C_VE := Askin / ViableEpidermis;  // viable epidermis tissue concentration (µmol/L)
+C_rest := Arest / RestOfBody;     // rest-of-body tissue concentration (µmol/L)
+    
+
 
 // =====================
-// DERMAL ABSORPTION
+// DERMAL ABSORPTION, reactions
 // =====================
 
-// Surface → SC
-Jsurf: Asurfacedepot -> ASC; Kd_SC * Asurfacedepot;
+// Surface → SC; part of unput dosing so remove
+//J00: Asurfacedepot -> Asc; Kd_SC * Asurfacedepot; // (A.15/A.17) uptake from skin surface to SC (1st order with Kd_SC)
 
 // SC → VE
-Jsc: ASC -> AVE; Kd_VE * ASC;
+J1: Asc -> Askin; Kd_VE * Asc;  // (A.16) transfer from SC to viable epidermis (VE) at rate Kd_VE
 
-// Blood → VE (arterial inflow)
-Jblood_to_VE: CBlood -> AVE; Qskin * C_Arterial_blood;
+// ArtBlood → VE (arterial inflow)
+J2: Aart -> Askin; Qskin * (Aart / ArterialBlood); //arterial inflow to skin (VE) (Q_skin * C_a)
 
-// VE → Blood (venous outflow)
-JVE_to_blood: AVE -> CBlood; Qskin * (C_VE / Prestbody);
-
-// =====================
-// SYSTEMIC DISTRIBUTION
-// =====================
-
-// Blood ↔ RestBody 
-Jb_rest: CBlood -> CRestbody; CO * (CBlood/Blood - CRestbody/(Prestbody*RestBody));
-
-Jr_blood: CRestbody -> CBlood; CO * (CRestbody/(Prestbody*RestBody) - CBlood/Blood);
-
+// VE → ven Blood (venous outflow)
+J3: Askin -> Aven; Qskin * (Askin / (ViableEpidermis * PC_VEblood)); // venous outflow from skin 
 
 // =====================
-// CLEARANCE (SIMPLIFIED)
+// SYSTEMIC DISTRIBUTION, flow-limitted
 // =====================
-Metabolism: CBlood -> ; CL * CBlood/Blood;
 
+// ArtBlod ↔ RestBody 
+J4: Aart -> Arest; Qrest * (Aart / ArterialBlood); // arterial inflow to rest-of-body 
+
+// venous return from rest-of-body 
+J5: Arest -> Aven; Qrest * (Arest / (RestOfBody * Prestbody));
+J6: Aven -> Aart; CO * (Aven / VenousBlood);  // returns venous blood to arterial (CO * C_v)       
+
+// =====================
+// CLEARANCE (SIMPLIFIED metabolism)
+// =====================
+
+J7: Aven -> Aurine; CL_total * (Aven / VenousBlood);             // clearance of parent permethrin from venous blood
 
 // =====================
 // INITIAL CONDITIONS
 // =====================
 
-Asurfacedepot = 100;   // µmol applied dose
 
-ASC = 0;
-AVE = 0;
+Asurfacedepot = 0;  //tested with 100;  // µmol — initial dose applied on skin surface (e.g., single dermal application).
+Asc          = 0;      // µmol — no permethrin in stratum corneum at baseline (no prior absorption).
+Askin        = 0;      // µmol — no initial burden in viable epidermis (dermal tissue) before exposure.
+Aart         = 0;      // µmol — arterial blood contains no permethrin initially (pre-dose).
+Aven         = 0;      // µmol — venous blood contains no permethrin initially.
+Arest        = 0;      // µmol — rest-of-body tissues have no permethrin at baseline.
+Aurine       = 0;      // µmol — urine/excreted pool starts at 0 (no elimination before exposure).
 
-CBlood = 0;
-CRestbody = 0;
 
 end

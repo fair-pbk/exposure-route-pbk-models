@@ -1,5 +1,5 @@
 idModelInstance,Parameter,Value,Unit,Description,Reference
-Dermal_APM_CarrierBrunet1999_DermalOnly_PARAM,f_abs,0.161,,,
+Dermal_APM_CarrierBrunet1999_DermalOnly_PARAM,Rest,70.0,,,
 Dermal_APM_CarrierBrunet1999_DermalOnly_PARAM,k_abs_bl,0.1561,,,
 Dermal_APM_CarrierBrunet1999_DermalOnly_PARAM,k_o,0.0162,,,
 Dermal_APM_CarrierBrunet1999_DermalOnly_PARAM,k_n,0.005,,,

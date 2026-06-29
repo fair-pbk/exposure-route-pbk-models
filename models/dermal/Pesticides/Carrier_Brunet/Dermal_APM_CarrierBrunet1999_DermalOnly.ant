@@ -1,32 +1,67 @@
 model Dermal_APM_CarrierBrunet1999_DermalOnly()
 
+//Created: Monika Witala, May/June 2026 (v2)
+//Checked:
+
 model notes ```
+
  Carrier and Brunet-based 1999: generic kinetic model
  Here only dermal exposure
+ E.g. for Azinphosmethyl (pesticides)
  Model description https://10.1093/toxsci/47.1.23
+
 ```
 
-  // Compartments (volume in L)
-  compartment Skin = 1;
-  compartment RestBody = 1;
-  compartment Urine = 1;
-  compartment NonObservedExcr = 1;
-
+  //----------------------------------------------------------
+  // Compartments 
+  //---------------------------------------------------------
+  
+  compartment Skin;  // as AbsorptionSite in paper
+  compartment RestBody;  // as Body Burden in paper
+  compartment Urine;    // as cummulative excretion in urine, in paper
+  compartment NonObservedExcr;  // as cummulative non observed excretion, in paper
+  
+  //--------------------------------------------------------
   // Species (amounts in mg)
-  species ASkin in Skin;
-  species ARestBody in RestBody;
-  species AUrine in Urine;
-  species ANonObservedExcr in NonObservedExcr;
+  //--------------------------------------------------------
+ 
+  substanceOnly species ASkin in Skin;  // as A_j(t): APM amount at dermal absorption site [mg]
+  substanceOnly species ARestBody in RestBody;  // as B(t): APM body burden [mg]
+  substanceOnly species AUrine in Urine;    // like O(t): cumulative observed urinary excretion [mg equivalents]
+  substanceOnly species ANonObservedExcr in NonObservedExcr; // in paper N(t): cumulative non-observed excretion [mg]
+  
+  //--------------------------------------------------------
+  // Compartments, initialization 
+  //--------------------------------------------------------
 
+  Skin = 1;              // L assumed skin-site volume for derived concentration
+  Rest = 70              // [L], assumed apparent body volume for derived concentration // 65;
+  Urine = 1;             // [L], placeholder for derived urine concentration
+  NonObservedExcr = 1;   // dimensionless placeholder like?
+
+  //-------------------------------------------------------------
   // Parameters (from Carrier & Brunet 1999)
-  f_abs = 0.161;      // fraction of dermal dose absorbed (unitless)
+  //------------------------------------------------------------
+  
   k_abs_bl = 0.1561;  // absorption rate from skin to blood (1/h)
   k_o = 0.0162;       // observed elimination rate (urine) (1/h)
   k_n = 0.0050;       // non-observed elimination rate (1/h)
-
+ 
+  //---------------------------------------------------------------
   // Reactions (mass transfer processes)
+  //--------------------------------------------------------------
+ 
   R_absorb: ASkin -> ARestBody; k_abs_bl * ASkin;
   R_elim_obs: ARestBody -> AUrine; k_o * ARestBody;
   R_elim_unobs: ARestBody -> ANonObservedExcr; k_n * ARestBody;
+
+  // ------------------------------------------------------------
+  // Initial conditions
+  // ------------------------------------------------------------
+
+  ASkin = 0;
+  ARestBody = 0;
+  AUrine = 0;
+  ANonObservedExcr = 0;
 
 end

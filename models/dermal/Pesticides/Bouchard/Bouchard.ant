@@ -1,0 +1,194 @@
+
+model Bouchard2005_DermalOnly_Simplified
+
+//Created: Monika Witala, June 2026
+//Checked: 
+
+
+model notes ```
+Chlorpyrifos and its metabolites (Bouchard et al. 2005):
+Note: Just amounts are computed in mol - no volumes considered 
+based on paper equations and information. Units: All species are amounts in mol.
+Bouchard et al. formulate the model on a molar mass-balance basis.
+model description "https://doi.org/10.1080/15459620590922407"
+```
+
+
+
+//----------------------------------------------------------
+// Compartments
+//----------------------------------------------------------
+
+compartment SkinSurf;      // D(t): chlorpyrifos bioavailable at skin surface
+compartment Blood;         // B(t): chlorpyrifos blood/systemic burden
+compartment RestOfBody;    // merged S(t), M_TCP(t), and M_AP(t)
+compartment Urine;         // merged cumulative urinary metabolite excretion
+
+
+//----------------------------------------------------------
+// Species
+//----------------------------------------------------------
+// Notes:
+// ASkin      = D(t): CPF available at skin surface
+// ABlood     = B(t): CPF in blood/systemic compartment
+// AStorage   = S(t): CPF in storage tissues
+// AMetTCP    = M_TCP(t): body burden of 3,5,6-TCP
+// AMetAP     = M_AP(t): body burden of alkyl phosphates
+// AUrine     = U_TCP(t) + U_AP(t): cumulative urinary metabolites
+
+substanceOnly species ASkin in SkinSurf;
+substanceOnly species ABlood in Blood;
+substanceOnly species AStorage in RestOfBody;
+substanceOnly species AMetTCP in RestOfBody;
+substanceOnly species AMetAP in RestOfBody;
+substanceOnly species AUrine in Urine;
+
+
+//----------------------------------------------------------
+// Compartments, initialization
+//----------------------------------------------------------
+//
+// These volumes are placeholders because Bouchard's variables are
+// compartment burdens in mol, not concentration-driven PBPK compartments.
+
+SkinSurf = 1;       // L, placeholder
+Blood = 1;          // L, placeholder
+RestOfBody = 1;     // L, placeholder
+Urine = 1;          // L, placeholder
+
+
+//----------------------------------------------------------
+// Dose input, parameters
+//----------------------------------------------------------
+//
+// Bouchard uses g_dermal(t) as the bioavailable dermal input rate.
+// If an applied dermal dose is known in mg, it can be converted to mol,
+// multiplied by the dermal absorption fraction, and delivered over an
+// exposure duration. Commented out for removal from ant-file
+//
+// Molecular weight chlorpyrifos = 350.58 g/mol = 350580 mg/mol.
+
+// MW_CPF_mg_per_mol = 350580;     // mg/mol
+
+// AppliedDermalDose_mg = 0;       // mg CPF applied to skin; set by scenario
+// AppliedDermalDose_mol := AppliedDermalDose_mg / MW_CPF_mg_per_mol;
+
+f_abs_dermal = 0.00995;         // unitless, dermal absorption fraction
+
+//E xposureDuration_h = 8;         // h, workshift-style dermal exposure duration
+
+// BioavailableDermalDose_mol := f_abs_dermal * AppliedDermalDose_mol;
+
+// Bouchard's g_dermal(t), simplified as a constant input during exposure.
+// If your Antimony version does not support piecewise(), replace this
+// with a fixed DermalInputRate value for the exposure period. Commen out for removal från ant-file
+
+// DermalInputRate := piecewise(BioavailableDermalDose_mol / ExposureDuration_h,time <= ExposureDuration_h, 0);
+
+
+//----------------------------------------------------------
+// Parameters from Bouchard et al. 2005
+//----------------------------------------------------------
+//
+// Dermal absorption:
+// k_abs_dermal = transfer rate from skin surface to blood
+//
+// Blood / storage:
+// k_BS = blood to storage transfer
+// k_SB = storage to blood transfer
+//
+// Biotransformation:
+// k_BM = transformation of CPF to metabolites
+//
+// Urinary excretion:
+// k_MU_TCP = transfer of 3,5,6-TCP body burden to urine
+// k_MU_AP  = transfer of AP body burden to urine
+
+k_abs_dermal = 0.0400;      // 1/h
+k_BM = 1.908;               // 1/h
+k_BS = 3.061;               // 1/h
+k_SB = 0.0361;              // 1/h
+
+k_MU_TCP = 0.0611;          // 1/h
+k_MU_AP = 0.199;            // 1/h
+
+
+//----------------------------------------------------------
+// Reactions / Transfers
+//----------------------------------------------------------
+
+//----------------------------------------------------------
+// Dermal input into skin-surface compartment
+//----------------------------------------------------------
+//
+// Corresponds to:
+// dD(t)/dt = g_dermal(t) - k_abs_dermal * D(t)
+
+R_dermal_input: -> ASkin; DermalInputRate;
+
+
+//----------------------------------------------------------
+// Dermal absorption from skin surface to blood
+//----------------------------------------------------------
+//
+// Corresponds to:
+// contribution to dB(t)/dt = k_abs_dermal * D(t)
+
+R_absorb_skin_to_blood: ASkin -> ABlood;  k_abs_dermal * ASkin;
+
+
+//----------------------------------------------------------
+// Reversible storage
+//----------------------------------------------------------
+//
+// Corresponds to:
+// dB(t)/dt includes + k_SB*S(t) - k_BS*B(t)
+// dS(t)/dt = k_BS*B(t) - k_SB*S(t)
+
+R_blood_to_storage:  ABlood -> AStorage;  k_BS * ABlood;
+
+R_storage_to_blood: AStorage -> ABlood; k_SB * AStorage;
+
+
+//----------------------------------------------------------
+// Systemic biotransformation of CPF
+//----------------------------------------------------------
+//
+// Bouchard assumes that one mole of absorbed CPF eventually gives:
+// 1 mole of 3,5,6-TCP and 1 mole of AP.
+// This reaction consumes one mole of CPF from blood and generates
+// one mole of each metabolite body burden.
+//
+// Corresponds to:
+// dM_TCP(t)/dt = k_BM*B(t) - k_MU_TCP*M_TCP(t)
+// dM_AP(t)/dt  = k_BM*B(t) - k_MU_AP*M_AP(t)
+
+R_metabolism_to_TCP_and_AP: ABlood -> AMetTCP + AMetAP; k_BM * ABlood;
+
+
+//----------------------------------------------------------
+// Urinary excretion, merged urine output
+//----------------------------------------------------------
+//
+// In Bouchard, U_TCP and U_AP are separate cumulative urine compartments.
+// Here they are merged into one cumulative urinary metabolite output.
+
+R_urine_TCP: AMetTCP -> AUrine; k_MU_TCP * AMetTCP;
+
+R_urine_AP: AMetAP -> AUrine; k_MU_AP * AMetAP;
+
+
+
+
+//----------------------------------------------------------
+// Initial conditions
+//----------------------------------------------------------
+
+ASkin = 0;
+ABlood = 0;
+AStorage = 0;
+AMetTCP = 0;
+AMetAP = 0;
+AUrine = 0;
+
+end

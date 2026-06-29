@@ -1,0 +1,281 @@
+model Poet2014_DermalOnly_SimplifiedCPF
+
+//Created: Monika Witala, May-June; v1 2026
+//Checked:
+
+model notes ```
+ Poet et al. 2014: generic PBTK model, simplified
+ dermal intake only, the code is based on publication description only
+ Units: Amounts are represented as umol CPF or TCPy-equivalent. Concentrations are represented as umol/L.
+
+ Model description https://doi.org/10.3109/00498254.2014.918295
+```
+
+
+//------------------------------------------------------------
+// Compartments
+//
+//------------------------------------------------------------
+
+compartment Skin;
+compartment ArterialBlood;
+compartment VenousBlood;
+compartment RestOfBody;
+compartment Elimination;
+
+
+//-----------------------------------------------------------------------
+// Species
+//-----------------------------------------------------------------------
+//
+
+
+substanceOnly species ADermalLiquid in Skin;          // umol CPF on/applied to skin surface
+substanceOnly species ASkin in Skin;                  // umol CPF in exposed skin
+substanceOnly species AArterialBlood in ArterialBlood; // umol CPF in arterial blood
+substanceOnly species AVenousBlood in VenousBlood;     // umol CPF in venous blood
+substanceOnly species ARestOfBody in RestOfBody;       // umol CPF in lumped rest-of-body
+substanceOnly species ATCP in Elimination;             // umol TCPy in simplified TCPy body pool
+substanceOnly species Aurine in Elimination;           // umol TCPy excreted in urine
+
+
+//------------------------------------------------------------
+// Body size and surface area
+//------------------------------------------------------------
+
+BW = 70;                         // kg, standard adult body weight assumption
+
+// Poet et al. calculate height from body weight and then total surface area.
+// HT equation and TSA (TotalBodySurfArea) equation are taken from Poet et al. 2014,
+// where TSA is based on the Du Bois & Du Bois surface area relationship.
+HT := 19.994 + 5.5408*BW - 0.0671*BW^2 - 0.003*BW^3;   // cm, empirical height equation
+TotalBodySurfArea := 71.81 * BW^0.425 * HT^0.725;                    // cm2, total body surface area
+
+SkinSurfArea = 100;              // cm2, exposed skin surface area; same exposure area as Timchalk/Poet dermal validation setting
+
+// Total skin volume is kept as your reduced-model assumption.
+// Poet's key modification is that only the skin volume beneath the exposed
+// surface is used as the dermal compartment.
+VTotalSkin = 4;                  // L, reduced-model assumption for total skin volume
+VSkin := VTotalSkin * (SkinSurfArea / TotalBodySurfArea);   // L, exposed skin volume following Poet logic
+
+VArtBlood = 1.5;                 // L, reduced-model assumption
+VVenBlood = 3.5;                 // L, reduced-model assumption
+VRest = 39;                      // L, reduced-model assumption
+VElimination = 1;                // L, bookkeeping compartment
+
+
+//------------------------------------------------------------
+// Physiological flows
+//------------------------------------------------------------
+//
+// Human cardiac output from Timchalk et al. 2002, retained because
+// Poet et al. build from the Timchalk CPF PBPK/PD model.
+// Total skin blood flow is scaled to the exposed skin fraction,
+// consistent with using only exposed skin volume in this reduced model.
+
+Qtotal = 347.9;                  // L/h, human cardiac output
+Qskin_total := 0.058 * Qtotal;   // L/h, total skin blood flow; 5.8% of cardiac output
+Qskin := Qskin_total * (SkinSurfArea / TotalBodySurfArea);  // L/h, exposed-skin blood flow
+Qrest := Qtotal - Qskin;         // L/h, lumped rest-of-body blood flow
+
+
+//------------------------------------------------------------
+// Dermal exposure parameters: Poet surface flux
+//------------------------------------------------------------
+//
+// Poet et al. describe dermal uptake using a Fick's law-type expression:
+// flux depends on Kp, exposed surface area, and surface concentration.
+// The surface concentration diminishes when exposure is finite.
+// DZONE acts as an exposure/washing switch.
+
+Kp = 5.5e-05;                    // cm/h, dermal absorption rate/permeability coefficient from Poet Appendix
+//Comment out below line 94, 96, 97as to remove dosing from here*
+//DZONE = 1;                       // unitless exposure switch; 1 = exposure on, 0 = washed/off*
+
+//Vliq = 0.001;                    // L, applied liquid/surface volume; exposure-specific model assumption*
+//CSURF := ADermalLiquid / Vliq;   // umol/L, CPF concentration in applied surface liquid/depot*
+
+// Conversion note:
+// Kp * SA gives cm3/h.
+// Division by 1000 converts cm3/h to L/h.
+
+
+//------------------------------------------------------------
+// Partition coefficients and protein binding
+//------------------------------------------------------------
+//
+// Poet et al. Appendix gives CPF skin:blood partition coefficient as 200.
+// This differs strongly from Timchalk 2002, where CPF skin:blood was 6.
+// Poet also uses 99% plasma protein binding for CPF.
+
+Pskin = 200;                     // unitless, CPF skin:blood partition coefficient from Poet Appendix
+Prest = 3.85;                    // unitless, CPF slowly perfused:blood coefficient used as lumped RestOfBody approximation
+
+Frac_Bound = 0.99;               // unitless, CPF blood/plasma binding fraction from Poet Appendix
+F_free := 1 - Frac_Bound;        // unitless, free CPF fraction
+
+
+//------------------------------------------------------------
+// Skin metabolism parameters
+//------------------------------------------------------------
+//
+// Poet et al. added metabolism in skin.
+// CYP450-mediated dermal metabolism was set to 2% of hepatic activity.
+// In the Appendix, human dermal dearylation and desulfuration values are:
+//
+// Dermal dearylation to TCPy:
+//   VMCDERMCP = 27.2 umol/h/kg, KMDERMCP = 21 umol/L
+//
+// Dermal desulfuration to CPF-oxon:
+//   VMCDERMCO = 12.6 umol/h/kg, KMDERMCO = 33.2 umol/L
+//
+// In this simplified model, TCPy formation is tracked as ATCP.
+// CPF-oxon is not explicitly tracked, so desulfuration is represented
+// as an untracked metabolic sink.
+
+VMCDERMCP = 27.2;                // umol/h/kg tissue, dermal CPF -> TCPy
+KMDERMCP = 21;                   // umol/L
+
+VMCDERMCO = 12.6;                // umol/h/kg tissue, dermal CPF -> CPF-oxon
+KMDERMCO = 33.2;                 // umol/L
+
+// Approximate exposed skin tissue mass as VSkin kg,
+// assuming 1 L tissue approximately equals 1 kg.
+Vmax_skin_to_TCP := VMCDERMCP * VSkin;     // umol/h
+Vmax_skin_to_oxon := VMCDERMCO * VSkin;    // umol/h
+
+
+//------------------------------------------------------------
+// TCPy urinary elimination
+//------------------------------------------------------------
+//
+// Poet Appendix gives human TCPy elimination rate constant KE = 0.024 /h.
+// Vdistr is retained from the earlier Timchalk TCPy one-compartment model;
+// it is used here only to calculate CTCP.
+
+Kelim = 0.024;                   // 1/h, human TCPy elimination rate from Poet Appendix
+Vdistr = 35;                     // L, TCPy distribution volume retained from Timchalk-type model
+
+
+//------------------------------------------------------------
+// Concentrations
+//------------------------------------------------------------
+
+CArt := AArterialBlood / VArtBlood;        // umol/L
+CVen := AVenousBlood / VVenBlood;          // umol/L
+CSkin := ASkin / VSkin;                    // umol/L
+CRest := ARestOfBody / VRest;              // umol/L
+CTCP := ATCP / Vdistr;                     // umol/L
+
+CArtFree := CArt * F_free;                 // umol/L
+CVenFree := CVen * F_free;                 // umol/L
+
+CVSkinFree := CSkin / Pskin;               // umol/L, free-equivalent venous skin concentration
+CVRestFree := CRest / Prest;               // umol/L, free-equivalent venous rest concentration
+
+
+//------------------------------------------------------------
+// Dermal uptake from surface into exposed skin
+//------------------------------------------------------------
+//
+// Poet-style dermal uptake:
+// surface/depot CPF enters the exposed skin compartment according to
+// Kp, exposed surface area, surface concentration and exposure switch.
+
+//R_dermal_absorption:
+//R00: ADermalLiquid -> ASkin;   (Kp * SkinSurfArea / 1000) * CSURF * DZONE;  //after dosing abs
+
+
+//------------------------------------------------------------
+// Skin metabolism
+//------------------------------------------------------------
+//
+// Local skin metabolism is the main Poet 2014 addition compared with
+// the earlier Timchalk dermal implementation.
+// Here, direct CPF-to-TCPy metabolism in skin is tracked.
+// CPF-to-oxon is represented as an untracked sink because this simplified
+// model does not include a CPF-oxon species or PD module.
+
+//R_skin_CPF_to_TCP:
+R1: ASkin -> ATCP; Vmax_skin_to_TCP * CSkin / (KMDERMCP + CSkin);
+
+//R_skin_CPF_to_untracked_oxon:
+R2: ASkin -> ; Vmax_skin_to_oxon * CSkin / (KMDERMCO + CSkin);
+
+
+//------------------------------------------------------------
+// Skin exchange with blood
+//------------------------------------------------------------
+//
+// Flow-limited exchange between arterial blood and exposed skin.
+// Only free CPF in arterial blood is available for tissue uptake.
+
+//R_skin_in:
+R3: AArterialBlood -> ASkin;  Qskin * CArtFree;
+
+//R_skin_out:
+R4: ASkin -> AVenousBlood;  Qskin * CVSkinFree;
+
+
+//------------------------------------------------------------
+// Rest-of-body exchange
+//------------------------------------------------------------
+//
+// Reduced lumped compartment replacing Poet's full tissue structure.
+// This is not a full Poet model; it is a simplified dermal-only version.
+
+//R_rest_in:
+R5: ArterialBlood -> ARestOfBody;  Qrest * CArtFree;
+
+//R_rest_out:
+R6: ARestOfBody -> AVenousBlood;  Qrest * CVRestFree;
+
+
+//------------------------------------------------------------
+// Blood recirculation
+//------------------------------------------------------------
+
+//R_recirculate:
+R7: AVenousBlood -> AArterialBlood;  Qtotal * CVen;
+
+
+//------------------------------------------------------------
+// TCPy urinary excretion
+//------------------------------------------------------------
+//
+// Simplified one-compartment TCPy urinary elimination.
+
+//R_TCP_urinary_excretion:
+R8: ATCP -> Aurine;  Kelim * ATCP;
+
+
+//------------------------------------------------------------
+// Initial conditions
+//------------------------------------------------------------
+//
+// Set DermalDose_umol to the applied CPF dose on skin.
+// If no dose is set, model starts at zero.
+
+DermalDose_umol = 0;
+
+ADermalLiquid = DermalDose_umol;
+ASkin = 0;
+AArterialBlood = 0;
+AVenousBlood = 0;
+ARestOfBody = 0;
+ATCP = 0;
+Aurine = 0;
+
+
+//------------------------------------------------------------
+// Assign compartment volumes, L
+//------------------------------------------------------------
+
+Skin := VSkin;
+ArterialBlood := VArtBlood;
+VenousBlood := VVenBlood;
+RestOfBody := VRest;
+Elimination := VElimination;
+
+end

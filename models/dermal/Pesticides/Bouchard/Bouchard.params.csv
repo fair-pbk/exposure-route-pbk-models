@@ -1,0 +1,8 @@
+idModelInstance,Parameter,Value,Unit,Description,Reference
+Bouchard2005_DermalOnly_Simplified_PARAM,f_abs_dermal,0.00995,,,
+Bouchard2005_DermalOnly_Simplified_PARAM,k_abs_dermal,0.04,,,
+Bouchard2005_DermalOnly_Simplified_PARAM,k_BM,1.908,,,
+Bouchard2005_DermalOnly_Simplified_PARAM,k_BS,3.061,,,
+Bouchard2005_DermalOnly_Simplified_PARAM,k_SB,0.0361,,,
+Bouchard2005_DermalOnly_Simplified_PARAM,k_MU_TCP,0.0611,,,
+Bouchard2005_DermalOnly_Simplified_PARAM,k_MU_AP,0.199,,,

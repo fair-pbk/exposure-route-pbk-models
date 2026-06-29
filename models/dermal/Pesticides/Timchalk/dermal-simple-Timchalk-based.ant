@@ -1,7 +1,7 @@
 
 model Dermal_CPF_Timchalk2002_Simplified()
 
-#Created: Monika Witala, May-Juni 2026
+#Created: Monika Witala, May-June; v2 2026
 #Checked:
 
 model notes ```
@@ -9,44 +9,224 @@ model notes ```
  dermal intake only, the code is based on publication description only
  Model description https://10.1093/toxsci/66.1.34
 ```
-
+  //------------------------------------------------------------
   // Compartments (volume in liters)
-  compartment Skin = 4;
-  compartment ArterialBlood = 1.5;
-  compartment VenousBlood = 3.5;
-  compartment RestOfBody = 39;
-  compartment Elimination = 1;
+  //------------------------------------------------------------
 
+  compartment Skin;
+  compartment ArterialBlood;
+  compartment VenousBlood;
+  compartment RestOfBody;
+  compartment Elimination;
+
+  //-----------------------------------------------------------------------
   // Species (mass amounts in mg)
-  species ASkin in Skin;
-  species AArterialBlood in ArterialBlood;
-  species AVenousBlood in VenousBlood;
-  species ARestOfBody in RestOfBody;
-  species Aurine in Elimination;  // if this species fits best for this - author has compartments 3 and liver connected to elimination..
+  //-------------------------------------------------------------------------
+  
+ substanceOnly species ADermalLiquid in Skin;       // µmol CPF in applied dermal liquid/depot
+ substanceOnly species ASkin in Skin;               // µmol CPF in skin
+ substanceOnly species AArterialBlood in ArterialBlood; // µmol CPF in arterial blood
+ substanceOnly species AVenousBlood in VenousBlood;     // µmol CPF in venous blood
+ substanceOnly species ARestOfBody in RestOfBody;       // µmol CPF in lumped rest-of-body tissue
+ substanceOnly species ATCP in Elimination;         // µmol TCP in simplified TCP body pool
+ substanceOnly species Aurine in Elimination;       // µmol TCP excreted in urine
 
-  // Initial conditions
-  ASkin = 0;
-  AArterialBlood = 0;
-  AVenousBlood = 0;
-  ARestOfBody = 0;
-  Aurine = 0;
 
-  // Physiological parameters (Timchalk et al., 2002)
+//------------------------------------------------------------
+// Volumes
+//------------------------------------------------------------
+
+  
+ BW = 70;                 // kg, standard adult assumption
+
+ VSkin = 4;               // L, reduced-model assumption
+ VArtBlood = 1.5;         // L, reduced-model assumption
+ VVenBlood = 3.5;         // L, reduced-model assumption
+ VRest = 39;              // L, reduced-model assumption
+ VElimination = 1;        // L, bookkeeping compartment
+
+
+  // Physiological flows (Timchalk et al., 2002)
   Qtotal = 347.9;            // total cardiac output (L/h)
   Qskin := 0.058 * Qtotal;    // skin blood flow (L/h, ~5.8% of CO)
   Qrest := Qtotal - Qskin;   // rest-of-body blood flow (L/h)
+
+  //Dermal param
   SkinSurfArea = 100;        // exposed skin surface area (cm^2)
   Kp = 4.81e-5;              // skin permeability coefficient (cm/h)
-  Pskin = 6.0;               // skin:blood partition coefficient (unitless)
-  Prest = 10.0;              // rest-of-body:blood partition coefficient (unitless)
+ 
+
+  //Elimination
   Kelim = 0.017;             // elimination rate constant (1/h)
 
-  // Reactions (mass transfer and elimination)
-  R_skin_in: AArterialBlood -> ASkin; Qskin * AArterialBlood / ArterialBlood;
-  R_skin_out: ASkin -> AVenousBlood; Qskin * ASkin / (Skin * Pskin);
-  R_rest_in: AArterialBlood -> ARestOfBody; Qrest * AArterialBlood / ArterialBlood;
-  R_rest_out: ARestOfBody -> AVenousBlood; Qrest * ARestOfBody / (RestOfBody * Prest);
-  R_recirculate: AVenousBlood -> AArterialBlood; Qtotal * AVenousBlood / VenousBlood;
-  R_clear: AVenousBlood -> Aurine; Kelim * AVenousBlood;
+  //Partition coefficients
+   Pskin = 6.0;               // skin:blood partition coefficient (unitless) for CPF
+  //Prest = 10.0;              // rest-of-body:blood partition coefficient (unitless)
+  Prest = 6.9;               //using CPF slowly perfused:blood as lumped ?
+
+
+ Frac_Bound = 0.97;               // bound fraction of CPF in blood
+ F_free := 1 - Frac_Bound;         // free fraction of CPF in blood
+
+
+ //------------------------------------------------------------
+  Simplified metabolism and TCP urinary elimination
+ //------------------------------------------------------------
+ // Note: 
+ // Timchalk includes hepatic CYP450 metabolism to CPF-oxon and TCP,
+ // and TCP formation from several sources.
+ // Because this reduced model removes the liver and CPF-oxon,
+ // TCP formation is represented as a lumped first-order formation
+ // from venous blood.
+ // Ke and Vd are Timchalk TCP model parameters.
+
+ K_TCP = 0.01;         // 1/h, reduced-model lumped TCP formation; not directly in Timchalk
+ Kelim = 0.017;              // 1/h, TCP urinary elimination rate
+ Vdistr = 35;              // L, TCP volume of distribution
+
+//------------------------------------------------------------
+// Concentrations
+//------------------------------------------------------------
+
+ CArt := AArterialBlood / VArtBlood;       // µmol/L
+ CVen := AVenousBlood / VVenBlood;         // µmol/L
+ CSkin := ASkin / VSkin;                   // µmol/L
+ CRest := ARestOfBody / VRest;             // µmol/L
+ CTCP := ATCP / Vdistr;                     // µmol/L
+
+ CArtFree := CArt * F_free;                 // µmol/L
+ CVenFree := CVen * F_free;                 // µmol/L
+
+ CVSkinFree := (CSkin / Pskin) * F_free;    // µmol/L
+ CVRestFree := (CRest / Prest) * F_free;    // µmol/L
+
+
+
+ //------------------------------------------------------------
+ // Dermal exposure parameters
+ //------------------------------------------------------------
+ // Note: 
+ // Timchalk dermal absorption equation, notes:
+ //
+ // dADL/dt = Kp * SA / 1000 * (ConcL - ADL / Vliq)
+ //
+ // Kp: cm/h
+ // SA: cm2
+ // division by 1000 converts cm3/h to L/h
+ // ConcL and ADL/Vliq are in µmol/L
+ // If initial dermal dose is known directly, initialize ADermalLiquid.
+ // Example: DermalDose_umol = dose placed on skin.
+ // Then set ADermalLiquid = DermalDose_umol and ConcL = DermalDose_umol / Vliq.
+
+//dosing below, comenting out
+// Vliq = 0.001;            // L, applied liquid volume; exposure-specific assumption
+// ConcL = 0;               // µmol/L, set from applied dermal formulation if needed
+
+
+
+/------------------------------------------------------------
+// Dermal uptake into skin
+//------------------------------------------------------------
+//
+// This is the key Timchalk-style dermal input.
+// It represents transfer from applied dermal liquid/depot into skin.
+
+//R_dermal_absorption:
+// ADermalLiquid -> ASkin; Kp * SkinSurfArea / 1000 * (ADermalLiquid / Vliq);
+
+
+//------------------------------------------------------------
+// Skin exchange with blood
+//------------------------------------------------------------
+//
+// Timchalk skin equation:
+// dASK/dt = QSK * (CAf - CVskf) + dADL/dt
+//
+// Here, the dADL/dt part is represented above by R_dermal_absorption.
+// The perfusion exchange is represented by arterial-to-skin and
+// skin-to-venous transfer.
+
+//R_skin_in:
+AArterialBlood -> ASkin; Qskin * CArtFree;
+
+//R_skin_out:
+ASkin -> AVenousBlood; Qskin * CVSkinFree;
+
+
+//------------------------------------------------------------
+// Rest-of-body exchange
+//------------------------------------------------------------
+//
+// Reduced lumped tissue representation.
+// This replaces Timchalk's fat, slowly perfused, rapidly perfused,
+// diaphragm, brain and liver compartments.
+
+//R_rest_in:
+AArterialBlood -> ARestOfBody; Qrest * CArtFree;
+
+//R_rest_out:
+ARestOfBody -> AVenousBlood; Qrest * CVRestFree;
+
+
+//------------------------------------------------------------
+// Blood recirculation
+//------------------------------------------------------------
+//
+// Simplified venous-to-arterial recirculation.
+
+//R_recirculate:
+AVenousBlood -> AArterialBlood; Qtotal * CVen;
+
+
+//------------------------------------------------------------
+// Simplified TCP formation
+//------------------------------------------------------------
+//
+// This replaces the full Timchalk liver CPF-to-TCP and CPF-to-oxon
+// metabolism structure.
+// It is a reduced approximation only.
+
+//R_TCP_formation: 
+AVenousBlood -> ATCP; K_TCP * AVenousBlood;
+
+
+//------------------------------------------------------------
+// TCP urinary excretion
+//------------------------------------------------------------
+//
+// Timchalk TCP model:
+// dATCP/dt = sum formation - ATCP * Ke
+// dTCPexc/dt = ATCP * Ke
+
+//R_TCP_urinary_excretion: 
+ATCP -> Aurine; Kelim * ATCP;
+
+
+//------------------------------------------------------------
+// Initial conditions
+//------------------------------------------------------------
+
+ ADermalLiquid = 0;
+ ASkin = 0;
+ AArterialBlood = 0;
+ AVenousBlood = 0;
+ ARestOfBody = 0;
+ ATCP = 0;
+ Aurine = 0;
+
+
+ //-------------------------------------------------------
+ // Initialization compartments, in L
+ //--------------------------------------------------------
+
+ 
+ Skin := VSkin;
+ ArterialBlood := VArtBlood;
+ VenousBlood := VVenBlood;
+ RestOfBody := VRest;
+ Elimination := VElimination;
+
+
+
 
 end

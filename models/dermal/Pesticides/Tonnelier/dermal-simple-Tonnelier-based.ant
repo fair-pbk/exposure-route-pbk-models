@@ -1,52 +1,156 @@
 
 model Dermal_PBK_Tonnelier_Simplified()
 
+// Created: Monika Witala, April-May v1, June v2 2026
+// Checked: 
+
 model notes ```
-Tonnelier et al. 2012: generic PBTK model that,
-based on in vitro liver metabolism data, minimal renal
-excretion and a chronic exposure, is able to assess the
-bioaccumulative potential of a chemical.
-Model description https://doi:10.1007/s00204-011-0768-0
+
+ Tonnelier et al. 2012: generic PBTK model that,
+ based on in vitro liver metabolism data, minimal renal
+ excretion and a chronic exposure, is able to assess the
+ bioaccumulative potential of a chemical.
+ Pesticides model, among all: chlorpyrifos
+ Can be treated as minimal dermal-only PBK representation 
+ Model description https://doi:10.1007/s00204-011-0768-0
+
 ```
 
-  // Compartments
-  compartment Skin = 1;
-  compartment Blood = 5;
-  compartment Liver = 1.5;
-  compartment Elimination = 1;
+//-----------------------------------------------
+// Compartments
+//-----------------------------------------------
 
-  // Species
-  species ASkin in Skin;
-  species CBlood in Blood;
-  species CLiver in Liver;
+compartment DermalAbsorptionCompartment;
+compartment PortalVeinBlood;
+compartment Liver;
+compartment SystemicCompartment;
+compartment RenalExcretion;
 
-  // Parameters
-  k_abs = 0.5;           // dermal absorption rate (h^-1)
+//----------------------------------------------
+// Species, amount of parent compound 
+// Species = dimensionless “relative amount”
+//--------------------------------------------------
 
-  Qhepatic = 90;              // hepatic blood flow (L/h)
-  VBlood = 5;             // systemic blood volume
-  VLiver = 1.5;           // liver volume
 
-  CL_R = 0.2;            // renal clearance (L/h)
-  CL_int = 1.0;           // intrinsic hepatic clearance
-  fu = 0.1;              // fraction unbound
+substanceOnly species Aabsorbed in DermalAbsorptionCompartment;
+substanceOnly species APortalVein in PortalVeinBlood;
+substanceOnly species Asys in SystemicCompartment;
+substanceOnly species AUrine in RenalExcretion;
+substanceOnly species Aliver in Liver;
+//substanceOnly species AMet in Liver;  //metabolised?
 
-  // Hepatic clearance
-  CL_H := (Qhepatic * fu * CL_int) / (Qhepatic + fu * CL_int);
+//------------------------------------------------
+// volumes
+//------------------------------------------------
+BW = 70  // kg, standard adult body weight assumption
+VDermalAbsorption= 1  // L, nominal depot volume
+VPortalVeinBlood = 3.2     // L, portal vein blood volume used in Tonnelier 
+VRenalExcretion = 1;  L, bookkeeping compartment
 
-  // Reactions
+Volume_Liver_per_kg = 0.026       // L/kg body weight
+VLiver := Volume_Liver_per_kg * BW
 
-  // Absorption into blood
-  R2: ASkin -> CBlood ; k_abs*ASkin
+// Fipronil from tabl. 1 suppl (L/kg):
+//VSysDist_per_kg = 10.10 
+// Chlorpyrifos, from tabl. 1 suppl (L/kg):
+VSysDist_per_kg = 22.42 
 
-  // Blood ↔ Liver exchange
-  R3: CBlood -> CLiver ; Qhepatic*CBlood/VBlood
-  R4: CLiver -> CBlood ; Qhepatic*CLiver/VLiver
+VSysDist := VSysDist_per_kg * BW  //L
 
-  // Hepatic metabolism
-  R5: CLiver -> ; CL_H*CLiver/VLiver
 
-  // Renal clearance
-  R6: CBlood -> ; CL_R*CBlood/VBlood
+// Parameters
+k_abs = 2;                       // 1/h, generic first-order absorption rate from Tonnelier
+
+
+VLiver = 1.5;           // liver volume
+
+CL_R = 0.118 		// renal clearance in L/h, values per compund Tonnelier supp Table1
+CL_int = 2.6;           // µL/min/10^6 hepatocytes, intrinsic hepatic clearance
+fu = 0.01760;              // fraction unbound, for chlorpyrifos ; / fu = 0.04610, from suppl Table 1
+
+
+
+// Concentrations
+CPortVein := APortalVein / VPortalVeinBlood
+CLiver := ALiver / VLiver
+CSysCirc := Asys / VSysDist
+
+// Flows, 
+
+QPortVein = 6.7;                 // L/h
+QHepaticArtery = 18;             // L/h
+Qhepatic := QPortVein + QHepaticArtery;
+
+// Hepatic clearance
+CL_H := (Qhepatic * fu * CL_int) / (Qhepatic + fu * CL_int);
+
+
+
+//Dermal uptake from absorption compartment
+
+Aabsorbed -> Asys; F_dermal_abs * k_abs * Aabsorbed;
+
+
+
+//----------------------------------------------
+// Reactions
+//----------------------------------------------
+
+
+
+//-----------------------------------------------
+// Perfusion-limited exchange
+
+
+// Systemic circulation to portal vein blood
+Asys -> APortalVein; QPortVein * CSysCirc;
+
+// Portal vein blood to liver
+APortalVein -> Aliver;  QPortVein * CPortVein;
+
+// Systemic circulation to liver via hepatic artery
+Asys -> Aliver;  QHepaticArtery * CSysCirc;
+
+// Liver back to systemic circulation
+Aliver -> Asys   Qhepatic * CLiver;
+
+
+//-----------------------------------------------
+// Hepatic metabolism 
+//
+//
+// No metabolite compartment is included.
+// Parent compound is removed from liver by hepatic metabolic clearance.
+
+Aliver -> ; CL_H * CLiver;
+
+
+//-----------------------------------------------
+// Renal excretion
+
+
+Asys -> AUrine; CL_R * CSysCirc;
+
+//-----------------------------------------------
+// Initial conditions
+
+
+Aabsorbed = 0;
+APortalVein = 0;
+Aliver = 0;
+Asys = 0;
+AUrine = 0;
+AMet = 0;
+
+//--------------------------------------------------------
+// Compartments, initialization 
+
+DermalAbsorptionCompartment = VDermalAbsorption;
+PortalVeinBlood = VPortalVeinBlood;
+Liver = VLiver;
+SystemicCompartment = VSysDist;
+RenalExcretion = VRenalExcretion;
+
+
 
 end
