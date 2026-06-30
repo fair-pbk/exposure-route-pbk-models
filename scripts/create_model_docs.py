@@ -514,8 +514,8 @@ def create_overview_report():
     with pd.ExcelWriter(excel_file) as writer:
         df.to_excel(writer, sheet_name='Models overview', index=False, header=True)
 
-def export_models_zip():
-    zip_file = os.path.join(OUTPUT_PATH, 'models.zip')
+def export_models_zip(models_path, output_path, filename):
+    zip_file = os.path.join(output_path, filename)
     allowed_extensions = (
         '.ant',
         '.sbml',
@@ -523,19 +523,19 @@ def export_models_zip():
         '.params.csv'
     )
 
-    if not os.path.isdir(MODELS_PATH):
-        console_logger.error('Models path does not exist: %s', MODELS_PATH)
+    if not os.path.isdir(models_path):
+        console_logger.error('Models path does not exist: %s', models_path)
         return
 
-    os.makedirs(OUTPUT_PATH, exist_ok=True)
+    os.makedirs(output_path, exist_ok=True)
 
-    console_logger.info('Creating zip archive [%s] from models folder [%s].', zip_file, MODELS_PATH)
+    console_logger.info('Creating zip archive [%s] from models folder [%s].', zip_file, models_path)
     with zipfile.ZipFile(zip_file, 'w', zipfile.ZIP_DEFLATED) as archive:
-        for root, _, files in os.walk(MODELS_PATH):
+        for root, _, files in os.walk(models_path):
             for filename in files:
                 if filename.endswith(allowed_extensions):
                     full_path = os.path.join(root, filename)
-                    archive_path = os.path.relpath(full_path, MODELS_PATH)
+                    archive_path = os.path.relpath(full_path, models_path)
                     archive.write(full_path, archive_path)
                     console_logger.debug('Added file to zip: %s', archive_path)
 
@@ -719,4 +719,6 @@ if __name__ == '__main__':
     create_overview_report()
     export_annotations()
     export_parameterisations()
-    export_models_zip()
+    export_models_zip(MODELS_PATH, OUTPUT_PATH, 'models.zip')
+    export_models_zip(os.path.join(MODELS_PATH, 'oral'), OUTPUT_PATH, 'oral_models.zip')
+    export_models_zip(os.path.join(MODELS_PATH, 'dermal'), OUTPUT_PATH, 'dermal_models.zip')

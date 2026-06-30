@@ -3,6 +3,8 @@
 | File | Description |
 | ---- | ----------- |
 | [models.zip](../models/models.zip) | All model implementations in one zip archive. |
+| [oral_models.zip](../models/oral_models.zip) | All oral model implementations in one zip archive. |
+| [dermal_models.zip](../models/dermal_models.zip) | All dermal model implementations in one zip archive. |
 | [models_overview.xlsx](../models/models_overview.xlsx) | Excel overview of all models. |
 | [annotations.xlsx](../models/annotations.xlsx) | All model annotations combined in one Excel file. |
-| [parameterisations.xlsx](../models/parameterisations.xlsx) | All model parametrisations in one zip archive. |
+| [parameterisations.xlsx](../models/parameterisations.xlsx) | All model parametrisations in one Excel file. |
