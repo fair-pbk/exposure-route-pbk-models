@@ -1,0 +1,100 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_SkinSurf {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-SkinSurf",
+			label="SkinSurf
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ASkin	[color=black,
+			fillcolor=gold,
+			href="#species-ASkin",
+			label="ASkin
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Blood {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Blood",
+			label="Blood
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ABlood	[color=black,
+			fillcolor=gold,
+			href="#species-ABlood",
+			label="ABlood
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_RestOfBody {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-RestOfBody",
+			label="RestOfBody
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AStorage	[color=black,
+			fillcolor=gold,
+			href="#species-AStorage",
+			label="AStorage
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		AMetTCP	[color=black,
+			fillcolor=gold,
+			href="#species-AMetTCP",
+			label="AMetTCP
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		AMetAP	[color=black,
+			fillcolor=gold,
+			href="#species-AMetAP",
+			label="AMetAP
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Urine {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Urine",
+			label="Urine
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AUrine	[color=black,
+			fillcolor=gold,
+			href="#species-AUrine",
+			label="AUrine
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	ASkin -> ABlood	[label=R_absorb_skin_to_blood,
+		minlen=1];
+	ABlood -> AStorage	[label=R_blood_to_storage];
+	ABlood -> AMetTCP	[label=R_metabolism_to_TCP_and_AP];
+	ABlood -> AMetAP	[label=R_metabolism_to_TCP_and_AP];
+	AStorage -> ABlood	[label=R_storage_to_blood];
+	AMetTCP -> AUrine	[label=R_urine_TCP];
+	AMetAP -> AUrine	[label=R_urine_AP];
+}

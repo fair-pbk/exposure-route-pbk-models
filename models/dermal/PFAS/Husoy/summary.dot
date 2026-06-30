@@ -1,0 +1,103 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_Skin {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Skin",
+			label="Skin
+[PBPKO:00470]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ASkin	[color=black,
+			fillcolor=gold,
+			href="#species-ASkin",
+			label="ASkin
+[PBPKO:00506]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Plasma {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Plasma",
+			label="Plasma
+[PBPKO:00488]",
+			shape=box,
+			style="filled,rounded"
+		];
+		APlasma	[color=black,
+			fillcolor=gold,
+			href="#species-APlasma",
+			label="APlasma
+[PBPKO:00502]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_RestBody {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-RestBody",
+			label="RestBody
+[PBPKO:00450]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARestbody	[color=black,
+			fillcolor=gold,
+			href="#species-ARestbody",
+			label="ARestbody
+[PBPKO:00501]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Kidney {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Kidney",
+			label="Kidney
+[PBPKO:00557]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AKidney	[color=black,
+			fillcolor=gold,
+			href="#species-AKidney",
+			label="AKidney
+[PBPKO:00498]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Urine {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Urine",
+			label="Urine
+[PBPKO:00556]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AUrine	[color=black,
+			fillcolor=gold,
+			href="#species-AUrine",
+			label="AUrine
+[PBPKO:00272]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	ASkin -> APlasma	[label=J1,
+		minlen=1];
+	APlasma -> ARestbody	[label=J2,
+		minlen=1];
+	APlasma -> AKidney	[label=J3];
+	AKidney -> AUrine	[label=J4,
+		minlen=1];
+}

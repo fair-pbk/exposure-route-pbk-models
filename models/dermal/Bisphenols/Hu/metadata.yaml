@@ -1,0 +1,1201 @@
+id: BPA_Dermal_PBK_Hu_layered
+name: BPA_Dermal_simple-Hu-based
+applicability_domain:
+  chemicals:
+  - id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  species:
+  - id: NCBITaxon:9606
+    label: Homo sapiens
+    iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
+num_compartments: 7
+num_species: 7
+num_parameters: 62
+num_reactions: 11
+compartments:
+- id: SurfaceDepot
+  name: skin-surface depot sub-compartment (before follicle or SC sub-compartments)
+  pbpko_bqm_is_class:
+    id: PBPKO:00625
+    label: exposed skin compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00625
+  unit: L
+- id: ExposedVE
+  name: Exposed Skin Viable Epidermis compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00456
+    label: viable exposed skin compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00456
+  unit: L
+- id: Follicle
+  name: Follicle sub-compartment
+  unit: L
+- id: UnexposedSkin
+  name: Unexposed Skin compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00626
+    label: unexposed skin compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00626
+  unit: L
+- id: Plasma
+  name: Plasma Compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00488
+    label: plasma compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00488
+  unit: L
+- id: Restbody
+  name: Rest of Body Compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00450
+    label: rest of body compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00450
+  unit: L
+- id: Urine
+  name: Urine compartment
+  unit: L
+species:
+- id: AWELL
+  name: amount of chemical in Surface Depot (on Skin)
+  chebi_bqb_is_class:
+    id: CHEBI:22901
+    label: bisphenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_22901
+  unit: nmol
+- id: AVE
+  name: amount of chemical in Viable Epidermis, exposed skin
+  pbpko_bqm_is_class:
+    id: PBPKO:00638
+    label: amount in viable epidermis of exposed skin
+    iri: http://purl.obolibrary.org/obo/PBPKO_00638
+  chebi_bqb_is_class:
+    id: CHEBI:22901
+    label: bisphenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_22901
+  unit: nmol
+- id: AFO
+  name: amount of chemical in Follicle
+  chebi_bqb_is_class:
+    id: CHEBI:22901
+    label: bisphenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_22901
+  unit: nmol
+- id: Askin_unexp
+  name: amount of chemical in unexposed skin
+  unit: nmol
+- id: Aplasma
+  name: amount of chemical in plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:00502
+    label: amount in plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_00502
+  chebi_bqb_is_class:
+    id: CHEBI:22901
+    label: bisphenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_22901
+  unit: nmol
+- id: ARestbody
+  name: amount of chemical in rest-of-body
+  pbpko_bqm_is_class:
+    id: PBPKO:00501
+    label: amount in restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00501
+  chebi_bqb_is_class:
+    id: CHEBI:22901
+    label: bisphenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_22901
+  unit: nmol
+- id: AUrine
+  name: amount of chemical eliminated
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: nmol
+parameters:
+- id: BW
+  name: Body Weight
+  pbpko_bqm_is_class:
+    id: PBPKO:00008
+    label: bodyweight
+    iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  unit: kg
+- id: BSA
+  name: Body Surface Area
+  pbpko_bqm_is_class:
+    id: PBPKO:00010
+    label: surface area
+    iri: http://purl.obolibrary.org/obo/PBPKO_00010
+  unit: dm^2
+- id: VplasmaC
+  name: fractional volume of plasma
+  unit: L/kg
+- id: VSkinC
+  name: Fractional volume of skin tissue
+  unit: L/kg
+- id: VBody
+  name: Volume of Body Compartment
+  unit: L/kg
+- id: QCC
+  name: cardiac blood output
+  pbpko_bqm_is_class:
+    id: PBPKO:00013
+    label: cardiac output rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  unit: L/min
+- id: QSkinC
+  name: fractional blood flow to the skin (scaled)
+  pbpko_bqm_is_class:
+    id: PBPKO:00037
+    label: fraction of blood flow to skin
+    iri: http://purl.obolibrary.org/obo/PBPKO_00037
+  unit: dimensionless
+- id: Area_exposed_skin
+  name: area of exposed skin
+  unit: dm^2
+- id: Area_exposed_follicle
+  name: area of exposed follicle
+  pbpko_bqm_is_class:
+    id: PBPKO:00110
+    label: fraction of surface area exposed
+    iri: http://purl.obolibrary.org/obo/PBPKO_00110
+  unit: dimensionless
+- id: Thickness_epidermis_finger
+  name: thickness of epidermis (finger)
+  unit: ''
+- id: Thickness_skin_finger
+  name: thickness of skin (finger)
+  pbpko_bqm_is_class:
+    id: PBPKO:00635
+    label: skin thickness
+    iri: http://purl.obolibrary.org/obo/PBPKO_00635
+  unit: ''
+- id: Thickness_SC
+  name: thickness of stratum corneum
+  pbpko_bqm_is_class:
+    id: PBPKO:00643
+    label: thickness stratum corneum
+    iri: http://purl.obolibrary.org/obo/PBPKO_00643
+  unit: ''
+- id: Thickness_VE
+  name: thickness of viable epidermis
+  pbpko_bqm_is_class:
+    id: PBPKO:00644
+    label: thickness viable epidermis
+    iri: http://purl.obolibrary.org/obo/PBPKO_00644
+  unit: ''
+- id: D_SC
+  name: Stratum Corneum diffusion coefficient
+  pbpko_bqm_is_class:
+    id: PBPKO:00648
+    label: diffusion rate stratum corneum viable epidermis 
+    iri: http://purl.obolibrary.org/obo/PBPKO_00648
+  unit: ''
+- id: u1
+  name: stratum corneum desquamation velocity
+  unit: dm/h
+- id: PCSC
+  name: Partition coefficient of Stratum Corneum to Viable epidermis
+  unit: dimensionless
+- id: PCSCVE
+  name: Partition coefficient of Stratum Corneum to Viable Epidermis
+  unit: dimensionless
+- id: pskin
+  name: VE/blood partition coefficient
+  unit: dimensionless
+- id: P_follicle
+  name: Follicle permeability coefficient
+  unit: dm/h
+- id: PCFO
+  name: follicle/SSD partition term
+  unit: dimensionless
+- id: PCRestbody
+  name: tissue-to-blood partition coefficient (lumped Rest of Body)
+  pbpko_bqm_is_class:
+    id: PBPKO:00585
+    label: restbody blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00585
+  unit: dimensionless
+- id: CLUrine
+  name: renal clearance rate
+  pbpko_bqm_is_class:
+    id: PBPKO:00237
+    label: renal elimination rate constant
+    iri: http://purl.obolibrary.org/obo/PBPKO_00237
+  unit: dimensionless
+- id: Free
+  name: ''
+  unit: ''
+- id: Vplasma
+  name: volume of plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:00103
+    label: volume of plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_00103
+  unit: L
+- id: Vskin
+  name: Volume of Skin
+  pbpko_bqm_is_class:
+    id: PBPKO:00089
+    label: volume of skin
+    iri: http://purl.obolibrary.org/obo/PBPKO_00089
+  unit: L
+- id: Vbody_total
+  name: Volume of Total body
+  unit: L
+- id: Vrestbody
+  name: Volume of Rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00105
+    label: volume of rest body
+    iri: http://purl.obolibrary.org/obo/PBPKO_00105
+  unit: L
+- id: frac_exposed
+  name: fraction exposed skin derived param
+  pbpko_bqm_is_class:
+    id: PBPKO:00061
+    label: fraction of exposed skin
+    iri: http://purl.obolibrary.org/obo/PBPKO_00061
+  unit: dimensionless
+- id: VexposedSC
+  name: volume of stratum corneum exposed
+  pbpko_bqm_is_class:
+    id: PBPKO:00112
+    label: volume of stratum corneum exposed
+    iri: http://purl.obolibrary.org/obo/PBPKO_00112
+  unit: L
+- id: VexposedVE
+  name: Volume of exposed Viable epidermis
+  unit: L
+- id: Thick_follicle
+  name: ''
+  unit: ''
+- id: Vfollicle
+  name: Volume of follicles
+  unit: L
+- id: Vskin_unexp
+  name: Volume of unexposed skin
+  pbpko_bqm_is_class:
+    id: PBPKO:00111
+    label: volume of unexposed skin
+    iri: http://purl.obolibrary.org/obo/PBPKO_00111
+  unit: L
+- id: VSSD
+  name: Volume of SurfaceDepot (skin)
+  unit: L
+- id: QC
+  name: Cardiac Output (scaled)
+  pbpko_bqm_is_class:
+    id: PBPKO:00013
+    label: cardiac output rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  unit: L/h
+- id: Qskin
+  name: volumetric blood flow rate to the skin tissue compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00036
+    label: blood flow rate to skin
+    iri: http://purl.obolibrary.org/obo/PBPKO_00036
+  unit: L/h
+- id: Qskin_exposed
+  name: blood flow rate to the exposed skin
+  pbpko_bqm_is_class:
+    id: PBPKO:00563
+    label: blood flow rate to exposed skin
+    iri: http://purl.obolibrary.org/obo/PBPKO_00563
+  unit: L/h
+- id: Qskin_unexp
+  name: blood flow rate to unexposed skin
+  pbpko_bqm_is_class:
+    id: PBPKO:00562
+    label: blood flow rate to unexposed skin
+    iri: http://purl.obolibrary.org/obo/PBPKO_00562
+  unit: L/h
+- id: Qrest
+  name: blood flow rate to the lumped Rest of Body tissues
+  pbpko_bqm_is_class:
+    id: PBPKO:00050
+    label: blood flow rate to restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00050
+  unit: L/h
+- id: QFO
+  name: blood flow follicles, exposed skin
+  pbpko_bqm_is_class:
+    id: PBPKO:00563
+    label: blood flow rate to exposed skin
+    iri: http://purl.obolibrary.org/obo/PBPKO_00563
+  unit: L/h
+- id: QVE
+  name: blood flow rate to Viable Epidermis (split from exposed skin part)
+  pbpko_bqm_is_class:
+    id: PBPKO:00563
+    label: blood flow rate to exposed skin
+    iri: http://purl.obolibrary.org/obo/PBPKO_00563
+  unit: L/h
+- id: SC_dx
+  name: Thickness
+  unit: cm
+- id: CSC01
+  name: ''
+  unit: ''
+- id: CSC02
+  name: ''
+  unit: ''
+- id: CSC03
+  name: ''
+  unit: ''
+- id: CSC04
+  name: ''
+  unit: ''
+- id: CSC05
+  name: ''
+  unit: ''
+- id: CSC06
+  name: ''
+  unit: ''
+- id: CSC07
+  name: ''
+  unit: ''
+- id: CSC08
+  name: ''
+  unit: ''
+- id: CSC09
+  name: ''
+  unit: ''
+- id: Cplasma
+  name: Total concentration of substance in blood plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:00301
+    label: concentration in blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00301
+  unit: ''
+- id: CSSD
+  name: Concentration of chemical in Surface Depot
+  unit: ''
+- id: CVE
+  name: Concentration of chemical in Viable Epidermis
+  unit: ''
+- id: CFO
+  name: Concentration of chemical in Follicle
+  unit: ''
+- id: CSC00
+  name: ''
+  unit: ''
+- id: CSC10
+  name: ''
+  unit: ''
+- id: CvVE
+  name: total venous concentration in Viable Epidermis
+  unit: ''
+- id: CvFO
+  name: total venous concentration in follicle
+  unit: ''
+- id: JSC00
+  name: ''
+  unit: ''
+- id: JSC10
+  name: ''
+  unit: ''
+- id: JFO
+  name: ''
+  unit: ''
+parameterisations:
+- filename: BPA_Dermal_simple-Hu-based.params.csv
+  model_id: BPA_Dermal_PBK_Hu_layered
+  parameters:
+  - id: BW
+    value: 70.0
+    unit: kg
+    reference: ''
+    bqm_is:
+      id: PBPKO:00008
+      label: bodyweight
+      iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  - id: BSA
+    value: 190.0
+    unit: dm^2
+    reference: ''
+    bqm_is:
+      id: PBPKO:00010
+      label: surface area
+      iri: http://purl.obolibrary.org/obo/PBPKO_00010
+  - id: VplasmaC
+    value: 0.0411
+    unit: L/kg
+    reference: ''
+  - id: VSkinC
+    value: 0.038
+    unit: L/kg
+    reference: ''
+  - id: VBody
+    value: 1.0
+    unit: L/kg
+    reference: ''
+  - id: QCC
+    value: 5.6
+    unit: L/min
+    reference: ''
+    bqm_is:
+      id: PBPKO:00013
+      label: cardiac output rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  - id: QSkinC
+    value: 0.05
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00037
+      label: fraction of blood flow to skin
+      iri: http://purl.obolibrary.org/obo/PBPKO_00037
+  - id: Area_exposed_skin
+    value: null
+    unit: dm^2
+    reference: ''
+  - id: Area_exposed_follicle
+    value: 0.005
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00110
+      label: fraction of surface area exposed
+      iri: http://purl.obolibrary.org/obo/PBPKO_00110
+  - id: Thickness_epidermis_finger
+    value: 545.0
+    unit: ''
+    reference: ''
+  - id: Thickness_skin_finger
+    value: null
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00635
+      label: skin thickness
+      iri: http://purl.obolibrary.org/obo/PBPKO_00635
+  - id: Thickness_SC
+    value: null
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00643
+      label: thickness stratum corneum
+      iri: http://purl.obolibrary.org/obo/PBPKO_00643
+  - id: D_SC
+    value: 1.728e-08
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00648
+      label: diffusion rate stratum corneum viable epidermis 
+      iri: http://purl.obolibrary.org/obo/PBPKO_00648
+  - id: u1
+    value: 5.7e-05
+    unit: dm/h
+    reference: ''
+  - id: PCSC
+    value: 64.6
+    unit: dimensionless
+    reference: ''
+  - id: PCSCVE
+    value: 195.12
+    unit: dimensionless
+    reference: ''
+  - id: pskin
+    value: 2.15
+    unit: dimensionless
+    reference: ''
+  - id: P_follicle
+    value: 0.001055
+    unit: dm/h
+    reference: ''
+  - id: PCFO
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+  - id: PCRestbody
+    value: 1.2
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00585
+      label: restbody blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00585
+  - id: CLUrine
+    value: 10.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00237
+      label: renal elimination rate constant
+      iri: http://purl.obolibrary.org/obo/PBPKO_00237
+  - id: Free
+    value: 1.0
+    unit: ''
+    reference: ''
+  - id: SC_dx
+    value: null
+    unit: cm
+    reference: ''
+unit_consistency:
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'CLUrine * (Aplasma / Vplasma)' in the <kineticLaw> element of the <reaction>\
+    \ with id '_J10' produces units that are inconsistent with units of earlier KineticLaw\
+    \ elements."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'Thickness_epidermis_finger' cannot be fully checked. Unit\
+    \ consistency reported as either no errors or further unit errors related to this\
+    \ object may not be accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'Thickness_epidermis_finger'\
+    \ does not have a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'Thickness_skin_finger' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'Thickness_skin_finger'\
+    \ does not have a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'Thickness_SC' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'Thickness_SC' does not\
+    \ have a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'Thickness_VE' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'Thickness_VE' does not\
+    \ have a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'D_SC' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'D_SC' does not have a\
+    \ 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'Free' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'Free' does not have a\
+    \ 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'Thick_follicle' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'Thick_follicle' does\
+    \ not have a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CSC01' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CSC01' does not have\
+    \ a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CSC02' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CSC02' does not have\
+    \ a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CSC03' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CSC03' does not have\
+    \ a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CSC04' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CSC04' does not have\
+    \ a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CSC05' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CSC05' does not have\
+    \ a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CSC06' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CSC06' does not have\
+    \ a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CSC07' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CSC07' does not have\
+    \ a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CSC08' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CSC08' does not have\
+    \ a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CSC09' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CSC09' does not have\
+    \ a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'Cplasma' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'Cplasma' does not have\
+    \ a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CSSD' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CSSD' does not have a\
+    \ 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CVE' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CVE' does not have a\
+    \ 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CFO' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CFO' does not have a\
+    \ 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CSC00' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CSC00' does not have\
+    \ a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CSC10' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CSC10' does not have\
+    \ a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CvVE' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CvVE' does not have a\
+    \ 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'CvFO' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CvFO' does not have a\
+    \ 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'JSC00' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'JSC00' does not have\
+    \ a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'JSC10' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'JSC10' does not have\
+    \ a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'JFO' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'JFO' does not have a\
+    \ 'units' attribute."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <initialAssignment> <math> expression '20 / 100' cannot be fully checked. Unit\
+    \ consistency reported as either no errors or further unit errors related to this\
+    \ object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <initialAssignment> <math> expression '1200 + 545' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <initialAssignment> <math> expression '185 / 100000' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <initialAssignment> <math> expression 'Thickness_SC / 10' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '(Thickness_epidermis_finger - 185) / 100000'\
+    \ cannot be fully checked. Unit consistency reported as either no errors or further\
+    \ unit errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'Area_exposed_skin * Thickness_SC' cannot\
+    \ be fully checked. Unit consistency reported as either no errors or further unit\
+    \ errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'Area_exposed_skin * Thickness_VE' cannot\
+    \ be fully checked. Unit consistency reported as either no errors or further unit\
+    \ errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '(388/560) * Thickness_skin_finger / 100000'\
+    \ cannot be fully checked. Unit consistency reported as either no errors or further\
+    \ unit errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'Area_exposed_skin * Area_exposed_follicle\
+    \ * Thick_follicle' cannot be fully checked. Unit consistency reported as either\
+    \ no errors or further unit errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'Area_exposed_skin * 0.01' cannot be fully\
+    \ checked. Unit consistency reported as either no errors or further unit errors\
+    \ related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'QCC * 60' cannot be fully checked. Unit\
+    \ consistency reported as either no errors or further unit errors related to this\
+    \ object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'Qskin * (1 - frac_exposed)' cannot be fully\
+    \ checked. Unit consistency reported as either no errors or further unit errors\
+    \ related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '0.25 * Qskin_exposed' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '0.75 * Qskin_exposed' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <rateRule> <math> expression 'D_SC * (CSC00 - 2 * CSC01 + CSC02) / pow(SC_dx,\
+    \ 2) + u1 * (CSC02 - CSC00) / (2 * SC_dx)' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <rateRule> <math> expression 'D_SC * (CSC01 - 2 * CSC02 + CSC03) / pow(SC_dx,\
+    \ 2) + u1 * (CSC03 - CSC01) / (2 * SC_dx)' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <rateRule> <math> expression 'D_SC * (CSC02 - 2 * CSC03 + CSC04) / pow(SC_dx,\
+    \ 2) + u1 * (CSC04 - CSC02) / (2 * SC_dx)' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <rateRule> <math> expression 'D_SC * (CSC03 - 2 * CSC04 + CSC05) / pow(SC_dx,\
+    \ 2) + u1 * (CSC05 - CSC03) / (2 * SC_dx)' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <rateRule> <math> expression 'D_SC * (CSC04 - 2 * CSC05 + CSC06) / pow(SC_dx,\
+    \ 2) + u1 * (CSC06 - CSC04) / (2 * SC_dx)' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <rateRule> <math> expression 'D_SC * (CSC05 - 2 * CSC06 + CSC07) / pow(SC_dx,\
+    \ 2) + u1 * (CSC07 - CSC05) / (2 * SC_dx)' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <rateRule> <math> expression 'D_SC * (CSC06 - 2 * CSC07 + CSC08) / pow(SC_dx,\
+    \ 2) + u1 * (CSC08 - CSC06) / (2 * SC_dx)' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <rateRule> <math> expression 'D_SC * (CSC07 - 2 * CSC08 + CSC09) / pow(SC_dx,\
+    \ 2) + u1 * (CSC09 - CSC07) / (2 * SC_dx)' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <rateRule> <math> expression 'D_SC * (CSC08 - 2 * CSC09 + CSC10) / pow(SC_dx,\
+    \ 2) + u1 * (CSC10 - CSC08) / (2 * SC_dx)' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'PCSC * CSSD' cannot be fully checked. Unit\
+    \ consistency reported as either no errors or further unit errors related to this\
+    \ object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'PCSCVE * CVE' cannot be fully checked. Unit\
+    \ consistency reported as either no errors or further unit errors related to this\
+    \ object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'CVE / pskin' cannot be fully checked. Unit\
+    \ consistency reported as either no errors or further unit errors related to this\
+    \ object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'CFO / pskin' cannot be fully checked. Unit\
+    \ consistency reported as either no errors or further unit errors related to this\
+    \ object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '-D_SC * (CSC01 - CSC00) / SC_dx - u1 * CSC00'\
+    \ cannot be fully checked. Unit consistency reported as either no errors or further\
+    \ unit errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '-D_SC * (CSC10 - CSC09) / SC_dx - u1 * CSC10'\
+    \ cannot be fully checked. Unit consistency reported as either no errors or further\
+    \ unit errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'P_follicle * (CSSD - CFO / PCFO)' cannot\
+    \ be fully checked. Unit consistency reported as either no errors or further unit\
+    \ errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <kineticLaw> <math> expression 'JSC10 * Area_exposed_skin * (1 - Area_exposed_follicle)'\
+    \ cannot be fully checked. Unit consistency reported as either no errors or further\
+    \ unit errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <kineticLaw> <math> expression 'JFO * Area_exposed_skin * Area_exposed_follicle'\
+    \ cannot be fully checked. Unit consistency reported as either no errors or further\
+    \ unit errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <kineticLaw> <math> expression 'QVE * Cplasma' cannot be fully checked. Unit\
+    \ consistency reported as either no errors or further unit errors related to this\
+    \ object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <kineticLaw> <math> expression 'QVE * (CVE / pskin)' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <kineticLaw> <math> expression 'QFO * Cplasma' cannot be fully checked. Unit\
+    \ consistency reported as either no errors or further unit errors related to this\
+    \ object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <kineticLaw> <math> expression 'QFO * (CFO / pskin)' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <kineticLaw> <math> expression 'Qskin_unexp * Cplasma' cannot be fully checked.\
+    \ Unit consistency reported as either no errors or further unit errors related\
+    \ to this object may not be accurate."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are mole (exponent = 1, multiplier = 1, scale = -9), second (exponent\
+    \ = -1, multiplier = 3600, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J10') are mole (exponent\
+    \ = 1, multiplier = 1e-09, scale = 0), litre (exponent = -1, multiplier = 1, scale\
+    \ = 0)."

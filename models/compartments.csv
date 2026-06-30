@@ -14,43 +14,68 @@ model_A_inh_exh_art_ven.sbml,Air,alveolar air,inhalation,Generic,L,PBPKO:00458,s
 model_A_inh_exh_art_ven.sbml,Arterial,,inhalation,Generic,L,,,
 model_A_inh_exh_art_ven.sbml,Venous,,inhalation,Generic,L,,,
 model_A_inh_exh_art_ven.sbml,RestofBody,,inhalation,Generic,L,,,
-dermal-simple-model-Karrer-based.sbml,SurfaceDepot,,dermal,dermal-simple-model-Karrer-based,,,,
-dermal-simple-model-Karrer-based.sbml,Skin,,dermal,dermal-simple-model-Karrer-based,,,,
-dermal-simple-model-Karrer-based.sbml,Plasma,,dermal,dermal-simple-model-Karrer-based,,,,
-dermal-simple-model-Karrer-based.sbml,Restbody,,dermal,dermal-simple-model-Karrer-based,,,,
-Dermal_APM_CarrierBrunet1999_DermalOnly.sbml,Skin,,dermal,Dermal_APM_CarrierBrunet1999_DermalOnly,,,,
-Dermal_APM_CarrierBrunet1999_DermalOnly.sbml,RestBody,,dermal,Dermal_APM_CarrierBrunet1999_DermalOnly,,,,
-Dermal_APM_CarrierBrunet1999_DermalOnly.sbml,Urine,,dermal,Dermal_APM_CarrierBrunet1999_DermalOnly,,,,
-Dermal_APM_CarrierBrunet1999_DermalOnly.sbml,NonObservedExcr,,dermal,Dermal_APM_CarrierBrunet1999_DermalOnly,,,,
-dermal-simple-Quindroit-based.sbml,default_compartment,,dermal,dermal-simple-Quindroit-based,,,,
-dermal-simple-Quindroit-based.sbml,SkinSurface,,dermal,dermal-simple-Quindroit-based,,,,
-dermal-simple-Quindroit-based.sbml,StratumCorneum,,dermal,dermal-simple-Quindroit-based,,,,
-dermal-simple-Quindroit-based.sbml,Skin,,dermal,dermal-simple-Quindroit-based,,,,
-dermal-simple-Quindroit-based.sbml,ArterialBlood,,dermal,dermal-simple-Quindroit-based,,,,
-dermal-simple-Quindroit-based.sbml,VenousBlood,,dermal,dermal-simple-Quindroit-based,,,,
-dermal-simple-Quindroit-based.sbml,RestOfBody,,dermal,dermal-simple-Quindroit-based,,,,
-dermal-simple-Tonnelier-based.sbml,Skin,,dermal,dermal-simple-Tonnelier-based,,,,
-dermal-simple-Tonnelier-based.sbml,Blood,,dermal,dermal-simple-Tonnelier-based,,,,
-dermal-simple-Tonnelier-based.sbml,Liver,,dermal,dermal-simple-Tonnelier-based,,,,
-dermal-simple-Timchalk-based.sbml,Skin,Skin Compartment,dermal,dermal-simple-Timchalk-based,L,PBPKO:00470,skin compartment,http://purl.obolibrary.org/obo/PBPKO_00470
-dermal-simple-Timchalk-based.sbml,ArterialBlood,Arterial blood compartment,dermal,dermal-simple-Timchalk-based,L,PBPKO:00552,arterial blood compartment,http://purl.obolibrary.org/obo/PBPKO_00552
-dermal-simple-Timchalk-based.sbml,VenousBlood,Venous blood compartment,dermal,dermal-simple-Timchalk-based,L,PBPKO:00561,venous blood compartment,http://purl.obolibrary.org/obo/PBPKO_00561
-dermal-simple-Timchalk-based.sbml,RestOfBody,Rest of Body Compartment,dermal,dermal-simple-Timchalk-based,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-dermal-simple-Timchalk-based.sbml,Elimination,Elimination compartment,dermal,dermal-simple-Timchalk-based,L,PBPKO:00446,compartment,http://purl.obolibrary.org/obo/PBPKO_00446
-dermal-simple-Tornero-Velez-based.sbml,default_compartment,,dermal,dermal-simple-Tornero-Velez-based,,,,
-dermal-simple-Tornero-Velez-based.sbml,Blood,,dermal,dermal-simple-Tornero-Velez-based,,,,
-dermal-simple-Tornero-Velez-based.sbml,RestBody,,dermal,dermal-simple-Tornero-Velez-based,,,,
-dermal-simple-Tornero-Velez-based.sbml,SC,,dermal,dermal-simple-Tornero-Velez-based,,,,
-dermal-simple-Tornero-Velez-based.sbml,VE,,dermal,dermal-simple-Tornero-Velez-based,,,,
-dermal-steady-state-Dancik-based.sbml,Stratum_Corneum,,dermal,dermal-steady-state-Dancik-based,,,,
-dermal-steady-state-Dancik-based.sbml,Viable_Epidermis,,dermal,dermal-steady-state-Dancik-based,,,,
-dermal-steady-state-Dancik-based.sbml,Dermis,,dermal,dermal-steady-state-Dancik-based,,,,
-BPA_Dermal_simple-Hu-based.sbml,SurfaceDepot,skin-surface depot sub-compartment (before follicle or SC sub-compartments),dermal,BPA_Dermal_simple-Hu-based,L,PBPKO:00625,exposed skin compartment,http://purl.obolibrary.org/obo/PBPKO_00625
-BPA_Dermal_simple-Hu-based.sbml,ExposedVE,Exposed Skin Viable Epidermis compartment,dermal,BPA_Dermal_simple-Hu-based,L,PBPKO:00456,viable exposed skin compartment,http://purl.obolibrary.org/obo/PBPKO_00456
-BPA_Dermal_simple-Hu-based.sbml,Follicle,Follicle sub-compartment,dermal,BPA_Dermal_simple-Hu-based,L,,,
-BPA_Dermal_simple-Hu-based.sbml,UnexposedSkin,Unexposed Skin compartment,dermal,BPA_Dermal_simple-Hu-based,L,PBPKO:00626,unexposed skin compartment,http://purl.obolibrary.org/obo/PBPKO_00626
-BPA_Dermal_simple-Hu-based.sbml,Plasma,Plasma Compartment,dermal,BPA_Dermal_simple-Hu-based,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-BPA_Dermal_simple-Hu-based.sbml,Restbody,Rest of Body Compartment,dermal,BPA_Dermal_simple-Hu-based,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+BPA_Dermal_simple-Hu-based.sbml,SurfaceDepot,skin-surface depot sub-compartment (before follicle or SC sub-compartments),dermal,Bisphenols,L,PBPKO:00625,exposed skin compartment,http://purl.obolibrary.org/obo/PBPKO_00625
+BPA_Dermal_simple-Hu-based.sbml,ExposedVE,Exposed Skin Viable Epidermis compartment,dermal,Bisphenols,L,PBPKO:00456,viable exposed skin compartment,http://purl.obolibrary.org/obo/PBPKO_00456
+BPA_Dermal_simple-Hu-based.sbml,Follicle,Follicle sub-compartment,dermal,Bisphenols,L,,,
+BPA_Dermal_simple-Hu-based.sbml,UnexposedSkin,Unexposed Skin compartment,dermal,Bisphenols,L,PBPKO:00626,unexposed skin compartment,http://purl.obolibrary.org/obo/PBPKO_00626
+BPA_Dermal_simple-Hu-based.sbml,Plasma,Plasma Compartment,dermal,Bisphenols,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+BPA_Dermal_simple-Hu-based.sbml,Restbody,Rest of Body Compartment,dermal,Bisphenols,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+BPA_Dermal_simple-Hu-based.sbml,Urine,Urine compartment,dermal,Bisphenols,L,,,
+dermal-simple-model-Karrer-based.sbml,SurfaceDepot,,dermal,Bisphenols,,,,
+dermal-simple-model-Karrer-based.sbml,Skin,,dermal,Bisphenols,,,,
+dermal-simple-model-Karrer-based.sbml,Plasma,,dermal,Bisphenols,,,,
+dermal-simple-model-Karrer-based.sbml,Restbody,,dermal,Bisphenols,,,,
+dermal-simple-model-Karrer-based.sbml,Urine,,dermal,Bisphenols,,,,
+dermal-simple-Tonnelier-based.sbml,DermalAbsorptionCompartment,,dermal,Pesticides,,,,
+dermal-simple-Tonnelier-based.sbml,PortalVeinBlood,,dermal,Pesticides,,,,
+dermal-simple-Tonnelier-based.sbml,Liver,,dermal,Pesticides,,,,
+dermal-simple-Tonnelier-based.sbml,SystemicCompartment,,dermal,Pesticides,,,,
+dermal-simple-Tonnelier-based.sbml,RenalExcretion,,dermal,Pesticides,,,,
+Wei.sbml,default_compartment,,dermal,Pesticides,,,,
+Wei.sbml,Skin,,dermal,Pesticides,,,,
+Wei.sbml,Blood,,dermal,Pesticides,,,,
+Wei.sbml,RestOfBody,,dermal,Pesticides,,,,
+Wei.sbml,UrinaryExcretion,,dermal,Pesticides,,,,
+Bouchard.sbml,SkinSurf,,dermal,Pesticides,,,,
+Bouchard.sbml,Blood,,dermal,Pesticides,,,,
+Bouchard.sbml,RestOfBody,,dermal,Pesticides,,,,
+Bouchard.sbml,Urine,,dermal,Pesticides,,,,
+dermal-simple-Quindroit-based.sbml,SkinSurface,,dermal,Pesticides,,,,
+dermal-simple-Quindroit-based.sbml,StratumCorneum,,dermal,Pesticides,,,,
+dermal-simple-Quindroit-based.sbml,Skin,,dermal,Pesticides,,,,
+dermal-simple-Quindroit-based.sbml,ArterialBlood,,dermal,Pesticides,,,,
+dermal-simple-Quindroit-based.sbml,VenousBlood,,dermal,Pesticides,,,,
+dermal-simple-Quindroit-based.sbml,UrinaryTrack,,dermal,Pesticides,,,,
+dermal-simple-Quindroit-based.sbml,RestOfBody,,dermal,Pesticides,,,,
+Dermal_APM_CarrierBrunet1999_DermalOnly.sbml,Skin,,dermal,Pesticides,,,,
+Dermal_APM_CarrierBrunet1999_DermalOnly.sbml,RestBody,,dermal,Pesticides,,,,
+Dermal_APM_CarrierBrunet1999_DermalOnly.sbml,Urine,,dermal,Pesticides,,,,
+Dermal_APM_CarrierBrunet1999_DermalOnly.sbml,NonObservedExcr,,dermal,Pesticides,,,,
+dermal-simple-Tornero-Velez-based.sbml,SkinSurface,,dermal,Pesticides,,,,
+dermal-simple-Tornero-Velez-based.sbml,StratumCorneum,,dermal,Pesticides,,,,
+dermal-simple-Tornero-Velez-based.sbml,ViableEpidermis,,dermal,Pesticides,,,,
+dermal-simple-Tornero-Velez-based.sbml,ArterialBlood,,dermal,Pesticides,,,,
+dermal-simple-Tornero-Velez-based.sbml,VenousBlood,,dermal,Pesticides,,,,
+dermal-simple-Tornero-Velez-based.sbml,UrinaryExcretion,,dermal,Pesticides,,,,
+dermal-simple-Tornero-Velez-based.sbml,RestOfBody,,dermal,Pesticides,,,,
+Poet.sbml,Skin,,dermal,Pesticides,,,,
+Poet.sbml,ArterialBlood,,dermal,Pesticides,,,,
+Poet.sbml,VenousBlood,,dermal,Pesticides,,,,
+Poet.sbml,RestOfBody,,dermal,Pesticides,,,,
+Poet.sbml,Elimination,,dermal,Pesticides,,,,
+dermal-simple-Timchalk-based.sbml,Skin,Skin Compartment,dermal,Pesticides,L,PBPKO:00470,skin compartment,http://purl.obolibrary.org/obo/PBPKO_00470
+dermal-simple-Timchalk-based.sbml,ArterialBlood,Arterial blood compartment,dermal,Pesticides,L,PBPKO:00552,arterial blood compartment,http://purl.obolibrary.org/obo/PBPKO_00552
+dermal-simple-Timchalk-based.sbml,VenousBlood,Venous blood compartment,dermal,Pesticides,L,PBPKO:00561,venous blood compartment,http://purl.obolibrary.org/obo/PBPKO_00561
+dermal-simple-Timchalk-based.sbml,RestOfBody,Rest of Body Compartment,dermal,Pesticides,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+dermal-simple-Timchalk-based.sbml,Elimination,Elimination compartment,dermal,Pesticides,L,PBPKO:00446,compartment,http://purl.obolibrary.org/obo/PBPKO_00446
+PFOA_dermal-simple-model-Husoy-based.sbml,Skin,Skin compartment,dermal,PFAS,L,PBPKO:00470,skin compartment,http://purl.obolibrary.org/obo/PBPKO_00470
+PFOA_dermal-simple-model-Husoy-based.sbml,Plasma,,dermal,PFAS,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
+PFOA_dermal-simple-model-Husoy-based.sbml,RestBody,,dermal,PFAS,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+PFOA_dermal-simple-model-Husoy-based.sbml,Kidney,,dermal,PFAS,L,PBPKO:00557,kidney compartment,http://purl.obolibrary.org/obo/PBPKO_00557
+PFOA_dermal-simple-model-Husoy-based.sbml,Urine,,dermal,PFAS,L,PBPKO:00556,urine compartment,http://purl.obolibrary.org/obo/PBPKO_00556
+dermal-steady-state-Dancik-based.sbml,Stratum_Corneum,,dermal,Other,,,,
+dermal-steady-state-Dancik-based.sbml,Viable_Epidermis,,dermal,Other,,,,
+dermal-steady-state-Dancik-based.sbml,Dermis,,dermal,Other,,,,
 Mukherjee.sbml,GILumen,GI lumen compartment,oral,Mycotoxins,L,PBPKO:00478,gut lumen compartment,http://purl.obolibrary.org/obo/PBPKO_00478
 Mukherjee.sbml,Fast,Fast GI lumen compartment,oral,Mycotoxins,L,PBPKO:00478,gut lumen compartment,http://purl.obolibrary.org/obo/PBPKO_00478
 Mukherjee.sbml,Slow,Slow GI lumen compartment,oral,Mycotoxins,L,PBPKO:00478,gut lumen compartment,http://purl.obolibrary.org/obo/PBPKO_00478

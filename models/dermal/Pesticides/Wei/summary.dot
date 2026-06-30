@@ -1,0 +1,103 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_default_compartment {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-default_compartment",
+			label="default_compartment
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ABloodn	[color=black,
+			fillcolor=gold,
+			href="#species-ABloodn",
+			label="ABloodn
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Skin {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Skin",
+			label="Skin
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ASkin	[color=black,
+			fillcolor=gold,
+			href="#species-ASkin",
+			label="ASkin
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Blood {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Blood",
+			label="Blood
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ABlood	[color=black,
+			fillcolor=gold,
+			href="#species-ABlood",
+			label="ABlood
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_RestOfBody {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-RestOfBody",
+			label="RestOfBody
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARest	[color=black,
+			fillcolor=gold,
+			href="#species-ARest",
+			label="ARest
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_UrinaryExcretion {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-UrinaryExcretion",
+			label="UrinaryExcretion
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AUrine	[color=black,
+			fillcolor=gold,
+			href="#species-AUrine",
+			label="AUrine
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	ASkin -> ABlood	[label=R2];
+	ABlood -> ASkin	[label=R1];
+	ABlood -> ARest	[label=R3];
+	ABlood -> AUrine	[label=R5,
+		minlen=1];
+	ARest -> ABloodn	[label=R4,
+		minlen=1];
+}

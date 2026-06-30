@@ -1,0 +1,118 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_Skin {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Skin",
+			label="Skin
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ADermalLiquid	[color=black,
+			fillcolor=gold,
+			href="#species-ADermalLiquid",
+			label="ADermalLiquid
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		ASkin	[color=black,
+			fillcolor=gold,
+			href="#species-ASkin",
+			label="ASkin
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_ArterialBlood {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-ArterialBlood",
+			label="ArterialBlood
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AArterialBlood	[color=black,
+			fillcolor=gold,
+			href="#species-AArterialBlood",
+			label="AArterialBlood
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_VenousBlood {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-VenousBlood",
+			label="VenousBlood
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AVenousBlood	[color=black,
+			fillcolor=gold,
+			href="#species-AVenousBlood",
+			label="AVenousBlood
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_RestOfBody {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-RestOfBody",
+			label="RestOfBody
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARestOfBody	[color=black,
+			fillcolor=gold,
+			href="#species-ARestOfBody",
+			label="ARestOfBody
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Elimination {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Elimination",
+			label="Elimination
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ATCP	[color=black,
+			fillcolor=gold,
+			href="#species-ATCP",
+			label="ATCP
+[-]",
+			shape=box,
+			style="filled,rounded"];
+		Aurine	[color=black,
+			fillcolor=gold,
+			href="#species-Aurine",
+			label="Aurine
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	ASkin -> AVenousBlood	[label=R4];
+	ASkin -> ATCP	[label=R1];
+	AArterialBlood -> ASkin	[label=R3];
+	AArterialBlood -> ARestOfBody	[label=R5];
+	AVenousBlood -> AArterialBlood	[label=R7];
+	ARestOfBody -> AVenousBlood	[label=R6];
+	ATCP -> Aurine	[label=R8,
+		minlen=1];
+}

@@ -1,0 +1,104 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_DermalAbsorptionCompartment {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-DermalAbsorptionCompartment",
+			label="DermalAbsorptionCompartment
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Aabsorbed	[color=black,
+			fillcolor=gold,
+			href="#species-Aabsorbed",
+			label="Aabsorbed
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_PortalVeinBlood {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-PortalVeinBlood",
+			label="PortalVeinBlood
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		APortalVein	[color=black,
+			fillcolor=gold,
+			href="#species-APortalVein",
+			label="APortalVein
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Liver {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Liver",
+			label="Liver
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Aliver	[color=black,
+			fillcolor=gold,
+			href="#species-Aliver",
+			label="Aliver
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_SystemicCompartment {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-SystemicCompartment",
+			label="SystemicCompartment
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Asys	[color=black,
+			fillcolor=gold,
+			href="#species-Asys",
+			label="Asys
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_RenalExcretion {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-RenalExcretion",
+			label="RenalExcretion
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AUrine	[color=black,
+			fillcolor=gold,
+			href="#species-AUrine",
+			label="AUrine
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	Aabsorbed -> Asys	[label=_J0,
+		minlen=1];
+	APortalVein -> Aliver	[label=_J2];
+	Aliver -> Asys	[label=_J4];
+	Asys -> APortalVein	[label=_J1];
+	Asys -> Aliver	[label=_J3];
+	Asys -> AUrine	[label=_J6,
+		minlen=1];
+}

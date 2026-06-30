@@ -1,0 +1,142 @@
+digraph {
+	graph [ratio=fill,
+		size="7,4"
+	];
+	node [fontname=Arial];
+	subgraph cluster_SkinSurface {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-SkinSurface",
+			label="SkinSurface
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Asurf	[color=black,
+			fillcolor=gold,
+			href="#species-Asurf",
+			label="Asurf
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_StratumCorneum {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-StratumCorneum",
+			label="StratumCorneum
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Asc	[color=black,
+			fillcolor=gold,
+			href="#species-Asc",
+			label="Asc
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Skin {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Skin",
+			label="Skin
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Askin	[color=black,
+			fillcolor=gold,
+			href="#species-Askin",
+			label="Askin
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_ArterialBlood {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-ArterialBlood",
+			label="ArterialBlood
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Aart	[color=black,
+			fillcolor=gold,
+			href="#species-Aart",
+			label="Aart
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_VenousBlood {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-VenousBlood",
+			label="VenousBlood
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Aven	[color=black,
+			fillcolor=gold,
+			href="#species-Aven",
+			label="Aven
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_UrinaryTrack {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-UrinaryTrack",
+			label="UrinaryTrack
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Aurine	[color=black,
+			fillcolor=gold,
+			href="#species-Aurine",
+			label="Aurine
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_RestOfBody {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-RestOfBody",
+			label="RestOfBody
+[-]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Arest	[color=black,
+			fillcolor=gold,
+			href="#species-Arest",
+			label="Arest
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	Asc -> Askin	[label=R1,
+		minlen=1];
+	Askin -> Aven	[label=R4];
+	Aart -> Askin	[label=R2];
+	Aart -> Askin	[label=R3];
+	Aart -> Arest	[label=R5,
+		minlen=1];
+	Aven -> Aart	[label=R6];
+	Aven -> Aurine	[label=R7,
+		minlen=1];
+}

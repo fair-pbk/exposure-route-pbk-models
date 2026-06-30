@@ -14,44 +14,74 @@ model_A_inh_exh_art_ven.sbml,Aair,,inhalation,Generic,ug,,,,,,
 model_A_inh_exh_art_ven.sbml,Aart,,inhalation,Generic,ug,,,,,,
 model_A_inh_exh_art_ven.sbml,Aven,amount of chemical in venous blood,inhalation,Generic,ug,,,,,,
 model_A_inh_exh_art_ven.sbml,Arest,amount of chemical in rest-of-body,inhalation,Generic,ug,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,,,
-dermal-simple-model-Karrer-based.sbml,SSD,,dermal,dermal-simple-model-Karrer-based,,,,,,,
-dermal-simple-model-Karrer-based.sbml,ASkin,,dermal,dermal-simple-model-Karrer-based,,,,,,,
-dermal-simple-model-Karrer-based.sbml,APlasma,,dermal,dermal-simple-model-Karrer-based,,,,,,,
-dermal-simple-model-Karrer-based.sbml,ARestbody,,dermal,dermal-simple-model-Karrer-based,,,,,,,
-Dermal_APM_CarrierBrunet1999_DermalOnly.sbml,ASkin,,dermal,Dermal_APM_CarrierBrunet1999_DermalOnly,,,,,,,
-Dermal_APM_CarrierBrunet1999_DermalOnly.sbml,ARestBody,,dermal,Dermal_APM_CarrierBrunet1999_DermalOnly,,,,,,,
-Dermal_APM_CarrierBrunet1999_DermalOnly.sbml,AUrine,,dermal,Dermal_APM_CarrierBrunet1999_DermalOnly,,,,,,,
-Dermal_APM_CarrierBrunet1999_DermalOnly.sbml,ANonObservedExcr,,dermal,Dermal_APM_CarrierBrunet1999_DermalOnly,,,,,,,
-dermal-simple-Quindroit-based.sbml,Qsurf,,dermal,dermal-simple-Quindroit-based,,,,,,,
-dermal-simple-Quindroit-based.sbml,Qsc,,dermal,dermal-simple-Quindroit-based,,,,,,,
-dermal-simple-Quindroit-based.sbml,Cskin,,dermal,dermal-simple-Quindroit-based,,,,,,,
-dermal-simple-Quindroit-based.sbml,Cart,,dermal,dermal-simple-Quindroit-based,,,,,,,
-dermal-simple-Quindroit-based.sbml,Cven,,dermal,dermal-simple-Quindroit-based,,,,,,,
-dermal-simple-Quindroit-based.sbml,Crest,,dermal,dermal-simple-Quindroit-based,,,,,,,
-dermal-simple-Quindroit-based.sbml,Qskin,,dermal,dermal-simple-Quindroit-based,,,,,,,
-dermal-simple-Quindroit-based.sbml,Qrest,,dermal,dermal-simple-Quindroit-based,,,,,,,
-dermal-simple-Tonnelier-based.sbml,ASkin,,dermal,dermal-simple-Tonnelier-based,,,,,,,
-dermal-simple-Tonnelier-based.sbml,CBlood,,dermal,dermal-simple-Tonnelier-based,,,,,,,
-dermal-simple-Tonnelier-based.sbml,CLiver,,dermal,dermal-simple-Tonnelier-based,,,,,,,
-dermal-simple-Timchalk-based.sbml,ASkin,amount of chemical in skin,dermal,dermal-simple-Timchalk-based,mg,PBPKO:00506,amount in skin,http://purl.obolibrary.org/obo/PBPKO_00506,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
-dermal-simple-Timchalk-based.sbml,AArterialBlood,amount in arterial blood,dermal,dermal-simple-Timchalk-based,mg,PBPKO:00631,amount in arterial blood,http://purl.obolibrary.org/obo/PBPKO_00631,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
-dermal-simple-Timchalk-based.sbml,AVenousBlood,amount of chemical in venous blood,dermal,dermal-simple-Timchalk-based,mg,PBPKO:00632,amount in venous blood,http://purl.obolibrary.org/obo/PBPKO_00632,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
-dermal-simple-Timchalk-based.sbml,ARestOfBody,amount of chemical in rest-of-body,dermal,dermal-simple-Timchalk-based,mg,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
-dermal-simple-Timchalk-based.sbml,Aurine,amount of chemical eliminated,dermal,dermal-simple-Timchalk-based,mg,,,,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
-dermal-simple-Tornero-Velez-based.sbml,Asurfacedepot,,dermal,dermal-simple-Tornero-Velez-based,,,,,,,
-dermal-simple-Tornero-Velez-based.sbml,ASC,,dermal,dermal-simple-Tornero-Velez-based,,,,,,,
-dermal-simple-Tornero-Velez-based.sbml,AVE,,dermal,dermal-simple-Tornero-Velez-based,,,,,,,
-dermal-simple-Tornero-Velez-based.sbml,CBlood,,dermal,dermal-simple-Tornero-Velez-based,,,,,,,
-dermal-simple-Tornero-Velez-based.sbml,CRestbody,,dermal,dermal-simple-Tornero-Velez-based,,,,,,,
-dermal-steady-state-Dancik-based.sbml,C_SC,,dermal,dermal-steady-state-Dancik-based,,,,,,,
-dermal-steady-state-Dancik-based.sbml,C_VE,,dermal,dermal-steady-state-Dancik-based,,,,,,,
-dermal-steady-state-Dancik-based.sbml,C_Dermis,,dermal,dermal-steady-state-Dancik-based,,,,,,,
-BPA_Dermal_simple-Hu-based.sbml,AWELL,amount of chemical in Surface Depot (on Skin),dermal,BPA_Dermal_simple-Hu-based,,,,,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
-BPA_Dermal_simple-Hu-based.sbml,AVE,"amount of chemical in Viable Epidermis, exposed skin",dermal,BPA_Dermal_simple-Hu-based,,PBPKO:00638,amount in viable epidermis of exposed skin,http://purl.obolibrary.org/obo/PBPKO_00638,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
-BPA_Dermal_simple-Hu-based.sbml,AFO,amount of chemical in Follicle,dermal,BPA_Dermal_simple-Hu-based,,,,,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
-BPA_Dermal_simple-Hu-based.sbml,Askin_unexp,amount of chemical in unexposed skin,dermal,BPA_Dermal_simple-Hu-based,,,,,,,
-BPA_Dermal_simple-Hu-based.sbml,Aplasma,amount of chemical in plasma,dermal,BPA_Dermal_simple-Hu-based,,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
-BPA_Dermal_simple-Hu-based.sbml,ARestbody,amount of chemical in rest-of-body,dermal,BPA_Dermal_simple-Hu-based,,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
+BPA_Dermal_simple-Hu-based.sbml,AWELL,amount of chemical in Surface Depot (on Skin),dermal,Bisphenols,nmol,,,,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
+BPA_Dermal_simple-Hu-based.sbml,AVE,"amount of chemical in Viable Epidermis, exposed skin",dermal,Bisphenols,nmol,PBPKO:00638,amount in viable epidermis of exposed skin,http://purl.obolibrary.org/obo/PBPKO_00638,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
+BPA_Dermal_simple-Hu-based.sbml,AFO,amount of chemical in Follicle,dermal,Bisphenols,nmol,,,,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
+BPA_Dermal_simple-Hu-based.sbml,Askin_unexp,amount of chemical in unexposed skin,dermal,Bisphenols,nmol,,,,,,
+BPA_Dermal_simple-Hu-based.sbml,Aplasma,amount of chemical in plasma,dermal,Bisphenols,nmol,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
+BPA_Dermal_simple-Hu-based.sbml,ARestbody,amount of chemical in rest-of-body,dermal,Bisphenols,nmol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
+BPA_Dermal_simple-Hu-based.sbml,AUrine,amount of chemical eliminated,dermal,Bisphenols,nmol,,,,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+dermal-simple-model-Karrer-based.sbml,SSD,,dermal,Bisphenols,,,,,,,
+dermal-simple-model-Karrer-based.sbml,ASkin,,dermal,Bisphenols,,,,,,,
+dermal-simple-model-Karrer-based.sbml,APlasma,,dermal,Bisphenols,,,,,,,
+dermal-simple-model-Karrer-based.sbml,ARestbody,,dermal,Bisphenols,,,,,,,
+dermal-simple-model-Karrer-based.sbml,AUrine,,dermal,Bisphenols,,,,,,,
+dermal-simple-Tonnelier-based.sbml,Aabsorbed,,dermal,Pesticides,,,,,,,
+dermal-simple-Tonnelier-based.sbml,APortalVein,,dermal,Pesticides,,,,,,,
+dermal-simple-Tonnelier-based.sbml,Asys,,dermal,Pesticides,,,,,,,
+dermal-simple-Tonnelier-based.sbml,AUrine,,dermal,Pesticides,,,,,,,
+dermal-simple-Tonnelier-based.sbml,Aliver,,dermal,Pesticides,,,,,,,
+Wei.sbml,ASkin,,dermal,Pesticides,,,,,,,
+Wei.sbml,ABlood,,dermal,Pesticides,,,,,,,
+Wei.sbml,ARest,,dermal,Pesticides,,,,,,,
+Wei.sbml,AUrine,,dermal,Pesticides,,,,,,,
+Wei.sbml,ABloodn,,dermal,Pesticides,,,,,,,
+Bouchard.sbml,ASkin,,dermal,Pesticides,,,,,,,
+Bouchard.sbml,ABlood,,dermal,Pesticides,,,,,,,
+Bouchard.sbml,AStorage,,dermal,Pesticides,,,,,,,
+Bouchard.sbml,AMetTCP,,dermal,Pesticides,,,,,,,
+Bouchard.sbml,AMetAP,,dermal,Pesticides,,,,,,,
+Bouchard.sbml,AUrine,,dermal,Pesticides,,,,,,,
+dermal-simple-Quindroit-based.sbml,Asurf,,dermal,Pesticides,,,,,,,
+dermal-simple-Quindroit-based.sbml,Asc,,dermal,Pesticides,,,,,,,
+dermal-simple-Quindroit-based.sbml,Askin,,dermal,Pesticides,,,,,,,
+dermal-simple-Quindroit-based.sbml,Aart,,dermal,Pesticides,,,,,,,
+dermal-simple-Quindroit-based.sbml,Aven,,dermal,Pesticides,,,,,,,
+dermal-simple-Quindroit-based.sbml,Arest,,dermal,Pesticides,,,,,,,
+dermal-simple-Quindroit-based.sbml,Aurine,,dermal,Pesticides,,,,,,,
+Dermal_APM_CarrierBrunet1999_DermalOnly.sbml,ASkin,,dermal,Pesticides,,,,,,,
+Dermal_APM_CarrierBrunet1999_DermalOnly.sbml,ARestBody,,dermal,Pesticides,,,,,,,
+Dermal_APM_CarrierBrunet1999_DermalOnly.sbml,AUrine,,dermal,Pesticides,,,,,,,
+Dermal_APM_CarrierBrunet1999_DermalOnly.sbml,ANonObservedExcr,,dermal,Pesticides,,,,,,,
+dermal-simple-Tornero-Velez-based.sbml,Asurfacedepot,,dermal,Pesticides,,,,,,,
+dermal-simple-Tornero-Velez-based.sbml,Asc,,dermal,Pesticides,,,,,,,
+dermal-simple-Tornero-Velez-based.sbml,Askin,,dermal,Pesticides,,,,,,,
+dermal-simple-Tornero-Velez-based.sbml,Aart,,dermal,Pesticides,,,,,,,
+dermal-simple-Tornero-Velez-based.sbml,Aven,,dermal,Pesticides,,,,,,,
+dermal-simple-Tornero-Velez-based.sbml,Arest,,dermal,Pesticides,,,,,,,
+dermal-simple-Tornero-Velez-based.sbml,Aurine,,dermal,Pesticides,,,,,,,
+Poet.sbml,ADermalLiquid,,dermal,Pesticides,,,,,,,
+Poet.sbml,ASkin,,dermal,Pesticides,,,,,,,
+Poet.sbml,AArterialBlood,,dermal,Pesticides,,,,,,,
+Poet.sbml,AVenousBlood,,dermal,Pesticides,,,,,,,
+Poet.sbml,ARestOfBody,,dermal,Pesticides,,,,,,,
+Poet.sbml,ATCP,,dermal,Pesticides,,,,,,,
+Poet.sbml,Aurine,,dermal,Pesticides,,,,,,,
+dermal-simple-Timchalk-based.sbml,ADermalLiquid,,dermal,Pesticides,,,,,,,
+dermal-simple-Timchalk-based.sbml,ASkin,amount of chemical in skin,dermal,Pesticides,mg,PBPKO:00506,amount in skin,http://purl.obolibrary.org/obo/PBPKO_00506,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+dermal-simple-Timchalk-based.sbml,AArterialBlood,amount in arterial blood,dermal,Pesticides,mg,PBPKO:00631,amount in arterial blood,http://purl.obolibrary.org/obo/PBPKO_00631,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+dermal-simple-Timchalk-based.sbml,AVenousBlood,amount of chemical in venous blood,dermal,Pesticides,mg,PBPKO:00632,amount in venous blood,http://purl.obolibrary.org/obo/PBPKO_00632,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+dermal-simple-Timchalk-based.sbml,ARestOfBody,amount of chemical in rest-of-body,dermal,Pesticides,mg,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+dermal-simple-Timchalk-based.sbml,ATCP,,dermal,Pesticides,,,,,,,
+dermal-simple-Timchalk-based.sbml,Aurine,amount of chemical eliminated,dermal,Pesticides,mg,,,,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+PFOA_dermal-simple-model-Husoy-based.sbml,ASkin,,dermal,PFAS,,PBPKO:00506,amount in skin,http://purl.obolibrary.org/obo/PBPKO_00506,,,
+PFOA_dermal-simple-model-Husoy-based.sbml,APlasma,,dermal,PFAS,,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,,,
+PFOA_dermal-simple-model-Husoy-based.sbml,ARestbody,,dermal,PFAS,,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,,,
+PFOA_dermal-simple-model-Husoy-based.sbml,AKidney,,dermal,PFAS,,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498,,,
+PFOA_dermal-simple-model-Husoy-based.sbml,AUrine,,dermal,PFAS,,PBPKO:00272,amount in urine,http://purl.obolibrary.org/obo/PBPKO_00272,,,
+dermal-steady-state-Dancik-based.sbml,C_SC,,dermal,Other,,,,,,,
+dermal-steady-state-Dancik-based.sbml,C_VE,,dermal,Other,,,,,,,
+dermal-steady-state-Dancik-based.sbml,C_Dermis,,dermal,Other,,,,,,,
 Mukherjee.sbml,AGILumen,Amount in GI lumen,oral,Mycotoxins,ng,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
 Mukherjee.sbml,AFast,Amount in fast GI lumen,oral,Mycotoxins,ng,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
 Mukherjee.sbml,ASlow,Amount in slow GI lumen,oral,Mycotoxins,ng,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106

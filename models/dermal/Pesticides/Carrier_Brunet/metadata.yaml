@@ -1,0 +1,153 @@
+id: Dermal_APM_CarrierBrunet1999_DermalOnly
+name: Dermal_APM_CarrierBrunet 1999_DermalOnly
+applicability_domain:
+  chemicals: []
+  species: []
+num_compartments: 4
+num_species: 4
+num_parameters: 4
+num_reactions: 3
+compartments:
+- id: Skin
+  name: ''
+  unit: ''
+- id: RestBody
+  name: ''
+  unit: ''
+- id: Urine
+  name: ''
+  unit: ''
+- id: NonObservedExcr
+  name: ''
+  unit: ''
+species:
+- id: ASkin
+  name: ''
+  unit: ''
+- id: ARestBody
+  name: ''
+  unit: ''
+- id: AUrine
+  name: ''
+  unit: ''
+- id: ANonObservedExcr
+  name: ''
+  unit: ''
+parameters:
+- id: Rest
+  name: ''
+  unit: ''
+- id: k_abs_bl
+  name: ''
+  unit: ''
+- id: k_o
+  name: ''
+  unit: ''
+- id: k_n
+  name: ''
+  unit: ''
+parameterisations:
+- filename: Dermal_APM_CarrierBrunet1999_DermalOnly.params.csv
+  model_id: Dermal_APM_CarrierBrunet1999_DermalOnly
+  parameters:
+  - id: Rest
+    value: 70.0
+    unit: ''
+    reference: ''
+  - id: k_abs_bl
+    value: 0.1561
+    unit: ''
+    reference: ''
+  - id: k_o
+    value: 0.0162
+    unit: ''
+    reference: ''
+  - id: k_n
+    value: 0.005
+    unit: ''
+    reference: ''
+unit_consistency:
+- level: warning
+  msg: "As a principle of best modeling practice, the size of a <compartment> should\
+    \ be set to a value rather than be left undefined. Doing so improves the portability\
+    \ of models between different simulation and analysis systems, and helps make\
+    \ it easier to detect potential errors in models.\n The <compartment> with the\
+    \ id 'RestBody' does not have a 'size' attribute, nor is its initial value set\
+    \ by an <initialAssignment> or <assignmentRule>."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'Rest' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'Rest' does not have a\
+    \ 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'k_abs_bl' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'k_abs_bl' does not have\
+    \ a 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'k_o' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'k_o' does not have a\
+    \ 'units' attribute."
+- level: error
+  msg: "In situations where a mathematical expression refers to a compartment, species\
+    \ or parameter, it is necessary to know the units of the object to establish unit\
+    \ consistency. In models where the units of an object have not been declared,\
+    \ libSBML does not yet have the functionality to accurately verify the consistency\
+    \ of the units in mathematical expressions referring to that object. \n The units\
+    \ of the <parameter> 'k_n' cannot be fully checked. Unit consistency reported\
+    \ as either no errors or further unit errors related to this object may not be\
+    \ accurate."
+- level: error
+  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
+    \ the unit of measurement associated with that parameter's value is undefined.\n\
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'k_n' does not have a\
+    \ 'units' attribute."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <kineticLaw> <math> expression 'k_abs_bl * ASkin' cannot be fully checked. Unit\
+    \ consistency reported as either no errors or further unit errors related to this\
+    \ object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <kineticLaw> <math> expression 'k_o * ARestBody' cannot be fully checked. Unit\
+    \ consistency reported as either no errors or further unit errors related to this\
+    \ object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <kineticLaw> <math> expression 'k_n * ARestBody' cannot be fully checked. Unit\
+    \ consistency reported as either no errors or further unit errors related to this\
+    \ object may not be accurate."
