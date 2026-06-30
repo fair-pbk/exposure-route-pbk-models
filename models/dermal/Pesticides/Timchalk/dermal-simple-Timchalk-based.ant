@@ -70,7 +70,7 @@ model notes ```
 
 
  //------------------------------------------------------------
-  Simplified metabolism and TCP urinary elimination
+ // Simplified metabolism and TCP urinary elimination
  //------------------------------------------------------------
  // Note: 
  // Timchalk includes hepatic CYP450 metabolism to CPF-oxon and TCP,
@@ -124,7 +124,7 @@ model notes ```
 
 
 
-/------------------------------------------------------------
+//------------------------------------------------------------
 // Dermal uptake into skin
 //------------------------------------------------------------
 //

@@ -226,7 +226,7 @@ R4: ASkin -> AVenousBlood;  Qskin * CVSkinFree;
 // This is not a full Poet model; it is a simplified dermal-only version.
 
 //R_rest_in:
-R5: ArterialBlood -> ARestOfBody;  Qrest * CArtFree;
+R5: AArterialBlood -> ARestOfBody;  Qrest * CArtFree;
 
 //R_rest_out:
 R6: ARestOfBody -> AVenousBlood;  Qrest * CVRestFree;

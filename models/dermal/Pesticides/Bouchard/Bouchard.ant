@@ -124,7 +124,7 @@ k_MU_AP = 0.199;            // 1/h
 // Corresponds to:
 // dD(t)/dt = g_dermal(t) - k_abs_dermal * D(t)
 
-R_dermal_input: -> ASkin; DermalInputRate;
+//R_dermal_input: -> ASkin; DermalInputRate;
 
 
 //----------------------------------------------------------

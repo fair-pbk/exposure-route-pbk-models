@@ -45,7 +45,7 @@ substanceOnly species Aliver in Liver;
 BW = 70  // kg, standard adult body weight assumption
 VDermalAbsorption= 1  // L, nominal depot volume
 VPortalVeinBlood = 3.2     // L, portal vein blood volume used in Tonnelier 
-VRenalExcretion = 1;  L, bookkeeping compartment
+VRenalExcretion = 1;  // L, bookkeeping compartment
 
 Volume_Liver_per_kg = 0.026       // L/kg body weight
 VLiver := Volume_Liver_per_kg * BW
@@ -60,9 +60,9 @@ VSysDist := VSysDist_per_kg * BW  //L
 
 // Parameters
 k_abs = 2;                       // 1/h, generic first-order absorption rate from Tonnelier
+F_dermal_abs = 1
 
-
-VLiver = 1.5;           // liver volume
+//VLiver = 1.5;           // liver volume
 
 CL_R = 0.118 		// renal clearance in L/h, values per compund Tonnelier supp Table1
 CL_int = 2.6;           // µL/min/10^6 hepatocytes, intrinsic hepatic clearance
@@ -72,7 +72,7 @@ fu = 0.01760;              // fraction unbound, for chlorpyrifos ; / fu = 0.0461
 
 // Concentrations
 CPortVein := APortalVein / VPortalVeinBlood
-CLiver := ALiver / VLiver
+CLiver := Aliver / VLiver
 CSysCirc := Asys / VSysDist
 
 // Flows, 
@@ -112,7 +112,7 @@ APortalVein -> Aliver;  QPortVein * CPortVein;
 Asys -> Aliver;  QHepaticArtery * CSysCirc;
 
 // Liver back to systemic circulation
-Aliver -> Asys   Qhepatic * CLiver;
+Aliver -> Asys;   Qhepatic * CLiver;
 
 
 //-----------------------------------------------

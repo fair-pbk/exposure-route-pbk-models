@@ -28,7 +28,7 @@ compartment UrinaryExcretion;
 //--------------------------------------------------
 
 substanceOnly species ASkin in Skin;
-substanceOnly species Blood in Blood;
+substanceOnly species ABlood in Blood;
 substanceOnly species ARest in RestOfBody;
 substanceOnly species AUrine in UrinaryExcretion;
 
@@ -69,7 +69,7 @@ QSkin := QSkinC * QC;        // L/h
 QRest := QC - QSkin;       // L/h, lumped flow to rest of body
 
 
-/------------------------------------------------
+//------------------------------------------------
 // Partition coefficients, using Weis values
 // Note: PS = 5.60 is used here
 // as a simplified approximation because the rest compartment is
@@ -155,7 +155,7 @@ R2: ASkin -> ABlood;   QSkin * (CSkin / PSkinBlood);
 
 R3: ABlood -> ARest; QRest * CBlood;
 
-R4: ARest -> ABloodn  QRest * (CRest / PRestBlood);
+R4: ARest -> ABloodn;  QRest * (CRest / PRestBlood);
 
 
 //------------------------------------------------
