@@ -193,6 +193,14 @@ parameters:
   unit: dimensionless
 - id: kabs
   name: absorption constant rate
+  pbpko_bqm_is_class:
+    id: PBPKO:00141
+    label: absorption rate constant gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00141
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: /h
 - id: KmLMet1
   name: Glucuronidation - Km
@@ -208,20 +216,20 @@ parameters:
 - id: VmaxLMet1C
   name: Glucuronidation - Vmax
   pbpko_bqm_is_class:
-    id: PBPKO:00214
-    label: Michaelis constant  liver
-    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    id: PBPKO:00213
+    label: maximum rate in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00213
   chebi_bqb_is_class:
     id: CHEBI:76967
     label: human xenobiotic metabolite
     iri: http://purl.obolibrary.org/obo/CHEBI_76967
-  unit: nmol/min/g
+  unit: umol/h/g
 - id: VmaxLMet1
   name: Glucuronidation - Vmax
   pbpko_bqm_is_class:
-    id: PBPKO:00214
-    label: Michaelis constant  liver
-    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    id: PBPKO:00213
+    label: maximum rate in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00213
   chebi_bqb_is_class:
     id: CHEBI:76967
     label: human xenobiotic metabolite
@@ -234,31 +242,31 @@ parameters:
     label: Michaelis constant  liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00214
   chebi_bqb_is_class:
-    id: CHEBI:33216
-    label: bisphenol A
-    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+    id: CHEBI:167305
+    label: bisphenol A sulfate
+    iri: http://purl.obolibrary.org/obo/CHEBI_167305
   unit: umol/L
 - id: VmaxLMet2C
   name: Sulfation - Vmax
   pbpko_bqm_is_class:
-    id: PBPKO:00214
-    label: Michaelis constant  liver
-    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    id: PBPKO:00213
+    label: maximum rate in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00213
   chebi_bqb_is_class:
-    id: CHEBI:33216
-    label: bisphenol A
-    iri: http://purl.obolibrary.org/obo/CHEBI_33216
-  unit: nmol/min/g
+    id: CHEBI:167305
+    label: bisphenol A sulfate
+    iri: http://purl.obolibrary.org/obo/CHEBI_167305
+  unit: umol/h/g
 - id: VmaxLMet2
   name: Sulfation - Vmax
   pbpko_bqm_is_class:
-    id: PBPKO:00214
-    label: Michaelis constant  liver
-    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    id: PBPKO:00213
+    label: maximum rate in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00213
   chebi_bqb_is_class:
-    id: CHEBI:33216
-    label: bisphenol A
-    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+    id: CHEBI:167305
+    label: bisphenol A sulfate
+    iri: http://purl.obolibrary.org/obo/CHEBI_167305
   unit: umol/h
 - id: CBlood
   name: Concentration in blood
@@ -356,6 +364,14 @@ parameterisations:
     value: 1.2
     unit: /h
     reference: ''
+    bqm_is:
+      id: PBPKO:00141
+      label: absorption rate constant gut
+      iri: http://purl.obolibrary.org/obo/PBPKO_00141
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: KmLMet1
     value: 8.5
     unit: umol/L
@@ -373,9 +389,9 @@ parameterisations:
     unit: ''
     reference: ''
     bqm_is:
-      id: PBPKO:00214
-      label: Michaelis constant  liver
-      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+      id: PBPKO:00213
+      label: maximum rate in liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00213
     bqb_is:
       id: CHEBI:76967
       label: human xenobiotic metabolite
@@ -389,9 +405,9 @@ parameterisations:
       label: Michaelis constant  liver
       iri: http://purl.obolibrary.org/obo/PBPKO_00214
     bqb_is:
-      id: CHEBI:33216
-      label: bisphenol A
-      iri: http://purl.obolibrary.org/obo/CHEBI_33216
+      id: CHEBI:167305
+      label: bisphenol A sulfate
+      iri: http://purl.obolibrary.org/obo/CHEBI_167305
 unit_consistency:
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\

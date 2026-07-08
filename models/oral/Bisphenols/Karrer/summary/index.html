@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://fair-pbk.github.io/exposure-route-pbk-models/models/oral/Bisphenols/Karrer/summary/">
       
       
-        <link rel="prev" href="../../Hu/summary/">
+        <link rel="prev" href="../../Deepika/summary/">
       
       
         <link rel="next" href="../../Loizou/summary/">
@@ -532,34 +532,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Hu/summary/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Hu
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -704,17 +676,6 @@
     <span class="md-ellipsis">
       
         Assignment rules
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#initial-assignments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Initial assignments
       
     </span>
   </a>
@@ -3583,7 +3544,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Number of species</td>
-<td style="text-align: left;">15</td>
+<td style="text-align: left;">14</td>
 </tr>
 <tr>
 <td style="text-align: left;">Number of parameters</td>
@@ -3661,15 +3622,15 @@
 <tbody>
 <tr>
 <td style="text-align: left;">ASt</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Amount in stomach</td>
+<td style="text-align: left;">nmol</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06004</td>
 </tr>
 <tr>
 <td style="text-align: left;">ASI</td>
 <td style="text-align: left;">Amount in small intestine</td>
 <td style="text-align: left;">nmol</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06005</td>
 </tr>
 <tr>
 <td style="text-align: left;">ALiver</td>
@@ -3690,12 +3651,6 @@
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00501</td>
 </tr>
 <tr>
-<td style="text-align: left;">AGILumen</td>
-<td style="text-align: left;">Amount in GI lumen</td>
-<td style="text-align: left;">nmol</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00496</td>
-</tr>
-<tr>
 <td style="text-align: left;">AFeces</td>
 <td style="text-align: left;">Amount in feces</td>
 <td style="text-align: left;">nmol</td>
@@ -3705,13 +3660,13 @@
 <td style="text-align: left;">ASIMet1</td>
 <td style="text-align: left;">Amount in small intestine</td>
 <td style="text-align: left;">nmol</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06005</td>
 </tr>
 <tr>
 <td style="text-align: left;">ASIMet2</td>
 <td style="text-align: left;">Amount in small intestine</td>
 <td style="text-align: left;">nmol</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06005</td>
 </tr>
 <tr>
 <td style="text-align: left;">AGILumenMet1</td>
@@ -4044,19 +3999,19 @@
 </tr>
 <tr>
 <td style="text-align: left;">VmaxGILumenMet1</td>
-<td style="text-align: left;">fGutMet1 * VmaxGILumenMet1c * BW</td>
+<td style="text-align: left;">fGutMet1 * VmaxGILumenMet1c * BW * 1000</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxGILumenMet2</td>
-<td style="text-align: left;">fGutMet2 * VmaxGILumenMet2c * BW</td>
+<td style="text-align: left;">fGutMet2 * VmaxGILumenMet2c * BW * 1000</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet1</td>
-<td style="text-align: left;">fLiverMet1 * VmaxLMet1c * VLc * BW</td>
+<td style="text-align: left;">fLiverMet1 * VmaxLMet1c * VLc * BW * 1000</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet2</td>
-<td style="text-align: left;">fLiverMet2 * VmaxLMet2c * VLc * BW</td>
+<td style="text-align: left;">fLiverMet2 * VmaxLMet2c * VLc * BW * 1000</td>
 </tr>
 <tr>
 <td style="text-align: left;">CSt</td>
@@ -4081,25 +4036,6 @@
 <tr>
 <td style="text-align: left;">CGut</td>
 <td style="text-align: left;">ASI / enterocytes</td>
-</tr>
-</tbody>
-</table>
-<h2 id="initial-assignments">Initial assignments</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">variable</th>
-<th style="text-align: left;">assignment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">VmaxLMet1c</td>
-<td style="text-align: left;">9040 * 1000</td>
-</tr>
-<tr>
-<td style="text-align: left;">VmaxLMet2c</td>
-<td style="text-align: left;">149 * 1000</td>
 </tr>
 </tbody>
 </table>
@@ -4226,7 +4162,7 @@
 <td style="text-align: left;">kabs</td>
 <td style="text-align: left;">Uptake from enterocyte to liver</td>
 <td style="text-align: left;">/h</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00141</td>
 </tr>
 <tr>
 <td style="text-align: left;">kfeC</td>
@@ -4339,14 +4275,14 @@
 <tr>
 <td style="text-align: left;">VmaxGILumenMet1c</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
-<td style="text-align: left;">nmol/h/kg</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
+<td style="text-align: left;">nmol/h/g</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00211</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxGILumenMet1</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
 <td style="text-align: left;">nmol/h</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00211</td>
 </tr>
 <tr>
 <td style="text-align: left;">fGutMet2</td>
@@ -4363,14 +4299,14 @@
 <tr>
 <td style="text-align: left;">VmaxGILumenMet2c</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
-<td style="text-align: left;">nmol/h/kg</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
+<td style="text-align: left;">nmol/h/g</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00211</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxGILumenMet2</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
 <td style="text-align: left;">nmol/h</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00212</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00211</td>
 </tr>
 <tr>
 <td style="text-align: left;">BileFracLMet1</td>
@@ -4399,14 +4335,14 @@
 <tr>
 <td style="text-align: left;">VmaxLMet1c</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
-<td style="text-align: left;">nmol/h/L</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
+<td style="text-align: left;">nmol/h/g</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00213</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet1</td>
 <td style="text-align: left;">Glucuronidation - Vmax</td>
 <td style="text-align: left;">nmol/h</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00213</td>
 </tr>
 <tr>
 <td style="text-align: left;">fLiverMet2</td>
@@ -4423,14 +4359,14 @@
 <tr>
 <td style="text-align: left;">VmaxLMet2c</td>
 <td style="text-align: left;">Sulfation - Vmax</td>
-<td style="text-align: left;">nmol/h/L</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
+<td style="text-align: left;">nmol/h/g</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00213</td>
 </tr>
 <tr>
 <td style="text-align: left;">VmaxLMet2</td>
 <td style="text-align: left;">Sulfation - Vmax</td>
 <td style="text-align: left;">nmol/h</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00214</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00213</td>
 </tr>
 <tr>
 <td style="text-align: left;">CSt</td>

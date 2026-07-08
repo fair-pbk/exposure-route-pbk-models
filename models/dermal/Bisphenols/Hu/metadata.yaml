@@ -58,6 +58,10 @@ compartments:
 species:
 - id: AWELL
   name: amount of chemical in Surface Depot (on Skin)
+  pbpko_bqm_is_class:
+    id: PBPKO:06051
+    label: amount in skin surface depot
+    iri: http://purl.obolibrary.org/obo/PBPKO_06051
   chebi_bqb_is_class:
     id: CHEBI:22901
     label: bisphenol
@@ -76,6 +80,10 @@ species:
   unit: nmol
 - id: AFO
   name: amount of chemical in Follicle
+  pbpko_bqm_is_class:
+    id: PBPKO:06053
+    label: amount in follicles
+    iri: http://purl.obolibrary.org/obo/PBPKO_06053
   chebi_bqb_is_class:
     id: CHEBI:22901
     label: bisphenol
@@ -153,6 +161,10 @@ parameters:
   unit: dimensionless
 - id: Area_exposed_skin
   name: area of exposed skin
+  pbpko_bqm_is_class:
+    id: PBPKO:04063
+    label: area of exposed skin
+    iri: http://purl.obolibrary.org/obo/PBPKO_04063
   unit: dm^2
 - id: Area_exposed_follicle
   name: area of exposed follicle
@@ -163,6 +175,10 @@ parameters:
   unit: dimensionless
 - id: Thickness_epidermis_finger
   name: thickness of epidermis (finger)
+  pbpko_bqm_is_class:
+    id: PBPKO:04060
+    label: thickness epidermis
+    iri: http://purl.obolibrary.org/obo/PBPKO_04060
   unit: ''
 - id: Thickness_skin_finger
   name: thickness of skin (finger)
@@ -197,18 +213,46 @@ parameters:
   unit: dm/h
 - id: PCSC
   name: Partition coefficient of Stratum Corneum to Viable epidermis
+  pbpko_bqm_is_class:
+    id: PBPKO:03032
+    label: partition coeffcient of stratum corneum to viable epidermis
+    iri: http://purl.obolibrary.org/obo/PBPKO_03032
+  chebi_bqb_is_class:
+    id: CHEBI:22901
+    label: bisphenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_22901
   unit: dimensionless
 - id: PCSCVE
   name: Partition coefficient of Stratum Corneum to Viable Epidermis
+  pbpko_bqm_is_class:
+    id: PBPKO:03032
+    label: partition coeffcient of stratum corneum to viable epidermis
+    iri: http://purl.obolibrary.org/obo/PBPKO_03032
+  chebi_bqb_is_class:
+    id: CHEBI:22901
+    label: bisphenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_22901
   unit: dimensionless
 - id: pskin
   name: VE/blood partition coefficient
+  pbpko_bqm_is_class:
+    id: PBPKO:03033
+    label: partition coeffcient of viable epidermis to blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_03033
   unit: dimensionless
 - id: P_follicle
   name: Follicle permeability coefficient
+  pbpko_bqm_is_class:
+    id: PBPKO:03031
+    label: follicle permeability coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_03031
   unit: dm/h
 - id: PCFO
   name: follicle/SSD partition term
+  pbpko_bqm_is_class:
+    id: PBPKO:03035
+    label: partition coeffcient of follicle to skin surface depot
+    iri: http://purl.obolibrary.org/obo/PBPKO_03035
   unit: dimensionless
 - id: PCRestbody
   name: tissue-to-blood partition coefficient (lumped Rest of Body)
@@ -267,12 +311,20 @@ parameters:
   unit: L
 - id: VexposedVE
   name: Volume of exposed Viable epidermis
+  pbpko_bqm_is_class:
+    id: PBPKO:04061
+    label: volume of exposed viable epidermis
+    iri: http://purl.obolibrary.org/obo/PBPKO_04061
   unit: L
 - id: Thick_follicle
   name: ''
   unit: ''
 - id: Vfollicle
   name: Volume of follicles
+  pbpko_bqm_is_class:
+    id: PBPKO:04062
+    label: volume of follicle
+    iri: http://purl.obolibrary.org/obo/PBPKO_04062
   unit: L
 - id: Vskin_unexp
   name: Volume of unexposed skin
@@ -283,6 +335,10 @@ parameters:
   unit: L
 - id: VSSD
   name: Volume of SurfaceDepot (skin)
+  pbpko_bqm_is_class:
+    id: PBPKO:04078
+    label: volume of skin surface depot
+    iri: http://purl.obolibrary.org/obo/PBPKO_04078
   unit: L
 - id: QC
   name: Cardiac Output (scaled)
@@ -372,6 +428,10 @@ parameters:
   unit: ''
 - id: CSSD
   name: Concentration of chemical in Surface Depot
+  pbpko_bqm_is_class:
+    id: PBPKO:06051
+    label: amount in skin surface depot
+    iri: http://purl.obolibrary.org/obo/PBPKO_06051
   unit: ''
 - id: CVE
   name: Concentration of chemical in Viable Epidermis
@@ -452,6 +512,10 @@ parameterisations:
     value: null
     unit: dm^2
     reference: ''
+    bqm_is:
+      id: PBPKO:04063
+      label: area of exposed skin
+      iri: http://purl.obolibrary.org/obo/PBPKO_04063
   - id: Area_exposed_follicle
     value: 0.005
     unit: dimensionless
@@ -464,6 +528,10 @@ parameterisations:
     value: 545.0
     unit: ''
     reference: ''
+    bqm_is:
+      id: PBPKO:04060
+      label: thickness epidermis
+      iri: http://purl.obolibrary.org/obo/PBPKO_04060
   - id: Thickness_skin_finger
     value: null
     unit: ''
@@ -496,22 +564,50 @@ parameterisations:
     value: 64.6
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:03032
+      label: partition coeffcient of stratum corneum to viable epidermis
+      iri: http://purl.obolibrary.org/obo/PBPKO_03032
+    bqb_is:
+      id: CHEBI:22901
+      label: bisphenol
+      iri: http://purl.obolibrary.org/obo/CHEBI_22901
   - id: PCSCVE
     value: 195.12
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:03032
+      label: partition coeffcient of stratum corneum to viable epidermis
+      iri: http://purl.obolibrary.org/obo/PBPKO_03032
+    bqb_is:
+      id: CHEBI:22901
+      label: bisphenol
+      iri: http://purl.obolibrary.org/obo/CHEBI_22901
   - id: pskin
     value: 2.15
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:03033
+      label: partition coeffcient of viable epidermis to blood
+      iri: http://purl.obolibrary.org/obo/PBPKO_03033
   - id: P_follicle
     value: 0.001055
     unit: dm/h
     reference: ''
+    bqm_is:
+      id: PBPKO:03031
+      label: follicle permeability coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_03031
   - id: PCFO
     value: 1.0
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:03035
+      label: partition coeffcient of follicle to skin surface depot
+      iri: http://purl.obolibrary.org/obo/PBPKO_03035
   - id: PCRestbody
     value: 1.2
     unit: dimensionless

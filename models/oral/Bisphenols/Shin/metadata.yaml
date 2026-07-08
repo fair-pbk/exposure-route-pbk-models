@@ -66,6 +66,10 @@ compartments:
 species:
 - id: ASt
   name: Amount in stomach
+  pbpko_bqm_is_class:
+    id: PBPKO:00566
+    label: stomach compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00566
   chebi_bqb_is_class:
     id: CHEBI:33216
     label: bisphenol A
@@ -84,6 +88,10 @@ species:
   unit: mg
 - id: ASpleen
   name: Amount in spleen
+  pbpko_bqm_is_class:
+    id: PBPKO:06013
+    label: amount in spleen
+    iri: http://purl.obolibrary.org/obo/PBPKO_06013
   chebi_bqb_is_class:
     id: CHEBI:33216
     label: bisphenol A
@@ -91,6 +99,10 @@ species:
   unit: mg
 - id: ASI
   name: Amount in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06005
+    label: amount in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_06005
   chebi_bqb_is_class:
     id: CHEBI:33216
     label: bisphenol A
@@ -270,6 +282,14 @@ parameters:
   unit: dimensionless
 - id: PSI
   name: Partition coefficient - small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:00168
+    label: intestine plasma partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00168
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: dimensionless
 - id: PRest
   name: Partition coefficient - rest of body
@@ -389,6 +409,14 @@ parameterisations:
     value: 45.96
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:00168
+      label: intestine plasma partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00168
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: PRest
     value: 1.0
     unit: dimensionless

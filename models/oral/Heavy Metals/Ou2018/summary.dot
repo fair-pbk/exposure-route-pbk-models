@@ -21,7 +21,7 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		AGutlumen_Met	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-AGutlumen_Met",
 			label="AGutlumen_Met
 [-]",
@@ -64,7 +64,7 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		ALiver_Met	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-ALiver_Met",
 			label="ALiver_Met
 [PBPKO:00497]",

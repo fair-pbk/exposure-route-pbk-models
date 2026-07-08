@@ -157,19 +157,12 @@ Loizou.sbml,Gut,gut,oral,Bisphenols,,PBPKO:00477,gut compartment,http://purl.obo
 Loizou.sbml,Rest,rest-of-body,oral,Bisphenols,,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 Christensen.sbml,Stomach,stomach,oral,Bisphenols,L,PBPKO:00566,stomach compartment,http://purl.obolibrary.org/obo/PBPKO_00566
 Christensen.sbml,Blood,blood,oral,Bisphenols,L,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
-Christensen.sbml,Bladder,,oral,Bisphenols,L,PBPKO:00402,bladder compartment,http://purl.obolibrary.org/obo/PBPKO_00402
+Christensen.sbml,Bladder,bladder,oral,Bisphenols,L,PBPKO:00402,bladder compartment,http://purl.obolibrary.org/obo/PBPKO_00402
 Teeguarden.sbml,GILumen,GI lumen compartment,oral,Bisphenols,L,PBPKO:00478,gut lumen compartment,http://purl.obolibrary.org/obo/PBPKO_00478
 Teeguarden.sbml,Liver,liver,oral,Bisphenols,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
 Teeguarden.sbml,Blood,blood,oral,Bisphenols,L,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
 Teeguarden.sbml,Rest,rest-of-body,oral,Bisphenols,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 Teeguarden.sbml,Feces,feces,oral,Bisphenols,L,PBPKO:00555,feces compartment,http://purl.obolibrary.org/obo/PBPKO_00555
-Hu.sbml,Stomach,stomach,oral,Bisphenols,L,PBPKO:00566,stomach compartment,http://purl.obolibrary.org/obo/PBPKO_00566
-Hu.sbml,SI,Small intestine compartment,oral,Bisphenols,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
-Hu.sbml,Liver,liver,oral,Bisphenols,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
-Hu.sbml,Plasma,blood plasma,oral,Bisphenols,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-Hu.sbml,Rest,rest-of-body,oral,Bisphenols,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Hu.sbml,GILumen,GI lumen compartment,oral,Bisphenols,L,PBPKO:00478,gut lumen compartment,http://purl.obolibrary.org/obo/PBPKO_00478
-Hu.sbml,Feces,feces,oral,Bisphenols,L,PBPKO:00555,feces compartment,http://purl.obolibrary.org/obo/PBPKO_00555
 Yang.sbml,Stomach,stomach,oral,Bisphenols,L,PBPKO:00566,stomach compartment,http://purl.obolibrary.org/obo/PBPKO_00566
 Yang.sbml,SI,Small intestine compartment,oral,Bisphenols,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
 Yang.sbml,Liver,liver,oral,Bisphenols,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558

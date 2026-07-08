@@ -10,7 +10,7 @@ applicability_domain:
     label: Homo sapiens
     iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
 num_compartments: 7
-num_species: 15
+num_species: 14
 num_parameters: 59
 num_reactions: 24
 compartments:
@@ -65,10 +65,22 @@ compartments:
   unit: L
 species:
 - id: ASt
-  name: ''
-  unit: ''
+  name: Amount in stomach
+  pbpko_bqm_is_class:
+    id: PBPKO:06004
+    label: amount in stomach
+    iri: http://purl.obolibrary.org/obo/PBPKO_06004
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: nmol
 - id: ASI
   name: Amount in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06005
+    label: amount in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_06005
   chebi_bqb_is_class:
     id: CHEBI:33216
     label: bisphenol A
@@ -107,17 +119,6 @@ species:
     label: bisphenol A
     iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: nmol
-- id: AGILumen
-  name: Amount in GI lumen
-  pbpko_bqm_is_class:
-    id: PBPKO:00496
-    label: amount in gut
-    iri: http://purl.obolibrary.org/obo/PBPKO_00496
-  chebi_bqb_is_class:
-    id: CHEBI:33216
-    label: bisphenol A
-    iri: http://purl.obolibrary.org/obo/CHEBI_33216
-  unit: nmol
 - id: AFeces
   name: Amount in feces
   pbpko_bqm_is_class:
@@ -131,6 +132,10 @@ species:
   unit: nmol
 - id: ASIMet1
   name: Amount in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06005
+    label: amount in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_06005
   chebi_bqb_is_class:
     id: CHEBI:76967
     label: human xenobiotic metabolite
@@ -138,6 +143,10 @@ species:
   unit: nmol
 - id: ASIMet2
   name: Amount in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06005
+    label: amount in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_06005
   chebi_bqb_is_class:
     id: CHEBI:167305
     label: bisphenol A sulfate
@@ -330,6 +339,14 @@ parameters:
   unit: /h.kg^0.25
 - id: kabs
   name: Uptake from enterocyte to liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00141
+    label: absorption rate constant gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00141
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: /h
 - id: kfeC
   name: intrinsic fecal elimination rate constant
@@ -428,20 +445,20 @@ parameters:
 - id: VmaxGILumenMet1c
   name: Glucuronidation - Vmax
   pbpko_bqm_is_class:
-    id: PBPKO:00212
-    label: Michaelis constant  intestine
-    iri: http://purl.obolibrary.org/obo/PBPKO_00212
+    id: PBPKO:00211
+    label: maximum rate in intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00211
   chebi_bqb_is_class:
     id: CHEBI:76967
     label: human xenobiotic metabolite
     iri: http://purl.obolibrary.org/obo/CHEBI_76967
-  unit: nmol/h/kg
+  unit: nmol/h/g
 - id: VmaxGILumenMet1
   name: Glucuronidation - Vmax
   pbpko_bqm_is_class:
-    id: PBPKO:00212
-    label: Michaelis constant  intestine
-    iri: http://purl.obolibrary.org/obo/PBPKO_00212
+    id: PBPKO:00211
+    label: maximum rate in intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00211
   chebi_bqb_is_class:
     id: CHEBI:76967
     label: human xenobiotic metabolite
@@ -464,20 +481,20 @@ parameters:
 - id: VmaxGILumenMet2c
   name: Glucuronidation - Vmax
   pbpko_bqm_is_class:
-    id: PBPKO:00212
-    label: Michaelis constant  intestine
-    iri: http://purl.obolibrary.org/obo/PBPKO_00212
+    id: PBPKO:00211
+    label: maximum rate in intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00211
   chebi_bqb_is_class:
     id: CHEBI:167305
     label: bisphenol A sulfate
     iri: http://purl.obolibrary.org/obo/CHEBI_167305
-  unit: nmol/h/kg
+  unit: nmol/h/g
 - id: VmaxGILumenMet2
   name: Glucuronidation - Vmax
   pbpko_bqm_is_class:
-    id: PBPKO:00212
-    label: Michaelis constant  intestine
-    iri: http://purl.obolibrary.org/obo/PBPKO_00212
+    id: PBPKO:00211
+    label: maximum rate in intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00211
   chebi_bqb_is_class:
     id: CHEBI:167305
     label: bisphenol A sulfate
@@ -506,20 +523,20 @@ parameters:
 - id: VmaxLMet1c
   name: Glucuronidation - Vmax
   pbpko_bqm_is_class:
-    id: PBPKO:00214
-    label: Michaelis constant  liver
-    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    id: PBPKO:00213
+    label: maximum rate in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00213
   chebi_bqb_is_class:
     id: CHEBI:76967
     label: human xenobiotic metabolite
     iri: http://purl.obolibrary.org/obo/CHEBI_76967
-  unit: nmol/h/L
+  unit: nmol/h/g
 - id: VmaxLMet1
   name: Glucuronidation - Vmax
   pbpko_bqm_is_class:
-    id: PBPKO:00214
-    label: Michaelis constant  liver
-    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    id: PBPKO:00213
+    label: maximum rate in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00213
   chebi_bqb_is_class:
     id: CHEBI:76967
     label: human xenobiotic metabolite
@@ -542,20 +559,20 @@ parameters:
 - id: VmaxLMet2c
   name: Sulfation - Vmax
   pbpko_bqm_is_class:
-    id: PBPKO:00214
-    label: Michaelis constant  liver
-    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    id: PBPKO:00213
+    label: maximum rate in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00213
   chebi_bqb_is_class:
     id: CHEBI:167305
     label: bisphenol A sulfate
     iri: http://purl.obolibrary.org/obo/CHEBI_167305
-  unit: nmol/h/L
+  unit: nmol/h/g
 - id: VmaxLMet2
   name: Sulfation - Vmax
   pbpko_bqm_is_class:
-    id: PBPKO:00214
-    label: Michaelis constant  liver
-    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    id: PBPKO:00213
+    label: maximum rate in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00213
   chebi_bqb_is_class:
     id: CHEBI:167305
     label: bisphenol A sulfate
@@ -596,6 +613,253 @@ parameters:
     iri: http://purl.obolibrary.org/obo/PBPKO_00538
   unit: nmol/L
 parameterisations:
+- filename: Hu.params.csv
+  model_id: Karrer2018_BPA_Human
+  parameters:
+  - id: BW
+    value: 60.0
+    unit: kg
+    reference: ''
+    bqm_is:
+      id: PBPKO:00008
+      label: bodyweight
+      iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  - id: VLc
+    value: 0.0233
+    unit: L/kg
+    reference: ''
+    bqm_is:
+      id: PBPKO:00078
+      label: fraction of liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00078
+  - id: VPlasmac
+    value: 0.04
+    unit: L/kg
+    reference: ''
+    bqm_is:
+      id: PBPKO:00104
+      label: fraction of plasma
+      iri: http://purl.obolibrary.org/obo/PBPKO_00104
+  - id: enterocytes
+    value: 0.1223
+    unit: L
+    reference: ''
+  - id: QLc
+    value: 0.24
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00025
+      label: fraction of blood flow to liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00025
+  - id: PL
+    value: 0.73
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00577
+      label: liver blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00577
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  - id: PRest
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00585
+      label: restbody blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00585
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  - id: kstoC
+    value: 3.5
+    unit: 1/h/kg^(-0.25)
+    reference: ''
+  - id: k0C
+    value: 0.0
+    unit: 1/h/kg^(-0.25)
+    reference: ''
+  - id: kabsC
+    value: 50.0
+    unit: 1/h/kg^(-0.25)
+    reference: ''
+  - id: kfeC
+    value: 0.0
+    unit: 1/h/kg^(-0.25)
+    reference: ''
+    bqm_is:
+      id: PBPKO:00236
+      label: fecal elimination rate constant
+      iri: http://purl.obolibrary.org/obo/PBPKO_00236
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  - id: kfeMetC
+    value: 0.0
+    unit: 1/h/kg^(-0.25)
+    reference: ''
+    bqm_is:
+      id: PBPKO:00236
+      label: fecal elimination rate constant
+      iri: http://purl.obolibrary.org/obo/PBPKO_00236
+    bqb_is:
+      id: CHEBI:76967
+      label: human xenobiotic metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_76967
+  - id: kabsMet1C
+    value: 50.0
+    unit: 1/h/kg^(-0.25)
+    reference: ''
+  - id: kabsMet2C
+    value: 50.0
+    unit: 1/h/kg^(-0.25)
+    reference: ''
+  - id: EHRrateC
+    value: 0.2
+    unit: 1/h/kg^(-0.25)
+    reference: ''
+  - id: kehrMet1C
+    value: 0.2
+    unit: 1/h/kg^(-0.25)
+    reference: ''
+  - id: kehrMet2C
+    value: 0.0
+    unit: 1/h/kg^(-0.25)
+    reference: ''
+  - id: BileFracSIMet1
+    value: 0.1
+    unit: dimensionless
+    reference: ''
+  - id: BileFracSIMet2
+    value: 0.0
+    unit: dimensionless
+    reference: ''
+  - id: fGutMet1
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+  - id: KmGILumenMet1
+    value: 58400.0
+    unit: nmol/L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00212
+      label: Michaelis constant  intestine
+      iri: http://purl.obolibrary.org/obo/PBPKO_00212
+    bqb_is:
+      id: CHEBI:76967
+      label: human xenobiotic metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_76967
+  - id: VmaxGILumenMet1c
+    value: 361.0
+    unit: nmol/h/kg
+    reference: ''
+    bqm_is:
+      id: PBPKO:00211
+      label: maximum rate in intestine
+      iri: http://purl.obolibrary.org/obo/PBPKO_00211
+    bqb_is:
+      id: CHEBI:76967
+      label: human xenobiotic metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_76967
+  - id: fGutMet2
+    value: 0.0
+    unit: dimensionless
+    reference: ''
+  - id: KmGILumenMet2
+    value: 0.001
+    unit: nmol/L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00212
+      label: Michaelis constant  intestine
+      iri: http://purl.obolibrary.org/obo/PBPKO_00212
+    bqb_is:
+      id: CHEBI:167305
+      label: bisphenol A sulfate
+      iri: http://purl.obolibrary.org/obo/CHEBI_167305
+  - id: VmaxGILumenMet2c
+    value: 0.001
+    unit: nmol/h/kg
+    reference: ''
+    bqm_is:
+      id: PBPKO:00211
+      label: maximum rate in intestine
+      iri: http://purl.obolibrary.org/obo/PBPKO_00211
+    bqb_is:
+      id: CHEBI:167305
+      label: bisphenol A sulfate
+      iri: http://purl.obolibrary.org/obo/CHEBI_167305
+  - id: BileFracLMet1
+    value: 0.1
+    unit: dimensionless
+    reference: ''
+  - id: BileFracLMet2
+    value: 0.0
+    unit: dimensionless
+    reference: ''
+  - id: fLiverMet1
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+  - id: KmLMet1
+    value: 45800.0
+    unit: nmol/L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:76967
+      label: human xenobiotic metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_76967
+  - id: VmaxLMet1c
+    value: 9040000.0
+    unit: nmol/h/L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00213
+      label: maximum rate in liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00213
+    bqb_is:
+      id: CHEBI:76967
+      label: human xenobiotic metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_76967
+  - id: fLiverMet2
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+  - id: KmLMet2
+    value: 10100.0
+    unit: nmol/L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:167305
+      label: bisphenol A sulfate
+      iri: http://purl.obolibrary.org/obo/CHEBI_167305
+  - id: VmaxLMet2c
+    value: 149000.0
+    unit: nmol/h/L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00213
+      label: maximum rate in liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00213
+    bqb_is:
+      id: CHEBI:167305
+      label: bisphenol A sulfate
+      iri: http://purl.obolibrary.org/obo/CHEBI_167305
 - filename: Karrer.params.csv
   model_id: Karrer2018_BPA_Human
   parameters:
@@ -741,12 +1005,12 @@ parameterisations:
       iri: http://purl.obolibrary.org/obo/CHEBI_76967
   - id: VmaxGILumenMet1c
     value: 361.0
-    unit: nmol/h/kg
+    unit: nmol/h/g
     reference: ''
     bqm_is:
-      id: PBPKO:00212
-      label: Michaelis constant  intestine
-      iri: http://purl.obolibrary.org/obo/PBPKO_00212
+      id: PBPKO:00211
+      label: maximum rate in intestine
+      iri: http://purl.obolibrary.org/obo/PBPKO_00211
     bqb_is:
       id: CHEBI:76967
       label: human xenobiotic metabolite
@@ -769,12 +1033,12 @@ parameterisations:
       iri: http://purl.obolibrary.org/obo/CHEBI_167305
   - id: VmaxGILumenMet2c
     value: 0.001
-    unit: nmol/h/kg
+    unit: nmol/h/g
     reference: ''
     bqm_is:
-      id: PBPKO:00212
-      label: Michaelis constant  intestine
-      iri: http://purl.obolibrary.org/obo/PBPKO_00212
+      id: PBPKO:00211
+      label: maximum rate in intestine
+      iri: http://purl.obolibrary.org/obo/PBPKO_00211
     bqb_is:
       id: CHEBI:167305
       label: bisphenol A sulfate
@@ -805,12 +1069,12 @@ parameterisations:
       iri: http://purl.obolibrary.org/obo/CHEBI_76967
   - id: VmaxLMet1c
     value: 9040000.0
-    unit: nmol/h/L
+    unit: nmol/h/g
     reference: ''
     bqm_is:
-      id: PBPKO:00214
-      label: Michaelis constant  liver
-      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+      id: PBPKO:00213
+      label: maximum rate in liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00213
     bqb_is:
       id: CHEBI:76967
       label: human xenobiotic metabolite
@@ -833,31 +1097,17 @@ parameterisations:
       iri: http://purl.obolibrary.org/obo/CHEBI_167305
   - id: VmaxLMet2c
     value: 149000.0
-    unit: nmol/h/L
+    unit: nmol/h/g
     reference: ''
     bqm_is:
-      id: PBPKO:00214
-      label: Michaelis constant  liver
-      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+      id: PBPKO:00213
+      label: maximum rate in liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00213
     bqb_is:
       id: CHEBI:167305
       label: bisphenol A sulfate
       iri: http://purl.obolibrary.org/obo/CHEBI_167305
 unit_consistency:
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression '9040 * 1000' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression '149 * 1000' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -872,6 +1122,34 @@ unit_consistency:
     \ <assignmentRule> <math> expression '15.87 * pow(BW, 0.75)' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
     \ to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'fGutMet1 * VmaxGILumenMet1c * BW * 1000'\
+    \ cannot be fully checked. Unit consistency reported as either no errors or further\
+    \ unit errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'fGutMet2 * VmaxGILumenMet2c * BW * 1000'\
+    \ cannot be fully checked. Unit consistency reported as either no errors or further\
+    \ unit errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'fLiverMet1 * VmaxLMet1c * VLc * BW * 1000'\
+    \ cannot be fully checked. Unit consistency reported as either no errors or further\
+    \ unit errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'fLiverMet2 * VmaxLMet2c * VLc * BW * 1000'\
+    \ cannot be fully checked. Unit consistency reported as either no errors or further\
+    \ unit errors related to this object may not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\

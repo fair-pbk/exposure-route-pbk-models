@@ -21,7 +21,7 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		AGILumenMet	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-AGILumenMet",
 			label="AGILumenMet
 [PBPKO:00496]",
@@ -45,13 +45,6 @@ digraph {
 [PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
-		ALiverMet	[color=black,
-			fillcolor=gold,
-			href="#species-ALiverMet",
-			label="ALiverMet
-[-]",
-			shape=box,
-			style="filled,rounded"];
 	}
 	subgraph cluster_Blood {
 		graph [color=black,
@@ -71,7 +64,7 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		ABloodMet	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-ABloodMet",
 			label="ABloodMet
 [PBPKO:00623]",
@@ -107,7 +100,7 @@ digraph {
 			style="filled,rounded"
 		];
 		AFecesMet	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-AFecesMet",
 			label="AFecesMet
 [PBPKO:00273]",

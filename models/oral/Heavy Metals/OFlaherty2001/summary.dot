@@ -21,7 +21,7 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		AGI_Cr6	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-AGI_Cr6",
 			label="AGI_Cr6
 [PBPKO:00496]",
@@ -46,7 +46,7 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		ALiver_Cr6	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-ALiver_Cr6",
 			label="ALiver_Cr6
 [PBPKO:00497]",
@@ -71,7 +71,7 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		Aplasma_Cr6	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-Aplasma_Cr6",
 			label="Aplasma_Cr6
 [PBPKO:00502]",
@@ -96,7 +96,7 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		ARBC_Cr6	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-ARBC_Cr6",
 			label="ARBC_Cr6
 [PBPKO:00623]",
@@ -121,7 +121,7 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		ARest_Cr6	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-ARest_Cr6",
 			label="ARest_Cr6
 [PBPKO:00501]",
@@ -146,7 +146,7 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		AFeces_Cr6	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-AFeces_Cr6",
 			label="AFeces_Cr6
 [PBPKO:00273]",

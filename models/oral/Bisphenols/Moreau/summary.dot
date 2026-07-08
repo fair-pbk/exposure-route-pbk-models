@@ -17,7 +17,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ASt",
 			label="ASt
-[-]",
+[PBPKO:06004]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -53,7 +53,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ADuodenum",
 			label="ADuodenum
-[-]",
+[PBPKO:06014]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -75,7 +75,7 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		ALiverMet	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-ALiverMet",
 			label="ALiverMet
 [PBPKO:00497]",
@@ -100,7 +100,7 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		APlasmaMet	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-APlasmaMet",
 			label="APlasmaMet
 [PBPKO:00502]",

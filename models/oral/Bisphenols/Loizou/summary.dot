@@ -17,7 +17,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AStomach",
 			label="AStomach
-[-]",
+[PBPKO:06004]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -39,17 +39,17 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		ALiverMet1	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-ALiverMet1",
 			label="ALiverMet1
-[-]",
+[PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
 		ALiverMet2	[color=black,
-			fillcolor=gold,
+			fillcolor=lightcoral,
 			href="#species-ALiverMet2",
 			label="ALiverMet2
-[-]",
+[PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -92,7 +92,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AGutMet1",
 			label="AGutMet1
-[-]",
+[PBPKO:00496]",
 			shape=box,
 			style="filled,rounded"];
 	}

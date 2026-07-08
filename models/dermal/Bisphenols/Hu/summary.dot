@@ -17,7 +17,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AWELL",
 			label="AWELL
-[-]",
+[PBPKO:06051]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -53,7 +53,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AFO",
 			label="AFO
-[-]",
+[PBPKO:06053]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -122,7 +122,7 @@ digraph {
 			style="filled,rounded"
 		];
 		AUrine	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-AUrine",
 			label="AUrine
 [-]",

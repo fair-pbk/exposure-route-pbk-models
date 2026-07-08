@@ -17,7 +17,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ASt",
 			label="ASt
-[-]",
+[PBPKO:00566]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -53,7 +53,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ASpleen",
 			label="ASpleen
-[-]",
+[PBPKO:06013]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -71,7 +71,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ASI",
 			label="ASI
-[-]",
+[PBPKO:06005]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -93,7 +93,7 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		AMet	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-AMet",
 			label="AMet
 [PBPKO:00497]",

@@ -14,9 +14,9 @@ model_A_inh_exh_art_ven.sbml,Aair,,inhalation,Generic,ug,,,,,,
 model_A_inh_exh_art_ven.sbml,Aart,,inhalation,Generic,ug,,,,,,
 model_A_inh_exh_art_ven.sbml,Aven,amount of chemical in venous blood,inhalation,Generic,ug,,,,,,
 model_A_inh_exh_art_ven.sbml,Arest,amount of chemical in rest-of-body,inhalation,Generic,ug,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,,,
-BPA_Dermal_simple-Hu-based.sbml,AWELL,amount of chemical in Surface Depot (on Skin),dermal,Bisphenols,nmol,,,,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
+BPA_Dermal_simple-Hu-based.sbml,AWELL,amount of chemical in Surface Depot (on Skin),dermal,Bisphenols,nmol,PBPKO:06051,amount in skin surface depot,http://purl.obolibrary.org/obo/PBPKO_06051,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
 BPA_Dermal_simple-Hu-based.sbml,AVE,"amount of chemical in Viable Epidermis, exposed skin",dermal,Bisphenols,nmol,PBPKO:00638,amount in viable epidermis of exposed skin,http://purl.obolibrary.org/obo/PBPKO_00638,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
-BPA_Dermal_simple-Hu-based.sbml,AFO,amount of chemical in Follicle,dermal,Bisphenols,nmol,,,,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
+BPA_Dermal_simple-Hu-based.sbml,AFO,amount of chemical in Follicle,dermal,Bisphenols,nmol,PBPKO:06053,amount in follicles,http://purl.obolibrary.org/obo/PBPKO_06053,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
 BPA_Dermal_simple-Hu-based.sbml,Askin_unexp,amount of chemical in unexposed skin,dermal,Bisphenols,nmol,,,,,,
 BPA_Dermal_simple-Hu-based.sbml,Aplasma,amount of chemical in plasma,dermal,Bisphenols,nmol,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
 BPA_Dermal_simple-Hu-based.sbml,ARestbody,amount of chemical in rest-of-body,dermal,Bisphenols,nmol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
@@ -148,10 +148,10 @@ Wang.sbml,ALiver,Amount in liver,oral,Mycotoxins,umol,PBPKO:00497,amount in live
 Wang.sbml,ABlood,Amount in blood,oral,Mycotoxins,umol,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
 Wang.sbml,ARest,Amount in rest of body,oral,Mycotoxins,umol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
 Wang.sbml,AMet,Amount metabolised,oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
-Shin.sbml,ASt,Amount in stomach,oral,Bisphenols,mg,,,,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Shin.sbml,ASt,Amount in stomach,oral,Bisphenols,mg,PBPKO:00566,stomach compartment,http://purl.obolibrary.org/obo/PBPKO_00566,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Shin.sbml,AIL,Amount in GI lumen,oral,Bisphenols,mg,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Shin.sbml,ASpleen,Amount in spleen,oral,Bisphenols,mg,,,,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Shin.sbml,ASI,Amount in small intestine,oral,Bisphenols,mg,,,,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Shin.sbml,ASpleen,Amount in spleen,oral,Bisphenols,mg,PBPKO:06013,amount in spleen,http://purl.obolibrary.org/obo/PBPKO_06013,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Shin.sbml,ASI,Amount in small intestine,oral,Bisphenols,mg,PBPKO:06005,amount in small intestine,http://purl.obolibrary.org/obo/PBPKO_06005,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Shin.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,mg,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Shin.sbml,ABlood,amount of chemical in blood,oral,Bisphenols,mg,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Shin.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,mg,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
@@ -162,16 +162,16 @@ Mielke.sbml,ABlood,amount of chemical in blood,oral,Bisphenols,umol,PBPKO:00623,
 Mielke.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,umol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Mielke.sbml,ALiverMet1,Amount in liver,oral,Bisphenols,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
 Mielke.sbml,ALiverMet2,Amount in liver,oral,Bisphenols,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Moreau.sbml,ASt,amount in stomach,oral,Bisphenols,mg,,,,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Moreau.sbml,ADuodenum,amount in duodenum,oral,Bisphenols,mg,,,,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Moreau.sbml,ASt,amount in stomach,oral,Bisphenols,mg,PBPKO:06004,amount in stomach,http://purl.obolibrary.org/obo/PBPKO_06004,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Moreau.sbml,ADuodenum,amount in duodenum,oral,Bisphenols,mg,PBPKO:06014,amount in duodenum,http://purl.obolibrary.org/obo/PBPKO_06014,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Moreau.sbml,AGITissue,amount in intestinal tissue,oral,Bisphenols,mg,,,,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Moreau.sbml,ALiver,amount in liver,oral,Bisphenols,mg,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Moreau.sbml,APlasma,amount in plasma,oral,Bisphenols,mg,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Moreau.sbml,ARest,amount in rest,oral,Bisphenols,mg,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Moreau.sbml,ALiverMet,amount of metabolite in liver,oral,Bisphenols,mg,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,,,
-Moreau.sbml,APlasmaMet,amount of metabolite in plasma,oral,Bisphenols,mg,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,,,
+Moreau.sbml,ALiverMet,amount of metabolite in liver,oral,Bisphenols,mg,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:235438,bisphenol A beta-D-glucuronide,http://purl.obolibrary.org/obo/CHEBI_235438
+Moreau.sbml,APlasmaMet,amount of metabolite in plasma,oral,Bisphenols,mg,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:235438,bisphenol A beta-D-glucuronide,http://purl.obolibrary.org/obo/CHEBI_235438
 Moreau.sbml,AUrine,amount in urine,oral,Bisphenols,mg,PBPKO:00272,amount in urine,http://purl.obolibrary.org/obo/PBPKO_00272,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Deepika.sbml,ASt,Amount of chemical in stomach,oral,Bisphenols,umol,,,,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Deepika.sbml,ASt,Amount of chemical in stomach,oral,Bisphenols,umol,PBPKO:06004,amount in stomach,http://purl.obolibrary.org/obo/PBPKO_06004,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Deepika.sbml,ALiver,Amount of chemical in liver,oral,Bisphenols,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Deepika.sbml,APlasma,Amount of chemical in plasma,oral,Bisphenols,umol,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Deepika.sbml,AGut,Amount of chemical in gut,oral,Bisphenols,umol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
@@ -179,62 +179,40 @@ Deepika.sbml,ARest,Amount of chemical in rest-of-body,oral,Bisphenols,umol,PBPKO
 Deepika.sbml,AGutMet1,Amount of chemical in gut,oral,Bisphenols,umol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
 Deepika.sbml,ALiverMet1,Amount of chemical in liver,oral,Bisphenols,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
 Deepika.sbml,ALiverMet2,Amount of chemical in liver,oral,Bisphenols,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Loizou.sbml,AStomach,,oral,Bisphenols,,,,,,,
-Loizou.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Loizou.sbml,APlasma,amount of chemical in plasma,oral,Bisphenols,,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,,,
-Loizou.sbml,AGut,amount of chemical in gut,oral,Bisphenols,,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,,,
-Loizou.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Loizou.sbml,AGutMet1,,oral,Bisphenols,,,,,,,
-Loizou.sbml,ALiverMet1,,oral,Bisphenols,,,,,,,
-Loizou.sbml,ALiverMet2,,oral,Bisphenols,,,,,,,
-Christensen.sbml,ASt,amount of chemical in stomach,oral,Bisphenols,umol,,,,,,
-Christensen.sbml,ABlood,amount of chemical in blood,oral,Bisphenols,umol,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,,,
-Christensen.sbml,AExcr,,oral,Bisphenols,umol,,,,,,
+Loizou.sbml,AStomach,Amount in stomach,oral,Bisphenols,umol,PBPKO:06004,amount in stomach,http://purl.obolibrary.org/obo/PBPKO_06004,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Loizou.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Loizou.sbml,APlasma,amount of chemical in plasma,oral,Bisphenols,umol,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Loizou.sbml,AGut,amount of chemical in gut,oral,Bisphenols,umol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Loizou.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,umol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Loizou.sbml,AGutMet1,Amount in gut,oral,Bisphenols,umol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Loizou.sbml,ALiverMet1,Amount of metabolite in the liver,oral,Bisphenols,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:235438,bisphenol A beta-D-glucuronide,http://purl.obolibrary.org/obo/CHEBI_235438
+Loizou.sbml,ALiverMet2,Amount of metabolite in the liver,oral,Bisphenols,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Christensen.sbml,ASt,amount of chemical in stomach,oral,Bisphenols,umol,PBPKO:06004,amount in stomach,http://purl.obolibrary.org/obo/PBPKO_06004,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Christensen.sbml,ABlood,amount of chemical in blood,oral,Bisphenols,umol,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Christensen.sbml,AExcr,,oral,Bisphenols,umol,,,,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Teeguarden.sbml,AGILumen,Amount in GI lumen,oral,Bisphenols,mg,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Teeguarden.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,mg,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Teeguarden.sbml,ABlood,amount of chemical in blood,oral,Bisphenols,mg,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Teeguarden.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,mg,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Teeguarden.sbml,ALiverMet,,oral,Bisphenols,,,,,,,
 Teeguarden.sbml,AGILumenMet,Amount of metabolite in GI lumen,oral,Bisphenols,mg,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
 Teeguarden.sbml,ABloodMet,Amount of metabolite in blood,oral,Bisphenols,mg,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
 Teeguarden.sbml,AFecesMet,Amount of metabolite in feces,oral,Bisphenols,mg,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Hu.sbml,ASt,Amount in stomach,oral,Bisphenols,nmol,,,,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Hu.sbml,ASI,Amount in small intestine,oral,Bisphenols,nmol,,,,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Hu.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,nmol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Hu.sbml,APlasma,amount of chemical in plasma,oral,Bisphenols,nmol,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Hu.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,nmol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Hu.sbml,AGILumen,Amount in GI lumen,oral,Bisphenols,nmol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Hu.sbml,AFeces,Amount in feces,oral,Bisphenols,nmol,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Hu.sbml,ASIMet1,Amount in small intestine,oral,Bisphenols,nmol,,,,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Hu.sbml,ASIMet2,Amount in small intestine,oral,Bisphenols,nmol,,,,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Hu.sbml,ALiverMet1,Amount in liver,oral,Bisphenols,nmol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Hu.sbml,ALiverMet2,Amount in liver,oral,Bisphenols,nmol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Hu.sbml,APVMet1,Amount in portal vein,oral,Bisphenols,nmol,,,,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Hu.sbml,APVMet2,Amount in portal vein,oral,Bisphenols,nmol,,,,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Hu.sbml,AGILumenMet1,Amount in GI lumen,oral,Bisphenols,nmol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Hu.sbml,AGILumenMet2,Amount in GI lumen,oral,Bisphenols,nmol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Hu.sbml,APlasmaMet1,Amount in plasma,oral,Bisphenols,nmol,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Hu.sbml,APlasmaMet2,Amount in plasma,oral,Bisphenols,nmol,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Hu.sbml,AFecesMet1,Amount in feces,oral,Bisphenols,nmol,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Hu.sbml,AFecesMet2,Amount in feces,oral,Bisphenols,nmol,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
 Yang.sbml,ASt,,oral,Bisphenols,,,,,,,
-Yang.sbml,ASI,Amount in small intestine,oral,Bisphenols,nmol,,,,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Yang.sbml,ASI,Amount in small intestine,oral,Bisphenols,nmol,PBPKO:06005,amount in small intestine,http://purl.obolibrary.org/obo/PBPKO_06005,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Yang.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,nmol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Yang.sbml,APlasma,amount of chemical in plasma,oral,Bisphenols,nmol,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Yang.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,nmol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Yang.sbml,AFeces,Amount in feces,oral,Bisphenols,nmol,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Yang.sbml,ASIMet1,Amount of metabolite in small intestine,oral,Bisphenols,nmol,,,,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Yang.sbml,ASIMet2,Amount of metabolite in small intestine,oral,Bisphenols,nmol,,,,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Yang.sbml,ALiverMet1,Amount of metabolite in liver,oral,Bisphenols,nmol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Yang.sbml,ALiverMet2,Amount of metabolite in liver,oral,Bisphenols,nmol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Yang.sbml,APVMet1,Amount of metabolite in portal vein,oral,Bisphenols,nmol,,,,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Yang.sbml,APVMet2,Amount of metabolite in portal vein,oral,Bisphenols,nmol,,,,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Yang.sbml,AGILumenMet1,Amount of metabolite in GI lumen,oral,Bisphenols,nmol,,,,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Yang.sbml,AGILumenMet2,Amount of metabolite in GI lumen,oral,Bisphenols,nmol,,,,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Yang.sbml,APlasmaMet1,Amount of metabolite in plasma,oral,Bisphenols,nmol,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Yang.sbml,APlasmaMet2,AMount of metabolite in plasma,oral,Bisphenols,nmol,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Yang.sbml,AFecesMet1,Amount of metabolite in feces,oral,Bisphenols,nmol,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Yang.sbml,AFecesMet2,Amount of metabolite in feces,oral,Bisphenols,nmol,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Yang.sbml,ASIMet1,Amount in small intestine,oral,Bisphenols,nmol,PBPKO:06005,amount in small intestine,http://purl.obolibrary.org/obo/PBPKO_06005,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Yang.sbml,ASIMet2,Amount in small intestine,oral,Bisphenols,nmol,PBPKO:06005,amount in small intestine,http://purl.obolibrary.org/obo/PBPKO_06005,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Yang.sbml,APVMet1,,oral,Bisphenols,,,,,,,
+Yang.sbml,APVMet2,,oral,Bisphenols,,,,,,,
+Yang.sbml,AGILumenMet1,Amount in GI lumen,oral,Bisphenols,nmol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Yang.sbml,AGILumenMet2,Amount in GI lumen,oral,Bisphenols,nmol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Yang.sbml,APlasmaMet1,Amount in plasma,oral,Bisphenols,nmol,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Yang.sbml,APlasmaMet2,Amount in plasma,oral,Bisphenols,nmol,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Yang.sbml,AFecesMet1,Amount in feces,oral,Bisphenols,nmol,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Yang.sbml,AFecesMet2,Amount in feces,oral,Bisphenols,nmol,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
 Sharma.sbml,ASt,,oral,Bisphenols,,,,,,,
 Sharma.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Sharma.sbml,APlasma,amount of chemical in plasma,oral,Bisphenols,umol,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
@@ -243,15 +221,14 @@ Sharma.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,umol,PBPKO:
 Sharma.sbml,AGutMet1,Amount in gut,oral,Bisphenols,umol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
 Sharma.sbml,ALiverMet1,Amoun in liver,oral,Bisphenols,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
 Sharma.sbml,ALiverMet2,Amount in liver,oral,Bisphenols,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Karrer.sbml,ASt,,oral,Bisphenols,,,,,,,
-Karrer.sbml,ASI,Amount in small intestine,oral,Bisphenols,nmol,,,,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Karrer.sbml,ASt,Amount in stomach,oral,Bisphenols,nmol,PBPKO:06004,amount in stomach,http://purl.obolibrary.org/obo/PBPKO_06004,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Karrer.sbml,ASI,Amount in small intestine,oral,Bisphenols,nmol,PBPKO:06005,amount in small intestine,http://purl.obolibrary.org/obo/PBPKO_06005,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Karrer.sbml,ALiver,amount of chemical in liver,oral,Bisphenols,nmol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Karrer.sbml,APlasma,amount of chemical in plasma,oral,Bisphenols,nmol,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Karrer.sbml,ARest,amount of chemical in rest-of-body,oral,Bisphenols,nmol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Karrer.sbml,AGILumen,Amount in GI lumen,oral,Bisphenols,nmol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Karrer.sbml,AFeces,Amount in feces,oral,Bisphenols,nmol,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Karrer.sbml,ASIMet1,Amount in small intestine,oral,Bisphenols,nmol,,,,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Karrer.sbml,ASIMet2,Amount in small intestine,oral,Bisphenols,nmol,,,,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Karrer.sbml,ASIMet1,Amount in small intestine,oral,Bisphenols,nmol,PBPKO:06005,amount in small intestine,http://purl.obolibrary.org/obo/PBPKO_06005,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Karrer.sbml,ASIMet2,Amount in small intestine,oral,Bisphenols,nmol,PBPKO:06005,amount in small intestine,http://purl.obolibrary.org/obo/PBPKO_06005,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
 Karrer.sbml,AGILumenMet1,Amount in GI lumen,oral,Bisphenols,nmol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
 Karrer.sbml,AGILumenMet2,Amount in GI lumen,oral,Bisphenols,nmol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
 Karrer.sbml,APlasmaMet1,Amount in plasma,oral,Bisphenols,nmol,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967

@@ -21,7 +21,7 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		ALumen_As5	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-ALumen_As5",
 			label="ALumen_As5
 [-]",
@@ -46,21 +46,21 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		AGut_As5	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-AGut_As5",
 			label="AGut_As5
 [PBPKO:00496]",
 			shape=box,
 			style="filled,rounded"];
 		AGut_AsM5	[color=black,
-			fillcolor=gold,
+			fillcolor=lightcoral,
 			href="#species-AGut_AsM5",
 			label="AGut_AsM5
 [PBPKO:00496]",
 			shape=box,
 			style="filled,rounded"];
 		AGut_AsD5	[color=black,
-			fillcolor=gold,
+			fillcolor=lightskyblue,
 			href="#species-AGut_AsD5",
 			label="AGut_AsD5
 [PBPKO:00496]",
@@ -85,35 +85,35 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		ALiver_As5	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-ALiver_As5",
 			label="ALiver_As5
 [PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
 		ALiver_AsM3	[color=black,
-			fillcolor=gold,
+			fillcolor=plum,
 			href="#species-ALiver_AsM3",
 			label="ALiver_AsM3
 [PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
 		ALiver_AsM5	[color=black,
-			fillcolor=gold,
+			fillcolor=lightcoral,
 			href="#species-ALiver_AsM5",
 			label="ALiver_AsM5
 [PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
 		ALiver_AsD3	[color=black,
-			fillcolor=gold,
+			fillcolor=khaki,
 			href="#species-ALiver_AsD3",
 			label="ALiver_AsD3
 [PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
 		ALiver_AsD5	[color=black,
-			fillcolor=gold,
+			fillcolor=lightskyblue,
 			href="#species-ALiver_AsD5",
 			label="ALiver_AsD5
 [PBPKO:00497]",
@@ -138,35 +138,35 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		ALung_As5	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-ALung_As5",
 			label="ALung_As5
 [PBPKO:00504]",
 			shape=box,
 			style="filled,rounded"];
 		ALung_AsM3	[color=black,
-			fillcolor=gold,
+			fillcolor=plum,
 			href="#species-ALung_AsM3",
 			label="ALung_AsM3
 [PBPKO:00504]",
 			shape=box,
 			style="filled,rounded"];
 		ALung_AsM5	[color=black,
-			fillcolor=gold,
+			fillcolor=lightcoral,
 			href="#species-ALung_AsM5",
 			label="ALung_AsM5
 [PBPKO:00504]",
 			shape=box,
 			style="filled,rounded"];
 		ALung_AsD3	[color=black,
-			fillcolor=gold,
+			fillcolor=khaki,
 			href="#species-ALung_AsD3",
 			label="ALung_AsD3
 [PBPKO:00504]",
 			shape=box,
 			style="filled,rounded"];
 		ALung_AsD5	[color=black,
-			fillcolor=gold,
+			fillcolor=lightskyblue,
 			href="#species-ALung_AsD5",
 			label="ALung_AsD5
 [PBPKO:00504]",
@@ -184,7 +184,7 @@ digraph {
 			style="filled,rounded"
 		];
 		AArterial_AsD5	[color=black,
-			fillcolor=gold,
+			fillcolor=lightskyblue,
 			href="#species-AArterial_AsD5",
 			label="AArterial_AsD5
 [PBPKO:00631]",
@@ -198,14 +198,14 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		AArterial_As5	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-AArterial_As5",
 			label="AArterial_As5
 [PBPKO:00631]",
 			shape=box,
 			style="filled,rounded"];
 		AArterial_AsM5	[color=black,
-			fillcolor=gold,
+			fillcolor=lightcoral,
 			href="#species-AArterial_AsM5",
 			label="AArterial_AsM5
 [PBPKO:00631]",
@@ -230,21 +230,21 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		AVenous_As5	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-AVenous_As5",
 			label="AVenous_As5
 [PBPKO:00632]",
 			shape=box,
 			style="filled,rounded"];
 		AVenous_AsM5	[color=black,
-			fillcolor=gold,
+			fillcolor=lightcoral,
 			href="#species-AVenous_AsM5",
 			label="AVenous_AsM5
 [PBPKO:00632]",
 			shape=box,
 			style="filled,rounded"];
 		AVenous_AsD5	[color=black,
-			fillcolor=gold,
+			fillcolor=lightskyblue,
 			href="#species-AVenous_AsD5",
 			label="AVenous_AsD5
 [PBPKO:00632]",
@@ -269,21 +269,21 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		ARest_As5	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-ARest_As5",
 			label="ARest_As5
 [PBPKO:00501]",
 			shape=box,
 			style="filled,rounded"];
 		ARest_AsM5	[color=black,
-			fillcolor=gold,
+			fillcolor=lightcoral,
 			href="#species-ARest_AsM5",
 			label="ARest_AsM5
 [PBPKO:00501]",
 			shape=box,
 			style="filled,rounded"];
 		ARest_AsD5	[color=black,
-			fillcolor=gold,
+			fillcolor=lightskyblue,
 			href="#species-ARest_AsD5",
 			label="ARest_AsD5
 [PBPKO:00501]",
@@ -301,14 +301,14 @@ digraph {
 			style="filled,rounded"
 		];
 		AUrine_AsM3	[color=black,
-			fillcolor=gold,
+			fillcolor=plum,
 			href="#species-AUrine_AsM3",
 			label="AUrine_AsM3
 [PBPKO:00274]",
 			shape=box,
 			style="filled,rounded"];
 		AUrine_AsD3	[color=black,
-			fillcolor=gold,
+			fillcolor=khaki,
 			href="#species-AUrine_AsD3",
 			label="AUrine_AsD3
 [PBPKO:00274]",

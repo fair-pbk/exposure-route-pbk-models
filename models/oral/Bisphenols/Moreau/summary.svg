@@ -12,9 +12,9 @@
 <g id="clust1" class="cluster">
 <title>cluster_Stomach</title>
 <g id="a_clust1"><a xlink:href="#compartment-Stomach" xlink:title="Stomach&#10;[PBPKO:00566]">
-<path fill="lightblue" stroke="black" d="M76.91,-508C76.91,-508 371.83,-508 371.83,-508 377.83,-508 383.83,-514 383.83,-520 383.83,-520 383.83,-588 383.83,-588 383.83,-594 377.83,-600 371.83,-600 371.83,-600 76.91,-600 76.91,-600 70.91,-600 64.91,-594 64.91,-588 64.91,-588 64.91,-520 64.91,-520 64.91,-514 70.91,-508 76.91,-508"/>
-<text text-anchor="middle" x="224.37" y="-584.8" font-family="Arial" font-size="14.00">Stomach</text>
-<text text-anchor="middle" x="224.37" y="-569.8" font-family="Arial" font-size="14.00">[PBPKO:00566]</text>
+<path fill="lightblue" stroke="black" d="M37.4,-508C37.4,-508 380.3,-508 380.3,-508 386.3,-508 392.3,-514 392.3,-520 392.3,-520 392.3,-588 392.3,-588 392.3,-594 386.3,-600 380.3,-600 380.3,-600 37.4,-600 37.4,-600 31.4,-600 25.4,-594 25.4,-588 25.4,-588 25.4,-520 25.4,-520 25.4,-514 31.4,-508 37.4,-508"/>
+<text text-anchor="middle" x="208.85" y="-584.8" font-family="Arial" font-size="14.00">Stomach</text>
+<text text-anchor="middle" x="208.85" y="-569.8" font-family="Arial" font-size="14.00">[PBPKO:00566]</text>
 </a>
 </g>
 </g>
@@ -30,9 +30,9 @@
 <g id="clust3" class="cluster">
 <title>cluster_Duodenum</title>
 <g id="a_clust3"><a xlink:href="#compartment-Duodenum" xlink:title="Duodenum&#10;[PBPKO:00471]">
-<path fill="lightblue" stroke="black" d="M59.98,-383C59.98,-383 354.9,-383 354.9,-383 360.9,-383 366.9,-389 366.9,-395 366.9,-395 366.9,-463 366.9,-463 366.9,-469 360.9,-475 354.9,-475 354.9,-475 59.98,-475 59.98,-475 53.98,-475 47.98,-469 47.98,-463 47.98,-463 47.98,-395 47.98,-395 47.98,-389 53.98,-383 59.98,-383"/>
-<text text-anchor="middle" x="207.44" y="-459.8" font-family="Arial" font-size="14.00">Duodenum</text>
-<text text-anchor="middle" x="207.44" y="-444.8" font-family="Arial" font-size="14.00">[PBPKO:00471]</text>
+<path fill="lightblue" stroke="black" d="M37.4,-383C37.4,-383 380.3,-383 380.3,-383 386.3,-383 392.3,-389 392.3,-395 392.3,-395 392.3,-463 392.3,-463 392.3,-469 386.3,-475 380.3,-475 380.3,-475 37.4,-475 37.4,-475 31.4,-475 25.4,-469 25.4,-463 25.4,-463 25.4,-395 25.4,-395 25.4,-389 31.4,-383 37.4,-383"/>
+<text text-anchor="middle" x="208.85" y="-459.8" font-family="Arial" font-size="14.00">Duodenum</text>
+<text text-anchor="middle" x="208.85" y="-444.8" font-family="Arial" font-size="14.00">[PBPKO:00471]</text>
 </a>
 </g>
 </g>
@@ -57,9 +57,9 @@
 <g id="clust6" class="cluster">
 <title>cluster_Rest</title>
 <g id="a_clust6"><a xlink:href="#compartment-Rest" xlink:title="Rest&#10;[PBPKO:00450]">
-<path fill="lightblue" stroke="black" d="M474.85,-383C474.85,-383 817.75,-383 817.75,-383 823.75,-383 829.75,-389 829.75,-395 829.75,-395 829.75,-463 829.75,-463 829.75,-469 823.75,-475 817.75,-475 817.75,-475 474.85,-475 474.85,-475 468.85,-475 462.85,-469 462.85,-463 462.85,-463 462.85,-395 462.85,-395 462.85,-389 468.85,-383 474.85,-383"/>
-<text text-anchor="middle" x="646.3" y="-459.8" font-family="Arial" font-size="14.00">Rest</text>
-<text text-anchor="middle" x="646.3" y="-444.8" font-family="Arial" font-size="14.00">[PBPKO:00450]</text>
+<path fill="lightblue" stroke="black" d="M488.97,-383C488.97,-383 831.86,-383 831.86,-383 837.86,-383 843.86,-389 843.86,-395 843.86,-395 843.86,-463 843.86,-463 843.86,-469 837.86,-475 831.86,-475 831.86,-475 488.97,-475 488.97,-475 482.97,-475 476.97,-469 476.97,-463 476.97,-463 476.97,-395 476.97,-395 476.97,-389 482.97,-383 488.97,-383"/>
+<text text-anchor="middle" x="660.41" y="-459.8" font-family="Arial" font-size="14.00">Rest</text>
+<text text-anchor="middle" x="660.41" y="-444.8" font-family="Arial" font-size="14.00">[PBPKO:00450]</text>
 </a>
 </g>
 </g>
@@ -75,20 +75,20 @@
 <!-- ASt -->
 <g id="node1" class="node">
 <title>ASt</title>
-<g id="a_node1"><a xlink:href="#species-ASt" xlink:title="ASt&#10;[&#45;]">
-<path fill="gold" stroke="black" d="M223.7,-554C223.7,-554 193.7,-554 193.7,-554 187.7,-554 181.7,-548 181.7,-542 181.7,-542 181.7,-528 181.7,-528 181.7,-522 187.7,-516 193.7,-516 193.7,-516 223.7,-516 223.7,-516 229.7,-516 235.7,-522 235.7,-528 235.7,-528 235.7,-542 235.7,-542 235.7,-548 229.7,-554 223.7,-554"/>
+<g id="a_node1"><a xlink:href="#species-ASt" xlink:title="ASt&#10;[PBPKO:06004]">
+<path fill="gold" stroke="black" d="M253.2,-554C253.2,-554 164.2,-554 164.2,-554 158.2,-554 152.2,-548 152.2,-542 152.2,-542 152.2,-528 152.2,-528 152.2,-522 158.2,-516 164.2,-516 164.2,-516 253.2,-516 253.2,-516 259.2,-516 265.2,-522 265.2,-528 265.2,-528 265.2,-542 265.2,-542 265.2,-548 259.2,-554 253.2,-554"/>
 <text text-anchor="middle" x="208.7" y="-538.8" font-family="Arial" font-size="14.00">ASt</text>
-<text text-anchor="middle" x="208.7" y="-523.8" font-family="Arial" font-size="14.00">[&#45;]</text>
+<text text-anchor="middle" x="208.7" y="-523.8" font-family="Arial" font-size="14.00">[PBPKO:06004]</text>
 </a>
 </g>
 </g>
 <!-- ADuodenum -->
 <g id="node3" class="node">
 <title>ADuodenum</title>
-<g id="a_node3"><a xlink:href="#species-ADuodenum" xlink:title="ADuodenum&#10;[&#45;]">
-<path fill="gold" stroke="black" d="M242.7,-429C242.7,-429 174.7,-429 174.7,-429 168.7,-429 162.7,-423 162.7,-417 162.7,-417 162.7,-403 162.7,-403 162.7,-397 168.7,-391 174.7,-391 174.7,-391 242.7,-391 242.7,-391 248.7,-391 254.7,-397 254.7,-403 254.7,-403 254.7,-417 254.7,-417 254.7,-423 248.7,-429 242.7,-429"/>
+<g id="a_node3"><a xlink:href="#species-ADuodenum" xlink:title="ADuodenum&#10;[PBPKO:06014]">
+<path fill="gold" stroke="black" d="M253.2,-429C253.2,-429 164.2,-429 164.2,-429 158.2,-429 152.2,-423 152.2,-417 152.2,-417 152.2,-403 152.2,-403 152.2,-397 158.2,-391 164.2,-391 164.2,-391 253.2,-391 253.2,-391 259.2,-391 265.2,-397 265.2,-403 265.2,-403 265.2,-417 265.2,-417 265.2,-423 259.2,-429 253.2,-429"/>
 <text text-anchor="middle" x="208.7" y="-413.8" font-family="Arial" font-size="14.00">ADuodenum</text>
-<text text-anchor="middle" x="208.7" y="-398.8" font-family="Arial" font-size="14.00">[&#45;]</text>
+<text text-anchor="middle" x="208.7" y="-398.8" font-family="Arial" font-size="14.00">[PBPKO:06014]</text>
 </a>
 </g>
 </g>
@@ -137,7 +137,7 @@
 <g id="node5" class="node">
 <title>ALiverMet</title>
 <g id="a_node5"><a xlink:href="#species-ALiverMet" xlink:title="ALiverMet&#10;[PBPKO:00497]">
-<path fill="gold" stroke="black" d="M250.2,-54C250.2,-54 161.2,-54 161.2,-54 155.2,-54 149.2,-48 149.2,-42 149.2,-42 149.2,-28 149.2,-28 149.2,-22 155.2,-16 161.2,-16 161.2,-16 250.2,-16 250.2,-16 256.2,-16 262.2,-22 262.2,-28 262.2,-28 262.2,-42 262.2,-42 262.2,-48 256.2,-54 250.2,-54"/>
+<path fill="mediumspringgreen" stroke="black" d="M250.2,-54C250.2,-54 161.2,-54 161.2,-54 155.2,-54 149.2,-48 149.2,-42 149.2,-42 149.2,-28 149.2,-28 149.2,-22 155.2,-16 161.2,-16 161.2,-16 250.2,-16 250.2,-16 256.2,-16 262.2,-22 262.2,-28 262.2,-28 262.2,-42 262.2,-42 262.2,-48 256.2,-54 250.2,-54"/>
 <text text-anchor="middle" x="205.7" y="-38.8" font-family="Arial" font-size="14.00">ALiverMet</text>
 <text text-anchor="middle" x="205.7" y="-23.8" font-family="Arial" font-size="14.00">[PBPKO:00497]</text>
 </a>
@@ -185,7 +185,7 @@
 <g id="node7" class="node">
 <title>APlasmaMet</title>
 <g id="a_node7"><a xlink:href="#species-APlasmaMet" xlink:title="APlasmaMet&#10;[PBPKO:00502]">
-<path fill="gold" stroke="black" d="M640.2,-179C640.2,-179 551.2,-179 551.2,-179 545.2,-179 539.2,-173 539.2,-167 539.2,-167 539.2,-153 539.2,-153 539.2,-147 545.2,-141 551.2,-141 551.2,-141 640.2,-141 640.2,-141 646.2,-141 652.2,-147 652.2,-153 652.2,-153 652.2,-167 652.2,-167 652.2,-173 646.2,-179 640.2,-179"/>
+<path fill="mediumspringgreen" stroke="black" d="M640.2,-179C640.2,-179 551.2,-179 551.2,-179 545.2,-179 539.2,-173 539.2,-167 539.2,-167 539.2,-153 539.2,-153 539.2,-147 545.2,-141 551.2,-141 551.2,-141 640.2,-141 640.2,-141 646.2,-141 652.2,-147 652.2,-153 652.2,-153 652.2,-167 652.2,-167 652.2,-173 646.2,-179 640.2,-179"/>
 <text text-anchor="middle" x="595.7" y="-163.8" font-family="Arial" font-size="14.00">APlasmaMet</text>
 <text text-anchor="middle" x="595.7" y="-148.8" font-family="Arial" font-size="14.00">[PBPKO:00502]</text>
 </a>
@@ -202,18 +202,18 @@
 <g id="node8" class="node">
 <title>ARest</title>
 <g id="a_node8"><a xlink:href="#species-ARest" xlink:title="ARest&#10;[PBPKO:00501]">
-<path fill="gold" stroke="black" d="M691.2,-429C691.2,-429 602.2,-429 602.2,-429 596.2,-429 590.2,-423 590.2,-417 590.2,-417 590.2,-403 590.2,-403 590.2,-397 596.2,-391 602.2,-391 602.2,-391 691.2,-391 691.2,-391 697.2,-391 703.2,-397 703.2,-403 703.2,-403 703.2,-417 703.2,-417 703.2,-423 697.2,-429 691.2,-429"/>
-<text text-anchor="middle" x="646.7" y="-413.8" font-family="Arial" font-size="14.00">ARest</text>
-<text text-anchor="middle" x="646.7" y="-398.8" font-family="Arial" font-size="14.00">[PBPKO:00501]</text>
+<path fill="gold" stroke="black" d="M705.2,-429C705.2,-429 616.2,-429 616.2,-429 610.2,-429 604.2,-423 604.2,-417 604.2,-417 604.2,-403 604.2,-403 604.2,-397 610.2,-391 616.2,-391 616.2,-391 705.2,-391 705.2,-391 711.2,-391 717.2,-397 717.2,-403 717.2,-403 717.2,-417 717.2,-417 717.2,-423 711.2,-429 705.2,-429"/>
+<text text-anchor="middle" x="660.7" y="-413.8" font-family="Arial" font-size="14.00">ARest</text>
+<text text-anchor="middle" x="660.7" y="-398.8" font-family="Arial" font-size="14.00">[PBPKO:00501]</text>
 </a>
 </g>
 </g>
 <!-- APlasma&#45;&gt;ARest -->
 <g id="edge9" class="edge">
 <title>APlasma&#45;&gt;ARest</title>
-<path fill="none" stroke="black" d="M596.57,-304.04C598.09,-322.42 602.26,-351.31 613.7,-373.5 615.42,-376.84 617.55,-380.09 619.88,-383.19"/>
-<polygon fill="black" stroke="black" points="617.3,-385.56 626.42,-390.97 622.66,-381.06 617.3,-385.56"/>
-<text text-anchor="middle" x="624.7" y="-362.3" font-family="Times,serif" font-size="14.00">_J6</text>
+<path fill="none" stroke="black" d="M605.33,-304.22C616.15,-324.69 633.82,-358.13 646.29,-381.72"/>
+<polygon fill="black" stroke="black" points="643.35,-383.64 651.11,-390.85 649.53,-380.37 643.35,-383.64"/>
+<text text-anchor="middle" x="652.7" y="-362.3" font-family="Times,serif" font-size="14.00">_J6</text>
 </g>
 <!-- AUrine -->
 <g id="node9" class="node">
@@ -235,9 +235,9 @@
 <!-- ARest&#45;&gt;APlasma -->
 <g id="edge11" class="edge">
 <title>ARest&#45;&gt;APlasma</title>
-<path fill="none" stroke="black" d="M644.07,-390.87C642.32,-381.09 639.62,-368.92 635.7,-358.5 629.75,-342.65 620.8,-326.03 612.88,-312.71"/>
-<polygon fill="black" stroke="black" points="615.8,-310.78 607.61,-304.07 609.83,-314.43 615.8,-310.78"/>
-<text text-anchor="middle" x="651.7" y="-362.3" font-family="Times,serif" font-size="14.00">_J7</text>
+<path fill="none" stroke="black" d="M667.7,-390.66C670.37,-380.81 671.89,-368.65 667.7,-358.5 659.95,-339.68 644.68,-323.17 630.19,-310.67"/>
+<polygon fill="black" stroke="black" points="632.22,-307.81 622.27,-304.15 627.77,-313.21 632.22,-307.81"/>
+<text text-anchor="middle" x="681.7" y="-362.3" font-family="Times,serif" font-size="14.00">_J7</text>
 </g>
 </g>
 </svg>

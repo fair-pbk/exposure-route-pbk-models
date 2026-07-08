@@ -35,21 +35,21 @@ digraph {
 			fillcolor=gold,
 			href="#species-ASI",
 			label="ASI
-[-]",
+[PBPKO:06005]",
 			shape=box,
 			style="filled,rounded"];
 		ASIMet1	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-ASIMet1",
 			label="ASIMet1
-[-]",
+[PBPKO:06005]",
 			shape=box,
 			style="filled,rounded"];
 		ASIMet2	[color=black,
-			fillcolor=gold,
+			fillcolor=lightcoral,
 			href="#species-ASIMet2",
 			label="ASIMet2
-[-]",
+[PBPKO:06005]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -67,20 +67,6 @@ digraph {
 			fillcolor=gold,
 			href="#species-ALiver",
 			label="ALiver
-[PBPKO:00497]",
-			shape=box,
-			style="filled,rounded"];
-		ALiverMet1	[color=black,
-			fillcolor=gold,
-			href="#species-ALiverMet1",
-			label="ALiverMet1
-[PBPKO:00497]",
-			shape=box,
-			style="filled,rounded"];
-		ALiverMet2	[color=black,
-			fillcolor=gold,
-			href="#species-ALiverMet2",
-			label="ALiverMet2
 [PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
@@ -117,14 +103,14 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		APlasmaMet1	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-APlasmaMet1",
 			label="APlasmaMet1
 [PBPKO:00502]",
 			shape=box,
 			style="filled,rounded"];
 		APlasmaMet2	[color=black,
-			fillcolor=gold,
+			fillcolor=lightcoral,
 			href="#species-APlasmaMet2",
 			label="APlasmaMet2
 [PBPKO:00502]",
@@ -160,17 +146,17 @@ digraph {
 			style="filled,rounded"
 		];
 		AGILumenMet1	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-AGILumenMet1",
 			label="AGILumenMet1
-[-]",
+[PBPKO:00496]",
 			shape=box,
 			style="filled,rounded"];
 		AGILumenMet2	[color=black,
-			fillcolor=gold,
+			fillcolor=lightcoral,
 			href="#species-AGILumenMet2",
 			label="AGILumenMet2
-[-]",
+[PBPKO:00496]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -192,14 +178,14 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		AFecesMet1	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-AFecesMet1",
 			label="AFecesMet1
 [PBPKO:00273]",
 			shape=box,
 			style="filled,rounded"];
 		AFecesMet2	[color=black,
-			fillcolor=gold,
+			fillcolor=lightcoral,
 			href="#species-AFecesMet2",
 			label="AFecesMet2
 [PBPKO:00273]",

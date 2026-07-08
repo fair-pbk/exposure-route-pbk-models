@@ -60,19 +60,19 @@ BPA_Dermal_simple-Hu-based.sbml,VSkinC,Fractional volume of skin tissue,dermal,B
 BPA_Dermal_simple-Hu-based.sbml,VBody,Volume of Body Compartment,dermal,Bisphenols,L/kg,,,,,,
 BPA_Dermal_simple-Hu-based.sbml,QCC,cardiac blood output,dermal,Bisphenols,L/min,PBPKO:00013,cardiac output rate,http://purl.obolibrary.org/obo/PBPKO_00013,,,
 BPA_Dermal_simple-Hu-based.sbml,QSkinC,fractional blood flow to the skin (scaled),dermal,Bisphenols,dimensionless,PBPKO:00037,fraction of blood flow to skin,http://purl.obolibrary.org/obo/PBPKO_00037,,,
-BPA_Dermal_simple-Hu-based.sbml,Area_exposed_skin,area of exposed skin,dermal,Bisphenols,dm^2,,,,,,
+BPA_Dermal_simple-Hu-based.sbml,Area_exposed_skin,area of exposed skin,dermal,Bisphenols,dm^2,PBPKO:04063,area of exposed skin,http://purl.obolibrary.org/obo/PBPKO_04063,,,
 BPA_Dermal_simple-Hu-based.sbml,Area_exposed_follicle,area of exposed follicle,dermal,Bisphenols,dimensionless,PBPKO:00110,fraction of surface area exposed,http://purl.obolibrary.org/obo/PBPKO_00110,,,
-BPA_Dermal_simple-Hu-based.sbml,Thickness_epidermis_finger,thickness of epidermis (finger),dermal,Bisphenols,,,,,,,
+BPA_Dermal_simple-Hu-based.sbml,Thickness_epidermis_finger,thickness of epidermis (finger),dermal,Bisphenols,,PBPKO:04060,thickness epidermis,http://purl.obolibrary.org/obo/PBPKO_04060,,,
 BPA_Dermal_simple-Hu-based.sbml,Thickness_skin_finger,thickness of skin (finger),dermal,Bisphenols,,PBPKO:00635,skin thickness,http://purl.obolibrary.org/obo/PBPKO_00635,,,
 BPA_Dermal_simple-Hu-based.sbml,Thickness_SC,thickness of stratum corneum,dermal,Bisphenols,,PBPKO:00643,thickness stratum corneum,http://purl.obolibrary.org/obo/PBPKO_00643,,,
 BPA_Dermal_simple-Hu-based.sbml,Thickness_VE,thickness of viable epidermis,dermal,Bisphenols,,PBPKO:00644,thickness viable epidermis,http://purl.obolibrary.org/obo/PBPKO_00644,,,
 BPA_Dermal_simple-Hu-based.sbml,D_SC,Stratum Corneum diffusion coefficient,dermal,Bisphenols,,PBPKO:00648,diffusion rate stratum corneum viable epidermis ,http://purl.obolibrary.org/obo/PBPKO_00648,,,
 BPA_Dermal_simple-Hu-based.sbml,u1,stratum corneum desquamation velocity,dermal,Bisphenols,dm/h,,,,,,
-BPA_Dermal_simple-Hu-based.sbml,PCSC,Partition coefficient of Stratum Corneum to Viable epidermis,dermal,Bisphenols,dimensionless,,,,,,
-BPA_Dermal_simple-Hu-based.sbml,PCSCVE,Partition coefficient of Stratum Corneum to Viable Epidermis,dermal,Bisphenols,dimensionless,,,,,,
-BPA_Dermal_simple-Hu-based.sbml,pskin,VE/blood partition coefficient,dermal,Bisphenols,dimensionless,,,,,,
-BPA_Dermal_simple-Hu-based.sbml,P_follicle,Follicle permeability coefficient,dermal,Bisphenols,dm/h,,,,,,
-BPA_Dermal_simple-Hu-based.sbml,PCFO,follicle/SSD partition term,dermal,Bisphenols,dimensionless,,,,,,
+BPA_Dermal_simple-Hu-based.sbml,PCSC,Partition coefficient of Stratum Corneum to Viable epidermis,dermal,Bisphenols,dimensionless,PBPKO:03032,partition coeffcient of stratum corneum to viable epidermis,http://purl.obolibrary.org/obo/PBPKO_03032,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
+BPA_Dermal_simple-Hu-based.sbml,PCSCVE,Partition coefficient of Stratum Corneum to Viable Epidermis,dermal,Bisphenols,dimensionless,PBPKO:03032,partition coeffcient of stratum corneum to viable epidermis,http://purl.obolibrary.org/obo/PBPKO_03032,CHEBI:22901,bisphenol,http://purl.obolibrary.org/obo/CHEBI_22901
+BPA_Dermal_simple-Hu-based.sbml,pskin,VE/blood partition coefficient,dermal,Bisphenols,dimensionless,PBPKO:03033,partition coeffcient of viable epidermis to blood,http://purl.obolibrary.org/obo/PBPKO_03033,,,
+BPA_Dermal_simple-Hu-based.sbml,P_follicle,Follicle permeability coefficient,dermal,Bisphenols,dm/h,PBPKO:03031,follicle permeability coefficient,http://purl.obolibrary.org/obo/PBPKO_03031,,,
+BPA_Dermal_simple-Hu-based.sbml,PCFO,follicle/SSD partition term,dermal,Bisphenols,dimensionless,PBPKO:03035,partition coeffcient of follicle to skin surface depot,http://purl.obolibrary.org/obo/PBPKO_03035,,,
 BPA_Dermal_simple-Hu-based.sbml,PCRestbody,tissue-to-blood partition coefficient (lumped Rest of Body),dermal,Bisphenols,dimensionless,PBPKO:00585,restbody blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00585,,,
 BPA_Dermal_simple-Hu-based.sbml,CLUrine,renal clearance rate,dermal,Bisphenols,dimensionless,PBPKO:00237,renal elimination rate constant,http://purl.obolibrary.org/obo/PBPKO_00237,,,
 BPA_Dermal_simple-Hu-based.sbml,Free,,dermal,Bisphenols,,,,,,,
@@ -82,11 +82,11 @@ BPA_Dermal_simple-Hu-based.sbml,Vbody_total,Volume of Total body,dermal,Bispheno
 BPA_Dermal_simple-Hu-based.sbml,Vrestbody,Volume of Rest of body,dermal,Bisphenols,L,PBPKO:00105,volume of rest body,http://purl.obolibrary.org/obo/PBPKO_00105,,,
 BPA_Dermal_simple-Hu-based.sbml,frac_exposed,fraction exposed skin derived param,dermal,Bisphenols,dimensionless,PBPKO:00061,fraction of exposed skin,http://purl.obolibrary.org/obo/PBPKO_00061,,,
 BPA_Dermal_simple-Hu-based.sbml,VexposedSC,volume of stratum corneum exposed,dermal,Bisphenols,L,PBPKO:00112,volume of stratum corneum exposed,http://purl.obolibrary.org/obo/PBPKO_00112,,,
-BPA_Dermal_simple-Hu-based.sbml,VexposedVE,Volume of exposed Viable epidermis,dermal,Bisphenols,L,,,,,,
+BPA_Dermal_simple-Hu-based.sbml,VexposedVE,Volume of exposed Viable epidermis,dermal,Bisphenols,L,PBPKO:04061,volume of exposed viable epidermis,http://purl.obolibrary.org/obo/PBPKO_04061,,,
 BPA_Dermal_simple-Hu-based.sbml,Thick_follicle,,dermal,Bisphenols,,,,,,,
-BPA_Dermal_simple-Hu-based.sbml,Vfollicle,Volume of follicles,dermal,Bisphenols,L,,,,,,
+BPA_Dermal_simple-Hu-based.sbml,Vfollicle,Volume of follicles,dermal,Bisphenols,L,PBPKO:04062,volume of follicle,http://purl.obolibrary.org/obo/PBPKO_04062,,,
 BPA_Dermal_simple-Hu-based.sbml,Vskin_unexp,Volume of unexposed skin,dermal,Bisphenols,L,PBPKO:00111,volume of unexposed skin,http://purl.obolibrary.org/obo/PBPKO_00111,,,
-BPA_Dermal_simple-Hu-based.sbml,VSSD,Volume of SurfaceDepot (skin),dermal,Bisphenols,L,,,,,,
+BPA_Dermal_simple-Hu-based.sbml,VSSD,Volume of SurfaceDepot (skin),dermal,Bisphenols,L,PBPKO:04078,volume of skin surface depot,http://purl.obolibrary.org/obo/PBPKO_04078,,,
 BPA_Dermal_simple-Hu-based.sbml,QC,Cardiac Output (scaled),dermal,Bisphenols,L/h,PBPKO:00013,cardiac output rate,http://purl.obolibrary.org/obo/PBPKO_00013,,,
 BPA_Dermal_simple-Hu-based.sbml,Qskin,volumetric blood flow rate to the skin tissue compartment,dermal,Bisphenols,L/h,PBPKO:00036,blood flow rate to skin,http://purl.obolibrary.org/obo/PBPKO_00036,,,
 BPA_Dermal_simple-Hu-based.sbml,Qskin_exposed,blood flow rate to the exposed skin,dermal,Bisphenols,L/h,PBPKO:00563,blood flow rate to exposed skin,http://purl.obolibrary.org/obo/PBPKO_00563,,,
@@ -105,7 +105,7 @@ BPA_Dermal_simple-Hu-based.sbml,CSC07,,dermal,Bisphenols,,,,,,,
 BPA_Dermal_simple-Hu-based.sbml,CSC08,,dermal,Bisphenols,,,,,,,
 BPA_Dermal_simple-Hu-based.sbml,CSC09,,dermal,Bisphenols,,,,,,,
 BPA_Dermal_simple-Hu-based.sbml,Cplasma,Total concentration of substance in blood plasma,dermal,Bisphenols,,PBPKO:00301,concentration in blood,http://purl.obolibrary.org/obo/PBPKO_00301,,,
-BPA_Dermal_simple-Hu-based.sbml,CSSD,Concentration of chemical in Surface Depot,dermal,Bisphenols,,,,,,,
+BPA_Dermal_simple-Hu-based.sbml,CSSD,Concentration of chemical in Surface Depot,dermal,Bisphenols,,PBPKO:06051,amount in skin surface depot,http://purl.obolibrary.org/obo/PBPKO_06051,,,
 BPA_Dermal_simple-Hu-based.sbml,CVE,Concentration of chemical in Viable Epidermis,dermal,Bisphenols,,,,,,,
 BPA_Dermal_simple-Hu-based.sbml,CFO,Concentration of chemical in Follicle,dermal,Bisphenols,,,,,,,
 BPA_Dermal_simple-Hu-based.sbml,CSC00,,dermal,Bisphenols,,,,,,,
@@ -594,7 +594,7 @@ Shin.sbml,RBS,Blood serum ratio,oral,Bisphenols,dimensionless,,,,,,
 Shin.sbml,PL,Partition coefficient - liver,oral,Bisphenols,dimensionless,PBPKO:00577,liver blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00577,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Shin.sbml,PSpleen,Partition coefficient - spleen,oral,Bisphenols,dimensionless,PBPKO:00589,spleen blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00589,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Shin.sbml,PSt,Partition coefficient - stomach,oral,Bisphenols,dimensionless,PBPKO:00590,stomach blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00590,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Shin.sbml,PSI,Partition coefficient - small intestine,oral,Bisphenols,dimensionless,,,,,,
+Shin.sbml,PSI,Partition coefficient - small intestine,oral,Bisphenols,dimensionless,PBPKO:00168,intestine plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00168,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Shin.sbml,PRest,Partition coefficient - rest of body,oral,Bisphenols,dimensionless,PBPKO:00585,restbody blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00585,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Shin.sbml,kabs,Uptake from GI,oral,Bisphenols,/h,,,,,,
 Shin.sbml,CLint,Hepatic intrinsic clearance,oral,Bisphenols,L/h,PBPKO:00234,hepatic clearance rate,http://purl.obolibrary.org/obo/PBPKO_00234,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
@@ -616,52 +616,51 @@ Mielke.sbml,QC,Cardiac output,oral,Bisphenols,L/h,PBPKO:00013,cardiac output rat
 Mielke.sbml,QRest,Blood flow rate to rest of body,oral,Bisphenols,L/h,PBPKO:00050,blood flow rate to restbody,http://purl.obolibrary.org/obo/PBPKO_00050,,,
 Mielke.sbml,PL,Partition coefficient - liver,oral,Bisphenols,dimensionless,PBPKO:00577,liver blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00577,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Mielke.sbml,PRest,Partition coefficient - rest of body,oral,Bisphenols,dimensionless,PBPKO:00585,restbody blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00585,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Mielke.sbml,kabs,absorption constant rate,oral,Bisphenols,/h,,,,,,
+Mielke.sbml,kabs,absorption constant rate,oral,Bisphenols,/h,PBPKO:00141,absorption rate constant gut,http://purl.obolibrary.org/obo/PBPKO_00141,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Mielke.sbml,KmLMet1,Glucuronidation - Km,oral,Bisphenols,umol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Mielke.sbml,VmaxLMet1C,Glucuronidation - Vmax,oral,Bisphenols,nmol/min/g,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Mielke.sbml,VmaxLMet1,Glucuronidation - Vmax,oral,Bisphenols,umol/h,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Mielke.sbml,KmLMet2,Sulfation - Km,oral,Bisphenols,umol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Mielke.sbml,VmaxLMet2C,Sulfation - Vmax,oral,Bisphenols,nmol/min/g,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Mielke.sbml,VmaxLMet2,Sulfation - Vmax,oral,Bisphenols,umol/h,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Mielke.sbml,VmaxLMet1C,Glucuronidation - Vmax,oral,Bisphenols,umol/h/g,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Mielke.sbml,VmaxLMet1,Glucuronidation - Vmax,oral,Bisphenols,umol/h,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Mielke.sbml,KmLMet2,Sulfation - Km,oral,Bisphenols,umol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Mielke.sbml,VmaxLMet2C,Sulfation - Vmax,oral,Bisphenols,umol/h/g,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Mielke.sbml,VmaxLMet2,Sulfation - Vmax,oral,Bisphenols,umol/h,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
 Mielke.sbml,CBlood,Concentration in blood,oral,Bisphenols,umol/L,PBPKO:00301,concentration in blood,http://purl.obolibrary.org/obo/PBPKO_00301,,,
 Mielke.sbml,CLiver,Concentration in liver,oral,Bisphenols,umol/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
 Mielke.sbml,CVL,Concentration in liver (Aliver/PL),oral,Bisphenols,umol/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
 Mielke.sbml,CRest,Concentration in rest of body,oral,Bisphenols,umol/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
-Moreau.sbml,BW,,oral,Bisphenols,kg,,,,,,
-Moreau.sbml,VLc,,oral,Bisphenols,L/kg,,,,,,
+Moreau.sbml,BW,body weight,oral,Bisphenols,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
+Moreau.sbml,VLc,Volume fraction of liver to bodyweight,oral,Bisphenols,L/kg,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
 Moreau.sbml,VGITissuec,,oral,Bisphenols,L/kg,,,,,,
-Moreau.sbml,VL,,oral,Bisphenols,L,,,,,,
+Moreau.sbml,VL,Volume of liver,oral,Bisphenols,L,PBPKO:00077,volume of liver,http://purl.obolibrary.org/obo/PBPKO_00077,,,
 Moreau.sbml,VGITissue,,oral,Bisphenols,L,,,,,,
-Moreau.sbml,VPlasma,,oral,Bisphenols,L,,,,,,
-Moreau.sbml,VUrineC,,oral,Bisphenols,L/kg/d,,,,,,
-Moreau.sbml,VUrine,,oral,Bisphenols,L/h,,,,,,
-Moreau.sbml,VRest,,oral,Bisphenols,L,,,,,,
-Moreau.sbml,QC,,oral,Bisphenols,L/h,,,,,,
+Moreau.sbml,VPlasma,Volume of plasma,oral,Bisphenols,L,PBPKO:00103,volume of plasma,http://purl.obolibrary.org/obo/PBPKO_00103,,,
+Moreau.sbml,VUrineC,urine volume per day,oral,Bisphenols,L/kg/d,,,,,,
+Moreau.sbml,VUrine,urine volume per hour,oral,Bisphenols,L/h,,,,,,
+Moreau.sbml,VRest,Volume of rest of body,oral,Bisphenols,L,PBPKO:00105,volume of rest body,http://purl.obolibrary.org/obo/PBPKO_00105,,,
+Moreau.sbml,QC,Cardiac output,oral,Bisphenols,L/h,PBPKO:00013,cardiac output rate,http://purl.obolibrary.org/obo/PBPKO_00013,,,
 Moreau.sbml,Hct,,oral,Bisphenols,dimensionless,,,,,,
-Moreau.sbml,QCPlasma,,oral,Bisphenols,L/h,,,,,,
-Moreau.sbml,QGIc,,oral,Bisphenols,dimensionless,,,,,,
-Moreau.sbml,QLc,,oral,Bisphenols,dimensionless,,,,,,
-Moreau.sbml,QGI,,oral,Bisphenols,L/h,,,,,,
-Moreau.sbml,QL,,oral,Bisphenols,L/h,,,,,,
-Moreau.sbml,QRest,,oral,Bisphenols,L/h,,,,,,
-Moreau.sbml,PL,,oral,Bisphenols,dimensionless,,,,,,
-Moreau.sbml,PGI,,oral,Bisphenols,dimensionless,,,,,,
-Moreau.sbml,PRest,,oral,Bisphenols,dimensionless,,,,,,
-Moreau.sbml,ksto,,oral,Bisphenols,/h,,,,,,
-Moreau.sbml,kabs,,oral,Bisphenols,/h,,,,,,
-Moreau.sbml,Fa,,oral,Bisphenols,dimensionless,,,,,,
+Moreau.sbml,QCPlasma,Plasma flow,oral,Bisphenols,L/h,,,,,,
+Moreau.sbml,QGIc,Plasma flow to GI constant,oral,Bisphenols,dimensionless,PBPKO:00513,fraction of blood flow to gut,http://purl.obolibrary.org/obo/PBPKO_00513,,,
+Moreau.sbml,QLc,Plasma flow to liver constant,oral,Bisphenols,dimensionless,PBPKO:00025,fraction of blood flow to liver,http://purl.obolibrary.org/obo/PBPKO_00025,,,
+Moreau.sbml,QGI,Plasma flow to liver,oral,Bisphenols,L/h,PBPKO:00531,blood flow rate to gut,http://purl.obolibrary.org/obo/PBPKO_00531,,,
+Moreau.sbml,QL,Plasma flow to liver,oral,Bisphenols,L/h,PBPKO:00024,blood flow rate to liver,http://purl.obolibrary.org/obo/PBPKO_00024,,,
+Moreau.sbml,QRest,Plasma flow to rest of body,oral,Bisphenols,L/h,PBPKO:00050,blood flow rate to restbody,http://purl.obolibrary.org/obo/PBPKO_00050,,,
+Moreau.sbml,PL,Partition coefficient - liver,oral,Bisphenols,dimensionless,PBPKO:00577,liver blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00577,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Moreau.sbml,PGI,Partition coefficient GI - Plasma,oral,Bisphenols,dimensionless,PBPKO:00168,intestine plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00168,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Moreau.sbml,PRest,Partition coefficient - rest of body,oral,Bisphenols,dimensionless,PBPKO:00585,restbody blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00585,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Moreau.sbml,ksto,Gastric emptying rate constant,oral,Bisphenols,/h,PBPKO:00143,gastric emptying rate,http://purl.obolibrary.org/obo/PBPKO_00143,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Moreau.sbml,kabs,Uptake from gut to liver,oral,Bisphenols,/h,PBPKO:00141,absorption rate constant gut,http://purl.obolibrary.org/obo/PBPKO_00141,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Moreau.sbml,Fa,fraction absorbed,oral,Bisphenols,dimensionless,PBPKO:00263,bioavailability,http://purl.obolibrary.org/obo/PBPKO_00263,,,
 Moreau.sbml,CLintLC,,oral,Bisphenols,L/h/kg,,,,,,
-Moreau.sbml,CLintL,,oral,Bisphenols,L/h,,,,,,
-Moreau.sbml,CLintB,,oral,Bisphenols,L/h,,,,,,
-Moreau.sbml,Free,,oral,Bisphenols,dimensionless,,,,,,
-Moreau.sbml,GFR,,oral,Bisphenols,L/h,,,,,,
-Moreau.sbml,CLUC,,oral,Bisphenols,L/h,,,,,,
-Moreau.sbml,CLU,,oral,Bisphenols,L/h,,,,,,
+Moreau.sbml,CLintL,,oral,Bisphenols,L/h,PBPKO:00234,hepatic clearance rate,http://purl.obolibrary.org/obo/PBPKO_00234,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Moreau.sbml,CLintB,,oral,Bisphenols,L/h,PBPKO:00235,intrinsic clearance rate,http://purl.obolibrary.org/obo/PBPKO_00235,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Moreau.sbml,Free,Fraction unbound plasma,oral,Bisphenols,dimensionless,PBPKO:00591,fraction unbound plasma,http://purl.obolibrary.org/obo/PBPKO_00591,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Moreau.sbml,GFR,,oral,Bisphenols,L/h,PBPKO:00065,glomerular filtration rate,http://purl.obolibrary.org/obo/PBPKO_00065,,,
+Moreau.sbml,CLU,,oral,Bisphenols,L/h,PBPKO:00237,renal elimination rate constant,http://purl.obolibrary.org/obo/PBPKO_00237,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Moreau.sbml,CGITissue,,oral,Bisphenols,mg/L,,,,,,
-Moreau.sbml,CLiver,,oral,Bisphenols,mg/L,,,,,,
-Moreau.sbml,CPlasma,,oral,Bisphenols,mg/L,,,,,,
-Moreau.sbml,CRest,,oral,Bisphenols,mg/L,,,,,,
-Moreau.sbml,CUrine,,oral,Bisphenols,mg/L,,,,,,
+Moreau.sbml,CLiver,Concentration in liver,oral,Bisphenols,mg/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
+Moreau.sbml,CPlasma,Concentration in plasma,oral,Bisphenols,mg/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
+Moreau.sbml,CRest,Concentration in rest of body,oral,Bisphenols,mg/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
+Moreau.sbml,CUrine,Concentration in Urine,oral,Bisphenols,mg/L,PBPKO:00302,concentration in urine,http://purl.obolibrary.org/obo/PBPKO_00302,,,
 Deepika.sbml,BW,Body weight,oral,Bisphenols,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
 Deepika.sbml,VLc,Volume fraction of liver to bodyweight,oral,Bisphenols,L/kg,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
 Deepika.sbml,VPlasmac,Volume fraction of plasma to bodyweight,oral,Bisphenols,L/kg,PBPKO:00104,fraction of plasma,http://purl.obolibrary.org/obo/PBPKO_00104,,,
@@ -677,12 +676,12 @@ Deepika.sbml,QL,Blood flow rate to liver,oral,Bisphenols,L/h,PBPKO:00024,blood f
 Deepika.sbml,QRest,Blood flow rate to rest of body,oral,Bisphenols,L/h,PBPKO:00050,blood flow rate to restbody,http://purl.obolibrary.org/obo/PBPKO_00050,,,
 Deepika.sbml,fup,unbound fraction,oral,Bisphenols,dimensionless,PBPKO:00149,unbound fraction,http://purl.obolibrary.org/obo/PBPKO_00149,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Deepika.sbml,ksto,Gastric emptying rate,oral,Bisphenols,/h,PBPKO:00143,gastric emptying rate,http://purl.obolibrary.org/obo/PBPKO_00143,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Deepika.sbml,kabs,Oral absorption rate,oral,Bisphenols,/h,,,,,,
-Deepika.sbml,VmaxGMet1,Glucuronidation - Vmax,oral,Bisphenols,umol/h,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Deepika.sbml,KmGMet1,Glucuronidation - Km,oral,Bisphenols,umol/L,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Deepika.sbml,VmaxLMet1,Glucuronidation - Vmax,oral,Bisphenols,umol/h,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Deepika.sbml,KmLMet1,Glucuronidation - Km,oral,Bisphenols,umol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Deepika.sbml,VmaxLMet2,Sulfation - Vmax,oral,Bisphenols,umol/h,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Deepika.sbml,kabs,Oral absorption rate,oral,Bisphenols,/h,PBPKO:00141,absorption rate constant gut,http://purl.obolibrary.org/obo/PBPKO_00141,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Deepika.sbml,VmaxGMet1,Glucuronidation - Vmax,oral,Bisphenols,umol/h,PBPKO:00211,maximum rate in intestine,http://purl.obolibrary.org/obo/PBPKO_00211,CHEBI:235438,bisphenol A beta-D-glucuronide,http://purl.obolibrary.org/obo/CHEBI_235438
+Deepika.sbml,KmGMet1,Glucuronidation - Km,oral,Bisphenols,umol/L,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:235438,bisphenol A beta-D-glucuronide,http://purl.obolibrary.org/obo/CHEBI_235438
+Deepika.sbml,VmaxLMet1,Glucuronidation - Vmax,oral,Bisphenols,umol/h,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:235438,bisphenol A beta-D-glucuronide,http://purl.obolibrary.org/obo/CHEBI_235438
+Deepika.sbml,KmLMet1,Glucuronidation - Km,oral,Bisphenols,umol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:235438,bisphenol A beta-D-glucuronide,http://purl.obolibrary.org/obo/CHEBI_235438
+Deepika.sbml,VmaxLMet2,Sulfation - Vmax,oral,Bisphenols,umol/h,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
 Deepika.sbml,KmLMet2,Sulfation - Km,oral,Bisphenols,umol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
 Deepika.sbml,PL,Partition coefficient - liver,oral,Bisphenols,dimensionless,PBPKO:00577,liver blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00577,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Deepika.sbml,PRest,Partition coefficient - rest of body,oral,Bisphenols,dimensionless,PBPKO:00585,restbody blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00585,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
@@ -690,49 +689,49 @@ Deepika.sbml,CLiver,Concentration in liver,oral,Bisphenols,umol/L,PBPKO:00539,co
 Deepika.sbml,CPlasma,Concentration in plasma,oral,Bisphenols,umol/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
 Deepika.sbml,CGut,Concentration in gut,oral,Bisphenols,umol/L,PBPKO:00538,concentration in gut,http://purl.obolibrary.org/obo/PBPKO_00538,,,
 Deepika.sbml,CRest,Concentration in rest of body,oral,Bisphenols,umol/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
-Loizou.sbml,BW,body weight,oral,Bisphenols,,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
-Loizou.sbml,VLc,,oral,Bisphenols,,,,,,,
-Loizou.sbml,VPlasmac,,oral,Bisphenols,,,,,,,
-Loizou.sbml,VGc,,oral,Bisphenols,,,,,,,
-Loizou.sbml,VL,,oral,Bisphenols,,,,,,,
-Loizou.sbml,VPlasma,,oral,Bisphenols,,,,,,,
-Loizou.sbml,VG,,oral,Bisphenols,,,,,,,
-Loizou.sbml,VRest,,oral,Bisphenols,,,,,,,
-Loizou.sbml,QC,,oral,Bisphenols,,,,,,,
-Loizou.sbml,QLc,,oral,Bisphenols,,,,,,,
-Loizou.sbml,QGc,,oral,Bisphenols,,,,,,,
-Loizou.sbml,QL,,oral,Bisphenols,,,,,,,
-Loizou.sbml,QG,,oral,Bisphenols,,,,,,,
-Loizou.sbml,QRest,,oral,Bisphenols,,,,,,,
-Loizou.sbml,fu,,oral,Bisphenols,,,,,,,
-Loizou.sbml,k0C,,oral,Bisphenols,,,,,,,
-Loizou.sbml,k0,,oral,Bisphenols,,,,,,,
-Loizou.sbml,kstoC,,oral,Bisphenols,,,,,,,
-Loizou.sbml,ksto,,oral,Bisphenols,,,,,,,
-Loizou.sbml,kabsC,,oral,Bisphenols,,,,,,,
-Loizou.sbml,kabs,,oral,Bisphenols,,,,,,,
-Loizou.sbml,VmaxGMet1C,,oral,Bisphenols,,,,,,,
-Loizou.sbml,VmaxGMet1,,oral,Bisphenols,,,,,,,
-Loizou.sbml,KmGMet1,,oral,Bisphenols,,,,,,,
-Loizou.sbml,VmaxLMet1C,,oral,Bisphenols,,,,,,,
-Loizou.sbml,VmaxLMet1,,oral,Bisphenols,,,,,,,
-Loizou.sbml,KmLMet1,,oral,Bisphenols,,,,,,,
-Loizou.sbml,VmaxLMet2C,,oral,Bisphenols,,,,,,,
-Loizou.sbml,VmaxLMet2,,oral,Bisphenols,,,,,,,
-Loizou.sbml,KmLMet2,,oral,Bisphenols,,,,,,,
-Loizou.sbml,PL,,oral,Bisphenols,,,,,,,
-Loizou.sbml,PRest,,oral,Bisphenols,,,,,,,
-Loizou.sbml,CLiver,,oral,Bisphenols,,,,,,,
-Loizou.sbml,CPlasma,,oral,Bisphenols,,,,,,,
-Loizou.sbml,CGut,,oral,Bisphenols,,,,,,,
-Loizou.sbml,CRest,,oral,Bisphenols,,,,,,,
+Loizou.sbml,BW,body weight,oral,Bisphenols,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
+Loizou.sbml,VLc,Volume fraction of liver to bodyweight,oral,Bisphenols,L/kg,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
+Loizou.sbml,VPlasmac,Volume fraction of plasma to bodyweight,oral,Bisphenols,L/kg,PBPKO:00104,fraction of plasma,http://purl.obolibrary.org/obo/PBPKO_00104,,,
+Loizou.sbml,VGc,Volume fraction of gut to body weight,oral,Bisphenols,L/kg,PBPKO:00509,fraction of gut,http://purl.obolibrary.org/obo/PBPKO_00509,,,
+Loizou.sbml,VL,Volume of liver,oral,Bisphenols,L,PBPKO:00077,volume of liver,http://purl.obolibrary.org/obo/PBPKO_00077,,,
+Loizou.sbml,VPlasma,Volume of plasma,oral,Bisphenols,L,PBPKO:00103,volume of plasma,http://purl.obolibrary.org/obo/PBPKO_00103,,,
+Loizou.sbml,VG,Volume of gut,oral,Bisphenols,L,PBPKO:00524,volume of gut,http://purl.obolibrary.org/obo/PBPKO_00524,,,
+Loizou.sbml,VRest,Volume of rest of body,oral,Bisphenols,L,PBPKO:00105,volume of rest body,http://purl.obolibrary.org/obo/PBPKO_00105,,,
+Loizou.sbml,QC,Cardiac output,oral,Bisphenols,L/h,PBPKO:00013,cardiac output rate,http://purl.obolibrary.org/obo/PBPKO_00013,,,
+Loizou.sbml,QLc,Blood flow to liver constant,oral,Bisphenols,dimensionless,PBPKO:00025,fraction of blood flow to liver,http://purl.obolibrary.org/obo/PBPKO_00025,,,
+Loizou.sbml,QGc,Blood flow to gut constant,oral,Bisphenols,dimensionless,PBPKO:00513,fraction of blood flow to gut,http://purl.obolibrary.org/obo/PBPKO_00513,,,
+Loizou.sbml,QL,Blood flow to liver,oral,Bisphenols,L/h,PBPKO:00024,blood flow rate to liver,http://purl.obolibrary.org/obo/PBPKO_00024,,,
+Loizou.sbml,QG,Blood flow to liver,oral,Bisphenols,L/h,PBPKO:00531,blood flow rate to gut,http://purl.obolibrary.org/obo/PBPKO_00531,,,
+Loizou.sbml,QRest,Blood flow to rest of body,oral,Bisphenols,L/h,PBPKO:00050,blood flow rate to restbody,http://purl.obolibrary.org/obo/PBPKO_00050,,,
+Loizou.sbml,fu,Fraction unbound plasma,oral,Bisphenols,dimensionless,PBPKO:00591,fraction unbound plasma,http://purl.obolibrary.org/obo/PBPKO_00591,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Loizou.sbml,k0C,Uptake from stomach to liver constant,oral,Bisphenols,/h.kg^0.25,,,,,,
+Loizou.sbml,k0,Uptake from stomach to liver,oral,Bisphenols,/h,,,,,,
+Loizou.sbml,kstoC,intrinsic gastric emptying rate constant,oral,Bisphenols,/h.kg^0.25,,,,,,
+Loizou.sbml,ksto,Gastric emptying rate constant,oral,Bisphenols,/h,PBPKO:00143,gastric emptying rate,http://purl.obolibrary.org/obo/PBPKO_00143,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Loizou.sbml,kabsC,Uptake from gut to liver,oral,Bisphenols,/h.kg^0.25,,,,,,
+Loizou.sbml,kabs,Uptake from gut to liver,oral,Bisphenols,/h,PBPKO:00141,absorption rate constant gut,http://purl.obolibrary.org/obo/PBPKO_00141,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Loizou.sbml,VmaxGMet1C,Glucuronidation - Vmax,oral,Bisphenols,umol/h/g,PBPKO:00211,maximum rate in intestine,http://purl.obolibrary.org/obo/PBPKO_00211,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Loizou.sbml,VmaxGMet1,Glucuronidation - Vmax,oral,Bisphenols,umol/h,PBPKO:00211,maximum rate in intestine,http://purl.obolibrary.org/obo/PBPKO_00211,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Loizou.sbml,KmGMet1,Glucuronidation - Km,oral,Bisphenols,umol/L,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Loizou.sbml,VmaxLMet1C,Glucuronidation - Vmax,oral,Bisphenols,umol/h/g,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Loizou.sbml,VmaxLMet1,Glucuronidation - Vmax,oral,Bisphenols,umol/h,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Loizou.sbml,KmLMet1,Glucuronidation - Km,oral,Bisphenols,umol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Loizou.sbml,VmaxLMet2C,Sulfation - Vmax,oral,Bisphenols,umol/h/g,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Loizou.sbml,VmaxLMet2,Sulfation - Vmax,oral,Bisphenols,umol/h,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Loizou.sbml,KmLMet2,Sulfation - Km,oral,Bisphenols,umol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Loizou.sbml,PL,Partition coefficient - liver,oral,Bisphenols,dimensionless,PBPKO:00577,liver blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00577,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Loizou.sbml,PRest,Partition coefficient - rest of body,oral,Bisphenols,dimensionless,PBPKO:00585,restbody blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00585,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Loizou.sbml,CLiver,Concentration in liver,oral,Bisphenols,umol/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
+Loizou.sbml,CPlasma,Concentration in plasma,oral,Bisphenols,umol/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
+Loizou.sbml,CGut,Concentration in enterocytes (Amount in small intestine/ enterocytes),oral,Bisphenols,umol/L,PBPKO:00538,concentration in gut,http://purl.obolibrary.org/obo/PBPKO_00538,,,
+Loizou.sbml,CRest,Concentration in rest of body,oral,Bisphenols,umol/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
 Christensen.sbml,BW,body weight,oral,Bisphenols,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
-Christensen.sbml,VD,,oral,Bisphenols,L/kg,,,,,,
-Christensen.sbml,F1,,oral,Bisphenols,dimensionless,,,,,,
-Christensen.sbml,F2,,oral,Bisphenols,dimensionless,,,,,,
-Christensen.sbml,k1,,oral,Bisphenols,/h,,,,,,
-Christensen.sbml,k2,,oral,Bisphenols,/h,,,,,,
-Christensen.sbml,CBlood,,oral,Bisphenols,umol/L,,,,,,
+Christensen.sbml,VD,Blood volume of distribution,oral,Bisphenols,L/kg,PBPKO:00147,volume of distribution,http://purl.obolibrary.org/obo/PBPKO_00147,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Christensen.sbml,F1,Absorption fraction,oral,Bisphenols,dimensionless,PBPKO:00263,bioavailability,http://purl.obolibrary.org/obo/PBPKO_00263,,,
+Christensen.sbml,F2,Excretion fraction,oral,Bisphenols,dimensionless,,,,,,
+Christensen.sbml,k1,Absorption rate,oral,Bisphenols,/h,PBPKO:00141,absorption rate constant gut,http://purl.obolibrary.org/obo/PBPKO_00141,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Christensen.sbml,k2,Elimination rate,oral,Bisphenols,/h,PBPKO:00236,fecal elimination rate constant,http://purl.obolibrary.org/obo/PBPKO_00236,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Christensen.sbml,CBlood,Concentration in blood,oral,Bisphenols,umol/L,PBPKO:00301,concentration in blood,http://purl.obolibrary.org/obo/PBPKO_00301,,,
 Teeguarden.sbml,BW,body weight,oral,Bisphenols,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
 Teeguarden.sbml,VLc,Volume fraction of liver to bodyweight,oral,Bisphenols,L/kg,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
 Teeguarden.sbml,VBc,Volume fraction of blood to bodyweight,oral,Bisphenols,L/kg,,,,,,
@@ -763,125 +762,65 @@ Teeguarden.sbml,CBlood,Concentration in blood,oral,Bisphenols,mg/L,PBPKO:00301,c
 Teeguarden.sbml,CLiver,Concentration in liver,oral,Bisphenols,mg/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
 Teeguarden.sbml,CRest,Concentration in rest of body,oral,Bisphenols,mg/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
 Teeguarden.sbml,CPlasma,Concentration in plasma,oral,Bisphenols,mg/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
-Hu.sbml,BW,body weight,oral,Bisphenols,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
-Hu.sbml,VLc,Volume fraction of liver to bodyweight,oral,Bisphenols,dimensionless,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
-Hu.sbml,VPlasmac,Volume fraction of plasma to bodyweight,oral,Bisphenols,dimensionless,PBPKO:00104,fraction of plasma,http://purl.obolibrary.org/obo/PBPKO_00104,,,
-Hu.sbml,VL,Volume of liver,oral,Bisphenols,L,PBPKO:00077,volume of liver,http://purl.obolibrary.org/obo/PBPKO_00077,,,
-Hu.sbml,VPlasma,Volume of plasma,oral,Bisphenols,L,PBPKO:00103,volume of plasma,http://purl.obolibrary.org/obo/PBPKO_00103,,,
-Hu.sbml,VRest,Volume of rest of body,oral,Bisphenols,L,PBPKO:00105,volume of rest body,http://purl.obolibrary.org/obo/PBPKO_00105,,,
-Hu.sbml,enterocytes,Enterocytes (volume of distribution),oral,Bisphenols,L,,,,,,
-Hu.sbml,QC,Cardiac output,oral,Bisphenols,L/h,PBPKO:00013,cardiac output rate,http://purl.obolibrary.org/obo/PBPKO_00013,,,
-Hu.sbml,QLc,Blood flow to liver constant,oral,Bisphenols,dimensionless,PBPKO:00025,fraction of blood flow to liver,http://purl.obolibrary.org/obo/PBPKO_00025,,,
-Hu.sbml,QL,Blood flow to liver,oral,Bisphenols,L/h,PBPKO:00024,blood flow rate to liver,http://purl.obolibrary.org/obo/PBPKO_00024,,,
-Hu.sbml,QRest,Blood flow to rest of body,oral,Bisphenols,L/h,PBPKO:00050,blood flow rate to restbody,http://purl.obolibrary.org/obo/PBPKO_00050,,,
-Hu.sbml,PL,Partition coefficient - liver,oral,Bisphenols,dimensionless,PBPKO:00577,liver blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00577,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Hu.sbml,PRest,Partition coefficient - rest of body,oral,Bisphenols,dimensionless,PBPKO:00585,restbody blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00585,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Hu.sbml,kstoC,Gastric emptying constant,oral,Bisphenols,,,,,,,
-Hu.sbml,ksto,Gastric emptying rate,oral,Bisphenols,/h,PBPKO:00143,gastric emptying rate,http://purl.obolibrary.org/obo/PBPKO_00143,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Hu.sbml,k0C,Uptake from stomach to liver,oral,Bisphenols,,,,,,,
-Hu.sbml,k0,Uptake from stomach to liver,oral,Bisphenols,/h,,,,,,
-Hu.sbml,kabsC,Uptake from enterocytes to liver,oral,Bisphenols,,,,,,,
-Hu.sbml,kabs,Uptake from enterocytes to liver,oral,Bisphenols,/h,,,,,,
-Hu.sbml,kfeC,Fecal elimination constant,oral,Bisphenols,,PBPKO:00236,fecal elimination rate constant,http://purl.obolibrary.org/obo/PBPKO_00236,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Hu.sbml,kfe,Fecal elimination rate,oral,Bisphenols,/h,PBPKO:00230,fecal clearance rate,http://purl.obolibrary.org/obo/PBPKO_00230,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Hu.sbml,kfeMetC,Fecal elimination constant,oral,Bisphenols,,PBPKO:00236,fecal elimination rate constant,http://purl.obolibrary.org/obo/PBPKO_00236,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Hu.sbml,kfeMet,Fecal elimination rate,oral,Bisphenols,/h,PBPKO:00230,fecal clearance rate,http://purl.obolibrary.org/obo/PBPKO_00230,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Hu.sbml,kabsMet1C,Transport from enterocytes to serum,oral,Bisphenols,,,,,,,
-Hu.sbml,kabsMet1,Transport from enterocytes to serum,oral,Bisphenols,/h,,,,,,
-Hu.sbml,kabsMet2C,Transport from enterocytes to serum,oral,Bisphenols,,,,,,,
-Hu.sbml,kabsMet2,Transport from enterocytes to serum,oral,Bisphenols,/h,,,,,,
-Hu.sbml,EHRrateC,Enterohepatic recirculation,oral,Bisphenols,,,,,,,
-Hu.sbml,EHRrate,Enterohepatic recirculation,oral,Bisphenols,/h,,,,,,
-Hu.sbml,kehrMet1C,EHR due to biliary excretion,oral,Bisphenols,,,,,,,
-Hu.sbml,kehrMet1,EHR due to biliary excretion,oral,Bisphenols,/h,,,,,,
-Hu.sbml,kehrMet2C,EHR due to biliary excretion,oral,Bisphenols,,,,,,,
-Hu.sbml,kehrMet2,EHR due to biliary excretion,oral,Bisphenols,/h,,,,,,
-Hu.sbml,BileFracSIMet1,% of metabolite that goes to bile,oral,Bisphenols,dimensionless,,,,,,
-Hu.sbml,BileFracSIMet2,% of metabolite that goes to bile,oral,Bisphenols,dimensionless,,,,,,
-Hu.sbml,fGutMet1,Correction factor,oral,Bisphenols,dimensionless,,,,,,
-Hu.sbml,KmGILumenMet1,Glucuronidation - Km,oral,Bisphenols,,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Hu.sbml,VmaxGILumenMet1c,Glucuronidation - Vmax,oral,Bisphenols,,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Hu.sbml,VmaxGILumenMet1,Glucuronidation - Vmax,oral,Bisphenols,,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Hu.sbml,fGutMet2,Correction factor,oral,Bisphenols,dimensionless,,,,,,
-Hu.sbml,KmGILumenMet2,Sulfation - Km,oral,Bisphenols,,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Hu.sbml,VmaxGILumenMet2c,Sulfation - Vmax,oral,Bisphenols,,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Hu.sbml,VmaxGILumenMet2,Sulfation - Vmax,oral,Bisphenols,,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Hu.sbml,BileFracLMet1,% of metabolite that goes to bile,oral,Bisphenols,dimensionless,,,,,,
-Hu.sbml,BileFracLMet2,% of metabolite that goes to bile,oral,Bisphenols,dimensionless,,,,,,
-Hu.sbml,fLiverMet1,Correction factor,oral,Bisphenols,dimensionless,,,,,,
-Hu.sbml,KmLMet1,Glucuronidation - Km,oral,Bisphenols,,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Hu.sbml,VmaxLMet1c,Glucuronidation - Vmax,oral,Bisphenols,,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Hu.sbml,VmaxLMet1,Glucuronidation - Vmax,oral,Bisphenols,,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Hu.sbml,fLiverMet2,Correction factor,oral,Bisphenols,dimensionless,,,,,,
-Hu.sbml,KmLMet2,Sulfation - Km,oral,Bisphenols,,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Hu.sbml,VmaxLMet2c,Sulfation - Vmax,oral,Bisphenols,,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Hu.sbml,VmaxLMet2,Sulfation - Vmax,oral,Bisphenols,,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Hu.sbml,CSt,Concentration in stomach,oral,Bisphenols,,,,,,,
-Hu.sbml,CSI,Concentration in small intestine,oral,Bisphenols,,,,,,,
-Hu.sbml,CLiver,Concentration in liver,oral,Bisphenols,,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
-Hu.sbml,CPlasma,Concentration in plasma,oral,Bisphenols,,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
-Hu.sbml,CRest,Concentration in rest of body,oral,Bisphenols,,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
-Hu.sbml,ABile,Concentration in GI lumen,oral,Bisphenols,,PBPKO:00538,concentration in gut,http://purl.obolibrary.org/obo/PBPKO_00538,,,
-Hu.sbml,CGut,Concentration in enterocytes (Amount in small intestine/ enterocytes),oral,Bisphenols,,,,,,,
 Yang.sbml,BW,body weight,oral,Bisphenols,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
-Yang.sbml,VLc,Volume fraction to bodyweight - liver,oral,Bisphenols,L/kg,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
-Yang.sbml,VPlasmac,Volume fraction to bodyweight - Plasma,oral,Bisphenols,L/kg,PBPKO:00104,fraction of plasma,http://purl.obolibrary.org/obo/PBPKO_00104,,,
+Yang.sbml,VLc,Volume fraction of liver to bodyweight,oral,Bisphenols,L/kg,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
+Yang.sbml,VPlasmac,Volume fraction of plasma to bodyweight,oral,Bisphenols,L/kg,PBPKO:00104,fraction of plasma,http://purl.obolibrary.org/obo/PBPKO_00104,,,
 Yang.sbml,VL,Volume of liver,oral,Bisphenols,L,PBPKO:00077,volume of liver,http://purl.obolibrary.org/obo/PBPKO_00077,,,
 Yang.sbml,VPlasma,Volume of plasma,oral,Bisphenols,L,PBPKO:00103,volume of plasma,http://purl.obolibrary.org/obo/PBPKO_00103,,,
 Yang.sbml,VRest,Volume of rest of body,oral,Bisphenols,L,PBPKO:00105,volume of rest body,http://purl.obolibrary.org/obo/PBPKO_00105,,,
-Yang.sbml,enterocytes,Small intestine enterocyte processing volume,oral,Bisphenols,L,,,,,,
+Yang.sbml,enterocytes,Enterocyte volume,oral,Bisphenols,L,,,,,,
 Yang.sbml,QC,Cardiac output,oral,Bisphenols,L/h,PBPKO:00013,cardiac output rate,http://purl.obolibrary.org/obo/PBPKO_00013,,,
-Yang.sbml,QLc,Fraction of blood to liver,oral,Bisphenols,dimensionless,PBPKO:00025,fraction of blood flow to liver,http://purl.obolibrary.org/obo/PBPKO_00025,,,
+Yang.sbml,QLc,Blood flow to liver constant,oral,Bisphenols,dimensionless,PBPKO:00025,fraction of blood flow to liver,http://purl.obolibrary.org/obo/PBPKO_00025,,,
 Yang.sbml,QL,Blood flow to liver,oral,Bisphenols,L/h,PBPKO:00024,blood flow rate to liver,http://purl.obolibrary.org/obo/PBPKO_00024,,,
 Yang.sbml,QRest,Blood flow to rest of body,oral,Bisphenols,L/h,PBPKO:00050,blood flow rate to restbody,http://purl.obolibrary.org/obo/PBPKO_00050,,,
 Yang.sbml,PL,Partition coefficient - liver,oral,Bisphenols,dimensionless,PBPKO:00577,liver blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00577,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Yang.sbml,PRest,Partition coefficient - rest of body,oral,Bisphenols,dimensionless,PBPKO:00585,restbody blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00585,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Yang.sbml,kstoC,Gastric emptying constant,oral,Bisphenols,/h.kg^0.25,,,,,,
-Yang.sbml,ksto,Gastric emptying rate,oral,Bisphenols,/h,PBPKO:00143,gastric emptying rate,http://purl.obolibrary.org/obo/PBPKO_00143,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Yang.sbml,kstoC,intrinsic gastric emptying rate constant,oral,Bisphenols,/h.kg^0.25,,,,,,
+Yang.sbml,ksto,Gastric emptying rate constant,oral,Bisphenols,/h,PBPKO:00143,gastric emptying rate,http://purl.obolibrary.org/obo/PBPKO_00143,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Yang.sbml,k0C,Uptake from stomach to liver constant,oral,Bisphenols,/h.kg^0.25,,,,,,
-Yang.sbml,k0,Uptake rate from stomach to liver,oral,Bisphenols,/h,,,,,,
+Yang.sbml,k0,Uptake from stomach to liver,oral,Bisphenols,/h,,,,,,
 Yang.sbml,kabsC,Uptake from enterocytes to liver,oral,Bisphenols,/h.kg^0.25,,,,,,
-Yang.sbml,kabs,Uptake rate from enterocytes to liver,oral,Bisphenols,/h,,,,,,
-Yang.sbml,kfeC,Fecal elimination constant,oral,Bisphenols,/h.kg^0.25,PBPKO:00236,fecal elimination rate constant,http://purl.obolibrary.org/obo/PBPKO_00236,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Yang.sbml,kabs,Uptake from enterocyte to liver,oral,Bisphenols,/h,PBPKO:00141,absorption rate constant gut,http://purl.obolibrary.org/obo/PBPKO_00141,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Yang.sbml,kfeC,intrinsic fecal elimination rate constant,oral,Bisphenols,/h.kg^0.25,PBPKO:00236,fecal elimination rate constant,http://purl.obolibrary.org/obo/PBPKO_00236,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Yang.sbml,kfe,Fecal elimination rate,oral,Bisphenols,/h,PBPKO:00230,fecal clearance rate,http://purl.obolibrary.org/obo/PBPKO_00230,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Yang.sbml,kfeMet1C,Fecal elimination constant,oral,Bisphenols,/h.kg^0.25,PBPKO:00236,fecal elimination rate constant,http://purl.obolibrary.org/obo/PBPKO_00236,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Yang.sbml,kfeMet1C,Intrinsic fecal elimination rate constant,oral,Bisphenols,/h.kg^0.25,PBPKO:00236,fecal elimination rate constant,http://purl.obolibrary.org/obo/PBPKO_00236,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
 Yang.sbml,kfeMet1,Fecal elimination rate,oral,Bisphenols,/h,PBPKO:00230,fecal clearance rate,http://purl.obolibrary.org/obo/PBPKO_00230,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Yang.sbml,kabsMet1C,Transport constant of metabolite from enterocytes to serum,oral,Bisphenols,/h.kg^0.25,,,,,,
-Yang.sbml,kabsMet1,Transport rate of metabolite from enterocytes to serum,oral,Bisphenols,/h,,,,,,
-Yang.sbml,kabsMet2C,Transport constant of metabolite from enterocytes to serum,oral,Bisphenols,/h.kg^0.25,,,,,,
-Yang.sbml,kabsMet2,Transport rate of metabolite from enterocytes to serum,oral,Bisphenols,/h,,,,,,
-Yang.sbml,EHRrateC,Enterohepatic recirculation constant of metabolite,oral,Bisphenols,/h.kg^0.25,,,,,,
-Yang.sbml,EHRrate,Enterohepatic recirculation rate of metabolite,oral,Bisphenols,/h,,,,,,
-Yang.sbml,kehrMet1C,EHR constant of metabolite due to biliary excretion,oral,Bisphenols,/h.kg^0.25,,,,,,
-Yang.sbml,kehrMet1,EHR rate of metabolite due to biliary excretion,oral,Bisphenols,/h,,,,,,
-Yang.sbml,kehrMet2C,EHR constant of metabolite due to biliary excretion,oral,Bisphenols,/h.kg^0.25,,,,,,
-Yang.sbml,kehrMet2,EHR rate of metabolite due to biliary excretion,oral,Bisphenols,/h,,,,,,
+Yang.sbml,kabsMet1C,Transport from enterocytes to serum,oral,Bisphenols,/h.kg^0.25,,,,,,
+Yang.sbml,kabsMet1,Transport from enterocytes to serum,oral,Bisphenols,/h,,,,,,
+Yang.sbml,kabsMet2C,Transport from enterocytes to serum constant,oral,Bisphenols,/h.kg^0.25,,,,,,
+Yang.sbml,kabsMet2,Transport from enterocytes to serum,oral,Bisphenols,/h,,,,,,
+Yang.sbml,EHRrateC,intrinsic enterohepatic recirculation,oral,Bisphenols,/h.kg^0.25,,,,,,
+Yang.sbml,EHRrate,Enterohepatic recirculation rate,oral,Bisphenols,/h,,,,,,
+Yang.sbml,kehrMet1C,intrinsic EHR due to biliary excretion,oral,Bisphenols,/h.kg^0.25,,,,,,
+Yang.sbml,kehrMet1,EHR due to biliary excretion,oral,Bisphenols,/h,,,,,,
+Yang.sbml,kehrMet2C,intrinsic EHR due to biliary excretion,oral,Bisphenols,/h.kg^0.25,,,,,,
+Yang.sbml,kehrMet2,EHR due to biliary excretion,oral,Bisphenols,/h,,,,,,
 Yang.sbml,BileFracSIMet1,% of metabolite that goes to bile,oral,Bisphenols,dimensionless,,,,,,
 Yang.sbml,BileFracSIMet2,% of metabolite that goes to bile,oral,Bisphenols,dimensionless,,,,,,
-Yang.sbml,fGutMet1,correction factor,oral,Bisphenols,dimensionless,,,,,,
-Yang.sbml,KmGILumenMet1,Glucuronidation Km,oral,Bisphenols,nmol/L,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Yang.sbml,VmaxGILumenMet1c,Glucuronidation constant - Vmax,oral,Bisphenols,nmol/h/kg^0.75,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Yang.sbml,VmaxGILumenMet1,Glucuronidation Vmax,oral,Bisphenols,nmol/h,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Yang.sbml,fGutMet2,correction fraction,oral,Bisphenols,dimensionless,,,,,,
-Yang.sbml,KmGILumenMet2,Sulfation - Km,oral,Bisphenols,nmol/L,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Yang.sbml,VmaxGILumenMet2c,Sulfation constant - Vmax,oral,Bisphenols,nmol/h/kg^0.75,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Yang.sbml,VmaxGILumenMet2,Sulfation - Vmax,oral,Bisphenols,nmol/h,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Yang.sbml,fGutMet1,Switch on/off,oral,Bisphenols,dimensionless,,,,,,
+Yang.sbml,KmGILumenMet1,Glucuronidation - Km,oral,Bisphenols,nmol/L,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Yang.sbml,VmaxGILumenMet1c,Glucuronidation - Vmax,oral,Bisphenols,nmol/h/kg^0.75,PBPKO:00211,maximum rate in intestine,http://purl.obolibrary.org/obo/PBPKO_00211,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Yang.sbml,VmaxGILumenMet1,Glucuronidation - Vmax,oral,Bisphenols,nmol/h,PBPKO:00211,maximum rate in intestine,http://purl.obolibrary.org/obo/PBPKO_00211,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Yang.sbml,fGutMet2,Swich on/off,oral,Bisphenols,dimensionless,,,,,,
+Yang.sbml,KmGILumenMet2,Glucuronidation - Km,oral,Bisphenols,nmol/L,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Yang.sbml,VmaxGILumenMet2c,Glucuronidation - Vmax,oral,Bisphenols,nmol/h/kg^0.75,PBPKO:00211,maximum rate in intestine,http://purl.obolibrary.org/obo/PBPKO_00211,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Yang.sbml,VmaxGILumenMet2,Glucuronidation - Vmax,oral,Bisphenols,nmol/h,PBPKO:00211,maximum rate in intestine,http://purl.obolibrary.org/obo/PBPKO_00211,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
 Yang.sbml,BileFracLMet1,% of metabolite that goes to bile,oral,Bisphenols,dimensionless,,,,,,
 Yang.sbml,BileFracLMet2,% of metabolite that goes to bile,oral,Bisphenols,dimensionless,,,,,,
 Yang.sbml,fLiverMet1,Switch on/off,oral,Bisphenols,dimensionless,,,,,,
-Yang.sbml,KmLMet1,Glucuronidation- Km,oral,Bisphenols,nmol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Yang.sbml,VmaxLMet1c,Glucuronidation constant - Vmax,oral,Bisphenols,nmol/h/kg^0.75,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Yang.sbml,VmaxLMet1,Glucuronidation - Vmax,oral,Bisphenols,nmol/h,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Yang.sbml,fLiverMet2,Switch on/off,oral,Bisphenols,dimensionless,,,,,,
+Yang.sbml,KmLMet1,Glucuronidation - Km,oral,Bisphenols,nmol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Yang.sbml,VmaxLMet1c,Glucuronidation - Vmax,oral,Bisphenols,nmol/h/kg^0.75,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Yang.sbml,VmaxLMet1,Glucuronidation - Vmax,oral,Bisphenols,nmol/h,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Yang.sbml,fLiverMet2,Correction factor,oral,Bisphenols,dimensionless,,,,,,
 Yang.sbml,KmLMet2,Sulfation - Km,oral,Bisphenols,nmol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Yang.sbml,VmaxLMet2c,Sulfation constant - Vmax,oral,Bisphenols,nmol/h/kg^0.75,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Yang.sbml,VmaxLMet2,Sulfation - Vmax,oral,Bisphenols,nmol/h,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Yang.sbml,VmaxLMet2c,Sulfation - Vmax,oral,Bisphenols,nmol/h/kg^0.75,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Yang.sbml,VmaxLMet2,Sulfation - Vmax,oral,Bisphenols,nmol/h,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
 Yang.sbml,CSt,Concentration in stomach,oral,Bisphenols,nmol/L,,,,,,
-Yang.sbml,CSI,concentration in small intestine,oral,Bisphenols,nmol/L,,,,,,
+Yang.sbml,CSI,Concentration in small intestine,oral,Bisphenols,nmol/L,,,,,,
 Yang.sbml,CLiver,Concentration in liver,oral,Bisphenols,nmol/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
 Yang.sbml,CPlasma,Concentration in plasma,oral,Bisphenols,nmol/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
 Yang.sbml,CRest,Concentration in rest of body,oral,Bisphenols,nmol/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
-Yang.sbml,CGut,Concentration in gut,oral,Bisphenols,nmol/L,PBPKO:00538,concentration in gut,http://purl.obolibrary.org/obo/PBPKO_00538,,,
+Yang.sbml,CGut,Concentration in enterocytes (Amount in small intestine/ enterocytes),oral,Bisphenols,nmol/L,PBPKO:00538,concentration in gut,http://purl.obolibrary.org/obo/PBPKO_00538,,,
 Sharma.sbml,BW,body weight,oral,Bisphenols,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
 Sharma.sbml,VLc,Volume fraction of liver to bodyweight,oral,Bisphenols,L/kg,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
 Sharma.sbml,VPlasmac,Volume fraction of plasma to bodyweight,oral,Bisphenols,L/kg,PBPKO:00104,fraction of plasma,http://purl.obolibrary.org/obo/PBPKO_00104,,,
@@ -896,29 +835,28 @@ Sharma.sbml,QGc,Blood flow to gut constant,oral,Bisphenols,dimensionless,PBPKO:0
 Sharma.sbml,QL,Blood flow rate to liver,oral,Bisphenols,L/h,PBPKO:00024,blood flow rate to liver,http://purl.obolibrary.org/obo/PBPKO_00024,,,
 Sharma.sbml,QG,Blood flow rate to gut,oral,Bisphenols,L/h,PBPKO:00531,blood flow rate to gut,http://purl.obolibrary.org/obo/PBPKO_00531,,,
 Sharma.sbml,QRest,Blood flow rate to rest of body,oral,Bisphenols,L/h,PBPKO:00050,blood flow rate to restbody,http://purl.obolibrary.org/obo/PBPKO_00050,,,
-Sharma.sbml,Hct,,oral,Bisphenols,,,,,,,
+Sharma.sbml,Hct,,oral,Bisphenols,dimensionless,,,,,,
 Sharma.sbml,fup,unbound fraction,oral,Bisphenols,dimensionless,PBPKO:00149,unbound fraction,http://purl.obolibrary.org/obo/PBPKO_00149,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Sharma.sbml,k0C,Intrinsic stomach absorption rate constant,oral,Bisphenols,,,,,,,
+Sharma.sbml,k0C,Intrinsic stomach absorption rate constant,oral,Bisphenols,/h.kg^0.25,,,,,,
 Sharma.sbml,k0,Stomach absorption rate constant,oral,Bisphenols,/h,,,,,,
-Sharma.sbml,kstoC,intrinsic gastric emptying rate constant,oral,Bisphenols,,,,,,,
+Sharma.sbml,kstoC,intrinsic gastric emptying rate constant,oral,Bisphenols,/h.kg^0.25,,,,,,
 Sharma.sbml,ksto,Gastric emptying rate,oral,Bisphenols,/h,PBPKO:00143,gastric emptying rate,http://purl.obolibrary.org/obo/PBPKO_00143,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
-Sharma.sbml,kabsC,intrinsic absorption rate constant,oral,Bisphenols,,,,,,,
-Sharma.sbml,kabs,Oral absorption rate,oral,Bisphenols,/h,,,,,,
-Sharma.sbml,VmaxGMet1C,Glucuronidation - Vmax,oral,Bisphenols,nmol/min/mg,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Sharma.sbml,VmaxGMet1,Glucuronidation - Vmax,oral,Bisphenols,,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Sharma.sbml,KmGMet1,Glucuronidation - Km,oral,Bisphenols,umol,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Sharma.sbml,VmaxLMet1C,Glucuronidation - Vmax,oral,Bisphenols,nmol/min/mg,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Sharma.sbml,VmaxLMet1,Glucuronidation - Vmax,oral,Bisphenols,,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Sharma.sbml,KmLMet1,Glucuronidation - Km,oral,Bisphenols,umol,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Sharma.sbml,VmaxLMet2C,Sulfation - Vmax,oral,Bisphenols,,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Sharma.sbml,VmaxLMet2,Sulfation - Vmax,oral,Bisphenols,,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Sharma.sbml,KmLMet2,Sulfation - Km,oral,Bisphenols,umol,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Sharma.sbml,kabsC,Uptake from gut to liver,oral,Bisphenols,/h.kg^0.25,,,,,,
+Sharma.sbml,kabs,Oral absorption rate,oral,Bisphenols,/h,PBPKO:00141,absorption rate constant gut,http://purl.obolibrary.org/obo/PBPKO_00141,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
+Sharma.sbml,VmaxGMet1C,Glucuronidation - Vmax,oral,Bisphenols,umol/h/g,PBPKO:00211,maximum rate in intestine,http://purl.obolibrary.org/obo/PBPKO_00211,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Sharma.sbml,VmaxGMet1,Glucuronidation - Vmax,oral,Bisphenols,umol/h,PBPKO:00211,maximum rate in intestine,http://purl.obolibrary.org/obo/PBPKO_00211,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Sharma.sbml,KmGMet1,Glucuronidation - Km,oral,Bisphenols,umol/L,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Sharma.sbml,VmaxLMet1C,Glucuronidation - Vmax,oral,Bisphenols,umol/h/g,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Sharma.sbml,VmaxLMet1,Glucuronidation - Vmax,oral,Bisphenols,umol/h,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Sharma.sbml,KmLMet1,Glucuronidation - Km,oral,Bisphenols,umol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Sharma.sbml,VmaxLMet2C,Sulfation - Vmax,oral,Bisphenols,umol/h/g,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Sharma.sbml,VmaxLMet2,Sulfation - Vmax,oral,Bisphenols,umol/h,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Sharma.sbml,KmLMet2,Sulfation - Km,oral,Bisphenols,umol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
 Sharma.sbml,PL,Partition coefficient - liver,oral,Bisphenols,dimensionless,PBPKO:00577,liver blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00577,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Sharma.sbml,PRest,Partition coefficient - rest of body,oral,Bisphenols,dimensionless,PBPKO:00585,restbody blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00585,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Sharma.sbml,CLiver,Concentration in liver,oral,Bisphenols,umol/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
 Sharma.sbml,CPlasma,Concentration in plasma,oral,Bisphenols,umol/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
-Sharma.sbml,CPlasma_Total,Concentration in plasma,oral,Bisphenols,umol/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
-Sharma.sbml,CGut,Concentration in gut,oral,Bisphenols,umol/L,PBPKO:00538,concentration in gut,http://purl.obolibrary.org/obo/PBPKO_00538,,,
+Sharma.sbml,CGut,Concentration in enterocytes (Amount in small intestine/ enterocytes),oral,Bisphenols,umol/L,PBPKO:00538,concentration in gut,http://purl.obolibrary.org/obo/PBPKO_00538,,,
 Sharma.sbml,CRest,Concentration in rest of body,oral,Bisphenols,umol/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
 Karrer.sbml,BW,body weight,oral,Bisphenols,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
 Karrer.sbml,VLc,Volume fraction of liver to bodyweight,oral,Bisphenols,L/kg,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
@@ -938,7 +876,7 @@ Karrer.sbml,ksto,Gastric emptying rate constant,oral,Bisphenols,/h,PBPKO:00143,g
 Karrer.sbml,k0C,Uptake from stomach to liver constant,oral,Bisphenols,/h.kg^0.25,,,,,,
 Karrer.sbml,k0,Uptake from stomach to liver,oral,Bisphenols,/h,,,,,,
 Karrer.sbml,kabsC,Uptake from enterocytes to liver,oral,Bisphenols,/h.kg^0.25,,,,,,
-Karrer.sbml,kabs,Uptake from enterocyte to liver,oral,Bisphenols,/h,,,,,,
+Karrer.sbml,kabs,Uptake from enterocyte to liver,oral,Bisphenols,/h,PBPKO:00141,absorption rate constant gut,http://purl.obolibrary.org/obo/PBPKO_00141,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Karrer.sbml,kfeC,intrinsic fecal elimination rate constant,oral,Bisphenols,/h.kg^0.25,PBPKO:00236,fecal elimination rate constant,http://purl.obolibrary.org/obo/PBPKO_00236,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Karrer.sbml,kfe,Fecal elimination rate,oral,Bisphenols,/h,PBPKO:00230,fecal clearance rate,http://purl.obolibrary.org/obo/PBPKO_00230,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Karrer.sbml,kfeMetC,Intrinsic fecal elimination rate constant,oral,Bisphenols,/h.kg^0.25,PBPKO:00236,fecal elimination rate constant,http://purl.obolibrary.org/obo/PBPKO_00236,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
@@ -957,22 +895,22 @@ Karrer.sbml,BileFracSIMet1,% of metabolite that goes to bile,oral,Bisphenols,dim
 Karrer.sbml,BileFracSIMet2,% of metabolite that goes to bile,oral,Bisphenols,dimensionless,,,,,,
 Karrer.sbml,fGutMet1,Switch on/off,oral,Bisphenols,dimensionless,,,,,,
 Karrer.sbml,KmGILumenMet1,Glucuronidation - Km,oral,Bisphenols,nmol/L,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Karrer.sbml,VmaxGILumenMet1c,Glucuronidation - Vmax,oral,Bisphenols,nmol/h/kg,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Karrer.sbml,VmaxGILumenMet1,Glucuronidation - Vmax,oral,Bisphenols,nmol/h,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Karrer.sbml,VmaxGILumenMet1c,Glucuronidation - Vmax,oral,Bisphenols,nmol/h/g,PBPKO:00211,maximum rate in intestine,http://purl.obolibrary.org/obo/PBPKO_00211,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Karrer.sbml,VmaxGILumenMet1,Glucuronidation - Vmax,oral,Bisphenols,nmol/h,PBPKO:00211,maximum rate in intestine,http://purl.obolibrary.org/obo/PBPKO_00211,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
 Karrer.sbml,fGutMet2,Swich on/off,oral,Bisphenols,dimensionless,,,,,,
 Karrer.sbml,KmGILumenMet2,Glucuronidation - Km,oral,Bisphenols,nmol/L,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Karrer.sbml,VmaxGILumenMet2c,Glucuronidation - Vmax,oral,Bisphenols,nmol/h/kg,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Karrer.sbml,VmaxGILumenMet2,Glucuronidation - Vmax,oral,Bisphenols,nmol/h,PBPKO:00212,Michaelis constant  intestine,http://purl.obolibrary.org/obo/PBPKO_00212,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Karrer.sbml,VmaxGILumenMet2c,Glucuronidation - Vmax,oral,Bisphenols,nmol/h/g,PBPKO:00211,maximum rate in intestine,http://purl.obolibrary.org/obo/PBPKO_00211,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Karrer.sbml,VmaxGILumenMet2,Glucuronidation - Vmax,oral,Bisphenols,nmol/h,PBPKO:00211,maximum rate in intestine,http://purl.obolibrary.org/obo/PBPKO_00211,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
 Karrer.sbml,BileFracLMet1,% of metabolite that goes to bile,oral,Bisphenols,dimensionless,,,,,,
 Karrer.sbml,BileFracLMet2,% of metabolite that goes to bile,oral,Bisphenols,dimensionless,,,,,,
 Karrer.sbml,fLiverMet1,Switch on/off,oral,Bisphenols,dimensionless,,,,,,
 Karrer.sbml,KmLMet1,Glucuronidation - Km,oral,Bisphenols,nmol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Karrer.sbml,VmaxLMet1c,Glucuronidation - Vmax,oral,Bisphenols,nmol/h/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
-Karrer.sbml,VmaxLMet1,Glucuronidation - Vmax,oral,Bisphenols,nmol/h,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Karrer.sbml,VmaxLMet1c,Glucuronidation - Vmax,oral,Bisphenols,nmol/h/g,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
+Karrer.sbml,VmaxLMet1,Glucuronidation - Vmax,oral,Bisphenols,nmol/h,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:76967,human xenobiotic metabolite,http://purl.obolibrary.org/obo/CHEBI_76967
 Karrer.sbml,fLiverMet2,Correction factor,oral,Bisphenols,dimensionless,,,,,,
 Karrer.sbml,KmLMet2,Sulfation - Km,oral,Bisphenols,nmol/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Karrer.sbml,VmaxLMet2c,Sulfation - Vmax,oral,Bisphenols,nmol/h/L,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
-Karrer.sbml,VmaxLMet2,Sulfation - Vmax,oral,Bisphenols,nmol/h,PBPKO:00214,Michaelis constant  liver,http://purl.obolibrary.org/obo/PBPKO_00214,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Karrer.sbml,VmaxLMet2c,Sulfation - Vmax,oral,Bisphenols,nmol/h/g,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
+Karrer.sbml,VmaxLMet2,Sulfation - Vmax,oral,Bisphenols,nmol/h,PBPKO:00213,maximum rate in liver,http://purl.obolibrary.org/obo/PBPKO_00213,CHEBI:167305,bisphenol A sulfate,http://purl.obolibrary.org/obo/CHEBI_167305
 Karrer.sbml,CSt,Concentration in stomach,oral,Bisphenols,nmol/L,,,,,,
 Karrer.sbml,CSI,Concentration in small intestine,oral,Bisphenols,nmol/L,,,,,,
 Karrer.sbml,CLiver,Concentration in liver,oral,Bisphenols,nmol/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,

@@ -52,6 +52,10 @@ compartments:
 species:
 - id: ASt
   name: Amount of chemical in stomach
+  pbpko_bqm_is_class:
+    id: PBPKO:06004
+    label: amount in stomach
+    iri: http://purl.obolibrary.org/obo/PBPKO_06004
   chebi_bqb_is_class:
     id: CHEBI:33216
     label: bisphenol A
@@ -250,17 +254,25 @@ parameters:
   unit: /h
 - id: kabs
   name: Oral absorption rate
+  pbpko_bqm_is_class:
+    id: PBPKO:00141
+    label: absorption rate constant gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00141
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: /h
 - id: VmaxGMet1
   name: Glucuronidation - Vmax
   pbpko_bqm_is_class:
-    id: PBPKO:00212
-    label: Michaelis constant  intestine
-    iri: http://purl.obolibrary.org/obo/PBPKO_00212
+    id: PBPKO:00211
+    label: maximum rate in intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00211
   chebi_bqb_is_class:
-    id: CHEBI:76967
-    label: human xenobiotic metabolite
-    iri: http://purl.obolibrary.org/obo/CHEBI_76967
+    id: CHEBI:235438
+    label: bisphenol A beta-D-glucuronide
+    iri: http://purl.obolibrary.org/obo/CHEBI_235438
   unit: umol/h
 - id: KmGMet1
   name: Glucuronidation - Km
@@ -269,20 +281,20 @@ parameters:
     label: Michaelis constant  intestine
     iri: http://purl.obolibrary.org/obo/PBPKO_00212
   chebi_bqb_is_class:
-    id: CHEBI:76967
-    label: human xenobiotic metabolite
-    iri: http://purl.obolibrary.org/obo/CHEBI_76967
+    id: CHEBI:235438
+    label: bisphenol A beta-D-glucuronide
+    iri: http://purl.obolibrary.org/obo/CHEBI_235438
   unit: umol/L
 - id: VmaxLMet1
   name: Glucuronidation - Vmax
   pbpko_bqm_is_class:
-    id: PBPKO:00214
-    label: Michaelis constant  liver
-    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    id: PBPKO:00213
+    label: maximum rate in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00213
   chebi_bqb_is_class:
-    id: CHEBI:76967
-    label: human xenobiotic metabolite
-    iri: http://purl.obolibrary.org/obo/CHEBI_76967
+    id: CHEBI:235438
+    label: bisphenol A beta-D-glucuronide
+    iri: http://purl.obolibrary.org/obo/CHEBI_235438
   unit: umol/h
 - id: KmLMet1
   name: Glucuronidation - Km
@@ -291,16 +303,16 @@ parameters:
     label: Michaelis constant  liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00214
   chebi_bqb_is_class:
-    id: CHEBI:76967
-    label: human xenobiotic metabolite
-    iri: http://purl.obolibrary.org/obo/CHEBI_76967
+    id: CHEBI:235438
+    label: bisphenol A beta-D-glucuronide
+    iri: http://purl.obolibrary.org/obo/CHEBI_235438
   unit: umol/L
 - id: VmaxLMet2
   name: Sulfation - Vmax
   pbpko_bqm_is_class:
-    id: PBPKO:00214
-    label: Michaelis constant  liver
-    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    id: PBPKO:00213
+    label: maximum rate in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00213
   chebi_bqb_is_class:
     id: CHEBI:167305
     label: bisphenol A sulfate
@@ -447,6 +459,14 @@ parameterisations:
     value: 9.0
     unit: L/h/kg^-0.25
     reference: ''
+    bqm_is:
+      id: PBPKO:00141
+      label: absorption rate constant gut
+      iri: http://purl.obolibrary.org/obo/PBPKO_00141
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: KmGMet1
     value: 58.0
     unit: umol/L
@@ -456,9 +476,9 @@ parameterisations:
       label: Michaelis constant  intestine
       iri: http://purl.obolibrary.org/obo/PBPKO_00212
     bqb_is:
-      id: CHEBI:76967
-      label: human xenobiotic metabolite
-      iri: http://purl.obolibrary.org/obo/CHEBI_76967
+      id: CHEBI:235438
+      label: bisphenol A beta-D-glucuronide
+      iri: http://purl.obolibrary.org/obo/CHEBI_235438
   - id: KmLMet1
     value: 45.8
     unit: umol/L
@@ -468,9 +488,9 @@ parameterisations:
       label: Michaelis constant  liver
       iri: http://purl.obolibrary.org/obo/PBPKO_00214
     bqb_is:
-      id: CHEBI:76967
-      label: human xenobiotic metabolite
-      iri: http://purl.obolibrary.org/obo/CHEBI_76967
+      id: CHEBI:235438
+      label: bisphenol A beta-D-glucuronide
+      iri: http://purl.obolibrary.org/obo/CHEBI_235438
   - id: KmLMet2
     value: 10.1
     unit: umol/L

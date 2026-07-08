@@ -29,7 +29,7 @@ compartments:
     iri: http://purl.obolibrary.org/obo/PBPKO_00464
   unit: L
 - id: Bladder
-  name: ''
+  name: bladder
   pbpko_bqm_is_class:
     id: PBPKO:00402
     label: bladder compartment
@@ -38,6 +38,14 @@ compartments:
 species:
 - id: ASt
   name: amount of chemical in stomach
+  pbpko_bqm_is_class:
+    id: PBPKO:06004
+    label: amount in stomach
+    iri: http://purl.obolibrary.org/obo/PBPKO_06004
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: umol
 - id: ABlood
   name: amount of chemical in blood
@@ -45,9 +53,17 @@ species:
     id: PBPKO:00623
     label: amount in blood
     iri: http://purl.obolibrary.org/obo/PBPKO_00623
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: umol
 - id: AExcr
   name: ''
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: umol
 parameters:
 - id: BW
@@ -58,22 +74,54 @@ parameters:
     iri: http://purl.obolibrary.org/obo/PBPKO_00008
   unit: kg
 - id: VD
-  name: ''
+  name: Blood volume of distribution
+  pbpko_bqm_is_class:
+    id: PBPKO:00147
+    label: volume of distribution
+    iri: http://purl.obolibrary.org/obo/PBPKO_00147
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: L/kg
 - id: F1
-  name: ''
+  name: Absorption fraction
+  pbpko_bqm_is_class:
+    id: PBPKO:00263
+    label: bioavailability
+    iri: http://purl.obolibrary.org/obo/PBPKO_00263
   unit: dimensionless
 - id: F2
-  name: ''
+  name: Excretion fraction
   unit: dimensionless
 - id: k1
-  name: ''
+  name: Absorption rate
+  pbpko_bqm_is_class:
+    id: PBPKO:00141
+    label: absorption rate constant gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00141
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: /h
 - id: k2
-  name: ''
+  name: Elimination rate
+  pbpko_bqm_is_class:
+    id: PBPKO:00236
+    label: fecal elimination rate constant
+    iri: http://purl.obolibrary.org/obo/PBPKO_00236
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: /h
 - id: CBlood
-  name: ''
+  name: Concentration in blood
+  pbpko_bqm_is_class:
+    id: PBPKO:00301
+    label: concentration in blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00301
   unit: umol/L
 parameterisations:
 - filename: Christensen.params.csv
@@ -91,10 +139,22 @@ parameterisations:
     value: 0.15
     unit: L/kg
     reference: ''
+    bqm_is:
+      id: PBPKO:00147
+      label: volume of distribution
+      iri: http://purl.obolibrary.org/obo/PBPKO_00147
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: F1
     value: 1.0
     unit: DIMENSIONLESS
     reference: ''
+    bqm_is:
+      id: PBPKO:00263
+      label: bioavailability
+      iri: http://purl.obolibrary.org/obo/PBPKO_00263
   - id: F2
     value: 1.0
     unit: DIMENSIONLESS
@@ -103,10 +163,26 @@ parameterisations:
     value: 0.9
     unit: /h
     reference: ''
+    bqm_is:
+      id: PBPKO:00141
+      label: absorption rate constant gut
+      iri: http://purl.obolibrary.org/obo/PBPKO_00141
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: k2
     value: 0.9
     unit: /h
     reference: ''
+    bqm_is:
+      id: PBPKO:00236
+      label: fecal elimination rate constant
+      iri: http://purl.obolibrary.org/obo/PBPKO_00236
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
 unit_consistency:
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\

@@ -10,7 +10,7 @@ applicability_domain:
     label: Homo sapiens
     iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
 num_compartments: 5
-num_species: 8
+num_species: 7
 num_parameters: 30
 num_reactions: 9
 compartments:
@@ -94,9 +94,6 @@ species:
     label: bisphenol A
     iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: mg
-- id: ALiverMet
-  name: ''
-  unit: ''
 - id: AGILumenMet
   name: Amount of metabolite in GI lumen
   pbpko_bqm_is_class:
