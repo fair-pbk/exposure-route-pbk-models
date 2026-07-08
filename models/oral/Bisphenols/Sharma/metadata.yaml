@@ -51,8 +51,16 @@ compartments:
   unit: L
 species:
 - id: ASt
-  name: ''
-  unit: ''
+  name: Amount in stomach
+  pbpko_bqm_is_class:
+    id: PBPKO:06004
+    label: amount in stomach
+    iri: http://purl.obolibrary.org/obo/PBPKO_06004
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
+  unit: umol
 - id: ALiver
   name: amount of chemical in liver
   pbpko_bqm_is_class:
@@ -231,6 +239,10 @@ parameters:
   unit: L/h
 - id: Hct
   name: ''
+  pbpko_bqm_is_class:
+    id: PBPKO:04058
+    label: volume fraction of red blood cells
+    iri: http://purl.obolibrary.org/obo/PBPKO_04058
   unit: dimensionless
 - id: fup
   name: unbound fraction
@@ -245,12 +257,36 @@ parameters:
   unit: dimensionless
 - id: k0C
   name: Intrinsic stomach absorption rate constant
+  pbpko_bqm_is_class:
+    id: PBPKO:03003
+    label: intrinsic stomach uptake rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03003
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: /h.kg^0.25
 - id: k0
   name: Stomach absorption rate constant
+  pbpko_bqm_is_class:
+    id: PBPKO:03004
+    label: stomach uptake rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03004
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: /h
 - id: kstoC
   name: intrinsic gastric emptying rate constant
+  pbpko_bqm_is_class:
+    id: PBPKO:03001
+    label: intrinsic gastric emptying rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03001
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: /h.kg^0.25
 - id: ksto
   name: Gastric emptying rate
@@ -265,6 +301,14 @@ parameters:
   unit: /h
 - id: kabsC
   name: Uptake from gut to liver
+  pbpko_bqm_is_class:
+    id: PBPKO:03002
+    label: intrinsic absorption rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03002
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: /h.kg^0.25
 - id: kabs
   name: Oral absorption rate
@@ -482,6 +526,10 @@ parameterisations:
     value: 0.45
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:04058
+      label: volume fraction of red blood cells
+      iri: http://purl.obolibrary.org/obo/PBPKO_04058
   - id: fup
     value: 0.965
     unit: dimensionless
@@ -498,14 +546,38 @@ parameterisations:
     value: 0.0
     unit: ''
     reference: ''
+    bqm_is:
+      id: PBPKO:03003
+      label: intrinsic stomach uptake rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03003
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: kstoC
     value: 3.5
     unit: ''
     reference: ''
+    bqm_is:
+      id: PBPKO:03001
+      label: intrinsic gastric emptying rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03001
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: kabsC
     value: 9.0
     unit: ''
     reference: ''
+    bqm_is:
+      id: PBPKO:03002
+      label: intrinsic absorption rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03002
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: VmaxGMet1C
     value: 1.4
     unit: ''

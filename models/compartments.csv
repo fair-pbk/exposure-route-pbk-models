@@ -139,7 +139,7 @@ Mielke.sbml,Liver,liver,oral,Bisphenols,L,PBPKO:00558,liver compartment,http://p
 Mielke.sbml,Blood,blood,oral,Bisphenols,L,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
 Mielke.sbml,Rest,rest-of-body,oral,Bisphenols,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 Moreau.sbml,Stomach,Stomach,oral,Bisphenols,L,PBPKO:00566,stomach compartment,http://purl.obolibrary.org/obo/PBPKO_00566
-Moreau.sbml,GITissue,intestinal tissue,oral,Bisphenols,L,,,
+Moreau.sbml,GITissue,intestinal tissue,oral,Bisphenols,L,PBPKO:02004,intestinal tissue compartment,http://purl.obolibrary.org/obo/PBPKO_02004
 Moreau.sbml,Duodenum,Duodenum,oral,Bisphenols,L,PBPKO:00471,duodenum compartment,http://purl.obolibrary.org/obo/PBPKO_00471
 Moreau.sbml,Liver,Liver,oral,Bisphenols,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
 Moreau.sbml,Plasma,Plasma,oral,Bisphenols,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488

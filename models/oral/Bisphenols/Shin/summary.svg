@@ -75,10 +75,10 @@
 <!-- ASt -->
 <g id="node1" class="node">
 <title>ASt</title>
-<g id="a_node1"><a xlink:href="#species-ASt" xlink:title="ASt&#10;[PBPKO:00566]">
+<g id="a_node1"><a xlink:href="#species-ASt" xlink:title="ASt&#10;[PBPKO:06004]">
 <path fill="gold" stroke="black" d="M741.22,-268C741.22,-268 652.22,-268 652.22,-268 646.22,-268 640.22,-262 640.22,-256 640.22,-256 640.22,-242 640.22,-242 640.22,-236 646.22,-230 652.22,-230 652.22,-230 741.22,-230 741.22,-230 747.22,-230 753.22,-236 753.22,-242 753.22,-242 753.22,-256 753.22,-256 753.22,-262 747.22,-268 741.22,-268"/>
 <text text-anchor="middle" x="696.72" y="-252.8" font-family="Arial" font-size="14.00">ASt</text>
-<text text-anchor="middle" x="696.72" y="-237.8" font-family="Arial" font-size="14.00">[PBPKO:00566]</text>
+<text text-anchor="middle" x="696.72" y="-237.8" font-family="Arial" font-size="14.00">[PBPKO:06004]</text>
 </a>
 </g>
 </g>

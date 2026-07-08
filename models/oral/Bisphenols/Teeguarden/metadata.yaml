@@ -144,6 +144,10 @@ parameters:
   unit: L/kg
 - id: VBc
   name: Volume fraction of blood to bodyweight
+  pbpko_bqm_is_class:
+    id: PBPKO:04057
+    label: volume fraction of blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_04057
   unit: L/kg
 - id: VL
   name: Volume of liver
@@ -236,27 +240,35 @@ parameters:
   unit: dimensionless
 - id: kabsMet1C
   name: Intrinsic uptake from stomach to liver constant
+  pbpko_bqm_is_class:
+    id: PBPKO:03003
+    label: intrinsic stomach uptake rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03003
+  chebi_bqb_is_class:
+    id: CHEBI:76967
+    label: human xenobiotic metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_76967
   unit: /h.kg^0.25
 - id: kabsMet1
   name: Uptake rate from stomach to liver
+  pbpko_bqm_is_class:
+    id: PBPKO:03004
+    label: stomach uptake rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03004
+  chebi_bqb_is_class:
+    id: CHEBI:76967
+    label: human xenobiotic metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_76967
   unit: /h
 - id: VmaxLMetC
   name: Glucuronidation - Vmax
-  pbpko_bqm_is_class:
-    id: PBPKO:00214
-    label: Michaelis constant  liver
-    iri: http://purl.obolibrary.org/obo/PBPKO_00214
-  chebi_bqb_is_class:
-    id: CHEBI:33216
-    label: bisphenol A
-    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: mg/h/kg^0.75
 - id: VmaxLMet
   name: Glucuronidation - Vmax
   pbpko_bqm_is_class:
-    id: PBPKO:00214
-    label: Michaelis constant  liver
-    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    id: PBPKO:00213
+    label: maximum rate in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00213
   chebi_bqb_is_class:
     id: CHEBI:33216
     label: bisphenol A
@@ -297,12 +309,32 @@ parameters:
   unit: g/mol
 - id: BileFrac
   name: '% of metabolite that goes to bile'
+  pbpko_bqm_is_class:
+    id: PBPKO:04055
+    label: fraction of bile in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_04055
   unit: dimensionless
 - id: kehrMet1C
   name: Enterohepatic recirculation constant metabolite
+  pbpko_bqm_is_class:
+    id: PBPKO:03020
+    label: intrinsic enterohepatic recirculation rate constant
+    iri: http://purl.obolibrary.org/obo/PBPKO_03020
+  chebi_bqb_is_class:
+    id: CHEBI:76967
+    label: human xenobiotic metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_76967
   unit: /h.kg^0.25
 - id: kehrMet1
   name: Enterohepatic recirculation rate of metabolite
+  pbpko_bqm_is_class:
+    id: PBPKO:03021
+    label: enterohepatic recirculation rate constant
+    iri: http://purl.obolibrary.org/obo/PBPKO_03021
+  chebi_bqb_is_class:
+    id: CHEBI:76967
+    label: human xenobiotic metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_76967
   unit: /h
 - id: kfeC
   name: Fecal elimination constant
@@ -378,6 +410,10 @@ parameterisations:
     value: 0.079
     unit: L/kg
     reference: ''
+    bqm_is:
+      id: PBPKO:04057
+      label: volume fraction of blood
+      iri: http://purl.obolibrary.org/obo/PBPKO_04057
   - id: QCc
     value: 12.9
     unit: L/h/kg^0.75
@@ -426,18 +462,18 @@ parameterisations:
     value: 10.0
     unit: 1/h/kg^-0.25
     reference: ''
+    bqm_is:
+      id: PBPKO:03003
+      label: intrinsic stomach uptake rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03003
+    bqb_is:
+      id: CHEBI:76967
+      label: human xenobiotic metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_76967
   - id: VmaxLMetC
     value: 850.0
     unit: mg/h/kg^0.75
     reference: ''
-    bqm_is:
-      id: PBPKO:00214
-      label: Michaelis constant  liver
-      iri: http://purl.obolibrary.org/obo/PBPKO_00214
-    bqb_is:
-      id: CHEBI:33216
-      label: bisphenol A
-      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: KmLMet
     value: 10.0
     unit: mg/L
@@ -478,10 +514,22 @@ parameterisations:
     value: 0.1
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:04055
+      label: fraction of bile in liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_04055
   - id: kehrMet1C
     value: 0.5
     unit: 1/h/kg^-0.25
     reference: ''
+    bqm_is:
+      id: PBPKO:03020
+      label: intrinsic enterohepatic recirculation rate constant
+      iri: http://purl.obolibrary.org/obo/PBPKO_03020
+    bqb_is:
+      id: CHEBI:76967
+      label: human xenobiotic metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_76967
   - id: kfeC
     value: 0.0
     unit: 1/h/kg^-0.25

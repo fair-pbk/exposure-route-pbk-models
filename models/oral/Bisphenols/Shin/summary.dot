@@ -17,7 +17,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ASt",
 			label="ASt
-[PBPKO:00566]",
+[PBPKO:06004]",
 			shape=box,
 			style="filled,rounded"];
 	}

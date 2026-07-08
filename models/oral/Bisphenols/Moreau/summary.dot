@@ -27,7 +27,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-GITissue",
 			label="GITissue
-[-]",
+[PBPKO:02004]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -35,7 +35,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AGITissue",
 			label="AGITissue
-[-]",
+[PBPKO:06015]",
 			shape=box,
 			style="filled,rounded"];
 	}

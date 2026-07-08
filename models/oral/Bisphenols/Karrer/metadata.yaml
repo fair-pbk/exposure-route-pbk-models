@@ -263,6 +263,10 @@ parameters:
   unit: L
 - id: enterocytes
   name: Enterocyte volume
+  pbpko_bqm_is_class:
+    id: PBPKO:04043
+    label: enterocyte volume
+    iri: http://purl.obolibrary.org/obo/PBPKO_04043
   unit: L
 - id: QC
   name: Cardiac output
@@ -316,6 +320,14 @@ parameters:
   unit: dimensionless
 - id: kstoC
   name: intrinsic gastric emptying rate constant
+  pbpko_bqm_is_class:
+    id: PBPKO:03001
+    label: intrinsic gastric emptying rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03001
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: /h.kg^0.25
 - id: ksto
   name: Gastric emptying rate constant
@@ -330,12 +342,36 @@ parameters:
   unit: /h
 - id: k0C
   name: Uptake from stomach to liver constant
+  pbpko_bqm_is_class:
+    id: PBPKO:03003
+    label: intrinsic stomach uptake rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03003
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: /h.kg^0.25
 - id: k0
   name: Uptake from stomach to liver
+  pbpko_bqm_is_class:
+    id: PBPKO:03004
+    label: stomach uptake rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03004
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: /h
 - id: kabsC
   name: Uptake from enterocytes to liver
+  pbpko_bqm_is_class:
+    id: PBPKO:03002
+    label: intrinsic absorption rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03002
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: /h.kg^0.25
 - id: kabs
   name: Uptake from enterocyte to liver
@@ -394,39 +430,119 @@ parameters:
   unit: /h
 - id: kabsMet1C
   name: Transport from enterocytes to serum
+  pbpko_bqm_is_class:
+    id: PBPKO:03018
+    label: intrinsic absorption rate of metabilite
+    iri: http://purl.obolibrary.org/obo/PBPKO_03018
+  chebi_bqb_is_class:
+    id: CHEBI:235438
+    label: bisphenol A beta-D-glucuronide
+    iri: http://purl.obolibrary.org/obo/CHEBI_235438
   unit: /h.kg^0.25
 - id: kabsMet1
   name: Transport from enterocytes to serum
+  pbpko_bqm_is_class:
+    id: PBPKO:03019
+    label: absorption rate of metabolite
+    iri: http://purl.obolibrary.org/obo/PBPKO_03019
+  chebi_bqb_is_class:
+    id: CHEBI:235438
+    label: bisphenol A beta-D-glucuronide
+    iri: http://purl.obolibrary.org/obo/CHEBI_235438
   unit: /h
 - id: kabsMet2C
   name: Transport from enterocytes to serum constant
+  pbpko_bqm_is_class:
+    id: PBPKO:03018
+    label: intrinsic absorption rate of metabilite
+    iri: http://purl.obolibrary.org/obo/PBPKO_03018
+  chebi_bqb_is_class:
+    id: CHEBI:167305
+    label: bisphenol A sulfate
+    iri: http://purl.obolibrary.org/obo/CHEBI_167305
   unit: /h.kg^0.25
 - id: kabsMet2
   name: Transport from enterocytes to serum
+  pbpko_bqm_is_class:
+    id: PBPKO:03019
+    label: absorption rate of metabolite
+    iri: http://purl.obolibrary.org/obo/PBPKO_03019
+  chebi_bqb_is_class:
+    id: CHEBI:167305
+    label: bisphenol A sulfate
+    iri: http://purl.obolibrary.org/obo/CHEBI_167305
   unit: /h
 - id: EHRrateC
   name: intrinsic enterohepatic recirculation
+  pbpko_bqm_is_class:
+    id: PBPKO:03020
+    label: intrinsic enterohepatic recirculation rate constant
+    iri: http://purl.obolibrary.org/obo/PBPKO_03020
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: /h.kg^0.25
 - id: EHRrate
   name: Enterohepatic recirculation rate
+  pbpko_bqm_is_class:
+    id: PBPKO:03021
+    label: enterohepatic recirculation rate constant
+    iri: http://purl.obolibrary.org/obo/PBPKO_03021
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: /h
 - id: kehrMet1C
   name: intrinsic EHR due to biliary excretion
+  pbpko_bqm_is_class:
+    id: PBPKO:03023
+    label: intrinsic reabsorption rate constant
+    iri: http://purl.obolibrary.org/obo/PBPKO_03023
+  chebi_bqb_is_class:
+    id: CHEBI:235438
+    label: bisphenol A beta-D-glucuronide
+    iri: http://purl.obolibrary.org/obo/CHEBI_235438
   unit: /h.kg^0.25
 - id: kehrMet1
   name: EHR due to biliary excretion
   unit: /h
 - id: kehrMet2C
   name: intrinsic EHR due to biliary excretion
+  pbpko_bqm_is_class:
+    id: PBPKO:03023
+    label: intrinsic reabsorption rate constant
+    iri: http://purl.obolibrary.org/obo/PBPKO_03023
+  chebi_bqb_is_class:
+    id: CHEBI:167305
+    label: bisphenol A sulfate
+    iri: http://purl.obolibrary.org/obo/CHEBI_167305
   unit: /h.kg^0.25
 - id: kehrMet2
   name: EHR due to biliary excretion
+  pbpko_bqm_is_class:
+    id: PBPKO:03024
+    label: reabsorption rate constant
+    iri: http://purl.obolibrary.org/obo/PBPKO_03024
+  chebi_bqb_is_class:
+    id: CHEBI:167305
+    label: bisphenol A sulfate
+    iri: http://purl.obolibrary.org/obo/CHEBI_167305
   unit: /h
 - id: BileFracSIMet1
   name: '% of metabolite that goes to bile'
+  pbpko_bqm_is_class:
+    id: PBPKO:04054
+    label: fraction of bile in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_04054
   unit: dimensionless
 - id: BileFracSIMet2
   name: '% of metabolite that goes to bile'
+  pbpko_bqm_is_class:
+    id: PBPKO:04054
+    label: fraction of bile in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_04054
   unit: dimensionless
 - id: fGutMet1
   name: Switch on/off
@@ -502,9 +618,17 @@ parameters:
   unit: nmol/h
 - id: BileFracLMet1
   name: '% of metabolite that goes to bile'
+  pbpko_bqm_is_class:
+    id: PBPKO:04055
+    label: fraction of bile in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_04055
   unit: dimensionless
 - id: BileFracLMet2
   name: '% of metabolite that goes to bile'
+  pbpko_bqm_is_class:
+    id: PBPKO:04055
+    label: fraction of bile in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_04055
   unit: dimensionless
 - id: fLiverMet1
   name: Switch on/off
@@ -580,9 +704,17 @@ parameters:
   unit: nmol/h
 - id: CSt
   name: Concentration in stomach
+  pbpko_bqm_is_class:
+    id: PBPKO:06041
+    label: concentration in stomach
+    iri: http://purl.obolibrary.org/obo/PBPKO_06041
   unit: nmol/L
 - id: CSI
   name: Concentration in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06042
+    label: concentration in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_06042
   unit: nmol/L
 - id: CLiver
   name: Concentration in liver
@@ -644,6 +776,10 @@ parameterisations:
     value: 0.1223
     unit: L
     reference: ''
+    bqm_is:
+      id: PBPKO:04043
+      label: enterocyte volume
+      iri: http://purl.obolibrary.org/obo/PBPKO_04043
   - id: QLc
     value: 0.24
     unit: dimensionless
@@ -680,14 +816,38 @@ parameterisations:
     value: 3.5
     unit: 1/h/kg^(-0.25)
     reference: ''
+    bqm_is:
+      id: PBPKO:03001
+      label: intrinsic gastric emptying rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03001
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: k0C
     value: 0.0
     unit: 1/h/kg^(-0.25)
     reference: ''
+    bqm_is:
+      id: PBPKO:03003
+      label: intrinsic stomach uptake rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03003
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: kabsC
     value: 50.0
     unit: 1/h/kg^(-0.25)
     reference: ''
+    bqm_is:
+      id: PBPKO:03002
+      label: intrinsic absorption rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03002
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: kfeC
     value: 0.0
     unit: 1/h/kg^(-0.25)
@@ -716,30 +876,78 @@ parameterisations:
     value: 50.0
     unit: 1/h/kg^(-0.25)
     reference: ''
+    bqm_is:
+      id: PBPKO:03018
+      label: intrinsic absorption rate of metabilite
+      iri: http://purl.obolibrary.org/obo/PBPKO_03018
+    bqb_is:
+      id: CHEBI:235438
+      label: bisphenol A beta-D-glucuronide
+      iri: http://purl.obolibrary.org/obo/CHEBI_235438
   - id: kabsMet2C
     value: 50.0
     unit: 1/h/kg^(-0.25)
     reference: ''
+    bqm_is:
+      id: PBPKO:03018
+      label: intrinsic absorption rate of metabilite
+      iri: http://purl.obolibrary.org/obo/PBPKO_03018
+    bqb_is:
+      id: CHEBI:167305
+      label: bisphenol A sulfate
+      iri: http://purl.obolibrary.org/obo/CHEBI_167305
   - id: EHRrateC
     value: 0.2
     unit: 1/h/kg^(-0.25)
     reference: ''
+    bqm_is:
+      id: PBPKO:03020
+      label: intrinsic enterohepatic recirculation rate constant
+      iri: http://purl.obolibrary.org/obo/PBPKO_03020
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: kehrMet1C
     value: 0.2
     unit: 1/h/kg^(-0.25)
     reference: ''
+    bqm_is:
+      id: PBPKO:03023
+      label: intrinsic reabsorption rate constant
+      iri: http://purl.obolibrary.org/obo/PBPKO_03023
+    bqb_is:
+      id: CHEBI:235438
+      label: bisphenol A beta-D-glucuronide
+      iri: http://purl.obolibrary.org/obo/CHEBI_235438
   - id: kehrMet2C
     value: 0.0
     unit: 1/h/kg^(-0.25)
     reference: ''
+    bqm_is:
+      id: PBPKO:03023
+      label: intrinsic reabsorption rate constant
+      iri: http://purl.obolibrary.org/obo/PBPKO_03023
+    bqb_is:
+      id: CHEBI:167305
+      label: bisphenol A sulfate
+      iri: http://purl.obolibrary.org/obo/CHEBI_167305
   - id: BileFracSIMet1
     value: 0.1
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:04054
+      label: fraction of bile in small intestine
+      iri: http://purl.obolibrary.org/obo/PBPKO_04054
   - id: BileFracSIMet2
     value: 0.0
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:04054
+      label: fraction of bile in small intestine
+      iri: http://purl.obolibrary.org/obo/PBPKO_04054
   - id: fGutMet1
     value: 1.0
     unit: dimensionless
@@ -800,10 +1008,18 @@ parameterisations:
     value: 0.1
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:04055
+      label: fraction of bile in liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_04055
   - id: BileFracLMet2
     value: 0.0
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:04055
+      label: fraction of bile in liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_04055
   - id: fLiverMet1
     value: 1.0
     unit: dimensionless
@@ -891,6 +1107,10 @@ parameterisations:
     value: 0.1223
     unit: L
     reference: ''
+    bqm_is:
+      id: PBPKO:04043
+      label: enterocyte volume
+      iri: http://purl.obolibrary.org/obo/PBPKO_04043
   - id: QLc
     value: 0.24
     unit: dimensionless
@@ -927,14 +1147,38 @@ parameterisations:
     value: 3.5
     unit: 1/h/kg^(-0.25)
     reference: ''
+    bqm_is:
+      id: PBPKO:03001
+      label: intrinsic gastric emptying rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03001
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: k0C
     value: 0.0
     unit: 1/h/kg^(-0.25)
     reference: ''
+    bqm_is:
+      id: PBPKO:03003
+      label: intrinsic stomach uptake rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03003
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: kabsC
     value: 50.0
     unit: 1/h/kg^(-0.25)
     reference: ''
+    bqm_is:
+      id: PBPKO:03002
+      label: intrinsic absorption rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03002
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: kfeC
     value: 0.0
     unit: 1/h/kg^(-0.25)
@@ -963,30 +1207,78 @@ parameterisations:
     value: 50.0
     unit: 1/h/kg^(-0.25)
     reference: ''
+    bqm_is:
+      id: PBPKO:03018
+      label: intrinsic absorption rate of metabilite
+      iri: http://purl.obolibrary.org/obo/PBPKO_03018
+    bqb_is:
+      id: CHEBI:235438
+      label: bisphenol A beta-D-glucuronide
+      iri: http://purl.obolibrary.org/obo/CHEBI_235438
   - id: kabsMet2C
     value: 50.0
     unit: 1/h/kg^(-0.25)
     reference: ''
+    bqm_is:
+      id: PBPKO:03018
+      label: intrinsic absorption rate of metabilite
+      iri: http://purl.obolibrary.org/obo/PBPKO_03018
+    bqb_is:
+      id: CHEBI:167305
+      label: bisphenol A sulfate
+      iri: http://purl.obolibrary.org/obo/CHEBI_167305
   - id: EHRrateC
     value: 0.2
     unit: 1/h/kg^(-0.25)
     reference: ''
+    bqm_is:
+      id: PBPKO:03020
+      label: intrinsic enterohepatic recirculation rate constant
+      iri: http://purl.obolibrary.org/obo/PBPKO_03020
+    bqb_is:
+      id: CHEBI:33216
+      label: bisphenol A
+      iri: http://purl.obolibrary.org/obo/CHEBI_33216
   - id: kehrMet1C
     value: 0.2
     unit: 1/h/kg^(-0.25)
     reference: ''
+    bqm_is:
+      id: PBPKO:03023
+      label: intrinsic reabsorption rate constant
+      iri: http://purl.obolibrary.org/obo/PBPKO_03023
+    bqb_is:
+      id: CHEBI:235438
+      label: bisphenol A beta-D-glucuronide
+      iri: http://purl.obolibrary.org/obo/CHEBI_235438
   - id: kehrMet2C
     value: 0.0
     unit: 1/h/kg^(-0.25)
     reference: ''
+    bqm_is:
+      id: PBPKO:03023
+      label: intrinsic reabsorption rate constant
+      iri: http://purl.obolibrary.org/obo/PBPKO_03023
+    bqb_is:
+      id: CHEBI:167305
+      label: bisphenol A sulfate
+      iri: http://purl.obolibrary.org/obo/CHEBI_167305
   - id: BileFracSIMet1
     value: 0.1
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:04054
+      label: fraction of bile in small intestine
+      iri: http://purl.obolibrary.org/obo/PBPKO_04054
   - id: BileFracSIMet2
     value: 0.0
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:04054
+      label: fraction of bile in small intestine
+      iri: http://purl.obolibrary.org/obo/PBPKO_04054
   - id: fGutMet1
     value: 1.0
     unit: dimensionless
@@ -1047,10 +1339,18 @@ parameterisations:
     value: 0.1
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:04055
+      label: fraction of bile in liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_04055
   - id: BileFracLMet2
     value: 0.0
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:04055
+      label: fraction of bile in liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_04055
   - id: fLiverMet1
     value: 1.0
     unit: dimensionless

@@ -126,6 +126,10 @@ parameters:
   unit: L/kg
 - id: VBc
   name: Volume fraction of blood to bodyweight
+  pbpko_bqm_is_class:
+    id: PBPKO:04057
+    label: volume fraction of blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_04057
   unit: L/kg
 - id: VL
   name: Volume of liver
@@ -320,6 +324,10 @@ parameterisations:
     value: 0.079
     unit: L/kg
     reference: ''
+    bqm_is:
+      id: PBPKO:04057
+      label: volume fraction of blood
+      iri: http://purl.obolibrary.org/obo/PBPKO_04057
   - id: QL
     value: 99.5
     unit: L/h

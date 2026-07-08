@@ -67,9 +67,9 @@ species:
 - id: ASt
   name: Amount in stomach
   pbpko_bqm_is_class:
-    id: PBPKO:00566
-    label: stomach compartment
-    iri: http://purl.obolibrary.org/obo/PBPKO_00566
+    id: PBPKO:06004
+    label: amount in stomach
+    iri: http://purl.obolibrary.org/obo/PBPKO_06004
   chebi_bqb_is_class:
     id: CHEBI:33216
     label: bisphenol A
@@ -304,6 +304,14 @@ parameters:
   unit: dimensionless
 - id: kabs
   name: Uptake from GI
+  pbpko_bqm_is_class:
+    id: PBPKO:00211
+    label: maximum rate in intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00211
+  chebi_bqb_is_class:
+    id: CHEBI:33216
+    label: bisphenol A
+    iri: http://purl.obolibrary.org/obo/CHEBI_33216
   unit: /h
 - id: CLint
   name: Hepatic intrinsic clearance
@@ -325,12 +333,24 @@ parameters:
   unit: mg/L
 - id: CSI
   name: Concentration in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06042
+    label: concentration in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_06042
   unit: mg/L
 - id: CSpleen
   name: Concentration in spleen
+  pbpko_bqm_is_class:
+    id: PBPKO:06049
+    label: concentration in spleen
+    iri: http://purl.obolibrary.org/obo/PBPKO_06049
   unit: mg/L
 - id: CSt
   name: Concentration in stomach
+  pbpko_bqm_is_class:
+    id: PBPKO:06041
+    label: concentration in stomach
+    iri: http://purl.obolibrary.org/obo/PBPKO_06041
   unit: mg/L
 - id: CLiver
   name: Concentration in liver

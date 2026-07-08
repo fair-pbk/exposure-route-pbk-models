@@ -23,6 +23,10 @@ compartments:
   unit: L
 - id: GITissue
   name: intestinal tissue
+  pbpko_bqm_is_class:
+    id: PBPKO:02004
+    label: intestinal tissue compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_02004
   unit: L
 - id: Duodenum
   name: Duodenum
@@ -84,6 +88,10 @@ species:
   unit: mg
 - id: AGITissue
   name: amount in intestinal tissue
+  pbpko_bqm_is_class:
+    id: PBPKO:06015
+    label: amount in intestinal tissue
+    iri: http://purl.obolibrary.org/obo/PBPKO_06015
   chebi_bqb_is_class:
     id: CHEBI:33216
     label: bisphenol A
@@ -172,6 +180,10 @@ parameters:
   unit: L/kg
 - id: VGITissuec
   name: ''
+  pbpko_bqm_is_class:
+    id: PBPKO:04090
+    label: fraction of gut intestinal tract
+    iri: http://purl.obolibrary.org/obo/PBPKO_04090
   unit: L/kg
 - id: VL
   name: Volume of liver
@@ -182,6 +194,10 @@ parameters:
   unit: L
 - id: VGITissue
   name: ''
+  pbpko_bqm_is_class:
+    id: PBPKO:04072
+    label: volume of gut intestinal tract
+    iri: http://purl.obolibrary.org/obo/PBPKO_04072
   unit: L
 - id: VPlasma
   name: Volume of plasma
@@ -212,9 +228,17 @@ parameters:
   unit: L/h
 - id: Hct
   name: ''
+  pbpko_bqm_is_class:
+    id: PBPKO:04058
+    label: volume fraction of red blood cells
+    iri: http://purl.obolibrary.org/obo/PBPKO_04058
   unit: dimensionless
 - id: QCPlasma
   name: Plasma flow
+  pbpko_bqm_is_class:
+    id: PBPKO:04001
+    label: plasma flow rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_04001
   unit: L/h
 - id: QGIc
   name: Plasma flow to GI constant
@@ -369,6 +393,10 @@ parameters:
   unit: L/h
 - id: CGITissue
   name: ''
+  pbpko_bqm_is_class:
+    id: PBPKO:06046
+    label: concentration in intestinal tissue
+    iri: http://purl.obolibrary.org/obo/PBPKO_06046
   unit: mg/L
 - id: CLiver
   name: Concentration in liver
@@ -422,6 +450,10 @@ parameterisations:
     value: 0.019
     unit: L/kg
     reference: ''
+    bqm_is:
+      id: PBPKO:04090
+      label: fraction of gut intestinal tract
+      iri: http://purl.obolibrary.org/obo/PBPKO_04090
   - id: VPlasma
     value: 2.5178
     unit: L
@@ -446,6 +478,10 @@ parameterisations:
     value: 0.3865
     unit: DIMENSIONLESS
     reference: ''
+    bqm_is:
+      id: PBPKO:04058
+      label: volume fraction of red blood cells
+      iri: http://purl.obolibrary.org/obo/PBPKO_04058
   - id: QGIc
     value: 0.164
     unit: DIMENSIONLESS
