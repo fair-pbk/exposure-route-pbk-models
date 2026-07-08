@@ -7,6 +7,7 @@ from pathlib import Path
 import libsbml as ls
 import yaml
 import pandas as pd
+import sbmlpbkutils
 from sbmlpbkutils import PbkModelReportGenerator, PbkModelInfosExtractor, RenderMode, \
     DiagramCreator, NamesDisplay
 
@@ -14,6 +15,9 @@ from docs.utils import render_template
 
 MODELS_PATH = './models/'
 OUTPUT_PATH = './docs/models/'
+
+sbmlpbkutils.pbk_ontology_checker.PBPKO['url'] = "https://raw.githubusercontent.com/InSilicoVida-Research-Lab/pbpko/refs/heads/develop/Robot/ontologies/pbpko.owl"
+sbmlpbkutils.pbk_ontology_checker.PBPKO['filename'] = 'pbpko_dev.owl'
 
 # Configure logger for formatted console output
 console_logger = logging.getLogger('create_model_docs')

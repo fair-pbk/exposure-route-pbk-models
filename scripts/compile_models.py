@@ -5,11 +5,15 @@ from pathlib import Path
 import uuid
 import tellurium as te
 import libsbml as ls
+import sbmlpbkutils
 from sbmlpbkutils import PbkModelValidator, AnnotationsTemplateGenerator, PbkModelAnnotator,\
     ParametrisationsTemplateGenerator
 
 MODELS_PATH = './models/'
 OUTPUT_PATH = './models/'
+
+sbmlpbkutils.pbk_ontology_checker.PBPKO['url'] = "https://raw.githubusercontent.com/InSilicoVida-Research-Lab/pbpko/refs/heads/develop/Robot/ontologies/pbpko.owl"
+sbmlpbkutils.pbk_ontology_checker.PBPKO['filename'] = 'pbpko_dev.owl'
 
 # Configure logger for formatted console output
 console_logger = logging.getLogger('compile_models')
