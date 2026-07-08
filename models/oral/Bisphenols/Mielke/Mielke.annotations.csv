@@ -25,7 +25,7 @@ BW,parameter,body weight,kg,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_0000
 BW,parameter,,,rdf,BQB_IS,,
 VLc,parameter,Volume fraction of liver to bodyweight,L/kg,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_00078,
 VLc,parameter,,,rdf,BQB_IS,,
-VBc,parameter,Volume fraction of blood to bodyweight,L/kg,rdf,BQM_IS,,
+VBc,parameter,Volume fraction of blood to bodyweight,L/kg,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_04057,
 VBc,parameter,,,rdf,BQB_IS,,
 VL,parameter,Volume of liver,L,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_00077,
 VL,parameter,,,rdf,BQB_IS,,
