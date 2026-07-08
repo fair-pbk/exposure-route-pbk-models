@@ -8,7 +8,7 @@ Christensen2013_BPA_Human,model,,,rdf,BQB_HAS_TAXON,http://purl.obolibrary.org/o
 Stomach,compartment,stomach,L,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_00566,
 Blood,compartment,blood,L,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_00464,
 Bladder,compartment,bladder,L,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_00402,
-ASt,species,amount of chemical in stomach,umol,rdf,BQM_IS,,
+ASt,species,amount of chemical in stomach,umol,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_06004,
 ASt,species,,,rdf,BQB_IS,http://purl.obolibrary.org/obo/CHEBI_33216,
 ABlood,species,amount of chemical in blood,umol,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_00623,
 ABlood,species,,,rdf,BQB_IS,http://purl.obolibrary.org/obo/CHEBI_33216,
