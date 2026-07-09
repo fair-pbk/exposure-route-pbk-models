@@ -82,72 +82,72 @@ PFOA_dermal-simple-model-Husoy-based.sbml,AUrine,,dermal,PFAS,,PBPKO:00272,amoun
 dermal-steady-state-Dancik-based.sbml,C_SC,,dermal,Other,,,,,,,
 dermal-steady-state-Dancik-based.sbml,C_VE,,dermal,Other,,,,,,,
 dermal-steady-state-Dancik-based.sbml,C_Dermis,,dermal,Other,,,,,,,
-Mukherjee.sbml,AGILumen,Amount in GI lumen,oral,Mycotoxins,ng,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mukherjee.sbml,AFast,Amount in fast GI lumen,oral,Mycotoxins,ng,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mukherjee.sbml,ASlow,Amount in slow GI lumen,oral,Mycotoxins,ng,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mukherjee.sbml,AColon,Amount in colon,oral,Mycotoxins,ng,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mukherjee.sbml,AGut,Amount in gut,oral,Mycotoxins,ng,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mukherjee.sbml,ALiver,Amount in liver,oral,Mycotoxins,ng,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mukherjee.sbml,ABlood,Amount in blood,oral,Mycotoxins,ng,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mukherjee.sbml,ARest,Amount in rest of body,oral,Mycotoxins,ng,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mukherjee.sbml,ASt,Amount in stomach,oral,Mycotoxins,ng,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mukherjee.sbml,ASpleen,Amount in spleen,oral,Mycotoxins,ng,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mukherjee.sbml,ABile,Amount in Bile (may be removed),oral,Mycotoxins,ng,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mukherjee.sbml,AFeces,Amount in feces,oral,Mycotoxins,ng,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mukherjee.sbml,ALiverMet1,Amount of metabolite in liver,oral,Mycotoxins,ng,,,,,,
-Mukherjee.sbml,ALiverMet2,Amount of metabolite in liver,oral,Mycotoxins,ng,,,,,,
-Mukherjee.sbml,ALiverMet3,Amount of metabolite in liver,oral,Mycotoxins,ng,,,,,,
-Mukherjee.sbml,ALiverMet4,Amount of metabolite in liver,oral,Mycotoxins,ng,,,,,,
-Mendez_Catala.sbml,ASt,Amount in stomach,oral,Mycotoxins,mg,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mendez_Catala.sbml,ASI1,Amount in small intestine,oral,Mycotoxins,mg,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mendez_Catala.sbml,ASI2,Amount in small intestine,oral,Mycotoxins,mg,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mendez_Catala.sbml,ASI3,Amount in small intestine,oral,Mycotoxins,mg,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mendez_Catala.sbml,ASI4,Amount in small intestine,oral,Mycotoxins,mg,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mendez_Catala.sbml,ASI5,Amount in small intestine,oral,Mycotoxins,mg,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mendez_Catala.sbml,ASI6,Amount in small intestine,oral,Mycotoxins,mg,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mendez_Catala.sbml,ASI7,Amount in small intestine,oral,Mycotoxins,mg,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mendez_Catala.sbml,ALI1,Amount in large intestine,oral,Mycotoxins,mg,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mendez_Catala.sbml,ASITissue,Amount in small intestine tissue,oral,Mycotoxins,mg,,,,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mendez_Catala.sbml,ALiver,Amount in liver,oral,Mycotoxins,mg,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mendez_Catala.sbml,ABlood,Amount in blood,oral,Mycotoxins,mg,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mendez_Catala.sbml,ARest,Amount in rest of body,oral,Mycotoxins,mg,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mendez_Catala.sbml,AFeaces,Amount in feces,oral,Mycotoxins,mg,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
-Mendez_Catala.sbml,ASITissueMet1,Amount of metabolite in small intestine tissue,oral,Mycotoxins,mg,,,,,,
-Mendez_Catala.sbml,ALI1Met2,Amount of metabolite in large intestine,oral,Mycotoxins,mg,,,,,,
-Mendez_Catala.sbml,ALI1Met3,Amount of metabolite in large intestine,oral,Mycotoxins,mg,,,,,,
-Mendez_Catala.sbml,ALiverMet2,Amount of metabolite in liver,oral,Mycotoxins,mg,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,,,
-Mendez_Catala.sbml,ALiverMet3,Amount of metabolite in liver,oral,Mycotoxins,mg,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,,,
-Mendez_Catala.sbml,ALiverMet1,Amount of metabolite in liver,oral,Mycotoxins,mg,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,,,
-Gilbert_Sandoval.sbml,ASt,Amount in stomach,oral,Mycotoxins,ng,,,,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
-Gilbert_Sandoval.sbml,ASI1,Amount in small intestine,oral,Mycotoxins,ng,,,,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
-Gilbert_Sandoval.sbml,ASI2,Amount in small intestine,oral,Mycotoxins,ng,,,,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
-Gilbert_Sandoval.sbml,ASI3,Amount in small intestine,oral,Mycotoxins,ng,,,,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
-Gilbert_Sandoval.sbml,ASI4,Amount in small intestine,oral,Mycotoxins,ng,,,,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
-Gilbert_Sandoval.sbml,ASI5,Amount in small intestine,oral,Mycotoxins,ng,,,,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
-Gilbert_Sandoval.sbml,ASI6,Amount in small intestine,oral,Mycotoxins,ng,,,,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
-Gilbert_Sandoval.sbml,ASI7,Amount in small intestine,oral,Mycotoxins,ng,,,,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
-Gilbert_Sandoval.sbml,AColon,Amount in colon,oral,Mycotoxins,ng,,,,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
-Gilbert_Sandoval.sbml,AFeaces,Amount in feces,oral,Mycotoxins,ng,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
-Gilbert_Sandoval.sbml,ALiver,Amount in liver,oral,Mycotoxins,ng,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
-Gilbert_Sandoval.sbml,ABlood,Amount in blood,oral,Mycotoxins,ng,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
-Gilbert_Sandoval.sbml,ARest,Amount in rest of body,oral,Mycotoxins,ng,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
-Gilbert_Sandoval.sbml,ALiverMet1,Amount in liver (metabolised),oral,Mycotoxins,ng,,,,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
-Gilbert_Sandoval.sbml,ALiverMet2,Amount in liver (metabolised),oral,Mycotoxins,ng,,,,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
-Notenboom.sbml,ALumen,Amount in gut lumen,oral,Mycotoxins,mg,,,,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
-Notenboom.sbml,ALiver,Amount in liver,oral,Mycotoxins,mg,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
-Notenboom.sbml,ABlood,Amount in blood,oral,Mycotoxins,mg,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
-Notenboom.sbml,ARest,Amount in rest of body,oral,Mycotoxins,mg,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
-Notenboom.sbml,ALiverMet1,Amount of metabolite in liver,oral,Mycotoxins,mg,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,,,
-Notenboom.sbml,ALiverMet2,Amount of metabolite in liver,oral,Mycotoxins,mg,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,,,
-Wang.sbml,ASt,Amount in stomach,oral,Mycotoxins,umol,,,,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
-Wang.sbml,AJ,Amount in jejunum,oral,Mycotoxins,umol,,,,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
-Wang.sbml,AI,Amount in ileum,oral,Mycotoxins,umol,,,,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
-Wang.sbml,ALI,amount in large intestine,oral,Mycotoxins,umol,,,,,,
-Wang.sbml,AIT,Amount in intestinal tissue,oral,Mycotoxins,umol,,,,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
+Mukherjee.sbml,AGILumen,Amount in GI lumen,oral,Mycotoxins,umol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mukherjee.sbml,AFast,Amount in fast lumen,oral,Mycotoxins,umol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mukherjee.sbml,ASlow,Amount in slow lumen,oral,Mycotoxins,umol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mukherjee.sbml,AColon,Amount in colon,oral,Mycotoxins,umol,PBPKO:06011,amount in colon,http://purl.obolibrary.org/obo/PBPKO_06011,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mukherjee.sbml,AGut,Amount in gut,oral,Mycotoxins,umol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mukherjee.sbml,ALiver,Amount in liver,oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mukherjee.sbml,ABlood,Amount in blood,oral,Mycotoxins,umol,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mukherjee.sbml,ARest,Amount in rest of body,oral,Mycotoxins,umol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mukherjee.sbml,ASt,Amount in stomach,oral,Mycotoxins,umol,PBPKO:06004,amount in stomach,http://purl.obolibrary.org/obo/PBPKO_06004,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mukherjee.sbml,ASpleen,Amount in spleen,oral,Mycotoxins,umol,PBPKO:06013,amount in spleen,http://purl.obolibrary.org/obo/PBPKO_06013,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mukherjee.sbml,ABile,Amount in bile,oral,Mycotoxins,umol,PBPKO:06012,amount in bile,http://purl.obolibrary.org/obo/PBPKO_06012,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mukherjee.sbml,AFeces,Amount in feces,oral,Mycotoxins,umol,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mukherjee.sbml,ALiverMet1,Amount in liver (metabolised),oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:25212,metabolite,http://purl.obolibrary.org/obo/CHEBI_25212
+Mukherjee.sbml,ALiverMet2,Amount in liver (metabolised),oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:25212,metabolite,http://purl.obolibrary.org/obo/CHEBI_25212
+Mukherjee.sbml,ALiverMet3,Amount in liver (metabolised),oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:25212,metabolite,http://purl.obolibrary.org/obo/CHEBI_25212
+Mukherjee.sbml,ALiverMet4,Amount in liver (metabolised),oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:25212,metabolite,http://purl.obolibrary.org/obo/CHEBI_25212
+Mendez_Catala.sbml,ASt,Amount in stomach,oral,Mycotoxins,umol,PBPKO:06004,amount in stomach,http://purl.obolibrary.org/obo/PBPKO_06004,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mendez_Catala.sbml,ASI1,Amount in small intestine,oral,Mycotoxins,umol,PBPKO:06010,amount in small intestine segment,http://purl.obolibrary.org/obo/PBPKO_06010,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mendez_Catala.sbml,ASI2,Amount in small intestine,oral,Mycotoxins,umol,PBPKO:06010,amount in small intestine segment,http://purl.obolibrary.org/obo/PBPKO_06010,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mendez_Catala.sbml,ASI3,Amount in small intestine,oral,Mycotoxins,umol,PBPKO:06010,amount in small intestine segment,http://purl.obolibrary.org/obo/PBPKO_06010,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mendez_Catala.sbml,ASI4,Amount in small intestine,oral,Mycotoxins,umol,PBPKO:06010,amount in small intestine segment,http://purl.obolibrary.org/obo/PBPKO_06010,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mendez_Catala.sbml,ASI5,Amount in small intestine,oral,Mycotoxins,umol,PBPKO:06010,amount in small intestine segment,http://purl.obolibrary.org/obo/PBPKO_06010,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mendez_Catala.sbml,ASI6,Amount in small intestine,oral,Mycotoxins,umol,PBPKO:06010,amount in small intestine segment,http://purl.obolibrary.org/obo/PBPKO_06010,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mendez_Catala.sbml,ASI7,Amount in small intestine,oral,Mycotoxins,umol,PBPKO:06010,amount in small intestine segment,http://purl.obolibrary.org/obo/PBPKO_06010,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mendez_Catala.sbml,ALI1,Amount in large intestine,oral,Mycotoxins,umol,PBPKO:06008,amount in  large intestine,http://purl.obolibrary.org/obo/PBPKO_06008,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mendez_Catala.sbml,ASITissue,Amount in small intestine tissue,oral,Mycotoxins,umol,PBPKO:06010,amount in small intestine segment,http://purl.obolibrary.org/obo/PBPKO_06010,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mendez_Catala.sbml,ALiver,Amount in liver,oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mendez_Catala.sbml,ABlood,Amount in blood,oral,Mycotoxins,umol,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mendez_Catala.sbml,ARest,Amount in rest of body,oral,Mycotoxins,umol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mendez_Catala.sbml,AFeaces,Amount in feces,oral,Mycotoxins,umol,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:10106,zearalenone,http://purl.obolibrary.org/obo/CHEBI_10106
+Mendez_Catala.sbml,ASITissueMet1,Amount metabolised in small intestine tissue,oral,Mycotoxins,umol,PBPKO:06010,amount in small intestine segment,http://purl.obolibrary.org/obo/PBPKO_06010,CHEBI:25212,metabolite,http://purl.obolibrary.org/obo/CHEBI_25212
+Mendez_Catala.sbml,ALI1Met2,Amount metabolised in large intestine,oral,Mycotoxins,umol,PBPKO:06008,amount in  large intestine,http://purl.obolibrary.org/obo/PBPKO_06008,CHEBI:25212,metabolite,http://purl.obolibrary.org/obo/CHEBI_25212
+Mendez_Catala.sbml,ALI1Met3,Amount in large intestine,oral,Mycotoxins,umol,PBPKO:06008,amount in  large intestine,http://purl.obolibrary.org/obo/PBPKO_06008,CHEBI:25212,metabolite,http://purl.obolibrary.org/obo/CHEBI_25212
+Mendez_Catala.sbml,ALiverMet2,Amount metabolised in liver,oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:25212,metabolite,http://purl.obolibrary.org/obo/CHEBI_25212
+Mendez_Catala.sbml,ALiverMet3,Amount metabolised in liver,oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:25212,metabolite,http://purl.obolibrary.org/obo/CHEBI_25212
+Mendez_Catala.sbml,ALiverMet1,Amount metabolised in liver,oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:25212,metabolite,http://purl.obolibrary.org/obo/CHEBI_25212
+Gilbert_Sandoval.sbml,ASt,Amount in stomach,oral,Mycotoxins,umol,PBPKO:06004,amount in stomach,http://purl.obolibrary.org/obo/PBPKO_06004,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
+Gilbert_Sandoval.sbml,ASI1,Amount in small intestine,oral,Mycotoxins,umol,PBPKO:06005,amount in small intestine,http://purl.obolibrary.org/obo/PBPKO_06005,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
+Gilbert_Sandoval.sbml,ASI2,Amount in small intestine,oral,Mycotoxins,umol,PBPKO:06005,amount in small intestine,http://purl.obolibrary.org/obo/PBPKO_06005,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
+Gilbert_Sandoval.sbml,ASI3,Amount in small intestine,oral,Mycotoxins,umol,PBPKO:06005,amount in small intestine,http://purl.obolibrary.org/obo/PBPKO_06005,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
+Gilbert_Sandoval.sbml,ASI4,Amount in small intestine,oral,Mycotoxins,umol,PBPKO:06005,amount in small intestine,http://purl.obolibrary.org/obo/PBPKO_06005,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
+Gilbert_Sandoval.sbml,ASI5,Amount in small intestine,oral,Mycotoxins,umol,PBPKO:06005,amount in small intestine,http://purl.obolibrary.org/obo/PBPKO_06005,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
+Gilbert_Sandoval.sbml,ASI6,Amount in small intestine,oral,Mycotoxins,umol,PBPKO:06005,amount in small intestine,http://purl.obolibrary.org/obo/PBPKO_06005,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
+Gilbert_Sandoval.sbml,ASI7,Amount in small intestine,oral,Mycotoxins,umol,PBPKO:06005,amount in small intestine,http://purl.obolibrary.org/obo/PBPKO_06005,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
+Gilbert_Sandoval.sbml,AColon,Amount in colon,oral,Mycotoxins,umol,PBPKO:06011,amount in colon,http://purl.obolibrary.org/obo/PBPKO_06011,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
+Gilbert_Sandoval.sbml,AFeaces,Amount in feces,oral,Mycotoxins,umol,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
+Gilbert_Sandoval.sbml,ALiver,Amount in liver,oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
+Gilbert_Sandoval.sbml,ABlood,Amount in blood,oral,Mycotoxins,umol,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
+Gilbert_Sandoval.sbml,ARest,Amount in rest of body,oral,Mycotoxins,umol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:2504,aflatoxin B1,http://purl.obolibrary.org/obo/CHEBI_2504
+Gilbert_Sandoval.sbml,ALiverMet1,Amount of metabolite in liver,oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:78582,aflatoxin Q1,http://purl.obolibrary.org/obo/CHEBI_78582
+Gilbert_Sandoval.sbml,ALiverMet2,Amount of metabolite in liver,oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:30725,"aflatoxin B1 exo-8,9-epoxide",http://purl.obolibrary.org/obo/CHEBI_30725
+Notenboom.sbml,ALumen,Amount in lumen,oral,Mycotoxins,umol,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
+Notenboom.sbml,ALiver,Amount in liver,oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
+Notenboom.sbml,ABlood,Amount in blood,oral,Mycotoxins,umol,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
+Notenboom.sbml,ARest,Amount in rest of body,oral,Mycotoxins,umol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
+Notenboom.sbml,ALiverMet1,Amount in liver (metabolised),oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:146195,3-acetyldeoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_146195
+Notenboom.sbml,ALiverMet2,Amount in liver (metabolised),oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:169241,15-Acetyl-4-deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_169241
+Wang.sbml,ASt,Amount in stomach,oral,Mycotoxins,umol,PBPKO:06004,amount in stomach,http://purl.obolibrary.org/obo/PBPKO_06004,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
+Wang.sbml,AJ,Amount in jejunum,oral,Mycotoxins,umol,PBPKO:06006,amount in jejunum,http://purl.obolibrary.org/obo/PBPKO_06006,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
+Wang.sbml,AI,Amount in ileum,oral,Mycotoxins,umol,PBPKO:06007,amount in ileum,http://purl.obolibrary.org/obo/PBPKO_06007,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
+Wang.sbml,ALI,Amount in large intestine,oral,Mycotoxins,umol,PBPKO:06008,amount in  large intestine,http://purl.obolibrary.org/obo/PBPKO_06008,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
+Wang.sbml,AIT,Amount in instestinal tissue,oral,Mycotoxins,umol,PBPKO:06015,amount in intestinal tissue,http://purl.obolibrary.org/obo/PBPKO_06015,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
 Wang.sbml,ALiver,Amount in liver,oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
 Wang.sbml,ABlood,Amount in blood,oral,Mycotoxins,umol,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
 Wang.sbml,ARest,Amount in rest of body,oral,Mycotoxins,umol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
-Wang.sbml,AMet,Amount metabolised,oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:10022,deoxynivalenol,http://purl.obolibrary.org/obo/CHEBI_10022
+Wang.sbml,AMet,Amount metabolised,oral,Mycotoxins,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:25212,metabolite,http://purl.obolibrary.org/obo/CHEBI_25212
 Shin.sbml,ASt,Amount in stomach,oral,Bisphenols,mg,PBPKO:06004,amount in stomach,http://purl.obolibrary.org/obo/PBPKO_06004,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Shin.sbml,AIL,Amount in GI lumen,oral,Bisphenols,mg,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
 Shin.sbml,ASpleen,Amount in spleen,oral,Bisphenols,mg,PBPKO:06013,amount in spleen,http://purl.obolibrary.org/obo/PBPKO_06013,CHEBI:33216,bisphenol A,http://purl.obolibrary.org/obo/CHEBI_33216
@@ -267,51 +267,15 @@ ElMasri2008.sbml,ALung_AsD3,Amount of DMA3 in lung,oral,Heavy Metals,mol/,PBPKO:
 ElMasri2008.sbml,ALung_AsD5,Amount of DMA5 in lung,oral,Heavy Metals,mol/,PBPKO:00504,amount in lung,http://purl.obolibrary.org/obo/PBPKO_00504,CHEBI:48765,dimethylarsinic acid,http://purl.obolibrary.org/obo/CHEBI_48765
 ElMasri2008.sbml,AUrine_AsM3,Cumulative amount of MMA3 in urine,oral,Heavy Metals,mol/,PBPKO:00274,cumulative amount in urine,http://purl.obolibrary.org/obo/PBPKO_00274,CHEBI:17826,methylarsonous acid,http://purl.obolibrary.org/obo/CHEBI_17826
 ElMasri2008.sbml,AUrine_AsD3,Cumulative amount of DMA3 in urine,oral,Heavy Metals,mol/,PBPKO:00274,cumulative amount in urine,http://purl.obolibrary.org/obo/PBPKO_00274,CHEBI:23808,dimethylarsinous acid,http://purl.obolibrary.org/obo/CHEBI_23808
-Ruiz2010_Male.sbml,AGI,Amount in gut,oral,Heavy Metals,ug,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Ruiz2010_Male.sbml,ATI,Amount in intestinal tissue,oral,Heavy Metals,ug,,,,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Ruiz2010_Male.sbml,ALiver,Amount in liver,oral,Heavy Metals,ug,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Ruiz2010_Male.sbml,AKidney,Amount in kidney,oral,Heavy Metals,ug,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Ruiz2010_Male.sbml,APlasma,Amount in plasma,oral,Heavy Metals,ug,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Ruiz2010_Male.sbml,ARBC,Amount in red blood cells,oral,Heavy Metals,ug,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Ruiz2010_Male.sbml,AMetallothionein,Amount in metallothionein blood,oral,Heavy Metals,ug,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Ruiz2010_Male.sbml,ARest,Amount in rest of body,oral,Heavy Metals,ug,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Ruiz2010_Male.sbml,ADaily_Uptake,Amount of daily uptake,oral,Heavy Metals,ug,,,,,,
-Ruiz2010_Female.sbml,AGI,Amount in gut,oral,Heavy Metals,ug,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Ruiz2010_Female.sbml,ATI,Amount in intestinal tissue,oral,Heavy Metals,ug,,,,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Ruiz2010_Female.sbml,ALiver,Amount in liver,oral,Heavy Metals,ug,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Ruiz2010_Female.sbml,AKidney,Amount in kidney,oral,Heavy Metals,ug,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Ruiz2010_Female.sbml,APlasma,Amount in plasma,oral,Heavy Metals,ug,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Ruiz2010_Female.sbml,ARBC,Amount in red blood cells,oral,Heavy Metals,ug,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Ruiz2010_Female.sbml,AMetallothionein,Amount in metallothionein blood,oral,Heavy Metals,ug,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Ruiz2010_Female.sbml,ARest,Amount in rest of body,oral,Heavy Metals,ug,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Ruiz2010_Female.sbml,ADaily_Uptake,Amount of daily uptake,oral,Heavy Metals,ug,,,,,,
-Pouillot2022.sbml,AGI,Amount in gut,oral,Heavy Metals,mg,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Pouillot2022.sbml,ATI,Amount in intestinal tissue,oral,Heavy Metals,mg,,,,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Pouillot2022.sbml,ALiver,Amount in liver,oral,Heavy Metals,mg,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Pouillot2022.sbml,AKidney,Amount in kidney,oral,Heavy Metals,mg,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Pouillot2022.sbml,APlasma,Amount in plasma,oral,Heavy Metals,mg,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Pouillot2022.sbml,ARBC,Amount in red blood cells,oral,Heavy Metals,mg,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Pouillot2022.sbml,AMetallothionein,Amount in metallothionein blood,oral,Heavy Metals,mg,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Pouillot2022.sbml,ARest,Amount in rest of body,oral,Heavy Metals,mg,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Pouillot2022.sbml,ADaily_Uptake,Amount of daily uptake,oral,Heavy Metals,mg,,,,,,
-Bechaux2014_Male.sbml,AGI,Amount in gastrointestinal compartment,oral,Heavy Metals,ug,,,,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Male.sbml,ATI,Amount in intestinal tissue,oral,Heavy Metals,ug,,,,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Male.sbml,ALiver,Amoun in liver,oral,Heavy Metals,ug,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Male.sbml,AKidney,Amoun in kidney,oral,Heavy Metals,ug,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Male.sbml,APlasma,Amount in plasma,oral,Heavy Metals,ug,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Male.sbml,ARBC,Amount in red blood cells,oral,Heavy Metals,ug,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Male.sbml,AMetallothionein,Amount in mettalothioneine bloood,oral,Heavy Metals,ug,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Male.sbml,ARest,Amount in rest of body,oral,Heavy Metals,ug,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Male.sbml,ADaily_Uptake,Amount of daily uptake,oral,Heavy Metals,ug,,,,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Female.sbml,AGI,Amount in gastrointestinal compartment,oral,Heavy Metals,ug,,,,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Female.sbml,ATI,Amount in intestinal tissue,oral,Heavy Metals,ug,,,,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Female.sbml,ALiver,Amoun in liver,oral,Heavy Metals,ug,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Female.sbml,AKidney,Amoun in kidney,oral,Heavy Metals,ug,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Female.sbml,APlasma,Amount in plasma,oral,Heavy Metals,ug,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Female.sbml,ARBC,Amount in red blood cells,oral,Heavy Metals,ug,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Female.sbml,AMetallothionein,Amount in mettalothioneine bloood,oral,Heavy Metals,ug,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Female.sbml,ARest,Amount in rest of body,oral,Heavy Metals,ug,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-Bechaux2014_Female.sbml,ADaily_Uptake,Amount of daily uptake,oral,Heavy Metals,ug,,,,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
+Pouillot2022.sbml,AGI,Amount in gut,oral,Heavy Metals,ug,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
+Pouillot2022.sbml,ATI,Amount in intestinal tissue,oral,Heavy Metals,ug,PBPKO:06015,amount in intestinal tissue,http://purl.obolibrary.org/obo/PBPKO_06015,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
+Pouillot2022.sbml,APlasma,Amount in plasma,oral,Heavy Metals,ug,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
+Pouillot2022.sbml,ARBC,Amount in red blood cells,oral,Heavy Metals,ug,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
+Pouillot2022.sbml,AMetallothionein,Amount in metallothionein blood,oral,Heavy Metals,ug,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
+Pouillot2022.sbml,ARest,Amount in rest of body,oral,Heavy Metals,ug,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
+Pouillot2022.sbml,ADaily_Uptake,Amount of daily uptake,oral,Heavy Metals,ug,PBPKO:00286,estimated daily intake,http://purl.obolibrary.org/obo/PBPKO_00286,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
+Pouillot2022.sbml,AFeces,Amount in Feces,oral,Heavy Metals,ug,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
+Pouillot2022.sbml,AUrine,amount in urine,oral,Heavy Metals,ug,PBPKO:00272,amount in urine,http://purl.obolibrary.org/obo/PBPKO_00272,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
 OFlaherty2000.sbml,ALiver,Amount in liver,oral,Heavy Metals,mg,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:33585,lead molecular entity,http://purl.obolibrary.org/obo/CHEBI_33585
 OFlaherty2000.sbml,ABlood,Amount in blood,oral,Heavy Metals,mg,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:33585,lead molecular entity,http://purl.obolibrary.org/obo/CHEBI_33585
 OFlaherty2000.sbml,ARest,Amount in rest of body,oral,Heavy Metals,mg,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:33585,lead molecular entity,http://purl.obolibrary.org/obo/CHEBI_33585
@@ -327,7 +291,7 @@ OFlaherty2001.sbml,ARest_Cr3,Amount in rest of body,oral,Heavy Metals,mg,PBPKO:0
 OFlaherty2001.sbml,ARest_Cr6,Amount in rest of body,oral,Heavy Metals,mg,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:33007,chromium(6+),http://purl.obolibrary.org/obo/CHEBI_33007
 OFlaherty2001.sbml,AFeces_Cr3,Amount in feces,oral,Heavy Metals,mg,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:49544,chromium(3+),http://purl.obolibrary.org/obo/CHEBI_49544
 OFlaherty2001.sbml,AFeces_Cr6,Amount in feces,oral,Heavy Metals,mg,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:33007,chromium(6+),http://purl.obolibrary.org/obo/CHEBI_33007
-Ou2018.sbml,AGut_lumen,Amount in gut lumen,oral,Heavy Metals,ug,,,,CHEBI:25322,methylmercury compound,http://purl.obolibrary.org/obo/CHEBI_25322
+Ou2018.sbml,AGut_lumen,Amount in gut lumen,oral,Heavy Metals,ug,PBPKO:06009,amount in lumen,http://purl.obolibrary.org/obo/PBPKO_06009,CHEBI:25322,methylmercury compound,http://purl.obolibrary.org/obo/CHEBI_25322
 Ou2018.sbml,AGut,Amount in gut,oral,Heavy Metals,ug,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:25322,methylmercury compound,http://purl.obolibrary.org/obo/CHEBI_25322
 Ou2018.sbml,ALiver,Amount in liver,oral,Heavy Metals,ug,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:25322,methylmercury compound,http://purl.obolibrary.org/obo/CHEBI_25322
 Ou2018.sbml,ARBC,Amount in red blood cells,oral,Heavy Metals,ug,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:25322,methylmercury compound,http://purl.obolibrary.org/obo/CHEBI_25322
@@ -335,18 +299,20 @@ Ou2018.sbml,APlasma,Amount in plasma,oral,Heavy Metals,ug,PBPKO:00502,amount in 
 Ou2018.sbml,ARest,Amount in rest of body,oral,Heavy Metals,ug,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:25322,methylmercury compound,http://purl.obolibrary.org/obo/CHEBI_25322
 Ou2018.sbml,AFeces,Amount in feces,oral,Heavy Metals,ug,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:25322,methylmercury compound,http://purl.obolibrary.org/obo/CHEBI_25322
 Ou2018.sbml,ALiver_Met,Amount in liver (metabolised),oral,Heavy Metals,ug,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:35113,elemental mercury,http://purl.obolibrary.org/obo/CHEBI_35113
-Ou2018.sbml,AGutlumen_Met,Amount in gut lumen (metabolised),oral,Heavy Metals,ug,,,,CHEBI:35113,elemental mercury,http://purl.obolibrary.org/obo/CHEBI_35113
+Ou2018.sbml,AGutlumen_Met,Amount in gut lumen (metabolised),oral,Heavy Metals,ug,PBPKO:06009,amount in lumen,http://purl.obolibrary.org/obo/PBPKO_06009,CHEBI:35113,elemental mercury,http://purl.obolibrary.org/obo/CHEBI_35113
 KjellstromNordberg1978.sbml,AGI,Amount in gut,oral,Heavy Metals,ug,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-KjellstromNordberg1978.sbml,ATI,Amount in intestinal tissue,oral,Heavy Metals,ug,,,,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-KjellstromNordberg1978.sbml,ALiver,Amount in liver,oral,Heavy Metals,ug,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-KjellstromNordberg1978.sbml,AKidney,Amount in kidney,oral,Heavy Metals,ug,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
+KjellstromNordberg1978.sbml,ATI,Amount in intestinal tissue,oral,Heavy Metals,ug,PBPKO:06015,amount in intestinal tissue,http://purl.obolibrary.org/obo/PBPKO_06015,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
 KjellstromNordberg1978.sbml,APlasma,Amount in plasma,oral,Heavy Metals,ug,PBPKO:00502,amount in plasma,http://purl.obolibrary.org/obo/PBPKO_00502,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
 KjellstromNordberg1978.sbml,ARBC,Amount in red blood cells,oral,Heavy Metals,ug,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
 KjellstromNordberg1978.sbml,AMetallothionein,Amount in metallothionein blood,oral,Heavy Metals,ug,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
 KjellstromNordberg1978.sbml,ARest,Amount in rest of body,oral,Heavy Metals,ug,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
-KjellstromNordberg1978.sbml,ADaily_Uptake,Amount of daily uptake,oral,Heavy Metals,ug,,,,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
+KjellstromNordberg1978.sbml,ADaily_Uptake,Amount of daily uptake,oral,Heavy Metals,ug,PBPKO:00286,estimated daily intake,http://purl.obolibrary.org/obo/PBPKO_00286,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
+KjellstromNordberg1978.sbml,AFeces,Amount in Feces,oral,Heavy Metals,ug,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
+KjellstromNordberg1978.sbml,AUrine,amount in urine,oral,Heavy Metals,ug,PBPKO:00272,amount in urine,http://purl.obolibrary.org/obo/PBPKO_00272,CHEBI:22978,cadmium molecular entity,http://purl.obolibrary.org/obo/CHEBI_22978
 Carrier2001.sbml,AGI,Amount in gastrointestinal compartment,oral,Heavy Metals,mg,PBPKO:00496,amount in gut,http://purl.obolibrary.org/obo/PBPKO_00496,CHEBI:16170,mercury(0),http://purl.obolibrary.org/obo/CHEBI_16170
 Carrier2001.sbml,ABlood,Amount in blood,oral,Heavy Metals,mg,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:16170,mercury(0),http://purl.obolibrary.org/obo/CHEBI_16170
+Carrier2001.sbml,ARest,Amount in rest of body,oral,Heavy Metals,mg,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:16170,mercury(0),http://purl.obolibrary.org/obo/CHEBI_16170
+Carrier2001.sbml,AHair,Amount in hair,oral,Heavy Metals,mg,,,,CHEBI:16170,mercury(0),http://purl.obolibrary.org/obo/CHEBI_16170
 Carrier2001.sbml,ALiver_Met,Amount in liver (metabolised),oral,Heavy Metals,mg,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:16170,mercury(0),http://purl.obolibrary.org/obo/CHEBI_16170
 Tebby2022.sbml,ALiver,Amount in liver,oral,Heavy Metals,mg,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:33585,lead molecular entity,http://purl.obolibrary.org/obo/CHEBI_33585
 Tebby2022.sbml,ABlood,Amount in blood,oral,Heavy Metals,mg,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:33585,lead molecular entity,http://purl.obolibrary.org/obo/CHEBI_33585
@@ -388,6 +354,31 @@ Bouchard.sbml,AGut,,oral,Pesticides,,,,,,,
 Bouchard.sbml,ABlood,,oral,Pesticides,,,,,,,
 Bouchard.sbml,ARest,,oral,Pesticides,,,,,,,
 Bouchard.sbml,ABloodMetTotal,,oral,Pesticides,,,,,,,
+Moerenhout.sbml,AStomach,Amount in stomach,oral,Pesticides,umol,PBPKO:06004,amount in stomach,http://purl.obolibrary.org/obo/PBPKO_06004,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+Moerenhout.sbml,ASI1,Amount in small intestine,oral,Pesticides,umol,PBPKO:06005,amount in small intestine,http://purl.obolibrary.org/obo/PBPKO_06005,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+Moerenhout.sbml,ASI2,Amount in small intestine,oral,Pesticides,umol,PBPKO:06010,amount in small intestine segment,http://purl.obolibrary.org/obo/PBPKO_06010,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+Moerenhout.sbml,ASI3,Amount in small intestine,oral,Pesticides,umol,PBPKO:06010,amount in small intestine segment,http://purl.obolibrary.org/obo/PBPKO_06010,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+Moerenhout.sbml,ASI4,Amount in small intestine,oral,Pesticides,umol,PBPKO:06010,amount in small intestine segment,http://purl.obolibrary.org/obo/PBPKO_06010,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+Moerenhout.sbml,ASI5,Amount in small intestine,oral,Pesticides,umol,PBPKO:06010,amount in small intestine segment,http://purl.obolibrary.org/obo/PBPKO_06010,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+Moerenhout.sbml,ASI6,Amount in small intestine,oral,Pesticides,umol,PBPKO:06010,amount in small intestine segment,http://purl.obolibrary.org/obo/PBPKO_06010,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+Moerenhout.sbml,ASI7,Amount in small intestine,oral,Pesticides,umol,PBPKO:06010,amount in small intestine segment,http://purl.obolibrary.org/obo/PBPKO_06010,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+Moerenhout.sbml,AColon,Amount in colon,oral,Pesticides,umol,PBPKO:06011,amount in colon,http://purl.obolibrary.org/obo/PBPKO_06011,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+Moerenhout.sbml,ABlood,Amount in blood,oral,Pesticides,umol,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+Moerenhout.sbml,ALiver,Amount in liver,oral,Pesticides,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+Moerenhout.sbml,AKidney,Amount in kidney,oral,Pesticides,umol,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+Moerenhout.sbml,ARest,Amount in rest of body,oral,Pesticides,umol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+Moerenhout.sbml,AFeces,Amount in feces,oral,Pesticides,umol,PBPKO:00273,amount in feces,http://purl.obolibrary.org/obo/PBPKO_00273,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+Moerenhout.sbml,AUrine,Amount in urine,oral,Pesticides,umol,PBPKO:00272,amount in urine,http://purl.obolibrary.org/obo/PBPKO_00272,CHEBI:34631,chlorpyrifos,http://purl.obolibrary.org/obo/CHEBI_34631
+Moerenhout.sbml,ABloodOxon,Amount in blood,oral,Pesticides,umol,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:25212,metabolite,http://purl.obolibrary.org/obo/CHEBI_25212
+Moerenhout.sbml,ALiverOxon,Amount in liver,oral,Pesticides,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:25212,metabolite,http://purl.obolibrary.org/obo/CHEBI_25212
+Moerenhout.sbml,AKidneyOxon,Amount in kidney,oral,Pesticides,umol,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498,CHEBI:25212,metabolite,http://purl.obolibrary.org/obo/CHEBI_25212
+Moerenhout.sbml,ARestOxon,Amount in rest of body,oral,Pesticides,umol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:25212,metabolite,http://purl.obolibrary.org/obo/CHEBI_25212
+Moerenhout.sbml,AUrineOxon,Amount in urine,oral,Pesticides,umol,PBPKO:00272,amount in urine,http://purl.obolibrary.org/obo/PBPKO_00272,CHEBI:25212,metabolite,http://purl.obolibrary.org/obo/CHEBI_25212
+Moerenhout.sbml,ABloodMet,Amount in blood,oral,Pesticides,umol,PBPKO:00623,amount in blood,http://purl.obolibrary.org/obo/PBPKO_00623,CHEBI:83490,"3,5,6-trichloropyridine-2-one",http://purl.obolibrary.org/obo/CHEBI_83490
+Moerenhout.sbml,ALiverMet,Amount in liver,oral,Pesticides,umol,PBPKO:00497,amount in liver,http://purl.obolibrary.org/obo/PBPKO_00497,CHEBI:83490,"3,5,6-trichloropyridine-2-one",http://purl.obolibrary.org/obo/CHEBI_83490
+Moerenhout.sbml,AKidneyMet,Amount in kidney,oral,Pesticides,umol,PBPKO:00498,amount in kidney,http://purl.obolibrary.org/obo/PBPKO_00498,CHEBI:83490,"3,5,6-trichloropyridine-2-one",http://purl.obolibrary.org/obo/CHEBI_83490
+Moerenhout.sbml,ARestMet,Amount in rest of body,oral,Pesticides,umol,PBPKO:00501,amount in restbody,http://purl.obolibrary.org/obo/PBPKO_00501,CHEBI:83490,"3,5,6-trichloropyridine-2-one",http://purl.obolibrary.org/obo/CHEBI_83490
+Moerenhout.sbml,AUrineMet,Amount in urine,oral,Pesticides,umol,PBPKO:00272,amount in urine,http://purl.obolibrary.org/obo/PBPKO_00272,CHEBI:83490,"3,5,6-trichloropyridine-2-one",http://purl.obolibrary.org/obo/CHEBI_83490
 Moreau_Deltamethrin.sbml,ASt,,oral,Pesticides,,,,,,,
 Moreau_Deltamethrin.sbml,ADuodenum,,oral,Pesticides,,,,,,,
 Moreau_Deltamethrin.sbml,AGITissue,,oral,Pesticides,,,,,,,

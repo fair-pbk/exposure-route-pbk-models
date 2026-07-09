@@ -11,8 +11,8 @@ applicability_domain:
     iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
 num_compartments: 9
 num_species: 9
-num_parameters: 15
-num_reactions: 13
+num_parameters: 12
+num_reactions: 10
 compartments:
 - id: GI
   name: Gut compartment
@@ -23,20 +23,10 @@ compartments:
   unit: L
 - id: Intestinal_Tissue
   name: Intestinal tissue compartment
-  unit: L
-- id: Liver
-  name: Liver compartment
   pbpko_bqm_is_class:
-    id: PBPKO:00558
-    label: liver compartment
-    iri: http://purl.obolibrary.org/obo/PBPKO_00558
-  unit: L
-- id: Kidney
-  name: Kidney compartment
-  pbpko_bqm_is_class:
-    id: PBPKO:00557
-    label: kidney compartment
-    iri: http://purl.obolibrary.org/obo/PBPKO_00557
+    id: PBPKO:02004
+    label: intestinal tissue compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_02004
   unit: L
 - id: Plasma
   name: Plasma compartment
@@ -68,6 +58,24 @@ compartments:
   unit: L
 - id: Daily_Uptake
   name: Amount of daily uptake
+  pbpko_bqm_is_class:
+    id: PBPKO:00446
+    label: compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00446
+  unit: L
+- id: Feces
+  name: Amount exreted as feces
+  pbpko_bqm_is_class:
+    id: PBPKO:00555
+    label: feces compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00555
+  unit: L
+- id: Urine
+  name: Urine compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00556
+    label: urine compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00556
   unit: L
 species:
 - id: AGI
@@ -83,28 +91,10 @@ species:
   unit: ug
 - id: ATI
   name: Amount in intestinal tissue
-  chebi_bqb_is_class:
-    id: CHEBI:22978
-    label: cadmium molecular entity
-    iri: http://purl.obolibrary.org/obo/CHEBI_22978
-  unit: ug
-- id: ALiver
-  name: Amount in liver
   pbpko_bqm_is_class:
-    id: PBPKO:00497
-    label: amount in liver
-    iri: http://purl.obolibrary.org/obo/PBPKO_00497
-  chebi_bqb_is_class:
-    id: CHEBI:22978
-    label: cadmium molecular entity
-    iri: http://purl.obolibrary.org/obo/CHEBI_22978
-  unit: ug
-- id: AKidney
-  name: Amount in kidney
-  pbpko_bqm_is_class:
-    id: PBPKO:00498
-    label: amount in kidney
-    iri: http://purl.obolibrary.org/obo/PBPKO_00498
+    id: PBPKO:06015
+    label: amount in intestinal tissue
+    iri: http://purl.obolibrary.org/obo/PBPKO_06015
   chebi_bqb_is_class:
     id: CHEBI:22978
     label: cadmium molecular entity
@@ -156,132 +146,219 @@ species:
   unit: ug
 - id: ADaily_Uptake
   name: Amount of daily uptake
+  pbpko_bqm_is_class:
+    id: PBPKO:00286
+    label: estimated daily intake
+    iri: http://purl.obolibrary.org/obo/PBPKO_00286
+  chebi_bqb_is_class:
+    id: CHEBI:22978
+    label: cadmium molecular entity
+    iri: http://purl.obolibrary.org/obo/CHEBI_22978
+  unit: ug
+- id: AFeces
+  name: Amount in Feces
+  pbpko_bqm_is_class:
+    id: PBPKO:00273
+    label: amount in feces
+    iri: http://purl.obolibrary.org/obo/PBPKO_00273
+  chebi_bqb_is_class:
+    id: CHEBI:22978
+    label: cadmium molecular entity
+    iri: http://purl.obolibrary.org/obo/CHEBI_22978
+  unit: ug
+- id: AUrine
+  name: amount in urine
+  pbpko_bqm_is_class:
+    id: PBPKO:00272
+    label: amount in urine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00272
   chebi_bqb_is_class:
     id: CHEBI:22978
     label: cadmium molecular entity
     iri: http://purl.obolibrary.org/obo/CHEBI_22978
   unit: ug
 parameters:
-- id: Age
-  name: Age
-  pbpko_bqm_is_class:
-    id: PBPKO:00521
-    label: age in PBPK model
-    iri: http://purl.obolibrary.org/obo/PBPKO_00521
-  unit: y
-- id: BW
-  name: Bodyweight
-  pbpko_bqm_is_class:
-    id: PBPKO:00008
-    label: bodyweight
-    iri: http://purl.obolibrary.org/obo/PBPKO_00008
-  unit: kg
 - id: C5
-  name: Coefficient
+  name: Fraction og GI-tract cadmium retained in epithelium
   unit: dimensionless
 - id: C6
-  name: Coefficient
+  name: Transfer rate from GI to uptake
   unit: /d
 - id: C7
-  name: Coefficient
+  name: fraction of uptake pool transferred to blood pool B4
   unit: dimensionless
+- id: CX
+  name: Rate of transfer of Cd in B1 to blood B2
+  unit: dimensionless
+- id: C16
+  name: Transfer rate between blood compartments
+  unit: /d
 - id: C8
-  name: Coefficient
-  unit: mg
+  name: Maximum amount
+  pbpko_bqm_is_class:
+    id: PBPKO:06052
+    label: maximum amount
+    iri: http://purl.obolibrary.org/obo/PBPKO_06052
+  unit: ug
 - id: C9
-  name: Coefficient
+  name: Transfer rate from blood to other tissues
   unit: dimensionless
 - id: C10
-  name: Coefficient
+  name: Transfer rate from other tissues to blood
   unit: /d
-- id: C12
-  name: Coefficient
+- id: C11
+  name: Fraction
   unit: dimensionless
-- id: C13
-  name: Coefficient
-  unit: /d
-- id: C14
-  name: Coefficient
-  unit: /d
-- id: C16
-  name: Coefficient
-  unit: /d
 - id: C17
-  name: Coefficient
+  name: Transfer rate from blood to kidney
   unit: dimensionless
-- id: C18
-  name: Coefficient
-  unit: /d
-- id: CX
-  name: Coefficient
+- id: ADaily_Uptake2
+  name: Fraction
+  unit: dimensionless
+- id: ADaily_Uptake1
+  name: Fraction
   unit: dimensionless
 parameterisations:
-- filename: KjellstromNordberg1978.params.csv
+- filename: Bechaux2014_Female.params.csv
   model_id: KjellstromNordberg1978_Cd_Human
   parameters:
-  - id: Age
-    value: 30.0
-    unit: ''
-    reference: ''
-    bqm_is:
-      id: PBPKO:00521
-      label: age in PBPK model
-      iri: http://purl.obolibrary.org/obo/PBPKO_00521
-  - id: BW
-    value: 70.0
-    unit: ''
-    reference: ''
-    bqm_is:
-      id: PBPKO:00008
-      label: bodyweight
-      iri: http://purl.obolibrary.org/obo/PBPKO_00008
   - id: C5
-    value: 0.048
-    unit: ''
+    value: 0.075
+    unit: dimensionless
     reference: ''
   - id: C6
     value: 0.05
-    unit: ''
+    unit: /d
     reference: ''
   - id: C7
     value: 0.25
-    unit: ''
-    reference: ''
-  - id: C8
-    value: 1.0
-    unit: ''
-    reference: ''
-  - id: C9
-    value: 0.44
-    unit: ''
-    reference: ''
-  - id: C10
-    value: 0.00014
-    unit: ''
-    reference: ''
-  - id: C12
-    value: 0.25
-    unit: ''
-    reference: ''
-  - id: C13
-    value: 3.0e-05
-    unit: ''
-    reference: ''
-  - id: C14
-    value: 0.00016
-    unit: ''
-    reference: ''
-  - id: C16
-    value: 0.012
-    unit: ''
-    reference: ''
-  - id: C18
-    value: 1.0e-05
-    unit: ''
+    unit: dimensionless
     reference: ''
   - id: CX
     value: 0.04
-    unit: ''
+    unit: dimensionless
+    reference: ''
+  - id: C16
+    value: 0.012
+    unit: /d
+    reference: ''
+  - id: C8
+    value: 1.0
+    unit: ug
+    reference: ''
+    bqm_is:
+      id: PBPKO:06052
+      label: maximum amount
+      iri: http://purl.obolibrary.org/obo/PBPKO_06052
+  - id: C9
+    value: 0.44
+    unit: dimensionless
+    reference: ''
+  - id: C10
+    value: 0.00014
+    unit: /d
+    reference: ''
+  - id: C11
+    value: 0.27
+    unit: dimensionless
+    reference: ''
+  - id: C17
+    value: 0.95
+    unit: dimensionless
+    reference: ''
+- filename: Bechaux2014_Male.params.csv
+  model_id: KjellstromNordberg1978_Cd_Human
+  parameters:
+  - id: C5
+    value: 0.05
+    unit: dimensionless
+    reference: ''
+  - id: C6
+    value: 0.05
+    unit: /d
+    reference: ''
+  - id: C7
+    value: 0.25
+    unit: dimensionless
+    reference: ''
+  - id: CX
+    value: 0.04
+    unit: dimensionless
+    reference: ''
+  - id: C16
+    value: 0.012
+    unit: /d
+    reference: ''
+  - id: C8
+    value: 1.0
+    unit: ug
+    reference: ''
+    bqm_is:
+      id: PBPKO:06052
+      label: maximum amount
+      iri: http://purl.obolibrary.org/obo/PBPKO_06052
+  - id: C9
+    value: 0.44
+    unit: dimensionless
+    reference: ''
+  - id: C10
+    value: 0.00014
+    unit: /d
+    reference: ''
+  - id: C11
+    value: 0.27
+    unit: dimensionless
+    reference: ''
+  - id: C17
+    value: 0.95
+    unit: dimensionless
+    reference: ''
+- filename: KjellstromNordberg1978.params.csv
+  model_id: KjellstromNordberg1978_Cd_Human
+  parameters:
+  - id: C5
+    value: 0.048
+    unit: dimensionless
+    reference: ''
+  - id: C6
+    value: 0.05
+    unit: /d
+    reference: ''
+  - id: C7
+    value: 0.25
+    unit: dimensionless
+    reference: ''
+  - id: CX
+    value: 0.04
+    unit: dimensionless
+    reference: ''
+  - id: C16
+    value: 0.0209
+    unit: /d
+    reference: ''
+  - id: C8
+    value: 1.0
+    unit: ug
+    reference: ''
+    bqm_is:
+      id: PBPKO:06052
+      label: maximum amount
+      iri: http://purl.obolibrary.org/obo/PBPKO_06052
+  - id: C9
+    value: 0.44
+    unit: dimensionless
+    reference: ''
+  - id: C10
+    value: 0.00014
+    unit: /d
+    reference: ''
+  - id: C11
+    value: 0.27
+    unit: dimensionless
+    reference: ''
+  - id: C17
+    value: 0.95
+    unit: dimensionless
     reference: ''
 unit_consistency:
 - level: warning
@@ -298,20 +375,6 @@ unit_consistency:
     \ it easier to detect potential errors in models.\n The <compartment> with the\
     \ id 'Intestinal_Tissue' does not have a 'size' attribute, nor is its initial\
     \ value set by an <initialAssignment> or <assignmentRule>."
-- level: warning
-  msg: "As a principle of best modeling practice, the size of a <compartment> should\
-    \ be set to a value rather than be left undefined. Doing so improves the portability\
-    \ of models between different simulation and analysis systems, and helps make\
-    \ it easier to detect potential errors in models.\n The <compartment> with the\
-    \ id 'Liver' does not have a 'size' attribute, nor is its initial value set by\
-    \ an <initialAssignment> or <assignmentRule>."
-- level: warning
-  msg: "As a principle of best modeling practice, the size of a <compartment> should\
-    \ be set to a value rather than be left undefined. Doing so improves the portability\
-    \ of models between different simulation and analysis systems, and helps make\
-    \ it easier to detect potential errors in models.\n The <compartment> with the\
-    \ id 'Kidney' does not have a 'size' attribute, nor is its initial value set by\
-    \ an <initialAssignment> or <assignmentRule>."
 - level: warning
   msg: "As a principle of best modeling practice, the size of a <compartment> should\
     \ be set to a value rather than be left undefined. Doing so improves the portability\
@@ -347,27 +410,25 @@ unit_consistency:
     \ it easier to detect potential errors in models.\n The <compartment> with the\
     \ id 'Daily_Uptake' does not have a 'size' attribute, nor is its initial value\
     \ set by an <initialAssignment> or <assignmentRule>."
-- level: error
-  msg: In situations where a mathematical expression refers to extent, the units of
-    extent should be consistent with the global extent units of the model. In models
-    where the 'extentUnits' attribute has not been declared, libSBML does not yet
-    have the functionality to verify accurately the consistency of the units in such
-    expressions.
-- level: error
-  msg: "The units of the expressions used as arguments to a function call are expected\
-    \ to match the units expected for the arguments of that function. \nReference:\
-    \ L3V2 Section 3.4\n The formula 'lt(C7 * ADaily_Uptake, C8)' in the math element\
-    \ of the <kineticLaw> can only act on variables with the same units."
-- level: error
-  msg: "The units of the expressions used as arguments to a function call are expected\
-    \ to match the units expected for the arguments of that function. \nReference:\
-    \ L3V2 Section 3.4\n The formula 'lt(C7 * ADaily_Uptake, C8)' in the math element\
-    \ of the <kineticLaw> can only act on variables with the same units."
+- level: warning
+  msg: "As a principle of best modeling practice, the size of a <compartment> should\
+    \ be set to a value rather than be left undefined. Doing so improves the portability\
+    \ of models between different simulation and analysis systems, and helps make\
+    \ it easier to detect potential errors in models.\n The <compartment> with the\
+    \ id 'Feces' does not have a 'size' attribute, nor is its initial value set by\
+    \ an <initialAssignment> or <assignmentRule>."
+- level: warning
+  msg: "As a principle of best modeling practice, the size of a <compartment> should\
+    \ be set to a value rather than be left undefined. Doing so improves the portability\
+    \ of models between different simulation and analysis systems, and helps make\
+    \ it easier to detect potential errors in models.\n The <compartment> with the\
+    \ id 'Urine' does not have a 'size' attribute, nor is its initial value set by\
+    \ an <initialAssignment> or <assignmentRule>."
 - level: error
   msg: "The units of the expressions used as arguments to a function call are expected\
     \ to match the units expected for the arguments of that function. \nReference:\
-    \ L3V2 Section 3.4\n The formula 'ADaily_Uptake - C8' in the math element of the\
-    \ <kineticLaw> can only act on variables with the same units."
+    \ L3V2 Section 3.4\n The formula 'ADaily_Uptake - ADaily_Uptake2' in the math\
+    \ element of the <assignmentRule> can only act on variables with the same units."
 - level: error
   msg: "The unit of measurement associated with the mathematical formula in the MathML\
     \ math element of every KineticLaw object in a model should be identical to all\
@@ -378,45 +439,91 @@ unit_consistency:
   msg: "The unit of measurement associated with the mathematical formula in the MathML\
     \ math element of every KineticLaw object in a model should be identical to all\
     \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
-    \ 'C10 * ARest' in the <kineticLaw> element of the <reaction> with id '_J5' produces\
-    \ units that are inconsistent with units of earlier KineticLaw elements."
-- level: error
-  msg: "The unit of measurement associated with the mathematical formula in the MathML\
-    \ math element of every KineticLaw object in a model should be identical to all\
-    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
-    \ 'C13 * ALiver' in the <kineticLaw> element of the <reaction> with id '_J7' produces\
-    \ units that are inconsistent with units of earlier KineticLaw elements."
-- level: error
-  msg: "The unit of measurement associated with the mathematical formula in the MathML\
-    \ math element of every KineticLaw object in a model should be identical to all\
-    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
-    \ 'C14 * ALiver' in the <kineticLaw> element of the <reaction> with id '_J8' produces\
-    \ units that are inconsistent with units of earlier KineticLaw elements."
-- level: error
-  msg: "The unit of measurement associated with the mathematical formula in the MathML\
-    \ math element of every KineticLaw object in a model should be identical to all\
-    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
-    \ 'C16 * ARBC' in the <kineticLaw> element of the <reaction> with id '_J9' produces\
-    \ units that are inconsistent with units of earlier KineticLaw elements."
-- level: error
-  msg: "The unit of measurement associated with the mathematical formula in the MathML\
-    \ math element of every KineticLaw object in a model should be identical to all\
-    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
-    \ 'C18 * AKidney' in the <kineticLaw> element of the <reaction> with id '_J11'\
+    \ 'ADaily_Uptake2' in the <kineticLaw> element of the <reaction> with id '_J2'\
     \ produces units that are inconsistent with units of earlier KineticLaw elements."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'ADaily_Uptake1' in the <kineticLaw> element of the <reaction> with id '_J3'\
+    \ produces units that are inconsistent with units of earlier KineticLaw elements."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'C16 * ARBC' in the <kineticLaw> element of the <reaction> with id '_J5' produces\
+    \ units that are inconsistent with units of earlier KineticLaw elements."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'C10 * ARest' in the <kineticLaw> element of the <reaction> with id '_J7' produces\
+    \ units that are inconsistent with units of earlier KineticLaw elements."
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are dimensionless\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'ADaily_Uptake2' are gram (exponent\
+    \ = 1, multiplier = 1, scale = -6)."
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are dimensionless\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'ADaily_Uptake1' are indeterminable."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are gram (exponent = 1, multiplier = 1, scale = -6), second (exponent\
+    \ = -1, multiplier = 86400, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J0') are gram (exponent =\
+    \ 1, multiplier = 1e-06, scale = 0)."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are gram (exponent = 1, multiplier = 1, scale = -6), second (exponent\
+    \ = -1, multiplier = 86400, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J2') are dimensionless (exponent\
+    \ = 1, multiplier = 1, scale = 0)."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are gram (exponent = 1, multiplier = 1, scale = -6), second (exponent\
+    \ = -1, multiplier = 86400, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J3') are dimensionless (exponent\
+    \ = 1, multiplier = 1, scale = 0)."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are gram (exponent = 1, multiplier = 1, scale = -6), second (exponent\
+    \ = -1, multiplier = 86400, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J4') are gram (exponent =\
+    \ 1, multiplier = 1e-06, scale = 0)."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are gram (exponent = 1, multiplier = 1, scale = -6), second (exponent\
+    \ = -1, multiplier = 86400, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J6') are gram (exponent =\
+    \ 1, multiplier = 1e-06, scale = 0)."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are gram (exponent = 1, multiplier = 1, scale = -6), second (exponent\
+    \ = -1, multiplier = 86400, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J8') are gram (exponent =\
+    \ 1, multiplier = 1e-06, scale = 0)."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression 'piecewise(0.95, lt(Age, 30), 0.95 * 0.33\
-    \ * (Age - 30) / (80 - 30))' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'piecewise(ADaily_Uptake * (1 - C7), lt(C7 *\
-    \ ADaily_Uptake, C8), ADaily_Uptake - C8)' cannot be fully checked. Unit consistency\
-    \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate."
+    \ <kineticLaw> <math> expression '(1 - C17) * AMetallothionein' cannot be fully\
+    \ checked. Unit consistency reported as either no errors or further unit errors\
+    \ related to this object may not be accurate."

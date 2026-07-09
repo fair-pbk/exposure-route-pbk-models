@@ -17,7 +17,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AGILumen",
 			label="AGILumen
-[-]",
+[PBPKO:00496]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -35,7 +35,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AFast",
 			label="AFast
-[-]",
+[PBPKO:00496]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -53,7 +53,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ASlow",
 			label="ASlow
-[-]",
+[PBPKO:00496]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -63,7 +63,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Colon",
 			label="Colon
-[-]",
+[PBPKO:02002]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -71,7 +71,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AColon",
 			label="AColon
-[-]",
+[PBPKO:06011]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -111,31 +111,31 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		ALiverMet1	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-ALiverMet1",
 			label="ALiverMet1
-[-]",
+[PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
 		ALiverMet2	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-ALiverMet2",
 			label="ALiverMet2
-[-]",
+[PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
 		ALiverMet3	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-ALiverMet3",
 			label="ALiverMet3
-[-]",
+[PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
 		ALiverMet4	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-ALiverMet4",
 			label="ALiverMet4
-[-]",
+[PBPKO:00497]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -181,7 +181,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Bile",
 			label="Bile
-[-]",
+[PBPKO:02001]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -189,7 +189,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ABile",
 			label="ABile
-[-]",
+[PBPKO:06012]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -225,7 +225,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ASt",
 			label="ASt
-[-]",
+[PBPKO:06004]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -243,7 +243,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ASpleen",
 			label="ASpleen
-[-]",
+[PBPKO:06013]",
 			shape=box,
 			style="filled,rounded"];
 	}

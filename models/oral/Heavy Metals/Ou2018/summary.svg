@@ -75,29 +75,29 @@
 <!-- AGut_lumen -->
 <g id="node1" class="node">
 <title>AGut_lumen</title>
-<g id="a_node1"><a xlink:href="#species-AGut_lumen" xlink:title="AGut_lumen&#10;[&#45;]">
-<path fill="gold" stroke="black" d="M316.98,-290C316.98,-290 247.98,-290 247.98,-290 241.98,-290 235.98,-284 235.98,-278 235.98,-278 235.98,-264 235.98,-264 235.98,-258 241.98,-252 247.98,-252 247.98,-252 316.98,-252 316.98,-252 322.98,-252 328.98,-258 328.98,-264 328.98,-264 328.98,-278 328.98,-278 328.98,-284 322.98,-290 316.98,-290"/>
-<text text-anchor="middle" x="282.48" y="-274.8" font-family="Arial" font-size="14.00">AGut_lumen</text>
-<text text-anchor="middle" x="282.48" y="-259.8" font-family="Arial" font-size="14.00">[&#45;]</text>
+<g id="a_node1"><a xlink:href="#species-AGut_lumen" xlink:title="AGut_lumen&#10;[PBPKO:06009]">
+<path fill="gold" stroke="black" d="M321.98,-290C321.98,-290 232.98,-290 232.98,-290 226.98,-290 220.98,-284 220.98,-278 220.98,-278 220.98,-264 220.98,-264 220.98,-258 226.98,-252 232.98,-252 232.98,-252 321.98,-252 321.98,-252 327.98,-252 333.98,-258 333.98,-264 333.98,-264 333.98,-278 333.98,-278 333.98,-284 327.98,-290 321.98,-290"/>
+<text text-anchor="middle" x="277.48" y="-274.8" font-family="Arial" font-size="14.00">AGut_lumen</text>
+<text text-anchor="middle" x="277.48" y="-259.8" font-family="Arial" font-size="14.00">[PBPKO:06009]</text>
 </a>
 </g>
 </g>
 <!-- AGutlumen_Met -->
 <g id="node2" class="node">
 <title>AGutlumen_Met</title>
-<g id="a_node2"><a xlink:href="#species-AGutlumen_Met" xlink:title="AGutlumen_Met&#10;[&#45;]">
+<g id="a_node2"><a xlink:href="#species-AGutlumen_Met" xlink:title="AGutlumen_Met&#10;[PBPKO:06009]">
 <path fill="mediumspringgreen" stroke="black" d="M323.48,-165C323.48,-165 231.48,-165 231.48,-165 225.48,-165 219.48,-159 219.48,-153 219.48,-153 219.48,-139 219.48,-139 219.48,-133 225.48,-127 231.48,-127 231.48,-127 323.48,-127 323.48,-127 329.48,-127 335.48,-133 335.48,-139 335.48,-139 335.48,-153 335.48,-153 335.48,-159 329.48,-165 323.48,-165"/>
 <text text-anchor="middle" x="277.48" y="-149.8" font-family="Arial" font-size="14.00">AGutlumen_Met</text>
-<text text-anchor="middle" x="277.48" y="-134.8" font-family="Arial" font-size="14.00">[&#45;]</text>
+<text text-anchor="middle" x="277.48" y="-134.8" font-family="Arial" font-size="14.00">[PBPKO:06009]</text>
 </a>
 </g>
 </g>
 <!-- AGut_lumen&#45;&gt;AGutlumen_Met -->
 <g id="edge1" class="edge">
 <title>AGut_lumen&#45;&gt;AGutlumen_Met</title>
-<path fill="none" stroke="black" d="M281.75,-251.85C280.93,-231.68 279.59,-198.86 278.64,-175.31"/>
-<polygon fill="black" stroke="black" points="282.13,-175.07 278.23,-165.22 275.13,-175.36 282.13,-175.07"/>
-<text text-anchor="middle" x="295.98" y="-223.3" font-family="Times,serif" font-size="14.00">_J11</text>
+<path fill="none" stroke="black" d="M277.48,-251.85C277.48,-231.68 277.48,-198.86 277.48,-175.31"/>
+<polygon fill="black" stroke="black" points="280.98,-175.22 277.48,-165.22 273.98,-175.22 280.98,-175.22"/>
+<text text-anchor="middle" x="292.98" y="-223.3" font-family="Times,serif" font-size="14.00">_J11</text>
 </g>
 <!-- AGut -->
 <g id="node3" class="node">
@@ -112,9 +112,9 @@
 <!-- AGut_lumen&#45;&gt;AGut -->
 <g id="edge2" class="edge">
 <title>AGut_lumen&#45;&gt;AGut</title>
-<path fill="none" stroke="black" d="M308.53,-251.93C325.36,-240.26 347.72,-224.74 367.48,-211 386.4,-197.86 407.49,-183.19 424.7,-171.21"/>
-<polygon fill="black" stroke="black" points="427.11,-173.8 433.32,-165.21 423.11,-168.05 427.11,-173.8"/>
-<text text-anchor="middle" x="364.48" y="-223.3" font-family="Times,serif" font-size="14.00">_J0</text>
+<path fill="none" stroke="black" d="M305.59,-251.86C323.41,-240.29 346.89,-224.91 367.48,-211 386.71,-198.02 407.98,-183.25 425.22,-171.17"/>
+<polygon fill="black" stroke="black" points="427.66,-173.73 433.84,-165.12 423.64,-168 427.66,-173.73"/>
+<text text-anchor="middle" x="363.48" y="-223.3" font-family="Times,serif" font-size="14.00">_J0</text>
 </g>
 <!-- AFeces -->
 <g id="node9" class="node">
@@ -129,8 +129,8 @@
 <!-- AGut_lumen&#45;&gt;AFeces -->
 <g id="edge3" class="edge">
 <title>AGut_lumen&#45;&gt;AFeces</title>
-<path fill="none" stroke="black" d="M329.12,-256.13C343.88,-251.97 360.31,-247.56 375.48,-244 451.69,-226.11 493.19,-266.41 548.48,-211 587.31,-172.09 588.13,-102.82 585,-64.13"/>
-<polygon fill="black" stroke="black" points="588.47,-63.7 584.04,-54.08 581.51,-64.36 588.47,-63.7"/>
+<path fill="none" stroke="black" d="M334.18,-254.59C348.29,-250.94 363.4,-247.19 377.48,-244 452.98,-226.92 493.87,-265.85 548.48,-211 587.27,-172.05 588.1,-102.8 584.99,-64.12"/>
+<polygon fill="black" stroke="black" points="588.46,-63.69 584.03,-54.07 581.49,-64.35 588.46,-63.69"/>
 <text text-anchor="middle" x="599.98" y="-142.3" font-family="Times,serif" font-size="14.00">_J12</text>
 </g>
 <!-- ALiver -->
@@ -153,9 +153,9 @@
 <!-- ALiver&#45;&gt;AGut_lumen -->
 <g id="edge5" class="edge">
 <title>ALiver&#45;&gt;AGut_lumen</title>
-<path fill="none" stroke="black" d="M123.08,-376.85C155.76,-355.35 210.32,-319.47 246.35,-295.77"/>
-<polygon fill="black" stroke="black" points="248.65,-298.44 255.08,-290.02 244.81,-292.59 248.65,-298.44"/>
-<text text-anchor="middle" x="182.48" y="-348.3" font-family="Times,serif" font-size="14.00">_J9</text>
+<path fill="none" stroke="black" d="M123.23,-376.79C140.83,-365.19 164.05,-349.8 184.48,-336 204.03,-322.8 225.74,-307.87 243.27,-295.76"/>
+<polygon fill="black" stroke="black" points="245.28,-298.62 251.51,-290.05 241.3,-292.86 245.28,-298.62"/>
+<text text-anchor="middle" x="180.48" y="-348.3" font-family="Times,serif" font-size="14.00">_J9</text>
 </g>
 <!-- ALiver_Met -->
 <g id="node5" class="node">
@@ -187,9 +187,9 @@
 <!-- ALiver&#45;&gt;APlasma -->
 <g id="edge7" class="edge">
 <title>ALiver&#45;&gt;APlasma</title>
-<path fill="none" stroke="black" d="M152.04,-393.56C215.97,-390.81 322.71,-382.81 411.48,-359.5 470.06,-344.12 533.67,-315.03 574.47,-294.63"/>
-<polygon fill="black" stroke="black" points="576.23,-297.67 583.58,-290.03 573.07,-291.42 576.23,-297.67"/>
-<text text-anchor="middle" x="468.48" y="-348.3" font-family="Times,serif" font-size="14.00">_J4</text>
+<path fill="none" stroke="black" d="M152.12,-393.68C216.44,-391.03 324.06,-383.12 413.48,-359.5 471.56,-344.16 534.53,-315.07 574.92,-294.65"/>
+<polygon fill="black" stroke="black" points="576.62,-297.71 583.93,-290.05 573.43,-291.48 576.62,-297.71"/>
+<text text-anchor="middle" x="470.48" y="-348.3" font-family="Times,serif" font-size="14.00">_J4</text>
 </g>
 <!-- ARBC -->
 <g id="node6" class="node">
@@ -218,9 +218,9 @@
 <!-- APlasma&#45;&gt;ALiver -->
 <g id="edge10" class="edge">
 <title>APlasma&#45;&gt;ALiver</title>
-<path fill="none" stroke="black" d="M596.58,-290.09C571.25,-310.86 526.35,-344.05 481.48,-359.5 424.24,-379.22 256.76,-388.76 162.29,-392.68"/>
-<polygon fill="black" stroke="black" points="162.12,-389.19 152.27,-393.09 162.4,-396.18 162.12,-389.19"/>
-<text text-anchor="middle" x="524.48" y="-348.3" font-family="Times,serif" font-size="14.00">_J3</text>
+<path fill="none" stroke="black" d="M596.94,-290.1C572.03,-310.88 527.83,-344.07 483.48,-359.5 425.93,-379.53 257.18,-388.95 162.28,-392.77"/>
+<polygon fill="black" stroke="black" points="162.06,-389.28 152.2,-393.17 162.33,-396.27 162.06,-389.28"/>
+<text text-anchor="middle" x="525.48" y="-348.3" font-family="Times,serif" font-size="14.00">_J3</text>
 </g>
 <!-- APlasma&#45;&gt;ARBC -->
 <g id="edge11" class="edge">

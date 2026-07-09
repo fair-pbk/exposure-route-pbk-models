@@ -9,10 +9,10 @@ applicability_domain:
   - id: NCBITaxon:9606
     label: Homo sapiens
     iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
-num_compartments: 3
-num_species: 3
-num_parameters: 12
-num_reactions: 2
+num_compartments: 5
+num_species: 5
+num_parameters: 7
+num_reactions: 4
 compartments:
 - id: GI
   name: Gastrointestinal compartment
@@ -21,19 +21,33 @@ compartments:
     label: gut compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00477
   unit: L
-- id: Liver
-  name: Liver compartment
-  pbpko_bqm_is_class:
-    id: PBPKO:00558
-    label: liver compartment
-    iri: http://purl.obolibrary.org/obo/PBPKO_00558
-  unit: L
 - id: Blood
   name: Blood compartment
   pbpko_bqm_is_class:
     id: PBPKO:00464
     label: blood compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00464
+  unit: L
+- id: Rest
+  name: Rest of body compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00450
+    label: rest of body compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00450
+  unit: L
+- id: Hair
+  name: Hair compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00479
+    label: hair compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00479
+  unit: L
+- id: Liver
+  name: Liver compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00558
+    label: liver compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00558
   unit: L
 species:
 - id: AGI
@@ -58,6 +72,24 @@ species:
     label: mercury(0)
     iri: http://purl.obolibrary.org/obo/CHEBI_16170
   unit: mg
+- id: ARest
+  name: Amount in rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00501
+    label: amount in restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00501
+  chebi_bqb_is_class:
+    id: CHEBI:16170
+    label: mercury(0)
+    iri: http://purl.obolibrary.org/obo/CHEBI_16170
+  unit: mg
+- id: AHair
+  name: Amount in hair
+  chebi_bqb_is_class:
+    id: CHEBI:16170
+    label: mercury(0)
+    iri: http://purl.obolibrary.org/obo/CHEBI_16170
+  unit: mg
 - id: ALiver_Met
   name: Amount in liver (metabolised)
   pbpko_bqm_is_class:
@@ -70,53 +102,16 @@ species:
     iri: http://purl.obolibrary.org/obo/CHEBI_16170
   unit: mg
 parameters:
-- id: BW
-  name: Bodyweight
-  pbpko_bqm_is_class:
-    id: PBPKO:00008
-    label: bodyweight
-    iri: http://purl.obolibrary.org/obo/PBPKO_00008
-  unit: kg
-- id: VGIc
-  name: Volume fraction of gut
-  pbpko_bqm_is_class:
-    id: PBPKO:00509
-    label: fraction of gut
-    iri: http://purl.obolibrary.org/obo/PBPKO_00509
-  unit: L/kg
-- id: VBc
-  name: Volume fraction of blood
-  unit: L/kg
-- id: VLc
-  name: Volume fraction of liver
-  pbpko_bqm_is_class:
-    id: PBPKO:00078
-    label: fraction of liver
-    iri: http://purl.obolibrary.org/obo/PBPKO_00078
-  unit: L/kg
-- id: VB
-  name: Volume of blood
-  pbpko_bqm_is_class:
-    id: PBPKO:00108
-    label: volume of blood
-    iri: http://purl.obolibrary.org/obo/PBPKO_00108
-  unit: L
-- id: VGI
-  name: Volume of gastrointestinal compartment
-  pbpko_bqm_is_class:
-    id: PBPKO:00524
-    label: volume of gut
-    iri: http://purl.obolibrary.org/obo/PBPKO_00524
-  unit: L
-- id: VL
-  name: Volume of liver
-  pbpko_bqm_is_class:
-    id: PBPKO:00077
-    label: volume of liver
-    iri: http://purl.obolibrary.org/obo/PBPKO_00077
-  unit: L
 - id: kabs
   name: Oral absorption rate constant
+  pbpko_bqm_is_class:
+    id: PBPKO:03075
+    label: absorption rate constant
+    iri: http://purl.obolibrary.org/obo/PBPKO_03075
+  chebi_bqb_is_class:
+    id: CHEBI:16170
+    label: mercury(0)
+    iri: http://purl.obolibrary.org/obo/CHEBI_16170
   unit: /d
 - id: Frac
   name: Bioavailability
@@ -127,57 +122,43 @@ parameters:
   unit: dimensionless
 - id: kmet_liver
   name: Metabolism rate constant
+  pbpko_bqm_is_class:
+    id: PBPKO:03027
+    label: metabolism rate constant in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_03027
+  chebi_bqb_is_class:
+    id: CHEBI:16170
+    label: mercury(0)
+    iri: http://purl.obolibrary.org/obo/CHEBI_16170
   unit: /d
-- id: CGI
-  name: Concentration in gastrointestinal compartment
-  pbpko_bqm_is_class:
-    id: PBPKO:00538
-    label: concentration in gut
-    iri: http://purl.obolibrary.org/obo/PBPKO_00538
-  unit: mg/L
-- id: CBlood
-  name: Concentration in blood
-  pbpko_bqm_is_class:
-    id: PBPKO:00301
-    label: concentration in blood
-    iri: http://purl.obolibrary.org/obo/PBPKO_00301
-  unit: mg/L
+- id: kqh
+  name: Transfer rate to hair
+  unit: /d
+- id: kelim_all
+  name: Whole body elimination rate
+  unit: /d
+- id: kelim
+  name: Whole body elimination rate - excluding hair
+  unit: /d
+- id: K
+  name: Constant ratio [Whole body burder/Blood]
+  unit: dimensionless
 parameterisations:
 - filename: Carrier2001.params.csv
   model_id: Carrier2001_Hg_Human
   parameters:
-  - id: BW
-    value: 70.0
-    unit: kg
-    reference: ''
-    bqm_is:
-      id: PBPKO:00008
-      label: bodyweight
-      iri: http://purl.obolibrary.org/obo/PBPKO_00008
-  - id: VGIc
-    value: 0.017
-    unit: L/kg
-    reference: ''
-    bqm_is:
-      id: PBPKO:00509
-      label: fraction of gut
-      iri: http://purl.obolibrary.org/obo/PBPKO_00509
-  - id: VBc
-    value: 0.067
-    unit: L/kg
-    reference: ''
-  - id: VLc
-    value: 0.026
-    unit: L/kg
-    reference: ''
-    bqm_is:
-      id: PBPKO:00078
-      label: fraction of liver
-      iri: http://purl.obolibrary.org/obo/PBPKO_00078
   - id: kabs
     value: 5.544
     unit: /d
     reference: ''
+    bqm_is:
+      id: PBPKO:03075
+      label: absorption rate constant
+      iri: http://purl.obolibrary.org/obo/PBPKO_03075
+    bqb_is:
+      id: CHEBI:16170
+      label: mercury(0)
+      iri: http://purl.obolibrary.org/obo/CHEBI_16170
   - id: Frac
     value: 1.0
     unit: dimensionless
@@ -190,10 +171,14 @@ parameterisations:
     value: 0.175
     unit: /d
     reference: ''
+    bqm_is:
+      id: PBPKO:03027
+      label: metabolism rate constant in liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_03027
+    bqb_is:
+      id: CHEBI:16170
+      label: mercury(0)
+      iri: http://purl.obolibrary.org/obo/CHEBI_16170
 unit_consistency:
-- level: error
-  msg: In situations where a mathematical expression refers to extent, the units of
-    extent should be consistent with the global extent units of the model. In models
-    where the 'extentUnits' attribute has not been declared, libSBML does not yet
-    have the functionality to verify accurately the consistency of the units in such
-    expressions.
+- level: info
+  msg: No unit inconsistencies found.

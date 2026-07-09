@@ -814,34 +814,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Bechaux2014/summary/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Bechaux 2014_Female
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../Carrier2001/summary/" class="md-nav__link">
         
   
@@ -1158,17 +1130,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#initial-assignments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Initial assignments
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1203,34 +1164,6 @@
     
   
     Pouillot 2022
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Ruiz2010/summary/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Ruiz 2010_Female
   
 
     
@@ -1621,6 +1554,34 @@
     
   
     Mallick
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Pesticides/Moerenhout/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moerenhout
   
 
     
@@ -3635,7 +3596,7 @@
 <td style="text-align: left;">AGut_lumen</td>
 <td style="text-align: left;">Amount in gut lumen</td>
 <td style="text-align: left;">ug</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06009</td>
 </tr>
 <tr>
 <td style="text-align: left;">AGut</td>
@@ -3683,7 +3644,7 @@
 <td style="text-align: left;">AGutlumen_Met</td>
 <td style="text-align: left;">Amount in gut lumen (metabolised)</td>
 <td style="text-align: left;">ug</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06009</td>
 </tr>
 </tbody>
 </table>
@@ -3744,13 +3705,13 @@
 <td style="text-align: left;">_J7</td>
 <td style="text-align: left;">APlasma</td>
 <td style="text-align: left;">ARBC</td>
-<td style="text-align: left;">CPlasma * Qrbc</td>
+<td style="text-align: left;">CPlasma * krbc</td>
 </tr>
 <tr>
 <td style="text-align: left;">_J8</td>
 <td style="text-align: left;">ARBC</td>
 <td style="text-align: left;">APlasma</td>
-<td style="text-align: left;">Qrbc * CRBC / PRBC</td>
+<td style="text-align: left;">krbc * CRBC / PRBC</td>
 </tr>
 <tr>
 <td style="text-align: left;">_J9</td>
@@ -3791,15 +3752,15 @@
                -  \frac{(\mathit{QL}+\mathit{QGI})\cdot \mathit{CLiver}}{\mathit{PL}}
                -  \mathit{kbiliary}\cdot \mathit{CLiver}
                -  \mathit{kmet_{liver}}\cdot \mathit{CLiver}\)</span></p>
-<p><span class="arithmatex">\(\frac{d[\mathtt{ARBC}]}{dt} =  \mathit{CPlasma}\cdot \mathit{Qrbc}
-             -  \frac{\mathit{Qrbc}\cdot \mathit{CRBC}}{\mathit{PRBC}}\)</span></p>
+<p><span class="arithmatex">\(\frac{d[\mathtt{ARBC}]}{dt} =  \mathit{CPlasma}\cdot \mathit{krbc}
+             -  \frac{\mathit{krbc}\cdot \mathit{CRBC}}{\mathit{PRBC}}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{APlasma}]}{dt} = -  \mathit{QGI}\cdot \mathit{CPlasma}
                 -  \mathit{QL}\cdot \mathit{CPlasma}
                 +  \frac{(\mathit{QL}+\mathit{QGI})\cdot \mathit{CLiver}}{\mathit{PL}}
                 -  \mathit{QRest}\cdot \mathit{CPlasma}
                 +  \frac{\mathit{QRest}\cdot \mathit{CRest}}{\mathit{PRest}}
-                -  \mathit{CPlasma}\cdot \mathit{Qrbc}
-                +  \frac{\mathit{Qrbc}\cdot \mathit{CRBC}}{\mathit{PRBC}}\)</span></p>
+                -  \mathit{CPlasma}\cdot \mathit{krbc}
+                +  \frac{\mathit{krbc}\cdot \mathit{CRBC}}{\mathit{PRBC}}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{ARest}]}{dt} =  \mathit{QRest}\cdot \mathit{CPlasma}
               -  \frac{\mathit{QRest}\cdot \mathit{CRest}}{\mathit{PRest}}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{AFeces}]}{dt} =  \mathit{kfe}\cdot \mathit{CGut_{lumen}}\)</span></p>
@@ -3814,6 +3775,30 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align: left;">Gut_lumen</td>
+<td style="text-align: left;">VGut_lumen</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gut</td>
+<td style="text-align: left;">VG</td>
+</tr>
+<tr>
+<td style="text-align: left;">Liver</td>
+<td style="text-align: left;">VL</td>
+</tr>
+<tr>
+<td style="text-align: left;">Red_Blood_Cell</td>
+<td style="text-align: left;">VRBC</td>
+</tr>
+<tr>
+<td style="text-align: left;">Plasma</td>
+<td style="text-align: left;">VPlasma</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rest</td>
+<td style="text-align: left;">VRest</td>
+</tr>
 <tr>
 <td style="text-align: left;">VGut_lumen</td>
 <td style="text-align: left;">VGut_lumenc * BW</td>
@@ -3836,7 +3821,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">VRest</td>
-<td style="text-align: left;">BW - VGut_lumen - VG - VL - VRBC - VPlasma</td>
+<td style="text-align: left;">BW - VG - VL - VRBC - VPlasma</td>
 </tr>
 <tr>
 <td style="text-align: left;">QC</td>
@@ -3855,16 +3840,16 @@
 <td style="text-align: left;">QC - QL - QGI</td>
 </tr>
 <tr>
-<td style="text-align: left;">Qrbc</td>
-<td style="text-align: left;">Qrbcc * pow(BW, 0.75)</td>
-</tr>
-<tr>
 <td style="text-align: left;">kabs</td>
 <td style="text-align: left;">kabsc * pow(BW, 0.75)</td>
 </tr>
 <tr>
 <td style="text-align: left;">kfe</td>
 <td style="text-align: left;">kfec * pow(BW, 0.75)</td>
+</tr>
+<tr>
+<td style="text-align: left;">krbc</td>
+<td style="text-align: left;">krbcc * pow(BW, 0.75)</td>
 </tr>
 <tr>
 <td style="text-align: left;">kmet_gutlumen</td>
@@ -3904,41 +3889,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="initial-assignments">Initial assignments</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">variable</th>
-<th style="text-align: left;">assignment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Gut_lumen</td>
-<td style="text-align: left;">VGut_lumen</td>
-</tr>
-<tr>
-<td style="text-align: left;">Gut</td>
-<td style="text-align: left;">VG</td>
-</tr>
-<tr>
-<td style="text-align: left;">Liver</td>
-<td style="text-align: left;">VL</td>
-</tr>
-<tr>
-<td style="text-align: left;">Red_Blood_Cell</td>
-<td style="text-align: left;">VRBC</td>
-</tr>
-<tr>
-<td style="text-align: left;">Plasma</td>
-<td style="text-align: left;">VPlasma</td>
-</tr>
-<tr>
-<td style="text-align: left;">Rest</td>
-<td style="text-align: left;">VRest</td>
-</tr>
-</tbody>
-</table>
 <h2 id="parameters">Parameters</h2>
 <table>
 <thead>
@@ -3965,38 +3915,38 @@
 <tr>
 <td style="text-align: left;">VGut_lumenc</td>
 <td style="text-align: left;">Volume fraction of gut lumen</td>
-<td style="text-align: left;">dimensionless</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/kg</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_04086</td>
 </tr>
 <tr>
 <td style="text-align: left;">VGc</td>
 <td style="text-align: left;">Volume fraction of gut</td>
-<td style="text-align: left;">dimensionless</td>
+<td style="text-align: left;">L/kg</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00509</td>
 </tr>
 <tr>
 <td style="text-align: left;">VLc</td>
 <td style="text-align: left;">Volume fraction of liver</td>
-<td style="text-align: left;">dimensionless</td>
+<td style="text-align: left;">L/kg</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00078</td>
 </tr>
 <tr>
 <td style="text-align: left;">VRBCc</td>
 <td style="text-align: left;">Volume fraction of red blood cells</td>
-<td style="text-align: left;">dimensionless</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/kg</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_04058</td>
 </tr>
 <tr>
 <td style="text-align: left;">VPlasmac</td>
 <td style="text-align: left;">Volume fraction of plasma</td>
-<td style="text-align: left;">dimensionless</td>
+<td style="text-align: left;">L/kg</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00104</td>
 </tr>
 <tr>
 <td style="text-align: left;">VGut_lumen</td>
 <td style="text-align: left;">Volume of gut lumen</td>
 <td style="text-align: left;">L</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_04068</td>
 </tr>
 <tr>
 <td style="text-align: left;">VG</td>
@@ -4031,7 +3981,7 @@
 <tr>
 <td style="text-align: left;">QC</td>
 <td style="text-align: left;">Cardiac output</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/h/kg^0.75</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00013</td>
 </tr>
 <tr>
@@ -4045,12 +3995,6 @@
 <td style="text-align: left;">Cardiac output fraction to gut</td>
 <td style="text-align: left;">dimensionless</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00513</td>
-</tr>
-<tr>
-<td style="text-align: left;">Qrbcc</td>
-<td style="text-align: left;">Maternal red cells / plasma diffusion</td>
-<td style="text-align: left;">dimensionless</td>
-<td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">QGI</td>
@@ -4071,30 +4015,6 @@
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00050</td>
 </tr>
 <tr>
-<td style="text-align: left;">Qrbc</td>
-<td style="text-align: left;">Maternal red cells / plasma diffusion</td>
-<td style="text-align: left;">L/h</td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">kabsc</td>
-<td style="text-align: left;">Reabsorption rate in gut</td>
-<td style="text-align: left;">dimensionless</td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">kabs</td>
-<td style="text-align: left;">Reabsorption rate in gut</td>
-<td style="text-align: left;">dimensionless</td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">Frac</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
 <td style="text-align: left;">PGI</td>
 <td style="text-align: left;">Partition coefficient blood-gut</td>
 <td style="text-align: left;">dimensionless</td>
@@ -4110,7 +4030,7 @@
 <td style="text-align: left;">PRBC</td>
 <td style="text-align: left;">Partition coefficient red blood cells</td>
 <td style="text-align: left;">dimensionless</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_03030</td>
 </tr>
 <tr>
 <td style="text-align: left;">PRest</td>
@@ -4119,9 +4039,27 @@
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00585</td>
 </tr>
 <tr>
+<td style="text-align: left;">kabsc</td>
+<td style="text-align: left;">Reabsorption rate in gut</td>
+<td style="text-align: left;">L/h/kg^0.75</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_03002</td>
+</tr>
+<tr>
+<td style="text-align: left;">kabs</td>
+<td style="text-align: left;">Reabsorption rate in gut</td>
+<td style="text-align: left;">L/h</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_03024</td>
+</tr>
+<tr>
+<td style="text-align: left;">Frac</td>
+<td style="text-align: left;">Fraction</td>
+<td style="text-align: left;">dimensionless</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00139</td>
+</tr>
+<tr>
 <td style="text-align: left;">kfec</td>
 <td style="text-align: left;">fecal elimination rate</td>
-<td style="text-align: left;">dimensionless</td>
+<td style="text-align: left;">L/h/kg^0.75</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00236</td>
 </tr>
 <tr>
@@ -4131,34 +4069,46 @@
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00230</td>
 </tr>
 <tr>
+<td style="text-align: left;">krbcc</td>
+<td style="text-align: left;">red blood cell/plasma diffusion</td>
+<td style="text-align: left;">L/h/kg^0.75</td>
+<td style="text-align: left;"><em>not specified</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">krbc</td>
+<td style="text-align: left;">red blood cell/ plasma diffusion rate</td>
+<td style="text-align: left;">L/h</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00646</td>
+</tr>
+<tr>
 <td style="text-align: left;">kmet_gutlumenc</td>
 <td style="text-align: left;">Metabolism rate constant in gut</td>
 <td style="text-align: left;">dimensionless</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_03028</td>
 </tr>
 <tr>
 <td style="text-align: left;">kmet_gutlumen</td>
 <td style="text-align: left;">Metabolism rate in gut</td>
-<td style="text-align: left;">dimensionless</td>
+<td style="text-align: left;">L/h/kg^0.75</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">kmet_liverc</td>
 <td style="text-align: left;">metabolism rate constant in liver</td>
-<td style="text-align: left;">dimensionless</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/h/kg^0.75</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_03027</td>
 </tr>
 <tr>
 <td style="text-align: left;">kmet_liver</td>
 <td style="text-align: left;">metabolism rate in liver</td>
-<td style="text-align: left;">dimensionless</td>
+<td style="text-align: left;">L/h</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">kbiliaryc</td>
 <td style="text-align: left;">Biliary clearance</td>
-<td style="text-align: left;">dimensionless</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00233</td>
+<td style="text-align: left;">L/h/kg^0.75</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_03007</td>
 </tr>
 <tr>
 <td style="text-align: left;">kbiliary</td>
@@ -4170,7 +4120,7 @@
 <td style="text-align: left;">CGut_lumen</td>
 <td style="text-align: left;">Concentration in gut lumen</td>
 <td style="text-align: left;">ug/L</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06047</td>
 </tr>
 <tr>
 <td style="text-align: left;">CGI</td>

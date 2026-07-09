@@ -17,14 +17,14 @@ digraph {
 			fillcolor=gold,
 			href="#species-AGut_lumen",
 			label="AGut_lumen
-[-]",
+[PBPKO:06009]",
 			shape=box,
 			style="filled,rounded"];
 		AGutlumen_Met	[color=black,
 			fillcolor=mediumspringgreen,
 			href="#species-AGutlumen_Met",
 			label="AGutlumen_Met
-[-]",
+[PBPKO:06009]",
 			shape=box,
 			style="filled,rounded"];
 	}

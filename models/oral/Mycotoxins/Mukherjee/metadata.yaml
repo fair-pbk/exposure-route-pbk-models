@@ -11,25 +11,25 @@ applicability_domain:
     iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
 num_compartments: 12
 num_species: 16
-num_parameters: 51
+num_parameters: 49
 num_reactions: 22
 compartments:
 - id: GILumen
-  name: GI lumen compartment
+  name: Gut lumen compartment
   pbpko_bqm_is_class:
     id: PBPKO:00478
     label: gut lumen compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00478
   unit: L
 - id: Fast
-  name: Fast GI lumen compartment
+  name: Fast lumen compartment
   pbpko_bqm_is_class:
     id: PBPKO:00478
     label: gut lumen compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00478
   unit: L
 - id: Slow
-  name: Slow GI lumen compartment
+  name: Slow lumen compartment
   pbpko_bqm_is_class:
     id: PBPKO:00478
     label: gut lumen compartment
@@ -37,6 +37,10 @@ compartments:
   unit: L
 - id: Colon
   name: Colon compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:02002
+    label: colon compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_02002
   unit: L
 - id: Gut
   name: Gut compartment
@@ -67,7 +71,11 @@ compartments:
     iri: http://purl.obolibrary.org/obo/PBPKO_00450
   unit: L
 - id: Bile
-  name: Bile (pseudo) compartment
+  name: Bile compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:02001
+    label: bile compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_02001
   unit: L
 - id: Feces
   name: Feces compartment
@@ -93,32 +101,48 @@ compartments:
 species:
 - id: AGILumen
   name: Amount in GI lumen
+  pbpko_bqm_is_class:
+    id: PBPKO:00496
+    label: amount in gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00496
   chebi_bqb_is_class:
     id: CHEBI:10106
     label: zearalenone
     iri: http://purl.obolibrary.org/obo/CHEBI_10106
-  unit: ng
+  unit: umol
 - id: AFast
-  name: Amount in fast GI lumen
+  name: Amount in fast lumen
+  pbpko_bqm_is_class:
+    id: PBPKO:00496
+    label: amount in gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00496
   chebi_bqb_is_class:
     id: CHEBI:10106
     label: zearalenone
     iri: http://purl.obolibrary.org/obo/CHEBI_10106
-  unit: ng
+  unit: umol
 - id: ASlow
-  name: Amount in slow GI lumen
+  name: Amount in slow lumen
+  pbpko_bqm_is_class:
+    id: PBPKO:00496
+    label: amount in gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00496
   chebi_bqb_is_class:
     id: CHEBI:10106
     label: zearalenone
     iri: http://purl.obolibrary.org/obo/CHEBI_10106
-  unit: ng
+  unit: umol
 - id: AColon
   name: Amount in colon
+  pbpko_bqm_is_class:
+    id: PBPKO:06011
+    label: amount in colon
+    iri: http://purl.obolibrary.org/obo/PBPKO_06011
   chebi_bqb_is_class:
     id: CHEBI:10106
     label: zearalenone
     iri: http://purl.obolibrary.org/obo/CHEBI_10106
-  unit: ng
+  unit: umol
 - id: AGut
   name: Amount in gut
   pbpko_bqm_is_class:
@@ -129,7 +153,7 @@ species:
     id: CHEBI:10106
     label: zearalenone
     iri: http://purl.obolibrary.org/obo/CHEBI_10106
-  unit: ng
+  unit: umol
 - id: ALiver
   name: Amount in liver
   pbpko_bqm_is_class:
@@ -140,7 +164,7 @@ species:
     id: CHEBI:10106
     label: zearalenone
     iri: http://purl.obolibrary.org/obo/CHEBI_10106
-  unit: ng
+  unit: umol
 - id: ABlood
   name: Amount in blood
   pbpko_bqm_is_class:
@@ -151,7 +175,7 @@ species:
     id: CHEBI:10106
     label: zearalenone
     iri: http://purl.obolibrary.org/obo/CHEBI_10106
-  unit: ng
+  unit: umol
 - id: ARest
   name: Amount in rest of body
   pbpko_bqm_is_class:
@@ -162,28 +186,40 @@ species:
     id: CHEBI:10106
     label: zearalenone
     iri: http://purl.obolibrary.org/obo/CHEBI_10106
-  unit: ng
+  unit: umol
 - id: ASt
   name: Amount in stomach
+  pbpko_bqm_is_class:
+    id: PBPKO:06004
+    label: amount in stomach
+    iri: http://purl.obolibrary.org/obo/PBPKO_06004
   chebi_bqb_is_class:
     id: CHEBI:10106
     label: zearalenone
     iri: http://purl.obolibrary.org/obo/CHEBI_10106
-  unit: ng
+  unit: umol
 - id: ASpleen
   name: Amount in spleen
+  pbpko_bqm_is_class:
+    id: PBPKO:06013
+    label: amount in spleen
+    iri: http://purl.obolibrary.org/obo/PBPKO_06013
   chebi_bqb_is_class:
     id: CHEBI:10106
     label: zearalenone
     iri: http://purl.obolibrary.org/obo/CHEBI_10106
-  unit: ng
+  unit: umol
 - id: ABile
-  name: Amount in Bile (may be removed)
+  name: Amount in bile
+  pbpko_bqm_is_class:
+    id: PBPKO:06012
+    label: amount in bile
+    iri: http://purl.obolibrary.org/obo/PBPKO_06012
   chebi_bqb_is_class:
     id: CHEBI:10106
     label: zearalenone
     iri: http://purl.obolibrary.org/obo/CHEBI_10106
-  unit: ng
+  unit: umol
 - id: AFeces
   name: Amount in feces
   pbpko_bqm_is_class:
@@ -194,19 +230,51 @@ species:
     id: CHEBI:10106
     label: zearalenone
     iri: http://purl.obolibrary.org/obo/CHEBI_10106
-  unit: ng
+  unit: umol
 - id: ALiverMet1
-  name: Amount of metabolite in liver
-  unit: ng
+  name: Amount in liver (metabolised)
+  pbpko_bqm_is_class:
+    id: PBPKO:00497
+    label: amount in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: umol
 - id: ALiverMet2
-  name: Amount of metabolite in liver
-  unit: ng
+  name: Amount in liver (metabolised)
+  pbpko_bqm_is_class:
+    id: PBPKO:00497
+    label: amount in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: umol
 - id: ALiverMet3
-  name: Amount of metabolite in liver
-  unit: ng
+  name: Amount in liver (metabolised)
+  pbpko_bqm_is_class:
+    id: PBPKO:00497
+    label: amount in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: umol
 - id: ALiverMet4
-  name: Amount of metabolite in liver
-  unit: ng
+  name: Amount in liver (metabolised)
+  pbpko_bqm_is_class:
+    id: PBPKO:00497
+    label: amount in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: umol
 parameters:
 - id: BW
   name: Bodyweight
@@ -221,17 +289,21 @@ parameters:
     id: PBPKO:00078
     label: fraction of liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00078
-  unit: dimensionless
+  unit: L/kg
 - id: VBc
   name: Volume fraction of blood
-  unit: dimensionless
+  pbpko_bqm_is_class:
+    id: PBPKO:04057
+    label: volume fraction of blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_04057
+  unit: L/kg
 - id: VGc
   name: Volume fraction of gut
   pbpko_bqm_is_class:
     id: PBPKO:00509
     label: fraction of gut
     iri: http://purl.obolibrary.org/obo/PBPKO_00509
-  unit: dimensionless
+  unit: L/kg
 - id: VL
   name: Volume of liver
   pbpko_bqm_is_class:
@@ -256,9 +328,9 @@ parameters:
 - id: VSt
   name: Volume of stomach
   pbpko_bqm_is_class:
-    id: PBPKO:00067
-    label: volume of stomach
-    iri: http://purl.obolibrary.org/obo/PBPKO_00067
+    id: PBPKO:00068
+    label: fraction of stomach
+    iri: http://purl.obolibrary.org/obo/PBPKO_00068
   unit: L
 - id: VSpleen
   name: Volume of spleen
@@ -268,7 +340,11 @@ parameters:
     iri: http://purl.obolibrary.org/obo/PBPKO_00095
   unit: L
 - id: VBile
-  name: Volume of bile
+  name: Volume of bile (pseudo-compartment)
+  pbpko_bqm_is_class:
+    id: PBPKO:04042
+    label: volume of bile
+    iri: http://purl.obolibrary.org/obo/PBPKO_04042
   unit: L
 - id: VRest
   name: Volume of rest of body
@@ -285,59 +361,67 @@ parameters:
     iri: http://purl.obolibrary.org/obo/PBPKO_00013
   unit: L/h
 - id: QLc
-  name: Cardiac output fraction to liver
+  name: Blood flow to liver fraction
   pbpko_bqm_is_class:
     id: PBPKO:00025
     label: fraction of blood flow to liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00025
   unit: dimensionless
 - id: QGc
-  name: Cardiac output fraction to gut
+  name: Blood flow fraction to gut
   pbpko_bqm_is_class:
     id: PBPKO:00513
     label: fraction of blood flow to gut
     iri: http://purl.obolibrary.org/obo/PBPKO_00513
   unit: dimensionless
 - id: QL
-  name: Cardiac output to liver
+  name: Blood flow to liver
   pbpko_bqm_is_class:
     id: PBPKO:00024
     label: blood flow rate to liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00024
   unit: L/h
 - id: QG
-  name: Cardiac output to gut
+  name: Blood flow to gut
   pbpko_bqm_is_class:
     id: PBPKO:00531
     label: blood flow rate to gut
     iri: http://purl.obolibrary.org/obo/PBPKO_00531
   unit: L/h
 - id: QSpleen
-  name: Cardiac output to spleen
+  name: Blood flow to spleen
   pbpko_bqm_is_class:
     id: PBPKO:00042
     label: blood flow rate to spleen
     iri: http://purl.obolibrary.org/obo/PBPKO_00042
   unit: L/h
 - id: QSt
-  name: Cardiac output to stomach
+  name: Blood flow to stomach
   pbpko_bqm_is_class:
     id: PBPKO:00014
     label: blood flow rate to stomach
     iri: http://purl.obolibrary.org/obo/PBPKO_00014
   unit: L/h
 - id: QRest
-  name: Cardiac output to rest of body
+  name: Blood flow to rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00050
     label: blood flow rate to restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00050
   unit: L/h
 - id: QBile
-  name: Cardiac output to Bile
+  name: Blood flow to bile
+  pbpko_bqm_is_class:
+    id: PBPKO:04045
+    label: blood flow rate to bile
+    iri: http://purl.obolibrary.org/obo/PBPKO_04045
   unit: L/h
 - id: QLhep
-  name: arterial hepatic blood flow
+  name: Hepatic arterial blood flow
+  pbpko_bqm_is_class:
+    id: PBPKO:04100
+    label: hepatic arterial blood flow
+    iri: http://purl.obolibrary.org/obo/PBPKO_04100
   unit: L/h
 - id: PL
   name: Partition coefficient blood-liver
@@ -395,78 +479,176 @@ parameters:
     iri: http://purl.obolibrary.org/obo/CHEBI_10106
   unit: dimensionless
 - id: ktFL
-  name: Transfer kinetic constant GI lumen to fast lumen
+  name: Transport rate from GI to fast lumen
+  pbpko_bqm_is_class:
+    id: PBPKO:03001
+    label: intrinsic gastric emptying rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03001
+  chebi_bqb_is_class:
+    id: CHEBI:10106
+    label: zearalenone
+    iri: http://purl.obolibrary.org/obo/CHEBI_10106
   unit: /h
 - id: ktSL
-  name: Transfer kinetic constant GI lumen to slow lumen
+  name: Transport rate from GI to slow lumen
+  pbpko_bqm_is_class:
+    id: PBPKO:03001
+    label: intrinsic gastric emptying rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03001
+  chebi_bqb_is_class:
+    id: CHEBI:10106
+    label: zearalenone
+    iri: http://purl.obolibrary.org/obo/CHEBI_10106
   unit: /h
 - id: kt
-  name: Kinetic constant slow lumen to colon
+  name: transport rate from slow lumen to colon
+  pbpko_bqm_is_class:
+    id: PBPKO:03015
+    label: kinetic emptying  rate between intestinal segments
+    iri: http://purl.obolibrary.org/obo/PBPKO_03015
+  chebi_bqb_is_class:
+    id: CHEBI:10106
+    label: zearalenone
+    iri: http://purl.obolibrary.org/obo/CHEBI_10106
   unit: /h
 - id: kabsFL
-  name: Kinetic constant fast lumen to gut
+  name: Absorption rate from fast lumen
+  pbpko_bqm_is_class:
+    id: PBPKO:00142
+    label: absorption rate constant intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00142
+  chebi_bqb_is_class:
+    id: CHEBI:10106
+    label: zearalenone
+    iri: http://purl.obolibrary.org/obo/CHEBI_10106
   unit: /h
 - id: kabsSL
-  name: Kinetic constant slow lumen to gut
+  name: Absorption rate constant in slow lumen
+  pbpko_bqm_is_class:
+    id: PBPKO:00142
+    label: absorption rate constant intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00142
+  chebi_bqb_is_class:
+    id: CHEBI:10106
+    label: zearalenone
+    iri: http://purl.obolibrary.org/obo/CHEBI_10106
   unit: /h
 - id: kfe
-  name: Kinetic constant colon to feces
+  name: Fecal elimination rate
+  pbpko_bqm_is_class:
+    id: PBPKO:00230
+    label: fecal clearance rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00230
+  chebi_bqb_is_class:
+    id: CHEBI:10106
+    label: zearalenone
+    iri: http://purl.obolibrary.org/obo/CHEBI_10106
   unit: /h
 - id: kbiliary
   name: Kinetic constant biliary excretion (liver to bile)
-  unit: /h
-- id: VmaxGZEA
-  name: Vmax gut metabolism
   pbpko_bqm_is_class:
-    id: SBO:0000027
-    label: Michaelis constant
-    iri: http://biomodels.net/SBO/SBO_0000027
+    id: PBPKO:00233
+    label: biliary clearance rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00233
   chebi_bqb_is_class:
     id: CHEBI:10106
     label: zearalenone
     iri: http://purl.obolibrary.org/obo/CHEBI_10106
-  unit: ''
-- id: KmGZEA
-  name: Km gut metabolism
-  pbpko_bqm_is_class:
-    id: SBO:0000027
-    label: Michaelis constant
-    iri: http://biomodels.net/SBO/SBO_0000027
-  chebi_bqb_is_class:
-    id: CHEBI:10106
-    label: zearalenone
-    iri: http://purl.obolibrary.org/obo/CHEBI_10106
-  unit: ''
+  unit: dimensionless
 - id: VLkg
-  name: Volume fraction of liver convert to kg
+  name: Fraction of liver (in bodyweight)
   pbpko_bqm_is_class:
     id: PBPKO:00078
     label: fraction of liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00078
   unit: g/kg
 - id: CLintLMet1C
-  name: Vmax/Km for reaction ZEA -> ZEAGLU
-  unit: ''
+  name: Vmax/Km value
+  pbpko_bqm_is_class:
+    id: SBO:0000027
+    label: Michaelis constant
+    iri: http://biomodels.net/SBO/SBO_0000027
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: mL/min/g
 - id: CLintLMet1
-  name: Vmax/Km for reaction ZEA -> ZEAGLU
+  name: Vmax/Km value
+  pbpko_bqm_is_class:
+    id: SBO:0000027
+    label: Michaelis constant
+    iri: http://biomodels.net/SBO/SBO_0000027
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
   unit: L/h
 - id: CLintLMet2C
-  name: Vmax/Km for reaction ZEA -> a-ZOL
-  unit: ''
+  name: Vmax/Km value
+  pbpko_bqm_is_class:
+    id: SBO:0000027
+    label: Michaelis constant
+    iri: http://biomodels.net/SBO/SBO_0000027
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: mL/min/g
 - id: CLintLMet2
-  name: Vmax/Km for reaction ZEA -> a-ZOL
+  name: Vmax/Km value
+  pbpko_bqm_is_class:
+    id: SBO:0000027
+    label: Michaelis constant
+    iri: http://biomodels.net/SBO/SBO_0000027
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
   unit: L/h
 - id: CLintLMet3C
-  name: Vmax/Km for reaction ZEA -> b-ZOL
-  unit: ''
+  name: Vmax/Km value
+  pbpko_bqm_is_class:
+    id: SBO:0000027
+    label: Michaelis constant
+    iri: http://biomodels.net/SBO/SBO_0000027
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: mL/min/g
 - id: CLintLMet3
-  name: Vmax/Km for reaction ZEA -> b-ZOL
+  name: Vmax/Km value
+  pbpko_bqm_is_class:
+    id: SBO:0000027
+    label: Michaelis constant
+    iri: http://biomodels.net/SBO/SBO_0000027
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
   unit: L/h
 - id: CLintLMet4C
-  name: Vmax/Km for reaction ZEA -> ZAN
-  unit: ''
+  name: Vmax/Km value
+  pbpko_bqm_is_class:
+    id: SBO:0000027
+    label: Michaelis constant
+    iri: http://biomodels.net/SBO/SBO_0000027
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: mL/min/g
 - id: CLintLMet4
-  name: Vmax/Km for reaction ZEA -> ZAN
+  name: Vmax/Km value
+  pbpko_bqm_is_class:
+    id: SBO:0000027
+    label: Michaelis constant
+    iri: http://biomodels.net/SBO/SBO_0000027
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
   unit: L/h
 - id: CGut
   name: Concentration in gut
@@ -474,37 +656,49 @@ parameters:
     id: PBPKO:00538
     label: concentration in gut
     iri: http://purl.obolibrary.org/obo/PBPKO_00538
-  unit: ''
+  unit: umol/L
 - id: CLiver
   name: Concentration in liver
   pbpko_bqm_is_class:
     id: PBPKO:00539
     label: concentration in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00539
-  unit: ''
+  unit: umol/L
 - id: CBlood
   name: Concentration in blood
   pbpko_bqm_is_class:
     id: PBPKO:00301
     label: concentration in blood
     iri: http://purl.obolibrary.org/obo/PBPKO_00301
-  unit: ''
+  unit: umol/L
 - id: CRest
   name: Concentration in rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00548
     label: concentration in restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00548
-  unit: ''
+  unit: umol/L
 - id: CStomach
   name: Concentration in stomach
-  unit: ''
+  pbpko_bqm_is_class:
+    id: PBPKO:06041
+    label: concentration in stomach
+    iri: http://purl.obolibrary.org/obo/PBPKO_06041
+  unit: umol/L
 - id: CSpleen
   name: Concentration in spleen
-  unit: ''
+  pbpko_bqm_is_class:
+    id: PBPKO:06049
+    label: concentration in spleen
+    iri: http://purl.obolibrary.org/obo/PBPKO_06049
+  unit: umol/L
 - id: CBile
-  name: Concentration in bile
-  unit: ''
+  name: Concentration in Bile
+  pbpko_bqm_is_class:
+    id: PBPKO:06048
+    label: concentration in bile
+    iri: http://purl.obolibrary.org/obo/PBPKO_06048
+  unit: umol/L
 parameterisations:
 - filename: Mukherjee.params.csv
   model_id: Mukherjee2014_Human_PBK
@@ -519,7 +713,7 @@ parameterisations:
       iri: http://purl.obolibrary.org/obo/PBPKO_00008
   - id: VLc
     value: 0.026
-    unit: dimensionless
+    unit: L/kg
     reference: ''
     bqm_is:
       id: PBPKO:00078
@@ -527,11 +721,15 @@ parameterisations:
       iri: http://purl.obolibrary.org/obo/PBPKO_00078
   - id: VBc
     value: 0.074
-    unit: dimensionless
+    unit: L/kg
     reference: ''
+    bqm_is:
+      id: PBPKO:04057
+      label: volume fraction of blood
+      iri: http://purl.obolibrary.org/obo/PBPKO_04057
   - id: VGc
     value: 0.009
-    unit: dimensionless
+    unit: L/kg
     reference: ''
     bqm_is:
       id: PBPKO:00509
@@ -542,9 +740,9 @@ parameterisations:
     unit: L
     reference: ''
     bqm_is:
-      id: PBPKO:00067
-      label: volume of stomach
-      iri: http://purl.obolibrary.org/obo/PBPKO_00067
+      id: PBPKO:00068
+      label: fraction of stomach
+      iri: http://purl.obolibrary.org/obo/PBPKO_00068
   - id: VSpleen
     value: 0.2
     unit: L
@@ -557,6 +755,10 @@ parameterisations:
     value: 0.5
     unit: L
     reference: ''
+    bqm_is:
+      id: PBPKO:04042
+      label: volume of bile
+      iri: http://purl.obolibrary.org/obo/PBPKO_04042
   - id: QLc
     value: 0.046
     unit: dimensionless
@@ -593,6 +795,10 @@ parameterisations:
     value: 0.031
     unit: L/h
     reference: ''
+    bqm_is:
+      id: PBPKO:04045
+      label: blood flow rate to bile
+      iri: http://purl.obolibrary.org/obo/PBPKO_04045
   - id: PL
     value: 4.56
     unit: dimensionless
@@ -657,195 +863,51 @@ parameterisations:
     value: 0.0
     unit: /h
     reference: ''
+    bqm_is:
+      id: PBPKO:00142
+      label: absorption rate constant intestine
+      iri: http://purl.obolibrary.org/obo/PBPKO_00142
+    bqb_is:
+      id: CHEBI:10106
+      label: zearalenone
+      iri: http://purl.obolibrary.org/obo/CHEBI_10106
+  - id: CLintLMet1C
+    value: 0.004776
+    unit: mL/min/g
+    reference: ''
+    bqm_is:
+      id: SBO:0000027
+      label: Michaelis constant
+      iri: http://biomodels.net/SBO/SBO_0000027
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: CLintLMet2C
+    value: 0.0236
+    unit: mL/min/g
+    reference: ''
+    bqm_is:
+      id: SBO:0000027
+      label: Michaelis constant
+      iri: http://biomodels.net/SBO/SBO_0000027
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: CLintLMet3C
+    value: 0.007057
+    unit: mL/min/g
+    reference: ''
+    bqm_is:
+      id: SBO:0000027
+      label: Michaelis constant
+      iri: http://biomodels.net/SBO/SBO_0000027
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
 unit_consistency:
-- level: error
-  msg: In situations where a mathematical expression refers to extent, the units of
-    extent should be consistent with the global extent units of the model. In models
-    where the 'extentUnits' attribute has not been declared, libSBML does not yet
-    have the functionality to verify accurately the consistency of the units in such
-    expressions.
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'VmaxGZEA' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'VmaxGZEA' does not have\
-    \ a 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'KmGZEA' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'KmGZEA' does not have\
-    \ a 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'CLintLMet1C' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CLintLMet1C' does not\
-    \ have a 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'CLintLMet2C' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CLintLMet2C' does not\
-    \ have a 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'CLintLMet3C' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CLintLMet3C' does not\
-    \ have a 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'CLintLMet4C' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CLintLMet4C' does not\
-    \ have a 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'CGut' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CGut' does not have a\
-    \ 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'CLiver' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CLiver' does not have\
-    \ a 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'CBlood' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CBlood' does not have\
-    \ a 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'CRest' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CRest' does not have\
-    \ a 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'CStomach' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CStomach' does not have\
-    \ a 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'CSpleen' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CSpleen' does not have\
-    \ a 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'CBile' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'CBile' does not have\
-    \ a 'units' attribute."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -867,27 +929,6 @@ unit_consistency:
     \ <initialAssignment> <math> expression '7.057 * pow(10, -3)' cannot be fully\
     \ checked. Unit consistency reported as either no errors or further unit errors\
     \ related to this object may not be accurate."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'VL' are gram (exponent = 1,\
-    \ multiplier = 1000, scale = 0)."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'VB' are gram (exponent = 1,\
-    \ multiplier = 1000, scale = 0)."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'VG' are gram (exponent = 1,\
-    \ multiplier = 1000, scale = 0)."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -986,115 +1027,3 @@ unit_consistency:
     \ <assignmentRule> <math> expression 'CLintLMet4C * VLkg * BW * 60 / 1000' cannot\
     \ be fully checked. Unit consistency reported as either no errors or further unit\
     \ errors related to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QG * CBlood' cannot be fully checked. Unit consistency\
-    \ reported as either no errors or further unit errors related to this object may\
-    \ not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QG * CGut / PG' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QLhep * CBlood' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QL * CLiver / PL' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QRest * CBlood' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QRest * CRest / PRest' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'CLintLMet1 * CLiver' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'CLintLMet2 * CLiver' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'CLintLMet3 * CLiver' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'CLintLMet4 * CLiver' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QBile * kbiliary * CLiver' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QBile * CBile' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QSt * CBlood' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QSt * CStomach / PStomach' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QSpleen * CBlood' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'QSpleen * CSpleen / PSpleen' cannot be fully\
-    \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate."

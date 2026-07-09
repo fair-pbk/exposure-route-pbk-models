@@ -21,24 +21,6 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 	}
-	subgraph cluster_Liver {
-		graph [color=black,
-			fillcolor=lightblue,
-			fontname=Arial,
-			href="#compartment-Liver",
-			label="Liver
-[PBPKO:00558]",
-			shape=box,
-			style="filled,rounded"
-		];
-		ALiver_Met	[color=black,
-			fillcolor=gold,
-			href="#species-ALiver_Met",
-			label="ALiver_Met
-[PBPKO:00497]",
-			shape=box,
-			style="filled,rounded"];
-	}
 	subgraph cluster_Blood {
 		graph [color=black,
 			fillcolor=lightblue,
@@ -57,8 +39,66 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 	}
+	subgraph cluster_Rest {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Rest",
+			label="Rest
+[PBPKO:00450]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ARest	[color=black,
+			fillcolor=gold,
+			href="#species-ARest",
+			label="ARest
+[PBPKO:00501]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Hair {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Hair",
+			label="Hair
+[PBPKO:00479]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AHair	[color=black,
+			fillcolor=gold,
+			href="#species-AHair",
+			label="AHair
+[-]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Liver {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Liver",
+			label="Liver
+[PBPKO:00558]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALiver_Met	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver_Met",
+			label="ALiver_Met
+[PBPKO:00497]",
+			shape=box,
+			style="filled,rounded"];
+	}
 	AGI -> ABlood	[label=_J0,
 		minlen=1];
-	ABlood -> ALiver_Met	[label=_J1,
+	ABlood -> ARest	[label=_J1,
 		minlen=1];
+	ABlood -> AHair	[label=_J2,
+		minlen=2];
+	ABlood -> ALiver_Met	[label=_J3,
+		minlen=3];
 }

@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://fair-pbk.github.io/exposure-route-pbk-models/models/oral/Heavy%20Metals/Carrier2001/summary/">
       
       
-        <link rel="prev" href="../../Bechaux2014/summary/">
+        <link rel="prev" href="../../../Bisphenols/Yang/summary/">
       
       
         <link rel="next" href="../../Clewell1999/summary/">
@@ -811,34 +811,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Bechaux2014/summary/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Bechaux 2014_Female
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -983,17 +955,6 @@
     <span class="md-ellipsis">
       
         Assignment rules
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#initial-assignments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Initial assignments
       
     </span>
   </a>
@@ -1203,34 +1164,6 @@
     
   
     Pouillot 2022
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Ruiz2010/summary/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Ruiz 2010_Female
   
 
     
@@ -1621,6 +1554,34 @@
     
   
     Mallick
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Pesticides/Moerenhout/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moerenhout
   
 
     
@@ -3513,7 +3474,7 @@
 <p><notes>
 <br />
 <body xmlns="http://www.w3.org/1999/xhtml">
-    <p>Hg PBK (Carrier et al., 2001): </p>
+    <p>Hg PBK (Carrier et al., 2001) </p>
   </body></p>
 <p></notes></p>
 <h2 id="overview">Overview</h2>
@@ -3551,15 +3512,15 @@
 </tr>
 <tr>
 <td style="text-align: left;">Number of compartments</td>
-<td style="text-align: left;">3</td>
+<td style="text-align: left;">5</td>
 </tr>
 <tr>
 <td style="text-align: left;">Number of species</td>
-<td style="text-align: left;">3</td>
+<td style="text-align: left;">5</td>
 </tr>
 <tr>
 <td style="text-align: left;">Number of parameters</td>
-<td style="text-align: left;">12 (7 external / 5 internal)</td>
+<td style="text-align: left;">7 (6 external / 1 internal)</td>
 </tr>
 </tbody>
 </table>
@@ -3583,16 +3544,28 @@
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00477</td>
 </tr>
 <tr>
-<td style="text-align: left;">Liver</td>
-<td style="text-align: left;">Liver compartment</td>
-<td style="text-align: left;">L</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00558</td>
-</tr>
-<tr>
 <td style="text-align: left;">Blood</td>
 <td style="text-align: left;">Blood compartment</td>
 <td style="text-align: left;">L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00464</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rest</td>
+<td style="text-align: left;">Rest of body compartment</td>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00450</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hair</td>
+<td style="text-align: left;">Hair compartment</td>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00479</td>
+</tr>
+<tr>
+<td style="text-align: left;">Liver</td>
+<td style="text-align: left;">Liver compartment</td>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00558</td>
 </tr>
 </tbody>
 </table>
@@ -3618,6 +3591,18 @@
 <td style="text-align: left;">Amount in blood</td>
 <td style="text-align: left;">mg</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00623</td>
+</tr>
+<tr>
+<td style="text-align: left;">ARest</td>
+<td style="text-align: left;">Amount in rest of body</td>
+<td style="text-align: left;">mg</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00501</td>
+</tr>
+<tr>
+<td style="text-align: left;">AHair</td>
+<td style="text-align: left;">Amount in hair</td>
+<td style="text-align: left;">mg</td>
+<td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">ALiver_Met</td>
@@ -3647,6 +3632,18 @@
 <tr>
 <td style="text-align: left;">_J1</td>
 <td style="text-align: left;">ABlood</td>
+<td style="text-align: left;">ARest</td>
+<td style="text-align: left;">ABlood * kelim * K</td>
+</tr>
+<tr>
+<td style="text-align: left;">_J2</td>
+<td style="text-align: left;">ABlood</td>
+<td style="text-align: left;">AHair</td>
+<td style="text-align: left;">ABlood * K * kqh</td>
+</tr>
+<tr>
+<td style="text-align: left;">_J3</td>
+<td style="text-align: left;">ABlood</td>
 <td style="text-align: left;">ALiver_Met</td>
 <td style="text-align: left;">ABlood * kmet_liver</td>
 </tr>
@@ -3655,7 +3652,11 @@
 <h2 id="odes">ODEs</h2>
 <p><span class="arithmatex">\(\frac{d[\mathtt{AGI}]}{dt} = -  \mathit{kabs}\cdot \mathit{AGI}\cdot \mathit{Frac}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{ABlood}]}{dt} =  \mathit{kabs}\cdot \mathit{AGI}\cdot \mathit{Frac}
+               -  \mathit{ABlood}\cdot \mathit{kelim}\cdot \mathit{K}
+               -  \mathit{ABlood}\cdot \mathit{K}\cdot \mathit{kqh}
                -  \mathit{ABlood}\cdot \mathit{kmet_{liver}}\)</span></p>
+<p><span class="arithmatex">\(\frac{d[\mathtt{ARest}]}{dt} =  \mathit{ABlood}\cdot \mathit{kelim}\cdot \mathit{K}\)</span></p>
+<p><span class="arithmatex">\(\frac{d[\mathtt{AHair}]}{dt} =  \mathit{ABlood}\cdot \mathit{K}\cdot \mathit{kqh}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{ALiver-Met}]}{dt} =  \mathit{ABlood}\cdot \mathit{kmet_{liver}}\)</span></p>
 <h2 id="assignment-rules">Assignment rules</h2>
 <table>
@@ -3667,47 +3668,8 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">VB</td>
-<td style="text-align: left;">VBc * BW</td>
-</tr>
-<tr>
-<td style="text-align: left;">VGI</td>
-<td style="text-align: left;">VGIc * BW</td>
-</tr>
-<tr>
-<td style="text-align: left;">VL</td>
-<td style="text-align: left;">VLc * BW</td>
-</tr>
-<tr>
-<td style="text-align: left;">CGI</td>
-<td style="text-align: left;">AGI / GI</td>
-</tr>
-<tr>
-<td style="text-align: left;">CBlood</td>
-<td style="text-align: left;">ABlood / Blood</td>
-</tr>
-</tbody>
-</table>
-<h2 id="initial-assignments">Initial assignments</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">variable</th>
-<th style="text-align: left;">assignment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">GI</td>
-<td style="text-align: left;">VGI</td>
-</tr>
-<tr>
-<td style="text-align: left;">Liver</td>
-<td style="text-align: left;">VL</td>
-</tr>
-<tr>
-<td style="text-align: left;">Blood</td>
-<td style="text-align: left;">VB</td>
+<td style="text-align: left;">kelim</td>
+<td style="text-align: left;">kelim_all - kqh</td>
 </tr>
 </tbody>
 </table>
@@ -3723,52 +3685,10 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">BW</td>
-<td style="text-align: left;">Bodyweight</td>
-<td style="text-align: left;">kg</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00008</td>
-</tr>
-<tr>
-<td style="text-align: left;">VGIc</td>
-<td style="text-align: left;">Volume fraction of gut</td>
-<td style="text-align: left;">L/kg</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00509</td>
-</tr>
-<tr>
-<td style="text-align: left;">VBc</td>
-<td style="text-align: left;">Volume fraction of blood</td>
-<td style="text-align: left;">L/kg</td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">VLc</td>
-<td style="text-align: left;">Volume fraction of liver</td>
-<td style="text-align: left;">L/kg</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00078</td>
-</tr>
-<tr>
-<td style="text-align: left;">VB</td>
-<td style="text-align: left;">Volume of blood</td>
-<td style="text-align: left;">L</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00108</td>
-</tr>
-<tr>
-<td style="text-align: left;">VGI</td>
-<td style="text-align: left;">Volume of gastrointestinal compartment</td>
-<td style="text-align: left;">L</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00524</td>
-</tr>
-<tr>
-<td style="text-align: left;">VL</td>
-<td style="text-align: left;">Volume of liver</td>
-<td style="text-align: left;">L</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00077</td>
-</tr>
-<tr>
 <td style="text-align: left;">kabs</td>
 <td style="text-align: left;">Oral absorption rate constant</td>
 <td style="text-align: left;">/d</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_03075</td>
 </tr>
 <tr>
 <td style="text-align: left;">Frac</td>
@@ -3780,19 +3700,31 @@
 <td style="text-align: left;">kmet_liver</td>
 <td style="text-align: left;">Metabolism rate constant</td>
 <td style="text-align: left;">/d</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_03027</td>
+</tr>
+<tr>
+<td style="text-align: left;">kqh</td>
+<td style="text-align: left;">Transfer rate to hair</td>
+<td style="text-align: left;">/d</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
-<td style="text-align: left;">CGI</td>
-<td style="text-align: left;">Concentration in gastrointestinal compartment</td>
-<td style="text-align: left;">mg/L</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00538</td>
+<td style="text-align: left;">kelim_all</td>
+<td style="text-align: left;">Whole body elimination rate</td>
+<td style="text-align: left;">/d</td>
+<td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
-<td style="text-align: left;">CBlood</td>
-<td style="text-align: left;">Concentration in blood</td>
-<td style="text-align: left;">mg/L</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00301</td>
+<td style="text-align: left;">kelim</td>
+<td style="text-align: left;">Whole body elimination rate - excluding hair</td>
+<td style="text-align: left;">/d</td>
+<td style="text-align: left;"><em>not specified</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">K</td>
+<td style="text-align: left;">Constant ratio [Whole body burder/Blood]</td>
+<td style="text-align: left;">dimensionless</td>
+<td style="text-align: left;"><em>not specified</em></td>
 </tr>
 </tbody>
 </table>

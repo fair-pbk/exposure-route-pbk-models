@@ -13,10 +13,10 @@ digraph {
 			shape=box,
 			style="filled,rounded"
 		];
-		ASt	[color=black,
+		AStomach	[color=black,
 			fillcolor=gold,
-			href="#species-ASt",
-			label="ASt
+			href="#species-AStomach",
+			label="AStomach
 [PBPKO:06004]",
 			shape=box,
 			style="filled,rounded"];
@@ -35,7 +35,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ASI1",
 			label="ASI1
-[PBPKO:06010]",
+[PBPKO:06005]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -147,99 +147,21 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 	}
-	subgraph cluster_LI1 {
+	subgraph cluster_Colon {
 		graph [color=black,
 			fillcolor=lightblue,
 			fontname=Arial,
-			href="#compartment-LI1",
-			label="LI1
-[PBPKO:00474]",
+			href="#compartment-Colon",
+			label="Colon
+[PBPKO:02002]",
 			shape=box,
 			style="filled,rounded"
 		];
-		ALI1	[color=black,
+		AColon	[color=black,
 			fillcolor=gold,
-			href="#species-ALI1",
-			label="ALI1
-[PBPKO:06008]",
-			shape=box,
-			style="filled,rounded"];
-		ALI1Met2	[color=black,
-			fillcolor=mediumspringgreen,
-			href="#species-ALI1Met2",
-			label="ALI1Met2
-[PBPKO:06008]",
-			shape=box,
-			style="filled,rounded"];
-		ALI1Met3	[color=black,
-			fillcolor=mediumspringgreen,
-			href="#species-ALI1Met3",
-			label="ALI1Met3
-[PBPKO:06008]",
-			shape=box,
-			style="filled,rounded"];
-	}
-	subgraph cluster_SITissue {
-		graph [color=black,
-			fillcolor=lightblue,
-			fontname=Arial,
-			href="#compartment-SITissue",
-			label="SITissue
-[PBPKO:00472]",
-			shape=box,
-			style="filled,rounded"
-		];
-		ASITissue	[color=black,
-			fillcolor=gold,
-			href="#species-ASITissue",
-			label="ASITissue
-[PBPKO:06010]",
-			shape=box,
-			style="filled,rounded"];
-		ASITissueMet1	[color=black,
-			fillcolor=mediumspringgreen,
-			href="#species-ASITissueMet1",
-			label="ASITissueMet1
-[PBPKO:06010]",
-			shape=box,
-			style="filled,rounded"];
-	}
-	subgraph cluster_Liver {
-		graph [color=black,
-			fillcolor=lightblue,
-			fontname=Arial,
-			href="#compartment-Liver",
-			label="Liver
-[PBPKO:00558]",
-			shape=box,
-			style="filled,rounded"
-		];
-		ALiver	[color=black,
-			fillcolor=gold,
-			href="#species-ALiver",
-			label="ALiver
-[PBPKO:00497]",
-			shape=box,
-			style="filled,rounded"];
-		ALiverMet2	[color=black,
-			fillcolor=mediumspringgreen,
-			href="#species-ALiverMet2",
-			label="ALiverMet2
-[PBPKO:00497]",
-			shape=box,
-			style="filled,rounded"];
-		ALiverMet3	[color=black,
-			fillcolor=mediumspringgreen,
-			href="#species-ALiverMet3",
-			label="ALiverMet3
-[PBPKO:00497]",
-			shape=box,
-			style="filled,rounded"];
-		ALiverMet1	[color=black,
-			fillcolor=mediumspringgreen,
-			href="#species-ALiverMet1",
-			label="ALiverMet1
-[PBPKO:00497]",
+			href="#species-AColon",
+			label="AColon
+[PBPKO:06011]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -260,6 +182,84 @@ digraph {
 [PBPKO:00623]",
 			shape=box,
 			style="filled,rounded"];
+		ABloodOxon	[color=black,
+			fillcolor=mediumspringgreen,
+			href="#species-ABloodOxon",
+			label="ABloodOxon
+[PBPKO:00623]",
+			shape=box,
+			style="filled,rounded"];
+		ABloodMet	[color=black,
+			fillcolor=lightcoral,
+			href="#species-ABloodMet",
+			label="ABloodMet
+[PBPKO:00623]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Liver {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Liver",
+			label="Liver
+[PBPKO:00558]",
+			shape=box,
+			style="filled,rounded"
+		];
+		ALiver	[color=black,
+			fillcolor=gold,
+			href="#species-ALiver",
+			label="ALiver
+[PBPKO:00497]",
+			shape=box,
+			style="filled,rounded"];
+		ALiverOxon	[color=black,
+			fillcolor=mediumspringgreen,
+			href="#species-ALiverOxon",
+			label="ALiverOxon
+[PBPKO:00497]",
+			shape=box,
+			style="filled,rounded"];
+		ALiverMet	[color=black,
+			fillcolor=lightcoral,
+			href="#species-ALiverMet",
+			label="ALiverMet
+[PBPKO:00497]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Kidney {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Kidney",
+			label="Kidney
+[PBPKO:00557]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AKidney	[color=black,
+			fillcolor=gold,
+			href="#species-AKidney",
+			label="AKidney
+[PBPKO:00498]",
+			shape=box,
+			style="filled,rounded"];
+		AKidneyOxon	[color=black,
+			fillcolor=mediumspringgreen,
+			href="#species-AKidneyOxon",
+			label="AKidneyOxon
+[PBPKO:00498]",
+			shape=box,
+			style="filled,rounded"];
+		AKidneyMet	[color=black,
+			fillcolor=lightcoral,
+			href="#species-AKidneyMet",
+			label="AKidneyMet
+[PBPKO:00498]",
+			shape=box,
+			style="filled,rounded"];
 	}
 	subgraph cluster_Rest {
 		graph [color=black,
@@ -278,60 +278,116 @@ digraph {
 [PBPKO:00501]",
 			shape=box,
 			style="filled,rounded"];
+		ARestOxon	[color=black,
+			fillcolor=mediumspringgreen,
+			href="#species-ARestOxon",
+			label="ARestOxon
+[PBPKO:00501]",
+			shape=box,
+			style="filled,rounded"];
+		ARestMet	[color=black,
+			fillcolor=lightcoral,
+			href="#species-ARestMet",
+			label="ARestMet
+[PBPKO:00501]",
+			shape=box,
+			style="filled,rounded"];
 	}
-	subgraph cluster_Feaces {
+	subgraph cluster_Urine {
 		graph [color=black,
 			fillcolor=lightblue,
 			fontname=Arial,
-			href="#compartment-Feaces",
-			label="Feaces
+			href="#compartment-Urine",
+			label="Urine
+[PBPKO:00556]",
+			shape=box,
+			style="filled,rounded"
+		];
+		AUrine	[color=black,
+			fillcolor=gold,
+			href="#species-AUrine",
+			label="AUrine
+[PBPKO:00272]",
+			shape=box,
+			style="filled,rounded"];
+		AUrineOxon	[color=black,
+			fillcolor=mediumspringgreen,
+			href="#species-AUrineOxon",
+			label="AUrineOxon
+[PBPKO:00272]",
+			shape=box,
+			style="filled,rounded"];
+		AUrineMet	[color=black,
+			fillcolor=lightcoral,
+			href="#species-AUrineMet",
+			label="AUrineMet
+[PBPKO:00272]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	subgraph cluster_Feces {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Feces",
+			label="Feces
 [PBPKO:00555]",
 			shape=box,
 			style="filled,rounded"
 		];
-		AFeaces	[color=black,
+		AFeces	[color=black,
 			fillcolor=gold,
-			href="#species-AFeaces",
-			label="AFeaces
+			href="#species-AFeces",
+			label="AFeces
 [PBPKO:00273]",
 			shape=box,
 			style="filled,rounded"];
 	}
-	ASt -> ASI1	[label=_J0,
+	AStomach -> ASI1	[label=_J0,
 		minlen=1];
 	ASI1 -> ASI2	[label=_J1];
-	ASI1 -> ASITissue	[label=_J8];
+	ASI1 -> ALiver	[label=_J9];
 	ASI2 -> ASI3	[label=_J2];
-	ASI2 -> ASITissue	[label=_J9];
+	ASI2 -> ALiver	[label=_J10];
 	ASI3 -> ASI4	[label=_J3];
-	ASI3 -> ASITissue	[label=_J10];
+	ASI3 -> ALiver	[label=_J11];
 	ASI4 -> ASI5	[label=_J4];
-	ASI4 -> ASITissue	[label=_J11];
+	ASI4 -> ALiver	[label=_J12];
 	ASI5 -> ASI6	[label=_J5];
-	ASI5 -> ASITissue	[label=_J12];
+	ASI5 -> ALiver	[label=_J13];
 	ASI6 -> ASI7	[label=_J6];
-	ASI6 -> ASITissue	[label=_J13];
-	ASI7 -> ALI1	[label=_J7];
-	ASI7 -> ASITissue	[label=_J14];
-	ALI1 -> ALI1Met2	[label=_J24,
+	ASI6 -> ALiver	[label=_J14];
+	ASI7 -> AColon	[label=_J7];
+	ASI7 -> ALiver	[label=_J15];
+	AColon -> AFeces	[label=_J8,
 		minlen=1];
-	ALI1 -> ALI1Met3	[label=_J25,
-		minlen=2];
-	ALI1 -> ALiver	[label=_J15];
-	ALI1 -> AFeaces	[label=_J16,
-		minlen=3];
-	ASITissue -> ASITissueMet1	[label=_J23,
+	ABlood -> ALiver	[label=_J16];
+	ABlood -> AKidney	[label=_J27];
+	ABlood -> ARest	[label=_J36];
+	ABloodOxon -> ABloodMet	[label=_J26];
+	ABloodOxon -> ALiverOxon	[label=_J18];
+	ABloodOxon -> AKidneyOxon	[label=_J28];
+	ABloodOxon -> ARestOxon	[label=_J37];
+	ABloodMet -> ALiverMet	[label=_J19];
+	ABloodMet -> AKidneyMet	[label=_J29];
+	ABloodMet -> ARestMet	[label=_J38];
+	ALiver -> ABlood	[label=_J23];
+	ALiver -> ALiverOxon	[label=_J17];
+	ALiver -> ALiverMet	[label=_J20];
+	ALiverOxon -> ABloodOxon	[label=_J24];
+	ALiverOxon -> ALiverMet	[label=_J21];
+	ALiverOxon -> ALiverMet	[label=_J22];
+	ALiverMet -> ABloodMet	[label=_J25];
+	AKidney -> ABlood	[label=_J30];
+	AKidney -> AUrine	[label=_J33,
 		minlen=1];
-	ASITissue -> ALiver	[label=_J17];
-	ALiver -> ALiverMet2	[label=_J26,
+	AKidneyOxon -> ABloodOxon	[label=_J31];
+	AKidneyOxon -> AUrineOxon	[label=_J34,
 		minlen=1];
-	ALiver -> ALiverMet3	[label=_J27,
-		minlen=2];
-	ALiver -> ALiverMet1	[label=_J28,
-		minlen=3];
-	ALiver -> ABlood	[label=_J20];
-	ABlood -> ASITissue	[label=_J18];
-	ABlood -> ALiver	[label=_J19];
-	ABlood -> ARest	[label=_J21];
-	ARest -> ABlood	[label=_J22];
+	AKidneyMet -> ABloodMet	[label=_J32];
+	AKidneyMet -> AUrineMet	[label=_J35,
+		minlen=1];
+	ARest -> ABlood	[label=_J39];
+	ARestOxon -> ABloodOxon	[label=_J40];
+	ARestMet -> ABloodMet	[label=_J41];
 }

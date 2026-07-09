@@ -76,41 +76,41 @@ PFOA_dermal-simple-model-Husoy-based.sbml,Urine,,dermal,PFAS,L,PBPKO:00556,urine
 dermal-steady-state-Dancik-based.sbml,Stratum_Corneum,,dermal,Other,,,,
 dermal-steady-state-Dancik-based.sbml,Viable_Epidermis,,dermal,Other,,,,
 dermal-steady-state-Dancik-based.sbml,Dermis,,dermal,Other,,,,
-Mukherjee.sbml,GILumen,GI lumen compartment,oral,Mycotoxins,L,PBPKO:00478,gut lumen compartment,http://purl.obolibrary.org/obo/PBPKO_00478
-Mukherjee.sbml,Fast,Fast GI lumen compartment,oral,Mycotoxins,L,PBPKO:00478,gut lumen compartment,http://purl.obolibrary.org/obo/PBPKO_00478
-Mukherjee.sbml,Slow,Slow GI lumen compartment,oral,Mycotoxins,L,PBPKO:00478,gut lumen compartment,http://purl.obolibrary.org/obo/PBPKO_00478
-Mukherjee.sbml,Colon,Colon compartment,oral,Mycotoxins,L,,,
+Mukherjee.sbml,GILumen,Gut lumen compartment,oral,Mycotoxins,L,PBPKO:00478,gut lumen compartment,http://purl.obolibrary.org/obo/PBPKO_00478
+Mukherjee.sbml,Fast,Fast lumen compartment,oral,Mycotoxins,L,PBPKO:00478,gut lumen compartment,http://purl.obolibrary.org/obo/PBPKO_00478
+Mukherjee.sbml,Slow,Slow lumen compartment,oral,Mycotoxins,L,PBPKO:00478,gut lumen compartment,http://purl.obolibrary.org/obo/PBPKO_00478
+Mukherjee.sbml,Colon,Colon compartment,oral,Mycotoxins,L,PBPKO:02002,colon compartment,http://purl.obolibrary.org/obo/PBPKO_02002
 Mukherjee.sbml,Gut,Gut compartment,oral,Mycotoxins,L,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
 Mukherjee.sbml,Liver,Liver compartment,oral,Mycotoxins,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
 Mukherjee.sbml,Blood,Blood compartment,oral,Mycotoxins,L,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
 Mukherjee.sbml,Rest,Rest of body compartment,oral,Mycotoxins,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Mukherjee.sbml,Bile,Bile (pseudo) compartment,oral,Mycotoxins,L,,,
+Mukherjee.sbml,Bile,Bile compartment,oral,Mycotoxins,L,PBPKO:02001,bile compartment,http://purl.obolibrary.org/obo/PBPKO_02001
 Mukherjee.sbml,Feces,Feces compartment,oral,Mycotoxins,L,PBPKO:00555,feces compartment,http://purl.obolibrary.org/obo/PBPKO_00555
 Mukherjee.sbml,Stomach,Stomach compartment,oral,Mycotoxins,L,PBPKO:00566,stomach compartment,http://purl.obolibrary.org/obo/PBPKO_00566
 Mukherjee.sbml,Spleen,Spleen compartment,oral,Mycotoxins,L,PBPKO:00492,spleen compartment,http://purl.obolibrary.org/obo/PBPKO_00492
 Mendez_Catala.sbml,Stomach,Stomach compartment,oral,Mycotoxins,L,PBPKO:00566,stomach compartment,http://purl.obolibrary.org/obo/PBPKO_00566
-Mendez_Catala.sbml,SI1,Small intestine compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
-Mendez_Catala.sbml,SI2,Small intestine compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
-Mendez_Catala.sbml,SI3,Small intestine compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
-Mendez_Catala.sbml,SI4,Small intestine compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
-Mendez_Catala.sbml,SI5,Small intestine compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
-Mendez_Catala.sbml,SI6,Small intestine compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
-Mendez_Catala.sbml,SI7,Small intestine compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Mendez_Catala.sbml,SI1,Small intestine sub compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Mendez_Catala.sbml,SI2,Small intestine sub compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Mendez_Catala.sbml,SI3,Small intestine sub compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Mendez_Catala.sbml,SI4,Small intestine sub compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Mendez_Catala.sbml,SI5,Small intestine sub compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Mendez_Catala.sbml,SI6,Small intestine sub compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Mendez_Catala.sbml,SI7,Small intestine sub compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
 Mendez_Catala.sbml,LI1,Large intestine compartment,oral,Mycotoxins,L,PBPKO:00474,large intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00474
-Mendez_Catala.sbml,SITissue,Small intestine tissue compartment,oral,Mycotoxins,L,,,
+Mendez_Catala.sbml,SITissue,Small intestinal tissue compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
 Mendez_Catala.sbml,Liver,Liver compartment,oral,Mycotoxins,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
 Mendez_Catala.sbml,Blood,Blood compartment,oral,Mycotoxins,L,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
 Mendez_Catala.sbml,Rest,Rest of body compartment,oral,Mycotoxins,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 Mendez_Catala.sbml,Feaces,Feces compartment,oral,Mycotoxins,L,PBPKO:00555,feces compartment,http://purl.obolibrary.org/obo/PBPKO_00555
 Gilbert_Sandoval.sbml,Stomach,Stomach compartment,oral,Mycotoxins,L,PBPKO:00566,stomach compartment,http://purl.obolibrary.org/obo/PBPKO_00566
-Gilbert_Sandoval.sbml,SI1,Small intestine compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
-Gilbert_Sandoval.sbml,SI2,Small intestine compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
-Gilbert_Sandoval.sbml,SI3,Small intestine compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
-Gilbert_Sandoval.sbml,SI4,Small intestine compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
-Gilbert_Sandoval.sbml,SI5,Small intestine compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
-Gilbert_Sandoval.sbml,SI6,Small intestine compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
-Gilbert_Sandoval.sbml,SI7,Small intestine compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
-Gilbert_Sandoval.sbml,Colon,Colon compartment,oral,Mycotoxins,L,,,
+Gilbert_Sandoval.sbml,SI1,Small intestine sub compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Gilbert_Sandoval.sbml,SI2,Small intestine sub compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Gilbert_Sandoval.sbml,SI3,Small intestine sub compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Gilbert_Sandoval.sbml,SI4,Small intestine sub compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Gilbert_Sandoval.sbml,SI5,Small intestine sub compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Gilbert_Sandoval.sbml,SI6,Small intestine sub compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Gilbert_Sandoval.sbml,SI7,Small intestine sub compartment,oral,Mycotoxins,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Gilbert_Sandoval.sbml,Colon,Colon compartment,oral,Mycotoxins,L,PBPKO:02002,colon compartment,http://purl.obolibrary.org/obo/PBPKO_02002
 Gilbert_Sandoval.sbml,Liver,Liver compartment,oral,Mycotoxins,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
 Gilbert_Sandoval.sbml,Blood,Blood compartment,oral,Mycotoxins,L,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
 Gilbert_Sandoval.sbml,Rest,Rest of body compartment,oral,Mycotoxins,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
@@ -122,11 +122,11 @@ Notenboom.sbml,Rest,Rest of body compartment,oral,Mycotoxins,L,PBPKO:00450,rest 
 Wang.sbml,Stomach,Stomach compartment,oral,Mycotoxins,L,PBPKO:00566,stomach compartment,http://purl.obolibrary.org/obo/PBPKO_00566
 Wang.sbml,Jejunum,Jejunum compartment,oral,Mycotoxins,L,PBPKO:00482,jejunum compartment,http://purl.obolibrary.org/obo/PBPKO_00482
 Wang.sbml,Ileum,Ileum compartment,oral,Mycotoxins,L,PBPKO:00481,ileum compartment,http://purl.obolibrary.org/obo/PBPKO_00481
-Wang.sbml,LargeLumen,Large intestine lumen compartment,oral,Mycotoxins,L,PBPKO:00474,large intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00474
+Wang.sbml,LargeLumen,Large intestine compartment,oral,Mycotoxins,L,PBPKO:00474,large intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00474
 Wang.sbml,Liver,Liver compartment,oral,Mycotoxins,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
 Wang.sbml,Blood,Blood compartment,oral,Mycotoxins,L,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
 Wang.sbml,Rest,Rest of body compartment,oral,Mycotoxins,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Wang.sbml,IntestinalTissue,Intestinal tissue compartment,oral,Mycotoxins,L,,,
+Wang.sbml,IntestinalTissue,Intestinal tissue compartment,oral,Mycotoxins,L,PBPKO:02004,intestinal tissue compartment,http://purl.obolibrary.org/obo/PBPKO_02004
 Shin.sbml,Stomach,stomach,oral,Bisphenols,L,PBPKO:00566,stomach compartment,http://purl.obolibrary.org/obo/PBPKO_00566
 Shin.sbml,IntestinalLumen,GI lumen compartment,oral,Bisphenols,L,PBPKO:00478,gut lumen compartment,http://purl.obolibrary.org/obo/PBPKO_00478
 Shin.sbml,Spleen,spleen,oral,Bisphenols,L,PBPKO:00492,spleen compartment,http://purl.obolibrary.org/obo/PBPKO_00492
@@ -190,51 +190,15 @@ ElMasri2008.sbml,Arterial,Compartment of arterial blood,oral,Heavy Metals,dimens
 ElMasri2008.sbml,Venous,Compartment of venous blood,oral,Heavy Metals,dimensionless,PBPKO:00561,venous blood compartment,http://purl.obolibrary.org/obo/PBPKO_00561
 ElMasri2008.sbml,Rest,Compartment of rest of the body,oral,Heavy Metals,dimensionless,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 ElMasri2008.sbml,Urine,Compartment of urine,oral,Heavy Metals,dimensionless,PBPKO:00556,urine compartment,http://purl.obolibrary.org/obo/PBPKO_00556
-Ruiz2010_Male.sbml,GI,Gut compartment,oral,Heavy Metals,L,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
-Ruiz2010_Male.sbml,Intestinal_Tissue,Intestinal tissue compartment,oral,Heavy Metals,L,,,
-Ruiz2010_Male.sbml,Liver,Liver compartment,oral,Heavy Metals,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
-Ruiz2010_Male.sbml,Kidney,Kidney compartment,oral,Heavy Metals,L,PBPKO:00557,kidney compartment,http://purl.obolibrary.org/obo/PBPKO_00557
-Ruiz2010_Male.sbml,Plasma,Plasma compartment,oral,Heavy Metals,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-Ruiz2010_Male.sbml,Red_Blood_Cell,Red blood cells compartment,oral,Heavy Metals,L,PBPKO:00634,red blood cell compartment,http://purl.obolibrary.org/obo/PBPKO_00634
-Ruiz2010_Male.sbml,Metallothionein,Metallothionein blood compartment,oral,Heavy Metals,L,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
-Ruiz2010_Male.sbml,Rest,Rest of body compartment,oral,Heavy Metals,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Ruiz2010_Male.sbml,Daily_Uptake,Amount daily uptake,oral,Heavy Metals,L,,,
-Ruiz2010_Female.sbml,GI,Gut compartment,oral,Heavy Metals,L,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
-Ruiz2010_Female.sbml,Intestinal_Tissue,Intestinal tissue compartment,oral,Heavy Metals,L,,,
-Ruiz2010_Female.sbml,Liver,Liver compartment,oral,Heavy Metals,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
-Ruiz2010_Female.sbml,Kidney,Kidney compartment,oral,Heavy Metals,L,PBPKO:00557,kidney compartment,http://purl.obolibrary.org/obo/PBPKO_00557
-Ruiz2010_Female.sbml,Plasma,Plasma compartment,oral,Heavy Metals,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-Ruiz2010_Female.sbml,Red_Blood_Cell,Red blood cells compartment,oral,Heavy Metals,L,PBPKO:00634,red blood cell compartment,http://purl.obolibrary.org/obo/PBPKO_00634
-Ruiz2010_Female.sbml,Metallothionein,Metallothionein blood compartment,oral,Heavy Metals,L,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
-Ruiz2010_Female.sbml,Rest,Rest of body compartment,oral,Heavy Metals,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Ruiz2010_Female.sbml,Daily_Uptake,Amount daily uptake,oral,Heavy Metals,L,,,
 Pouillot2022.sbml,GI,Gut compartment,oral,Heavy Metals,L,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
-Pouillot2022.sbml,Intestinal_Tissue,Intestinal tissue compartment,oral,Heavy Metals,L,,,
-Pouillot2022.sbml,Liver,Liver compartment,oral,Heavy Metals,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
-Pouillot2022.sbml,Kidney,Kidney compartment,oral,Heavy Metals,L,PBPKO:00557,kidney compartment,http://purl.obolibrary.org/obo/PBPKO_00557
+Pouillot2022.sbml,Intestinal_Tissue,Intestinal tissue compartment,oral,Heavy Metals,L,PBPKO:02004,intestinal tissue compartment,http://purl.obolibrary.org/obo/PBPKO_02004
 Pouillot2022.sbml,Plasma,Plasma compartment,oral,Heavy Metals,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
 Pouillot2022.sbml,Red_Blood_Cell,Red blood cells compartment,oral,Heavy Metals,L,PBPKO:00634,red blood cell compartment,http://purl.obolibrary.org/obo/PBPKO_00634
 Pouillot2022.sbml,Metallothionein,Metallothionein blood compartment,oral,Heavy Metals,L,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
 Pouillot2022.sbml,Rest,Rest of body compartment,oral,Heavy Metals,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Pouillot2022.sbml,Daily_Uptake,Amount of daily uptake,oral,Heavy Metals,L,,,
-Bechaux2014_Male.sbml,GI,Gastro-intestinal compartment,oral,Heavy Metals,L,,,
-Bechaux2014_Male.sbml,Intestinal_Tissue,Intestinal tissue compartment,oral,Heavy Metals,L,,,
-Bechaux2014_Male.sbml,Liver,Liver compartment,oral,Heavy Metals,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
-Bechaux2014_Male.sbml,Kidney,Kidney compartment,oral,Heavy Metals,L,PBPKO:00557,kidney compartment,http://purl.obolibrary.org/obo/PBPKO_00557
-Bechaux2014_Male.sbml,Plasma,Plasma compartment,oral,Heavy Metals,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-Bechaux2014_Male.sbml,Red_Blood_Cell,Red blood cells compartment,oral,Heavy Metals,L,PBPKO:00634,red blood cell compartment,http://purl.obolibrary.org/obo/PBPKO_00634
-Bechaux2014_Male.sbml,Metallothionein,Mettalothioneine blood compartment,oral,Heavy Metals,L,PBPKO:00552,arterial blood compartment,http://purl.obolibrary.org/obo/PBPKO_00552
-Bechaux2014_Male.sbml,Rest,Rest of body compartment,oral,Heavy Metals,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Bechaux2014_Male.sbml,Daily_Uptake,,oral,Heavy Metals,L,,,
-Bechaux2014_Female.sbml,GI,Gastro-intestinal compartment,oral,Heavy Metals,L,,,
-Bechaux2014_Female.sbml,Intestinal_Tissue,Intestinal tissue compartment,oral,Heavy Metals,L,,,
-Bechaux2014_Female.sbml,Liver,Liver compartment,oral,Heavy Metals,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
-Bechaux2014_Female.sbml,Kidney,Kidney compartment,oral,Heavy Metals,L,PBPKO:00557,kidney compartment,http://purl.obolibrary.org/obo/PBPKO_00557
-Bechaux2014_Female.sbml,Plasma,Plasma compartment,oral,Heavy Metals,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
-Bechaux2014_Female.sbml,Red_Blood_Cell,Red blood cells compartment,oral,Heavy Metals,L,PBPKO:00634,red blood cell compartment,http://purl.obolibrary.org/obo/PBPKO_00634
-Bechaux2014_Female.sbml,Metallothionein,Mettalothioneine blood compartment,oral,Heavy Metals,L,PBPKO:00552,arterial blood compartment,http://purl.obolibrary.org/obo/PBPKO_00552
-Bechaux2014_Female.sbml,Rest,Rest of body compartment,oral,Heavy Metals,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-Bechaux2014_Female.sbml,Daily_Uptake,,oral,Heavy Metals,L,,,
+Pouillot2022.sbml,Daily_Uptake,Amount of daily uptake,oral,Heavy Metals,L,PBPKO:00446,compartment,http://purl.obolibrary.org/obo/PBPKO_00446
+Pouillot2022.sbml,Feces,Amount exreted as feces,oral,Heavy Metals,L,PBPKO:00555,feces compartment,http://purl.obolibrary.org/obo/PBPKO_00555
+Pouillot2022.sbml,Urine,Urine compartment,oral,Heavy Metals,L,PBPKO:00556,urine compartment,http://purl.obolibrary.org/obo/PBPKO_00556
 OFlaherty2000.sbml,Liver,Liver compartment,oral,Heavy Metals,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
 OFlaherty2000.sbml,Blood,Blood compartment,oral,Heavy Metals,L,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
 OFlaherty2000.sbml,Rest,Rest of body compartment,oral,Heavy Metals,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
@@ -252,17 +216,19 @@ Ou2018.sbml,Plasma,Plasma compartment,oral,Heavy Metals,L,PBPKO:00488,plasma com
 Ou2018.sbml,Rest,Rest of body compartment,oral,Heavy Metals,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
 Ou2018.sbml,Feces,Feces compartment,oral,Heavy Metals,L,PBPKO:00555,feces compartment,http://purl.obolibrary.org/obo/PBPKO_00555
 KjellstromNordberg1978.sbml,GI,Gut compartment,oral,Heavy Metals,L,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
-KjellstromNordberg1978.sbml,Intestinal_Tissue,Intestinal tissue compartment,oral,Heavy Metals,L,,,
-KjellstromNordberg1978.sbml,Liver,Liver compartment,oral,Heavy Metals,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
-KjellstromNordberg1978.sbml,Kidney,Kidney compartment,oral,Heavy Metals,L,PBPKO:00557,kidney compartment,http://purl.obolibrary.org/obo/PBPKO_00557
+KjellstromNordberg1978.sbml,Intestinal_Tissue,Intestinal tissue compartment,oral,Heavy Metals,L,PBPKO:02004,intestinal tissue compartment,http://purl.obolibrary.org/obo/PBPKO_02004
 KjellstromNordberg1978.sbml,Plasma,Plasma compartment,oral,Heavy Metals,L,PBPKO:00488,plasma compartment,http://purl.obolibrary.org/obo/PBPKO_00488
 KjellstromNordberg1978.sbml,Red_Blood_Cell,Red blood cells compartment,oral,Heavy Metals,L,PBPKO:00634,red blood cell compartment,http://purl.obolibrary.org/obo/PBPKO_00634
 KjellstromNordberg1978.sbml,Metallothionein,Metallothionein blood compartment,oral,Heavy Metals,L,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
 KjellstromNordberg1978.sbml,Rest,Rest of body compartment,oral,Heavy Metals,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
-KjellstromNordberg1978.sbml,Daily_Uptake,Amount of daily uptake,oral,Heavy Metals,L,,,
+KjellstromNordberg1978.sbml,Daily_Uptake,Amount of daily uptake,oral,Heavy Metals,L,PBPKO:00446,compartment,http://purl.obolibrary.org/obo/PBPKO_00446
+KjellstromNordberg1978.sbml,Feces,Amount exreted as feces,oral,Heavy Metals,L,PBPKO:00555,feces compartment,http://purl.obolibrary.org/obo/PBPKO_00555
+KjellstromNordberg1978.sbml,Urine,Urine compartment,oral,Heavy Metals,L,PBPKO:00556,urine compartment,http://purl.obolibrary.org/obo/PBPKO_00556
 Carrier2001.sbml,GI,Gastrointestinal compartment,oral,Heavy Metals,L,PBPKO:00477,gut compartment,http://purl.obolibrary.org/obo/PBPKO_00477
-Carrier2001.sbml,Liver,Liver compartment,oral,Heavy Metals,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
 Carrier2001.sbml,Blood,Blood compartment,oral,Heavy Metals,L,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
+Carrier2001.sbml,Rest,Rest of body compartment,oral,Heavy Metals,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Carrier2001.sbml,Hair,Hair compartment,oral,Heavy Metals,L,PBPKO:00479,hair compartment,http://purl.obolibrary.org/obo/PBPKO_00479
+Carrier2001.sbml,Liver,Liver compartment,oral,Heavy Metals,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
 Tebby2022.sbml,Liver,Liver compartment,oral,Heavy Metals,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
 Tebby2022.sbml,Blood,Blood compartment,oral,Heavy Metals,L,PBPKO:00552,arterial blood compartment,http://purl.obolibrary.org/obo/PBPKO_00552
 Tebby2022.sbml,Rest,Rest of body compartment,oral,Heavy Metals,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
@@ -295,6 +261,21 @@ Wei.sbml,ExcretionCompartment,,oral,Pesticides,,,,
 Bouchard.sbml,Gut,,oral,Pesticides,,,,
 Bouchard.sbml,Blood,,oral,Pesticides,,,,
 Bouchard.sbml,Rest,,oral,Pesticides,,,,
+Moerenhout.sbml,Stomach,Stomach compartment,oral,Pesticides,L,PBPKO:00566,stomach compartment,http://purl.obolibrary.org/obo/PBPKO_00566
+Moerenhout.sbml,SI1,Small intestine compartment,oral,Pesticides,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Moerenhout.sbml,SI2,Small intestine compartment,oral,Pesticides,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Moerenhout.sbml,SI3,Small intestine compartment,oral,Pesticides,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Moerenhout.sbml,SI4,Small intestine compartment,oral,Pesticides,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Moerenhout.sbml,SI5,Small intestine compartment,oral,Pesticides,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Moerenhout.sbml,SI6,Small intestine compartment,oral,Pesticides,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Moerenhout.sbml,SI7,Small intestine compartment,oral,Pesticides,L,PBPKO:00472,small intestine compartment,http://purl.obolibrary.org/obo/PBPKO_00472
+Moerenhout.sbml,Colon,Colon compartment,oral,Pesticides,L,PBPKO:02002,colon compartment,http://purl.obolibrary.org/obo/PBPKO_02002
+Moerenhout.sbml,Blood,Blood compartment,oral,Pesticides,L,PBPKO:00464,blood compartment,http://purl.obolibrary.org/obo/PBPKO_00464
+Moerenhout.sbml,Liver,Liver compartment,oral,Pesticides,L,PBPKO:00558,liver compartment,http://purl.obolibrary.org/obo/PBPKO_00558
+Moerenhout.sbml,Kidney,Kidney compartment,oral,Pesticides,L,PBPKO:00557,kidney compartment,http://purl.obolibrary.org/obo/PBPKO_00557
+Moerenhout.sbml,Rest,Rest of body compartment,oral,Pesticides,L,PBPKO:00450,rest of body compartment,http://purl.obolibrary.org/obo/PBPKO_00450
+Moerenhout.sbml,Urine,Urine compartment,oral,Pesticides,L,PBPKO:00556,urine compartment,http://purl.obolibrary.org/obo/PBPKO_00556
+Moerenhout.sbml,Feces,Feces compartment,oral,Pesticides,L,PBPKO:00555,feces compartment,http://purl.obolibrary.org/obo/PBPKO_00555
 Moreau_Deltamethrin.sbml,Stomach,,oral,Pesticides,,,,
 Moreau_Deltamethrin.sbml,GITissue,,oral,Pesticides,,,,
 Moreau_Deltamethrin.sbml,Duodenum,,oral,Pesticides,,,,

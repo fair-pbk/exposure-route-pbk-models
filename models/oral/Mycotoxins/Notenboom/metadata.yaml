@@ -44,12 +44,16 @@ compartments:
   unit: L
 species:
 - id: ALumen
-  name: Amount in gut lumen
+  name: Amount in lumen
+  pbpko_bqm_is_class:
+    id: PBPKO:00496
+    label: amount in gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00496
   chebi_bqb_is_class:
     id: CHEBI:10022
     label: deoxynivalenol
     iri: http://purl.obolibrary.org/obo/CHEBI_10022
-  unit: mg
+  unit: umol
 - id: ALiver
   name: Amount in liver
   pbpko_bqm_is_class:
@@ -60,7 +64,7 @@ species:
     id: CHEBI:10022
     label: deoxynivalenol
     iri: http://purl.obolibrary.org/obo/CHEBI_10022
-  unit: mg
+  unit: umol
 - id: ABlood
   name: Amount in blood
   pbpko_bqm_is_class:
@@ -71,7 +75,7 @@ species:
     id: CHEBI:10022
     label: deoxynivalenol
     iri: http://purl.obolibrary.org/obo/CHEBI_10022
-  unit: mg
+  unit: umol
 - id: ARest
   name: Amount in rest of body
   pbpko_bqm_is_class:
@@ -82,21 +86,29 @@ species:
     id: CHEBI:10022
     label: deoxynivalenol
     iri: http://purl.obolibrary.org/obo/CHEBI_10022
-  unit: mg
+  unit: umol
 - id: ALiverMet1
-  name: Amount of metabolite in liver
+  name: Amount in liver (metabolised)
   pbpko_bqm_is_class:
     id: PBPKO:00497
     label: amount in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00497
-  unit: mg
+  chebi_bqb_is_class:
+    id: CHEBI:146195
+    label: 3-acetyldeoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_146195
+  unit: umol
 - id: ALiverMet2
-  name: Amount of metabolite in liver
+  name: Amount in liver (metabolised)
   pbpko_bqm_is_class:
     id: PBPKO:00497
     label: amount in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00497
-  unit: mg
+  chebi_bqb_is_class:
+    id: CHEBI:169241
+    label: 15-Acetyl-4-deoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_169241
+  unit: umol
 parameters:
 - id: BW
   name: Bodyweight
@@ -111,14 +123,14 @@ parameters:
     id: PBPKO:00078
     label: fraction of liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00078
-  unit: dimensionless
+  unit: L/kg
 - id: VBc
   name: Volume fraction of blood
   pbpko_bqm_is_class:
-    id: PBPKO:00104
-    label: fraction of plasma
-    iri: http://purl.obolibrary.org/obo/PBPKO_00104
-  unit: dimensionless
+    id: PBPKO:04057
+    label: volume fraction of blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_04057
+  unit: L/kg
 - id: VL
   name: Volume of liver
   pbpko_bqm_is_class:
@@ -135,6 +147,10 @@ parameters:
   unit: L
 - id: VLum
   name: Volume of gut lumen
+  pbpko_bqm_is_class:
+    id: PBPKO:00524
+    label: volume of gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00524
   unit: L
 - id: VRest
   name: Volume of rest of body
@@ -151,28 +167,28 @@ parameters:
     iri: http://purl.obolibrary.org/obo/PBPKO_00013
   unit: L/h
 - id: QLc
-  name: Cardiac output fraction to liver
+  name: Blood flow to liver fraction
   pbpko_bqm_is_class:
     id: PBPKO:00025
     label: fraction of blood flow to liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00025
   unit: dimensionless
 - id: QL
-  name: Cardiac output to liver
+  name: Blood flow of liver
   pbpko_bqm_is_class:
     id: PBPKO:00024
     label: blood flow rate to liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00024
   unit: L/h
 - id: QRest
-  name: Cardiac output to rest of body
+  name: Blood flow to rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00050
     label: blood flow rate to restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00050
   unit: L/h
 - id: kabs
-  name: Absorption constant from GI to liver
+  name: Absorption rate to liver
   pbpko_bqm_is_class:
     id: PBPKO:00141
     label: absorption rate constant gut
@@ -185,16 +201,24 @@ parameters:
 - id: CLintMet1
   name: Metabolic clearance rate
   pbpko_bqm_is_class:
-    id: PBPKO:00234
-    label: hepatic clearance rate
-    iri: http://purl.obolibrary.org/obo/PBPKO_00234
+    id: PBPKO:00229
+    label: clearance rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00229
+  chebi_bqb_is_class:
+    id: CHEBI:146195
+    label: 3-acetyldeoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_146195
   unit: L/h
 - id: CLintMet2
   name: Metabolic clearance rate
   pbpko_bqm_is_class:
-    id: PBPKO:00234
-    label: hepatic clearance rate
-    iri: http://purl.obolibrary.org/obo/PBPKO_00234
+    id: PBPKO:00229
+    label: clearance rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00229
+  chebi_bqb_is_class:
+    id: CHEBI:146194
+    label: 15-acetyldeoxynivalenol
+    iri: http://purl.obolibrary.org/obo/CHEBI_146194
   unit: L/h
 - id: PL
   name: Partition coefficient blood-liver
@@ -220,28 +244,32 @@ parameters:
   unit: dimensionless
 - id: CLumen
   name: Concentration in lumen
-  unit: mg/L
+  pbpko_bqm_is_class:
+    id: PBPKO:00538
+    label: concentration in gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00538
+  unit: umol/L
 - id: CLiver
   name: Concentration in liver
   pbpko_bqm_is_class:
     id: PBPKO:00539
     label: concentration in liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00539
-  unit: mg/L
+  unit: umol/L
 - id: CBlood
   name: Concentration in blood
   pbpko_bqm_is_class:
     id: PBPKO:00301
     label: concentration in blood
     iri: http://purl.obolibrary.org/obo/PBPKO_00301
-  unit: mg/L
+  unit: umol/L
 - id: CRest
   name: Concentration in rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00548
     label: concentration in restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00548
-  unit: mg/L
+  unit: umol/L
 parameterisations:
 - filename: Notenboom.params.csv
   model_id: Notenboom2023_DON_Human
@@ -256,7 +284,7 @@ parameterisations:
       iri: http://purl.obolibrary.org/obo/PBPKO_00008
   - id: VLc
     value: 0.026
-    unit: dimensionless
+    unit: L/kg
     reference: ''
     bqm_is:
       id: PBPKO:00078
@@ -264,24 +292,20 @@ parameterisations:
       iri: http://purl.obolibrary.org/obo/PBPKO_00078
   - id: VBc
     value: 0.079
-    unit: dimensionless
+    unit: L/kg
     reference: ''
     bqm_is:
-      id: PBPKO:00104
-      label: fraction of plasma
-      iri: http://purl.obolibrary.org/obo/PBPKO_00104
+      id: PBPKO:04057
+      label: volume fraction of blood
+      iri: http://purl.obolibrary.org/obo/PBPKO_04057
   - id: VLum
     value: 1.29
     unit: L
     reference: ''
-  - id: QLc
-    value: 0.227
-    unit: dimensionless
-    reference: ''
     bqm_is:
-      id: PBPKO:00025
-      label: fraction of blood flow to liver
-      iri: http://purl.obolibrary.org/obo/PBPKO_00025
+      id: PBPKO:00524
+      label: volume of gut
+      iri: http://purl.obolibrary.org/obo/PBPKO_00524
   - id: kabs
     value: 22.0
     unit: /h
@@ -295,7 +319,7 @@ parameterisations:
       label: deoxynivalenol
       iri: http://purl.obolibrary.org/obo/CHEBI_10022
   - id: PL
-    value: 6.56
+    value: 0.52
     unit: dimensionless
     reference: ''
     bqm_is:
@@ -319,26 +343,6 @@ parameterisations:
       label: deoxynivalenol
       iri: http://purl.obolibrary.org/obo/CHEBI_10022
 unit_consistency:
-- level: error
-  msg: In situations where a mathematical expression refers to extent, the units of
-    extent should be consistent with the global extent units of the model. In models
-    where the 'extentUnits' attribute has not been declared, libSBML does not yet
-    have the functionality to verify accurately the consistency of the units in such
-    expressions.
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'VL' are gram (exponent = 1,\
-    \ multiplier = 1000, scale = 0)."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'VB' are gram (exponent = 1,\
-    \ multiplier = 1000, scale = 0)."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -353,6 +357,13 @@ unit_consistency:
     \ <assignmentRule> <math> expression '15 * pow(BW, 0.74)' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
     \ to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '0.227' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\

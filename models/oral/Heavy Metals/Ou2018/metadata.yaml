@@ -66,6 +66,10 @@ compartments:
 species:
 - id: AGut_lumen
   name: Amount in gut lumen
+  pbpko_bqm_is_class:
+    id: PBPKO:06009
+    label: amount in lumen
+    iri: http://purl.obolibrary.org/obo/PBPKO_06009
   chebi_bqb_is_class:
     id: CHEBI:25322
     label: methylmercury compound
@@ -150,6 +154,10 @@ species:
   unit: ug
 - id: AGutlumen_Met
   name: Amount in gut lumen (metabolised)
+  pbpko_bqm_is_class:
+    id: PBPKO:06009
+    label: amount in lumen
+    iri: http://purl.obolibrary.org/obo/PBPKO_06009
   chebi_bqb_is_class:
     id: CHEBI:35113
     label: elemental mercury
@@ -172,33 +180,45 @@ parameters:
   unit: kg
 - id: VGut_lumenc
   name: Volume fraction of gut lumen
-  unit: dimensionless
+  pbpko_bqm_is_class:
+    id: PBPKO:04086
+    label: fraction of intestinal lumen
+    iri: http://purl.obolibrary.org/obo/PBPKO_04086
+  unit: L/kg
 - id: VGc
   name: Volume fraction of gut
   pbpko_bqm_is_class:
     id: PBPKO:00509
     label: fraction of gut
     iri: http://purl.obolibrary.org/obo/PBPKO_00509
-  unit: dimensionless
+  unit: L/kg
 - id: VLc
   name: Volume fraction of liver
   pbpko_bqm_is_class:
     id: PBPKO:00078
     label: fraction of liver
     iri: http://purl.obolibrary.org/obo/PBPKO_00078
-  unit: dimensionless
+  unit: L/kg
 - id: VRBCc
   name: Volume fraction of red blood cells
-  unit: dimensionless
+  pbpko_bqm_is_class:
+    id: PBPKO:04058
+    label: volume fraction of red blood cells
+    iri: http://purl.obolibrary.org/obo/PBPKO_04058
+  unit: L/kg
 - id: VPlasmac
   name: Volume fraction of plasma
   pbpko_bqm_is_class:
     id: PBPKO:00104
     label: fraction of plasma
     iri: http://purl.obolibrary.org/obo/PBPKO_00104
-  unit: dimensionless
+  unit: L/kg
 - id: VGut_lumen
   name: Volume of gut lumen
+  pbpko_bqm_is_class:
+    id: PBPKO:04068
+    label: volume of intestinal lumen
+    iri: http://purl.obolibrary.org/obo/PBPKO_04068
   unit: L
 - id: VG
   name: Volume of gut
@@ -241,7 +261,7 @@ parameters:
     id: PBPKO:00013
     label: cardiac output rate
     iri: http://purl.obolibrary.org/obo/PBPKO_00013
-  unit: ''
+  unit: L/h/kg^0.75
 - id: QLc
   name: Cardiac output to liver
   pbpko_bqm_is_class:
@@ -255,9 +275,6 @@ parameters:
     id: PBPKO:00513
     label: fraction of blood flow to gut
     iri: http://purl.obolibrary.org/obo/PBPKO_00513
-  unit: dimensionless
-- id: Qrbcc
-  name: Maternal red cells / plasma diffusion
   unit: dimensionless
 - id: QGI
   name: Blood flow to gut
@@ -280,18 +297,6 @@ parameters:
     label: blood flow rate to restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00050
   unit: L/h
-- id: Qrbc
-  name: Maternal red cells / plasma diffusion
-  unit: L/h
-- id: kabsc
-  name: Reabsorption rate in gut
-  unit: dimensionless
-- id: kabs
-  name: Reabsorption rate in gut
-  unit: dimensionless
-- id: Frac
-  name: ''
-  unit: ''
 - id: PGI
   name: Partition coefficient blood-gut
   pbpko_bqm_is_class:
@@ -316,6 +321,14 @@ parameters:
   unit: dimensionless
 - id: PRBC
   name: Partition coefficient red blood cells
+  pbpko_bqm_is_class:
+    id: PBPKO:03030
+    label: red blood cells partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_03030
+  chebi_bqb_is_class:
+    id: CHEBI:25322
+    label: methylmercury compound
+    iri: http://purl.obolibrary.org/obo/CHEBI_25322
   unit: dimensionless
 - id: PRest
   name: Partition coefficient blood- rest body
@@ -323,6 +336,39 @@ parameters:
     id: PBPKO:00585
     label: restbody blood partition coefficient
     iri: http://purl.obolibrary.org/obo/PBPKO_00585
+  chebi_bqb_is_class:
+    id: CHEBI:25322
+    label: methylmercury compound
+    iri: http://purl.obolibrary.org/obo/CHEBI_25322
+  unit: dimensionless
+- id: kabsc
+  name: Reabsorption rate in gut
+  pbpko_bqm_is_class:
+    id: PBPKO:03002
+    label: intrinsic absorption rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03002
+  chebi_bqb_is_class:
+    id: CHEBI:25322
+    label: methylmercury compound
+    iri: http://purl.obolibrary.org/obo/CHEBI_25322
+  unit: L/h/kg^0.75
+- id: kabs
+  name: Reabsorption rate in gut
+  pbpko_bqm_is_class:
+    id: PBPKO:03024
+    label: reabsorption rate constant
+    iri: http://purl.obolibrary.org/obo/PBPKO_03024
+  chebi_bqb_is_class:
+    id: CHEBI:25322
+    label: methylmercury compound
+    iri: http://purl.obolibrary.org/obo/CHEBI_25322
+  unit: L/h
+- id: Frac
+  name: Fraction
+  pbpko_bqm_is_class:
+    id: PBPKO:00139
+    label: biochemical parameter
+    iri: http://purl.obolibrary.org/obo/PBPKO_00139
   chebi_bqb_is_class:
     id: CHEBI:25322
     label: methylmercury compound
@@ -338,7 +384,7 @@ parameters:
     id: CHEBI:25322
     label: methylmercury compound
     iri: http://purl.obolibrary.org/obo/CHEBI_25322
-  unit: dimensionless
+  unit: L/h/kg^0.75
 - id: kfe
   name: fecal elimination rate
   pbpko_bqm_is_class:
@@ -350,29 +396,59 @@ parameters:
     label: methylmercury compound
     iri: http://purl.obolibrary.org/obo/CHEBI_25322
   unit: dimensionless
+- id: krbcc
+  name: red blood cell/plasma diffusion
+  unit: L/h/kg^0.75
+- id: krbc
+  name: red blood cell/ plasma diffusion rate
+  pbpko_bqm_is_class:
+    id: PBPKO:00646
+    label: diffusion rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00646
+  chebi_bqb_is_class:
+    id: CHEBI:25322
+    label: methylmercury compound
+    iri: http://purl.obolibrary.org/obo/CHEBI_25322
+  unit: L/h
 - id: kmet_gutlumenc
   name: Metabolism rate constant in gut
-  unit: dimensionless
-- id: kmet_gutlumen
-  name: Metabolism rate in gut
-  unit: dimensionless
-- id: kmet_liverc
-  name: metabolism rate constant in liver
-  unit: dimensionless
-- id: kmet_liver
-  name: metabolism rate in liver
-  unit: dimensionless
-- id: kbiliaryc
-  name: Biliary clearance
   pbpko_bqm_is_class:
-    id: PBPKO:00233
-    label: biliary clearance rate
-    iri: http://purl.obolibrary.org/obo/PBPKO_00233
+    id: PBPKO:03028
+    label: metabolism rate constant in intestinal tissue
+    iri: http://purl.obolibrary.org/obo/PBPKO_03028
   chebi_bqb_is_class:
     id: CHEBI:25322
     label: methylmercury compound
     iri: http://purl.obolibrary.org/obo/CHEBI_25322
   unit: dimensionless
+- id: kmet_gutlumen
+  name: Metabolism rate in gut
+  unit: L/h/kg^0.75
+- id: kmet_liverc
+  name: metabolism rate constant in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:03027
+    label: metabolism rate constant in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_03027
+  chebi_bqb_is_class:
+    id: CHEBI:25322
+    label: methylmercury compound
+    iri: http://purl.obolibrary.org/obo/CHEBI_25322
+  unit: L/h/kg^0.75
+- id: kmet_liver
+  name: metabolism rate in liver
+  unit: L/h
+- id: kbiliaryc
+  name: Biliary clearance
+  pbpko_bqm_is_class:
+    id: PBPKO:03007
+    label: intrinsic biliary clearance rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03007
+  chebi_bqb_is_class:
+    id: CHEBI:25322
+    label: methylmercury compound
+    iri: http://purl.obolibrary.org/obo/CHEBI_25322
+  unit: L/h/kg^0.75
 - id: kbiliary
   name: Biliary clearance
   pbpko_bqm_is_class:
@@ -386,6 +462,10 @@ parameters:
   unit: dimensionless
 - id: CGut_lumen
   name: Concentration in gut lumen
+  pbpko_bqm_is_class:
+    id: PBPKO:06047
+    label: concentration in lumen
+    iri: http://purl.obolibrary.org/obo/PBPKO_06047
   unit: ug/L
 - id: CGI
   name: Concentration in gut
@@ -446,6 +526,10 @@ parameterisations:
     value: 0.014
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:04086
+      label: fraction of intestinal lumen
+      iri: http://purl.obolibrary.org/obo/PBPKO_04086
   - id: VGc
     value: 0.017
     unit: dimensionless
@@ -466,6 +550,10 @@ parameterisations:
     value: 0.024
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:04058
+      label: volume fraction of red blood cells
+      iri: http://purl.obolibrary.org/obo/PBPKO_04058
   - id: VPlasmac
     value: 0.024
     unit: dimensionless
@@ -490,18 +578,6 @@ parameterisations:
       id: PBPKO:00513
       label: fraction of blood flow to gut
       iri: http://purl.obolibrary.org/obo/PBPKO_00513
-  - id: Qrbcc
-    value: 1.5
-    unit: dimensionless
-    reference: ''
-  - id: kabsc
-    value: 0.005
-    unit: dimensionless
-    reference: ''
-  - id: Frac
-    value: 0.95
-    unit: ''
-    reference: ''
   - id: PGI
     value: 1.0
     unit: dimensionless
@@ -527,9 +603,17 @@ parameterisations:
       label: methylmercury compound
       iri: http://purl.obolibrary.org/obo/CHEBI_25322
   - id: PRBC
-    value: 14.0
+    value: 12.0
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:03030
+      label: red blood cells partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_03030
+    bqb_is:
+      id: CHEBI:25322
+      label: methylmercury compound
+      iri: http://purl.obolibrary.org/obo/CHEBI_25322
   - id: PRest
     value: 1.0
     unit: dimensionless
@@ -542,9 +626,33 @@ parameterisations:
       id: CHEBI:25322
       label: methylmercury compound
       iri: http://purl.obolibrary.org/obo/CHEBI_25322
+  - id: kabsc
+    value: 0.005
+    unit: L/h/kg^0.75
+    reference: ''
+    bqm_is:
+      id: PBPKO:03002
+      label: intrinsic absorption rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03002
+    bqb_is:
+      id: CHEBI:25322
+      label: methylmercury compound
+      iri: http://purl.obolibrary.org/obo/CHEBI_25322
+  - id: Frac
+    value: 0.95
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00139
+      label: biochemical parameter
+      iri: http://purl.obolibrary.org/obo/PBPKO_00139
+    bqb_is:
+      id: CHEBI:25322
+      label: methylmercury compound
+      iri: http://purl.obolibrary.org/obo/CHEBI_25322
   - id: kfec
     value: 0.0002
-    unit: dimensionless
+    unit: L/h/kg^0.75
     reference: ''
     bqm_is:
       id: PBPKO:00236
@@ -554,22 +662,42 @@ parameterisations:
       id: CHEBI:25322
       label: methylmercury compound
       iri: http://purl.obolibrary.org/obo/CHEBI_25322
+  - id: krbcc
+    value: 1.5
+    unit: L/h/kg^0.75
+    reference: ''
   - id: kmet_gutlumenc
     value: 0.0001
     unit: dimensionless
     reference: ''
+    bqm_is:
+      id: PBPKO:03028
+      label: metabolism rate constant in intestinal tissue
+      iri: http://purl.obolibrary.org/obo/PBPKO_03028
+    bqb_is:
+      id: CHEBI:25322
+      label: methylmercury compound
+      iri: http://purl.obolibrary.org/obo/CHEBI_25322
   - id: kmet_liverc
     value: 1.0e-05
-    unit: dimensionless
-    reference: ''
-  - id: kbiliaryc
-    value: 0.0001
-    unit: dimensionless
+    unit: L/h/kg^0.75
     reference: ''
     bqm_is:
-      id: PBPKO:00233
-      label: biliary clearance rate
-      iri: http://purl.obolibrary.org/obo/PBPKO_00233
+      id: PBPKO:03027
+      label: metabolism rate constant in liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_03027
+    bqb_is:
+      id: CHEBI:25322
+      label: methylmercury compound
+      iri: http://purl.obolibrary.org/obo/CHEBI_25322
+  - id: kbiliaryc
+    value: 0.0001
+    unit: L/h/kg^0.75
+    reference: ''
+    bqm_is:
+      id: PBPKO:03007
+      label: intrinsic biliary clearance rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03007
     bqb_is:
       id: CHEBI:25322
       label: methylmercury compound
@@ -584,21 +712,19 @@ unit_consistency:
 - level: error
   msg: "The units of the expressions used as arguments to a function call are expected\
     \ to match the units expected for the arguments of that function. \nReference:\
-    \ L3V2 Section 3.4\n The formula 'BW - VGut_lumen' in the math element of the\
-    \ <assignmentRule> can only act on variables with the same units."
+    \ L3V2 Section 3.4\n The formula 'BW - VG' in the math element of the <assignmentRule>\
+    \ can only act on variables with the same units."
+- level: error
+  msg: "The units of the expressions used as arguments to a function call are expected\
+    \ to match the units expected for the arguments of that function. \nReference:\
+    \ L3V2 Section 3.4\n The formula 'QC - QL' in the math element of the <assignmentRule>\
+    \ can only act on variables with the same units."
 - level: error
   msg: "The unit of measurement associated with the mathematical formula in the MathML\
     \ math element of every KineticLaw object in a model should be identical to all\
     \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
     \ 'kbiliary * CLiver' in the <kineticLaw> element of the <reaction> with id '_J9'\
     \ produces units that are inconsistent with units of earlier KineticLaw elements."
-- level: error
-  msg: "The unit of measurement associated with the mathematical formula in the MathML\
-    \ math element of every KineticLaw object in a model should be identical to all\
-    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
-    \ 'kmet_liver * CLiver' in the <kineticLaw> element of the <reaction> with id\
-    \ '_J10' produces units that are inconsistent with units of earlier KineticLaw\
-    \ elements."
 - level: error
   msg: "The unit of measurement associated with the mathematical formula in the MathML\
     \ math element of every KineticLaw object in a model should be identical to all\
@@ -612,68 +738,6 @@ unit_consistency:
     \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
     \ 'kfe * CGut_lumen' in the <kineticLaw> element of the <reaction> with id '_J12'\
     \ produces units that are inconsistent with units of earlier KineticLaw elements."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'QC' cannot be fully checked. Unit consistency reported as\
-    \ either no errors or further unit errors related to this object may not be accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'QC' does not have a 'units'\
-    \ attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'Frac' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'Frac' does not have a\
-    \ 'units' attribute."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'VGut_lumen' are gram (exponent\
-    \ = 1, multiplier = 1000, scale = 0)."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'VG' are gram (exponent = 1,\
-    \ multiplier = 1000, scale = 0)."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'VL' are gram (exponent = 1,\
-    \ multiplier = 1000, scale = 0)."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'VRBC' are gram (exponent =\
-    \ 1, multiplier = 1000, scale = 0)."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'VPlasma' are gram (exponent\
-    \ = 1, multiplier = 1000, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
@@ -694,66 +758,43 @@ unit_consistency:
     \ (exponent = 1, multiplier = 1, scale = 0), second (exponent = -1, multiplier\
     \ = 3600, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
     \ with variable 'QGI' are gram (exponent = 1, multiplier = 1000, scale = 0)."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression 'QLc * QC' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression 'QC - QL - QGI' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
     \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
     \ (exponent = 1, multiplier = 1, scale = 0), second (exponent = -1, multiplier\
     \ = 3600, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
-    \ with variable 'Qrbc' are gram (exponent = 0.75, multiplier = 1000, scale = 0)."
+    \ with variable 'QL' are litre (exponent = 1, multiplier = 1, scale = 0), second\
+    \ (exponent = -1, multiplier = 3600, scale = 0), gram (exponent = -0.75, multiplier\
+    \ = 1000, scale = 0)."
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
+    \ (exponent = 1, multiplier = 1, scale = 0), second (exponent = -1, multiplier\
+    \ = 3600, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
+    \ with variable 'QRest' are indeterminable."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
     \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are dimensionless\
     \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'kabs' are gram (exponent =\
-    \ 0.75, multiplier = 1000, scale = 0)."
+    \ expression of the <assignmentRule> with variable 'kfe' are litre (exponent =\
+    \ 1, multiplier = 1, scale = 0), second (exponent = -1, multiplier = 3600, scale\
+    \ = 0)."
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
+    \ (exponent = 1, multiplier = 1, scale = 0), second (exponent = -1, multiplier\
+    \ = 3600, scale = 0), gram (exponent = -0.75, multiplier = 1, scale = 3) but the\
+    \ units returned by the <math> expression of the <assignmentRule> with variable\
+    \ 'kmet_gutlumen' are gram (exponent = 0.75, multiplier = 1000, scale = 0)."
 - level: error
   msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
     \ of the rule's right-hand side are expected to be consistent with the units declared\
     \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are dimensionless\
     \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'kfe' are gram (exponent =\
-    \ 0.75, multiplier = 1000, scale = 0)."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are dimensionless\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'kmet_gutlumen' are gram (exponent\
-    \ = 0.75, multiplier = 1000, scale = 0)."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are dimensionless\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'kmet_liver' are gram (exponent\
-    \ = 0.75, multiplier = 1000, scale = 0)."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are dimensionless\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'kbiliary' are gram (exponent\
-    \ = 0.75, multiplier = 1000, scale = 0)."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'kabs * CGut_lumen * Frac' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate."
+    \ expression of the <assignmentRule> with variable 'kbiliary' are litre (exponent\
+    \ = 1, multiplier = 1, scale = 0), second (exponent = -1, multiplier = 3600, scale\
+    \ = 0)."

@@ -17,7 +17,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ASt",
 			label="ASt
-[-]",
+[PBPKO:06004]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -35,7 +35,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AJ",
 			label="AJ
-[-]",
+[PBPKO:06006]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -53,7 +53,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AI",
 			label="AI
-[-]",
+[PBPKO:06007]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -71,7 +71,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-ALI",
 			label="ALI
-[-]",
+[PBPKO:06008]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -93,7 +93,7 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 		AMet	[color=black,
-			fillcolor=gold,
+			fillcolor=mediumspringgreen,
 			href="#species-AMet",
 			label="AMet
 [PBPKO:00497]",
@@ -142,7 +142,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-IntestinalTissue",
 			label="IntestinalTissue
-[-]",
+[PBPKO:02004]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -150,7 +150,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-AIT",
 			label="AIT
-[-]",
+[PBPKO:06015]",
 			shape=box,
 			style="filled,rounded"];
 	}

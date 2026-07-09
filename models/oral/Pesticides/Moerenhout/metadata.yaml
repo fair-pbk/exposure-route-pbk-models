@@ -1,0 +1,2990 @@
+id: Moerenhout2022_Pesticides_Human
+name: Moerenhout
+applicability_domain:
+  chemicals:
+  - id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  species:
+  - id: NCBITaxon:9606
+    label: Homo sapiens
+    iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
+num_compartments: 15
+num_species: 25
+num_parameters: 82
+num_reactions: 42
+compartments:
+- id: Stomach
+  name: Stomach compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00566
+    label: stomach compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00566
+  unit: L
+- id: SI1
+  name: Small intestine compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00472
+    label: small intestine compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00472
+  unit: L
+- id: SI2
+  name: Small intestine compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00472
+    label: small intestine compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00472
+  unit: L
+- id: SI3
+  name: Small intestine compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00472
+    label: small intestine compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00472
+  unit: L
+- id: SI4
+  name: Small intestine compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00472
+    label: small intestine compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00472
+  unit: L
+- id: SI5
+  name: Small intestine compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00472
+    label: small intestine compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00472
+  unit: L
+- id: SI6
+  name: Small intestine compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00472
+    label: small intestine compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00472
+  unit: L
+- id: SI7
+  name: Small intestine compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00472
+    label: small intestine compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00472
+  unit: L
+- id: Colon
+  name: Colon compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:02002
+    label: colon compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_02002
+  unit: L
+- id: Blood
+  name: Blood compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00464
+    label: blood compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00464
+  unit: L
+- id: Liver
+  name: Liver compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00558
+    label: liver compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00558
+  unit: L
+- id: Kidney
+  name: Kidney compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00557
+    label: kidney compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00557
+  unit: L
+- id: Rest
+  name: Rest of body compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00450
+    label: rest of body compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00450
+  unit: L
+- id: Urine
+  name: Urine compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00556
+    label: urine compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00556
+  unit: L
+- id: Feces
+  name: Feces compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00555
+    label: feces compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00555
+  unit: L
+species:
+- id: AStomach
+  name: Amount in stomach
+  pbpko_bqm_is_class:
+    id: PBPKO:06004
+    label: amount in stomach
+    iri: http://purl.obolibrary.org/obo/PBPKO_06004
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol
+- id: ASI1
+  name: Amount in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06005
+    label: amount in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_06005
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol
+- id: ASI2
+  name: Amount in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06010
+    label: amount in small intestine segment
+    iri: http://purl.obolibrary.org/obo/PBPKO_06010
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol
+- id: ASI3
+  name: Amount in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06010
+    label: amount in small intestine segment
+    iri: http://purl.obolibrary.org/obo/PBPKO_06010
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol
+- id: ASI4
+  name: Amount in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06010
+    label: amount in small intestine segment
+    iri: http://purl.obolibrary.org/obo/PBPKO_06010
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol
+- id: ASI5
+  name: Amount in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06010
+    label: amount in small intestine segment
+    iri: http://purl.obolibrary.org/obo/PBPKO_06010
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol
+- id: ASI6
+  name: Amount in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06010
+    label: amount in small intestine segment
+    iri: http://purl.obolibrary.org/obo/PBPKO_06010
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol
+- id: ASI7
+  name: Amount in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06010
+    label: amount in small intestine segment
+    iri: http://purl.obolibrary.org/obo/PBPKO_06010
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol
+- id: AColon
+  name: Amount in colon
+  pbpko_bqm_is_class:
+    id: PBPKO:06011
+    label: amount in colon
+    iri: http://purl.obolibrary.org/obo/PBPKO_06011
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol
+- id: ABlood
+  name: Amount in blood
+  pbpko_bqm_is_class:
+    id: PBPKO:00623
+    label: amount in blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00623
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol
+- id: ALiver
+  name: Amount in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00497
+    label: amount in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol
+- id: AKidney
+  name: Amount in kidney
+  pbpko_bqm_is_class:
+    id: PBPKO:00498
+    label: amount in kidney
+    iri: http://purl.obolibrary.org/obo/PBPKO_00498
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol
+- id: ARest
+  name: Amount in rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00501
+    label: amount in restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00501
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol
+- id: AFeces
+  name: Amount in feces
+  pbpko_bqm_is_class:
+    id: PBPKO:00273
+    label: amount in feces
+    iri: http://purl.obolibrary.org/obo/PBPKO_00273
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol
+- id: AUrine
+  name: Amount in urine
+  pbpko_bqm_is_class:
+    id: PBPKO:00272
+    label: amount in urine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00272
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol
+- id: ABloodOxon
+  name: Amount in blood
+  pbpko_bqm_is_class:
+    id: PBPKO:00623
+    label: amount in blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00623
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: umol
+- id: ALiverOxon
+  name: Amount in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00497
+    label: amount in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: umol
+- id: AKidneyOxon
+  name: Amount in kidney
+  pbpko_bqm_is_class:
+    id: PBPKO:00498
+    label: amount in kidney
+    iri: http://purl.obolibrary.org/obo/PBPKO_00498
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: umol
+- id: ARestOxon
+  name: Amount in rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00501
+    label: amount in restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00501
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: umol
+- id: AUrineOxon
+  name: Amount in urine
+  pbpko_bqm_is_class:
+    id: PBPKO:00272
+    label: amount in urine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00272
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: umol
+- id: ABloodMet
+  name: Amount in blood
+  pbpko_bqm_is_class:
+    id: PBPKO:00623
+    label: amount in blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00623
+  chebi_bqb_is_class:
+    id: CHEBI:83490
+    label: 3,5,6-trichloropyridine-2-one
+    iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  unit: umol
+- id: ALiverMet
+  name: Amount in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00497
+    label: amount in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00497
+  chebi_bqb_is_class:
+    id: CHEBI:83490
+    label: 3,5,6-trichloropyridine-2-one
+    iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  unit: umol
+- id: AKidneyMet
+  name: Amount in kidney
+  pbpko_bqm_is_class:
+    id: PBPKO:00498
+    label: amount in kidney
+    iri: http://purl.obolibrary.org/obo/PBPKO_00498
+  chebi_bqb_is_class:
+    id: CHEBI:83490
+    label: 3,5,6-trichloropyridine-2-one
+    iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  unit: umol
+- id: ARestMet
+  name: Amount in rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00501
+    label: amount in restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00501
+  chebi_bqb_is_class:
+    id: CHEBI:83490
+    label: 3,5,6-trichloropyridine-2-one
+    iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  unit: umol
+- id: AUrineMet
+  name: Amount in urine
+  pbpko_bqm_is_class:
+    id: PBPKO:00272
+    label: amount in urine
+    iri: http://purl.obolibrary.org/obo/PBPKO_00272
+  chebi_bqb_is_class:
+    id: CHEBI:83490
+    label: 3,5,6-trichloropyridine-2-one
+    iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  unit: umol
+parameters:
+- id: BW
+  name: Bodyweight
+  pbpko_bqm_is_class:
+    id: PBPKO:00008
+    label: bodyweight
+    iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  unit: kg
+- id: QCc
+  name: Cardiac output constant
+  pbpko_bqm_is_class:
+    id: PBPKO:00013
+    label: cardiac output rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  unit: dimensionless
+- id: QC
+  name: Cardiac output flow
+  pbpko_bqm_is_class:
+    id: PBPKO:00013
+    label: cardiac output rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  unit: L/h
+- id: QLc
+  name: Cardiac output to liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00025
+    label: fraction of blood flow to liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00025
+  unit: dimensionless
+- id: QL
+  name: Blood flow to liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00024
+    label: blood flow rate to liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00024
+  unit: L/h
+- id: QKidc
+  name: Fraction of blood flow to kidney
+  pbpko_bqm_is_class:
+    id: PBPKO:00027
+    label: fraction of blood flow to kidney
+    iri: http://purl.obolibrary.org/obo/PBPKO_00027
+  unit: dimensionless
+- id: QKid
+  name: Blood flow to kidney
+  pbpko_bqm_is_class:
+    id: PBPKO:00026
+    label: blood flow rate to kidney
+    iri: http://purl.obolibrary.org/obo/PBPKO_00026
+  unit: L/h
+- id: QRest
+  name: Blood flow to rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00050
+    label: blood flow rate to restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00050
+  unit: L/h
+- id: VLc
+  name: Volume fraction of liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00078
+    label: fraction of liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00078
+  unit: dimensionless
+- id: VKidc
+  name: Volume fraction of kidney
+  pbpko_bqm_is_class:
+    id: PBPKO:00080
+    label: fraction of kidney
+    iri: http://purl.obolibrary.org/obo/PBPKO_00080
+  unit: dimensionless
+- id: VBlc
+  name: Volume fraction of blood
+  pbpko_bqm_is_class:
+    id: PBPKO:04057
+    label: volume fraction of blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_04057
+  unit: dimensionless
+- id: VGutc
+  name: Volume fraction of gut
+  pbpko_bqm_is_class:
+    id: PBPKO:00509
+    label: fraction of gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00509
+  unit: dimensionless
+- id: VStc
+  name: Volume fraction of stomach
+  pbpko_bqm_is_class:
+    id: PBPKO:00068
+    label: fraction of stomach
+    iri: http://purl.obolibrary.org/obo/PBPKO_00068
+  unit: dimensionless
+- id: VColonc
+  name: Volume fraction of colon
+  pbpko_bqm_is_class:
+    id: PBPKO:00422
+    label: fraction of colon
+    iri: http://purl.obolibrary.org/obo/PBPKO_00422
+  unit: dimensionless
+- id: VL
+  name: Volume of liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00077
+    label: volume of liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00077
+  unit: L
+- id: VKid
+  name: Volume of kidney
+  pbpko_bqm_is_class:
+    id: PBPKO:00079
+    label: volume of kidney
+    iri: http://purl.obolibrary.org/obo/PBPKO_00079
+  unit: L
+- id: VBl
+  name: Volume of blood
+  pbpko_bqm_is_class:
+    id: PBPKO:00108
+    label: volume of blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00108
+  unit: L
+- id: VGut
+  name: Volume of gut
+  pbpko_bqm_is_class:
+    id: PBPKO:00524
+    label: volume of gut
+    iri: http://purl.obolibrary.org/obo/PBPKO_00524
+  unit: L
+- id: VSt
+  name: Volume of stomach
+  pbpko_bqm_is_class:
+    id: PBPKO:00067
+    label: volume of stomach
+    iri: http://purl.obolibrary.org/obo/PBPKO_00067
+  unit: L
+- id: VColon
+  name: Volume of colon
+  pbpko_bqm_is_class:
+    id: PBPKO:00427
+    label: volume of colon
+    iri: http://purl.obolibrary.org/obo/PBPKO_00427
+  unit: L
+- id: VRest
+  name: Volume of rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00105
+    label: volume of rest body
+    iri: http://purl.obolibrary.org/obo/PBPKO_00105
+  unit: L
+- id: PL
+  name: Partition coefficient blood-liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00577
+    label: liver blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00577
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: dimensionless
+- id: PLOxon
+  name: Partition coefficient blood-liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00577
+    label: liver blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00577
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: dimensionless
+- id: PLMet
+  name: Partition coefficient blood-liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00577
+    label: liver blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00577
+  chebi_bqb_is_class:
+    id: CHEBI:83490
+    label: 3,5,6-trichloropyridine-2-one
+    iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  unit: dimensionless
+- id: PKid
+  name: Partition coefficient blood-kidney
+  pbpko_bqm_is_class:
+    id: PBPKO:00575
+    label: kidney blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00575
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: dimensionless
+- id: PKidOxon
+  name: Partition coefficient blood-kidney
+  pbpko_bqm_is_class:
+    id: PBPKO:00575
+    label: kidney blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00575
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: dimensionless
+- id: PKidMet
+  name: Partition coefficient blood-kidney
+  pbpko_bqm_is_class:
+    id: PBPKO:00575
+    label: kidney blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00575
+  chebi_bqb_is_class:
+    id: CHEBI:83490
+    label: 3,5,6-trichloropyridine-2-one
+    iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  unit: dimensionless
+- id: PRest
+  name: Partition coefficient blood- rest body
+  pbpko_bqm_is_class:
+    id: PBPKO:00585
+    label: restbody blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00585
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: dimensionless
+- id: PRestOxon
+  name: Partition coefficient blood- rest body
+  pbpko_bqm_is_class:
+    id: PBPKO:00585
+    label: restbody blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00585
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: dimensionless
+- id: PRestMet
+  name: Partition coefficient blood- rest body
+  pbpko_bqm_is_class:
+    id: PBPKO:00585
+    label: restbody blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00585
+  chebi_bqb_is_class:
+    id: CHEBI:83490
+    label: 3,5,6-trichloropyridine-2-one
+    iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  unit: dimensionless
+- id: GFRc
+  name: Renal excretion rate constant (GFR)
+  pbpko_bqm_is_class:
+    id: PBPKO:00237
+    label: renal elimination rate constant
+    iri: http://purl.obolibrary.org/obo/PBPKO_00237
+  chebi_bqb_is_class:
+    id: CHEBI:83490
+    label: 3,5,6-trichloropyridine-2-one
+    iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  unit: L/h/kg
+- id: GFR
+  name: Renal excretion rate (GFR)
+  unit: /h
+- id: LiverVmax1c
+  name: Vmax constant in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: dimensionless
+- id: LiverKm1
+  name: Km constant in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: dimensionless
+- id: LiverVmax2c
+  name: Vmax constant in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: dimensionless
+- id: LiverKm2
+  name: Km constant in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: dimensionless
+- id: LiverVmaxOxon1c
+  name: Vmax constant in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: dimensionless
+- id: LiverKmOxon1
+  name: Km constant in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: dimensionless
+- id: LiverVmaxOxon2c
+  name: Vmax constant in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: dimensionless
+- id: LiverKmOxon2
+  name: Km constant in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: dimensionless
+- id: BloodVmaxOxonc
+  name: Vmax constant in blood
+  pbpko_bqm_is_class:
+    id: SBO:0000027
+    label: Michaelis constant
+    iri: http://biomodels.net/SBO/SBO_0000027
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: dimensionless
+- id: BloodKmOxon
+  name: Km constant in blood
+  pbpko_bqm_is_class:
+    id: SBO:0000027
+    label: Michaelis constant
+    iri: http://biomodels.net/SBO/SBO_0000027
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: dimensionless
+- id: fu
+  name: Fraction unbound
+  pbpko_bqm_is_class:
+    id: PBPKO:00149
+    label: unbound fraction
+    iri: http://purl.obolibrary.org/obo/PBPKO_00149
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: dimensionless
+- id: fuOxon
+  name: Fraction unbound of oxon
+  pbpko_bqm_is_class:
+    id: PBPKO:00149
+    label: unbound fraction
+    iri: http://purl.obolibrary.org/obo/PBPKO_00149
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: dimensionless
+- id: fuMet
+  name: Fraction unbound
+  pbpko_bqm_is_class:
+    id: PBPKO:00149
+    label: unbound fraction
+    iri: http://purl.obolibrary.org/obo/PBPKO_00149
+  chebi_bqb_is_class:
+    id: CHEBI:83490
+    label: 3,5,6-trichloropyridine-2-one
+    iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  unit: dimensionless
+- id: bpr
+  name: Blood - plasma concentration ratio
+  pbpko_bqm_is_class:
+    id: PBPKO:00187
+    label: blood:plasma ratio
+    iri: http://purl.obolibrary.org/obo/PBPKO_00187
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: dimensionless
+- id: bprOxon
+  name: Blood - plasma concentration ratio
+  pbpko_bqm_is_class:
+    id: PBPKO:00187
+    label: blood:plasma ratio
+    iri: http://purl.obolibrary.org/obo/PBPKO_00187
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: dimensionless
+- id: bprMet
+  name: Blood - plasma concentration ratio
+  pbpko_bqm_is_class:
+    id: PBPKO:00187
+    label: blood:plasma ratio
+    iri: http://purl.obolibrary.org/obo/PBPKO_00187
+  chebi_bqb_is_class:
+    id: CHEBI:83490
+    label: 3,5,6-trichloropyridine-2-one
+    iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  unit: dimensionless
+- id: ka
+  name: Absorption from small intestine to liver
+  pbpko_bqm_is_class:
+    id: PBPKO:03002
+    label: intrinsic absorption rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03002
+  chebi_bqb_is_class:
+    id: CHEBI:83490
+    label: 3,5,6-trichloropyridine-2-one
+    iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  unit: /h
+- id: LiverVmax1
+  name: Vmax in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol/h/mg
+- id: MPL
+  name: Clearance scaling factor
+  pbpko_bqm_is_class:
+    id: PBPKO:00649
+    label: miscellaneous parameter
+    iri: http://purl.obolibrary.org/obo/PBPKO_00649
+  unit: mg/g
+- id: LiverVmax2
+  name: Vmax in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: umol/h/mg
+- id: LiverVmaxOxon1
+  name: Vmax in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: umol/h/mg
+- id: LiverVmaxOxon2
+  name: Vmax in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00214
+    label: Michaelis constant  liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00214
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: umol/h/mg
+- id: CPL
+  name: Clearance scaling factor
+  pbpko_bqm_is_class:
+    id: PBPKO:00649
+    label: miscellaneous parameter
+    iri: http://purl.obolibrary.org/obo/PBPKO_00649
+  unit: mg/g
+- id: BloodVmaxOxon
+  name: Vmax in blood
+  pbpko_bqm_is_class:
+    id: SBO:0000027
+    label: Michaelis constant
+    iri: http://biomodels.net/SBO/SBO_0000027
+  chebi_bqb_is_class:
+    id: CHEBI:25212
+    label: metabolite
+    iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  unit: umol/h/mg
+- id: MPP
+  name: Clearance scaling factor
+  pbpko_bqm_is_class:
+    id: PBPKO:00649
+    label: miscellaneous parameter
+    iri: http://purl.obolibrary.org/obo/PBPKO_00649
+  unit: mg/g
+- id: HC
+  name: Hematocrit
+  pbpko_bqm_is_class:
+    id: PBPKO:00527
+    label: hematocrit volume
+    iri: http://purl.obolibrary.org/obo/PBPKO_00527
+  unit: dimensionless
+- id: kge
+  name: Gastric emptying rate
+  pbpko_bqm_is_class:
+    id: PBPKO:00143
+    label: gastric emptying rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00143
+  chebi_bqb_is_class:
+    id: CHEBI:34631
+    label: chlorpyrifos
+    iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  unit: /h
+- id: ktSI
+  name: Small intestine transit rate
+  pbpko_bqm_is_class:
+    id: PBPKO:03015
+    label: kinetic emptying  rate between intestinal segments
+    iri: http://purl.obolibrary.org/obo/PBPKO_03015
+  chebi_bqb_is_class:
+    id: CHEBI:83490
+    label: 3,5,6-trichloropyridine-2-one
+    iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  unit: /h
+- id: ktCol
+  name: Colon transit rate
+  unit: /h
+- id: CStomach
+  name: Concentration in stomach
+  pbpko_bqm_is_class:
+    id: PBPKO:06041
+    label: concentration in stomach
+    iri: http://purl.obolibrary.org/obo/PBPKO_06041
+  unit: umol/L
+- id: CSI1
+  name: Concentration in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06042
+    label: concentration in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_06042
+  unit: umol/L
+- id: CSI2
+  name: Concentration in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06042
+    label: concentration in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_06042
+  unit: umol/L
+- id: CSI3
+  name: Concentration in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06042
+    label: concentration in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_06042
+  unit: umol/L
+- id: CSI4
+  name: Concentration in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06042
+    label: concentration in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_06042
+  unit: umol/L
+- id: CSI5
+  name: Concentration in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06042
+    label: concentration in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_06042
+  unit: umol/L
+- id: CSI6
+  name: Concentration in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06042
+    label: concentration in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_06042
+  unit: umol/L
+- id: CSI7
+  name: Concentration in small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06042
+    label: concentration in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_06042
+  unit: umol/L
+- id: CColon
+  name: Concentration in colon
+  unit: umol/L
+- id: CBlood
+  name: Concentration in blood
+  pbpko_bqm_is_class:
+    id: PBPKO:00301
+    label: concentration in blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00301
+  unit: umol/L
+- id: CLiver
+  name: Concentration in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00539
+    label: concentration in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00539
+  unit: umol/L
+- id: CKid
+  name: Concentration in kidney
+  pbpko_bqm_is_class:
+    id: PBPKO:00541
+    label: concentration in kidney
+    iri: http://purl.obolibrary.org/obo/PBPKO_00541
+  unit: umol/L
+- id: CRest
+  name: Concentration in rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00548
+    label: concentration in restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00548
+  unit: umol/L
+- id: CBloodOxon
+  name: Concentration in blood
+  pbpko_bqm_is_class:
+    id: PBPKO:00301
+    label: concentration in blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00301
+  unit: umol/L
+- id: CLiverOxon
+  name: Concentration in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00539
+    label: concentration in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00539
+  unit: umol/L
+- id: CKidOxon
+  name: Concentration in kidney
+  pbpko_bqm_is_class:
+    id: PBPKO:00541
+    label: concentration in kidney
+    iri: http://purl.obolibrary.org/obo/PBPKO_00541
+  unit: umol/L
+- id: CRestOxon
+  name: Concentration in rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00548
+    label: concentration in restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00548
+  unit: umol/L
+- id: CBloodMet
+  name: Concentration in blood
+  pbpko_bqm_is_class:
+    id: PBPKO:00301
+    label: concentration in blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00301
+  unit: umol/L
+- id: CLiverMet
+  name: Concentration in liver
+  pbpko_bqm_is_class:
+    id: PBPKO:00539
+    label: concentration in liver
+    iri: http://purl.obolibrary.org/obo/PBPKO_00539
+  unit: umol/L
+- id: CKidMet
+  name: Concentration in kidney
+  pbpko_bqm_is_class:
+    id: PBPKO:00541
+    label: concentration in kidney
+    iri: http://purl.obolibrary.org/obo/PBPKO_00541
+  unit: umol/L
+- id: CRestMet
+  name: Concentration in rest of body
+  pbpko_bqm_is_class:
+    id: PBPKO:00548
+    label: concentration in restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00548
+  unit: umol/L
+parameterisations:
+- filename: Moerenhout.params.csv
+  model_id: Moerenhout2022_Pesticides_Human
+  parameters:
+  - id: BW
+    value: 70.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00008
+      label: bodyweight
+      iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  - id: QCc
+    value: 4.8
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00013
+      label: cardiac output rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  - id: QC
+    value: null
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00013
+      label: cardiac output rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  - id: QLc
+    value: 0.227
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00025
+      label: fraction of blood flow to liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00025
+  - id: QL
+    value: null
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00024
+      label: blood flow rate to liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00024
+  - id: QKidc
+    value: 0.175
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00027
+      label: fraction of blood flow to kidney
+      iri: http://purl.obolibrary.org/obo/PBPKO_00027
+  - id: QKid
+    value: null
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00026
+      label: blood flow rate to kidney
+      iri: http://purl.obolibrary.org/obo/PBPKO_00026
+  - id: QRest
+    value: null
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00050
+      label: blood flow rate to restbody
+      iri: http://purl.obolibrary.org/obo/PBPKO_00050
+  - id: VLc
+    value: 0.026
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00078
+      label: fraction of liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00078
+  - id: VKidc
+    value: 0.004
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00080
+      label: fraction of kidney
+      iri: http://purl.obolibrary.org/obo/PBPKO_00080
+  - id: VBlc
+    value: 0.079
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:04057
+      label: volume fraction of blood
+      iri: http://purl.obolibrary.org/obo/PBPKO_04057
+  - id: VGutc
+    value: 0.063
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00509
+      label: fraction of gut
+      iri: http://purl.obolibrary.org/obo/PBPKO_00509
+  - id: VStc
+    value: 0.063
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00068
+      label: fraction of stomach
+      iri: http://purl.obolibrary.org/obo/PBPKO_00068
+  - id: VColonc
+    value: 0.063
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00422
+      label: fraction of colon
+      iri: http://purl.obolibrary.org/obo/PBPKO_00422
+  - id: VRest
+    value: 1.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00105
+      label: volume of rest body
+      iri: http://purl.obolibrary.org/obo/PBPKO_00105
+  - id: PL
+    value: 1.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00577
+      label: liver blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00577
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: PLOxon
+    value: 1.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00577
+      label: liver blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00577
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: PLMet
+    value: 1.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00577
+      label: liver blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00577
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: PKid
+    value: 1.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00575
+      label: kidney blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00575
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: PKidOxon
+    value: 1.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00575
+      label: kidney blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00575
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: PKidMet
+    value: 1.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00575
+      label: kidney blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00575
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: PRest
+    value: 1.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00585
+      label: restbody blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00585
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: PRestOxon
+    value: 1.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00585
+      label: restbody blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00585
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: PRestMet
+    value: 1.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00585
+      label: restbody blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00585
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: GFRc
+    value: 0.108
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00237
+      label: renal elimination rate constant
+      iri: http://purl.obolibrary.org/obo/PBPKO_00237
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: LiverVmax1c
+    value: 0.156
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: LiverKm1
+    value: 28.59
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: LiverVmax2c
+    value: 0.234
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: LiverKm2
+    value: 4.326
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: LiverVmaxOxon1c
+    value: 37.98
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: LiverKmOxon1
+    value: 627.9
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: LiverVmaxOxon2c
+    value: 1.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: LiverKmOxon2
+    value: 1.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: BloodVmaxOxonc
+    value: 23.84
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: SBO:0000027
+      label: Michaelis constant
+      iri: http://biomodels.net/SBO/SBO_0000027
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: BloodKmOxon
+    value: 290.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: SBO:0000027
+      label: Michaelis constant
+      iri: http://biomodels.net/SBO/SBO_0000027
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: fu
+    value: 0.018
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00149
+      label: unbound fraction
+      iri: http://purl.obolibrary.org/obo/PBPKO_00149
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: fuOxon
+    value: 0.051
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00149
+      label: unbound fraction
+      iri: http://purl.obolibrary.org/obo/PBPKO_00149
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: fuMet
+    value: 0.025
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00149
+      label: unbound fraction
+      iri: http://purl.obolibrary.org/obo/PBPKO_00149
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: bpr
+    value: 0.983
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00187
+      label: blood:plasma ratio
+      iri: http://purl.obolibrary.org/obo/PBPKO_00187
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: bprOxon
+    value: 0.692
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00187
+      label: blood:plasma ratio
+      iri: http://purl.obolibrary.org/obo/PBPKO_00187
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: bprMet
+    value: 0.55
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00187
+      label: blood:plasma ratio
+      iri: http://purl.obolibrary.org/obo/PBPKO_00187
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: ka
+    value: 2.4
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:03002
+      label: intrinsic absorption rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03002
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: MPL
+    value: 35.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00649
+      label: miscellaneous parameter
+      iri: http://purl.obolibrary.org/obo/PBPKO_00649
+  - id: CPL
+    value: 87.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00649
+      label: miscellaneous parameter
+      iri: http://purl.obolibrary.org/obo/PBPKO_00649
+  - id: MPP
+    value: 60.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00649
+      label: miscellaneous parameter
+      iri: http://purl.obolibrary.org/obo/PBPKO_00649
+  - id: HC
+    value: 0.45
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00527
+      label: hematocrit volume
+      iri: http://purl.obolibrary.org/obo/PBPKO_00527
+  - id: kge
+    value: 2.0
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:00143
+      label: gastric emptying rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_00143
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: ktSI
+    value: 0.3
+    unit: ''
+    reference: ''
+    bqm_is:
+      id: PBPKO:03015
+      label: kinetic emptying  rate between intestinal segments
+      iri: http://purl.obolibrary.org/obo/PBPKO_03015
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: ktCol
+    value: 0.09
+    unit: ''
+    reference: ''
+- filename: Moerenhout_Chlorpyrifos.params.csv
+  model_id: Moerenhout2022_Pesticides_Human
+  parameters:
+  - id: BW
+    value: 70.0
+    unit: kg
+    reference: ''
+    bqm_is:
+      id: PBPKO:00008
+      label: bodyweight
+      iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  - id: QCc
+    value: 4.8
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00013
+      label: cardiac output rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  - id: QC
+    value: null
+    unit: L/h
+    reference: ''
+    bqm_is:
+      id: PBPKO:00013
+      label: cardiac output rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  - id: QLc
+    value: 0.227
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00025
+      label: fraction of blood flow to liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00025
+  - id: QL
+    value: null
+    unit: L/h
+    reference: ''
+    bqm_is:
+      id: PBPKO:00024
+      label: blood flow rate to liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00024
+  - id: QKidc
+    value: 0.175
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00027
+      label: fraction of blood flow to kidney
+      iri: http://purl.obolibrary.org/obo/PBPKO_00027
+  - id: QKid
+    value: null
+    unit: L/h
+    reference: ''
+    bqm_is:
+      id: PBPKO:00026
+      label: blood flow rate to kidney
+      iri: http://purl.obolibrary.org/obo/PBPKO_00026
+  - id: QRest
+    value: null
+    unit: L/h
+    reference: ''
+    bqm_is:
+      id: PBPKO:00050
+      label: blood flow rate to restbody
+      iri: http://purl.obolibrary.org/obo/PBPKO_00050
+  - id: VLc
+    value: 0.026
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00078
+      label: fraction of liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00078
+  - id: VL
+    value: null
+    unit: L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00077
+      label: volume of liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00077
+  - id: VKidc
+    value: 0.004
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00080
+      label: fraction of kidney
+      iri: http://purl.obolibrary.org/obo/PBPKO_00080
+  - id: VKid
+    value: null
+    unit: L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00079
+      label: volume of kidney
+      iri: http://purl.obolibrary.org/obo/PBPKO_00079
+  - id: VBlc
+    value: 0.079
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:04057
+      label: volume fraction of blood
+      iri: http://purl.obolibrary.org/obo/PBPKO_04057
+  - id: VBl
+    value: null
+    unit: L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00108
+      label: volume of blood
+      iri: http://purl.obolibrary.org/obo/PBPKO_00108
+  - id: VGutc
+    value: 0.063
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00509
+      label: fraction of gut
+      iri: http://purl.obolibrary.org/obo/PBPKO_00509
+  - id: VGut
+    value: null
+    unit: L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00524
+      label: volume of gut
+      iri: http://purl.obolibrary.org/obo/PBPKO_00524
+  - id: VStc
+    value: 0.063
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00068
+      label: fraction of stomach
+      iri: http://purl.obolibrary.org/obo/PBPKO_00068
+  - id: VSt
+    value: null
+    unit: L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00067
+      label: volume of stomach
+      iri: http://purl.obolibrary.org/obo/PBPKO_00067
+  - id: VColonc
+    value: 0.063
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00422
+      label: fraction of colon
+      iri: http://purl.obolibrary.org/obo/PBPKO_00422
+  - id: VColon
+    value: null
+    unit: L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00427
+      label: volume of colon
+      iri: http://purl.obolibrary.org/obo/PBPKO_00427
+  - id: VRest
+    value: 1.0
+    unit: L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00105
+      label: volume of rest body
+      iri: http://purl.obolibrary.org/obo/PBPKO_00105
+  - id: PL
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00577
+      label: liver blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00577
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: PLOxon
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00577
+      label: liver blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00577
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: PLMet
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00577
+      label: liver blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00577
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: PKid
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00575
+      label: kidney blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00575
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: PKidOxon
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00575
+      label: kidney blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00575
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: PKidMet
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00575
+      label: kidney blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00575
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: PRest
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00585
+      label: restbody blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00585
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: PRestOxon
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00585
+      label: restbody blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00585
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: PRestMet
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00585
+      label: restbody blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00585
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: GFRc
+    value: 0.108
+    unit: L/h/kg
+    reference: ''
+    bqm_is:
+      id: PBPKO:00237
+      label: renal elimination rate constant
+      iri: http://purl.obolibrary.org/obo/PBPKO_00237
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: GFR
+    value: null
+    unit: /h
+    reference: ''
+  - id: LiverVmax1c
+    value: 0.156
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: LiverKm1
+    value: 28.59
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: LiverVmax2c
+    value: 0.234
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: LiverKm2
+    value: 4.326
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: LiverVmaxOxon1c
+    value: 37.98
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: LiverKmOxon1
+    value: 627.9
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: LiverVmaxOxon2c
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: LiverKmOxon2
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: BloodVmaxOxonc
+    value: 23.84
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: SBO:0000027
+      label: Michaelis constant
+      iri: http://biomodels.net/SBO/SBO_0000027
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: BloodKmOxon
+    value: 290.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: SBO:0000027
+      label: Michaelis constant
+      iri: http://biomodels.net/SBO/SBO_0000027
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: fu
+    value: 0.018
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00149
+      label: unbound fraction
+      iri: http://purl.obolibrary.org/obo/PBPKO_00149
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: fuOxon
+    value: 0.051
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00149
+      label: unbound fraction
+      iri: http://purl.obolibrary.org/obo/PBPKO_00149
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: fuMet
+    value: 0.025
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00149
+      label: unbound fraction
+      iri: http://purl.obolibrary.org/obo/PBPKO_00149
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: bpr
+    value: 0.983
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00187
+      label: blood:plasma ratio
+      iri: http://purl.obolibrary.org/obo/PBPKO_00187
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: bprOxon
+    value: 0.692
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00187
+      label: blood:plasma ratio
+      iri: http://purl.obolibrary.org/obo/PBPKO_00187
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: bprMet
+    value: 0.55
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00187
+      label: blood:plasma ratio
+      iri: http://purl.obolibrary.org/obo/PBPKO_00187
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: ka
+    value: 2.4
+    unit: /h
+    reference: ''
+    bqm_is:
+      id: PBPKO:03002
+      label: intrinsic absorption rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03002
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: MPL
+    value: 35.0
+    unit: mg/g
+    reference: ''
+    bqm_is:
+      id: PBPKO:00649
+      label: miscellaneous parameter
+      iri: http://purl.obolibrary.org/obo/PBPKO_00649
+  - id: CPL
+    value: 87.0
+    unit: mg/g
+    reference: ''
+    bqm_is:
+      id: PBPKO:00649
+      label: miscellaneous parameter
+      iri: http://purl.obolibrary.org/obo/PBPKO_00649
+  - id: MPP
+    value: 60.0
+    unit: mg/g
+    reference: ''
+    bqm_is:
+      id: PBPKO:00649
+      label: miscellaneous parameter
+      iri: http://purl.obolibrary.org/obo/PBPKO_00649
+  - id: HC
+    value: 0.45
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00527
+      label: hematocrit volume
+      iri: http://purl.obolibrary.org/obo/PBPKO_00527
+  - id: kge
+    value: 2.0
+    unit: /h
+    reference: ''
+    bqm_is:
+      id: PBPKO:00143
+      label: gastric emptying rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_00143
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: ktSI
+    value: 0.3
+    unit: /h
+    reference: ''
+    bqm_is:
+      id: PBPKO:03015
+      label: kinetic emptying  rate between intestinal segments
+      iri: http://purl.obolibrary.org/obo/PBPKO_03015
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: ktCol
+    value: 0.09
+    unit: /h
+    reference: ''
+- filename: Moerenhout_Diazinon.params.csv
+  model_id: Moerenhout2022_Pesticides_Human
+  parameters:
+  - id: BW
+    value: 70.0
+    unit: kg
+    reference: ''
+    bqm_is:
+      id: PBPKO:00008
+      label: bodyweight
+      iri: http://purl.obolibrary.org/obo/PBPKO_00008
+  - id: QCc
+    value: 4.8
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00013
+      label: cardiac output rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  - id: QC
+    value: null
+    unit: L/h
+    reference: ''
+    bqm_is:
+      id: PBPKO:00013
+      label: cardiac output rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_00013
+  - id: QLc
+    value: 0.227
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00025
+      label: fraction of blood flow to liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00025
+  - id: QL
+    value: null
+    unit: L/h
+    reference: ''
+    bqm_is:
+      id: PBPKO:00024
+      label: blood flow rate to liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00024
+  - id: QKidc
+    value: 0.175
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00027
+      label: fraction of blood flow to kidney
+      iri: http://purl.obolibrary.org/obo/PBPKO_00027
+  - id: QKid
+    value: null
+    unit: L/h
+    reference: ''
+    bqm_is:
+      id: PBPKO:00026
+      label: blood flow rate to kidney
+      iri: http://purl.obolibrary.org/obo/PBPKO_00026
+  - id: QRest
+    value: null
+    unit: L/h
+    reference: ''
+    bqm_is:
+      id: PBPKO:00050
+      label: blood flow rate to restbody
+      iri: http://purl.obolibrary.org/obo/PBPKO_00050
+  - id: VLc
+    value: 0.026
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00078
+      label: fraction of liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00078
+  - id: VL
+    value: null
+    unit: L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00077
+      label: volume of liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00077
+  - id: VKidc
+    value: 0.004
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00080
+      label: fraction of kidney
+      iri: http://purl.obolibrary.org/obo/PBPKO_00080
+  - id: VKid
+    value: null
+    unit: L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00079
+      label: volume of kidney
+      iri: http://purl.obolibrary.org/obo/PBPKO_00079
+  - id: VBlc
+    value: 0.079
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:04057
+      label: volume fraction of blood
+      iri: http://purl.obolibrary.org/obo/PBPKO_04057
+  - id: VBl
+    value: null
+    unit: L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00108
+      label: volume of blood
+      iri: http://purl.obolibrary.org/obo/PBPKO_00108
+  - id: VGutc
+    value: 0.063
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00509
+      label: fraction of gut
+      iri: http://purl.obolibrary.org/obo/PBPKO_00509
+  - id: VGut
+    value: null
+    unit: L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00524
+      label: volume of gut
+      iri: http://purl.obolibrary.org/obo/PBPKO_00524
+  - id: VStc
+    value: 0.063
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00068
+      label: fraction of stomach
+      iri: http://purl.obolibrary.org/obo/PBPKO_00068
+  - id: VSt
+    value: null
+    unit: L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00067
+      label: volume of stomach
+      iri: http://purl.obolibrary.org/obo/PBPKO_00067
+  - id: VColonc
+    value: 0.063
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00422
+      label: fraction of colon
+      iri: http://purl.obolibrary.org/obo/PBPKO_00422
+  - id: VColon
+    value: null
+    unit: L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00427
+      label: volume of colon
+      iri: http://purl.obolibrary.org/obo/PBPKO_00427
+  - id: VRest
+    value: 1.0
+    unit: L
+    reference: ''
+    bqm_is:
+      id: PBPKO:00105
+      label: volume of rest body
+      iri: http://purl.obolibrary.org/obo/PBPKO_00105
+  - id: PL
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00577
+      label: liver blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00577
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: PLOxon
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00577
+      label: liver blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00577
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: PLMet
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00577
+      label: liver blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00577
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: PKid
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00575
+      label: kidney blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00575
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: PKidOxon
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00575
+      label: kidney blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00575
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: PKidMet
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00575
+      label: kidney blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00575
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: PRest
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00585
+      label: restbody blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00585
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: PRestOxon
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00585
+      label: restbody blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00585
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: PRestMet
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00585
+      label: restbody blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00585
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: GFRc
+    value: 0.108
+    unit: L/h/kg
+    reference: ''
+    bqm_is:
+      id: PBPKO:00237
+      label: renal elimination rate constant
+      iri: http://purl.obolibrary.org/obo/PBPKO_00237
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: GFR
+    value: null
+    unit: /h
+    reference: ''
+  - id: LiverVmax1c
+    value: 0.156
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: LiverKm1
+    value: 28.59
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: LiverVmax2c
+    value: 0.234
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: LiverKm2
+    value: 4.326
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: LiverVmaxOxon1c
+    value: 37.98
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: LiverKmOxon1
+    value: 627.9
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: LiverVmaxOxon2c
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: LiverKmOxon2
+    value: 1.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00214
+      label: Michaelis constant  liver
+      iri: http://purl.obolibrary.org/obo/PBPKO_00214
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: BloodVmaxOxonc
+    value: 23.84
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: SBO:0000027
+      label: Michaelis constant
+      iri: http://biomodels.net/SBO/SBO_0000027
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: BloodKmOxon
+    value: 290.0
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: SBO:0000027
+      label: Michaelis constant
+      iri: http://biomodels.net/SBO/SBO_0000027
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: fu
+    value: 0.018
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00149
+      label: unbound fraction
+      iri: http://purl.obolibrary.org/obo/PBPKO_00149
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: fuOxon
+    value: 0.051
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00149
+      label: unbound fraction
+      iri: http://purl.obolibrary.org/obo/PBPKO_00149
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: fuMet
+    value: 0.025
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00149
+      label: unbound fraction
+      iri: http://purl.obolibrary.org/obo/PBPKO_00149
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: bpr
+    value: 0.983
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00187
+      label: blood:plasma ratio
+      iri: http://purl.obolibrary.org/obo/PBPKO_00187
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: bprOxon
+    value: 0.692
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00187
+      label: blood:plasma ratio
+      iri: http://purl.obolibrary.org/obo/PBPKO_00187
+    bqb_is:
+      id: CHEBI:25212
+      label: metabolite
+      iri: http://purl.obolibrary.org/obo/CHEBI_25212
+  - id: bprMet
+    value: 0.55
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00187
+      label: blood:plasma ratio
+      iri: http://purl.obolibrary.org/obo/PBPKO_00187
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: ka
+    value: 2.4
+    unit: /h
+    reference: ''
+    bqm_is:
+      id: PBPKO:03002
+      label: intrinsic absorption rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03002
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: MPL
+    value: 35.0
+    unit: mg/g
+    reference: ''
+    bqm_is:
+      id: PBPKO:00649
+      label: miscellaneous parameter
+      iri: http://purl.obolibrary.org/obo/PBPKO_00649
+  - id: CPL
+    value: 87.0
+    unit: mg/g
+    reference: ''
+    bqm_is:
+      id: PBPKO:00649
+      label: miscellaneous parameter
+      iri: http://purl.obolibrary.org/obo/PBPKO_00649
+  - id: MPP
+    value: 60.0
+    unit: mg/g
+    reference: ''
+    bqm_is:
+      id: PBPKO:00649
+      label: miscellaneous parameter
+      iri: http://purl.obolibrary.org/obo/PBPKO_00649
+  - id: HC
+    value: 0.45
+    unit: dimensionless
+    reference: ''
+    bqm_is:
+      id: PBPKO:00527
+      label: hematocrit volume
+      iri: http://purl.obolibrary.org/obo/PBPKO_00527
+  - id: kge
+    value: 2.0
+    unit: /h
+    reference: ''
+    bqm_is:
+      id: PBPKO:00143
+      label: gastric emptying rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_00143
+    bqb_is:
+      id: CHEBI:34631
+      label: chlorpyrifos
+      iri: http://purl.obolibrary.org/obo/CHEBI_34631
+  - id: ktSI
+    value: 0.3
+    unit: /h
+    reference: ''
+    bqm_is:
+      id: PBPKO:03015
+      label: kinetic emptying  rate between intestinal segments
+      iri: http://purl.obolibrary.org/obo/PBPKO_03015
+    bqb_is:
+      id: CHEBI:83490
+      label: 3,5,6-trichloropyridine-2-one
+      iri: http://purl.obolibrary.org/obo/CHEBI_83490
+  - id: ktCol
+    value: 0.09
+    unit: /h
+    reference: ''
+unit_consistency:
+- level: error
+  msg: "The units of the expressions used as arguments to a function call are expected\
+    \ to match the units expected for the arguments of that function. \nReference:\
+    \ L3V2 Section 3.4\n The formula 'LiverKm1 + CLiver / PL * bpr' in the math element\
+    \ of the <kineticLaw> can only act on variables with the same units."
+- level: error
+  msg: "The units of the expressions used as arguments to a function call are expected\
+    \ to match the units expected for the arguments of that function. \nReference:\
+    \ L3V2 Section 3.4\n The formula 'LiverKm2 + CLiver / PL * bpr' in the math element\
+    \ of the <kineticLaw> can only act on variables with the same units."
+- level: error
+  msg: "The units of the expressions used as arguments to a function call are expected\
+    \ to match the units expected for the arguments of that function. \nReference:\
+    \ L3V2 Section 3.4\n The formula 'LiverKmOxon1 + CLiverOxon / PLOxon * bprOxon'\
+    \ in the math element of the <kineticLaw> can only act on variables with the same\
+    \ units."
+- level: error
+  msg: "The units of the expressions used as arguments to a function call are expected\
+    \ to match the units expected for the arguments of that function. \nReference:\
+    \ L3V2 Section 3.4\n The formula 'LiverKmOxon2 + CLiverOxon / PLOxon * bprOxon'\
+    \ in the math element of the <kineticLaw> can only act on variables with the same\
+    \ units."
+- level: error
+  msg: "The units of the expressions used as arguments to a function call are expected\
+    \ to match the units expected for the arguments of that function. \nReference:\
+    \ L3V2 Section 3.4\n The formula 'BloodKmOxon + CBloodOxon / bprOxon * fuOxon'\
+    \ in the math element of the <kineticLaw> can only act on variables with the same\
+    \ units."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'LiverVmax1 * (CLiver / PL) * bpr / (LiverKm1 + CLiver / PL * bpr)' in the <kineticLaw>\
+    \ element of the <reaction> with id '_J17' produces units that are inconsistent\
+    \ with units of earlier KineticLaw elements."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'LiverVmax2 * (CLiver / PL) * bpr / (LiverKm2 + CLiver / PL * bpr)' in the <kineticLaw>\
+    \ element of the <reaction> with id '_J20' produces units that are inconsistent\
+    \ with units of earlier KineticLaw elements."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'LiverVmaxOxon1 * (CLiverOxon / PLOxon) * bprOxon / (LiverKmOxon1 + CLiverOxon\
+    \ / PLOxon * bprOxon)' in the <kineticLaw> element of the <reaction> with id '_J21'\
+    \ produces units that are inconsistent with units of earlier KineticLaw elements."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'LiverVmaxOxon2 * (CLiverOxon / PLOxon) * bprOxon / (LiverKmOxon2 + CLiverOxon\
+    \ / PLOxon * bprOxon)' in the <kineticLaw> element of the <reaction> with id '_J22'\
+    \ produces units that are inconsistent with units of earlier KineticLaw elements."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'BloodVmaxOxon * (CBloodOxon / bprOxon) * fuOxon / (BloodKmOxon + CBloodOxon\
+    \ / bprOxon * fuOxon)' in the <kineticLaw> element of the <reaction> with id '_J26'\
+    \ produces units that are inconsistent with units of earlier KineticLaw elements."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'CKid * fu * GFR' in the <kineticLaw> element of the <reaction> with id '_J33'\
+    \ produces units that are inconsistent with units of earlier KineticLaw elements."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'CKidOxon * fuOxon * GFR' in the <kineticLaw> element of the <reaction> with\
+    \ id '_J34' produces units that are inconsistent with units of earlier KineticLaw\
+    \ elements."
+- level: error
+  msg: "The unit of measurement associated with the mathematical formula in the MathML\
+    \ math element of every KineticLaw object in a model should be identical to all\
+    \ KineticLaw objects in the model.\nReference: L3V2 Section 3.4\n The formula\
+    \ 'CKidMet * fuMet * GFR' in the <kineticLaw> element of the <reaction> with id\
+    \ '_J35' produces units that are inconsistent with units of earlier KineticLaw\
+    \ elements."
+- level: error
+  msg: "When the 'variable' in an <initialAssignment> refers to a <parameter>, the\
+    \ units of the <initialAssignment>'s <math> expression are expected to be consistent\
+    \ with the units declared for that parameter.\nReference: L3V2 Section 4.8\n Expected\
+    \ units are litre (exponent = 1, multiplier = 1, scale = 0), second (exponent\
+    \ = -1, multiplier = 3600, scale = 0) but the units returned by the <math> expression\
+    \ of the <initialAssignment> with symbol 'QC' are gram (exponent = 1, multiplier\
+    \ = 1000, scale = 0)."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '1' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression '1' cannot be fully checked. Unit consistency\
+    \ reported as either no errors or further unit errors related to this object may\
+    \ not be accurate."
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'VL' are gram (exponent = 1,\
+    \ multiplier = 1000, scale = 0)."
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'VKid' are gram (exponent =\
+    \ 1, multiplier = 1000, scale = 0)."
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'VBl' are gram (exponent =\
+    \ 1, multiplier = 1000, scale = 0)."
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'VGut' are gram (exponent =\
+    \ 1, multiplier = 1000, scale = 0)."
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'VSt' are gram (exponent =\
+    \ 1, multiplier = 1000, scale = 0)."
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'VColon' are gram (exponent\
+    \ = 1, multiplier = 1000, scale = 0)."
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are second\
+    \ (exponent = -1, multiplier = 3600, scale = 0) but the units returned by the\
+    \ <math> expression of the <assignmentRule> with variable 'GFR' are litre (exponent\
+    \ = 1, multiplier = 1, scale = 0), second (exponent = -1, multiplier = 3600, scale\
+    \ = 0)."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'LiverVmax1c / 1000 * 60 * MPL * 1000 * VL'\
+    \ cannot be fully checked. Unit consistency reported as either no errors or further\
+    \ unit errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'LiverVmax2c / 1000 * 60 * MPL * 1000 * VL'\
+    \ cannot be fully checked. Unit consistency reported as either no errors or further\
+    \ unit errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'LiverVmaxOxon1c / 1000 * 60 * MPL * 1000\
+    \ * VL' cannot be fully checked. Unit consistency reported as either no errors\
+    \ or further unit errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'LiverVmaxOxon2c / 1000 * 60 * CPL * 1000\
+    \ * VL' cannot be fully checked. Unit consistency reported as either no errors\
+    \ or further unit errors related to this object may not be accurate."
+- level: warning
+  msg: "In situations where a mathematical expression contains literal numbers or\
+    \ parameters whose units have not been declared, it is not possible to verify\
+    \ accurately the consistency of the units in the expression. \n The units of the\
+    \ <assignmentRule> <math> expression 'BloodVmaxOxonc / 1000 * 60 * MPP * 1000\
+    \ * VBl * (1 - HC)' cannot be fully checked. Unit consistency reported as either\
+    \ no errors or further unit errors related to this object may not be accurate."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are mole (exponent = 1, multiplier = 1, scale = -6), second (exponent\
+    \ = -1, multiplier = 3600, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J17') are mole (exponent\
+    \ = 2, multiplier = 1e-06, scale = 0), second (exponent = -1, multiplier = 3600,\
+    \ scale = 0), gram (exponent = -1, multiplier = 0.001, scale = 0), litre (exponent\
+    \ = -1, multiplier = 1, scale = 0)."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are mole (exponent = 1, multiplier = 1, scale = -6), second (exponent\
+    \ = -1, multiplier = 3600, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J20') are mole (exponent\
+    \ = 2, multiplier = 1e-06, scale = 0), second (exponent = -1, multiplier = 3600,\
+    \ scale = 0), gram (exponent = -1, multiplier = 0.001, scale = 0), litre (exponent\
+    \ = -1, multiplier = 1, scale = 0)."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are mole (exponent = 1, multiplier = 1, scale = -6), second (exponent\
+    \ = -1, multiplier = 3600, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J21') are mole (exponent\
+    \ = 2, multiplier = 1e-06, scale = 0), second (exponent = -1, multiplier = 3600,\
+    \ scale = 0), gram (exponent = -1, multiplier = 0.001, scale = 0), litre (exponent\
+    \ = -1, multiplier = 1, scale = 0)."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are mole (exponent = 1, multiplier = 1, scale = -6), second (exponent\
+    \ = -1, multiplier = 3600, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J22') are mole (exponent\
+    \ = 2, multiplier = 1e-06, scale = 0), second (exponent = -1, multiplier = 3600,\
+    \ scale = 0), gram (exponent = -1, multiplier = 0.001, scale = 0), litre (exponent\
+    \ = -1, multiplier = 1, scale = 0)."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are mole (exponent = 1, multiplier = 1, scale = -6), second (exponent\
+    \ = -1, multiplier = 3600, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J26') are mole (exponent\
+    \ = 2, multiplier = 1e-06, scale = 0), second (exponent = -1, multiplier = 3600,\
+    \ scale = 0), gram (exponent = -1, multiplier = 0.001, scale = 0), litre (exponent\
+    \ = -1, multiplier = 1, scale = 0)."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are mole (exponent = 1, multiplier = 1, scale = -6), second (exponent\
+    \ = -1, multiplier = 3600, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J33') are mole (exponent\
+    \ = 1, multiplier = 1e-06, scale = 0), litre (exponent = -1, multiplier = 1, scale\
+    \ = 0), second (exponent = -1, multiplier = 3600, scale = 0)."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are mole (exponent = 1, multiplier = 1, scale = -6), second (exponent\
+    \ = -1, multiplier = 3600, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J34') are mole (exponent\
+    \ = 1, multiplier = 1e-06, scale = 0), litre (exponent = -1, multiplier = 1, scale\
+    \ = 0), second (exponent = -1, multiplier = 3600, scale = 0)."
+- level: error
+  msg: "The units of the 'math' formula in a <kineticLaw> definition are expected\
+    \ to be the equivalent of _substance per time_.\nReference: L3V2 Sections 4.11.7,\
+    \ 4.2.3 AND 4.9.4\n In level 3 the expected units are extent_per_time. Expected\
+    \ units are mole (exponent = 1, multiplier = 1, scale = -6), second (exponent\
+    \ = -1, multiplier = 3600, scale = 0) but the units returned by the <math> expression\
+    \ in the <kineticLaw> (from the <reaction> with id '_J35') are mole (exponent\
+    \ = 1, multiplier = 1e-06, scale = 0), litre (exponent = -1, multiplier = 1, scale\
+    \ = 0), second (exponent = -1, multiplier = 3600, scale = 0)."

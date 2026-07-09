@@ -812,34 +812,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Heavy%20Metals/Bechaux2014/summary/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Bechaux 2014_Female
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../Heavy%20Metals/Carrier2001/summary/" class="md-nav__link">
         
   
@@ -1044,34 +1016,6 @@
     
   
     Pouillot 2022
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Heavy%20Metals/Ruiz2010/summary/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Ruiz 2010_Female
   
 
     
@@ -1621,6 +1565,34 @@
     
   
     Mallick
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Pesticides/Moerenhout/summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moerenhout
   
 
     
@@ -3559,7 +3531,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Number of parameters</td>
-<td style="text-align: left;">48 (15 external / 33 internal)</td>
+<td style="text-align: left;">46 (13 external / 33 internal)</td>
 </tr>
 </tbody>
 </table>
@@ -3596,7 +3568,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">LargeLumen</td>
-<td style="text-align: left;">Large intestine lumen compartment</td>
+<td style="text-align: left;">Large intestine compartment</td>
 <td style="text-align: left;">L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00474</td>
 </tr>
@@ -3622,7 +3594,7 @@
 <td style="text-align: left;">IntestinalTissue</td>
 <td style="text-align: left;">Intestinal tissue compartment</td>
 <td style="text-align: left;">L</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_02004</td>
 </tr>
 </tbody>
 </table>
@@ -3641,31 +3613,31 @@
 <td style="text-align: left;">ASt</td>
 <td style="text-align: left;">Amount in stomach</td>
 <td style="text-align: left;">umol</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06004</td>
 </tr>
 <tr>
 <td style="text-align: left;">AJ</td>
 <td style="text-align: left;">Amount in jejunum</td>
 <td style="text-align: left;">umol</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06006</td>
 </tr>
 <tr>
 <td style="text-align: left;">AI</td>
 <td style="text-align: left;">Amount in ileum</td>
 <td style="text-align: left;">umol</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06007</td>
 </tr>
 <tr>
 <td style="text-align: left;">ALI</td>
-<td style="text-align: left;">amount in large intestine</td>
+<td style="text-align: left;">Amount in large intestine</td>
 <td style="text-align: left;">umol</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06008</td>
 </tr>
 <tr>
 <td style="text-align: left;">AIT</td>
-<td style="text-align: left;">Amount in intestinal tissue</td>
+<td style="text-align: left;">Amount in instestinal tissue</td>
 <td style="text-align: left;">umol</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06015</td>
 </tr>
 <tr>
 <td style="text-align: left;">ALiver</td>
@@ -3726,19 +3698,19 @@
 <td style="text-align: left;">_J3</td>
 <td style="text-align: left;">AJ</td>
 <td style="text-align: left;">AIT</td>
-<td style="text-align: left;">kabsJ * CJ</td>
+<td style="text-align: left;">kabsJ * AJ</td>
 </tr>
 <tr>
 <td style="text-align: left;">_J4</td>
 <td style="text-align: left;">AI</td>
 <td style="text-align: left;">AIT</td>
-<td style="text-align: left;">kabsI * CI</td>
+<td style="text-align: left;">kabsI * AI</td>
 </tr>
 <tr>
 <td style="text-align: left;">_J5</td>
 <td style="text-align: left;">ALI</td>
 <td style="text-align: left;">AIT</td>
-<td style="text-align: left;">kabsLI * CLI</td>
+<td style="text-align: left;">kabsLI * ALI</td>
 </tr>
 <tr>
 <td style="text-align: left;">_J6</td>
@@ -3780,7 +3752,7 @@
 <td style="text-align: left;">_J12</td>
 <td style="text-align: left;">ALiver</td>
 <td style="text-align: left;">AMet</td>
-<td style="text-align: left;">CLint * (CLiver / PL)</td>
+<td style="text-align: left;">Met</td>
 </tr>
 </tbody>
 </table>
@@ -3788,21 +3760,21 @@
 <p><span class="arithmatex">\(\frac{d[\mathtt{ASt}]}{dt} = -  \mathit{ksto}\cdot \mathit{ASt}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{AJ}]}{dt} =  \mathit{ksto}\cdot \mathit{ASt}
            -  \mathit{kt1}\cdot \mathit{AJ}
-           -  \mathit{kabsJ}\cdot \mathit{CJ}\)</span></p>
+           -  \mathit{kabsJ}\cdot \mathit{AJ}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{AI}]}{dt} =  \mathit{kt1}\cdot \mathit{AJ}
            -  \mathit{kt2}\cdot \mathit{AI}
-           -  \mathit{kabsI}\cdot \mathit{CI}\)</span></p>
+           -  \mathit{kabsI}\cdot \mathit{AI}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{ALI}]}{dt} =  \mathit{kt2}\cdot \mathit{AI}
-            -  \mathit{kabsLI}\cdot \mathit{CLI}\)</span></p>
-<p><span class="arithmatex">\(\frac{d[\mathtt{AIT}]}{dt} =  \mathit{kabsJ}\cdot \mathit{CJ}
-            +  \mathit{kabsI}\cdot \mathit{CI}
-            +  \mathit{kabsLI}\cdot \mathit{CLI}
+            -  \mathit{kabsLI}\cdot \mathit{ALI}\)</span></p>
+<p><span class="arithmatex">\(\frac{d[\mathtt{AIT}]}{dt} =  \mathit{kabsJ}\cdot \mathit{AJ}
+            +  \mathit{kabsI}\cdot \mathit{AI}
+            +  \mathit{kabsLI}\cdot \mathit{ALI}
             +  \mathit{QIT}\cdot \mathit{CBlood}
             -  \frac{\mathit{QIT}\cdot \mathit{CIT}}{\mathit{PIT}}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{ALiver}]}{dt} =  \frac{\mathit{QIT}\cdot \mathit{CIT}}{\mathit{PIT}}
                +  \mathit{QL}\cdot \mathit{CBlood}
                -  \frac{(\mathit{QL}+\mathit{QIT})\cdot \mathit{CLiver}}{\mathit{PL}}
-               -  \mathit{CLint}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}\)</span></p>
+               -  \mathit{Met}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{ABlood}]}{dt} = -  \mathit{QIT}\cdot \mathit{CBlood}
                -  \mathit{QL}\cdot \mathit{CBlood}
                +  \frac{(\mathit{QL}+\mathit{QIT})\cdot \mathit{CLiver}}{\mathit{PL}}
@@ -3810,7 +3782,7 @@
                +  \frac{\mathit{QRest}\cdot \mathit{CRest}}{\mathit{PRest}}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{ARest}]}{dt} =  \mathit{QRest}\cdot \mathit{CBlood}
               -  \frac{\mathit{QRest}\cdot \mathit{CRest}}{\mathit{PRest}}\)</span></p>
-<p><span class="arithmatex">\(\frac{d[\mathtt{AMet}]}{dt} =  \mathit{CLint}\cdot \frac{\mathit{CLiver}}{\mathit{PL}}\)</span></p>
+<p><span class="arithmatex">\(\frac{d[\mathtt{AMet}]}{dt} =  \mathit{Met}\)</span></p>
 <h2 id="assignment-rules">Assignment rules</h2>
 <table>
 <thead>
@@ -3820,6 +3792,30 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align: left;">Jejunum</td>
+<td style="text-align: left;">VJ</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ileum</td>
+<td style="text-align: left;">VI</td>
+</tr>
+<tr>
+<td style="text-align: left;">LargeLumen</td>
+<td style="text-align: left;">VLI</td>
+</tr>
+<tr>
+<td style="text-align: left;">Liver</td>
+<td style="text-align: left;">VL</td>
+</tr>
+<tr>
+<td style="text-align: left;">Blood</td>
+<td style="text-align: left;">VB</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rest</td>
+<td style="text-align: left;">VRest</td>
+</tr>
 <tr>
 <td style="text-align: left;">VL</td>
 <td style="text-align: left;">VLc * BW</td>
@@ -3902,15 +3898,15 @@
 </tr>
 <tr>
 <td style="text-align: left;">kabsJ</td>
-<td style="text-align: left;">Papp_dm_h * SAJ</td>
+<td style="text-align: left;">Papp_dm_h * SAJ / VJ</td>
 </tr>
 <tr>
 <td style="text-align: left;">kabsI</td>
-<td style="text-align: left;">Papp_dm_h * SAI</td>
+<td style="text-align: left;">Papp_dm_h * SAI / VI</td>
 </tr>
 <tr>
 <td style="text-align: left;">kabsLI</td>
-<td style="text-align: left;">Papp_dm_h * SALI</td>
+<td style="text-align: left;">Papp_dm_h * SALI / VLI</td>
 </tr>
 <tr>
 <td style="text-align: left;">CLint</td>
@@ -3964,28 +3960,8 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Jejunum</td>
-<td style="text-align: left;">VJ</td>
-</tr>
-<tr>
-<td style="text-align: left;">Ileum</td>
-<td style="text-align: left;">VI</td>
-</tr>
-<tr>
-<td style="text-align: left;">LargeLumen</td>
-<td style="text-align: left;">VLI</td>
-</tr>
-<tr>
-<td style="text-align: left;">Liver</td>
-<td style="text-align: left;">VL</td>
-</tr>
-<tr>
-<td style="text-align: left;">Blood</td>
-<td style="text-align: left;">VB</td>
-</tr>
-<tr>
-<td style="text-align: left;">Rest</td>
-<td style="text-align: left;">VRest</td>
+<td style="text-align: left;">PappDONc</td>
+<td style="text-align: left;">1.2883 / 10000</td>
 </tr>
 </tbody>
 </table>
@@ -4009,19 +3985,19 @@
 <tr>
 <td style="text-align: left;">VLc</td>
 <td style="text-align: left;">Volume fraction of liver</td>
-<td style="text-align: left;">dimensionless</td>
+<td style="text-align: left;">L/kg</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00078</td>
 </tr>
 <tr>
 <td style="text-align: left;">VBc</td>
 <td style="text-align: left;">Volume fraction of blood</td>
-<td style="text-align: left;">dimensionless</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">L/kg</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_04057</td>
 </tr>
 <tr>
 <td style="text-align: left;">VITc</td>
 <td style="text-align: left;">Volume fraction of intestinal tissue</td>
-<td style="text-align: left;">dimensionless</td>
+<td style="text-align: left;">L/kg</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00070</td>
 </tr>
 <tr>
@@ -4044,37 +4020,37 @@
 </tr>
 <tr>
 <td style="text-align: left;">Ddm</td>
-<td style="text-align: left;">Intestinal segment geometry - diameter</td>
+<td style="text-align: left;">Diameter of intestine</td>
 <td style="text-align: left;">dm</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_04046</td>
 </tr>
 <tr>
 <td style="text-align: left;">LJdm</td>
-<td style="text-align: left;">Intestinal segment geometry - jejunum length</td>
+<td style="text-align: left;">Jejunum length</td>
 <td style="text-align: left;">dm</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">LIdm</td>
-<td style="text-align: left;">Intestinal segment geometry - ileum length</td>
+<td style="text-align: left;">Ileum length</td>
 <td style="text-align: left;">dm</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">LLIdm</td>
-<td style="text-align: left;">Intestinal segment geometry - large intestine length</td>
+<td style="text-align: left;">Large intestine length</td>
 <td style="text-align: left;">dm</td>
 <td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">VJ</td>
-<td style="text-align: left;">Volume of jejunum</td>
+<td style="text-align: left;">Volume of jejunum lumen</td>
 <td style="text-align: left;">L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00425</td>
 </tr>
 <tr>
 <td style="text-align: left;">VI</td>
-<td style="text-align: left;">Volume of ileum</td>
+<td style="text-align: left;">Volume of ileum lumen</td>
 <td style="text-align: left;">L</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00426</td>
 </tr>
@@ -4086,19 +4062,19 @@
 </tr>
 <tr>
 <td style="text-align: left;">SAJ</td>
-<td style="text-align: left;">Surface area - jejunum lumen</td>
+<td style="text-align: left;">Surface area - jejunum</td>
 <td style="text-align: left;">dm^2</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00010</td>
 </tr>
 <tr>
 <td style="text-align: left;">SAI</td>
-<td style="text-align: left;">Surface area - ileum lumen</td>
+<td style="text-align: left;">Surface area - ileum</td>
 <td style="text-align: left;">dm^2</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00010</td>
 </tr>
 <tr>
 <td style="text-align: left;">SALI</td>
-<td style="text-align: left;">Surface area - large intestine lumen</td>
+<td style="text-align: left;">Surface area - large intestine</td>
 <td style="text-align: left;">dm^2</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00010</td>
 </tr>
@@ -4116,31 +4092,31 @@
 </tr>
 <tr>
 <td style="text-align: left;">QLc</td>
-<td style="text-align: left;">Cardiac output fraction to liver</td>
+<td style="text-align: left;">Blood flow to liver fraction</td>
 <td style="text-align: left;">dimensionless</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00025</td>
 </tr>
 <tr>
 <td style="text-align: left;">QITc</td>
-<td style="text-align: left;">Cardiac output fraction to intestinal tissue</td>
+<td style="text-align: left;">Blood flow to intestinal tissue fraction</td>
 <td style="text-align: left;">dimensionless</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00017</td>
 </tr>
 <tr>
 <td style="text-align: left;">QL</td>
-<td style="text-align: left;">Cardiac output to liver</td>
+<td style="text-align: left;">Blood flow to liver</td>
 <td style="text-align: left;">L/h</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00024</td>
 </tr>
 <tr>
 <td style="text-align: left;">QIT</td>
-<td style="text-align: left;">Cardiac output to intestinal tissue</td>
+<td style="text-align: left;">Blood flow to intestinal tissue</td>
 <td style="text-align: left;">L/h</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00016</td>
 </tr>
 <tr>
 <td style="text-align: left;">QRest</td>
-<td style="text-align: left;">Cardiac output to rest of body</td>
+<td style="text-align: left;">Blood flow to rest of body</td>
 <td style="text-align: left;">L/h</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00050</td>
 </tr>
@@ -4148,13 +4124,7 @@
 <td style="text-align: left;">RBP</td>
 <td style="text-align: left;">Blood to plasma ratio</td>
 <td style="text-align: left;">dimensionless</td>
-<td style="text-align: left;"><em>not specified</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">fu</td>
-<td style="text-align: left;">Fraction unbound</td>
-<td style="text-align: left;">dimensionless</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00591</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00187</td>
 </tr>
 <tr>
 <td style="text-align: left;">PL</td>
@@ -4164,7 +4134,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">PIT</td>
-<td style="text-align: left;">Partition coefficient intestinal tissue - blood</td>
+<td style="text-align: left;">Partition coefficient blood - intestine tissue</td>
 <td style="text-align: left;">dimensionless</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00574</td>
 </tr>
@@ -4176,93 +4146,87 @@
 </tr>
 <tr>
 <td style="text-align: left;">ksto</td>
-<td style="text-align: left;">Kinetic constant stomach to jejunum</td>
+<td style="text-align: left;">Transport rate from stomach to jejunum</td>
 <td style="text-align: left;">/h</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_03001</td>
 </tr>
 <tr>
 <td style="text-align: left;">kt1</td>
-<td style="text-align: left;">Kinetic constant jejunum to ileum</td>
+<td style="text-align: left;">Transport rate from jejunum to ileum</td>
 <td style="text-align: left;">/h</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_03008</td>
 </tr>
 <tr>
 <td style="text-align: left;">kt2</td>
-<td style="text-align: left;">Kinetic constant ileum to large intestine</td>
+<td style="text-align: left;">Transport rate from ileum to large intestine</td>
 <td style="text-align: left;">/h</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_03009</td>
 </tr>
 <tr>
 <td style="text-align: left;">PappDONc</td>
-<td style="text-align: left;">Intestinal absorption rate</td>
-<td style="text-align: left;"><em>not specified</em></td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00142</td>
+<td style="text-align: left;">Fitted parameter</td>
+<td style="text-align: left;">cm/s</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00649</td>
 </tr>
 <tr>
 <td style="text-align: left;">Papp_dm_h</td>
-<td style="text-align: left;">Intestinal absorption rate</td>
+<td style="text-align: left;">Fitted parameter</td>
 <td style="text-align: left;">dm/h</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00142</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00649</td>
 </tr>
 <tr>
 <td style="text-align: left;">kabsJ</td>
-<td style="text-align: left;">Absorption rate jejunum</td>
-<td style="text-align: left;">L/h</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Absorption rate in jejunum</td>
+<td style="text-align: left;">/h</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00142</td>
 </tr>
 <tr>
 <td style="text-align: left;">kabsI</td>
-<td style="text-align: left;">Absorption rate ileum</td>
-<td style="text-align: left;">L/h</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Absorption rate in ileum</td>
+<td style="text-align: left;">/h</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00142</td>
 </tr>
 <tr>
 <td style="text-align: left;">kabsLI</td>
-<td style="text-align: left;">Absorption rate large intestine</td>
-<td style="text-align: left;">L/h</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">Absorption rate in large intestine</td>
+<td style="text-align: left;">/h</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00142</td>
 </tr>
 <tr>
 <td style="text-align: left;">CLint</td>
 <td style="text-align: left;">Hepatic intrinsic clearance</td>
 <td style="text-align: left;">L/h</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00235</td>
-</tr>
-<tr>
-<td style="text-align: left;">ALiv</td>
-<td style="text-align: left;">Amount in liver</td>
-<td style="text-align: left;">umol</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00497</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00234</td>
 </tr>
 <tr>
 <td style="text-align: left;">CSt</td>
-<td style="text-align: left;">Concentration in stomach</td>
+<td style="text-align: left;">Concenetration in stomach</td>
 <td style="text-align: left;">umol/L</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06041</td>
 </tr>
 <tr>
 <td style="text-align: left;">CJ</td>
 <td style="text-align: left;">Concentration in jejunum</td>
 <td style="text-align: left;">umol/L</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06043</td>
 </tr>
 <tr>
 <td style="text-align: left;">CI</td>
 <td style="text-align: left;">Concentration in ileum</td>
 <td style="text-align: left;">umol/L</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06044</td>
 </tr>
 <tr>
 <td style="text-align: left;">CLI</td>
 <td style="text-align: left;">Concentration in large intestine</td>
 <td style="text-align: left;">umol/L</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06045</td>
 </tr>
 <tr>
 <td style="text-align: left;">CIT</td>
 <td style="text-align: left;">Concentration in intestinal tissue</td>
 <td style="text-align: left;">umol/L</td>
-<td style="text-align: left;"><em>not specified</em></td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_06046</td>
 </tr>
 <tr>
 <td style="text-align: left;">CLiver</td>
@@ -4284,9 +4248,9 @@
 </tr>
 <tr>
 <td style="text-align: left;">Met</td>
-<td style="text-align: left;">Hepatic metabolism</td>
-<td style="text-align: left;">umol/L</td>
-<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00234</td>
+<td style="text-align: left;">Hepatic metabolism (intrinsic clearance on liver-venous concentration)</td>
+<td style="text-align: left;">umol/h</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_03049</td>
 </tr>
 </tbody>
 </table>
