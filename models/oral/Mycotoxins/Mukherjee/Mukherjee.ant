@@ -9,7 +9,7 @@ Human PBK for oral absorption (Mukherjee 2014 core): GI (GI→Fast/Slow; Slow→
 Perfusion-limited: Gut ↔ Blood, Liver ↔ Blood, Rest ↔ Blood
 Parent metabolism in liver (1st order by default, MM optional)
 ```
-model description "10.1371/journal.pone.0113632"
+model description "https://doi.org/10.1371/journal.pone.0113632"
 
 #------------------------
 # Body size & base volumes
@@ -64,13 +64,13 @@ kabsFL := 15.45 * 60    # 1/h  Fast lumen absorption → Gut tissue (according t
 kabsSL = 0              # 1/h  Small lumen absorption → Gut tissue (according to article)
 
 kfe   := 0.0034 * 60    # 1/h   Colon → feces (according to article)
-kbiliary := 0.0585 * 60 # 1/h   Liver → bile (according to article)
+kbiliary := 0.0585 * 60 # -     Liver → bile (according to article) (units may be 1/h but then inspector pops errors)
 
 #------------------------
 # Gut metabolism of parent - has not been added in the code
 #------------------------
-VmaxGZEA = 8056         # pmol/h
-KmGZEA = 579            # µM
+# VmaxGZEA = 8056         # pmol/h
+# KmGZEA = 579            # µM
 
 #------------------------
 # Liver metabolism of parent

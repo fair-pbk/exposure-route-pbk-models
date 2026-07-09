@@ -1,0 +1,11 @@
+idModelInstance,Parameter,Value,Unit,Description,Reference
+Bechaux2014_Cd_Human_Male_PARAM,C5,0.05,dimensionless,Fraction,
+Bechaux2014_Cd_Human_Male_PARAM,C6,0.05,/d,Rate Constant,
+Bechaux2014_Cd_Human_Male_PARAM,C7,0.25,dimensionless,Fraction,
+Bechaux2014_Cd_Human_Male_PARAM,CX,0.04,dimensionless,Fraction,
+Bechaux2014_Cd_Human_Male_PARAM,C16,0.012,/d,Rate Constant,
+Bechaux2014_Cd_Human_Male_PARAM,C8,1,ug,Maximum amount,
+Bechaux2014_Cd_Human_Male_PARAM,C9,0.44,dimensionless,Rate Constant,
+Bechaux2014_Cd_Human_Male_PARAM,C10,0.00014,/d,Coefficient,
+Bechaux2014_Cd_Human_Male_PARAM,C11,0.27,dimensionless,Fraction,
+Bechaux2014_Cd_Human_Male_PARAM,C17,0.95,dimensionless,Fraction,

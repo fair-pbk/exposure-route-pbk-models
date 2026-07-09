@@ -6,6 +6,7 @@ model_instances:
     model_path: models/oral/Heavy Metals/Carrier2001/Carrier2001.sbml
     param_file: models/oral/Heavy Metals/Carrier2001/Carrier2001.params.csv
     target_mappings:
+      BW: null
       Oral: AGI
       APlasma: ABlood
       CPlasma: '[ABlood]'

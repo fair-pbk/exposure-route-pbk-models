@@ -14,11 +14,11 @@ model description "https://doi.org/10.1016/j.envint.2018.03.018"
 
 Age = 30                            # year
 
-BW   = 70                           # kg             
+BW = 70                             # kg
 VGut_lumenc = 0.014                 # L/kg (gut lumen)
-VGc = 0.017  
-VLc  = 0.026                        # L/kg (liver)
-VRBCc  = 0.024                      # L/kg (blood)
+VGc = 0.017                         # L/kg (gut)
+VLc = 0.026                         # L/kg (liver)
+VRBCc = 0.024                       # L/kg (blood)
 VPlasmac = 0.024                    # L/kg (plasma)
 
 VGut_lumen := VGut_lumenc*BW        # L
@@ -26,43 +26,47 @@ VG         := VGc*BW                # L
 VL         := VLc*BW                # L
 VRBC       := VRBCc*BW              # L
 VPlasma    := VPlasmac*BW           # L
-VRest      := BW - VGut_lumen - VG - VL - VRBC - VPlasma      # Lumped Rest-of-body volume L 
+VRest      := BW - VG - VL - VRBC - VPlasma      # Lumped Rest-of-body volume L 
 
 #------------------------
 # Plasma Flows
 #------------------------
-QC    := 20*BW^0.75             # L/h (cardiac output)
+QC    := 20*BW^0.75             # L/hr/kg BW ^0.75 (cardiac output)
 QLc   = 0.046
-QGc  = 0.181
-Qrbcc = 1.5                     # Maternal red cells / plasma diffusion　
+QGc   = 0.181
 
-QGI    := QGc*BW                # L/h (Gut)
+QGI   := QGc*BW                 # L/h (Gut)
 QL    := QLc*QC                 # L/h (liver)
 QRest := QC - QL - QGI          # L/h (rest)
-Qrbc  := Qrbcc*BW^0.75          # L/h (rbc)
 
 #------------------------
-# Partition coefficients
+# Partition coefficients tissue/plasma
 #------------------------
 
+PGI = 1
+PL = 5
+PRBC = 12
+PRest = 1
+
+#------------------------
+# Chemical-specific kinetic rates
+#------------------------
 kabsc = 0.005
 kabs := kabsc * BW^0.75
 
 Frac = 0.95
 
-PGI = 1
-PL = 5
-PRBC = 14          # refers to fetus, not the parent
-PRest = 1
+kfec = 2.0e-4;                              # Fecal excretion rate　in L/hr/kg BW ^0.75
+kfe := kfec * BW^0.75;                      # Fecal excretion rate　in L/hr
 
-kfec = 2.0e-4;
-kfe := kfec * BW^0.75;
+krbcc = 1.5                                 # red cells / plasma diffusion　in L/hr/kg BW ^0.75
+krbc := krbcc * BW^0.75;                    # red cells / plasma diffusion　in L/hr
 
-kmet_gutlumenc = 1.0e-4;
-kmet_gutlumen := kmet_gutlumenc * BW^0.75;
+kmet_gutlumenc = 1.0e-4;                    # Demethylation rate in gut in L/hr/kg BW ^0.75
+kmet_gutlumen := kmet_gutlumenc * BW^0.75;  # Demethylation rate in gut in L/hr
 
-kmet_liverc = 1.0e-5;
-kmet_liver := kmet_liverc * BW^0.75;
+kmet_liverc = 1.0e-5;                       # Demethylation rate in liver in L/hr/kg BW ^0.75
+kmet_liver := kmet_liverc * BW^0.75;        # Demethylation rate in liver in L/hr
 
 kbiliaryc = 1.0e-4; 
 kbiliary := kbiliaryc * BW^0.75;
@@ -71,13 +75,13 @@ kbiliary := kbiliaryc * BW^0.75;
 # Compartments (sizes)
 #------------------------
 
-compartment Gut_lumen; Gut_lumen = VGut_lumen
-compartment Gut;       Gut = VG
-compartment Liver;     Liver = VL
-compartment Red_Blood_Cell;   Red_Blood_Cell = VRBC
-compartment Plasma;    Plasma = VPlasma
-compartment Rest;      Rest  = VRest
-compartment Feces;     Feces = 1
+compartment Gut_lumen := VGut_lumen
+compartment Gut := VG
+compartment Liver := VL
+compartment Red_Blood_Cell := VRBC
+compartment Plasma := VPlasma
+compartment Rest := VRest
+compartment Feces = 1
 
 #------------------------
 # Species (amount states)
@@ -88,7 +92,7 @@ substanceOnly species AGut in Gut
 substanceOnly species ALiver in Liver
 substanceOnly species ARBC in Red_Blood_Cell
 substanceOnly species APlasma in Plasma
-substanceOnly species ARest  in Rest
+substanceOnly species ARest in Rest
 substanceOnly species AFeces in Feces
 substanceOnly species ALiver_Met in Liver
 substanceOnly species AGutlumen_Met in Gut_lumen
@@ -116,7 +120,7 @@ CGI := AGut / Gut;
 CLiver := ALiver / Liver
 CRBC := ARBC / Red_Blood_Cell
 CPlasma := APlasma / Plasma
-CRest  := ARest  / Rest
+CRest := ARest / Rest
 
 #------------------------
 # Reactions / Transfers
@@ -139,8 +143,8 @@ APlasma -> ARest; QRest * CPlasma;
 ARest -> APlasma; QRest * CRest/PRest;
 
 # Perfusion-limitated exchanges (Plasma <-> Red blood cells)
-APlasma -> ARBC; CPlasma * Qrbc;
-ARBC -> APlasma; Qrbc * CRBC/PRBC;
+APlasma -> ARBC; CPlasma * krbc;
+ARBC -> APlasma; krbc * CRBC/PRBC;
 
 # Biliary excretion (Liver -> Gut lumen)
 ALiver -> AGut_lumen; kbiliary*CLiver;

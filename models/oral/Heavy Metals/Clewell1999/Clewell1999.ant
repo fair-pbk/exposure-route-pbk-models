@@ -4,7 +4,7 @@ model Clewell_Hg_Human()
 #Checked: Paris Mertzimekis, February 2026
 
 model notes ```
-Hg PBK (Clewell et al., 1999):
+Hg PBK (Clewell et al., 1999)
 ```
 model description "https://doi.org/10.1111/j.1539-6924.1999.tb00427.x"
 

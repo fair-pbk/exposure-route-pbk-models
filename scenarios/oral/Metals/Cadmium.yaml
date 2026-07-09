@@ -9,34 +9,18 @@ model_instances:
       Oral: AGI
       APlasma: APlasma
       CPlasma: '[APlasma]'
-  - id: Ruiz2010_Female
-    label: Ruiz 2010 (female)
-    model_path: models/oral/Heavy Metals/Ruiz2010/Ruiz2010_Female.sbml
-    param_file: models/oral/Heavy Metals/Ruiz2010/Ruiz2010_Female.params.csv
-    target_mappings:
-      Oral: AGI
-      APlasma: APlasma
-      CPlasma: '[APlasma]'
-  - id: Ruiz2010_Male
-    label: Ruiz 2010 (male)
-    model_path: models/oral/Heavy Metals/Ruiz2010/Ruiz2010_Male.sbml
-    param_file: models/oral/Heavy Metals/Ruiz2010/Ruiz2010_Male.params.csv
-    target_mappings:
-      Oral: AGI
-      APlasma: APlasma
-      CPlasma: '[APlasma]'
   - id: Bechaux2014_Female
     label: Bechaux 2014 (female)
-    model_path: models/oral/Heavy Metals/Bechaux2014/Bechaux2014_Female.sbml
-    param_file: models/oral/Heavy Metals/Bechaux2014/Bechaux2014_Female.params.csv
+    model_path: models/oral/Heavy Metals/KjellstromNordberg1978/KjellstromNordberg1978.sbml
+    param_file: models/oral/Heavy Metals/KjellstromNordberg1978/Bechaux2014_Female.params.csv
     target_mappings:
       Oral: AGI
       APlasma: APlasma
       CPlasma: '[APlasma]'
   - id: Bechaux2014_Male
     label: Bechaux 2014 (male)
-    model_path: models/oral/Heavy Metals/Bechaux2014/Bechaux2014_Male.sbml
-    param_file: models/oral/Heavy Metals/Bechaux2014/Bechaux2014_Male.params.csv
+    model_path: models/oral/Heavy Metals/KjellstromNordberg1978/KjellstromNordberg1978.sbml
+    param_file: models/oral/Heavy Metals/KjellstromNordberg1978/Bechaux2014_Male.params.csv
     target_mappings:
       Oral: AGI
       APlasma: APlasma
@@ -58,8 +42,6 @@ scenarios:
     time_unit: DAY
     amount_unit: MILLIGRAMS
     molar_mass: 112.411
-    parameters:
-        BW: 60
     dosing_events:
       - type: repeated_bolus
         target: Oral
@@ -80,8 +62,6 @@ scenarios:
     time_unit: DAY
     amount_unit: MILLIGRAMS
     molar_mass: 112.411
-    parameters:
-        BW: 60
     dosing_events:
       - type: repeated_bolus
         target: Oral
@@ -102,8 +82,6 @@ scenarios:
     time_unit: DAY
     amount_unit: MILLIGRAMS
     molar_mass: 112.411
-    parameters:
-        BW: 60
     dosing_events:
       - type: repeated_bolus
         target: Oral

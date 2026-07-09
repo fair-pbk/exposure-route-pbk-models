@@ -28,7 +28,7 @@ VRest := 0.84*BW - VL - VB      # Lumped Rest-of-body volume L
 # Blood Flows
 #------------------------
 QC    := 15*BW^0.74             # L/h (cardiac output)
-QLc   = 0.227
+QLc   := 0.227
 QL    := QLc*QC                 # L/h (liver)
 QRest := (1 - QLc)*QC           # L/h (rest)
 
@@ -50,10 +50,10 @@ PRest = 1
 #------------------------
 # Compartments (sizes)
 #------------------------
-compartment Lumen;   Lumen = VLum
-compartment Liver;   Liver = VL
-compartment Blood;   Blood = VB
-compartment Rest;    Rest  = VRest
+compartment Lumen := VLum
+compartment Liver := VL
+compartment Blood := VB
+compartment Rest := VRest
 
 #------------------------
 # Species (amount states)
@@ -61,9 +61,9 @@ compartment Rest;    Rest  = VRest
 substanceOnly species ALumen in Lumen
 substanceOnly species ALiver in Liver
 substanceOnly species ABlood in Blood
-substanceOnly species ARest  in Rest
-substanceOnly species ALiverMet1  in Liver
-substanceOnly species ALiverMet2  in Liver
+substanceOnly species ARest in Rest
+substanceOnly species ALiverMet1 in Liver
+substanceOnly species ALiverMet2 in Liver
 
 #------------------------
 # Initial conditions

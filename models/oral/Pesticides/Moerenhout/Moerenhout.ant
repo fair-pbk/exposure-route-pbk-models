@@ -1,0 +1,426 @@
+model Moerenhout2022_Pesticides_Human()
+
+#Created: Paris Mertzimekis, April 2026
+#Checked: 
+
+model notes ```
+```
+model description "https://doi.org/10.1021/acs.est.4c06534"
+
+#------------------------
+# Flows
+#------------------------
+BW = 70                     # kg
+
+QCc   = 4.8               # L/L QC
+QC    = BW*QCc            # L/h (cardiac output)
+QLc   = 0.227             # L/L QC
+QL    = QC*QLc            # L/h
+QKidc = 0.175             # L/L QC
+QKid  = QC*QKidc          # L/h
+QRest = QC - (QL + QKid)  # L/h
+
+VLc = 0.026               # L/kg BW
+VKidc = 0.004             # L/kg BW
+VBlc = 0.079              # L/kg BW
+VGutc = 0.063             # L/kg BW  [richly perfused tissue correspond to the SI sub compartments]
+VStc = 0.063              # L/kg BW  [richly perfused tissue correspond to the Stomach compartment]
+VColonc = 0.063           # L/kg BW  [richly perfused tissue correspond to the Colon compartment]
+
+VL := BW*VLc              # L
+VKid := BW*VKidc          # L
+VBl := BW*VBlc            # L
+VGut := BW*VGutc          # L
+VSt := BW*VStc            # L
+VColon := BW*VColonc      # L
+VRest = 1                 # L
+
+#------------------------
+# Partitions (tissue:blood)
+#------------------------
+
+PL        = 1  # Value not given in paper. Supposedly you get it form some calculation, but i did not manage to figure it out
+PLOxon    = 1  # Value not given in paper
+PLMet     = 1  # Value not given in paper
+PKid      = 1  # value not given in paper
+PKidOxon  = 1  # Value not given in paper
+PKidMet   = 1  # Value not given in paper
+PRest     = 1  # Value not given in paper
+PRestOxon = 1  # Value not given in paper
+PRestMet  = 1  # Value not given in paper
+
+#------------------------
+# Parameters
+#------------------------
+
+GFRc = 0.108   # L/h/kg BW
+GFR := BW*GFRc # Renal excretion [h^-1]
+
+# ----- Chlorpyrifos ----- #
+LiverVmax1c     = 0.156
+LiverKm1        = 28.59
+LiverVmax2c     = 0.234
+LiverKm2        = 4.326
+LiverVmaxOxon1c = 37.98
+LiverKmOxon1    = 627.9
+LiverVmaxOxon2c = 1         # not sure where to find this value
+LiverKmOxon2    = 1         # not sure where to find this value
+BloodVmaxOxonc  = 23.84
+BloodKmOxon     = 290
+fu       = 0.018   # unbound fraction Chlorpyrifos
+fuOxon   = 0.051   # Chorpyrifos oxon
+fuMet    = 0.025   # TCP (urinary metabolite)
+# fuMet2 = 0.31    # TCP-glucoronide
+# fuMet3 = 0.359   # TCP-sulfate
+bpr      = 0.983   # blood-plasma-concentration ratio
+bprOxon  = 0.692
+bprMet   = 0.55
+# bprMet2  = 0.55
+# bprMet3  = 0.55
+ka         = 2.4     # reported values 2.4, 0.6, 0.1 In table S6 [h^-1]
+
+# ----- Diazinon ----- #
+# LiverVmax1c     = 0.288
+# LiverKm1        = 4.745
+# LiverVmax2c     = 0.665
+# LiverKm2        = 16.34
+# LiverVmaxOxon1c = 53.49
+# LiverKmOxon1    = 557.4
+# LiverVmaxOxon2c = 1         # not sure where to find this value
+# LiverKmOxon2    = 1         # not sure where to find this value
+# BloodVmaxOxonc  = 124
+# BloodKmOxon     = 701
+# fu      = 0.11   # unbound fraction Diazinon
+# fuOxon  = 0.262  # Diazinon oxon
+# fuMet   = 0.623  # IMHP (urinary metabolite)
+# fuMet2  = 0.623  # IMHP-OH
+# fuMet3  = 0.583  # IMHP-glucoronide
+# fuMet4  = 0.441  # IMHP-sulfate
+# bpr     = 1.51
+# bprOxon = 0.786
+# fuMet   = 0.55
+# fuMetOH = 0.55
+# fuMet2  = 0.55
+# fuMet3  = 0.55
+# ka      = 2.07    # reported values 2.07, 0.1 In table S6
+
+# ----- Dimethoate ----- #
+# LiverVmax1c     = 0.132
+# LiverKm1        = 339.2
+# LiverVmax2c     = 0.4714
+# LiverKm2        = 419.2
+# fu      = 0.573        # unbound fraction Dimethoate
+# bpr     = 1
+# fuOxon  = 0.866        # unbound fraction Omethoate
+# bprOxon = 1
+# ka      = 2.22         # reported values 2.22 in table S6
+
+# ----- Fenitrothion ----- #
+# LiverVmax1c     = 1.68
+# LiverKm1        = 21.56
+# LiverVmax2c     = 0.1825
+# LiverKm2        = 4.084
+# LiverVmaxOxon1c = 3.089
+# LiverKmOxon1    = 12564
+# LiverVmaxOxon2c = 1         # not sure where to find this value
+# LiverKmOxon2    = 1         # not sure where to find this value
+# BloodVmaxOxonc  = 2.142
+# BloodKmOxon     = 5489
+# fu      = 0.091  # unbound fraction Fenitrothion
+# fuOxon  = 0.344  # Fenitrothion oxon
+# fuMet   = 0.103  # MNP (urinary metabolite)
+# fuMet2  = 0.222  # MNP-OH
+# fuMet3  = 0.286  # MNP-glucoronide
+# fuMet4  = 0.125  # MNP-sulfate
+# bpr     = 1.251
+# bprOxon = 1.046
+# bprMet  = 0.55
+# bprMet2 = 0.55
+# bprMet3 = 0.55
+# bprMet4 = 0.55
+# ka      = 1.65    # reported values 0.1,1.65 in table S6
+
+# ----- Methyl-parathion ----- #
+# LiverVmax1c     = 1.68
+# LiverKm1        = 21.56
+# LiverVmax2c     = 0.1825
+# LiverKm2        = 4.084
+# LiverVmaxOxon1c = 3.089
+# LiverKmOxon1    = 12564
+# LiverVmaxOxon2c = 1         # not sure where to find this value
+# LiverKmOxon2    = 1         # not sure where to find this value
+# BloodVmaxOxonc  = 2.142
+# BloodKmOxon     = 5489
+# fu       = 0.136  # unbound fraction Methyl-parathion 
+# fuOxon   = 0.453  # Methyl-parathio oxon
+# fuMet    = 0.109  # PNP (urinary metabolite)
+# fuMet3   = 0.378  # PNP-glucoronide
+# fuMet4   = 0.4    # PNP-sulfate
+# bpr      = 1.2128
+# bprOxon  = 0.9634
+# bprMet   = 0.55
+# bprMet2  = 0.55
+# bprMet3  = 0.55
+# ka       = 1.65    # reported values 1.65 in table S6
+
+# ----- Ethyl-parathion ----- #
+# LiverVmax1c     = 1.004
+# LiverKm1        = 9
+# LiverVmax2c     = 0.231
+# LiverKm2        = 31.8
+# LiverVmaxOxon1c = 1.35
+# LiverKmOxon1    = 280
+# LiverVmaxOxon2c = 1         # not sure where to find this value
+# LiverKmOxon2    = 1         # not sure where to find this value
+# BloodVmaxOxonc  = 3.5
+# BloodKmOxon     = 240
+# fu      = 0.054   # unbound fraction Ethyl-parathion 
+# fuOxon  = 0.28    # Ethyl-parathion oxon
+# fuMet   = 0.109   # PNP (urinary metabolite)
+# fuMet3  = 0.378   # PNP-glucoronide
+# fuMet4  = 0.4     # PNP-sulfate
+# bpr     = 0.97
+# bprOxon = 1.0962
+# bprMet   = 0.55
+# bprMet2  = 0.55
+# bprMet3  = 0.55
+# ka       = 1.7    # reported values 1.7 in table S6
+
+# ----- Chlorfenvinphos ----- #
+# LiverVmax1c = 0.565
+# LiverKm1    = 6.36
+# fuOxon      = 0.043   # unbound fraction Chlorfenvinphos
+# bprOxon     = 0.992
+# fuMet       = 0.016   # Des-ethyl-chlorfenvinphos
+# bprMet      = 0.55
+# ka          = 2.29    # reported values 2.29 in table S6
+
+# ----- Profenofos ----- #
+# LiverVmax1c     = 1.2
+# LiverKm1        = 6.9
+# LiverVmax2c     = 1.1
+# LiverKm2        = 1.4
+# BloodVmaxOxonc  = 0.99
+# BloodKmOxon     = 158
+# fuOxon  = 0.023  # unbound fraction Profenofos
+# fuMet   = 0.064  # BCP (urinary metabolite)
+# fuMet3  = 0.146  # BCP-glucoronide
+# fuMet4  = 0.062  # BCP-sulfate
+# bprOxon = 1.295
+# bprMet   = 0.55
+# bprMet2  = 0.55
+# bprMet3  = 0.55
+# ka       = 2.22    # reported values 2.22 in table S6
+# ----------------------
+
+LiverVmax1     := LiverVmax1c/1000*60*MPL*1000*VL    # umol/h/mg microsomal protein [mg microsomal protein = umol/h]
+LiverVmax2     :=  LiverVmax2c/1000*60*MPL*1000*VL   # umol/h/mg microsomal protein [mg microsomal protein = umol/h]
+LiverVmaxOxon1 := LiverVmaxOxon1c/1000*60*MPL*1000*VL
+LiverVmaxOxon2 := LiverVmaxOxon2c/1000*60*CPL*1000*VL
+BloodVmaxOxon  := BloodVmaxOxonc/1000*60*MPP*1000*VBl*(1-HC)
+
+kge   = 2       # h^-1                                  gastric emptying rate
+ktSI  = 0.30    # h^-1 in paper for human 0.3 -> 2.11   Small intestine transit rate
+ktCol = 0.09    # h^-1 colon transit rate               Colon transit rate
+
+HC  = 0.45   # hematocrit [unitless]
+MPL = 35     # clearance scaling factor - mg microsomal protein/g liver
+CPL = 87     # clearance scaling factor - mg cytosolic protein/g liver 
+MPP = 60     # clearance scaling factor - mg plasma protein/ g plasma
+
+#------------------------
+# Compartments
+#------------------------
+compartment Stomach; Stomach = VSt
+compartment SI1 := VGut    # Unless each of the sub compartments needs to be VGut/7? Unclear
+compartment SI2 := VGut
+compartment SI3 := VGut
+compartment SI4 := VGut
+compartment SI5 := VGut
+compartment SI6 := VGut
+compartment SI7 := VGut
+compartment Colon := VColon
+compartment Blood := VBl
+compartment Liver := VL
+compartment Kidney := VKid
+compartment Rest := VRest
+compartment Urine := 1       # no value given. Assumed 1
+compartment Feces := 1       # no value given. Assumed 1
+
+#------------------------
+# Species (amount states)
+#------------------------
+
+## --- Parent compound --- ##
+substanceOnly species AStomach  in Stomach
+substanceOnly species ASI1      in SI1
+substanceOnly species ASI2      in SI2
+substanceOnly species ASI3      in SI3
+substanceOnly species ASI4      in SI4
+substanceOnly species ASI5      in SI5
+substanceOnly species ASI6      in SI6
+substanceOnly species ASI7      in SI7
+substanceOnly species AColon    in Colon
+substanceOnly species ABlood    in Blood
+substanceOnly species ALiver    in Liver
+substanceOnly species AKidney   in Kidney
+substanceOnly species ARest     in Rest
+substanceOnly species AFeces    in Feces
+substanceOnly species AUrine    in Urine
+
+## --- Oxon --- ##
+substanceOnly species ABloodOxon   in Blood
+substanceOnly species ALiverOxon   in Liver
+substanceOnly species AKidneyOxon  in Kidney
+substanceOnly species ARestOxon    in Rest
+substanceOnly species AUrineOxon   in Urine
+
+## --- Metabolite --- ##
+substanceOnly species ABloodMet    in Blood
+substanceOnly species ALiverMet    in Liver
+substanceOnly species AKidneyMet   in Kidney
+substanceOnly species ARestMet     in Rest
+substanceOnly species AUrineMet    in Urine
+
+#------------------------
+# Initial conditions
+#------------------------
+
+## --- Parent compound --- ##
+AStomach = 0;
+ASI1     = 0;
+ASI2     = 0;
+ASI3     = 0;
+ASI4     = 0;
+ASI5     = 0;
+ASI6     = 0;
+ASI7     = 0;
+AColon   = 0;
+ABlood   = 0;
+ALiver   = 0;
+AKidney  = 0;
+ARest    = 0;
+AFeces   = 0;
+AUrine   = 0;
+
+## --- Oxon --- ##
+ABloodOxon  = 0;
+ALiverOxon  = 0;
+AKidneyOxon = 0;
+ARestOxon   = 0;
+AUrineOxon  = 0;
+
+## --- Metabolite --- ##
+ABloodMet  = 0;
+ALiverMet  = 0;
+AKidneyMet = 0;
+ARestMet   = 0;
+AUrineMet  = 0;
+
+#------------------------
+# Concentrations
+#------------------------
+
+## --- Parent compound --- ##
+CStomach := AStomach / Stomach
+CSI1 := ASI1 / SI1
+CSI2 := ASI2 / SI2
+CSI3 := ASI3 / SI3
+CSI4 := ASI4 / SI4
+CSI5 := ASI5 / SI5
+CSI6 := ASI6 / SI6
+CSI7 := ASI7 / SI7
+CColon := AColon / Colon
+CBlood := ABlood / Blood
+CLiver := ALiver / Liver
+CKid := AKidney / Kidney
+CRest := ARest / Rest
+
+## --- Oxon --- ##
+CBloodOxon := ABloodOxon / Blood
+CLiverOxon := ALiverOxon / Liver
+CKidOxon   := AKidneyOxon / Kidney
+CRestOxon  := ARestOxon / Rest
+
+## --- Metabolite --- ##
+CBloodMet := ABloodMet / Blood
+CLiverMet := ALiverMet / Liver
+CKidMet   := AKidneyMet / Kidney
+CRestMet  := ARestMet / Rest
+
+#------------------------
+# Differential equations
+#------------------------
+AStomach -> ASI1;      kge*AStomach  # Small intestine 1 (duodenum, bile acids secreted in duodenum)
+ASI1 -> ASI2;          ktSI*ASI1     # Small intestine 2 (jejunum)
+ASI2 -> ASI3;          ktSI*ASI2     # Small intestine 3 (jejunum)
+ASI3 -> ASI4;          ktSI*ASI3     # small intestine 4 (ileum)
+ASI4 -> ASI5;          ktSI*ASI4     # Small intestine 5 (ileum)
+ASI5 -> ASI6;          ktSI*ASI5     # Small intestine 6 (ileum)
+ASI6 -> ASI7;          ktSI*ASI6     # Small intestine 7 (ileum, bile acids reabsorbed in ileum)
+ASI7 -> AColon;        ktSI*ASI7     # no absorption in the colon
+AColon -> AFeces;      ktCol*AColon  # fecal elimination
+
+# ------------------- For thiophosphate ------------------- #
+ASI1 -> ALiver;           ka*ASI1     # from intestine compartment to liver
+ASI2 -> ALiver;           ka*ASI2
+ASI3 -> ALiver;           ka*ASI3
+ASI4 -> ALiver;           ka*ASI4
+ASI5 -> ALiver;           ka*ASI5
+ASI6 -> ALiver;           ka*ASI6
+ASI7 -> ALiver;           ka*ASI7
+ABlood -> ALiver;         QL*CBlood   # From blood to liver
+ALiver -> ALiverOxon;     (LiverVmax1*(CLiver/PL)*bpr)/(LiverKm1 + (CLiver/PL)*bpr)  # Amount metabolized from thiophosphate to Oxon in liver
+
+ABloodOxon -> ALiverOxon; QL*CBloodOxon
+ABloodMet  -> ALiverMet;  QL*CBloodMet
+ALiver     -> ALiverMet;  (LiverVmax2*(CLiver/PL)*bpr)/(LiverKm2 + (CLiver/PL)*bpr)                                    # Amount metabolized from thiophosphate to Metabolite in liver
+ALiverOxon -> ALiverMet;  (LiverVmaxOxon1*(CLiverOxon/PLOxon)*bprOxon)/(LiverKmOxon1 + (CLiverOxon/PLOxon)*bprOxon)    # Amount metabolised from Oxon to Metabolite in liver microsomes
+ALiverOxon -> ALiverMet;  (LiverVmaxOxon2*(CLiverOxon/PLOxon)*bprOxon)/(LiverKmOxon2 + (CLiverOxon/PLOxon)*bprOxon)    # Amount metabolised from Oxon to Metabolite in liver cytosol
+ALiver     -> ABlood;     QL*(CLiver/PL)*bpr
+ALiverOxon -> ABloodOxon; QL*(CLiverOxon/PLOxon)*bprOxon
+ALiverMet  -> ABloodMet;  QL*(CLiverMet/PLMet)*bprMet
+# --------
+
+# ------------------- For simple phosphate ------------------- #
+#ABlood -> ALiver;         QL*CBlood 
+#ASI1 -> ALiverOxon;       ka*ASI1
+#ASI2 -> ALiverOxon;       ka*ASI2
+#ASI3 -> ALiverOxon;       ka*ASI3
+#ASI4 -> ALiverOxon;       ka*ASI4
+#ASI5 -> ALiverOxon;       ka*ASI5
+#ASI6 -> ALiverOxon;       ka*ASI6
+#ASI7 -> ALiverOxon;       ka*ASI7
+#ABloodOxon -> ALiverOxon; QL*CBloodOxon
+#ALiver     -> ALiverOxon; (LiverVmax1*(CLiver/PL)*bpr)/(LiverKm1 + (CLiver/PL)*bpr)  # Amount #metabolized from thiophosphate to Oxon in liver
+
+#ABloodMet  -> ALiverMet;  QL*CBloodMet 
+#ALiver     -> ALiverMet;  (LiverVmax2*(CLiver/PL)*bpr)/(LiverKm2 + (CLiver/PL)*bpr)                                    # Amount metabolized from thiophosphate to Metabolite in liver
+#ALiverOxon -> ALiverMet;  (LiverVmaxOxon1*(CLiverOxon/PLOxon)*bprOxon)/(LiverKmOxon1 + (CLiverOxon/PLOxon)*bprOxon)    # Amount metabolised from Oxon to Metabolite in liver microsomes
+#ALiverOxon -> ALiverMet;  (LiverVmaxOxon2*(CLiverOxon/PLOxon)*bprOxon)/(LiverKmOxon2 + (CLiverOxon/PLOxon)*bprOxon)    # Amount metabolised from Oxon to Metabolite in liver cytosol
+#ALiver     -> ABlood;     QL*(CLiver/PL)*bpr
+#ALiverOxon -> ABloodOxon; QL*(CLiverOxon/PLOxon)*bprOxon
+#ALiverMet  -> ABloodMet;  QL*(CLiverMet/PLMet)*bprMet
+
+ABloodOxon -> ABloodMet;    BloodVmaxOxon*(CBloodOxon/bprOxon)*fuOxon/(BloodKmOxon + (CBloodOxon/bprOxon)*fuOxon)   # Cumulative amount metabolised in blood
+ 
+ABlood     -> AKidney;      QKid*CBlood             
+ABloodOxon -> AKidneyOxon;  QKid*CBloodOxon  
+ABloodMet  -> AKidneyMet;   QKid*CBloodMet    
+
+AKidney     -> ABlood;      QKid*(CKid/PKid)*bpr
+AKidneyOxon -> ABloodOxon;  QKid*(CKidOxon/PKidOxon)*bprOxon
+AKidneyMet  -> ABloodMet;   QKid*(CKidMet/PKidMet)*bprMet
+  
+AKidney     -> AUrine;      CKid*fu*GFR           # Cumultive amount
+AKidneyOxon -> AUrineOxon;  CKidOxon*fuOxon*GFR   # Cumultive amount
+AKidneyMet  -> AUrineMet;   CKidMet*fuMet*GFR     # Cumultive amount
+
+ABlood     -> ARest;        QRest*CBlood
+ABloodOxon -> ARestOxon;    QRest*CBloodOxon
+ABloodMet  -> ARestMet;     QRest*CBloodMet
+ARest      -> ABlood;       QRest*(CRest/PRest)*bpr
+ARestOxon  -> ABloodOxon;   QRest*(CRestOxon/PRest)*bprOxon
+ARestMet   -> ABloodMet;    QRest*(CRestMet/PRest)*bprMet
+
+end

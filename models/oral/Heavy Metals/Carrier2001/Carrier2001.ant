@@ -4,7 +4,7 @@ model Carrier2001_Hg_Human()
 #Checked: Paris Mertzimekis, February 2026
 
 model notes ```
-Hg PBK (Carrier et al., 2001):
+Hg PBK (Carrier et al., 2001)
 ```
 model description "https://doi.org/10.1006/taap.2000.9113"
 
@@ -12,14 +12,7 @@ model description "https://doi.org/10.1006/taap.2000.9113"
 # Body size & base volumes
 #------------------------
 
-BW   = 70                       # kg
-VGIc = 0.017  
-VBc  = 0.067
-VLc  = 0.026                    # L/kg (liver)
-
-VB   := VBc * BW;
-VGI  := VGIc*BW                  # L
-VL   := VLc*BW                   # L
+# Model is independent of body volumes
 
 #------------------------
 # Plasma Flows
@@ -31,17 +24,25 @@ VL   := VLc*BW                   # L
 # Partition coefficients
 #------------------------
 
-kabs = 5.5440
+kabs = 5.5440           # 1/day
 Frac = 1;
-kmet_liver = 0.1750;
+kmet_liver = 0.1750     # Transfer to inorganic Hg and transported to liver; 1/day
+kqh = 0.000023835       # Transfer to hair; 1/day
+
+kelim_all = 0.01380     # Whole-body elimination rate as sum of all transfers; 1/day
+kelim := kelim_all - kqh    # Accounting for all elimination processes besides Hair transfer; 1/day
+
+K = 12.9870             # Constant ratio whole body burden/blood
 
 #------------------------
 # Compartments (sizes)
 #------------------------
 
-compartment GI;        GI = VGI
-compartment Liver;     Liver = VL
-compartment Blood;     Blood = VB
+compartment GI = 1
+compartment Blood = 1
+compartment Rest = 1
+compartment Hair = 1
+compartment Liver = 1
 
 #------------------------
 # Species (amount states)
@@ -49,6 +50,8 @@ compartment Blood;     Blood = VB
 
 substanceOnly species AGI in GI
 substanceOnly species ABlood in Blood
+substanceOnly species ARest in Rest
+substanceOnly species AHair in Hair
 substanceOnly species ALiver_Met in Liver
 
 #------------------------
@@ -57,14 +60,14 @@ substanceOnly species ALiver_Met in Liver
 
 AGI = 0;
 ABlood = 0;
+ARest = 0;
+AHair = 0;
 ALiver_Met = 0;
 
 #------------------------
 # Concentrations
 #------------------------
 
-CGI := AGI / GI;
-CBlood := ABlood / Blood
 
 #------------------------
 # Reactions / Transfers
@@ -72,6 +75,10 @@ CBlood := ABlood / Blood
 
 # Absorption (Gut lumen -> Gut)
 AGI -> ABlood; kabs * AGI * Frac;
+
+ABlood -> ARest; ABlood * kelim * K;
+
+ABlood -> AHair; ABlood * K * kqh
 
 # Metabolism into iHg (Blood -> Liver)
 ABlood -> ALiver_Met; ABlood * kmet_liver;

@@ -1,9 +1,8 @@
 idModelInstance,Parameter,Value,Unit,Description,Reference
 Notenboom2023_DON_Human_PARAM,BW,70.0,kg,Bodyweight,
-Notenboom2023_DON_Human_PARAM,VLc,0.026,dimensionless,Volume fraction of liver,
-Notenboom2023_DON_Human_PARAM,VBc,0.079,dimensionless,Volume fraction of blood,
+Notenboom2023_DON_Human_PARAM,VLc,0.026,L/kg,Volume fraction of liver,
+Notenboom2023_DON_Human_PARAM,VBc,0.079,L/kg,Volume fraction of blood,
 Notenboom2023_DON_Human_PARAM,VLum,1.29,L,Volume of gut lumen,
-Notenboom2023_DON_Human_PARAM,QLc,0.227,dimensionless,Cardiac output fraction to liver,
-Notenboom2023_DON_Human_PARAM,kabs,22.0,/h,Absorption constant from GI to liver,
-Notenboom2023_DON_Human_PARAM,PL,6.56,dimensionless,Partition coefficient blood-liver,
+Notenboom2023_DON_Human_PARAM,kabs,22.0,/h,Absorption rate to liver,
+Notenboom2023_DON_Human_PARAM,PL,0.52,dimensionless,Partition coefficient blood-liver,
 Notenboom2023_DON_Human_PARAM,PRest,1.0,dimensionless,Partition coefficient blood- rest body,
