@@ -25,11 +25,11 @@ VRest := 0.93*BW - VL - VPlasma      # Lumped Rest-of-body volume L
 # Plasma Flows
 #------------------------
 QC    := 12.5*BW^0.75            # L/h (cardiac output)
-QCP   := QC*(1-Htc)              # L/h cardiac output adjusted for plasma flow
+QPlasma   := QC*(1-Htc)              # L/h cardiac output adjusted for plasma flow
 QLc   = 0.25 
 
-QL    := QLc*QCP                 # L/h (liver)
-QRest := QCP - QL                # L/h (rest)
+QL    := QLc*QPlasma                 # L/h (liver)
+QRest := QPlasma - QL                # L/h (rest)
 
 Htc = 0.44
 Free = 0.02
@@ -70,12 +70,12 @@ PRest = 1  # JW: Value from Worley 2017 supplemental material is 0.11
 #------------------------
 # Compartments (sizes)
 #------------------------
-compartment Stomach; Stomach = 1
-compartment SI;      SI = 1
-compartment Liver;   Liver := VL
-compartment Plasma;  Plasma := VPlasma
-compartment Rest;    Rest  := VRest
-compartment Feces;   Feces  = 1
+compartment Stomach = 1
+compartment SI = 1
+compartment Liver := VL
+compartment Plasma := VPlasma
+compartment Rest  := VRest
+compartment Feces  = 1
 
 #------------------------
 # Species (amount states)

@@ -79,8 +79,8 @@ substanceOnly species AST in Stomach
 substanceOnly species ASI in SI
 substanceOnly species ALiver in Liver
 substanceOnly species APlasma in Plasma
-substanceOnly species ARest  in Rest
-substanceOnly species AFeces  in Feces
+substanceOnly species ARest in Rest
+substanceOnly species AFeces in Feces
 
 #------------------------
 # Initial conditions
