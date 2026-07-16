@@ -231,6 +231,14 @@ parameters:
   unit: dimensionless
 - id: kfeC
   name: Intrinsic rate of fecal excretion
+  pbpko_bqm_is_class:
+    id: PBPKO:03005
+    label: intrinsic fecal excretion rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03005
+  chebi_bqb_is_class:
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
   unit: mL/d/g
 - id: kfe
   name: Fecal excretion rate
@@ -245,6 +253,14 @@ parameters:
   unit: L/d
 - id: kbiliaryC
   name: Intrinsic rate of biliary clearance
+  pbpko_bqm_is_class:
+    id: PBPKO:03007
+    label: intrinsic biliary clearance rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03007
+  chebi_bqb_is_class:
+    id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
   unit: mL/d/g
 - id: kbiliary
   name: Biliary clearance rate
@@ -306,6 +322,10 @@ parameters:
   unit: ug/L
 - id: CPlasma
   name: Unbound concentration in plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:06017
+    label: unbound concentration in plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_06017
   unit: ug/L
 - id: CPlasmaTotal
   name: Total concentration in plasma
@@ -397,10 +417,26 @@ parameterisations:
     value: 2.17e-06
     unit: ''
     reference: ''
+    bqm_is:
+      id: PBPKO:03005
+      label: intrinsic fecal excretion rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03005
+    bqb_is:
+      id: CHEBI:35549
+      label: perfluorooctanoic acid
+      iri: http://purl.obolibrary.org/obo/CHEBI_35549
   - id: kbiliaryC
     value: 0.000109
     unit: ''
     reference: ''
+    bqm_is:
+      id: PBPKO:03007
+      label: intrinsic biliary clearance rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03007
+    bqb_is:
+      id: CHEBI:35549
+      label: perfluorooctanoic acid
+      iri: http://purl.obolibrary.org/obo/CHEBI_35549
   - id: PL
     value: 2.2
     unit: ''

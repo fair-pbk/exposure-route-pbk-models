@@ -1606,20 +1606,20 @@ Chen.sbml,QLc,Fraction of blood flow to liver,oral,PFAS,dimensionless,PBPKO:0002
 Chen.sbml,QL,Blood flow to liver,oral,PFAS,L/d,PBPKO:00024,blood flow rate to liver,http://purl.obolibrary.org/obo/PBPKO_00024,,,
 Chen.sbml,QRest,Blood flow to rest of body,oral,PFAS,L/d,PBPKO:00050,blood flow rate to restbody,http://purl.obolibrary.org/obo/PBPKO_00050,,,
 Chen.sbml,Free,Unbound fraction,oral,PFAS,dimensionless,PBPKO:00149,unbound fraction,http://purl.obolibrary.org/obo/PBPKO_00149,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-Chen.sbml,kstoC,Intrinsic gastric emptying rate,oral,PFAS,/d.kg^0.25,,,,,,
+Chen.sbml,kstoC,Intrinsic gastric emptying rate,oral,PFAS,/d.kg^0.25,PBPKO:03001,intrinsic gastric emptying rate,http://purl.obolibrary.org/obo/PBPKO_03001,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 Chen.sbml,ksto,Gastric emptying rate,oral,PFAS,/d,PBPKO:00143,gastric emptying rate,http://purl.obolibrary.org/obo/PBPKO_00143,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-Chen.sbml,kabsC,Intrinsic absorption rate,oral,PFAS,/d.kg^0.25,,,,,,
+Chen.sbml,kabsC,Intrinsic absorption rate,oral,PFAS,/d.kg^0.25,PBPKO:03002,intrinsic absorption rate,http://purl.obolibrary.org/obo/PBPKO_03002,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 Chen.sbml,kabs,Absorption rate constant,oral,PFAS,/d,PBPKO:00142,absorption rate constant intestine,http://purl.obolibrary.org/obo/PBPKO_00142,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-Chen.sbml,k0C,Intrinsic uptake rate from the stomach,oral,PFAS,/d.kg^0.25,,,,,,
-Chen.sbml,k0,Stomach uptake rate,oral,PFAS,/d,,,,,,
-Chen.sbml,kfeC,Intrinsic fecal excretion rate,oral,PFAS,/d.kg^0.25,,,,,,
+Chen.sbml,k0C,Intrinsic uptake rate from the stomach,oral,PFAS,/d.kg^0.25,PBPKO:03003,intrinsic stomach uptake rate,http://purl.obolibrary.org/obo/PBPKO_03003,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+Chen.sbml,k0,Stomach uptake rate,oral,PFAS,/d,PBPKO:03004,stomach uptake rate,http://purl.obolibrary.org/obo/PBPKO_03004,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+Chen.sbml,kfeC,Intrinsic fecal excretion rate,oral,PFAS,/d.kg^0.25,PBPKO:03005,intrinsic fecal excretion rate,http://purl.obolibrary.org/obo/PBPKO_03005,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 Chen.sbml,kfe,Fecal excretion rate,oral,PFAS,/d,PBPKO:00236,fecal elimination rate constant,http://purl.obolibrary.org/obo/PBPKO_00236,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-Chen.sbml,kbiliaryC,Intrinsic biliary excretion rate,oral,PFAS,/d.kg^0.25,,,,,,
+Chen.sbml,kbiliaryC,Intrinsic biliary excretion rate,oral,PFAS,/d.kg^0.25,PBPKO:03007,intrinsic biliary clearance rate,http://purl.obolibrary.org/obo/PBPKO_03007,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 Chen.sbml,kbiliary,Biliary excretion rate,oral,PFAS,/d,PBPKO:00233,biliary clearance rate,http://purl.obolibrary.org/obo/PBPKO_00233,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 Chen.sbml,PL,Liver to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00170,liver plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00170,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 Chen.sbml,PRest,Rest of body to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00518,restbody plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00518,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 Chen.sbml,CLiver,Concentration in liver,oral,PFAS,ug/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
-Chen.sbml,CPlasma,Unbound concentration in plasma,oral,PFAS,ug/L,,,,,,
+Chen.sbml,CPlasma,Unbound concentration in plasma,oral,PFAS,ug/L,PBPKO:06017,unbound concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_06017,,,
 Chen.sbml,CPlasmaTotal,Total concentration in plasma,oral,PFAS,ug/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
 Chen.sbml,CRest,Concentration in rest of body,oral,PFAS,ug/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
 ChouLin.sbml,BW,Bodyweight,oral,PFAS,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
@@ -1627,30 +1627,30 @@ ChouLin.sbml,VLc,Volume fraction of the liver,oral,PFAS,L/kg,PBPKO:00078,fractio
 ChouLin.sbml,VPlasmac,Volume fraction of plasma,oral,PFAS,L/kg,PBPKO:00104,fraction of plasma,http://purl.obolibrary.org/obo/PBPKO_00104,,,
 ChouLin.sbml,VL,Liver volume,oral,PFAS,L,PBPKO:00077,volume of liver,http://purl.obolibrary.org/obo/PBPKO_00077,,,
 ChouLin.sbml,VPlasma,Plasma volume,oral,PFAS,L,PBPKO:00103,volume of plasma,http://purl.obolibrary.org/obo/PBPKO_00103,,,
-ChouLin.sbml,VRest,Rest of body volume,oral,PFAS,L,PBPKO:00105,volume of rest body,http://purl.obolibrary.org/obo/PBPKO_00105,,,
+ChouLin.sbml,VRest,Volume of the rest compartment,oral,PFAS,L,PBPKO:00105,volume of rest body,http://purl.obolibrary.org/obo/PBPKO_00105,,,
 ChouLin.sbml,QC,Cardiac output,oral,PFAS,L/d,PBPKO:00013,cardiac output rate,http://purl.obolibrary.org/obo/PBPKO_00013,,,
 ChouLin.sbml,QPlasma,Cardiac output of plasma,oral,PFAS,L/d,PBPKO:00528,cardiac output rate of plasma,http://purl.obolibrary.org/obo/PBPKO_00528,,,
 ChouLin.sbml,Htc,Hematocrit,oral,PFAS,dimensionless,PBPKO:00527,hematocrit volume,http://purl.obolibrary.org/obo/PBPKO_00527,,,
 ChouLin.sbml,QLc,Fraction of blood flow to liver,oral,PFAS,dimensionless,PBPKO:00025,fraction of blood flow to liver,http://purl.obolibrary.org/obo/PBPKO_00025,,,
-ChouLin.sbml,QL,Liver blood flow,oral,PFAS,L/d,PBPKO:00024,blood flow rate to liver,http://purl.obolibrary.org/obo/PBPKO_00024,,,
+ChouLin.sbml,QL,Blood flow to liver,oral,PFAS,L/d,PBPKO:00024,blood flow rate to liver,http://purl.obolibrary.org/obo/PBPKO_00024,,,
 ChouLin.sbml,QRest,Blood flow to rest of body,oral,PFAS,L/d,PBPKO:00050,blood flow rate to restbody,http://purl.obolibrary.org/obo/PBPKO_00050,,,
 ChouLin.sbml,Free,Unbound fraction,oral,PFAS,dimensionless,PBPKO:00149,unbound fraction,http://purl.obolibrary.org/obo/PBPKO_00149,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-ChouLin.sbml,kstoC,Intrinsic gastric emptying rate,oral,PFAS,/d.kg^0.25,,,,,,
+ChouLin.sbml,kstoC,Intrinsic gastric emptying rate,oral,PFAS,/d.kg^0.25,PBPKO:03001,intrinsic gastric emptying rate,http://purl.obolibrary.org/obo/PBPKO_03001,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 ChouLin.sbml,ksto,Gastric emptying rate,oral,PFAS,/d,PBPKO:00143,gastric emptying rate,http://purl.obolibrary.org/obo/PBPKO_00143,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-ChouLin.sbml,kabsC,Intrinsic absorption rate,oral,PFAS,/d.kg^0.25,,,,,,
-ChouLin.sbml,kabs,Absorption rate,oral,PFAS,/d,PBPKO:00142,absorption rate constant intestine,http://purl.obolibrary.org/obo/PBPKO_00142,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-ChouLin.sbml,k0C,Intrinsic stomach absorption rate,oral,PFAS,/d.kg^0.25,,,,,,
-ChouLin.sbml,k0,Stomach absorption rate,oral,PFAS,/d,,,,,,
-ChouLin.sbml,kfeC,Intrinsic fecal excretion rate,oral,PFAS,/d.kg^0.25,,,,,,
+ChouLin.sbml,kabsC,Intrinsic absorption rate,oral,PFAS,/d.kg^0.25,PBPKO:03002,intrinsic absorption rate,http://purl.obolibrary.org/obo/PBPKO_03002,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+ChouLin.sbml,kabs,Absorption rate constant,oral,PFAS,/d,PBPKO:00142,absorption rate constant intestine,http://purl.obolibrary.org/obo/PBPKO_00142,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+ChouLin.sbml,k0C,Intrinsic uptake rate from the stomach,oral,PFAS,/d.kg^0.25,PBPKO:03003,intrinsic stomach uptake rate,http://purl.obolibrary.org/obo/PBPKO_03003,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+ChouLin.sbml,k0,Stomach uptake rate,oral,PFAS,/d,PBPKO:03004,stomach uptake rate,http://purl.obolibrary.org/obo/PBPKO_03004,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+ChouLin.sbml,kfeC,Intrinsic fecal excretion rate,oral,PFAS,/d.kg^0.25,PBPKO:03005,intrinsic fecal excretion rate,http://purl.obolibrary.org/obo/PBPKO_03005,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 ChouLin.sbml,kfe,Fecal excretion rate,oral,PFAS,/d,PBPKO:00236,fecal elimination rate constant,http://purl.obolibrary.org/obo/PBPKO_00236,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-ChouLin.sbml,kbiliaryC,Intrinsic biliary excretion rate,oral,PFAS,/d.kg^0.25,,,,,,
+ChouLin.sbml,kbiliaryC,Intrinsic biliary excretion rate,oral,PFAS,/d.kg^0.25,PBPKO:03007,intrinsic biliary clearance rate,http://purl.obolibrary.org/obo/PBPKO_03007,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 ChouLin.sbml,kbiliary,Biliary excretion rate,oral,PFAS,/d,PBPKO:00233,biliary clearance rate,http://purl.obolibrary.org/obo/PBPKO_00233,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 ChouLin.sbml,PL,Liver to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00170,liver plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00170,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
-ChouLin.sbml,PRest,Rest of the body to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00518,restbody plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00518,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+ChouLin.sbml,PRest,Rest of body to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00518,restbody plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00518,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 ChouLin.sbml,CLiver,Concentration in liver,oral,PFAS,ug/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
-ChouLin.sbml,CPlasma,Unbound concentration in plasma,oral,PFAS,ug/L,,,,,,
+ChouLin.sbml,CPlasma,Unbound concentration in plasma,oral,PFAS,ug/L,PBPKO:06017,unbound concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_06017,,,
 ChouLin.sbml,CPlasmaTotal,Total concentration in plasma,oral,PFAS,ug/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
-ChouLin.sbml,CRest,Concentration in rest of the body,oral,PFAS,ug/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
+ChouLin.sbml,CRest,Concentration in rest of body,oral,PFAS,ug/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
 Husoy.sbml,BW,Bodyweight,oral,PFAS,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
 Husoy.sbml,VLc,Liver volume fraction,oral,PFAS,L/kg,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
 Husoy.sbml,Vplasmac,Volume fraction of plasma,oral,PFAS,L/kg,PBPKO:00104,fraction of plasma,http://purl.obolibrary.org/obo/PBPKO_00104,,,
@@ -1668,45 +1668,45 @@ Husoy.sbml,QL,Liver blood flow,oral,PFAS,L/d,PBPKO:00024,blood flow rate to live
 Husoy.sbml,QGI,Gastrointestinal tissue blood flow,oral,PFAS,L/d,PBPKO:00531,blood flow rate to gut,http://purl.obolibrary.org/obo/PBPKO_00531,,,
 Husoy.sbml,QRest,Blood flow to rest of body,oral,PFAS,L/d,PBPKO:00050,blood flow rate to restbody,http://purl.obolibrary.org/obo/PBPKO_00050,,,
 Husoy.sbml,Free,Unbound fraction,oral,PFAS,dimensionless,PBPKO:00149,unbound fraction,http://purl.obolibrary.org/obo/PBPKO_00149,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
-Husoy.sbml,kfeC,Intrinsic rate of fecal excretion,oral,PFAS,mL/d/g,,,,,,
+Husoy.sbml,kfeC,Intrinsic rate of fecal excretion,oral,PFAS,mL/d/g,PBPKO:03005,intrinsic fecal excretion rate,http://purl.obolibrary.org/obo/PBPKO_03005,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
 Husoy.sbml,kfe,Fecal excretion rate,oral,PFAS,L/d,PBPKO:00230,fecal clearance rate,http://purl.obolibrary.org/obo/PBPKO_00230,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
-Husoy.sbml,kbiliaryC,Intrinsic rate of biliary clearance,oral,PFAS,mL/d/g,,,,,,
+Husoy.sbml,kbiliaryC,Intrinsic rate of biliary clearance,oral,PFAS,mL/d/g,PBPKO:03007,intrinsic biliary clearance rate,http://purl.obolibrary.org/obo/PBPKO_03007,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
 Husoy.sbml,kbiliary,Biliary clearance rate,oral,PFAS,L/d,PBPKO:00233,biliary clearance rate,http://purl.obolibrary.org/obo/PBPKO_00233,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
 Husoy.sbml,PL,Liver to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00170,liver plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00170,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
 Husoy.sbml,PG,Gastrointestinal tissue to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00166,gut plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00166,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
 Husoy.sbml,PRest,Rest of the body to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00518,restbody plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00518,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
 Husoy.sbml,CGI,Concentration in gastrointestinal tissue,oral,PFAS,ug/L,PBPKO:00538,concentration in gut,http://purl.obolibrary.org/obo/PBPKO_00538,,,
 Husoy.sbml,CLiver,Concentration in liver,oral,PFAS,ug/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
-Husoy.sbml,CPlasma,Unbound concentration in plasma,oral,PFAS,ug/L,,,,,,
+Husoy.sbml,CPlasma,Unbound concentration in plasma,oral,PFAS,ug/L,PBPKO:06017,unbound concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_06017,,,
 Husoy.sbml,CPlasmaTotal,Total concentration in plasma,oral,PFAS,ug/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
 Husoy.sbml,CRest,Concentration in rest of the body,oral,PFAS,ug/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
 Worley.sbml,BW,Bodyweight,oral,PFAS,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
-Worley.sbml,VLc,Volume fraction of liver,oral,PFAS,L/kg,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
+Worley.sbml,VLc,Volume fraction of the liver,oral,PFAS,L/kg,PBPKO:00078,fraction of liver,http://purl.obolibrary.org/obo/PBPKO_00078,,,
 Worley.sbml,VPlasmac,Volume fraction of plasma,oral,PFAS,L/kg,PBPKO:00104,fraction of plasma,http://purl.obolibrary.org/obo/PBPKO_00104,,,
 Worley.sbml,VL,Liver volume,oral,PFAS,L,PBPKO:00077,volume of liver,http://purl.obolibrary.org/obo/PBPKO_00077,,,
-Worley.sbml,VPlasma,Volume of plasma,oral,PFAS,L,PBPKO:00103,volume of plasma,http://purl.obolibrary.org/obo/PBPKO_00103,,,
-Worley.sbml,VRest,Volume of the rest of the body,oral,PFAS,L,PBPKO:00105,volume of rest body,http://purl.obolibrary.org/obo/PBPKO_00105,,,
+Worley.sbml,VPlasma,Plasma volume,oral,PFAS,L,PBPKO:00103,volume of plasma,http://purl.obolibrary.org/obo/PBPKO_00103,,,
+Worley.sbml,VRest,Volume of the rest compartment,oral,PFAS,L,PBPKO:00105,volume of rest body,http://purl.obolibrary.org/obo/PBPKO_00105,,,
 Worley.sbml,QC,Cardiac output,oral,PFAS,L/d,PBPKO:00013,cardiac output rate,http://purl.obolibrary.org/obo/PBPKO_00013,,,
-Worley.sbml,QCP,Cardiac output of plasma,oral,PFAS,L/d,PBPKO:00528,cardiac output rate of plasma,http://purl.obolibrary.org/obo/PBPKO_00528,,,
+Worley.sbml,QPlasma,Cardiac output of plasma,oral,PFAS,L/d,PBPKO:00528,cardiac output rate of plasma,http://purl.obolibrary.org/obo/PBPKO_00528,,,
 Worley.sbml,Htc,Hematocrit,oral,PFAS,dimensionless,PBPKO:00527,hematocrit volume,http://purl.obolibrary.org/obo/PBPKO_00527,,,
 Worley.sbml,QLc,Fraction of blood flow to liver,oral,PFAS,dimensionless,PBPKO:00025,fraction of blood flow to liver,http://purl.obolibrary.org/obo/PBPKO_00025,,,
-Worley.sbml,QL,Liver blood flow,oral,PFAS,L/d,PBPKO:00024,blood flow rate to liver,http://purl.obolibrary.org/obo/PBPKO_00024,,,
+Worley.sbml,QL,Blood flow to liver,oral,PFAS,L/d,PBPKO:00024,blood flow rate to liver,http://purl.obolibrary.org/obo/PBPKO_00024,,,
 Worley.sbml,QRest,Blood flow to rest of body,oral,PFAS,L/d,PBPKO:00050,blood flow rate to restbody,http://purl.obolibrary.org/obo/PBPKO_00050,,,
-Worley.sbml,Free,Unbound fraction,oral,PFAS,dimensionless,PBPKO:00149,unbound fraction,http://purl.obolibrary.org/obo/PBPKO_00149,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
-Worley.sbml,kstoC,Intrinsic gastric emptying rate,oral,PFAS,/d.kg^0.25,,,,,,
-Worley.sbml,ksto,Gastric emptying rate,oral,PFAS,/d,PBPKO:00143,gastric emptying rate,http://purl.obolibrary.org/obo/PBPKO_00143,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
-Worley.sbml,kabsC,Intrinsic absorption rate,oral,PFAS,/d.kg^0.25,,,,,,
-Worley.sbml,kabs,Absorption rate constant,oral,PFAS,/d,PBPKO:00142,absorption rate constant intestine,http://purl.obolibrary.org/obo/PBPKO_00142,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
-Worley.sbml,k0C,Intrinsic stomach absorption rate,oral,PFAS,/d.kg^0.25,,,,,,
-Worley.sbml,k0,Stomach absorption rate,oral,PFAS,/d,,,,,,
-Worley.sbml,kfeC,Intrinsic fecal excretion rate,oral,PFAS,/d.kg^0.25,,,,,,
-Worley.sbml,kfe,Fecal excretion rate,oral,PFAS,/d,PBPKO:00236,fecal elimination rate constant,http://purl.obolibrary.org/obo/PBPKO_00236,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
-Worley.sbml,kbiliaryC,Intrinsic biliary clearance rate,oral,PFAS,/d.kg^0.25,,,,,,
-Worley.sbml,kbiliary,Biliary clearance rate,oral,PFAS,/d,PBPKO:00233,biliary clearance rate,http://purl.obolibrary.org/obo/PBPKO_00233,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
-Worley.sbml,PL,Liver to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00170,liver plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00170,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
-Worley.sbml,PRest,Rest of body to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00518,restbody plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00518,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
+Worley.sbml,Free,Unbound fraction,oral,PFAS,dimensionless,PBPKO:00149,unbound fraction,http://purl.obolibrary.org/obo/PBPKO_00149,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+Worley.sbml,kstoC,Intrinsic gastric emptying rate,oral,PFAS,/d.kg^0.25,PBPKO:03001,intrinsic gastric emptying rate,http://purl.obolibrary.org/obo/PBPKO_03001,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+Worley.sbml,ksto,Gastric emptying rate,oral,PFAS,/d,PBPKO:00143,gastric emptying rate,http://purl.obolibrary.org/obo/PBPKO_00143,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+Worley.sbml,kabsC,Intrinsic absorption rate,oral,PFAS,/d.kg^0.25,PBPKO:03002,intrinsic absorption rate,http://purl.obolibrary.org/obo/PBPKO_03002,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+Worley.sbml,kabs,Absorption rate constant,oral,PFAS,/d,PBPKO:00142,absorption rate constant intestine,http://purl.obolibrary.org/obo/PBPKO_00142,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+Worley.sbml,k0C,Intrinsic uptake rate from the stomach,oral,PFAS,/d.kg^0.25,PBPKO:03003,intrinsic stomach uptake rate,http://purl.obolibrary.org/obo/PBPKO_03003,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+Worley.sbml,k0,Stomach uptake rate,oral,PFAS,/d,PBPKO:03004,stomach uptake rate,http://purl.obolibrary.org/obo/PBPKO_03004,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+Worley.sbml,kfeC,Intrinsic fecal excretion rate,oral,PFAS,/d.kg^0.25,PBPKO:03005,intrinsic fecal excretion rate,http://purl.obolibrary.org/obo/PBPKO_03005,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+Worley.sbml,kfe,Fecal excretion rate,oral,PFAS,/d,PBPKO:00236,fecal elimination rate constant,http://purl.obolibrary.org/obo/PBPKO_00236,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+Worley.sbml,kbiliaryC,Intrinsic biliary excretion rate,oral,PFAS,/d.kg^0.25,PBPKO:03007,intrinsic biliary clearance rate,http://purl.obolibrary.org/obo/PBPKO_03007,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+Worley.sbml,kbiliary,Biliary excretion rate,oral,PFAS,/d,PBPKO:00233,biliary clearance rate,http://purl.obolibrary.org/obo/PBPKO_00233,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+Worley.sbml,PL,Liver to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00170,liver plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00170,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
+Worley.sbml,PRest,Rest of body to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00518,restbody plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00518,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 Worley.sbml,CLiver,Concentration in liver,oral,PFAS,ug/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
-Worley.sbml,CPlasma,Unbound concentration in plasma,oral,PFAS,ug/L,,,,,,
+Worley.sbml,CPlasma,Unbound concentration in plasma,oral,PFAS,ug/L,PBPKO:06017,unbound concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_06017,,,
 Worley.sbml,CPlasmaTotal,Total concentration in plasma,oral,PFAS,ug/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
 Worley.sbml,CRest,Concentration in rest of body,oral,PFAS,ug/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
 Deepika.sbml,BW,bodyweight,oral,PFAS,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
@@ -1731,7 +1731,7 @@ Deepika.sbml,PG,Gut to plasma partition coefficient,oral,PFAS,dimensionless,PBPK
 Deepika.sbml,PRest,Rest of body to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00518,restbody plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00518,CHEBI:39421,perfluorooctane-1-sulfonic acid,http://purl.obolibrary.org/obo/CHEBI_39421
 Deepika.sbml,CGI,Concentration in gastrointestinal tract,oral,PFAS,ug/L,PBPKO:00538,concentration in gut,http://purl.obolibrary.org/obo/PBPKO_00538,,,
 Deepika.sbml,CLiver,Concentration in liver,oral,PFAS,ug/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
-Deepika.sbml,CPlasma,Unbound concentration in plasma,oral,PFAS,ug/L,,,,,,
+Deepika.sbml,CPlasma,Unbound concentration in plasma,oral,PFAS,ug/L,PBPKO:06017,unbound concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_06017,,,
 Deepika.sbml,CPlasmaTotal,Total concentration in plasma,oral,PFAS,ug/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
 Deepika.sbml,CRest,Concentration in rest of body,oral,PFAS,ug/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,
 Loccisano.sbml,BW,Bodyweight,oral,PFAS,kg,PBPKO:00008,bodyweight,http://purl.obolibrary.org/obo/PBPKO_00008,,,
@@ -1756,6 +1756,6 @@ Loccisano.sbml,PG,Gastrointestinal tract tissue to plasma partition coefficient,
 Loccisano.sbml,PRest,Rest of the body to plasma partition coefficient,oral,PFAS,dimensionless,PBPKO:00518,restbody plasma partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00518,CHEBI:35549,perfluorooctanoic acid,http://purl.obolibrary.org/obo/CHEBI_35549
 Loccisano.sbml,CGI,Concentration in the gastrointestinal tract,oral,PFAS,ug/L,PBPKO:00538,concentration in gut,http://purl.obolibrary.org/obo/PBPKO_00538,,,
 Loccisano.sbml,CLiver,Concentration in the liver,oral,PFAS,ug/L,PBPKO:00539,concentration in liver,http://purl.obolibrary.org/obo/PBPKO_00539,,,
-Loccisano.sbml,CPlasma,Free concentration in plasma,oral,PFAS,ug/L,,,,,,
+Loccisano.sbml,CPlasma,Free concentration in plasma,oral,PFAS,ug/L,PBPKO:06017,unbound concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_06017,,,
 Loccisano.sbml,CPlasmaTotal,Total concentration in plasma,oral,PFAS,ug/L,PBPKO:00549,concentration in plasma,http://purl.obolibrary.org/obo/PBPKO_00549,,,
 Loccisano.sbml,CRest,Concentration in rest of body,oral,PFAS,ug/L,PBPKO:00548,concentration in restbody,http://purl.obolibrary.org/obo/PBPKO_00548,,,

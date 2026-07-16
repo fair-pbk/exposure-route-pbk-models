@@ -1,8 +1,14 @@
 id: Loccisano2011_PFAS_Human
 name: Loccisano
 applicability_domain:
-  chemicals: []
-  species: []
+  chemicals:
+  - id: CHEBI:35549
+    label: perfluorooctanoic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_35549
+  species:
+  - id: NCBITaxon:9606
+    label: Homo sapiens
+    iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
 num_compartments: 4
 num_species: 4
 num_parameters: 25
@@ -254,6 +260,10 @@ parameters:
   unit: ug/L
 - id: CPlasma
   name: Free concentration in plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:06017
+    label: unbound concentration in plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_06017
   unit: ug/L
 - id: CPlasmaTotal
   name: Total concentration in plasma

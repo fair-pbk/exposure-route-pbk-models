@@ -260,6 +260,10 @@ parameters:
   unit: ug/L
 - id: CPlasma
   name: Unbound concentration in plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:06017
+    label: unbound concentration in plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_06017
   unit: ug/L
 - id: CPlasmaTotal
   name: Total concentration in plasma

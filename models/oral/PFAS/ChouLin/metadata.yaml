@@ -59,6 +59,10 @@ compartments:
 species:
 - id: AST
   name: Amount in the stomach
+  pbpko_bqm_is_class:
+    id: PBPKO:06004
+    label: amount in stomach
+    iri: http://purl.obolibrary.org/obo/PBPKO_06004
   chebi_bqb_is_class:
     id: CHEBI:39421
     label: perfluorooctane-1-sulfonic acid
@@ -66,13 +70,17 @@ species:
   unit: ug
 - id: ASI
   name: Amount in the small intestine
+  pbpko_bqm_is_class:
+    id: PBPKO:06005
+    label: amount in small intestine
+    iri: http://purl.obolibrary.org/obo/PBPKO_06005
   chebi_bqb_is_class:
     id: CHEBI:39421
     label: perfluorooctane-1-sulfonic acid
     iri: http://purl.obolibrary.org/obo/CHEBI_39421
   unit: ug
 - id: ALiver
-  name: Amount in the liver
+  name: Liver
   pbpko_bqm_is_class:
     id: PBPKO:00497
     label: amount in liver
@@ -105,7 +113,7 @@ species:
     iri: http://purl.obolibrary.org/obo/CHEBI_39421
   unit: ug
 - id: AFeces
-  name: Amount in feces
+  name: Amount in the feces
   pbpko_bqm_is_class:
     id: PBPKO:00275
     label: cumulative amount in feces
@@ -152,7 +160,7 @@ parameters:
     iri: http://purl.obolibrary.org/obo/PBPKO_00103
   unit: L
 - id: VRest
-  name: Rest of body volume
+  name: Volume of the rest compartment
   pbpko_bqm_is_class:
     id: PBPKO:00105
     label: volume of rest body
@@ -187,7 +195,7 @@ parameters:
     iri: http://purl.obolibrary.org/obo/PBPKO_00025
   unit: dimensionless
 - id: QL
-  name: Liver blood flow
+  name: Blood flow to liver
   pbpko_bqm_is_class:
     id: PBPKO:00024
     label: blood flow rate to liver
@@ -213,6 +221,14 @@ parameters:
   unit: dimensionless
 - id: kstoC
   name: Intrinsic gastric emptying rate
+  pbpko_bqm_is_class:
+    id: PBPKO:03001
+    label: intrinsic gastric emptying rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03001
+  chebi_bqb_is_class:
+    id: CHEBI:39421
+    label: perfluorooctane-1-sulfonic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_39421
   unit: /d.kg^0.25
 - id: ksto
   name: Gastric emptying rate
@@ -227,9 +243,17 @@ parameters:
   unit: /d
 - id: kabsC
   name: Intrinsic absorption rate
+  pbpko_bqm_is_class:
+    id: PBPKO:03002
+    label: intrinsic absorption rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03002
+  chebi_bqb_is_class:
+    id: CHEBI:39421
+    label: perfluorooctane-1-sulfonic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_39421
   unit: /d.kg^0.25
 - id: kabs
-  name: Absorption rate
+  name: Absorption rate constant
   pbpko_bqm_is_class:
     id: PBPKO:00142
     label: absorption rate constant intestine
@@ -240,13 +264,37 @@ parameters:
     iri: http://purl.obolibrary.org/obo/CHEBI_39421
   unit: /d
 - id: k0C
-  name: Intrinsic stomach absorption rate
+  name: Intrinsic uptake rate from the stomach
+  pbpko_bqm_is_class:
+    id: PBPKO:03003
+    label: intrinsic stomach uptake rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03003
+  chebi_bqb_is_class:
+    id: CHEBI:39421
+    label: perfluorooctane-1-sulfonic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_39421
   unit: /d.kg^0.25
 - id: k0
-  name: Stomach absorption rate
+  name: Stomach uptake rate
+  pbpko_bqm_is_class:
+    id: PBPKO:03004
+    label: stomach uptake rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03004
+  chebi_bqb_is_class:
+    id: CHEBI:39421
+    label: perfluorooctane-1-sulfonic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_39421
   unit: /d
 - id: kfeC
   name: Intrinsic fecal excretion rate
+  pbpko_bqm_is_class:
+    id: PBPKO:03005
+    label: intrinsic fecal excretion rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03005
+  chebi_bqb_is_class:
+    id: CHEBI:39421
+    label: perfluorooctane-1-sulfonic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_39421
   unit: /d.kg^0.25
 - id: kfe
   name: Fecal excretion rate
@@ -261,6 +309,14 @@ parameters:
   unit: /d
 - id: kbiliaryC
   name: Intrinsic biliary excretion rate
+  pbpko_bqm_is_class:
+    id: PBPKO:03007
+    label: intrinsic biliary clearance rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_03007
+  chebi_bqb_is_class:
+    id: CHEBI:39421
+    label: perfluorooctane-1-sulfonic acid
+    iri: http://purl.obolibrary.org/obo/CHEBI_39421
   unit: /d.kg^0.25
 - id: kbiliary
   name: Biliary excretion rate
@@ -285,7 +341,7 @@ parameters:
     iri: http://purl.obolibrary.org/obo/CHEBI_39421
   unit: dimensionless
 - id: PRest
-  name: Rest of the body to plasma partition coefficient
+  name: Rest of body to plasma partition coefficient
   pbpko_bqm_is_class:
     id: PBPKO:00518
     label: restbody plasma partition coefficient
@@ -304,6 +360,10 @@ parameters:
   unit: ug/L
 - id: CPlasma
   name: Unbound concentration in plasma
+  pbpko_bqm_is_class:
+    id: PBPKO:06017
+    label: unbound concentration in plasma
+    iri: http://purl.obolibrary.org/obo/PBPKO_06017
   unit: ug/L
 - id: CPlasmaTotal
   name: Total concentration in plasma
@@ -313,7 +373,7 @@ parameters:
     iri: http://purl.obolibrary.org/obo/PBPKO_00549
   unit: ug/L
 - id: CRest
-  name: Concentration in rest of the body
+  name: Concentration in rest of body
   pbpko_bqm_is_class:
     id: PBPKO:00548
     label: concentration in restbody
@@ -379,22 +439,62 @@ parameterisations:
     value: 3.51
     unit: ''
     reference: ''
+    bqm_is:
+      id: PBPKO:03001
+      label: intrinsic gastric emptying rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03001
+    bqb_is:
+      id: CHEBI:39421
+      label: perfluorooctane-1-sulfonic acid
+      iri: http://purl.obolibrary.org/obo/CHEBI_39421
   - id: kabsC
     value: 2.12
     unit: ''
     reference: ''
+    bqm_is:
+      id: PBPKO:03002
+      label: intrinsic absorption rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03002
+    bqb_is:
+      id: CHEBI:39421
+      label: perfluorooctane-1-sulfonic acid
+      iri: http://purl.obolibrary.org/obo/CHEBI_39421
   - id: kfeC
     value: 7.06e-05
     unit: ''
     reference: ''
+    bqm_is:
+      id: PBPKO:03005
+      label: intrinsic fecal excretion rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03005
+    bqb_is:
+      id: CHEBI:39421
+      label: perfluorooctane-1-sulfonic acid
+      iri: http://purl.obolibrary.org/obo/CHEBI_39421
   - id: k0C
     value: 1.0
     unit: ''
     reference: ''
+    bqm_is:
+      id: PBPKO:03003
+      label: intrinsic stomach uptake rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03003
+    bqb_is:
+      id: CHEBI:39421
+      label: perfluorooctane-1-sulfonic acid
+      iri: http://purl.obolibrary.org/obo/CHEBI_39421
   - id: kbiliaryC
     value: 0.0001
     unit: ''
     reference: ''
+    bqm_is:
+      id: PBPKO:03007
+      label: intrinsic biliary clearance rate
+      iri: http://purl.obolibrary.org/obo/PBPKO_03007
+    bqb_is:
+      id: CHEBI:39421
+      label: perfluorooctane-1-sulfonic acid
+      iri: http://purl.obolibrary.org/obo/CHEBI_39421
   - id: PL
     value: 2.67
     unit: ''
