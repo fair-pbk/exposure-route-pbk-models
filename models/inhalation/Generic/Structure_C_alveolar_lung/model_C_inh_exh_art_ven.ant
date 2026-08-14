@@ -1,123 +1,124 @@
-// Created by libAntimony v2.15.0
-model *inhalation_C_art_ven()
+model Inhalation_C_art_ven()
 
-  // Compartments and Species:
-  compartment Air, Arterial, Venous, RestofBody, Lung;
-  substanceOnly species Aair in Air, Aart in Arterial, Aven in Venous, Arest in RestofBody, Alung in Lung, Abloodlung in Bloodlung;
-
-  // Assignment Rules:
-  Vblood := BW*sc_Vblood;
-  Vrest := BW*sc_Vrest;
-  Vbloodlung := BW*sc_Vbloodlung;
-  Vlung := BW*sc_Vlung;
-  Vart := Vblood/3;
-  Vven := Vblood- Vart;
-
-  // Reactions:
-  _J0: Aair -> Abloodlung; Falv*(Aair/Vair)*Fabs;
-  _J1: Abloodlung -> Aart; Qbloodlung*(Aart/Vart);
-  _J2: Aven -> Abloodlung; Qlung*(Abloodlung/Vbloodlung)/k_bloodlung_blood;
-  _J3: Aart -> Arest; Qrest*(Aart/Vart); 
-  _J4: Arest -> Aven ; Qrest*(Arest/Vrest)/k_rest_blood;
-  _J5: Aart -> Alung; Qlung*(Aart/Vart); 
-  _J6: Alung -> Aven ; Qlung*(Alung/Vlung)/k_lung_blood;
-  _J7: Aven -> Aart; CO*(Aven/Vven);
-  _J8: Abloodlung -> Aair; Falv*(Abloodlung/Vbloodlung)/PCAir;
-
-// Initial values
-  Aair = 0; 
-  Aair has MicroGM_per_L;
-  Arest = 0;
-  Arest has MicroGM_per_L;
-  Alung = 0;
-  Alung has MicroGM_per_L;
-  Aart = 0;
-  Aart has MicroGM_per_L;
-  Aven = 0;
-  Aven has MicroGM_per_L;
-
-  // Compartment initializations:
-  Vair = 1;
-  Air has L;
-  Arterial has L;
-  Venous has L;
-  RestofBody has L;
-  Lung has L;
-  
-  // Variable initializations:
-#------------------------
-# Parameters
-#------------------------
 #------------------------
 # Body size & base volumes
 #------------------------
 
-  BW = 70;
-  BW has KiloGM;
+  BW = 70                                 # body weight (kg)
 
-  sc_Vblood = 0.074; // blood volume as a fraction of body weight
-  sc_Vblood has L_PER_KiloGM;
-
-  sc_Vrest = 0.074; // rest of body volume as a fraction of body weight
-  sc_Vrest has L_PER_KiloGM;
-
-  sc_Vlung = 0.05; // lung volume as a fraction of body weight
-  sc_Vlung has L_PER_KiloGM;
-
-  sc_Vbloodlung = 0.05; // lung volume as a fraction of body weight
-  sc_Vbloodlung has L_PER_KiloGM;
+  sc_Vblood = 0.074                       # blood volume as a fraction of body weight
+  sc_Vpulmonary1 = 0.043                  # pulmonary 1 volume as a fraction of body weight
+  sc_Vpulmonary2 = 0.018                  # pulmonary 2 volume as a fraction of body weight
+  sc_Vrest := 1 - sc_Vblood - sc_Vpulmonary2   # rest of body volume as a fraction of body weight ; add sc_Vpulmonary1 if not alveolar 
+ 
+  Vblood := BW * sc_Vblood                # blood volume (L)
+  Vrest := BW * sc_Vrest                  # rest of body volume (L)
+  Vpulmonary1 := BW * sc_Vpulmonary1      # pulmonary 1 compartment volume (L)
+  Vpulmonary2 := BW * sc_Vpulmonary2      # pulmonary 2 compartment volume (L)
+  FracArt = 0.18                          # arterial volume fraction of total blood volume
+  Vart := Vblood * FracArt                # arterial volume (L)
+  Vven := Vblood - Vart                   # venous volume (L)
+  Vair = 1                                # air compartment volume (arbitrary) (L)
+  Vmet = 1                                # metabolite compartment volume (arbitrary) (L)
 
 #------------------------
-# Plasma Flows
+# Blood Flows
 #------------------------
-  CO = 12.5*BW^0.75;  # L/h (cardiac output)
-  CO has L_PER_HR;
 
-  Qrest = CO-Qlung-Qbloodlung; 
-  Qlung = CO; 
-  Qbloodlung = CO; 
+  COCoeff = 12.5                          # coefficient for the cardiac output
+  CO := COCoeff*BW^0.75                   # cardiac output (L/h)
+  Qrest := CO                             # blood flows to rest of body (L/h)
+  Qpulm = 100                             # blood flows to pulmonary (arbitrary), can be equal to CO (L/h)
+  Falv = 390                              # alveolar ventilation rate (L/h) (Rizzo et al., 2013)
 
-   Falv = 210;
-   Falv has L_PER_HR;
-
-// Chemicals
 #------------------------
 # Chemicals
 #------------------------
 
-  Fabs = 0.3; 
+  Fabs = 0.3                              # absorbed fraction to the systemic circulation
+  PCRestBlood = 0.5                       # rest of body to blood partition coefficient
+  PCPulmBlood = 0.5                       # pulmonary to blood partition coefficient
+  PCAirBlood = 2000                       # air to blood partition coefficient
+  kmetPulm = 0                            # metabolic rate (/h)
 
-  k_rest_blood = 0.5;
-  k_rest_blood has UNITLESS;
+#------------------------
+# Compartments (sizes)
+#------------------------
 
-  k_lung_blood = 0.5;
-  k_lung_blood has UNITLESS;
+  compartment Air = Vair
+  compartment Arterial = Vart
+  compartment Venous = Vven
+  compartment RestofBody = Vrest
+  compartment Pulmonary1 = Vpulmonary1
+  compartment Pulmonary2 = Vpulmonary2
+  compartment Metabolite = Vmet
 
-  k_bloodlung_blood = 0.5;
-  k_bloodlung_blood has UNITLESS;
+#------------------------
+# Species (amount states)
+#------------------------
 
-  PCAir = 2000;
-  PCAir has UNITLESS;
+  substanceOnly species Aair in Air
+  substanceOnly species Apulmonary1 in Pulmonary1
+  substanceOnly species Apulmonary2 in Pulmonary2
+  substanceOnly species Aart in Arterial
+  substanceOnly species Aven in Venous
+  substanceOnly species Arest in RestofBody
+  substanceOnly species Amet in Metabolite
 
-  // Other declarations:
-  var Arterial, Venous, RestofBody, CO;
-  const Air, BW, sc_Vblood, sc_Vrest, sc_Vlung, sc_Vbloodlung, k_rest_blood, k_lung_blood, k_bloodlung_blood, PCAir;
-  const Falv, Fabs;
+#------------------------
+# Initial conditions
+#------------------------
 
-  // Unit definitions:
-  unit MicroGM = 1e-6 gram;
-  unit HR = 3600 second;
-  unit L = litre;
-  unit KiloGM = 1e3 gram;
-  unit L_PER_KiloGM = litre / 1e3 gram;
-  unit L_PER_HR_PER_KiloGM0P75 = litre / (3600 second * (1e3 gram)^-0);
-  unit UNITLESS = dimensionless;
-  unit L_PER_HR = litre / 3600 second;
-  unit volume = L;
-  unit substance = MicroGM;
-  unit extent = MicroGM;
-  unit time_unit = HR;
-  unit MicroGM_per_L = 1e-6 gram / litre;
+  Aair = 1                                #(ug)
+  Apulmonary1 = 0
+  Apulmonary2 = 0
+  Amet = 0
+  Arest = 0
+  Aart = 0
+  Aven = 0
+  
+#------------------------
+# Concentrations
+#------------------------
 
+  Cair := Aair / Vair
+  Cpulmonary1 := Apulmonary1 / Vpulmonary1
+  Cpulmonary2 := Apulmonary2 / Vpulmonary2
+  Cart := Aart / Vart
+  Cven := Aven / Vven
+  Crest := Arest/Vrest
+
+#------------------------
+# Reactions / Transfers
+#------------------------
+
+  Aair  -> Apulmonary1;       Falv * Cair * Fabs      
+  Apulmonary1 -> Apulmonary2; Qpulm * Cpulmonary1 / PCAirBlood     
+  Apulmonary2 -> Aart;        CO * Cpulmonary2 / PCPulmBlood
+  Aart -> Arest;              Qrest * Cart
+  Arest -> Aven ;             Qrest * Crest / PCRestBlood
+  Aven  -> Apulmonary2;       CO * Cven
+  Apulmonary2 ->              Apulmonary1;  Qpulm * Cpulmonary2 / PCPulmBlood
+  Apulmonary1 -> Aair;        Falv * Cpulmonary1 / PCAirBlood
+  Apulmonary2 -> Amet;        kmetPulm * Apulmonary2
+
+#------------------------
+# Unit definitions
+#------------------------
+
+  unit MicroGM = 1e-6 gram
+  unit HR = 3600 second
+  unit L = litre
+  unit KiloGM = 1e3 gram
+  unit L_PER_KiloGM = litre / 1e3 gram
+  unit L_PER_HR_PER_KiloGM0P75 = litre / (3600 second * (1e3 gram)^-0.75)
+  unit UNITLESS = dimensionless
+  unit L_PER_HR = litre / 3600 second
+  unit volume = L
+  unit substance = MicroGM
+  unit extent = MicroGM
+  unit time_unit = HR
+  unit MicroGM_per_L = 1e-6 gram / litre
+  unit PER_HR = 1/HR
 
 end
