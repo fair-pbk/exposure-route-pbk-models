@@ -151,28 +151,28 @@ parameters:
     id: PBPKO:04057
     label: volume fraction of blood
     iri: http://purl.obolibrary.org/obo/PBPKO_04057
-  unit: dimensionless
+  unit: L/kg
 - id: sc_Vpulmonary1
   name: fraction of volume of first pulmonary compartment
   pbpko_bqm_is_class:
     id: PBPKO:00610
     label: fraction of volume of compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00610
-  unit: dimensionless
+  unit: L/kg
 - id: sc_Vpulmonary2
   name: fraction of volume of second pulmonary compartment
   pbpko_bqm_is_class:
     id: PBPKO:00610
     label: fraction of volume of compartment
     iri: http://purl.obolibrary.org/obo/PBPKO_00610
-  unit: dimensionless
+  unit: L/kg
 - id: sc_Vrest
   name: fraction of rest body
   pbpko_bqm_is_class:
     id: PBPKO:00106
     label: fraction of rest body
     iri: http://purl.obolibrary.org/obo/PBPKO_00106
-  unit: dimensionless
+  unit: L/kg
 - id: Vblood
   name: volume of blood
   pbpko_bqm_is_class:
@@ -202,7 +202,7 @@ parameters:
     iri: http://purl.obolibrary.org/obo/PBPKO_00066
   unit: L
 - id: FracArt
-  name: fraction of arterial blood volume
+  name: fraction of arterial blood volume
   pbpko_bqm_is_class:
     id: PBPKO:00651
     label: fraction of arterial blood volume
@@ -238,7 +238,7 @@ parameters:
   unit: L
 - id: COCoeff
   name: coefficient for cardiac output rate
-  unit: dimensionless
+  unit: L/h/kg^0.75
 - id: CO
   name: cardiac output rate
   pbpko_bqm_is_class:
@@ -480,38 +480,3 @@ unit_consistency:
     \ <assignmentRule> <math> expression '1 - sc_Vblood - sc_Vpulmonary2' cannot be\
     \ fully checked. Unit consistency reported as either no errors or further unit\
     \ errors related to this object may not be accurate."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'Vblood' are gram (exponent\
-    \ = 1, multiplier = 1000, scale = 0)."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'Vrest' are gram (exponent\
-    \ = 1, multiplier = 1000, scale = 0)."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'Vpulmonary1' are gram (exponent\
-    \ = 1, multiplier = 1000, scale = 0)."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'Vpulmonary2' are gram (exponent\
-    \ = 1, multiplier = 1000, scale = 0)."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0), second (exponent = -1, multiplier\
-    \ = 3600, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
-    \ with variable 'CO' are gram (exponent = 0.75, multiplier = 1000, scale = 0)."

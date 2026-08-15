@@ -93,14 +93,14 @@ parameters:
     id: PBPKO:04057
     label: volume fraction of blood
     iri: http://purl.obolibrary.org/obo/PBPKO_04057
-  unit: dimensionless
+  unit: L/kg
 - id: sc_Vrest
   name: fraction of rest body
   pbpko_bqm_is_class:
     id: PBPKO:00106
     label: fraction of rest body
     iri: http://purl.obolibrary.org/obo/PBPKO_00106
-  unit: dimensionless
+  unit: L/kg
 - id: Vblood
   name: volume of blood
   pbpko_bqm_is_class:
@@ -116,7 +116,7 @@ parameters:
     iri: http://purl.obolibrary.org/obo/PBPKO_00105
   unit: L
 - id: FracArt
-  name: fraction of arterial blood volume
+  name: fraction of arterial blood volume
   pbpko_bqm_is_class:
     id: PBPKO:00651
     label: fraction of arterial blood volume
@@ -141,7 +141,7 @@ parameters:
   unit: L
 - id: COCoeff
   name: coefficient for cardiac output rate
-  unit: dimensionless
+  unit: L/h/kg^0.75
 - id: CO
   name: cardiac output rate
   pbpko_bqm_is_class:
@@ -187,7 +187,7 @@ parameters:
     id: CHEBI:37193
     label: elemental lead
     iri: http://purl.obolibrary.org/obo/CHEBI_37193
-  unit: ''
+  unit: dimensionless
 parameterisations:
 - filename: model_A_inh_exh_art_ven.params.csv
   model_id: Inhalation_A_art_ven
@@ -261,20 +261,6 @@ parameterisations:
       label: elemental lead
       iri: http://purl.obolibrary.org/obo/CHEBI_37193
 unit_consistency:
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'PCAirBlood' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'PCAirBlood' does not\
-    \ have a 'units' attribute."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
@@ -282,31 +268,3 @@ unit_consistency:
     \ <assignmentRule> <math> expression '1 - sc_Vblood' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
     \ to this object may not be accurate."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'Vblood' are gram (exponent\
-    \ = 1, multiplier = 1000, scale = 0)."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
-    \ expression of the <assignmentRule> with variable 'Vrest' are gram (exponent\
-    \ = 1, multiplier = 1000, scale = 0)."
-- level: error
-  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
-    \ of the rule's right-hand side are expected to be consistent with the units declared\
-    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
-    \ (exponent = 1, multiplier = 1, scale = 0), second (exponent = -1, multiplier\
-    \ = 3600, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
-    \ with variable 'CO' are gram (exponent = 0.75, multiplier = 1000, scale = 0)."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'Falv * (Aart / Vart) / PCAirBlood' cannot be\
-    \ fully checked. Unit consistency reported as either no errors or further unit\
-    \ errors related to this object may not be accurate."
