@@ -1,0 +1,70 @@
+id: generic
+label: Generic
+model_instances:
+  - id: Structure A
+    label: Structure A
+    model_path: models/inhalation/Generic/Structure_A_direct_blood/model_A_inh_exh_art_ven.sbml
+    param_file: models/inhalation/Generic/Structure_A_direct_blood/model_A_inh_exh_art_ven.params.csv
+    target_mappings:
+      CAir: '[Aair]'
+  - id: Structure B
+    label: Structure B
+    model_path: models/inhalation/Generic/Structure_B_lung/model_B_inh_exh_art_ven.sbml
+    param_file: models/inhalation/Generic/Structure_B_lung/model_B_inh_exh_art_ven.params.csv
+    target_mappings:
+      CAir: '[Aair]'
+  - id: Structure C
+    label: Structure C
+    model_path: models/inhalation/Generic/Structure_C_alveolar_lung/model_C_inh_exh_art_ven.sbml
+    param_file: models/inhalation/Generic/Structure_C_alveolar_lung/model_C_inh_exh_art_ven.params.csv
+    target_mappings:
+      CAir: '[Aair]'
+
+scenarios:
+  - id: inhalation_scenario_1
+    label: "Scenario 1: single continuous"
+    duration: 1200
+    evaluation_resolution: 600
+    time_unit: HOUR
+    amount_unit: MICROGRAMS
+    dosing_events:
+      - type: single_continuous
+        target: Aair
+        adjustment: Air
+        amount: 10
+        time: 0
+        duration: 8
+    outputs:
+      - id: CAir
+        label: Air concentration
+        output: CAir
+      - id: Aven
+        label: Amount in venous blood
+        output: Aven
+      - id: Aart
+        label: Amount in arterial blood
+        output: Aart
+  - id: inhalation_scenario_2
+    label: "Scenario 2: continuous repeated"
+    duration: 1200
+    evaluation_resolution: 600
+    time_unit: HOUR
+    amount_unit: MICROGRAMS
+    dosing_events:
+      - type: repeated_continuous
+        target: Aair
+        adjustment: Air
+        amount: 10
+        time: 8
+        interval: 24
+        duration: 10
+    outputs:
+      - id: CAir
+        label: Air concentration
+        output: CAir
+      - id: Aven
+        label: Amount in venous blood
+        output: Aven
+      - id: Aart
+        label: Amount in arterial blood
+        output: Aart

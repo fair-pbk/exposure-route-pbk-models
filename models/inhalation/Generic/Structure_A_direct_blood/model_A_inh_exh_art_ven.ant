@@ -1,8 +1,8 @@
 model Inhalation_A_art_ven()
 
-#------------------------
-# Body size & base volumes
-#------------------------
+  #------------------------
+  # Body size & base volumes
+  #------------------------
 
   BW = 70                                 # body weight (kg)
 
@@ -13,79 +13,59 @@ model Inhalation_A_art_ven()
   FracArt = 0.18                          # arterial volume fraction of total blood volume
   Vart := Vblood * FracArt                # arterial volume (L)
   Vven := Vblood - Vart		                # venous volume (L)
-  Vair = 1	                              # air compartment volume (arbitrary) (L)
+  Vair = 1                                # air compartment volume (arbitrary) (L)
 
-#------------------------
-# Blood Flows
-#------------------------
-  COCoeff = 12.5	                        # coefficient for the cardiac output
+  #------------------------
+  # Blood Flows
+  #------------------------
+  COCoeff = 12.5                          # coefficient for the cardiac output
   CO := COCoeff * BW^0.75                 # cardiac output (L/h)
   Qrest := CO                             # blood flows to rest of body (L/h)
   Falv = 390                              # alveolar ventilation rate (L/h) (Rizzo et al., 2013)
 
-#------------------------
-# Chemicals
-#------------------------
+  #------------------------
+  # Chemicals
+  #------------------------
 
-  Cair = 1                                # air concentration (arbitrary) (µg/L)
   Fabs = 0.3                              # absorbed fraction to the systemic circulation
   PCRestBlood = 0.5                       # rest of body to blood partition coefficient
   PCAirBlood = 2000                       # air to blood partition coefficient
   
-#------------------------
-# Compartments (sizes)
-#------------------------
+  #------------------------
+  # Compartments (sizes)
+  #------------------------
 
   compartment Air = Vair
   compartment Arterial = Vart
   compartment Venous = Vven
   compartment RestofBody = Vrest
  
-#------------------------
-# Species (amount states)
-#------------------------
+  #------------------------
+  # Species (amount states)
+  #------------------------
 
-  substanceOnly species Aair in Air
+  const substanceOnly species Aair in Air
   substanceOnly species Aart in Arterial
   substanceOnly species Aven in Venous
   substanceOnly species Arest in RestofBody
 
-#------------------------
-# Initial conditions
-#------------------------
+  #------------------------
+  # Initial conditions
+  #------------------------
 
-  Aair = Cair * Vair                      # (µg)
+  Aair = 0
   Arest = 0
   Aart = 0
   Aven = 0
 
-#------------------------
-# Reactions / Transfers
-#------------------------
+  #------------------------
+  # Reactions / Transfers
+  #------------------------
 
- Aair -> Aart; Falv * (Aair / Vair) * Fabs
- Aart -> Arest; Qrest * (Aart / Vart) 
- Arest -> Aven ; Qrest * (Arest / Vrest) / PCRestBlood
- Aven -> Aart; CO * (Aven / Vven)
- Aart -> Aair; Falv * (Aart / Vart) / PCAirBlood
-
-#------------------------
-# Unit definitions
-#------------------------
-
-  unit MicroGM = 1e-6 gram
-  unit HR = 3600 second
-  unit L = litre
-  unit KiloGM = 1e3 gram
-  unit L_PER_KiloGM = litre / 1e3 gram
-  unit L_PER_HR_PER_KiloGM0P75 = litre / (3600 second * (1e3 gram)^-0.75)
-  unit UNITLESS = dimensionless
-  unit L_PER_HR = litre / 3600 second
-  unit volume = L
-  unit substance = MicroGM
-  unit extent = MicroGM
-  unit time_unit = HR
-  unit MicroGM_per_L = 1e-6 gram / litre
-
+  Aair -> Aart; Falv * (Aair / Vair) * Fabs
+  Aart -> Arest; Qrest * (Aart / Vart) 
+  Arest -> Aven ; Qrest * (Arest / Vrest) / PCRestBlood
+  Aven -> Aart; CO * (Aven / Vven)
+  Aart -> Aair; Falv * (Aart / Vart) / PCAirBlood
 
 end
