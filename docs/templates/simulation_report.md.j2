@@ -14,6 +14,9 @@
 - **Target:** `{{ event.target }}`
   - **Type:** {{ event.type.replace("_", " ") | title }}
   - **Amount:** {{ event.amount }} {{ scenario.amount_unit.value }}
+  {%- if event.adjustment is not none %}
+  - **Event adjustment:** {{ event.adjustment }}
+  {% endif -%}
   - **Time:** {{ event.time }}
   {%- if event.duration is not none %}
   - **Event duration:** {{ event.duration }}
