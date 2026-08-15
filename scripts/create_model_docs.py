@@ -726,3 +726,4 @@ if __name__ == '__main__':
     export_models_zip(MODELS_PATH, OUTPUT_PATH, 'models.zip')
     export_models_zip(os.path.join(MODELS_PATH, 'oral'), OUTPUT_PATH, 'oral_models.zip')
     export_models_zip(os.path.join(MODELS_PATH, 'dermal'), OUTPUT_PATH, 'dermal_models.zip')
+    export_models_zip(os.path.join(MODELS_PATH, 'inhalation'), OUTPUT_PATH, 'inhalation_models.zip')
