@@ -9,7 +9,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Air",
 			label="Air
-[PBPKO:00458]",
+[-]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -27,7 +27,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Arterial",
 			label="Arterial
-[-]",
+[PBPKO:00552]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -35,7 +35,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-Aart",
 			label="Aart
-[-]",
+[PBPKO:00631]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -45,7 +45,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Venous",
 			label="Venous
-[-]",
+[PBPKO:00561]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -53,7 +53,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-Aven",
 			label="Aven
-[-]",
+[PBPKO:00632]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -63,7 +63,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-RestofBody",
 			label="RestofBody
-[-]",
+[PBPKO:00450]",
 			shape=box,
 			style="filled,rounded"
 		];

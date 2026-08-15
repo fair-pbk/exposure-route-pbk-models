@@ -1,96 +1,196 @@
-id: inhalation_A_art_ven
+id: Inhalation_A_art_ven
 name: model_A_inh_exh_art_ven
 applicability_domain:
-  chemicals: []
-  species: []
+  chemicals:
+  - id: CHEBI:37193
+    label: elemental lead
+    iri: http://purl.obolibrary.org/obo/CHEBI_37193
+  species:
+  - id: NCBITaxon:9606
+    label: Homo sapiens
+    iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
 num_compartments: 4
 num_species: 4
-num_parameters: 14
+num_parameters: 16
 num_reactions: 5
 compartments:
 - id: Air
-  name: alveolar air
-  pbpko_bqm_is_class:
-    id: PBPKO:00458
-    label: skin exposed stratum corneum compartment
-    iri: http://purl.obolibrary.org/obo/PBPKO_00458
+  name: air compartment
   unit: L
 - id: Arterial
-  name: ''
+  name: arterial blood compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00552
+    label: arterial blood compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00552
   unit: L
 - id: Venous
-  name: ''
+  name: venous blood compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00561
+    label: venous blood compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00561
   unit: L
 - id: RestofBody
-  name: ''
+  name: rest of body compartment
+  pbpko_bqm_is_class:
+    id: PBPKO:00450
+    label: rest of body compartment
+    iri: http://purl.obolibrary.org/obo/PBPKO_00450
   unit: L
 species:
 - id: Aair
-  name: ''
+  name: amount in air
+  chebi_bqb_is_class:
+    id: CHEBI:37193
+    label: elemental lead
+    iri: http://purl.obolibrary.org/obo/CHEBI_37193
   unit: ug
 - id: Aart
-  name: ''
+  name: amount in arterial blood
+  pbpko_bqm_is_class:
+    id: PBPKO:00631
+    label: amount in arterial blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00631
+  chebi_bqb_is_class:
+    id: CHEBI:37193
+    label: elemental lead
+    iri: http://purl.obolibrary.org/obo/CHEBI_37193
   unit: ug
 - id: Aven
-  name: amount of chemical in venous blood
+  name: amount in venous blood
+  pbpko_bqm_is_class:
+    id: PBPKO:00632
+    label: amount in venous blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00632
+  chebi_bqb_is_class:
+    id: CHEBI:37193
+    label: elemental lead
+    iri: http://purl.obolibrary.org/obo/CHEBI_37193
   unit: ug
 - id: Arest
-  name: amount of chemical in rest-of-body
+  name: amount in restbody
   pbpko_bqm_is_class:
     id: PBPKO:00501
     label: amount in restbody
     iri: http://purl.obolibrary.org/obo/PBPKO_00501
+  chebi_bqb_is_class:
+    id: CHEBI:37193
+    label: elemental lead
+    iri: http://purl.obolibrary.org/obo/CHEBI_37193
   unit: ug
 parameters:
-- id: Vblood
-  name: ''
-  unit: ''
 - id: BW
-  name: body weight
+  name: bodyweight
   pbpko_bqm_is_class:
     id: PBPKO:00008
     label: bodyweight
     iri: http://purl.obolibrary.org/obo/PBPKO_00008
   unit: kg
 - id: sc_Vblood
-  name: ''
-  unit: L/kg
-- id: Vrest
-  name: ''
-  unit: ''
+  name: volume fraction of blood
+  pbpko_bqm_is_class:
+    id: PBPKO:04057
+    label: volume fraction of blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_04057
+  unit: dimensionless
 - id: sc_Vrest
-  name: ''
-  unit: L/kg
+  name: fraction of rest body
+  pbpko_bqm_is_class:
+    id: PBPKO:00106
+    label: fraction of rest body
+    iri: http://purl.obolibrary.org/obo/PBPKO_00106
+  unit: dimensionless
+- id: Vblood
+  name: volume of blood
+  pbpko_bqm_is_class:
+    id: PBPKO:00108
+    label: volume of blood
+    iri: http://purl.obolibrary.org/obo/PBPKO_00108
+  unit: L
+- id: Vrest
+  name: volume of rest body
+  pbpko_bqm_is_class:
+    id: PBPKO:00105
+    label: volume of rest body
+    iri: http://purl.obolibrary.org/obo/PBPKO_00105
+  unit: L
+- id: FracArt
+  name: fraction of arterial blood volume
+  pbpko_bqm_is_class:
+    id: PBPKO:00651
+    label: fraction of arterial blood volume
+    iri: http://purl.obolibrary.org/obo/PBPKO_00651
+  unit: dimensionless
 - id: Vart
-  name: ''
-  unit: ''
+  name: arterial volume
+  pbpko_bqm_is_class:
+    id: PBPKO:00121
+    label: arterial volume
+    iri: http://purl.obolibrary.org/obo/PBPKO_00121
+  unit: L
 - id: Vven
-  name: ''
-  unit: ''
-- id: Falv
-  name: ''
-  unit: L/h
+  name: venous volume
+  pbpko_bqm_is_class:
+    id: PBPKO:00122
+    label: venous volume
+    iri: http://purl.obolibrary.org/obo/PBPKO_00122
+  unit: L
 - id: Vair
-  name: ''
-  unit: ''
-- id: Fabs
-  name: ''
-  unit: ''
-- id: Qrest
-  name: ''
-  unit: ''
-- id: k_rest_blood
-  name: ''
+  name: volume of air (arbitrary)
+  unit: L
+- id: COCoeff
+  name: coefficient for cardiac output rate
   unit: dimensionless
 - id: CO
-  name: ''
+  name: cardiac output rate
+  pbpko_bqm_is_class:
+    id: PBPKO:00013
+    label: cardiac output rate
+    iri: http://purl.obolibrary.org/obo/PBPKO_00013
   unit: L/h
-- id: PCAir
-  name: ''
+- id: Qrest
+  name: blood flow rate to restbody
+  pbpko_bqm_is_class:
+    id: PBPKO:00050
+    label: blood flow rate to restbody
+    iri: http://purl.obolibrary.org/obo/PBPKO_00050
+  unit: L/h
+- id: Falv
+  name: alveolar ventilation rate
+  unit: L/h
+- id: Fabs
+  name: relative bioavailability
+  pbpko_bqm_is_class:
+    id: PBPKO:00264
+    label: relative bioavailability
+    iri: http://purl.obolibrary.org/obo/PBPKO_00264
   unit: dimensionless
+- id: PCRestBlood
+  name: restbody blood partition coefficient
+  pbpko_bqm_is_class:
+    id: PBPKO:00585
+    label: restbody blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00585
+  chebi_bqb_is_class:
+    id: CHEBI:37193
+    label: elemental lead
+    iri: http://purl.obolibrary.org/obo/CHEBI_37193
+  unit: dimensionless
+- id: PCAirBlood
+  name: air blood partition coefficient
+  pbpko_bqm_is_class:
+    id: PBPKO:00568
+    label: air blood partition coefficient
+    iri: http://purl.obolibrary.org/obo/PBPKO_00568
+  chebi_bqb_is_class:
+    id: CHEBI:37193
+    label: elemental lead
+    iri: http://purl.obolibrary.org/obo/CHEBI_37193
+  unit: ''
 parameterisations:
 - filename: model_A_inh_exh_art_ven.params.csv
-  model_id: inhalation_A_art_ven
+  model_id: Inhalation_A_art_ven
   parameters:
   - id: BW
     value: 70.0
@@ -102,212 +202,111 @@ parameterisations:
       iri: http://purl.obolibrary.org/obo/PBPKO_00008
   - id: sc_Vblood
     value: 0.074
-    unit: L/kg
+    unit: dimensionless
     reference: ''
-  - id: sc_Vrest
-    value: 0.074
-    unit: L/kg
+    bqm_is:
+      id: PBPKO:04057
+      label: volume fraction of blood
+      iri: http://purl.obolibrary.org/obo/PBPKO_04057
+  - id: FracArt
+    value: 0.18
+    unit: dimensionless
     reference: ''
-  - id: Falv
-    value: 210.0
-    unit: L/h
-    reference: ''
+    bqm_is:
+      id: PBPKO:00651
+      label: fraction of arterial blood volume
+      iri: http://purl.obolibrary.org/obo/PBPKO_00651
   - id: Vair
     value: 1.0
-    unit: ''
+    unit: L
+    reference: ''
+  - id: COCoeff
+    value: 12.5
+    unit: dimensionless
+    reference: ''
+  - id: Falv
+    value: 390.0
+    unit: L/h
     reference: ''
   - id: Fabs
     value: 0.3
-    unit: ''
+    unit: dimensionless
     reference: ''
-  - id: k_rest_blood
+    bqm_is:
+      id: PBPKO:00264
+      label: relative bioavailability
+      iri: http://purl.obolibrary.org/obo/PBPKO_00264
+  - id: PCRestBlood
     value: 0.5
     unit: dimensionless
     reference: ''
-  - id: PCAir
+    bqm_is:
+      id: PBPKO:00585
+      label: restbody blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00585
+    bqb_is:
+      id: CHEBI:37193
+      label: elemental lead
+      iri: http://purl.obolibrary.org/obo/CHEBI_37193
+  - id: PCAirBlood
     value: 2000.0
-    unit: dimensionless
+    unit: ''
     reference: ''
+    bqm_is:
+      id: PBPKO:00568
+      label: air blood partition coefficient
+      iri: http://purl.obolibrary.org/obo/PBPKO_00568
+    bqb_is:
+      id: CHEBI:37193
+      label: elemental lead
+      iri: http://purl.obolibrary.org/obo/CHEBI_37193
 unit_consistency:
-- level: warning
-  msg: "As a principle of best modeling practice, the size of a <compartment> should\
-    \ be set to a value rather than be left undefined. Doing so improves the portability\
-    \ of models between different simulation and analysis systems, and helps make\
-    \ it easier to detect potential errors in models.\n The <compartment> with the\
-    \ id 'Air' does not have a 'size' attribute, nor is its initial value set by an\
-    \ <initialAssignment> or <assignmentRule>."
-- level: warning
-  msg: "As a principle of best modeling practice, the size of a <compartment> should\
-    \ be set to a value rather than be left undefined. Doing so improves the portability\
-    \ of models between different simulation and analysis systems, and helps make\
-    \ it easier to detect potential errors in models.\n The <compartment> with the\
-    \ id 'Arterial' does not have a 'size' attribute, nor is its initial value set\
-    \ by an <initialAssignment> or <assignmentRule>."
-- level: warning
-  msg: "As a principle of best modeling practice, the size of a <compartment> should\
-    \ be set to a value rather than be left undefined. Doing so improves the portability\
-    \ of models between different simulation and analysis systems, and helps make\
-    \ it easier to detect potential errors in models.\n The <compartment> with the\
-    \ id 'Venous' does not have a 'size' attribute, nor is its initial value set by\
-    \ an <initialAssignment> or <assignmentRule>."
-- level: warning
-  msg: "As a principle of best modeling practice, the size of a <compartment> should\
-    \ be set to a value rather than be left undefined. Doing so improves the portability\
-    \ of models between different simulation and analysis systems, and helps make\
-    \ it easier to detect potential errors in models.\n The <compartment> with the\
-    \ id 'RestofBody' does not have a 'size' attribute, nor is its initial value set\
-    \ by an <initialAssignment> or <assignmentRule>."
 - level: error
   msg: "In situations where a mathematical expression refers to a compartment, species\
     \ or parameter, it is necessary to know the units of the object to establish unit\
     \ consistency. In models where the units of an object have not been declared,\
     \ libSBML does not yet have the functionality to accurately verify the consistency\
     \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'Vblood' cannot be fully checked. Unit consistency reported\
+    \ of the <parameter> 'PCAirBlood' cannot be fully checked. Unit consistency reported\
     \ as either no errors or further unit errors related to this object may not be\
     \ accurate."
 - level: error
   msg: "If the attribute 'units' on a given Parameter object has not been set, then\
     \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'Vblood' does not have\
-    \ a 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'Vrest' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'Vrest' does not have\
-    \ a 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'Vart' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'Vart' does not have a\
-    \ 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'Vven' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'Vven' does not have a\
-    \ 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'Vair' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'Vair' does not have a\
-    \ 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'Fabs' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'Fabs' does not have a\
-    \ 'units' attribute."
-- level: error
-  msg: "In situations where a mathematical expression refers to a compartment, species\
-    \ or parameter, it is necessary to know the units of the object to establish unit\
-    \ consistency. In models where the units of an object have not been declared,\
-    \ libSBML does not yet have the functionality to accurately verify the consistency\
-    \ of the units in mathematical expressions referring to that object. \n The units\
-    \ of the <parameter> 'Qrest' cannot be fully checked. Unit consistency reported\
-    \ as either no errors or further unit errors related to this object may not be\
-    \ accurate."
-- level: error
-  msg: "If the attribute 'units' on a given Parameter object has not been set, then\
-    \ the unit of measurement associated with that parameter's value is undefined.\n\
-    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'Qrest' does not have\
-    \ a 'units' attribute."
+    Reference: L3V2 Section 4.7.3\n The <parameter> with id 'PCAirBlood' does not\
+    \ have a 'units' attribute."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <initialAssignment> <math> expression '12.5 * pow(BW, 0.75)' cannot be fully\
-    \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression 'Vblood / 3' cannot be fully checked. Unit\
-    \ consistency reported as either no errors or further unit errors related to this\
-    \ object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <assignmentRule> <math> expression 'Vblood - Vart' cannot be fully checked.\
+    \ <assignmentRule> <math> expression '1 - sc_Vblood' cannot be fully checked.\
     \ Unit consistency reported as either no errors or further unit errors related\
     \ to this object may not be accurate."
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'Vblood' are gram (exponent\
+    \ = 1, multiplier = 1000, scale = 0)."
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
+    \ (exponent = 1, multiplier = 1, scale = 0) but the units returned by the <math>\
+    \ expression of the <assignmentRule> with variable 'Vrest' are gram (exponent\
+    \ = 1, multiplier = 1000, scale = 0)."
+- level: error
+  msg: "When the 'variable' in an <assignmentRule> refers to a <parameter>, the units\
+    \ of the rule's right-hand side are expected to be consistent with the units declared\
+    \ for that parameter. \nReference: L3V2 Section 4.9.3\n  Expected units are litre\
+    \ (exponent = 1, multiplier = 1, scale = 0), second (exponent = -1, multiplier\
+    \ = 3600, scale = 0) but the units returned by the <math> expression of the <assignmentRule>\
+    \ with variable 'CO' are gram (exponent = 0.75, multiplier = 1000, scale = 0)."
 - level: warning
   msg: "In situations where a mathematical expression contains literal numbers or\
     \ parameters whose units have not been declared, it is not possible to verify\
     \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'Falv * (Aair / Vair) * Fabs' cannot be fully\
-    \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'Qrest * (Aart / Vart)' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'Qrest * (Arest / Vrest) / k_rest_blood' cannot\
-    \ be fully checked. Unit consistency reported as either no errors or further unit\
+    \ <kineticLaw> <math> expression 'Falv * (Aart / Vart) / PCAirBlood' cannot be\
+    \ fully checked. Unit consistency reported as either no errors or further unit\
     \ errors related to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'CO * (Aven / Vven)' cannot be fully checked.\
-    \ Unit consistency reported as either no errors or further unit errors related\
-    \ to this object may not be accurate."
-- level: warning
-  msg: "In situations where a mathematical expression contains literal numbers or\
-    \ parameters whose units have not been declared, it is not possible to verify\
-    \ accurately the consistency of the units in the expression. \n The units of the\
-    \ <kineticLaw> <math> expression 'Falv * (Aart / Vart) / PCAir' cannot be fully\
-    \ checked. Unit consistency reported as either no errors or further unit errors\
-    \ related to this object may not be accurate."

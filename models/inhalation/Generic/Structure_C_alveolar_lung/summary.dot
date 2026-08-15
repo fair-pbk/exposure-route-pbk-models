@@ -9,7 +9,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Air",
 			label="Air
-[PBPKO:00458]",
+[-]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -17,7 +17,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-Aair",
 			label="Aair
-[-]",
+[PBPKO:00615]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -27,7 +27,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Arterial",
 			label="Arterial
-[-]",
+[PBPKO:00552]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -35,7 +35,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-Aart",
 			label="Aart
-[-]",
+[PBPKO:00631]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -45,7 +45,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-Venous",
 			label="Venous
-[-]",
+[PBPKO:00561]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -53,7 +53,7 @@ digraph {
 			fillcolor=gold,
 			href="#species-Aven",
 			label="Aven
-[-]",
+[PBPKO:00632]",
 			shape=box,
 			style="filled,rounded"];
 	}
@@ -63,7 +63,7 @@ digraph {
 			fontname=Arial,
 			href="#compartment-RestofBody",
 			label="RestofBody
-[-]",
+[PBPKO:00450]",
 			shape=box,
 			style="filled,rounded"
 		];
@@ -75,49 +75,68 @@ digraph {
 			shape=box,
 			style="filled,rounded"];
 	}
-	subgraph cluster_Lung {
+	subgraph cluster_Pulmonary1 {
 		graph [color=black,
 			fillcolor=lightblue,
 			fontname=Arial,
-			href="#compartment-Lung",
-			label="Lung
-[-]",
+			href="#compartment-Pulmonary1",
+			label="Pulmonary1
+[PBPKO:00446]",
 			shape=box,
 			style="filled,rounded"
 		];
-		Alung	[color=black,
+		Apulmonary1	[color=black,
 			fillcolor=gold,
-			href="#species-Alung",
-			label="Alung
-[-]",
+			href="#species-Apulmonary1",
+			label="Apulmonary1
+[PBPKO:00615]",
 			shape=box,
 			style="filled,rounded"];
 	}
-	subgraph cluster_Bloodlung {
+	subgraph cluster_Pulmonary2 {
 		graph [color=black,
 			fillcolor=lightblue,
 			fontname=Arial,
-			href="#compartment-Bloodlung",
-			label="Bloodlung
-[-]",
+			href="#compartment-Pulmonary2",
+			label="Pulmonary2
+[PBPKO:00446]",
 			shape=box,
 			style="filled,rounded"
 		];
-		Abloodlung	[color=black,
+		Apulmonary2	[color=black,
 			fillcolor=gold,
-			href="#species-Abloodlung",
-			label="Abloodlung
-[-]",
+			href="#species-Apulmonary2",
+			label="Apulmonary2
+[PBPKO:00615]",
 			shape=box,
 			style="filled,rounded"];
 	}
-	Aair -> Abloodlung	[label=_J0];
+	subgraph cluster_Metabolite {
+		graph [color=black,
+			fillcolor=lightblue,
+			fontname=Arial,
+			href="#compartment-Metabolite",
+			label="Metabolite
+[PBPKO:00446]",
+			shape=box,
+			style="filled,rounded"
+		];
+		Amet	[color=black,
+			fillcolor=gold,
+			href="#species-Amet",
+			label="Amet
+[PBPKO:00058]",
+			shape=box,
+			style="filled,rounded"];
+	}
+	Aair -> Apulmonary1	[label=_J0];
 	Aart -> Arest	[label=_J3];
-	Aart -> Alung	[label=_J5];
-	Aven -> Aart	[label=_J7];
-	Aven -> Abloodlung	[label=_J2];
+	Aven -> Apulmonary2	[label=_J5];
 	Arest -> Aven	[label=_J4];
-	Alung -> Aven	[label=_J6];
-	Abloodlung -> Aair	[label=_J8];
-	Abloodlung -> Aart	[label=_J1];
+	Apulmonary1 -> Aair	[label=_J7];
+	Apulmonary1 -> Apulmonary2	[label=_J1];
+	Apulmonary2 -> Aart	[label=_J2];
+	Apulmonary2 -> Apulmonary1	[label=_J6];
+	Apulmonary2 -> Amet	[label=_J8,
+		minlen=1];
 }
