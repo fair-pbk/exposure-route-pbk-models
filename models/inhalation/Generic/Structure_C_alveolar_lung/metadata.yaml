@@ -11,7 +11,7 @@ applicability_domain:
     iri: http://purl.obolibrary.org/obo/NCBITaxon_9606
 num_compartments: 7
 num_species: 7
-num_parameters: 30
+num_parameters: 31
 num_reactions: 9
 compartments:
 - id: Air
@@ -303,6 +303,9 @@ parameters:
     label: elemental lead
     iri: http://purl.obolibrary.org/obo/CHEBI_37193
   unit: dimensionless
+- id: PCAirBlood2
+  name: air blood partition coefficient2
+  unit: dimensionless
 - id: kmetPulm
   name: metabolism rate constant in pulmonary compartment
   unit: /h
@@ -471,6 +474,10 @@ parameterisations:
   - id: kmetPulm
     value: 0.0
     unit: /h
+    reference: ''
+  - id: PCAirBlood2
+    value: 1.0
+    unit: dimensionless
     reference: ''
 unit_consistency:
 - level: warning

@@ -3596,7 +3596,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Number of parameters</td>
-<td style="text-align: left;">30 (15 external / 15 internal)</td>
+<td style="text-align: left;">31 (16 external / 15 internal)</td>
 </tr>
 </tbody>
 </table>
@@ -3733,7 +3733,7 @@
 <td style="text-align: left;">_J1</td>
 <td style="text-align: left;">Apulmonary1</td>
 <td style="text-align: left;">Apulmonary2</td>
-<td style="text-align: left;">Qpulm * Cpulmonary1 / PCAirBlood</td>
+<td style="text-align: left;">Qpulm * Cpulmonary1 / PCAirBlood2</td>
 </tr>
 <tr>
 <td style="text-align: left;">_J2</td>
@@ -3783,10 +3783,10 @@
 <p><span class="arithmatex">\(\frac{d[\mathtt{Aair}]}{dt} = -  \mathit{Falv}\cdot \mathit{Cair}\cdot \mathit{Fabs}
              +  \frac{\mathit{Falv}\cdot \mathit{Cpulmonary1}}{\mathit{PCAirBlood}}\)</span></p>
 <p><span class="arithmatex">\(\frac{d[\mathtt{Apulmonary1}]}{dt} =  \mathit{Falv}\cdot \mathit{Cair}\cdot \mathit{Fabs}
-                    -  \frac{\mathit{Qpulm}\cdot \mathit{Cpulmonary1}}{\mathit{PCAirBlood}}
+                    -  \frac{\mathit{Qpulm}\cdot \mathit{Cpulmonary1}}{\mathit{PCAirBlood2}}
                     +  \frac{\mathit{Qpulm}\cdot \mathit{Cpulmonary2}}{\mathit{PCPulmBlood}}
                     -  \frac{\mathit{Falv}\cdot \mathit{Cpulmonary1}}{\mathit{PCAirBlood}}\)</span></p>
-<p><span class="arithmatex">\(\frac{d[\mathtt{Apulmonary2}]}{dt} =  \frac{\mathit{Qpulm}\cdot \mathit{Cpulmonary1}}{\mathit{PCAirBlood}}
+<p><span class="arithmatex">\(\frac{d[\mathtt{Apulmonary2}]}{dt} =  \frac{\mathit{Qpulm}\cdot \mathit{Cpulmonary1}}{\mathit{PCAirBlood2}}
                     -  \frac{\mathit{CO}\cdot \mathit{Cpulmonary2}}{\mathit{PCPulmBlood}}
                     +  \mathit{CO}\cdot \mathit{Cven}
                     -  \frac{\mathit{Qpulm}\cdot \mathit{Cpulmonary2}}{\mathit{PCPulmBlood}}
@@ -4056,6 +4056,12 @@
 <td style="text-align: left;">air blood partition coefficient</td>
 <td style="text-align: left;">dimensionless</td>
 <td style="text-align: left;">http://purl.obolibrary.org/obo/PBPKO_00568</td>
+</tr>
+<tr>
+<td style="text-align: left;">PCAirBlood2</td>
+<td style="text-align: left;">air blood partition coefficient2</td>
+<td style="text-align: left;">dimensionless</td>
+<td style="text-align: left;"><em>not specified</em></td>
 </tr>
 <tr>
 <td style="text-align: left;">kmetPulm</td>

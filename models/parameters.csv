@@ -294,6 +294,7 @@ model_C_inh_exh_art_ven.sbml,Fabs,relative bioavailability,inhalation,Generic,di
 model_C_inh_exh_art_ven.sbml,PCRestBlood,restbody blood partition coefficient,inhalation,Generic,dimensionless,PBPKO:00585,restbody blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00585,CHEBI:37193,elemental lead,http://purl.obolibrary.org/obo/CHEBI_37193
 model_C_inh_exh_art_ven.sbml,PCPulmBlood,pulmonary (often lung) blood partition coefficient,inhalation,Generic,dimensionless,PBPKO:00579,lung blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00579,CHEBI:37193,elemental lead,http://purl.obolibrary.org/obo/CHEBI_37193
 model_C_inh_exh_art_ven.sbml,PCAirBlood,air blood partition coefficient,inhalation,Generic,dimensionless,PBPKO:00568,air blood partition coefficient,http://purl.obolibrary.org/obo/PBPKO_00568,CHEBI:37193,elemental lead,http://purl.obolibrary.org/obo/CHEBI_37193
+model_C_inh_exh_art_ven.sbml,PCAirBlood2,air blood partition coefficient2,inhalation,Generic,dimensionless,,,,,,
 model_C_inh_exh_art_ven.sbml,kmetPulm,metabolism rate constant in pulmonary compartment,inhalation,Generic,/h,,,,,,
 model_C_inh_exh_art_ven.sbml,Cair,concentration in air,inhalation,Generic,ug/L,PBPKO:06061,concentration in air,http://purl.obolibrary.org/obo/PBPKO_06061,,,
 model_C_inh_exh_art_ven.sbml,Cpulmonary1,concentration of compound in first pulmonary compartment,inhalation,Generic,ug/L,PBPKO:00616,concentration of compound in compartment,http://purl.obolibrary.org/obo/PBPKO_00616,,,
