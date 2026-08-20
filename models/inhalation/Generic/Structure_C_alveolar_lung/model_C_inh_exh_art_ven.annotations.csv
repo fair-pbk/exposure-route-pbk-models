@@ -72,6 +72,8 @@ PCPulmBlood,parameter,pulmonary (often lung) blood partition coefficient,UNITLES
 PCPulmBlood,parameter,,,rdf,BQB_IS,http://purl.obolibrary.org/obo/CHEBI_37193,
 PCAirBlood,parameter,air blood partition coefficient,UNITLESS,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_00568,
 PCAirBlood,parameter,,,rdf,BQB_IS,http://purl.obolibrary.org/obo/CHEBI_37193,
+PCAirBlood2,parameter,air blood partition coefficient2,UNITLESS,rdf,BQM_IS,,
+PCAirBlood2,parameter,,,rdf,BQB_IS,,
 kmetPulm,parameter,metabolism rate constant in pulmonary compartment,/h,rdf,BQM_IS,,
 kmetPulm,parameter,,,rdf,BQB_IS,,
 Cair,parameter,concentration in air,ug/L,rdf,BQM_IS,http://purl.obolibrary.org/obo/PBPKO_06061,

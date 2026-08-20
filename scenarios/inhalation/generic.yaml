@@ -7,18 +7,35 @@ model_instances:
     param_file: models/inhalation/Generic/Structure_A_direct_blood/model_A_inh_exh_art_ven.params.csv
     target_mappings:
       CAir: '[Aair]'
-  - id: Structure B
-    label: Structure B
+
+  - id: Structure B PC0.5
+    label: Structure B (PCPulmBlood = 0.5)
     model_path: models/inhalation/Generic/Structure_B_lung/model_B_inh_exh_art_ven.sbml
     param_file: models/inhalation/Generic/Structure_B_lung/model_B_inh_exh_art_ven.params.csv
     target_mappings:
       CAir: '[Aair]'
-  - id: Structure C
-    label: Structure C
+
+  - id: Structure B PC100
+    label: Structure B (PCPulmBlood = 100)
+    model_path: models/inhalation/Generic/Structure_B_lung/model_B_inh_exh_art_ven.sbml
+    param_file: models/inhalation/Generic/Structure_B_lung/model_B_inh_exh_art_ven.params100.csv
+    target_mappings:
+      CAir: '[Aair]'
+
+  - id: Structure C PC0.5
+    label: Structure C (PCPulmBlood = 0.5)
     model_path: models/inhalation/Generic/Structure_C_alveolar_lung/model_C_inh_exh_art_ven.sbml
     param_file: models/inhalation/Generic/Structure_C_alveolar_lung/model_C_inh_exh_art_ven.params.csv
     target_mappings:
       CAir: '[Aair]'
+
+  - id: Structure C PC100
+    label: Structure C (PCPulmBlood = 100)
+    model_path: models/inhalation/Generic/Structure_C_alveolar_lung/model_C_inh_exh_art_ven.sbml
+    param_file: models/inhalation/Generic/Structure_C_alveolar_lung/model_C_inh_exh_art_ven.params100.csv
+    target_mappings:
+      CAir: '[Aair]'
+
 
 scenarios:
   - id: inhalation_scenario_1

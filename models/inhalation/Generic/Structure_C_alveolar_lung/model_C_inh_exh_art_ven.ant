@@ -39,6 +39,7 @@ model Inhalation_C_art_ven()
   PCRestBlood = 0.5                       # rest of body to blood partition coefficient
   PCPulmBlood = 0.5                       # pulmonary to blood partition coefficient
   PCAirBlood = 2000                       # air to blood partition coefficient
+  PCAirBlood2 = 1                         # partition coefficient, PCAirBlood2 = 1 always   
   kmetPulm = 0                            # metabolic rate (/h)
 
   #------------------------
@@ -92,8 +93,9 @@ model Inhalation_C_art_ven()
   # Reactions / Transfers
   #------------------------
 
+# pulm 1 = alveolar and pulm2 = lung tissue
   Aair -> Apulmonary1;         Falv * Cair * Fabs
-  Apulmonary1 -> Apulmonary2;  Qpulm * Cpulmonary1 / PCAirBlood
+  Apulmonary1 -> Apulmonary2;  Qpulm * Cpulmonary1 / PCAirBlood2
   Apulmonary2 -> Aart;         CO * Cpulmonary2 / PCPulmBlood
   Aart -> Arest;               Qrest * Cart
   Arest -> Aven;               Qrest * Crest / PCRestBlood
@@ -101,5 +103,28 @@ model Inhalation_C_art_ven()
   Apulmonary2 -> Apulmonary1;  Qpulm * Cpulmonary2 / PCPulmBlood
   Apulmonary1 -> Aair;         Falv * Cpulmonary1 / PCAirBlood
   Apulmonary2 -> Amet;         kmetPulm * Apulmonary2
+
+
+  # pulm 1 = lung tissue and pulm2 = lung blood
+  # Aair -> Apulmonary1;         Falv * Cair * Fabs
+  # Apulmonary1 -> Apulmonary2;  Qpulm * Cpulmonary1 / PCPulmBlood
+  # Apulmonary2 -> Aart;         CO * Cpulmonary2 / PCAirBlood2
+  # Aart -> Arest;               Qrest * Cart
+  # Arest -> Aven;               Qrest * Crest / PCRestBlood
+  # Aven -> Apulmonary2;         CO * Cven
+  # Apulmonary2 -> Apulmonary1;  Qpulm * Cpulmonary2 / PCAirBlood2
+  # Apulmonary1 -> Aair;         Falv * Cpulmonary1 / PCAirBlood
+  # Apulmonary1 -> Amet;         kmetPulm * Apulmonary1
+
+  # pulm 1 = conducting airways and pulm2 = alveolar
+  # Aair -> Apulmonary1;         Falv * Cair * Fabs
+  # Apulmonary1 -> Apulmonary2;  Falv * Cpulmonary1
+  # Apulmonary2 -> Aart;         Qpulm * Cpulmonary2 / PCAirBlood
+  # Aart -> Arest;               Qrest * Cart
+  # Arest -> Aven;               Qrest * Crest / PCRestBlood
+  # Aven -> Apulmonary2;         CO * Cven
+  # Apulmonary2 -> Apulmonary1;  Falv * Cpulmonary2 / PCAirBlood
+  # Apulmonary2 -> Aair;         Falv*Cpulmonary2/PCAirBlood;
+  # Apulmonary2 -> Amet;         kmetPulm*Apulmonary2;
 
 end

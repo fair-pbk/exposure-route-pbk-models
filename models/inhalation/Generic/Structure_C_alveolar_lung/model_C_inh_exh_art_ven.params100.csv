@@ -11,7 +11,7 @@ Inhalation_C_art_ven_PARAM,Qpulm,100.0,L/h,blood flow rate to pulmonary compartm
 Inhalation_C_art_ven_PARAM,Falv,390.0,L/h,alveolar ventilation rate,
 Inhalation_C_art_ven_PARAM,Fabs,0.3,dimensionless,relative bioavailability,
 Inhalation_C_art_ven_PARAM,PCRestBlood,0.5,dimensionless,restbody blood partition coefficient,
-Inhalation_C_art_ven_PARAM,PCPulmBlood,0.5,dimensionless,pulmonary (often lung) blood partition coefficient,
+Inhalation_C_art_ven_PARAM,PCPulmBlood,100.0,dimensionless,pulmonary (often lung) blood partition coefficient,
 Inhalation_C_art_ven_PARAM,PCAirBlood,2000.0,dimensionless,air blood partition coefficient,
 Inhalation_C_art_ven_PARAM,kmetPulm,0.0,/h,metabolism rate constant in pulmonary compartment,
 Inhalation_C_art_ven_PARAM,PCAirBlood2,1.0,dimensionless,air blood partition coefficient 2,
