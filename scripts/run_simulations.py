@@ -42,7 +42,8 @@ def create_simulation_reports(configs: list[str], force_recompute: bool):
         # Plot simulation results
         plot_simulation_results(
             config = config,
-            out_path = out_path
+            out_path = out_path,
+            output_format = 'svg'
         )
 
         # Rendering report
@@ -50,7 +51,8 @@ def create_simulation_reports(configs: list[str], force_recompute: bool):
         render_template(
             name="simulation_report",
             output_file=os.path.join(out_path, f"{config.id}.md"),
-            config=config
+            config=config,
+            output_format = 'svg'
         )
 
 if __name__ == '__main__':
